@@ -38,13 +38,6 @@ $(document).ready(function() {
     scrollio(target, 800);
   });
 
-  $('[data-gtm-category]').on('click', function() {
-    var category = $(this).data('gtm-category');
-    var action = $(this).data('gtm-action');
-    var label = $(this).data('gtm-label');
-    gtmClickTrack(category, action, label);
-  });
-
   console.log('%c stop tryna steal my stuff ✌', 'font-size:10em;');
 
 });
