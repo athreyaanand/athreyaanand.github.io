@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The DaB - Daily Briefing - August 11, 2025, 11:12 AM</title>
+    <style>
+      body {
+        font-family: monospace;
+        margin: 20px;
+        background-color: white;
+        color: black;
+        line-height: 1.4;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #000;
+        margin: 10px 0;
+      }
+
+      .nav-links {
+        margin-bottom: 20px;
+      }
+
+      .nav-links a {
+        color: #0000ee;
+        text-decoration: none;
+        margin-right: 15px;
+      }
+
+      .nav-links a:visited {
+        color: #551a8b;
+      }
+
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+
+      .stats {
+        background-color: #f8f8f8;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+      }
+
+      article {
+        margin-bottom: 30px;
+        padding: 0;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+      }
+
+      article:last-child {
+        border-bottom: none;
+      }
+
+      .article-number {
+        color: #666;
+        font-weight: bold;
+      }
+
+      .article-title {
+        font-weight: bold;
+        margin: 5px 0;
+      }
+
+      .article-title a {
+        color: #0000ee;
+        text-decoration: none;
+      }
+
+      .article-title a:visited {
+        color: #551a8b;
+      }
+
+      .article-title a:hover {
+        text-decoration: underline;
+      }
+
+      .article-meta {
+        color: #666;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+
+      .article-description {
+        margin-bottom: 15px;
+      }
+
+      .source-link {
+        color: #666;
+        font-size: 12px;
+      }
+
+      .tweets-section {
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        background-color: #f8f8f8;
+      }
+
+      .tweets-toggle {
+        background: #e8e8e8;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-family: monospace;
+        font-size: 12px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .tweets-toggle:hover {
+        background: #ddd;
+      }
+
+      .tweets-content {
+        display: none;
+        padding: 10px;
+      }
+
+      .tweet {
+        background: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 8px;
+        font-size: 12px;
+      }
+
+      .tweet:last-child {
+        margin-bottom: 0;
+      }
+
+      .engagement-high {
+        color: #d73527 !important;
+        font-weight: bold;
+      }
+
+      .engagement-notable {
+        color: #ff8c00 !important;
+        font-weight: bold;
+      }
+
+      .engagement-standard {
+        color: #666 !important;
+      }
+
+      .engagement-low {
+        color: #999 !important;
+      }
+
+      .footer {
+        margin-top: 30px;
+        font-style: italic;
+        font-size: 12px;
+        color: #666;
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+      }
+
+      .sort-controls {
+        background-color: #f0f0f0;
+        padding: 15px;
+        margin: 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      .sort-controls h3 {
+        margin: 0 0 10px 0;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .sort-button {
+        font-family: monospace;
+        font-size: 12px;
+        padding: 6px 12px;
+        margin: 2px 5px 2px 0;
+        cursor: pointer;
+        border: 1px solid #999;
+        background: white;
+        color: #333;
+      }
+
+      .sort-button:hover {
+        background: #e8e8e8;
+      }
+
+      .sort-button.active {
+        background: #333;
+        color: white;
+      }
+
+      .engagement-bar {
+        display: inline-block;
+        width: 60px;
+        height: 8px;
+        background: #f0f0f0;
+        border: 1px solid #ccc;
+        margin-left: 5px;
+        position: relative;
+      }
+
+      .engagement-fill {
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          #999 0%,
+          #ff8c00 50%,
+          #d73527 100%
+        );
+      }
+
+      .source-icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .topic-tag {
+        font-weight: bold;
+        font-size: 11px;
+      }
+    </style>
+    <script>
+      let articles = [];
+      let currentSort = "engagement";
+
+      function toggleTweets(articleId) {
+        const content = document.getElementById("tweets-" + articleId);
+        const toggle = document.getElementById("toggle-" + articleId);
+
+        if (content.style.display === "none" || content.style.display === "") {
+          content.style.display = "block";
+          toggle.textContent = "🔽 Hide Tweet Suggestions";
+        } else {
+          content.style.display = "none";
+          toggle.textContent =
+            "📱 Show Tweet Suggestions (" + content.children.length + ")";
+        }
+      }
+
+      function sortArticles(sortType) {
+        // Update active button
+        document
+          .querySelectorAll(".sort-button")
+          .forEach((btn) => btn.classList.remove("active"));
+        document.getElementById("sort-" + sortType).classList.add("active");
+        currentSort = sortType;
+
+        // Get all articles
+        const articleElements = Array.from(
+          document.querySelectorAll("article")
+        );
+        const container = articleElements[0].parentNode;
+
+        // Sort based on type
+        articleElements.sort((a, b) => {
+          switch (sortType) {
+            case "engagement":
+              const scoreA = parseFloat(a.getAttribute("data-engagement") || 0);
+              const scoreB = parseFloat(b.getAttribute("data-engagement") || 0);
+              return scoreB - scoreA;
+            case "date":
+              const dateA = new Date(a.getAttribute("data-published") || 0);
+              const dateB = new Date(b.getAttribute("data-published") || 0);
+              return dateB - dateA;
+            case "source":
+              const sourceA = a.getAttribute("data-source") || "";
+              const sourceB = b.getAttribute("data-source") || "";
+              return sourceA.localeCompare(sourceB);
+            case "title":
+              const titleA = a.getAttribute("data-title") || "";
+              const titleB = b.getAttribute("data-title") || "";
+              return titleA.localeCompare(titleB);
+            default:
+              return 0;
+          }
+        });
+
+        // Re-append sorted articles
+        articleElements.forEach((article, index) => {
+          // Update article number
+          const numberEl = article.querySelector(".article-number");
+          if (numberEl) {
+            const num = String(index + 1).padStart(2, "0");
+            numberEl.textContent = "[" + num + "]";
+          }
+          container.appendChild(article);
+        });
+      }
+
+      function getSourceIcon(sourceType) {
+        switch (sourceType) {
+          case "RSS":
+            return "📰";
+          case "Hacker News":
+            return "💻";
+          case "arXiv":
+            return "📚";
+          case "Reddit":
+            return "🗨️";
+          default:
+            return "📄";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="nav-links">
+      <a href="../../../index.html">← Back to Archive</a>
+    </div>
+
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>August 11, 2025, 11:12 AM</h2>
+    <hr />
+
+    <div class="stats">
+      📊 <strong>18 articles</strong> collected from multiple sources<br />
+      🔄 Generated at 2025-08-11 11:12:51
+    </div>
+
+    <div class="sort-controls">
+      <h3>🔄 Sort Articles:</h3>
+      <button
+        class="sort-button active"
+        id="sort-engagement"
+        onclick="sortArticles('engagement')"
+      >
+        📊 By Engagement Score
+      </button>
+      <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+        📅 By Date (Newest First)
+      </button>
+      <button
+        class="sort-button"
+        id="sort-source"
+        onclick="sortArticles('source')"
+      >
+        📡 By Source
+      </button>
+      <button
+        class="sort-button"
+        id="sort-title"
+        onclick="sortArticles('title')"
+      >
+        🔤 By Title (A-Z)
+      </button>
+    </div>
+
+    <hr />
+
+    <article
+      data-engagement="65.5"
+      data-published="2025-08-05 17:02"
+      data-source="Hacker News"
+      data-source-type="Hacker News"
+      data-title="Open models by OpenAI"
+    >
+      <div class="article-number">[01]</div>
+      <div class="article-title">
+        <span class="source-icon">💻</span>
+        <a href="https://openai.com/open-models/" target="_blank"
+          >Open models by OpenAI</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Hacker News | Published: 2025-08-05 17:02 | ID: 4c47f6733460 |
+        <span class="engagement-notable"
+          >Engagement: [65.5/100] ⭐ Notable</span
+        >
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 65%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #4caf50">🤖 Ai Ml</span>,
+        <span class="topic-tag" style="color: #f44336">🔒 Security</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        OpenAI has released a new platform called Open Models, allowing
+        developers to access and use pre-trained models for various tasks such
+        as text generation and image recognition. This initiative aims to
+        democratize AI by providing easy access to powerful models, potentially
+        accelerating innovation in AI applications across industries. Developers
+        can now leverage these advanced models without needing to train them
+        from scratch, saving time and resources in their AI projects.
+      </div>
+      <div class="source-link">
+        →
+        <a href="https://openai.com/open-models/" target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-4c47f6733460"
+          onclick="toggleTweets('4c47f6733460')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-4c47f6733460">
+          <div class="tweet">
+            Exciting news for developers! @OpenAI has launched Open Models, a
+            platform offering pre-trained models for tasks like text generation
+            and image recognition. 🚀 Democratizing AI and accelerating
+            innovation! #OpenAI #AI #TechNews
+          </div>
+          <div class="tweet">
+            How will access to pre-trained AI models through Open Models by
+            @OpenAI revolutionize the development process for AI applications?
+            🤔 Share your thoughts! #OpenAI #AI #TechInnovation
+          </div>
+          <div class="tweet">
+            With Open Models, developers can now tap into powerful pre-trained
+            AI models without the need to start from scratch, saving valuable
+            time and resources in their projects. Innovation in AI just got a
+            boost! 🌟 #OpenAI #AI #TechAdvancements
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="65.5"
+      data-published="2025-08-05 09:01"
+      data-source="Hacker News"
+      data-source-type="Hacker News"
+      data-title="uBlock Origin Lite now available for Safari"
+    >
+      <div class="article-number">[02]</div>
+      <div class="article-title">
+        <span class="source-icon">💻</span>
+        <a
+          href="https://apps.apple.com/app/ublock-origin-lite/id6745342698"
+          target="_blank"
+          >uBlock Origin Lite now available for Safari</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Hacker News | Published: 2025-08-05 09:01 | ID: 3a154c4e7705 |
+        <span class="engagement-notable"
+          >Engagement: [65.5/100] ⭐ Notable</span
+        >
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 65%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #4caf50">🤖 Ai Ml</span>,
+        <span class="topic-tag" style="color: #f44336">🔒 Security</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        The popular ad-blocking extension uBlock Origin has released a Lite
+        version specifically for Safari users. This lightweight version aims to
+        provide essential ad-blocking features while improving performance and
+        compatibility with Safari browsers. Safari users can now enjoy a
+        streamlined ad-blocking experience with uBlock Origin Lite.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://apps.apple.com/app/ublock-origin-lite/id6745342698"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-3a154c4e7705"
+          onclick="toggleTweets('3a154c4e7705')"
+        >
+          📱 Show Tweet Suggestions (2)
+        </div>
+        <div class="tweets-content" id="tweets-3a154c4e7705">
+          <div class="tweet">
+            Exciting news for Safari users! 🚀 uBlock Origin Lite is now
+            available, offering essential ad-blocking features with improved
+            performance and compatibility. Say goodbye to unwanted ads and enjoy
+            a smoother browsing experience. #uBlockOrigin #Safari #AdBlocking
+          </div>
+          <div class="tweet">
+            Curious about ad-blocking on Safari? 🤔 Check out the new uBlock
+            Origin Lite! With a focus on performance and compatibility, this
+            lightweight version aims to enhance your browsing experience. Have
+            you tried it yet? #uBlockOrigin #Safari #BrowsingExperience
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="62.5"
+      data-published="2025-08-07 17:00"
+      data-source="Hacker News"
+      data-source-type="Hacker News"
+      data-title="GPT-5"
+    >
+      <div class="article-number">[03]</div>
+      <div class="article-title">
+        <span class="source-icon">💻</span>
+        <a href="https://openai.com/gpt-5/" target="_blank">GPT-5</a>
+      </div>
+      <div class="article-meta">
+        Source: Hacker News | Published: 2025-08-07 17:00 | ID: a885ff1624e9 |
+        <span class="engagement-notable"
+          >Engagement: [62.5/100] ⭐ Notable</span
+        >
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 62%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #4caf50">🤖 Ai Ml</span>,
+        <span class="topic-tag" style="color: #f44336">🔒 Security</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        OpenAI has announced the development of GPT-5, the latest iteration of
+        its powerful natural language processing model. GPT-5 boasts even more
+        advanced capabilities in understanding and generating human-like text,
+        setting a new benchmark in AI language models. This advancement is
+        expected to have significant implications for various applications,
+        including chatbots, content generation, and language translation.
+      </div>
+      <div class="source-link">
+        →
+        <a href="https://openai.com/gpt-5/" target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-a885ff1624e9"
+          onclick="toggleTweets('a885ff1624e9')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-a885ff1624e9">
+          <div class="tweet">
+            Exciting news from OpenAI! 🚀 Introducing GPT-5, the latest in
+            natural language processing models. With enhanced capabilities, it's
+            set to revolutionize AI applications like chatbots and content
+            generation. #GPT5 #AI #TechNews
+          </div>
+          <div class="tweet">
+            Curious about the future of AI language models? 🤔 How do you think
+            GPT-5 will impact the way we interact with technology and consume
+            content? Share your thoughts! #GPT5 #AI #TechTrends
+          </div>
+          <div class="tweet">
+            GPT-5's advancements in natural language processing signal a new era
+            in AI development. From improved text generation to enhanced
+            understanding, it's paving the way for innovative applications in
+            various fields. #GPT5 #AI #Innovation
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="62.5"
+      data-published="2025-08-05 14:08"
+      data-source="Hacker News"
+      data-source-type="Hacker News"
+      data-title="Genie 3: A new frontier for world models"
+    >
+      <div class="article-number">[04]</div>
+      <div class="article-title">
+        <span class="source-icon">💻</span>
+        <a
+          href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/"
+          target="_blank"
+          >Genie 3: A new frontier for world models</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Hacker News | Published: 2025-08-05 14:08 | ID: d4302dfd1517 |
+        <span class="engagement-notable"
+          >Engagement: [62.5/100] ⭐ Notable</span
+        >
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 62%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #f44336">🔒 Security</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        Genie 3 represents a significant advancement in world models, offering
+        enhanced capabilities for simulating complex environments and scenarios.
+        The technology has garnered substantial interest within the tech
+        community, as evidenced by the active discussion on Hacker News with
+        1503 points and 489 comments. This innovation is poised to have a
+        profound impact on various fields, from AI research to virtual
+        environments and beyond.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-d4302dfd1517"
+          onclick="toggleTweets('d4302dfd1517')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-d4302dfd1517">
+          <div class="tweet">
+            Genie 3 is revolutionizing world models with its advanced
+            capabilities for simulating complex environments. Dive into this
+            groundbreaking technology that's making waves in AI research and
+            virtual environments. #Genie3 #AI #TechInnovation
+          </div>
+          <div class="tweet">
+            Can Genie 3's enhanced world models pave the way for more realistic
+            virtual environments? Join the conversation and explore the
+            potential impact of this cutting-edge technology. #Genie3
+            #VirtualReality #TechDiscussion
+          </div>
+          <div class="tweet">
+            The active engagement on Hacker News surrounding Genie 3 highlights
+            its significance in the tech community. This innovation is set to
+            reshape how we approach AI research and simulation technologies.
+            Stay tuned for the future of world models. #TechCommunity
+            #Innovation #Genie3
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="62.5"
+      data-published="2025-08-10 16:50"
+      data-source="Hacker News"
+      data-source-type="Hacker News"
+      data-title="Fight Chat Control"
+    >
+      <div class="article-number">[05]</div>
+      <div class="article-title">
+        <span class="source-icon">💻</span>
+        <a href="https://fightchatcontrol.eu/" target="_blank"
+          >Fight Chat Control</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Hacker News | Published: 2025-08-10 16:50 | ID: a3a5f20c0fa1 |
+        <span class="engagement-notable"
+          >Engagement: [62.5/100] ⭐ Notable</span
+        >
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 62%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #f44336">🔒 Security</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        A Hacker News discussion titled "Fight Chat Control" has gained
+        significant traction with 1350 points and 430 comments since being
+        posted on August 10, 2025, at 16:50. The thread likely delves into
+        issues related to chat control, potentially covering topics such as
+        moderation, censorship, or privacy concerns within chat platforms,
+        making it a relevant and engaging conversation for those interested in
+        online communication technologies and policies.
+      </div>
+      <div class="source-link">
+        →
+        <a href="https://fightchatcontrol.eu/" target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-a3a5f20c0fa1"
+          onclick="toggleTweets('a3a5f20c0fa1')"
+        >
+          📱 Show Tweet Suggestions (2)
+        </div>
+        <div class="tweets-content" id="tweets-a3a5f20c0fa1">
+          <div class="tweet">
+            Join the conversation on Hacker News with the trending discussion
+            "Fight Chat Control"! With over 1350 points and 430 comments, this
+            thread is diving deep into chat platform moderation, censorship, and
+            privacy concerns. 💬🔒 #TechTalk #OnlineCommunication
+          </div>
+          <div class="tweet">
+            Are chat platforms effectively balancing moderation and privacy
+            concerns? Dive into the Hacker News discussion "Fight Chat Control"
+            to explore different perspectives on this critical issue. Share your
+            thoughts! 💭💬 #ChatControlDebate #TechEthics
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="62.5"
+      data-published="2025-08-08 11:41"
+      data-source="Hacker News"
+      data-source-type="Hacker News"
+      data-title="Ultrathin business card runs a fluid simulation"
+    >
+      <div class="article-number">[06]</div>
+      <div class="article-title">
+        <span class="source-icon">💻</span>
+        <a
+          href="https://github.com/Nicholas-L-Johnson/flip-card"
+          target="_blank"
+          >Ultrathin business card runs a fluid simulation</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Hacker News | Published: 2025-08-08 11:41 | ID: 022332b23ac9 |
+        <span class="engagement-notable"
+          >Engagement: [62.5/100] ⭐ Notable</span
+        >
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 62%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #f44336">🔒 Security</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        A developer has created an ultrathin business card that runs a fluid
+        simulation, sparking a discussion on Hacker News with over 1100 points
+        and 200 comments. The business card, equipped with a microcontroller and
+        a small e-ink display, showcases the potential for creative and
+        functional applications in compact, portable devices. This innovation
+        highlights the intersection of technology and design, pushing the
+        boundaries of what can be achieved with minimalist hardware.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://github.com/Nicholas-L-Johnson/flip-card"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-022332b23ac9"
+          onclick="toggleTweets('022332b23ac9')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-022332b23ac9">
+          <div class="tweet">
+            Check out this ultrathin business card that runs a fluid simulation!
+            🌊💼 The intersection of tech and design at its finest.
+            #TechInnovation #BusinessCardTech
+          </div>
+          <div class="tweet">
+            What's the coolest tech feature you'd want on your business card? 🤔
+            Imagine the possibilities! #TechDesign #InnovativeCards
+          </div>
+          <div class="tweet">
+            The ultrathin business card with a fluid simulation is a prime
+            example of pushing boundaries with minimalist hardware. Creativity
+            knows no bounds! #TechInnovation #DesignThinking
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="55"
+      data-published="Mon, 11 Aug 2025 17:46:50 +0000"
+      data-source="TechCrunch"
+      data-source-type="RSS"
+      data-title="Ocean’s new app brings inbox triage, tasks and invites to Gmail users"
+    >
+      <div class="article-number">[07]</div>
+      <div class="article-title">
+        <span class="source-icon">📰</span>
+        <a
+          href="https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/"
+          target="_blank"
+          >Ocean’s new app brings inbox triage, tasks and invites to Gmail
+          users</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: TechCrunch | Published: Mon, 11 Aug 2025 17:46:50 +0000 | ID:
+        ee4a2f282abb |
+        <span class="engagement-standard"
+          >Engagement: [55.0/100] 📰 Standard</span
+        >
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 55%"></div>
+        </div>
+        | Topics: <span class="topic-tag" style="color: #4caf50">🤖 Ai Ml</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        Ocean has released a new email app designed for Gmail users, offering
+        features such as inbox triage tools, a task manager, and the ability to
+        manage invites directly within Gmail. The app aims to streamline email
+        management and increase productivity by providing users with tools to
+        organize and prioritize their emails and tasks efficiently. This new
+        offering from Ocean provides Gmail users with additional functionality
+        to enhance their email experience and workflow.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://techcrunch.com/2025/08/11/oceans-new-app-brings-inbox-triage-tasks-and-invites-to-gmail-users/"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-ee4a2f282abb"
+          onclick="toggleTweets('ee4a2f282abb')"
+        >
+          📱 Show Tweet Suggestions (2)
+        </div>
+        <div class="tweets-content" id="tweets-ee4a2f282abb">
+          <div class="tweet">
+            Exciting news for Gmail users! 📧 Ocean's new app introduces inbox
+            triage tools, task management, and invite features directly in
+            Gmail. Enhance your email experience and productivity with this new
+            offering. #EmailManagement #ProductivityTools
+          </div>
+          <div class="tweet">
+            Ever wish your inbox could do more? With Ocean's new app for Gmail,
+            you can now triage emails, manage tasks, and handle invites all in
+            one place. How could these features revolutionize your email
+            workflow? #TechInnovation #EmailProductivity
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="40.5"
+      data-published="Mon, 11 Aug 2025 16:31:51 +0000"
+      data-source="Ars Technica - All content"
+      data-source-type="RSS"
+      data-title="Trump strikes “wild” deal making US firms pay 15% tax on China chip sales"
+    >
+      <div class="article-number">[08]</div>
+      <div class="article-title">
+        <span class="source-icon">📰</span>
+        <a
+          href="https://arstechnica.com/tech-policy/2025/08/nvidia-amd-agree-to-pay-trumps-15-levy-on-china-chip-sales/"
+          target="_blank"
+          >Trump strikes “wild” deal making US firms pay 15% tax on China chip
+          sales</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Ars Technica - All content | Published: Mon, 11 Aug 2025
+        16:31:51 +0000 | ID: 146411ac808b |
+        <span class="engagement-standard"
+          >Engagement: [40.5/100] 📰 Standard</span
+        >
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 40%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #f44336">🔒 Security</span>,
+        <span class="topic-tag" style="color: #607d8b">🔧 Hardware</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        The Trump administration has reached a deal where US firms will pay a
+        15% tax on semiconductor sales to China. This move aims to address
+        national security worries but may not fully resolve the concerns. The
+        agreement could impact the tech industry's supply chain and potentially
+        lead to increased costs for companies involved in chip sales to China.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://arstechnica.com/tech-policy/2025/08/nvidia-amd-agree-to-pay-trumps-15-levy-on-china-chip-sales/"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-146411ac808b"
+          onclick="toggleTweets('146411ac808b')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-146411ac808b">
+          <div class="tweet">
+            "Big news in tech: US firms to now pay a 15% tax on chip sales to
+            China. How will this impact the industry's supply chain and cost
+            structures? 🤔 #TechNews #USChinaRelations #Semiconductors"
+          </div>
+          <div class="tweet">
+            "Will the new 15% tax on US chip sales to China strengthen national
+            security or create more challenges for the tech industry? Share your
+            thoughts! 💭 #TechPolicy #NationalSecurity #SupplyChain"
+          </div>
+          <div class="tweet">
+            "Trump's deal on 15% tax for US firms selling chips to China could
+            have ripple effects on tech companies. Stay informed on how this
+            move may reshape the industry landscape. 🚀 #TechIndustry #Taxation
+            #Innovation"
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="40.5"
+      data-published="2025-08-11T13:53:49-04:00"
+      data-source="The Verge"
+      data-source-type="RSS"
+      data-title="The viral video of a ‘deactivated’ Tesla Cybertruck is most likely fake"
+    >
+      <div class="article-number">[09]</div>
+      <div class="article-title">
+        <span class="source-icon">📰</span>
+        <a
+          href="https://www.theverge.com/tesla/757594/tesla-cybertruck-deactivated-viral-video-fake"
+          target="_blank"
+          >The viral video of a ‘deactivated’ Tesla Cybertruck is most likely
+          fake</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: The Verge | Published: 2025-08-11T13:53:49-04:00 | ID:
+        6c5306eadfcf |
+        <span class="engagement-standard"
+          >Engagement: [40.5/100] 📰 Standard</span
+        >
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 40%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #4caf50">🤖 Ai Ml</span>,
+        <span class="topic-tag" style="color: #f44336">🔒 Security</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        A viral video circulating on Instagram claiming a Tesla Cybertruck was
+        remotely deactivated by Tesla due to its appearance in an unauthorized
+        music video is likely fake. The video showed a Cybertruck with a
+        flashing red warning message on its touchscreen, but experts suggest
+        this scenario is improbable. Tesla has not officially commented on the
+        video, and the authenticity of the claim remains questionable.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://www.theverge.com/tesla/757594/tesla-cybertruck-deactivated-viral-video-fake"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-6c5306eadfcf"
+          onclick="toggleTweets('6c5306eadfcf')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-6c5306eadfcf">
+          <div class="tweet">
+            Did you see the viral video of a 'deactivated' Tesla Cybertruck?
+            Experts suggest it's likely fake. Stay skeptical of online tech
+            stories! 🧐 #Tesla #Cybertruck #FakeNews
+          </div>
+          <div class="tweet">
+            What would you do if your Tesla Cybertruck got remotely deactivated
+            due to its appearance in an unauthorized music video? 🤔 #TechDrama
+            #Cybertruck #ViralVideo
+          </div>
+          <div class="tweet">
+            Remember, not everything you see online is true! The 'deactivated'
+            Tesla Cybertruck video may be a hoax. Always verify sources before
+            sharing tech news. 🚫 #Hoax #FactCheck #TechCommunity
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="35.5"
+      data-published="2025-08-08"
+      data-source="arXiv"
+      data-source-type="arXiv"
+      data-title="Effective Training Data Synthesis for Improving MLLM Chart Understanding"
+    >
+      <div class="article-number">[10]</div>
+      <div class="article-title">
+        <span class="source-icon">📚</span>
+        <a href="http://arxiv.org/abs/2508.06492v1" target="_blank"
+          >Effective Training Data Synthesis for Improving MLLM Chart
+          Understanding</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: arXiv | Published: 2025-08-08 | ID: 1ee148f0b509 |
+        <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 35%"></div>
+        </div>
+        | Topics: <span class="topic-tag" style="color: #4caf50">🤖 Ai Ml</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        A research paper by Yuwei Yang, Zeyu Zhang, Yunzhong Hou, and others
+        focuses on improving chart understanding for multimodal large language
+        models (MLLMs) in scientific contexts. The study highlights the need for
+        better training data synthesis to enhance the performance of MLLMs,
+        which currently achieve success rates of 30%-50% on chart understanding
+        challenges. This research underscores the importance of addressing data
+        synthesis challenges to advance the capabilities of MLLMs in scientific
+        applications.
+      </div>
+      <div class="source-link">
+        →
+        <a href="http://arxiv.org/abs/2508.06492v1" target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-1ee148f0b509"
+          onclick="toggleTweets('1ee148f0b509')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-1ee148f0b509">
+          <div class="tweet">
+            Exciting research by Yuwei Yang, Zeyu Zhang, Yunzhong Hou, and team
+            on improving chart understanding for MLLMs in scientific contexts.
+            Enhancing training data synthesis could boost MLLMs' success rates
+            from 30%-50%! 📊💡 #MLLM #DataSynthesis #TechResearch
+          </div>
+          <div class="tweet">
+            How crucial is effective training data synthesis for advancing
+            MLLMs' chart understanding capabilities in scientific applications?
+            🤔 Join the discussion sparked by Yuwei Yang, Zeyu Zhang, Yunzhong
+            Hou, and colleagues' latest research! #MLLM #DataScience
+            #TechInnovation
+          </div>
+          <div class="tweet">
+            Key takeaway from the research by Yuwei Yang, Zeyu Zhang, Yunzhong
+            Hou, and others: Addressing data synthesis challenges is essential
+            to enhance MLLMs' performance in chart understanding tasks. Exciting
+            progress in scientific AI applications! 🚀🔬 #MLLM #AI
+            #TechAdvancement
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="32.5"
+      data-published="2025-08-08"
+      data-source="arXiv"
+      data-source-type="arXiv"
+      data-title="WGAST: Weakly-Supervised Generative Network for Daily 10 m Land Surface Temperature Estimation via Spatio-Temporal Fusion"
+    >
+      <div class="article-number">[11]</div>
+      <div class="article-title">
+        <span class="source-icon">📚</span>
+        <a href="http://arxiv.org/abs/2508.06485v1" target="_blank"
+          >WGAST: Weakly-Supervised Generative Network for Daily 10 m Land
+          Surface Temperature Estimation via Spatio-Temporal Fusion</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: arXiv | Published: 2025-08-08 | ID: b8cfc4491896 |
+        <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 32%"></div>
+        </div>
+        | Topics: <span class="topic-tag" style="color: #4caf50">🤖 Ai Ml</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        The research paper titled "WGAST: Weakly-Supervised Generative Network
+        for Daily 10 m Land Surface Temperature Estimation via Spatio-Temporal
+        Fusion" by Sofiane Bouaziz, Adel Hafiane, Raphael Canals, et al.
+        addresses the need for accurate environmental monitoring due to
+        urbanization, climate change, and agricultural stress. The paper
+        introduces a Weakly-Supervised Generative Network for estimating Land
+        Surface Temperature (LST) from remote sensing satellites, aiming to
+        overcome the spatial and temporal resolution trade-offs in current
+        systems. This innovation could lead to more precise and timely LST
+        estimation, benefiting various applications in environmental monitoring
+        and research.
+      </div>
+      <div class="source-link">
+        →
+        <a href="http://arxiv.org/abs/2508.06485v1" target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-b8cfc4491896"
+          onclick="toggleTweets('b8cfc4491896')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-b8cfc4491896">
+          <div class="tweet">
+            Exciting tech news! The research paper introduces WGAST, a
+            Weakly-Supervised Generative Network for precise & timely Land
+            Surface Temperature estimation from remote sensing satellites. 🌡️🛰️
+            #TechNews #EnvironmentalMonitoring
+          </div>
+          <div class="tweet">
+            Ever wondered how urbanization, climate change, & agricultural
+            stress impact environmental monitoring? The new Weakly-Supervised
+            Generative Network for Land Surface Temperature estimation could
+            provide crucial insights. 🌍💡 #TechInnovation #WGAST
+          </div>
+          <div class="tweet">
+            Key insight: The WGAST system addresses the spatial and temporal
+            resolution trade-offs in current Land Surface Temperature estimation
+            methods, potentially revolutionizing environmental monitoring &
+            research applications. 🔄🔍 #TechBreakthrough #SpatioTemporalFusion
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="32.5"
+      data-published="2025-08-11 10:04"
+      data-source="Reddit (r/technology)"
+      data-source-type="Reddit"
+      data-title="Reddit will block the Internet Archive"
+    >
+      <div class="article-number">[12]</div>
+      <div class="article-title">
+        <span class="source-icon">🗨️</span>
+        <a
+          href="https://www.theverge.com/news/757538/reddit-internet-archive-wayback-machine-block-limit"
+          target="_blank"
+          >Reddit will block the Internet Archive</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Reddit (r/technology) | Published: 2025-08-11 10:04 | ID:
+        25b810cb22dc |
+        <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 32%"></div>
+        </div>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        Reddit has announced that it will block the Internet Archive from
+        archiving its pages due to privacy concerns. This decision will prevent
+        the Wayback Machine from saving snapshots of Reddit threads, impacting
+        the ability to access historical content on the platform.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://www.theverge.com/news/757538/reddit-internet-archive-wayback-machine-block-limit"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-25b810cb22dc"
+          onclick="toggleTweets('25b810cb22dc')"
+        >
+          📱 Show Tweet Suggestions (2)
+        </div>
+        <div class="tweets-content" id="tweets-25b810cb22dc">
+          <div class="tweet">
+            Reddit has decided to block the Internet Archive from archiving its
+            pages, citing privacy concerns. This move will impact the
+            accessibility of historical Reddit content. #Reddit #InternetArchive
+            #PrivacyConcerns
+          </div>
+          <div class="tweet">
+            What are your thoughts on Reddit blocking the Internet Archive from
+            archiving its pages? Will this decision impact how we access and
+            preserve online content in the future? #TechNews #PrivacyDebate
+            #WaybackMachine
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="30.5"
+      data-published="2025-08-08"
+      data-source="arXiv"
+      data-source-type="arXiv"
+      data-title="LightSwitch: Multi-view Relighting with Material-guided Diffusion"
+    >
+      <div class="article-number">[13]</div>
+      <div class="article-title">
+        <span class="source-icon">📚</span>
+        <a href="http://arxiv.org/abs/2508.06494v1" target="_blank"
+          >LightSwitch: Multi-view Relighting with Material-guided Diffusion</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: arXiv | Published: 2025-08-08 | ID: 33d188b92a97 |
+        <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 30%"></div>
+        </div>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        The research paper titled "LightSwitch: Multi-view Relighting with
+        Material-guided Diffusion" by Yehonathan Litman, Fernando De la Torre,
+        and Shubham Tulsiani explores advancements in 3D relighting techniques
+        by incorporating generative priors from 2D image relighting. This
+        approach aims to modify the visual appearance of a 3D model while
+        maintaining its structural integrity. By leveraging material-guided
+        diffusion, the researchers propose a method that enhances the relighting
+        process, offering potential improvements in realistic rendering and
+        visual effects applications.
+      </div>
+      <div class="source-link">
+        →
+        <a href="http://arxiv.org/abs/2508.06494v1" target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-33d188b92a97"
+          onclick="toggleTweets('33d188b92a97')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-33d188b92a97">
+          <div class="tweet">
+            "Exciting research on multi-view relighting using material-guided
+            diffusion! Learn about the latest advancements in realistic
+            rendering and visual effects. #TechNews #3DRendering #VisualEffects"
+          </div>
+          <div class="tweet">
+            "Can generative priors from 2D image relighting revolutionize 3D
+            relighting techniques? Explore how 'LightSwitch' is pushing
+            boundaries in visual appearance modification. #Innovation
+            #TechResearch #LightSwitch"
+          </div>
+          <div class="tweet">
+            "Material-guided diffusion in 'LightSwitch' showcases a promising
+            approach to enhancing 3D model relighting while preserving
+            structural integrity. A breakthrough for realistic rendering
+            applications. #TechInnovations #VisualEffects #ResearchHighlight"
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="30.5"
+      data-published="2025-08-11 03:17"
+      data-source="Reddit (r/technology)"
+      data-source-type="Reddit"
+      data-title="A massive Wyoming data center will soon use 5x more power than the state's human occupants - but no one knows who is using it"
+    >
+      <div class="article-number">[14]</div>
+      <div class="article-title">
+        <span class="source-icon">🗨️</span>
+        <a
+          href="https://www.techradar.com/pro/a-massive-wyoming-data-center-will-soon-use-5x-more-power-than-the-states-human-occupants-and-no-one-knows-who-is-using-it"
+          target="_blank"
+          >A massive Wyoming data center will soon use 5x more power than the
+          state's human occupants - but no one knows who is using it</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Reddit (r/technology) | Published: 2025-08-11 03:17 | ID:
+        ce55655ec424 |
+        <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 30%"></div>
+        </div>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        A massive data center in Wyoming is set to consume five times more power
+        than the state's human residents combined, raising concerns about its
+        environmental impact. Despite its size, the entity behind the data
+        center remains unknown, prompting speculation and questions about the
+        purpose and ownership of the facility. The situation highlights the
+        growing energy demands of data centers and the need for transparency in
+        their operations to ensure sustainable practices.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://www.techradar.com/pro/a-massive-wyoming-data-center-will-soon-use-5x-more-power-than-the-states-human-occupants-and-no-one-knows-who-is-using-it"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-ce55655ec424"
+          onclick="toggleTweets('ce55655ec424')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-ce55655ec424">
+          <div class="tweet">
+            A massive data center in Wyoming is set to use 5x more power than
+            the state's human occupants combined. The mystery surrounding its
+            ownership raises questions about transparency in tech operations.
+            🌐💡 #DataCenter #TechNews #Transparency
+          </div>
+          <div class="tweet">
+            Who is behind the massive data center in Wyoming consuming 5x more
+            power than the state's residents? The secrecy shrouding its
+            ownership fuels speculation about the purpose and environmental
+            impact. 🧐💭 #TechMystery #DataCenter #Transparency
+          </div>
+          <div class="tweet">
+            The staggering energy consumption of the Wyoming data center sheds
+            light on the growing demands of tech infrastructure. It underscores
+            the importance of transparency to ensure sustainability in data
+            center operations. 💻⚡️ #TechTrends #Sustainability
+            #EnergyEfficiency
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="30.5"
+      data-published="2025-08-11 05:58"
+      data-source="Reddit (r/programming)"
+      data-source-type="Reddit"
+      data-title="LLMs aren't world models"
+    >
+      <div class="article-number">[15]</div>
+      <div class="article-title">
+        <span class="source-icon">🗨️</span>
+        <a
+          href="https://yosefk.com/blog/llms-arent-world-models.html"
+          target="_blank"
+          >LLMs aren't world models</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Reddit (r/programming) | Published: 2025-08-11 05:58 | ID:
+        2acfbadc11c1 |
+        <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 30%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #4caf50">🤖 Ai Ml</span>,
+        <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        A Reddit discussion in r/programming with 114 upvotes and 57 comments
+        highlighted that Large Language Models (LLMs) are not world models. The
+        conversation delved into the limitations of LLMs in understanding and
+        representing the complexities of the real world, emphasizing the need
+        for further advancements in AI models to achieve a more comprehensive
+        understanding of the world. This discussion underscores the ongoing
+        challenges in developing AI systems that can truly grasp the intricacies
+        of human language and context.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://yosefk.com/blog/llms-arent-world-models.html"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-2acfbadc11c1"
+          onclick="toggleTweets('2acfbadc11c1')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-2acfbadc11c1">
+          <div class="tweet">
+            Did you know that Large Language Models (LLMs) are not world models?
+            A recent Reddit discussion in r/programming highlighted the
+            limitations of LLMs in truly understanding the complexities of the
+            real world. #AI #TechNews
+          </div>
+          <div class="tweet">
+            Ever wondered why Large Language Models (LLMs) struggle to be world
+            models? Join the conversation sparked on Reddit in r/programming to
+            explore the challenges and advancements needed in AI models for a
+            deeper understanding of the world. #AI #TechDiscussion
+          </div>
+          <div class="tweet">
+            The discussion on Reddit in r/programming about Large Language
+            Models (LLMs) not being world models sheds light on the hurdles AI
+            faces in comprehending the nuances of human language and context.
+            Advancements are crucial for more sophisticated AI systems. #AI
+            #TechInsights
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="30.5"
+      data-published="2025-08-11 10:16"
+      data-source="Reddit (r/programming)"
+      data-source-type="Reddit"
+      data-title="GitHub CEO Thomas Dohmke to step down"
+    >
+      <div class="article-number">[16]</div>
+      <div class="article-title">
+        <span class="source-icon">🗨️</span>
+        <a
+          href="https://github.blog/news-insights/company-news/goodbye-github/"
+          target="_blank"
+          >GitHub CEO Thomas Dohmke to step down</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Reddit (r/programming) | Published: 2025-08-11 10:16 | ID:
+        de8f51138a6f |
+        <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 30%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        GitHub CEO Thomas Dohmke has announced his decision to step down. This
+        news has sparked a discussion on Reddit's r/programming community with
+        108 upvotes and 67 comments, reflecting the interest and impact of this
+        leadership change in the tech industry. Developers and tech
+        professionals are likely to closely monitor GitHub's future direction
+        and any potential changes under new leadership.
+      </div>
+      <div class="source-link">
+        →
+        <a
+          href="https://github.blog/news-insights/company-news/goodbye-github/"
+          target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-de8f51138a6f"
+          onclick="toggleTweets('de8f51138a6f')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-de8f51138a6f">
+          <div class="tweet">
+            GitHub CEO Thomas Dohmke announces departure, sparking discussions
+            in the tech community. Stay tuned for updates on GitHub's future
+            direction. #GitHub #TechNews
+          </div>
+          <div class="tweet">
+            What impact will CEO Thomas Dohmke's departure have on GitHub's
+            development and direction? Share your thoughts! #GitHub
+            #TechIndustry
+          </div>
+          <div class="tweet">
+            The departure of GitHub CEO Thomas Dohmke signals potential changes
+            ahead for the tech platform. How will this leadership change shape
+            GitHub's future? #TechLeadership #GitHub
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="27.5"
+      data-published="2025-08-08"
+      data-source="arXiv"
+      data-source-type="arXiv"
+      data-title="Multivariate Fields of Experts"
+    >
+      <div class="article-number">[17]</div>
+      <div class="article-title">
+        <span class="source-icon">📚</span>
+        <a href="http://arxiv.org/abs/2508.06490v1" target="_blank"
+          >Multivariate Fields of Experts</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: arXiv | Published: 2025-08-08 | ID: baed927a49ac |
+        <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 27%"></div>
+        </div>
+        | Topics:
+        <span class="topic-tag" style="color: #ff9800">₿ Crypto</span>,
+        <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        The research paper by Stanislas Ducotterd and Michael Unser introduces
+        the concept of multivariate fields of experts, a novel framework for
+        learning image priors. This model enhances existing fields of experts
+        methods by integrating multivariate potential functions created using
+        Moreau envelopes of the $\ell_\infty$-norm. The research showcases the
+        efficacy of this approach in improving image processing tasks.
+      </div>
+      <div class="source-link">
+        →
+        <a href="http://arxiv.org/abs/2508.06490v1" target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-baed927a49ac"
+          onclick="toggleTweets('baed927a49ac')"
+        >
+          📱 Show Tweet Suggestions (3)
+        </div>
+        <div class="tweets-content" id="tweets-baed927a49ac">
+          <div class="tweet">
+            Exciting tech news! 🚀 Research by Ducotterd & Unser introduces
+            multivariate fields of experts, a new framework enhancing image
+            priors learning. Innovative approach using Moreau envelopes of the
+            $\ell_\infty$-norm. #TechNews #ImageProcessing
+          </div>
+          <div class="tweet">
+            Ever wondered how image processing could be revolutionized? 🧐
+            Ducotterd & Unser's research on multivariate fields of experts opens
+            up new possibilities! How can this framework shape the future of
+            image analysis? #TechInnovation #FutureTech
+          </div>
+          <div class="tweet">
+            Key insight: Multivariate fields of experts, a groundbreaking
+            concept by Ducotterd & Unser, enhances image processing tasks
+            through innovative multivariate potential functions. A step forward
+            in improving image priors learning. #TechResearch
+            #InnovationInsights
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article
+      data-engagement="27.5"
+      data-published="2025-08-09 18:18"
+      data-source="Reddit (r/MachineLearning)"
+      data-source-type="Reddit"
+      data-title="[D] Reminder that Bill Gates's prophesy came true"
+    >
+      <div class="article-number">[18]</div>
+      <div class="article-title">
+        <span class="source-icon">🗨️</span>
+        <a href="https://i.redd.it/ocefuljse3if1.png" target="_blank"
+          >[D] Reminder that Bill Gates's prophesy came true</a
+        >
+      </div>
+      <div class="article-meta">
+        Source: Reddit (r/MachineLearning) | Published: 2025-08-09 18:18 | ID:
+        b4186733460a |
+        <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+        <div class="engagement-bar">
+          <div class="engagement-fill" style="width: 27%"></div>
+        </div>
+      </div>
+      <div class="article-description">
+        <strong>🤖 AI Summary:</strong><br />
+        A Reddit discussion in r/MachineLearning has highlighted Bill Gates's
+        prediction that "software will be able to do anything." The
+        conversation, which garnered 3239 upvotes and 365 comments, reflects on
+        the advancements in AI and machine learning that have validated Gates's
+        foresight, showcasing the increasing capabilities of software in various
+        domains. This serves as a reminder of the rapid progress and
+        transformative potential of technology in fulfilling such prophesies.
+      </div>
+      <div class="source-link">
+        →
+        <a href="https://i.redd.it/ocefuljse3if1.png" target="_blank"
+          >Read full article</a
+        >
+      </div>
+      <div class="tweets-section">
+        <div
+          class="tweets-toggle"
+          id="toggle-b4186733460a"
+          onclick="toggleTweets('b4186733460a')"
+        >
+          📱 Show Tweet Suggestions (2)
+        </div>
+        <div class="tweets-content" id="tweets-b4186733460a">
+          <div class="tweet">
+            Did you know Bill Gates's prediction about software's limitless
+            capabilities is coming true? A recent Reddit discussion in
+            r/MachineLearning reflects on the advancements in AI and machine
+            learning. #TechNews #AI #MachineLearning
+          </div>
+          <div class="tweet">
+            Are we witnessing the fulfillment of Bill Gates's prophecy on
+            software's potential? Join the conversation sparked by a Reddit
+            discussion in r/MachineLearning about software's transformative
+            power. What are your thoughts? #BillGates #TechPredictions
+            #ArtificialIntelligence
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="footer">
+      Generated by Daily Briefing Engine at 2025-08-11 11:12:51 |
+      <a href="../../../index.html">Back to Archive</a>
+    </div>
+  </body>
+</html>

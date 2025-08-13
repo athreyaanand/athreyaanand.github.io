@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index of /daily-briefings</title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .tree {
+            margin: 20px 0;
+        }
+        
+        .tree-item {
+            display: block;
+            padding: 1px 0;
+            white-space: nowrap;
+        }
+        
+        .tree-toggle {
+            cursor: pointer;
+            user-select: none;
+            color: black;
+            text-decoration: none;
+        }
+        
+        .tree-toggle:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .tree-content {
+            display: block;
+        }
+        
+        .tree-content.collapsed {
+            display: none;
+        }
+        
+        .year {
+            margin-left: 0px;
+        }
+        
+        .month {
+            margin-left: 20px;
+        }
+        
+        .day {
+            margin-left: 40px;
+        }
+        
+        .report {
+            margin-left: 60px;
+        }
+        
+        .tree-lines {
+            color: #888;
+            margin-right: 2px;
+        }
+        
+        a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: #551A8B;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .icon {
+            margin-right: 5px;
+        }
+        
+        .parent-dir {
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 12px;
+        }
+        
+        .expand-all {
+            margin: 10px 0;
+        }
+        
+        .expand-all button {
+            font-family: monospace;
+            padding: 5px 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleSection(id) {
+            const content = document.getElementById(id);
+            const toggle = document.getElementById('toggle-' + id);
+            
+            if (content.classList.contains('collapsed')) {
+                content.classList.remove('collapsed');
+                toggle.innerHTML = toggle.innerHTML.replace('📁', '📂').replace('►', '▼');
+            } else {
+                content.classList.add('collapsed');
+                toggle.innerHTML = toggle.innerHTML.replace('📂', '📁').replace('▼', '►');
+            }
+        }
+        
+        function expandAll() {
+            document.querySelectorAll('.tree-content').forEach(content => {
+                content.classList.remove('collapsed');
+            });
+            document.querySelectorAll('.tree-toggle').forEach(toggle => {
+                toggle.innerHTML = toggle.innerHTML.replace('📁', '📂').replace('►', '▼');
+            });
+        }
+        
+        function collapseAll() {
+            document.querySelectorAll('.tree-content').forEach(content => {
+                content.classList.add('collapsed');
+            });
+            document.querySelectorAll('.tree-toggle').forEach(toggle => {
+                toggle.innerHTML = toggle.innerHTML.replace('📂', '📁').replace('▼', '►');
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Index of /daily-briefings</h1>
+    <hr>
+    
+    <div class="parent-dir">
+        <span class="icon">📁</span><a href="../">Parent Directory</a>
+    </div>
+    
+    <div class="stats">
+        📊 <strong>16 reports</strong> available across 1 year(s)<br>
+        🔄 Last updated: 2025-08-13 07:14:02
+    </div>
+    
+    <div class="expand-all">
+        <button onclick="expandAll()">Expand All</button>
+        <button onclick="collapseAll()">Collapse All</button>
+    </div>
+    
+    <div class="tree">
+        <div class="tree-item year">
+            <span class="tree-lines">└─</span>
+            <span class="tree-toggle" id="toggle-year-2025" onclick="toggleSection('year-2025')">📂 ▼ 2025/</span>
+        </div>
+        <div class="tree-content" id="year-2025">
+            <div class="tree-item month">
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">└─</span>
+                <span class="tree-toggle" id="toggle-month-2025-08" onclick="toggleSection('month-2025-08')">📂 ▼ 08/ (August)</span>
+            </div>
+            <div class="tree-content" id="month-2025-08">
+                <div class="tree-item day">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                    <span class="tree-toggle" id="toggle-day-2025-08-13" onclick="toggleSection('day-2025-08-13')">🗓️ ▼ 13/</span>
+                </div>
+                <div class="tree-content" id="day-2025-08-13">
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;<span class="tree-lines">└─</span>
+                        📄 <a href="reports/2025/08/13/0713.html">Report 07:13 AM</a> (0713.html)
+                    </div>
+                </div>
+                <div class="tree-item day">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                    <span class="tree-toggle" id="toggle-day-2025-08-11" onclick="toggleSection('day-2025-08-11')">🗓️ ▼ 11/</span>
+                </div>
+                <div class="tree-content" id="day-2025-08-11">
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/11/1131.html">Report 11:31 AM</a> (1131.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/11/1112.html">Report 11:12 AM</a> (1112.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/11/1056.html">Report 10:56 AM</a> (1056.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/11/1049.html">Report 10:49 AM</a> (1049.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/11/1037.html">Report 10:37 AM</a> (1037.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;<span class="tree-lines">└─</span>
+                        📄 <a href="reports/2025/08/11/1009.html">Report 10:09 AM</a> (1009.html)
+                    </div>
+                </div>
+                <div class="tree-item day">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">└─</span>
+                    <span class="tree-toggle" id="toggle-day-2025-08-10" onclick="toggleSection('day-2025-08-10')">🗓️ ▼ 10/</span>
+                </div>
+                <div class="tree-content" id="day-2025-08-10">
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/10/2317.html">Report 11:17 PM</a> (2317.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/10/2114.html">Report 09:14 PM</a> (2114.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/10/2102.html">Report 09:02 PM</a> (2102.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/10/1323.html">Report 01:23 PM</a> (1323.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/10/1311.html">Report 01:11 PM</a> (1311.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/10/1255.html">Report 12:55 PM</a> (1255.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/10/1251.html">Report 12:51 PM</a> (1251.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">├─</span>
+                        📄 <a href="reports/2025/08/10/1242.html">Report 12:42 PM</a> (1242.html)
+                    </div>
+                    <div class="tree-item report">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tree-lines">└─</span>
+                        📄 <a href="reports/2025/08/10/1207.html">Report 12:07 PM</a> (1207.html)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="footer">
+        Daily Briefing Engine / Generated by Athreya
+    </div>
+</body>
+</html>
