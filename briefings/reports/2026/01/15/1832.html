@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - January 15, 2026, 06:32 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>January 15, 2026, 06:32 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-01-15 18:32:43
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 122.7 seconds</div>
+                <div>Start Time: 2026-01-15 18:32:43</div>
+                <div>End Time: 2026-01-15 18:34:45</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 19, Low: 14</div>
+                <div>Topics Detected: 7</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="65.5" 
+             data-published="2026-01-12 19:27" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Cowork: Claude Code for the rest of your work">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://claude.com/blog/cowork-research-preview" target="_blank">Cowork: Claude Code for the rest of your work</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-12 19:27 | ID: fc885be7b31e
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            "Cowork" is a new tool introduced on Hacker News, garnering 1290 points and 562 comments. The tool, named "Claude Code," aims to streamline collaborative coding efforts by providing a platform for developers to work together more efficiently. This tool has the potential to enhance productivity and collaboration among coding teams.
+        </div>
+        <div class="source-link">
+            → <a href="https://claude.com/blog/cowork-research-preview" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-fc885be7b31e" onclick="toggleTweets('fc885be7b31e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-fc885be7b31e">
+                <div class="tweet">"Cowork introduces 'Claude Code' on Hacker News, revolutionizing collaborative coding with a platform for seamless teamwork. Boost productivity and enhance collaboration! #Cowork #ClaudeCode #CollaborativeCoding"</div>
+<div class="tweet">"Could 'Claude Code' from Cowork be the game-changer for coding teams seeking improved collaboration and efficiency? Join the conversation on this innovative tool! #TechInnovation #CodingCommunity #Collaboration"</div>
+<div class="tweet">"Key insight from 'Claude Code' by Cowork: Streamlining collaborative coding efforts can lead to increased productivity and better teamwork dynamics. Discover how this tool can transform your coding experience! #ProductivityBoost #Teamwork #TechTools"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-01-11 10:26" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Don't fall into the anti-AI hype">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://antirez.com/news/158" target="_blank">Don't fall into the anti-AI hype</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-11 10:26 | ID: 14dace3558f4
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Hacker News discussion highlights the importance of not succumbing to anti-AI hype, emphasizing the positive impact and potential of artificial intelligence technologies. With 1279 points and 1623 comments, the conversation underscores the need for a balanced perspective on AI to harness its benefits while addressing ethical concerns and potential risks. Tech professionals are encouraged to engage critically with AI advancements to ensure responsible and effective integration into various industries.
+        </div>
+        <div class="source-link">
+            → <a href="https://antirez.com/news/158" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-14dace3558f4" onclick="toggleTweets('14dace3558f4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-14dace3558f4">
+                <div class="tweet">Don't be swayed by anti-AI hype! The Hacker News discussion sheds light on the positive impact and potential of artificial intelligence technologies. Engage critically to harness benefits while addressing ethical concerns. #AI #TechNews</div>
+<div class="tweet">Are you falling for the anti-AI hype? The Hacker News conversation challenges tech professionals to maintain a balanced perspective on artificial intelligence. How can we responsibly integrate AI while mitigating risks? #AI #TechDiscussion</div>
+<div class="tweet">Key takeaway: Embrace AI advancements responsibly. The Hacker News discussion underscores the importance of critical engagement with artificial intelligence to ensure effective integration across industries. Stay informed, stay ahead. #AI #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-01-12 15:22" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Apple picks Gemini to power Siri">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html" target="_blank">Apple picks Gemini to power Siri</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-12 15:22 | ID: 0fd23a727a2a
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple has chosen Gemini, a distributed ledger technology platform, to power Siri's data storage and retrieval. This move is expected to enhance Siri's privacy and data security by leveraging Gemini's decentralized architecture. By utilizing blockchain technology, Apple aims to improve user trust in Siri's handling of sensitive information.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0fd23a727a2a" onclick="toggleTweets('0fd23a727a2a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0fd23a727a2a">
+                <div class="tweet">Apple's choice of Gemini to power Siri marks a significant step towards enhancing user privacy and data security. By leveraging blockchain technology, Siri is set to provide a more trustworthy experience. #Apple #Siri #Blockchain</div>
+<div class="tweet">What impact will Apple's decision to use Gemini for Siri have on the future of virtual assistants and data security? Exciting times ahead for tech enthusiasts! #Gemini #Siri #DataSecurity</div>
+<div class="tweet">Apple's move to integrate Gemini's decentralized platform with Siri highlights the growing importance of leveraging blockchain for enhancing user trust and data privacy in tech applications. #Apple #Blockchain #DataPrivacy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-01-13 18:31" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="AI generated music barred from Bandcamp">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://old.reddit.com/r/BandCamp/comments/1qbw8ba/ai_generated_music_on_bandcamp/" target="_blank">AI generated music barred from Bandcamp</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-13 18:31 | ID: ceada296a512
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Bandcamp has updated its policies to prohibit AI-generated music from being sold on its platform. This decision follows concerns about the authenticity and originality of music created by AI algorithms. The move aims to maintain the integrity of human creativity in the music industry and prevent potential copyright issues.
+        </div>
+        <div class="source-link">
+            → <a href="https://old.reddit.com/r/BandCamp/comments/1qbw8ba/ai_generated_music_on_bandcamp/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ceada296a512" onclick="toggleTweets('ceada296a512')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ceada296a512">
+                <div class="tweet">Bandcamp takes a stand on creativity! The platform now prohibits AI-generated music sales to preserve human artistry. 🎶 #Bandcamp #AI #MusicIndustry</div>
+<div class="tweet">What defines authentic music? Bandcamp's decision to ban AI-generated music sparks a debate on creativity and technology's role in the music industry. 🤔🎵 #MusicTech #ArtificialIntelligence</div>
+<div class="tweet">Bandcamp's move to exclude AI-generated music highlights the ongoing need to balance innovation with preserving human creativity in the digital age. 🎶💡 #TechEthics #MusicCreation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-01-11 20:47" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="The struggle of resizing windows on macOS Tahoe">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://noheger.at/blog/2026/01/11/the-struggle-of-resizing-windows-on-macos-tahoe/" target="_blank">The struggle of resizing windows on macOS Tahoe</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-11 20:47 | ID: ebe18998d072
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the challenges users are facing with resizing windows on macOS Tahoe, a new operating system from Apple. Users are experiencing difficulties with the window management system, encountering issues such as unresponsive resizing handles and inconsistent behavior when adjusting window sizes. This issue has sparked a significant discussion in the tech community, with many users expressing frustration over the usability issues impacting their workflow on macOS Tahoe.
+        </div>
+        <div class="source-link">
+            → <a href="https://noheger.at/blog/2026/01/11/the-struggle-of-resizing-windows-on-macos-tahoe/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ebe18998d072" onclick="toggleTweets('ebe18998d072')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ebe18998d072">
+                <div class="tweet">Struggling with resizing windows on macOS Tahoe? Users are facing challenges with unresponsive resizing handles and inconsistent behavior. How has this impacted your workflow? #macOSTahoe #WindowManagement</div>
+<div class="tweet">Are usability issues affecting your workflow on macOS Tahoe? The discussion around resizing windows is gaining momentum in the tech community. Share your experiences and tips! #TechIssues #UserExperience</div>
+<div class="tweet">Key insight: The frustrations over window resizing issues in macOS Tahoe highlight the importance of seamless user experiences in operating systems. How can Apple address these concerns to enhance user productivity? #UserFeedback #TechCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-01-13 15:18" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Scott Adams has died">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.youtube.com/watch?v=Rs_JrOIo3SE" target="_blank">Scott Adams has died</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-13 15:18 | ID: b25c76cc27ec
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The tech news article reports the death of Scott Adams, the creator of the Dilbert comic strip. The news sparked a discussion on Hacker News with 1054 points and 1744 comments, reflecting the impact of Adams' work on the tech and developer community. Adams' contributions to humor and satire in the workplace resonated with many in the tech industry, making his passing a significant loss in the community.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.youtube.com/watch?v=Rs_JrOIo3SE" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b25c76cc27ec" onclick="toggleTweets('b25c76cc27ec')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b25c76cc27ec">
+                <div class="tweet">Sad news for the tech community as we mourn the passing of Scott Adams, the brilliant mind behind Dilbert. His humor and insight into workplace dynamics will be greatly missed. #ScottAdams #Dilbert #TechCommunity</div>
+<div class="tweet">How has Scott Adams' Dilbert comic influenced your perspective on the tech industry and workplace culture? Share your thoughts below. #ScottAdams #Dilbert #TechInfluence</div>
+<div class="tweet">The discussions sparked by Scott Adams' work on Hacker News highlight the profound impact he had on the tech and developer community. His legacy will continue to inspire generations to come. #ScottAdams #TechLegacy #Dilbert</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="56.5" 
+             data-published="Thu, 15 Jan 2026 16:31:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="OpenAI invests in Sam Altman’s brain computer interface startup Merge Labs">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/15/openai-invests-in-sam-altmans-brain-computer-interface-startup-merge-labs/" target="_blank">OpenAI invests in Sam Altman’s brain computer interface startup Merge Labs</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 15 Jan 2026 16:31:00 +0000 | ID: 94ea52e90d38
+             | <span class="engagement-standard">Engagement: [56.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 56%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI has made a significant investment in Merge Labs, a startup focused on developing brain-computer interfaces to enhance human capabilities by merging biological and artificial intelligence. The investment, part of a $250 million seed round, values Merge Labs at $850 million, marking a substantial endorsement of the company's vision and technology in the field of neural interfaces. This partnership between OpenAI and Merge Labs could potentially lead to advancements in brain-computer interface technology with far-reaching implications for human-machine interactions.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/15/openai-invests-in-sam-altmans-brain-computer-interface-startup-merge-labs/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-94ea52e90d38" onclick="toggleTweets('94ea52e90d38')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-94ea52e90d38">
+                <div class="tweet">Exciting news in the world of neural interfaces! OpenAI invests in Merge Labs, a startup focused on developing brain-computer interfaces. This partnership could revolutionize human-machine interactions. #OpenAI #MergeLabs #NeuralInterfaces</div>
+<div class="tweet">Curious about the future of brain-computer interfaces? OpenAI's investment in Merge Labs is paving the way for enhanced human capabilities. How do you think this technology will shape the future of human-machine interactions? #BCI #MergeLabs #TechInnovation</div>
+<div class="tweet">OpenAI's $250 million investment in Merge Labs values the brain-computer interface startup at $850 million. This partnership signifies a strong endorsement of Merge Labs' vision and technology in advancing neural interfaces. #TechInvestment #MergeLabs #OpenAI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="56.5" 
+             data-published="Thu, 15 Jan 2026 15:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="How one startup is using prebiotics to try and ease the copper shortage">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/15/how-one-startup-is-using-prebiotics-to-try-and-ease-the-copper-shortage/" target="_blank">How one startup is using prebiotics to try and ease the copper shortage</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 15 Jan 2026 15:00:00 +0000 | ID: 86a135bbda0b
+             | <span class="engagement-standard">Engagement: [56.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 56%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Transition Metal Solutions, a startup, is utilizing prebiotics to enhance the extraction of copper from ore by stimulating microbes. By applying a unique cocktail, the company aims to address the copper shortage by increasing the efficiency of copper extraction processes. This innovative approach could potentially lead to a more sustainable and cost-effective method of obtaining copper, crucial for various industries including technology and infrastructure.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/15/how-one-startup-is-using-prebiotics-to-try-and-ease-the-copper-shortage/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-86a135bbda0b" onclick="toggleTweets('86a135bbda0b')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-86a135bbda0b">
+                <div class="tweet">Transition Metal Solutions, a startup, is revolutionizing copper extraction by using prebiotics to stimulate microbes. This innovative approach could lead to a more sustainable and cost-effective method for obtaining copper. #TechNews #Innovation #Sustainability</div>
+<div class="tweet">Can prebiotics be the key to solving the copper shortage? Transition Metal Solutions is leveraging them to increase the efficiency of copper extraction processes. How might this impact the tech and infrastructure industries? #TechTrends #CopperShortage #FutureTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="54.5" 
+             data-published="Thu, 15 Jan 2026 16:56:20 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="The US imposes 25% tariff on Nvidia’s H200 AI chips headed to China">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/15/the-us-imposes-25-tariff-on-nvidias-h200-ai-chips-headed-to-china/" target="_blank">The US imposes 25% tariff on Nvidia’s H200 AI chips headed to China</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 15 Jan 2026 16:56:20 +0000 | ID: 1d552d4f57d9
+             | <span class="engagement-standard">Engagement: [54.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The US government has implemented a 25% tariff on Nvidia's H200 AI chips destined for China, affecting specific semiconductor sales. This move by the Trump administration is expected to impact Nvidia's business operations and pricing strategies in the Chinese market, potentially leading to higher costs for consumers and disruptions in supply chains.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/15/the-us-imposes-25-tariff-on-nvidias-h200-ai-chips-headed-to-china/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1d552d4f57d9" onclick="toggleTweets('1d552d4f57d9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1d552d4f57d9">
+                <div class="tweet">The US has levied a 25% tariff on Nvidia's H200 AI chips heading to China. How will this impact semiconductor sales and Nvidia's business strategies in the Chinese market? #TechNews #Nvidia #Tariffs</div>
+<div class="tweet">How will the 25% tariff on Nvidia's H200 AI chips to China affect consumer pricing and supply chains in the tech industry? Share your thoughts! #TechTariffs #Semiconductors #TradeWars</div>
+<div class="tweet">The US-imposed tariff on Nvidia's H200 AI chips bound for China signals potential disruptions in semiconductor sales, pricing strategies, and supply chains. Stay tuned for updates on how this move could reshape the tech market landscape. #TechIndustry #GlobalTrade #Nvidia</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="53.5" 
+             data-published="Thu, 15 Jan 2026 15:19:05 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Wikimedia Foundation announces new AI partnerships with Amazon, Meta, Microsoft, Perplexity, and others">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/15/wikimedia-foundation-announces-new-ai-partnerships-with-amazon-meta-microsoft-perplexity-and-others/" target="_blank">Wikimedia Foundation announces new AI partnerships with Amazon, Meta, Microsoft, Perplexity, and others</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 15 Jan 2026 15:19:05 +0000 | ID: 29541075b942
+             | <span class="engagement-standard">Engagement: [53.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 53%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Wikimedia Foundation has revealed new AI partnerships with tech giants Amazon, Meta, Microsoft, Perplexity, and other organizations. These collaborations will enable the partners to leverage Wikimedia's vast content, such as Wikipedia, on a large scale, potentially leading to advancements in AI technologies and tools. This initiative signifies a significant step towards enhancing access to valuable knowledge resources for these companies through AI-driven solutions.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/15/wikimedia-foundation-announces-new-ai-partnerships-with-amazon-meta-microsoft-perplexity-and-others/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-29541075b942" onclick="toggleTweets('29541075b942')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-29541075b942">
+                <div class="tweet">Exciting news in tech partnerships! The Wikimedia Foundation has teamed up with Amazon, Meta, Microsoft, Perplexity, & others for new AI collaborations. This move could revolutionize AI technologies with access to Wikimedia's vast content like Wikipedia. #AI #TechNews</div>
+<div class="tweet">What possibilities lie ahead with the Wikimedia Foundation's AI partnerships with Amazon, Meta, Microsoft, Perplexity, and more? How might leveraging Wikipedia's content on a large scale impact future AI developments? Share your thoughts! #AI #TechCollaboration</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Thu, 15 Jan 2026 14:32:12 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Spotify raises its subscription prices in the U.S. again">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/15/spotify-raises-its-subscription-prices-in-the-u-s-again/" target="_blank">Spotify raises its subscription prices in the U.S. again</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 15 Jan 2026 14:32:12 +0000 | ID: 4ad2aed34a5d
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Spotify has increased its subscription price for the individual plan in the U.S. to $12.99 per month. This marks another price hike for the streaming service, impacting users who will now pay more for access to Spotify's music library and features.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/15/spotify-raises-its-subscription-prices-in-the-u-s-again/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4ad2aed34a5d" onclick="toggleTweets('4ad2aed34a5d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4ad2aed34a5d">
+                <div class="tweet">Spotify users in the U.S. will now pay $12.99 per month for the individual plan, following another price increase. How will this impact your music streaming habits? #Spotify #SubscriptionPriceHike</div>
+<div class="tweet">How do you feel about Spotify raising its subscription prices in the U.S. once again? Will you continue to subscribe or consider switching to other music streaming services? #Spotify #SubscriptionPriceIncrease</div>
+<div class="tweet">Spotify's latest subscription price hike to $12.99 per month for the individual plan highlights the ongoing challenge of balancing revenue growth with user satisfaction. Will this move drive users away or lead to increased revenue for the platform? #Spotify #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Thu, 15 Jan 2026 14:24:46 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Parloa triples its valuation in 8 months to $3B with $350M raise">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/15/parloa-triples-its-valuation-in-8-months-to-3b-with-350m-raise/" target="_blank">Parloa triples its valuation in 8 months to $3B with $350M raise</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 15 Jan 2026 14:24:46 +0000 | ID: acec4e226a49
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Parloa, a tech company, has seen its valuation triple to $3 billion in just 8 months following a successful $350 million funding round led by General Catalyst and other returning investors. This significant raise highlights investor confidence in Parloa's technology and potential for growth in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/15/parloa-triples-its-valuation-in-8-months-to-3b-with-350m-raise/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-acec4e226a49" onclick="toggleTweets('acec4e226a49')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-acec4e226a49">
+                <div class="tweet">"Parloa, a tech company, triples its valuation to $3 billion in 8 months with a $350M raise, showcasing investor confidence in its technology. 🚀💰 #TechNews #Startup #Funding"</div>
+<div class="tweet">"Could Parloa be the next big disruptor in the tech industry? Valuation skyrockets to $3B in just 8 months. What sets them apart from the competition? 🤔💡 #Innovation #Investing #TechTrends"</div>
+<div class="tweet">"Parloa's rapid valuation growth to $3 billion post $350M raise illustrates the power of strong investor backing in propelling tech companies forward. 📈💡 #TechIndustry #StartupSuccess #GrowthPotential"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Thu, 15 Jan 2026 15:25:52 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Wikipedia signs AI training deals with Microsoft, Meta, and Amazon">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/01/wikipedia-will-share-content-with-ai-firms-in-new-licensing-deals/" target="_blank">Wikipedia signs AI training deals with Microsoft, Meta, and Amazon</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 15 Jan 2026 15:25:52 +0000 | ID: 9f917d6913c4
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Wikimedia Enterprise, the commercial arm of Wikipedia, has entered into paid AI training agreements with tech giants Microsoft, Meta (formerly Facebook), and Amazon, as well as AI startups Perplexity and Mistral AI. This collaboration aims to enhance the accuracy and efficiency of AI models used for content moderation and recommendation systems on Wikipedia, potentially improving user experience and content quality on the platform. The partnerships signify a significant step towards leveraging advanced AI technologies to support and maintain the integrity of user-generated content on Wikipedia.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/01/wikipedia-will-share-content-with-ai-firms-in-new-licensing-deals/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9f917d6913c4" onclick="toggleTweets('9f917d6913c4')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-9f917d6913c4">
+                <div class="tweet">Exciting news in tech collaborations! Wikimedia Enterprise partners with Microsoft, Meta, Amazon, and AI startups to enhance AI models for Wikipedia's content moderation and recommendation systems. #Wikipedia #AI #TechPartnerships</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="48.0" 
+             data-published="2026-01-14" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="ShortCoder: Knowledge-Augmented Syntax Optimization for Token-Efficient Code Generation">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.09703v1" target="_blank">ShortCoder: Knowledge-Augmented Syntax Optimization for Token-Efficient Code Generation</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-14 | ID: 4a515e04e915
+             | <span class="engagement-standard">Engagement: [48.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "ShortCoder" by Liu, Huang, Liu, et al. introduces a knowledge-augmented syntax optimization technique for token-efficient code generation tasks. This approach leverages large language models (LLMs) to automate the conversion of user requirements into executable code, streamlining software development processes. By enhancing the efficiency of LLMs in code generation, ShortCoder aims to boost productivity and reduce manual coding efforts in software development.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.09703v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4a515e04e915" onclick="toggleTweets('4a515e04e915')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-4a515e04e915">
+                <div class="tweet">Exciting tech news! 🚀 "ShortCoder" introduces a knowledge-augmented syntax optimization technique for efficient code generation. Leveraging large language models, this approach aims to streamline software development processes. #TechNews #CodeGeneration</div>
+<div class="tweet">Ever thought about automating code generation? "ShortCoder" research by Liu, Huang, Liu, et al. explores a knowledge-augmented syntax optimization technique using large language models. How can this impact software development efficiency? 💡 #ShortCoder #AI #TechTalk</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="47.5" 
+             data-published="Thu, 15 Jan 2026 14:22:35 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="US government to take 25% cut of AMD, NVIDIA AI sales to China">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/01/us-government-to-take-25-cut-of-amd-nvidia-ai-sales-to-china/" target="_blank">US government to take 25% cut of AMD, NVIDIA AI sales to China</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 15 Jan 2026 14:22:35 +0000 | ID: e814b6c9cbe6
+             | <span class="engagement-standard">Engagement: [47.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 47%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The US government has announced a 25% tariff on sales of AI chips from companies like AMD and NVIDIA to China. This move aims to curb technology transfer and protect national security interests. The tariffs are structured to withstand potential legal disputes, signaling a significant development in US-China tech trade relations.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/01/us-government-to-take-25-cut-of-amd-nvidia-ai-sales-to-china/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e814b6c9cbe6" onclick="toggleTweets('e814b6c9cbe6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e814b6c9cbe6">
+                <div class="tweet">US government imposes a 25% tariff on AI chip sales to China by AMD and NVIDIA to protect national security. This move could impact tech trade relations significantly. #USChinaTechTrade #AItariffs</div>
+<div class="tweet">What impact will the 25% tariff on AI chip sales to China have on the global tech industry and innovation? Share your thoughts. #TechTrade #Innovation #AI</div>
+<div class="tweet">The US's decision to take a cut of AMD and NVIDIA AI sales to China showcases the escalating tensions in tech trade relations. Stay informed on the latest developments in the industry. #TechNews #USChinaRelations #AIChips</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Thu, 15 Jan 2026 15:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="US senators demand answers from X, Meta, Alphabet, and others on sexualized deepfakes">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/15/us-senators-demand-answers-from-x-meta-alphabet-on-sexualized-deepfakes/" target="_blank">US senators demand answers from X, Meta, Alphabet, and others on sexualized deepfakes</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 15 Jan 2026 15:00:00 +0000 | ID: 17132cafb723
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Several U.S. senators have sent a letter to tech giants including X, Meta, Alphabet, Snap, Reddit, and TikTok, seeking evidence of strong safeguards and strategies to combat the proliferation of sexualized deepfakes on their platforms. The letter underscores the growing concern over the misuse of deepfake technology for creating non-consensual and harmful content, urging these companies to take proactive measures to address this issue effectively. The demand highlights the increasing pressure on tech firms to prioritize the protection of users from the negative impacts of manipulated media.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/15/us-senators-demand-answers-from-x-meta-alphabet-on-sexualized-deepfakes/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-17132cafb723" onclick="toggleTweets('17132cafb723')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-17132cafb723">
+                <div class="tweet">US senators press X, Meta, Alphabet, Snap, Reddit, and TikTok to combat sexualized deepfakes on their platforms. The demand emphasizes the need for stronger safeguards against harmful manipulated media. #Deepfakes #TechEthics</div>
+<div class="tweet">How can tech giants like X and Meta effectively tackle the rise of sexualized deepfakes on their platforms? US senators demand answers, reinforcing the urgency to protect users from manipulated content. #DeepfakeProtection #TechAccountability</div>
+<div class="tweet">Senators urge tech companies to prioritize user protection amidst concerns over sexualized deepfakes. The call for evidence of robust safeguards highlights the importance of proactive measures in combating the misuse of deepfake tech. #DigitalSafety #TechResponsibility</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="2026-01-15T13:13:49-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Amazon is buying copper harvested by bacteria for its data centers">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/862820/amazon-arizona-copper-mine-data-centers" target="_blank">Amazon is buying copper harvested by bacteria for its data centers</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-15T13:13:49-05:00 | ID: 1d26cdcede64
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Amazon is set to purchase copper sourced from a mine in Arizona that uses bacteria to extract the metal from ores, a process known as bioleaching. This innovative technology, developed by Nuton Technologies, will be utilized in Amazon Web Services' data centers. AWS will not only be a customer but will also provide cloud-based data and analytics support to optimize Nuton's mining operations.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/862820/amazon-arizona-copper-mine-data-centers" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1d26cdcede64" onclick="toggleTweets('1d26cdcede64')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-1d26cdcede64">
+                <div class="tweet">Amazon is taking sustainability to the next level by purchasing copper harvested by bacteria for its data centers. This innovative bioleaching technology from Nuton Technologies is a game-changer for eco-friendly tech solutions. 🌱💻 #Amazon #TechNews #Sustainability</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Thu, 15 Jan 2026 14:19:44 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Tiger Global loses India tax case tied to Walmart-Flipkart deal in blow to offshore playbook">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/15/tiger-global-loses-india-tax-case-tied-to-walmart-flipkart-deal-in-blow-to-offshore-playbook/" target="_blank">Tiger Global loses India tax case tied to Walmart-Flipkart deal in blow to offshore playbook</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 15 Jan 2026 14:19:44 +0000 | ID: 510132834ec5
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Tiger Global has lost a significant tax case in India related to the Walmart-Flipkart deal, impacting its offshore investment strategy. The ruling could have broader implications for investors using similar offshore structures in India, signaling potential changes in the country's tax landscape for foreign investments.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/15/tiger-global-loses-india-tax-case-tied-to-walmart-flipkart-deal-in-blow-to-offshore-playbook/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-510132834ec5" onclick="toggleTweets('510132834ec5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-510132834ec5">
+                <div class="tweet">Tiger Global faces setback in India tax case linked to Walmart-Flipkart deal, signaling potential changes in offshore investment strategies. 🌏💼 #TechNews #TaxLaws #ForeignInvestments</div>
+<div class="tweet">What implications will the recent tax ruling against Tiger Global in India have on offshore investment structures? 🤔💸 #TechInvesting #GlobalMarkets #TaxChanges</div>
+<div class="tweet">The India tax case ruling against Tiger Global highlights the importance of staying informed on evolving tax landscapes for foreign investors. 🌍💰 #InvestmentStrategy #TaxImplications #TechIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Thu, 15 Jan 2026 16:23:14 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Bully Online mod taken down abruptly one month after launch">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gaming/2026/01/online-mod-for-rockstars-classic-bully-is-abruptly-taken-down-after-one-month/" target="_blank">Bully Online mod taken down abruptly one month after launch</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 15 Jan 2026 16:23:14 +0000 | ID: 367cd16820fa
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Bully Online mod, an open-source project aimed at enhancing the game Bully, was abruptly taken down by its developers just one month after its launch. The developers stated that this decision was not their intention, leading to speculation about potential legal issues or copyright concerns. The removal of the mod has disappointed fans and raised questions about the future of community-driven modifications for popular games.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gaming/2026/01/online-mod-for-rockstars-classic-bully-is-abruptly-taken-down-after-one-month/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-367cd16820fa" onclick="toggleTweets('367cd16820fa')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-367cd16820fa">
+                <div class="tweet">Just in: The Bully Online mod, designed to enhance the game Bully, has been abruptly taken down by developers after just one month. What could be the reasons behind this sudden decision? 🤔 #BullyOnline #Modding #TechNews</div>
+<div class="tweet">Curious about the fate of community-driven game mods? The recent takedown of the Bully Online mod has sparked discussions on legal concerns and copyright issues in the gaming community. What does this mean for future modding projects? 🎮 #Gaming #Modders #TechCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.0" 
+             data-published="2026-01-14" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Value-Aware Numerical Representations for Transformer Language Models">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.09706v1" target="_blank">Value-Aware Numerical Representations for Transformer Language Models</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-14 | ID: d5441995387c
+             | <span class="engagement-standard">Engagement: [43.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A research paper by Andreea Dutulescu, Stefan Ruseti, and Mihai Dascalu introduces Value-Aware Numerical Representations for Transformer Language Models. The paper addresses the limitation in current transformer-based language models where numbers are processed as symbolic tokens, leading to fragility in basic numerical understanding and arithmetic operations. The proposed approach aims to explicitly encode numerical values in embeddings to improve mathematical reasoning and numerical operations in transformer models.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.09706v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d5441995387c" onclick="toggleTweets('d5441995387c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d5441995387c">
+                <div class="tweet">Exciting research by Dutulescu, Ruseti, and Dascalu introduces Value-Aware Numerical Representations for Transformer Language Models. Enhancing mathematical reasoning in transformer models! 🧮🔍 #TransformerModels #NumericalRepresentations</div>
+<div class="tweet">Ever wondered how transformer models handle numbers? The new Value-Aware Numerical Representations approach tackles the limitations of symbolic tokens, aiming to boost mathematical reasoning. How could this impact AI applications? 🤔💡 #AI #NumericalUnderstanding</div>
+<div class="tweet">Addressing a crucial limitation in transformer models, the novel approach of encoding numerical values directly in embeddings could revolutionize mathematical operations. Stay tuned for advancements in AI language models! 🚀🔢 #MathematicalReasoning #AIProgress</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-01-15T13:14:25-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Here are the best AirPods deals you can get right now">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/21302051/best-apple-airpods-deals" target="_blank">Here are the best AirPods deals you can get right now</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-15T13:14:25-05:00 | ID: 0c6da2e74d74
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article highlights ongoing discounts on Apple's AirPods lineup, including the AirPods Max, AirPods 4 (with and without ANC), and AirPods Pro 3. These discounts are available from various retailers, making it a good time for consumers to purchase these popular wireless earbuds. Shopping events like Black Friday and Cyber Monday have also offered significant discounts on AirPods, providing opportunities for savings.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/21302051/best-apple-airpods-deals" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0c6da2e74d74" onclick="toggleTweets('0c6da2e74d74')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0c6da2e74d74">
+                <div class="tweet">Looking for a great deal on AirPods? Check out the latest discounts on AirPods Max, AirPods 4, and AirPods Pro 3 from various retailers! 🎧💸 #AirPods #TechDeals</div>
+<div class="tweet">Thinking of upgrading your earbuds? With discounts on AirPods Max, AirPods 4, and AirPods Pro 3, which model would you choose for your tech setup? 🤔 #WirelessAudio #TechChoices</div>
+<div class="tweet">Don't miss out on the current discounts for Apple's AirPods lineup! Retailers are offering great deals on AirPods Max, AirPods 4, and AirPods Pro 3, making it the perfect time to grab a pair. 🛍️🔊 #AirPodsSale #TechSavings</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-01-15T12:00:00-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Microsoft is closing its employee library and cutting back on subscriptions">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/862531/microsoft-library-closure-transition-changes-notepad" target="_blank">Microsoft is closing its employee library and cutting back on subscriptions</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-15T12:00:00-05:00 | ID: a9f8a86d9a16
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Microsoft is shutting down its employee library and reducing subscriptions to leading US newspapers as part of a move towards an "AI-powered learning experience." The company is digitizing its resources and shifting towards online learning platforms to provide more efficient and personalized learning opportunities for employees. This change reflects Microsoft's commitment to leveraging technology to enhance its internal educational resources.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/862531/microsoft-library-closure-transition-changes-notepad" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a9f8a86d9a16" onclick="toggleTweets('a9f8a86d9a16')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a9f8a86d9a16">
+                <div class="tweet">Microsoft is revolutionizing employee learning by shutting down its library & embracing AI-powered online platforms. A move towards efficient & personalized education. #Microsoft #AI #TechNews</div>
+<div class="tweet">What does Microsoft's decision to close its employee library mean for the future of workplace learning? Are online platforms the new norm? Share your thoughts! #Microsoft #OnlineLearning #TechTrends</div>
+<div class="tweet">By digitizing resources & focusing on online learning, Microsoft is showing how tech can enhance internal educational tools. Embracing innovation for a smarter workforce. #EdTech #DigitalTransformation #Microsoft</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Thu, 15 Jan 2026 15:15:15 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Key Senate staffer is “begging” NASA to get on with commercial space stations">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/01/key-senate-staffer-is-begging-nasa-to-get-on-with-commercial-space-stations/" target="_blank">Key Senate staffer is “begging” NASA to get on with commercial space stations</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 15 Jan 2026 15:15:15 +0000 | ID: 1457b5628c61
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A key Senate staffer is urging NASA to expedite the development of commercial space stations to ensure continuous human presence in space without any gaps. The staffer emphasizes the importance of this initiative during discussions with NASA, highlighting the need for progress in this area to support ongoing space exploration efforts and maintain a consistent human presence in space.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/01/key-senate-staffer-is-begging-nasa-to-get-on-with-commercial-space-stations/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1457b5628c61" onclick="toggleTweets('1457b5628c61')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1457b5628c61">
+                <div class="tweet">"Senate staffer pushes NASA to accelerate commercial space station development for seamless space habitation. 🚀 Continuous human presence in space is crucial for future exploration. #NASA #SpaceStation #TechNews"</div>
+<div class="tweet">"Can commercial space stations revolutionize our approach to space exploration? Senate staffer's plea to NASA sparks debates on the future of space habitation. 🛰️ #CommercialSpace #NASA #TechDiscussion"</div>
+<div class="tweet">"Efforts to establish commercial space stations are vital for sustained space presence. Senate's urgency highlights the need for progress in this area to support ongoing space missions. 🌌 #SpaceExploration #Innovation #NASA"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Wed, 14 Jan 2026 23:43:46 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Musk and Hegseth vow to “make Star Trek real” but miss the show’s lessons">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/01/pentagons-arsenal-of-freedom-tour-borrows-name-from-star-trek-episode-about-killer-ai/" target="_blank">Musk and Hegseth vow to “make Star Trek real” but miss the show’s lessons</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 14 Jan 2026 23:43:46 +0000 | ID: a478b287a3f4
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Elon Musk and Pete Hegseth have expressed ambitions to "make Star Trek real," but experts warn that the development of AI weapons systems could lead to catastrophic consequences, potentially resulting in the annihilation of their creators. The focus on advancing technology without considering the ethical and safety implications underscores the importance of responsible AI development and the need for robust regulations to prevent unintended harm.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/01/pentagons-arsenal-of-freedom-tour-borrows-name-from-star-trek-episode-about-killer-ai/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a478b287a3f4" onclick="toggleTweets('a478b287a3f4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a478b287a3f4">
+                <div class="tweet">"Elon Musk and Pete Hegseth aim to 'make Star Trek real,' but the push for AI weapon systems raises concerns about unintended consequences. Responsible AI development and strict regulations are crucial. #AI #Ethics #TechNews"</div>
+<div class="tweet">"Is the pursuit of 'making Star Trek real' blinding us to the potential dangers of advanced AI weapon systems? Ethical considerations and regulations are essential in preventing catastrophic outcomes. Thoughts? #StarTrek #AI #TechEthics"</div>
+<div class="tweet">"The ambition to 'make Star Trek real' highlights the need for responsible AI development. Focusing solely on technological advancements without considering ethical implications could lead to disastrous consequences. #AI #EthicsInTech #TechFuture"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-01-14" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.09708v1" target="_blank">Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-14 | ID: 7bbcbcb738e3
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning" by Chi-Pin Huang, Yunze Man, Zhiding Yu, and others addresses the challenge of Vision-Language-Action (VLA) tasks, which involve complex visual scene understanding and adaptive action execution. The study introduces a method called Verbalizable Latent Planning to improve reasoning efficiency in VLA tasks by reducing inference latency, enhancing generalization, and optimizing performance in dynamic environments. This approach aims to streamline the reasoning process and enhance the overall effectiveness of VLA systems.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.09708v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7bbcbcb738e3" onclick="toggleTweets('7bbcbcb738e3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7bbcbcb738e3">
+                <div class="tweet">Exciting research alert! "Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning" introduces a method to enhance reasoning efficiency in VLA tasks. #TechNews #AI #Research</div>
+<div class="tweet">Ever wondered how to streamline reasoning in Vision-Language-Action tasks? The new study on "Fast-ThinkAct" by Chi-Pin Huang et al. might have the answer! How can Verbalizable Latent Planning revolutionize VLA systems? 🤔 #TechResearch #Innovation</div>
+<div class="tweet">Key insight: Verbalizable Latent Planning can reduce inference latency, improve generalization, and optimize performance in dynamic environments for VLA tasks. This method could be a game-changer in enhancing VLA system effectiveness. #TechInnovation #ResearchBreakthrough</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.0" 
+             data-published="2026-01-14" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="SAM3-DMS: Decoupled Memory Selection for Multi-target Video Segmentation of SAM3">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.09699v1" target="_blank">SAM3-DMS: Decoupled Memory Selection for Multi-target Video Segmentation of SAM3</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-14 | ID: edad66359b4e
+             | <span class="engagement-low">Engagement: [39.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The SAM3-DMS research paper by Shen, Liu, and Ding introduces Decoupled Memory Selection for Multi-target Video Segmentation in the Segment Anything 3 (SAM3) framework. SAM3, known for detecting, segmenting, and tracking targets in videos, now improves memory selection for complex multi-object scenarios by decoupling group-level collective memory selection. This enhancement addresses synchronization issues, making SAM3 more effective in handling diverse and challenging video segmentation tasks.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.09699v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-edad66359b4e" onclick="toggleTweets('edad66359b4e')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-edad66359b4e">
+                <div class="tweet">Exciting tech news! The SAM3-DMS research by Shen, Liu, and Ding enhances SAM3's video segmentation with Decoupled Memory Selection for multi-target scenarios. This innovation improves synchronization & tackles complex segmentation challenges. #SAM3 #VideoSegmentation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-01-15 16:22" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="‘ELITE’: The Palantir App ICE Uses to Find Neighborhoods to Raid | Internal ICE material and testimony from an official obtained by 404 Media provides the clearest link yet between the technological infrastructure Palantir is building for ICE and the agency’s activities on the ground">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.404media.co/elite-the-palantir-app-ice-uses-to-find-neighborhoods-to-raid/" target="_blank">‘ELITE’: The Palantir App ICE Uses to Find Neighborhoods to Raid | Internal ICE material and testimony from an official obtained by 404 Media provides the clearest link yet between the technological infrastructure Palantir is building for ICE and the agency’s activities on the ground</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-01-15 16:22 | ID: e3bd1374c05c
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article reveals that Palantir's software, known as 'ELITE,' is being used by ICE to target neighborhoods for raids. This information, obtained from internal ICE material and official testimony, highlights the direct connection between Palantir's technology and ICE's operational activities. The revelation underscores the ethical implications of tech companies like Palantir providing tools that enable controversial immigration enforcement actions.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.404media.co/elite-the-palantir-app-ice-uses-to-find-neighborhoods-to-raid/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e3bd1374c05c" onclick="toggleTweets('e3bd1374c05c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e3bd1374c05c">
+                <div class="tweet">Did you know that Palantir's software, 'ELITE,' is aiding ICE in targeting neighborhoods for raids? This article sheds light on the intersection of technology and controversial enforcement practices. #Palantir #ICE #TechEthics</div>
+<div class="tweet">How should tech companies like Palantir navigate the ethical implications of providing tools that enable controversial enforcement actions? Join the conversation on the role of technology in shaping societal issues. #TechEthics #Immigration #Palantir</div>
+<div class="tweet">The direct link between Palantir's 'ELITE' software and ICE's enforcement activities highlights the need for a deeper discussion on the responsibilities of tech companies in supporting law enforcement agencies. #TechResponsibility #DataEthics #Palantir</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-01-15T12:30:15-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Raspberry Pi&#8217;s new add-on board has 8GB of RAM for running gen AI models">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/862748/raspberry-pi-ai-hat-2-gen-ai-ram" target="_blank">Raspberry Pi&#8217;s new add-on board has 8GB of RAM for running gen AI models</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-15T12:30:15-05:00 | ID: 2236a2966c06
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Raspberry Pi has introduced a new add-on board, the AI HAT+ 2, designed for running generative AI models on the Raspberry Pi 5. Priced at $130, the upgraded module features 8GB of RAM and a Hailo 10H chip, enabling more powerful AI processing capabilities locally. This advancement allows developers to execute complex AI tasks on the Raspberry Pi without relying on cloud services, opening up new possibilities for edge computing applications.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/862748/raspberry-pi-ai-hat-2-gen-ai-ram" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2236a2966c06" onclick="toggleTweets('2236a2966c06')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2236a2966c06">
+                <div class="tweet">Exciting news for Raspberry Pi enthusiasts! The new AI HAT+ 2 board boasts 8GB of RAM, enabling powerful AI processing on the Raspberry Pi 5 without cloud reliance. Perfect for edge computing applications. #RaspberryPi #AI #EdgeComputing</div>
+<div class="tweet">Are you ready to take your Raspberry Pi projects to the next level? With the new AI HAT+ 2 board featuring 8GB of RAM, running generative AI models locally just got a whole lot more powerful. #TechInnovation #AIProcessing #RaspberryPi5</div>
+<div class="tweet">The introduction of the AI HAT+ 2 board by Raspberry Pi signifies a significant leap in edge computing capabilities. With 8GB of RAM and a Hailo 10H chip, developers can now execute complex AI tasks without relying on cloud services. #TechAdvancement #EdgeAI #RaspberryPi</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-01-15 01:43" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="Nvidia: End-to-End Test-Time Training for Long Context aka Being Able To Update A Model's Weights In Real-Time As You Use It | "TTT changes the paradigm from retrieving info to learning it on the fly...the TTT model treats the context window as a dataset & trains itself on it in real-time." [R]">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.reddit.com/gallery/1qd696s" target="_blank">Nvidia: End-to-End Test-Time Training for Long Context aka Being Able To Update A Model's Weights In Real-Time As You Use It | "TTT changes the paradigm from retrieving info to learning it on the fly...the TTT model treats the context window as a dataset & trains itself on it in real-time." [R]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-01-15 01:43 | ID: 7241e26e35ea
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Nvidia introduces Test-Time Training (TTT) for Long Context, enabling real-time updating of a model's weights as it is being used. This paradigm shift allows the model to treat the context window as a dataset and continuously train itself on the fly, eliminating the need to retrieve information and improving learning efficiency. This innovation has the potential to enhance the performance and adaptability of machine learning models in various applications.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.reddit.com/gallery/1qd696s" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7241e26e35ea" onclick="toggleTweets('7241e26e35ea')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7241e26e35ea">
+                <div class="tweet">Nvidia introduces Test-Time Training for Long Context, enabling real-time model weight updates. This paradigm shift allows models to train themselves on the fly, enhancing learning efficiency. #Nvidia #MachineLearning #TTT</div>
+<div class="tweet">Thought-provoking question: How would Test-Time Training change the way we approach machine learning applications? Real-time model updates could revolutionize data processing and learning capabilities. #TechInnovation #TTT #Nvidia</div>
+<div class="tweet">Key insight: Nvidia's Test-Time Training allows models to continuously learn in real-time, treating the context window as a dataset. This innovation eliminates the need to retrieve info, enhancing model adaptability and performance. #InnovativeTech #MachineLearning #TTT</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="2026-01-15T13:05:48-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Pijama wants to bring more indie films to a global audience">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/862676/pijama-streaming-movies" target="_blank">Pijama wants to bring more indie films to a global audience</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-15T13:05:48-05:00 | ID: 8f10ada140e6
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Pijama, a new VOD streaming service founded by filmmakers Juan de Dio and Pablo Larraín, aims to make independent films more accessible to a global audience. The platform seeks to address the challenge of distribution for indie films that often struggle to reach wider viewership after debuting at festivals. Pijama's focus on showcasing indie films could provide a valuable platform for filmmakers to connect with audiences worldwide.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/862676/pijama-streaming-movies" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8f10ada140e6" onclick="toggleTweets('8f10ada140e6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8f10ada140e6">
+                <div class="tweet">Exciting news in the world of indie cinema! Pijama, a new VOD streaming service, is on a mission to make indie films more accessible globally. 🎥🌎 #IndieFilms #Pijama #FilmIndustry</div>
+<div class="tweet">Ever felt that indie films deserve more recognition? Pijama, a new VOD platform, aims to bridge the gap and bring these unique stories to a wider audience. What indie gem are you looking forward to watching? 🎬 #IndieCinema #GlobalAudience #Pijama</div>
+<div class="tweet">Pijama's launch signifies a shift in the landscape of film distribution by providing indie filmmakers a platform to reach a more diverse global audience. A promising development for indie cinema enthusiasts worldwide! 🌟 #IndieFilms #FilmDistribution #Pijama</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Thu, 15 Jan 2026 12:00:57 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="The difficulty of driving an EV in the “most beautiful race in the world”">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/features/2026/01/the-difficulty-of-driving-an-ev-in-the-most-beautiful-race-in-the-world/" target="_blank">The difficulty of driving an EV in the “most beautiful race in the world”</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 15 Jan 2026 12:00:57 +0000 | ID: c0b295b3ea23
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The regularity road rally, known as the "most beautiful race in the world," faced challenges with electric vehicles (EVs) due to jet lag and charging difficulties. Participants encountered issues related to managing the EVs' range and finding suitable charging stations along the rally route, highlighting the current limitations and complexities of using EVs in long-distance events.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/features/2026/01/the-difficulty-of-driving-an-ev-in-the-most-beautiful-race-in-the-world/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c0b295b3ea23" onclick="toggleTweets('c0b295b3ea23')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-c0b295b3ea23">
+                <div class="tweet">"Driving an EV in the 'most beautiful race in the world' proved challenging due to range anxiety and charging hurdles. This highlights the current complexities of using EVs in long-distance events. 🚗⚡️ #ElectricVehicles #RallyChallenges"</div>
+<div class="tweet">"Are EVs ready for long-distance rallies? The 'most beautiful race in the world' faced charging dilemmas and range anxiety with electric vehicles. What advancements are needed to make EVs more suitable for such events? 🤔⚡️ #EVChallenges #TechInnovation"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Thu, 15 Jan 2026 08:00:15 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Exclusive: Volvo tells us why having Gemini in your next car is a good thing">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/cars/2026/01/exclusive-volvo-tells-us-why-having-gemini-in-your-next-car-is-a-good-thing/" target="_blank">Exclusive: Volvo tells us why having Gemini in your next car is a good thing</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 15 Jan 2026 08:00:15 +0000 | ID: e3a06741d174
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Volvo is introducing a new in-car personal assistant called Gemini, aiming to enhance user experience and provide more intuitive interactions. Gemini will combine the capabilities of Google Assistant and Amazon Alexa, offering a seamless and personalized experience for drivers. This integration of two major voice assistants in Volvo cars is expected to improve convenience and functionality for users on the road.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/cars/2026/01/exclusive-volvo-tells-us-why-having-gemini-in-your-next-car-is-a-good-thing/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e3a06741d174" onclick="toggleTweets('e3a06741d174')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e3a06741d174">
+                <div class="tweet">"Exciting news from Volvo! Meet Gemini, the new in-car personal assistant that combines Google Assistant and Amazon Alexa for a seamless driving experience. #Volvo #Gemini #TechNews"</div>
+<div class="tweet">"Imagine having both Google Assistant and Amazon Alexa in your car - the possibilities are endless! Which features are you most excited to try out with Gemini? #Innovation #VoiceAssistants #Volvo"</div>
+<div class="tweet">"Volvo's Gemini marks a major step in enhancing user experience with dual voice assistants in cars. This integration is set to redefine convenience and functionality on the road. #FutureTech #UserExperience #VolvoGemini"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Thu, 15 Jan 2026 00:01:59 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="A British redcoat’s lost memoir resurfaces">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/01/a-british-redcoats-lost-memoir-resurfaces/" target="_blank">A British redcoat’s lost memoir resurfaces</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 15 Jan 2026 00:01:59 +0000 | ID: 1f7e76510785
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A lost memoir of British redcoat Shadrack Byfield, who lost his left arm in the War of 1812, has resurfaced, shedding light on post-war re-integration challenges. Byfield's story provides historical insight into the experiences of disabled veterans and the struggles they faced in reintegrating into society after military service. This rediscovered memoir offers a valuable perspective on the impact of war on individuals and communities, highlighting the importance of supporting veterans in their transition back to civilian life.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/01/a-british-redcoats-lost-memoir-resurfaces/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1f7e76510785" onclick="toggleTweets('1f7e76510785')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-1f7e76510785">
+                <div class="tweet">"A lost memoir of British redcoat Shadrack Byfield, who lost his arm in the War of 1812, has resurfaced, shedding light on post-war reintegration challenges. This rediscovered memoir offers valuable historical insight. #WarOf1812 #Veterans #HistoricalDiscovery"</div>
+<div class="tweet">"Ever wondered about the challenges disabled veterans faced post-war? The rediscovered memoir of British redcoat Shadrack Byfield provides a unique perspective. How can we better support veterans in their transition back to civilian life? #WarStories #VeteranSupport #History"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-01-15T13:23:56-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Democrats push FTC to investigate Trump Mobile">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/862821/democrats-elizabeth-warren-aoc-ftc-trump-mobile-investigation-letter" target="_blank">Democrats push FTC to investigate Trump Mobile</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-15T13:23:56-05:00 | ID: 86da9a1f4324
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Democratic lawmakers, led by Elizabeth Warren, have urged the FTC to probe Trump Mobile for suspected deceptive practices and false advertising related to their T1 Phone, which has not been delivered to customers despite being announced over six months ago. The investigation request highlights concerns over the company's failure to fulfill orders, raising questions about the legitimacy of Trump Mobile's business operations and product claims. This move underscores growing scrutiny on tech companies for transparency and accountability in delivering promised products and services.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/862821/democrats-elizabeth-warren-aoc-ftc-trump-mobile-investigation-letter" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-86da9a1f4324" onclick="toggleTweets('86da9a1f4324')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-86da9a1f4324">
+                <div class="tweet">Democratic lawmakers, led by Elizabeth Warren, are urging the FTC to investigate Trump Mobile for deceptive practices related to their delayed T1 Phone delivery. Tech companies face increasing scrutiny for transparency and accountability. #TrumpMobile #FTCInvestigation</div>
+<div class="tweet">Should tech companies be held accountable for failing to deliver promised products? The call for an FTC investigation into Trump Mobile's T1 Phone delay raises questions about consumer protection and business practices in the tech industry. #Accountability #TechEthics</div>
+<div class="tweet">The push for an FTC probe into Trump Mobile highlights the importance of companies fulfilling promises to customers in the tech sector. Transparency and accountability are crucial for maintaining trust and credibility in the industry. #ConsumerProtection #TechTransparency</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-01-15 16:32" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Cursor CEO Built a Browser using AI, but Does It Really Work?">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.finalroundai.com/blog/cursor-ceo-browser-made-using-ai" target="_blank">Cursor CEO Built a Browser using AI, but Does It Really Work?</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-01-15 16:32 | ID: b860741b6208
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Cursor CEO has developed a browser using AI technology, sparking a discussion on Reddit's r/programming with significant engagement. The browser's effectiveness and functionality are being questioned, prompting a debate within the tech community about the practicality and potential impact of AI-driven browsers in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.finalroundai.com/blog/cursor-ceo-browser-made-using-ai" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b860741b6208" onclick="toggleTweets('b860741b6208')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b860741b6208">
+                <div class="tweet">Cursor CEO introduces an AI-powered browser, igniting a debate in the tech community about its functionality and future impact. Is this the future of browsing? #AI #TechNews</div>
+<div class="tweet">Could an AI-driven browser revolutionize the way we surf the web, or are we diving into uncharted territory? Join the discussion on Cursor CEO's latest innovation. #AI #TechDebate</div>
+<div class="tweet">The development of an AI browser by Cursor CEO begs the question: how far can AI technology push the boundaries of web browsing? Innovation meets skepticism in the tech world. #AI #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-01-15T12:51:34-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="I’ve tested the latest Switch 2 controllers, and this one is the best">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/791574/best-switch-2-controllers" target="_blank">I’ve tested the latest Switch 2 controllers, and this one is the best</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-15T12:51:34-05:00 | ID: 23be795ae4ab
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article reviews the Nintendo Switch 2 Pro Controller, highlighting its standout feature of a 3.5mm headphone jack for private listening, making it the only wireless controller for the console with this capability. Priced at $89, the controller offers a premium experience for users looking to enhance their gaming setup with improved audio options and a comfortable design.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/791574/best-switch-2-controllers" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-23be795ae4ab" onclick="toggleTweets('23be795ae4ab')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-23be795ae4ab">
+                <div class="tweet">"Looking to level up your gaming experience on the Nintendo Switch 2? The new Pro Controller with a 3.5mm headphone jack might be just what you need! Enhance your audio and comfort for $89. #NintendoSwitch #GamingGear"</div>
+<div class="tweet">"Ever wished your Nintendo Switch 2 controller had a headphone jack? The new Pro Controller offers just that! How would private listening enhance your gaming sessions? 🎮💭 #TechTalk #GameChanger"</div>
+<div class="tweet">"Exclusive to the Nintendo Switch 2 Pro Controller: a 3.5mm headphone jack for immersive private listening. Priced at $89, this accessory is a must-have for gamers seeking enhanced audio quality and comfort. #GamingSetup #AudioUpgrade"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-01-15T12:26:27-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Amazon is turning Fallout’s postapocalypse into a reality show">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/streaming/862738/fallout-shelter-reality-show-amazon-prime-video" target="_blank">Amazon is turning Fallout’s postapocalypse into a reality show</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-15T12:26:27-05:00 | ID: 2fe3d51b598d
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Amazon has revealed plans for a new reality show called Fallout Shelter, inspired by the popular video game series Fallout. The show will place contestants in Fallout's vaults to test their survival skills, resembling the post-apocalyptic world of the game. This move by Amazon taps into the trend of turning fictional worlds into competitive reality TV experiences, following the success of shows like Squid Game.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/streaming/862738/fallout-shelter-reality-show-amazon-prime-video" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2fe3d51b598d" onclick="toggleTweets('2fe3d51b598d')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-2fe3d51b598d">
+                <div class="tweet">Exciting news for Fallout fans! Amazon is bringing the post-apocalyptic world of Fallout to life with a new reality show called Fallout Shelter. Contestants will test their survival skills in the vaults. #FalloutShelter #Amazon #TechNews</div>
+<div class="tweet">How would you fare in a post-apocalyptic world like Fallout? Amazon's new reality show, Fallout Shelter, will challenge contestants to survive in the game's vaults. Are you ready for the ultimate test? #SurvivalSkills #FalloutShelter #TechTrends</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-01-15 10:37" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Responsible disclosure of a Claude Cowork vulnerability that lets hidden prompt injections exfiltrate local files by uploading them to an attacker’s Anthropic account">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files" target="_blank">Responsible disclosure of a Claude Cowork vulnerability that lets hidden prompt injections exfiltrate local files by uploading them to an attacker’s Anthropic account</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-01-15 10:37 | ID: ed47183d80bf
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A vulnerability named Claude Cowork has been responsibly disclosed, allowing hidden prompt injections to exfiltrate local files by uploading them to an attacker's Anthropic account. This flaw poses a significant security risk as it could lead to unauthorized access and data theft. The Reddit discussion in r/programming highlights the importance of addressing such vulnerabilities promptly to prevent potential exploitation.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.promptarmor.com/resources/claude-cowork-exfiltrates-files" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ed47183d80bf" onclick="toggleTweets('ed47183d80bf')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ed47183d80bf">
+                <div class="tweet">Responsible disclosure of the Claude Cowork vulnerability exposes a major security risk - hidden prompt injections can exfiltrate local files to an attacker's Anthropic account. Stay vigilant and update your systems! #CyberSecurity #TechNews</div>
+<div class="tweet">Can we ever be fully prepared against vulnerabilities like Claude Cowork? The recent disclosure emphasizes the need for proactive security measures. What steps do you take to safeguard your systems? #DataSecurity #CyberThreats</div>
+<div class="tweet">The Claude Cowork vulnerability sheds light on the importance of swift vulnerability response and mitigation strategies. As technology advances, so do cyber threats. Stay informed, stay protected. #InfoSec #StaySecure</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-01-15 15:27" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Boeing Knew About Flaws in UPS Plane That Crashed in Louisville, N.T.S.B. Says">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.nytimes.com/2026/01/14/us/louisville-crash-report.html?unlocked_article_code=1.ElA.RW_u.VWGAWZbL4F7A" target="_blank">Boeing Knew About Flaws in UPS Plane That Crashed in Louisville, N.T.S.B. Says</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-01-15 15:27 | ID: 5cd2f37e866a
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The National Transportation Safety Board (NTSB) revealed that Boeing was aware of design flaws in the UPS cargo plane that crashed in Louisville in 2013. The NTSB's investigation found that Boeing had identified the potential for the plane's rudder to jam due to a manufacturing defect, which contributed to the crash. This revelation raises concerns about Boeing's handling of safety issues and underscores the importance of thorough testing and oversight in aircraft design and manufacturing.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.nytimes.com/2026/01/14/us/louisville-crash-report.html?unlocked_article_code=1.ElA.RW_u.VWGAWZbL4F7A" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5cd2f37e866a" onclick="toggleTweets('5cd2f37e866a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5cd2f37e866a">
+                <div class="tweet">Boeing under scrutiny as N.T.S.B. reveals design flaws in UPS cargo plane that crashed in Louisville. This highlights the critical need for rigorous safety testing in aircraft manufacturing. #Boeing #NTSB #AircraftSafety</div>
+<div class="tweet">Did Boeing's awareness of design flaws in the UPS plane contribute to the crash in Louisville? The N.T.S.B.'s findings raise questions about safety protocols in aircraft manufacturing. #Boeing #NTSB #AircraftSafety</div>
+<div class="tweet">Boeing's knowledge of the UPS plane's design flaws underscores the vital role of thorough testing and oversight in ensuring aircraft safety. Transparency and accountability are crucial in the aviation industry. #Boeing #NTSB #AircraftSafety</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-01-15 18:32:43 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
