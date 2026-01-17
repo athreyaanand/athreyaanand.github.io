@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - January 17, 2026, 06:26 AM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>January 17, 2026, 06:26 AM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-01-17 06:26:28
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 92.4 seconds</div>
+                <div>Start Time: 2026-01-17 06:26:28</div>
+                <div>End Time: 2026-01-17 06:28:00</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 17, Low: 16</div>
+                <div>Topics Detected: 6</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="65.5" 
+             data-published="2026-01-12 19:27" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Cowork: Claude Code for the rest of your work">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://claude.com/blog/cowork-research-preview" target="_blank">Cowork: Claude Code for the rest of your work</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-12 19:27 | ID: fc885be7b31e
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            "Cowork" is a new tool discussed on Hacker News, garnering significant attention with 1293 points and 563 comments. The tool, named "Claude Code," aims to streamline collaborative coding efforts, offering features to enhance teamwork and productivity in software development projects. This innovative platform could potentially revolutionize the way developers work together on code, improving efficiency and code quality.
+        </div>
+        <div class="source-link">
+            → <a href="https://claude.com/blog/cowork-research-preview" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-fc885be7b31e" onclick="toggleTweets('fc885be7b31e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-fc885be7b31e">
+                <div class="tweet">"Claude Code, the new collaborative coding tool, is making waves on Hacker News with its features designed to enhance teamwork and productivity in software development projects. #TechNews #Coding #Productivity"</div>
+<div class="tweet">"Ready to revolutionize your collaborative coding efforts? Discover 'Claude Code,' the innovative platform gaining traction on Hacker News. How do you think this tool will impact software development teams? #ClaudeCode #TechInnovation #Collaboration"</div>
+<div class="tweet">"Key insight: 'Claude Code' not only streamlines collaborative coding but also aims to improve efficiency and code quality. This tool has the potential to transform how developers work together on projects. #TechTools #Innovation #Efficiency"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-01-11 10:26" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Don't fall into the anti-AI hype">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://antirez.com/news/158" target="_blank">Don't fall into the anti-AI hype</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-11 10:26 | ID: 14dace3558f4
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Hacker News discussion with significant engagement highlighted the importance of not succumbing to anti-AI hype. The conversation emphasized the need for a balanced understanding of AI technologies, debunking myths and misconceptions. This serves as a reminder for tech professionals to critically assess AI advancements and their real-world implications.
+        </div>
+        <div class="source-link">
+            → <a href="https://antirez.com/news/158" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-14dace3558f4" onclick="toggleTweets('14dace3558f4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-14dace3558f4">
+                <div class="tweet">Don't let the anti-AI hype cloud your judgment! Engage in balanced discussions to understand AI technologies better and debunk myths. Stay informed. #AI #Tech #Misconceptions</div>
+<div class="tweet">Questioning the anti-AI narrative: How can tech professionals ensure a balanced understanding of AI advancements amidst the hype? Let's delve deeper. #AI #TechDebates #CriticalThinking</div>
+<div class="tweet">Key takeaway: In a recent Hacker News discussion, tech enthusiasts emphasized the importance of critically assessing AI advancements to grasp their real-world implications. Let's stay informed and debunk misconceptions. #AI #TechInsights #HackerNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-01-12 15:22" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Apple picks Gemini to power Siri">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html" target="_blank">Apple picks Gemini to power Siri</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-12 15:22 | ID: 0fd23a727a2a
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple has chosen Gemini, a decentralized finance platform, to power Siri's new financial capabilities. This partnership will enable Siri to provide users with personalized financial advice and services securely through Gemini's platform. By leveraging Gemini's expertise in the crypto and fintech space, Apple aims to enhance Siri's functionality and offer users a seamless and secure financial experience.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0fd23a727a2a" onclick="toggleTweets('0fd23a727a2a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0fd23a727a2a">
+                <div class="tweet">Apple has selected Gemini to power Siri's new financial features, offering users personalized financial advice securely. This partnership aims to enhance Siri's capabilities in the crypto and fintech space. #Apple #Gemini #Siri #TechNews</div>
+<div class="tweet">Curious about how Siri's new financial capabilities powered by Gemini will impact your daily interactions with your Apple device? Exciting times ahead for personalized financial advice through voice commands! #Apple #Gemini #Siri #TechInnovation</div>
+<div class="tweet">Apple's collaboration with Gemini to integrate decentralized finance into Siri signifies a significant step towards offering users a seamless and secure financial experience. The future of voice-activated financial services is here! #Apple #Gemini #Siri #TechTrends</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-01-13 18:31" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="AI generated music barred from Bandcamp">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://old.reddit.com/r/BandCamp/comments/1qbw8ba/ai_generated_music_on_bandcamp/" target="_blank">AI generated music barred from Bandcamp</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-13 18:31 | ID: ceada296a512
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Bandcamp has updated its policies to prohibit the sale of music generated by AI on its platform. This decision comes after concerns were raised about the potential misuse of AI-generated music and its impact on the music industry. The move aims to maintain the authenticity and creativity of human-made music on the platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://old.reddit.com/r/BandCamp/comments/1qbw8ba/ai_generated_music_on_bandcamp/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ceada296a512" onclick="toggleTweets('ceada296a512')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ceada296a512">
+                <div class="tweet">Bandcamp updates policy to ban AI-generated music sales on its platform, aiming to preserve the authenticity of human-made music. 🎵 #Bandcamp #AI #MusicIndustry</div>
+<div class="tweet">Does banning AI-generated music on Bandcamp stifle innovation or protect the integrity of human creativity in the music industry? Share your thoughts! 🤖🎶 #AI #MusicTech #Innovation</div>
+<div class="tweet">Bandcamp's decision to prohibit AI-generated music sales highlights the ongoing debate on maintaining the authenticity of human creativity in the digital age. 🎵💡 #TechNews #MusicIndustry #Creativity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-01-11 20:47" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="The struggle of resizing windows on macOS Tahoe">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://noheger.at/blog/2026/01/11/the-struggle-of-resizing-windows-on-macos-tahoe/" target="_blank">The struggle of resizing windows on macOS Tahoe</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-11 20:47 | ID: ebe18998d072
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The macOS Tahoe operating system is facing challenges with window resizing, as users are experiencing difficulties in adjusting window sizes smoothly. This issue has sparked a significant discussion on Hacker News, with over 2700 points and 1100 comments, highlighting the frustration among users. The technical glitch in resizing windows on macOS Tahoe is impacting user experience and productivity, prompting the need for a fix or workaround from Apple.
+        </div>
+        <div class="source-link">
+            → <a href="https://noheger.at/blog/2026/01/11/the-struggle-of-resizing-windows-on-macos-tahoe/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ebe18998d072" onclick="toggleTweets('ebe18998d072')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ebe18998d072">
+                <div class="tweet">Struggling with window resizing on macOS Tahoe? Users face challenges adjusting window sizes smoothly, impacting productivity. #macOSTahoe #TechIssues</div>
+<div class="tweet">Ever encountered window resizing issues on macOS Tahoe? The frustration among users is real. What fix or workaround would you suggest? #UserExperience #TechTalk</div>
+<div class="tweet">The technical glitch affecting window resizing on macOS Tahoe emphasizes the importance of seamless user experience in operating systems. #TechNews #AppleFixes</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-01-13 15:18" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Scott Adams has died">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.youtube.com/watch?v=Rs_JrOIo3SE" target="_blank">Scott Adams has died</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-13 15:18 | ID: b25c76cc27ec
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Scott Adams, the creator of the Dilbert comic strip, has passed away. The news sparked a significant discussion on Hacker News with over 1000 points and nearly 1800 comments. Adams' work has had a lasting impact on the tech industry, offering a humorous and insightful perspective on office culture and technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.youtube.com/watch?v=Rs_JrOIo3SE" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b25c76cc27ec" onclick="toggleTweets('b25c76cc27ec')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b25c76cc27ec">
+                <div class="tweet">Remembering a tech legend - Scott Adams, the brilliant mind behind Dilbert, has left a lasting impact on the tech industry. His humor and insights into office culture will be dearly missed. #ScottAdams #Dilbert #TechIcon</div>
+<div class="tweet">What lessons did you learn from Scott Adams' Dilbert comics about navigating office culture and technology in the tech world? Share your favorite insights! #ScottAdams #Dilbert #TechLessons</div>
+<div class="tweet">Scott Adams' Dilbert wasn't just a comic strip; it was a mirror reflecting the absurdities and realities of the tech industry. His legacy will continue to influence how we view office dynamics and technology. #ScottAdams #Dilbert #TechLegacy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Fri, 16 Jan 2026 23:46:33 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="AI cloud startup Runpod hits $120M in ARR — and it started with a Reddit post">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/16/ai-cloud-startup-runpod-hits-120m-in-arr-and-it-started-with-a-reddit-post/" target="_blank">AI cloud startup Runpod hits $120M in ARR — and it started with a Reddit post</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 16 Jan 2026 23:46:33 +0000 | ID: 1277f2ae9446
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            AI cloud startup Runpod has achieved an impressive $120 million in Annual Recurring Revenue (ARR), tracing its beginnings back to a Reddit post. This success highlights the potential for rapid growth in the tech industry when combining a well-built product with fortuitous timing. Runpod's journey serves as a testament to the power of seizing opportunities in the evolving landscape of AI and cloud computing.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/16/ai-cloud-startup-runpod-hits-120m-in-arr-and-it-started-with-a-reddit-post/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1277f2ae9446" onclick="toggleTweets('1277f2ae9446')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1277f2ae9446">
+                <div class="tweet">AI cloud startup Runpod's incredible journey from a Reddit post to $120M ARR showcases the power of seizing opportunities in tech. Learn how they leveraged AI and cloud computing to achieve rapid growth. #TechNews #AI #CloudComputing</div>
+<div class="tweet">Can a single Reddit post lead to a $120M ARR for an AI cloud startup? Runpod's success story proves that fortuitous timing and a well-built product can drive rapid growth in tech. What opportunities are you ready to seize? #TechInnovation #Runpod #AI</div>
+<div class="tweet">Runpod's $120M ARR milestone is a testament to the potential for rapid growth in the tech industry. By combining innovation with the right timing, startups can achieve remarkable success in AI and cloud computing. Seize the moment! #TechSuccess #StartupJourney #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Fri, 16 Jan 2026 20:14:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="From OpenAI’s offices to a deal with Eli Lilly — how Chai Discovery became one of the flashiest names in AI drug development">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/16/from-openais-offices-to-a-deal-with-eli-lilly-how-chai-discovery-became-one-of-the-flashiest-names-in-ai-drug-development/" target="_blank">From OpenAI’s offices to a deal with Eli Lilly — how Chai Discovery became one of the flashiest names in AI drug development</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 16 Jan 2026 20:14:00 +0000 | ID: c0d7da12e91c
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Chai Discovery, an AI drug development startup, has secured a partnership with pharmaceutical giant Eli Lilly, marking a significant milestone in its growth. The company, supported by prominent Silicon Valley venture capitalists, including OpenAI's offices, is gaining recognition for its innovative approach to leveraging AI in drug discovery, signaling a promising future in the biotech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/16/from-openais-offices-to-a-deal-with-eli-lilly-how-chai-discovery-became-one-of-the-flashiest-names-in-ai-drug-development/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c0d7da12e91c" onclick="toggleTweets('c0d7da12e91c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c0d7da12e91c">
+                <div class="tweet">Exciting news in AI drug development! Chai Discovery, backed by Silicon Valley VCs, has partnered with Eli Lilly, showcasing the power of AI in biotech. 🔬💊 #AI #Biotech #TechNews</div>
+<div class="tweet">Curious about the future of AI in drug discovery? Chai Discovery's recent partnership with Eli Lilly highlights the potential of AI to revolutionize the biotech industry. How will this impact healthcare innovation? 💡 #AI #Biotech #Innovation</div>
+<div class="tweet">Chai Discovery's collaboration with Eli Lilly underscores the growing significance of AI in drug development. With support from top VCs like OpenAI, the startup is paving the way for groundbreaking advancements in biotech. 🚀 #TechTrends #Innovation #AI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 16 Jan 2026 19:54:19 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="ChatGPT users are about to get hit with targeted ads">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/16/chatgpt-users-are-about-to-get-hit-with-targeted-ads/" target="_blank">ChatGPT users are about to get hit with targeted ads</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 16 Jan 2026 19:54:19 +0000 | ID: 6a1bf87da22f
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI has announced that ChatGPT users will soon start seeing targeted ads, with users having some control over the content they are shown. This move marks a shift towards monetization for OpenAI's popular language model and may impact user experience as they interact with the AI-powered chatbot.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/16/chatgpt-users-are-about-to-get-hit-with-targeted-ads/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6a1bf87da22f" onclick="toggleTweets('6a1bf87da22f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6a1bf87da22f">
+                <div class="tweet">OpenAI's ChatGPT users, get ready for targeted ads! 🤖📈 Users will soon have control over the content they see, marking a shift towards monetization for the language model. How will this impact your ChatGPT experience? #OpenAI #ChatGPT #AI #TargetedAds</div>
+<div class="tweet">How do you feel about ChatGPT introducing targeted ads? 🤔 Will having control over the ads enhance or disrupt your interactions with the AI chatbot? Share your thoughts! #ChatGPT #AI #TargetedAds #UserExperience</div>
+<div class="tweet">The move towards targeted ads on ChatGPT by OpenAI signifies a new era of monetization for the popular language model. User control over ad content could shape the future of AI interactions. Stay tuned for how this impacts user experience! #OpenAI #ChatGPT #AI #Monetization</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Fri, 16 Jan 2026 23:15:27 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Rackspace customers grapple with “devastating” email hosting price hike">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/information-technology/2026/01/rackspace-raises-email-hosting-prices-by-as-much-as-706-percent/" target="_blank">Rackspace customers grapple with “devastating” email hosting price hike</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 16 Jan 2026 23:15:27 +0000 | ID: 1fef2f953cdd
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Rackspace, a prominent cloud services provider, is facing backlash from customers due to a significant price increase in its email hosting services. One reseller reported a staggering 706 percent hike in charges, leading to concerns and frustration among users. This move highlights the importance of transparent pricing structures and the potential impact on businesses relying on cloud services for their operations.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/information-technology/2026/01/rackspace-raises-email-hosting-prices-by-as-much-as-706-percent/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1fef2f953cdd" onclick="toggleTweets('1fef2f953cdd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1fef2f953cdd">
+                <div class="tweet">Rackspace customers hit hard by soaring email hosting fees. Transparency in pricing is crucial for trust in cloud services. #Rackspace #CloudServices #TechNews</div>
+<div class="tweet">Is the era of affordable cloud services coming to an end? Rackspace customers shocked by email hosting price spike. Share your thoughts. #CloudComputing #TechCommunity #PricingStrategy</div>
+<div class="tweet">The recent Rackspace email hosting price hike serves as a stark reminder of the impact sudden cost increases can have on businesses relying on cloud services. #TechInsights #CloudSolutions #BusinessImpact</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Fri, 16 Jan 2026 23:21:24 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="California AG sends Musk’s xAI a cease-and-desist order over sexual deepfakes">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/16/california-ag-sends-musks-xai-a-cease-and-desist-order-over-sexual-deepfakes/" target="_blank">California AG sends Musk’s xAI a cease-and-desist order over sexual deepfakes</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 16 Jan 2026 23:21:24 +0000 | ID: 41b85972f44b
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            California's Attorney General has issued a cease-and-desist order to xAI, a company owned by Elon Musk, over the creation of AI-generated sexual deepfakes. The proliferation of such content has raised alarms among regulators and lawmakers due to ethical and privacy concerns surrounding the misuse of AI technology for creating non-consensual explicit material. The move highlights the growing need for regulations and safeguards to address the potential misuse of AI in generating harmful and deceptive content.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/16/california-ag-sends-musks-xai-a-cease-and-desist-order-over-sexual-deepfakes/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-41b85972f44b" onclick="toggleTweets('41b85972f44b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-41b85972f44b">
+                <div class="tweet">California's AG issues a cease-and-desist order to xAI, owned by Elon Musk, over AI-generated sexual deepfakes. This highlights the urgent need for regulations to prevent the misuse of AI tech. #AI #TechEthics #Privacy</div>
+<div class="tweet">Should tech companies be held accountable for the creation of AI-generated deepfakes? California AG's move against xAI, a company owned by Elon Musk, raises important questions about ethical AI use. What are your thoughts? #Deepfakes #Regulations #TechEthics</div>
+<div class="tweet">The cease-and-desist order sent to xAI by California's AG emphasizes the critical importance of implementing safeguards against the misuse of AI technology. It's a wake-up call for the tech industry to prioritize ethical AI development. #AI #Regulations #EthicalTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Fri, 16 Jan 2026 20:49:18 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="EPA rules that xAI’s natural gas generators were illegally used">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/16/epa-rules-that-xais-natural-gas-generators-were-illegally-used/" target="_blank">EPA rules that xAI’s natural gas generators were illegally used</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 16 Jan 2026 20:49:18 +0000 | ID: e69acca393f2
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The EPA has determined that xAI, Elon Musk's AI company, illegally operated 35 natural gas turbines without permits. This violation highlights the importance of adhering to environmental regulations when deploying energy infrastructure, even for tech companies. The ruling serves as a reminder for companies to ensure compliance with all necessary permits and regulations when implementing energy generation technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/16/epa-rules-that-xais-natural-gas-generators-were-illegally-used/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e69acca393f2" onclick="toggleTweets('e69acca393f2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e69acca393f2">
+                <div class="tweet">The EPA rules that xAI's natural gas generators were illegally used, emphasizing the need for tech companies to comply with environmental regulations. 🌿⚡️ #TechNews #EnvironmentalCompliance</div>
+<div class="tweet">Do tech companies prioritize speed of deployment over environmental compliance? xAI's recent violation sheds light on the importance of adhering to regulations in the energy sector. 💭🔌 #TechEthics #Sustainability</div>
+<div class="tweet">The xAI case underscores the significance of obtaining permits and adhering to regulations when deploying energy infrastructure. Compliance is key for tech companies looking to innovate sustainably. 🌍💻 #GreenTech #RegulatoryCompliance</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Fri, 16 Jan 2026 20:01:12 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Supreme Court hacker posted stolen government data on Instagram">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/16/supreme-court-hacker-posted-stolen-government-data-on-instagram/" target="_blank">Supreme Court hacker posted stolen government data on Instagram</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 16 Jan 2026 20:01:12 +0000 | ID: d6a7b9facd1c
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Nicholas Moore admitted to hacking the Supreme Court and other federal agencies to steal sensitive information, which he later shared on his Instagram account @ihackthegovernment. This incident highlights the ongoing threat of cyber attacks on government institutions and the need for robust cybersecurity measures to safeguard sensitive data from malicious actors.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/16/supreme-court-hacker-posted-stolen-government-data-on-instagram/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d6a7b9facd1c" onclick="toggleTweets('d6a7b9facd1c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d6a7b9facd1c">
+                <div class="tweet">Hackers targeting government institutions like the Supreme Court pose a serious threat to sensitive data security. The recent case of Nicholas Moore sharing stolen data on Instagram sheds light on the importance of robust cybersecurity measures. #CyberSecurity #DataBreach</div>
+<div class="tweet">Is social media becoming a platform for hackers to flaunt their cyber exploits? The case of a hacker posting stolen government data on Instagram raises concerns about the security implications of such actions. How can we tackle this growing trend? #CyberCrime #TechEthics</div>
+<div class="tweet">The Supreme Court hacker incident underscores the urgent need for enhanced cybersecurity measures in government agencies. Safeguarding sensitive data from malicious actors is crucial to maintaining public trust and national security. #InfoSec #CyberThreats</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Fri, 16 Jan 2026 21:11:11 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="TikTok quietly launches a microdrama app called ‘PineDrama’">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/16/tiktok-quietly-launches-a-micro-drama-app-called-pinedrama/" target="_blank">TikTok quietly launches a microdrama app called ‘PineDrama’</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 16 Jan 2026 21:11:11 +0000 | ID: 242e0e71d7d6
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            TikTok has introduced a new microdrama app called 'PineDrama,' featuring short episodes of fictional stories in a format similar to TikTok videos. Users can engage with bite-sized narrative content, potentially opening up new avenues for storytelling and creative expression within the TikTok ecosystem. This move reflects TikTok's efforts to diversify its content offerings and cater to users interested in serialized storytelling in a compact format.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/16/tiktok-quietly-launches-a-micro-drama-app-called-pinedrama/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-242e0e71d7d6" onclick="toggleTweets('242e0e71d7d6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-242e0e71d7d6">
+                <div class="tweet">Exciting news for TikTok fans! 📱🎬 #TikTok has quietly rolled out 'PineDrama,' a new microdrama app for bite-sized fictional stories. 🌟🎥 This move showcases TikTok's commitment to expanding its content horizons. #PineDrama #TechNews</div>
+<div class="tweet">Curious about the future of storytelling on social media? 🤔📚 TikTok's latest offering, 'PineDrama,' introduces a new way to engage with short, serialized narratives. How will this impact creativity and user engagement? 🌈💭 #TikTok #PineDrama #DigitalStorytelling</div>
+<div class="tweet">Dive into the world of microdramas with TikTok's 'PineDrama' app! 🎭📲 This innovative move not only enriches TikTok's content library but also opens up fresh possibilities for creative expression in short-form storytelling. 🚀🎥 #TechInnovation #PineDrama #TikTok</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Fri, 16 Jan 2026 22:05:08 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Snowflake, Databricks challenger ClickHouse hits $15B valuation">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/16/snowflake-databricks-challenger-clickhouse-hits-15b-valuation/" target="_blank">Snowflake, Databricks challenger ClickHouse hits $15B valuation</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 16 Jan 2026 22:05:08 +0000 | ID: b8fa129eb111
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            ClickHouse, a competitor to Snowflake and Databricks, has achieved a significant milestone with a $400 million funding round led by Dragoneer, propelling its valuation to $15 billion. This investment underscores the growing demand for data analytics and storage solutions, positioning ClickHouse as a formidable player in the data management space alongside industry giants like Snowflake and Databricks. The substantial valuation reflects investor confidence in ClickHouse's technology and its potential to disrupt the market with innovative data processing capabilities.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/16/snowflake-databricks-challenger-clickhouse-hits-15b-valuation/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b8fa129eb111" onclick="toggleTweets('b8fa129eb111')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-b8fa129eb111">
+                <div class="tweet">Exciting news in the tech world! ClickHouse, a rising competitor to Snowflake and Databricks, secures $400 million funding round led by Dragoneer, reaching a $15 billion valuation. 🚀💰 #ClickHouse #DataAnalytics #TechNews</div>
+<div class="tweet">Curious about the future of data management? With ClickHouse's recent $400 million funding round and $15 billion valuation, could we see a shift in the industry landscape? 🧐💭 #DataTech #Innovation #Disruption</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Fri, 16 Jan 2026 21:20:03 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="OpenAI to test ads in ChatGPT as it burns through billions">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/information-technology/2026/01/openai-to-test-ads-in-chatgpt-as-it-burns-through-billions/" target="_blank">OpenAI to test ads in ChatGPT as it burns through billions</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 16 Jan 2026 21:20:03 +0000 | ID: 0c459df0eac2
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI is planning to introduce advertisements to its ChatGPT platform, including the free tier and the new $8/month ChatGPT Go plan in the US. This move is aimed at generating revenue as the company continues to incur significant expenses, having burned through billions in funding. Users of ChatGPT can expect to see ads integrated into their interactions on the platform, marking a shift in OpenAI's monetization strategy.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/information-technology/2026/01/openai-to-test-ads-in-chatgpt-as-it-burns-through-billions/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0c459df0eac2" onclick="toggleTweets('0c459df0eac2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0c459df0eac2">
+                <div class="tweet">OpenAI is venturing into ad space with ChatGPT to boost revenue. Users on the free tier and ChatGPT Go plan in the US will soon see ads in their conversations. Will this change in monetization impact user experience? #OpenAI #ChatGPT #TechNews</div>
+<div class="tweet">How do you feel about OpenAI incorporating ads into ChatGPT? Will this shift in strategy affect how users interact with the AI platform? Share your thoughts! #OpenAI #ChatGPT #TechDiscussion</div>
+<div class="tweet">OpenAI's decision to introduce ads in ChatGPT reflects a strategic move to tackle mounting expenses. Ad integration signals a shift in how AI platforms generate revenue. How will users react to this change in monetization? #OpenAI #ChatGPT #TechStrategy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-01-16T17:36:55-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Google is appealing a judge’s search monopoly ruling">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/863710/google-search-antitrust-monopoly-appeal" target="_blank">Google is appealing a judge’s search monopoly ruling</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-16T17:36:55-05:00 | ID: 8abccdf74c25
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google is appealing a federal court ruling that deemed it an illegal online search monopolist. The company filed a notice to appeal to challenge the decision and requested a pause on the court-ordered remedies aimed at restoring competition in the online search market. Google argues that the court's ruling overlooked the actual user behavior and impact of its search practices.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/863710/google-search-antitrust-monopoly-appeal" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8abccdf74c25" onclick="toggleTweets('8abccdf74c25')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8abccdf74c25">
+                <div class="tweet">Google is appealing a judge's ruling on its search monopoly status. The tech giant argues that the decision overlooked user behavior and search impact. Keep an eye on this case! #Google #TechNews #Antitrust</div>
+<div class="tweet">Is Google's appeal on its search monopoly ruling justified? How will this impact competition in the online search market? Share your thoughts! #Google #Antitrust #TechDebate</div>
+<div class="tweet">Google's appeal against the search monopoly ruling highlights the ongoing battle for fair competition in the tech industry. Understanding user behavior is crucial in assessing market dominance. #Google #Antitrust #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Fri, 16 Jan 2026 21:43:22 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Judge orders Anna’s Archive to delete scraped data; no one thinks it will comply">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/01/judge-orders-annas-archive-to-delete-scraped-data-no-one-thinks-it-will-comply/" target="_blank">Judge orders Anna’s Archive to delete scraped data; no one thinks it will comply</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 16 Jan 2026 21:43:22 +0000 | ID: 32852ca11f9d
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A judge has ordered Anna's Archive, the operator of WorldCat, to delete scraped data, but there is skepticism about compliance. The default judgment aims to prompt web hosts to enforce the order, signaling a potential shift in accountability for data scraping practices.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/01/judge-orders-annas-archive-to-delete-scraped-data-no-one-thinks-it-will-comply/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-32852ca11f9d" onclick="toggleTweets('32852ca11f9d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-32852ca11f9d">
+                <div class="tweet">Judge orders Anna’s Archive to delete scraped data from WorldCat, but compliance remains uncertain. This default judgment could set a new precedent for accountability in data scraping practices. #DataPrivacy #TechNews</div>
+<div class="tweet">Is this court order against Anna’s Archive a turning point in the battle against unauthorized data scraping? The skepticism around compliance raises questions about enforcement in the digital age. #DataScraping #TechEthics</div>
+<div class="tweet">The recent ruling to delete scraped data from Anna’s Archive highlights the growing importance of accountability in online data practices. Tech companies are facing increased scrutiny over how they handle user information. #DataProtection #TechLaw</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Fri, 16 Jan 2026 21:32:13 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="This may be the grossest eye pic ever—but the cause is what’s truly horrifying">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/features/2026/01/this-may-be-the-grossest-eye-pic-ever-but-the-cause-is-whats-truly-horrifying/" target="_blank">This may be the grossest eye pic ever—but the cause is what’s truly horrifying</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 16 Jan 2026 21:32:13 +0000 | ID: 67433edab429
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A hypervirulent germ nearly destroyed a man by invading his brain and causing his eye to blow out, making it one of the most shocking eye pictures ever seen. The case highlights the dangers of such aggressive pathogens and underscores the importance of prompt and effective medical intervention in combating severe infections. This incident serves as a stark reminder of the potential consequences of untreated infections and the critical role of healthcare professionals in managing such cases.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/features/2026/01/this-may-be-the-grossest-eye-pic-ever-but-the-cause-is-whats-truly-horrifying/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-67433edab429" onclick="toggleTweets('67433edab429')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-67433edab429">
+                <div class="tweet">Witness the shocking power of hypervirulent pathogens in this jaw-dropping eye pic that highlights the critical need for swift medical intervention in severe infections. #HealthTech #InfectionControl</div>
+<div class="tweet">What would you do if faced with a hypervirulent germ invading your brain, causing your eye to blow out? This eye pic serves as a stark reminder of the importance of timely medical care in combating aggressive pathogens. #Healthcare #TechNews</div>
+<div class="tweet">The terrifying case of a man's eye almost destroyed by a hypervirulent germ underscores the vital role of healthcare professionals in managing severe infections. Prompt intervention is crucial to prevent such devastating consequences. #MedTech #HealthAwareness</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Fri, 16 Jan 2026 21:05:37 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Mandiant releases rainbow table that cracks weak admin password in 12 hours">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/security/2026/01/mandiant-releases-rainbow-table-that-cracks-weak-admin-password-in-12-hours/" target="_blank">Mandiant releases rainbow table that cracks weak admin password in 12 hours</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 16 Jan 2026 21:05:37 +0000 | ID: e09962704d08
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Mandiant has unveiled a rainbow table capable of cracking weak admin passwords within 12 hours, targeting Windows users who have yet to update from the vulnerable hashing function. This development highlights the urgency for users to strengthen their security measures and move away from outdated practices to safeguard against potential breaches and unauthorized access.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/security/2026/01/mandiant-releases-rainbow-table-that-cracks-weak-admin-password-in-12-hours/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e09962704d08" onclick="toggleTweets('e09962704d08')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e09962704d08">
+                <div class="tweet">Mandiant's new rainbow table can crack weak admin passwords in just 12 hours, emphasizing the need for stronger security measures in the face of evolving cyber threats. 🔒💻 #CyberSecurity #Mandiant #TechNews</div>
+<div class="tweet">Are you still using weak admin passwords? Mandiant's latest rainbow table can crack them in 12 hours, underlining the importance of updating security practices to stay ahead of potential breaches. 🌈🔓 #CyberThreats #DataSecurity #TechTips</div>
+<div class="tweet">Mandiant's rainbow table breakthrough serves as a wake-up call for users to enhance their security protocols and abandon outdated password practices. Stay vigilant and prioritize safeguarding your digital assets. 🛡️💡 #SecurityAwareness #TechInnovation #StaySafeOnline</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-01-16T14:37:52-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Google brings its AI videomaker to Workspace users">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/863570/google-flow-ai-video-generator-workspace" target="_blank">Google brings its AI videomaker to Workspace users</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-16T14:37:52-05:00 | ID: 6ecb75e530e1
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has extended access to its AI videomaking tool, Flow, to Business, Enterprise, and Education Workspace users. Flow leverages Google's Veo 3.1 AI video generation model to create eight-second video clips. This expansion allows a broader range of Workspace users to utilize AI technology for video creation within their professional environments.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/863570/google-flow-ai-video-generator-workspace" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6ecb75e530e1" onclick="toggleTweets('6ecb75e530e1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6ecb75e530e1">
+                <div class="tweet">Exciting news for Google Workspace users! 🌟 Google has now made its AI videomaker, Flow, available to Business, Enterprise, and Education users. Create professional video clips in seconds with the power of AI. #GoogleWorkspace #AI #VideoCreation</div>
+<div class="tweet">🤔 How will the integration of Google's AI videomaker, Flow, impact the way Workspace users approach video creation? Share your thoughts! #AI #VideoProduction #GoogleFlow</div>
+<div class="tweet">Key insight: Google's extension of Flow to Workspace users showcases the growing importance of AI in simplifying and enhancing professional video creation processes. Embrace the power of AI in your work! #ArtificialIntelligence #TechNews #WorkspaceAI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-01-15" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="DInf-Grid: A Neural Differential Equation Solver with Differentiable Feature Grids">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.10715v1" target="_blank">DInf-Grid: A Neural Differential Equation Solver with Differentiable Feature Grids</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-15 | ID: b54bb6df9469
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            "DInf-Grid" is a new neural differential equation solver introduced by Navami Kairanda, Shanthika Naik, Marc Habermann, and collaborators. The solver utilizes a differentiable grid-based representation to efficiently tackle differential equations, offering a more computationally efficient alternative to coordinate-based MLP architectures like sinusoidal neural networks. This approach aims to enhance training speed and reduce computational complexity in neural solvers for DEs.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.10715v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b54bb6df9469" onclick="toggleTweets('b54bb6df9469')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b54bb6df9469">
+                <div class="tweet">"DInf-Grid introduces a novel approach to solving differential equations using differentiable feature grids. This innovative solver promises enhanced training speed and reduced computational complexity. #NeuralNetworks #ComputationalEfficiency"</div>
+<div class="tweet">"Can differentiable feature grids revolutionize how we approach neural differential equation solvers? The introduction of DInf-Grid by Navami Kairanda and team could be a game-changer! #TechInnovation #MachineLearning"</div>
+<div class="tweet">"By leveraging differentiable grids, DInf-Grid offers a more efficient solution to differential equations compared to traditional MLP architectures. This advancement could pave the way for faster and more scalable neural solvers. #TechAdvancements #InnovativeSolvers"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-01-15" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="MatchTIR: Fine-Grained Supervision for Tool-Integrated Reasoning via Bipartite Matching">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.10712v1" target="_blank">MatchTIR: Fine-Grained Supervision for Tool-Integrated Reasoning via Bipartite Matching</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-15 | ID: 6f94629bc815
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "MatchTIR" introduces a fine-grained supervision technique for Tool-Integrated Reasoning (TIR) to enhance large language models' (LLMs) performance in complex tasks by integrating reasoning steps with external tool interactions. The proposed method addresses the limitations of existing reinforcement learning methods that assign uniform advantages to all outcomes or trajectories, by leveraging bipartite matching to provide more precise feedback. This approach could significantly improve the efficiency and effectiveness of LLMs in handling intricate tasks that require nuanced reasoning and tool integration.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.10712v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6f94629bc815" onclick="toggleTweets('6f94629bc815')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-6f94629bc815">
+                <div class="tweet">Exciting tech news! "MatchTIR" introduces fine-grained supervision for Tool-Integrated Reasoning to boost large language models' performance in complex tasks. Leveraging bipartite matching for precise feedback. #TechNews #AI #Research</div>
+<div class="tweet">Ever wondered how large language models can improve nuanced reasoning and tool integration? "MatchTIR" research offers a breakthrough with fine-grained supervision via bipartite matching. What's your take on this innovative approach? #TechDiscussion #MachineLearning</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-01-16T14:25:12-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The two things AMD subtly revealed at CES that actually excite me">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/862861/amd-ces-2026-socketed-laptop-chips-strix-halo-price" target="_blank">The two things AMD subtly revealed at CES that actually excite me</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-16T14:25:12-05:00 | ID: abca375f361d
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            At CES 2026, AMD subtly revealed two key developments that caught the attention of tech enthusiasts. Firstly, the company hinted at a potential new chiplet-based GPU architecture, which could bring significant performance improvements and efficiency gains. Secondly, AMD teased advancements in its FidelityFX Super Resolution technology, suggesting enhancements that could rival or surpass Nvidia's DLSS technology in the future. These revelations hint at exciting possibilities for AMD's future products and competitiveness in the GPU market.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/862861/amd-ces-2026-socketed-laptop-chips-strix-halo-price" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-abca375f361d" onclick="toggleTweets('abca375f361d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-abca375f361d">
+                <div class="tweet">Exciting news from AMD at CES 2026! Hinting at a new chiplet-based GPU architecture & advancements in FidelityFX Super Resolution technology, could we see AMD rival Nvidia in the GPU market soon? 🚀 #AMD #CES2026 #TechNews</div>
+<div class="tweet">What do you think about AMD's subtle hints at a potential new chiplet-based GPU architecture and advancements in FidelityFX Super Resolution technology? Will AMD soon give Nvidia a run for its money in the GPU market? 🤔 #AMD #TechEnthusiasts #CES2026</div>
+<div class="tweet">AMD's sneak peeks at a possible chiplet-based GPU architecture and upgrades to FidelityFX Super Resolution tech at CES 2026 signal a promising future for the company in the competitive GPU market. Could these developments propel AMD ahead of its rivals? 🌟 #TechInnovations #AMD</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-01-16T13:41:51-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Verizon-owned Visible is offering outage credits, too">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/863554/visible-verizon-outage-credit-january-2026" target="_blank">Verizon-owned Visible is offering outage credits, too</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-16T13:41:51-05:00 | ID: b896b14f9ff4
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Visible Wireless, a Verizon-owned company, is providing a $5 credit to its customers following a Verizon cell service outage. This move mirrors Verizon's offer of a $20 credit to its own customers affected by the outage earlier this week. The outage credits aim to compensate customers for the service disruption experienced.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/863554/visible-verizon-outage-credit-january-2026" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b896b14f9ff4" onclick="toggleTweets('b896b14f9ff4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b896b14f9ff4">
+                <div class="tweet">Visible Wireless, a Verizon-owned company, is offering a $5 credit to customers affected by the recent Verizon outage. It's great to see companies prioritizing customer satisfaction and providing compensation for service disruptions. #Visible #Verizon #CustomerService</div>
+<div class="tweet">Wondering how outage credits can impact customer loyalty and retention in the telecom industry? Visible Wireless follows Verizon's lead by offering $5 credits to affected customers. Share your thoughts! #CustomerExperience #Telecom #Visible</div>
+<div class="tweet">The move by Visible Wireless to provide outage credits showcases the importance of proactive customer service and maintaining trust during service disruptions. Offering compensation can go a long way in retaining customer loyalty. #Visible #CustomerRetention #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-01-16T13:24:07-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Ted Sarandos says Netflix will commit to 45-day theatrical releases">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/streaming/863511/ted-sarandos-netflix-theatrical-movie-release-windows" target="_blank">Ted Sarandos says Netflix will commit to 45-day theatrical releases</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-16T13:24:07-05:00 | ID: ad05a15463f3
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Netflix's co-CEO Ted Sarandos has announced that the streaming giant will commit to 45-day theatrical releases for its films, reassuring concerns about the impact of its potential acquisition of Warner Bros. Discovery on the movie theater industry. This move signifies a strategic shift for Netflix, aligning with traditional theatrical release windows and potentially fostering stronger relationships with theaters. The decision reflects Netflix's evolving approach to content distribution and signals a willingness to adapt to industry norms while maintaining its streaming dominance.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/streaming/863511/ted-sarandos-netflix-theatrical-movie-release-windows" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ad05a15463f3" onclick="toggleTweets('ad05a15463f3')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-ad05a15463f3">
+                <div class="tweet">Netflix's co-CEO Ted Sarandos announces a strategic shift as the streaming giant commits to 45-day theatrical releases for its films. A move that aligns with traditional release windows and could strengthen relationships with theaters. #Netflix #MovieIndustry</div>
+<div class="tweet">Is Netflix's decision to commit to 45-day theatrical releases a game-changer for the movie industry? Will this move pave the way for closer collaboration between streaming services and theaters? Share your thoughts! #Netflix #TheatricalReleases</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.0" 
+             data-published="2026-01-15" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Alterbute: Editing Intrinsic Attributes of Objects in Images">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.10714v1" target="_blank">Alterbute: Editing Intrinsic Attributes of Objects in Images</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-15 | ID: a4b9b215b2cb
+             | <span class="engagement-low">Engagement: [38.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper introduces Alterbute, a diffusion-based method enabling the editing of an object's intrinsic attributes in images. This technique allows for altering an object's color, texture, material, and shape while maintaining its perceived identity and scene context. Alterbute offers a novel approach to object attribute editing that goes beyond existing methods by preserving visual coherence and context in image manipulation.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.10714v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a4b9b215b2cb" onclick="toggleTweets('a4b9b215b2cb')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-a4b9b215b2cb">
+                <div class="tweet">Exciting tech news! Meet Alterbute: a groundbreaking method for editing object attributes in images while preserving visual coherence and context. 🖼️🎨 #ImageEditing #Alterbute #TechInnovation</div>
+<div class="tweet">Ever wished you could change an object's color, texture, or shape in an image without altering its identity? Alterbute offers a solution with its diffusion-based editing technique. How will this revolutionize image manipulation? 🤔 #TechNews #ImageManipulation #Alterbute</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="Fri, 16 Jan 2026 19:12:04 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Calif. counters FCC attack on DEI with conditions on Verizon/Frontier merger">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/01/verizon-frontier-to-complete-10b-merger-after-approvals-from-fcc-and-states/" target="_blank">Calif. counters FCC attack on DEI with conditions on Verizon/Frontier merger</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 16 Jan 2026 19:12:04 +0000 | ID: f37f93f23a4e
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            California is imposing conditions on the Verizon/Frontier merger in response to the FCC's stance on diversity, equity, and inclusion (DEI) initiatives. Verizon highlights the merger's significant expansion, offering nearly 30 million fiber passings nationwide.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/01/verizon-frontier-to-complete-10b-merger-after-approvals-from-fcc-and-states/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f37f93f23a4e" onclick="toggleTweets('f37f93f23a4e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f37f93f23a4e">
+                <div class="tweet">California sets conditions on Verizon/Frontier merger in response to FCC's stance on diversity, equity, and inclusion initiatives. Verizon expects significant expansion with nearly 30 million fiber passings nationwide. #TechNews #DEI #Verizon #Frontier</div>
+<div class="tweet">Do you think more states will follow California's lead in imposing conditions on tech mergers to prioritize diversity, equity, and inclusion initiatives? Share your thoughts! #TechTrends #DEI #Verizon #Frontier</div>
+<div class="tweet">California's response to the FCC's stance on DEI initiatives by setting conditions on the Verizon/Frontier merger showcases the growing importance of diversity and inclusion in tech industry regulations. #TechIndustry #California #Verizon #Frontier</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-01-16T18:48:15-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The best deals on MacBooks right now">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/22399419/apple-macbook-air-pro-mac-mini-imac-deals" target="_blank">The best deals on MacBooks right now</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-16T18:48:15-05:00 | ID: 415ebde901e2
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple is offering a variety of MacBooks with M-series processors running macOS 26 at different price points and sizes. The article highlights the challenge of choosing the right specs when purchasing a new MacBook and suggests looking for deals to get a relatively fast machine at a better price.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/22399419/apple-macbook-air-pro-mac-mini-imac-deals" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-415ebde901e2" onclick="toggleTweets('415ebde901e2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-415ebde901e2">
+                <div class="tweet">Looking for a new MacBook with M-series processors? Check out the latest deals from Apple offering a variety of models at different price points and sizes. Upgrade your tech game without breaking the bank! 💻🍎 #MacBook #TechDeals</div>
+<div class="tweet">Thinking of upgrading your MacBook? With various sizes and specs available, do you prioritize processing power or portability? Share your thoughts on what matters most when choosing a new laptop in the tech world! 💭💻 #MacBook #TechTalk</div>
+<div class="tweet">When purchasing a new MacBook, finding the right balance between specs and price is key. Don't miss out on deals that offer fast machines at affordable prices. Stay tech-savvy and informed when making your next tech investment! 💡💸 #MacBook #TechTips</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-01-16T15:51:18-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Trump and Mid-Atlantic governors want tech companies to pay for new power plants">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/863620/data-centers-ai-power-auction-trump" target="_blank">Trump and Mid-Atlantic governors want tech companies to pay for new power plants</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-16T15:51:18-05:00 | ID: 836468e5caaf
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Trump administration and Mid-Atlantic governors are pushing for an emergency power auction through PJM Interconnection to incentivize the construction of new power plants. This move aims to address potential electricity shortages and ensure a stable energy supply over the next 15 years. Tech companies may be required to participate in this auction to secure long-term electricity contracts, potentially impacting their operational costs and energy sourcing strategies.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/863620/data-centers-ai-power-auction-trump" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-836468e5caaf" onclick="toggleTweets('836468e5caaf')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-836468e5caaf">
+                <div class="tweet">"Tech companies may soon need to pay for new power plants as part of an emergency auction to ensure a stable energy supply for the next 15 years. How will this impact their operational costs? #TechNews #EnergySupply"</div>
+<div class="tweet">"Should tech giants be required to participate in an emergency power auction to incentivize new power plant construction? Will this reshape their energy sourcing strategies? Share your thoughts. #TechDebate #RenewableEnergy"</div>
+<div class="tweet">"Trump administration and Mid-Atlantic governors propose an emergency power auction to address potential electricity shortages. Tech companies could face increased operational costs and altered energy procurement tactics. Stay informed. #TechIndustry #EnergyTransition"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.0" 
+             data-published="2026-01-15" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.10716v1" target="_blank">WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-15 | ID: bccd8d304253
+             | <span class="engagement-low">Engagement: [36.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper introduces WildRayZer, a self-supervised framework designed for novel view synthesis (NVS) in dynamic environments with moving cameras and objects. Traditional NVS models struggle in dynamic settings due to the lack of multi-view consistency, resulting in issues like ghosting, hallucinated geometry, and unstable pose estimation. WildRayZer aims to address these challenges by providing a solution that can handle dynamic content effectively, improving the quality and stability of view synthesis in such environments.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.10716v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-bccd8d304253" onclick="toggleTweets('bccd8d304253')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-bccd8d304253">
+                <div class="tweet">Exciting breakthrough in view synthesis tech! WildRayZer introduces a self-supervised framework for novel view synthesis in dynamic environments, enhancing quality and stability. 🚀 #TechNews #AI #ViewSynthesis</div>
+<div class="tweet">Ever wondered how to tackle ghosting and hallucinated geometry in dynamic view synthesis? WildRayZer might just have the answer! 💡 How can self-supervised frameworks revolutionize view synthesis technology? #Innovation #Research #TechTalk</div>
+<div class="tweet">WildRayZer's innovative approach to self-supervised large view synthesis in dynamic environments could pave the way for more robust and reliable applications in various fields. Stay tuned for the future of dynamic content creation! 🌟 #TechInnovation #ResearchPaper #WildRayZer</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 16 Jan 2026 22:07:41 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Archaeologists find a supersized medieval shipwreck in Denmark">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/01/archaeologists-find-a-supersized-medieval-shipwreck-in-denmark/" target="_blank">Archaeologists find a supersized medieval shipwreck in Denmark</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 16 Jan 2026 22:07:41 +0000 | ID: b4f0f46458ec
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Archaeologists in Denmark have discovered a large medieval shipwreck, indicating a thriving economy in medieval Europe. The well-preserved remains offer valuable insights into the maritime history and trade practices of the era. This discovery sheds light on the advanced shipbuilding techniques and extensive trade networks that existed during medieval times.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/01/archaeologists-find-a-supersized-medieval-shipwreck-in-denmark/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b4f0f46458ec" onclick="toggleTweets('b4f0f46458ec')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b4f0f46458ec">
+                <div class="tweet">Archaeologists in Denmark unearth a large medieval shipwreck, unveiling insights into ancient maritime history and trade practices. Discoveries like these reveal the advanced shipbuilding techniques of the past. #Archaeology #MedievalTech</div>
+<div class="tweet">What stories lie within the depths of the newly discovered medieval shipwreck in Denmark? The find showcases the intricate trade networks and shipbuilding prowess of medieval Europe. What other mysteries await discovery? #ShipwreckMystery #TechHistory</div>
+<div class="tweet">The supersized medieval shipwreck found in Denmark highlights the sophisticated shipbuilding techniques and bustling trade routes of the era. A testament to the advanced tech and trade networks of medieval times. #HistoricalTech #TradeNetworks</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 16 Jan 2026 19:56:33 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="RAM shortage chaos expands to GPUs, high-capacity SSDs, and even hard drives">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/01/ram-shortage-chaos-expands-to-gpus-high-capacity-ssds-and-even-hard-drives/" target="_blank">RAM shortage chaos expands to GPUs, high-capacity SSDs, and even hard drives</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 16 Jan 2026 19:56:33 +0000 | ID: e72783c2c9e4
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The ongoing RAM shortage is now affecting GPUs, high-capacity SSDs, and hard drives, leading to supply chain disruptions. GPU manufacturers are potentially favoring more lucrative models, while the scarcity of large SSDs is becoming more pronounced. This widening impact of the shortage underscores the challenges faced by the tech industry in sourcing critical components.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/01/ram-shortage-chaos-expands-to-gpus-high-capacity-ssds-and-even-hard-drives/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e72783c2c9e4" onclick="toggleTweets('e72783c2c9e4')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-e72783c2c9e4">
+                <div class="tweet">The RAM shortage chaos is spreading! GPUs, high-capacity SSDs, and hard drives are now feeling the impact. 🖥️💾 Tech industry faces supply chain disruptions as critical components become scarce. #TechNews #RAMShortage</div>
+<div class="tweet">Is the tech industry's overreliance on certain components exacerbating the impact of the RAM shortage? How can manufacturers adapt to ensure a steady supply chain amidst these challenges? 🤔💭 #TechSupplyChain #Adaptability</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-01-16 19:58" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Here is the 15 sec coding test to instantly filter out 50% of unqualified applicants by JOSE ZARAZUA">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://josezarazua.com/im-a-former-cto-here-is-the-15-sec-coding-test-i-used-to-instantly-filter-out-50-of-unqualified-applicants/" target="_blank">Here is the 15 sec coding test to instantly filter out 50% of unqualified applicants by JOSE ZARAZUA</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-01-16 19:58 | ID: 68acd598f745
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming has introduced a 15-second coding test aimed at quickly filtering out unqualified job applicants. The test involves asking candidates to write a simple function in their preferred programming language, helping recruiters assess basic coding skills efficiently. This approach has the potential to streamline the hiring process and save time for both recruiters and candidates.
+        </div>
+        <div class="source-link">
+            → <a href="https://josezarazua.com/im-a-former-cto-here-is-the-15-sec-coding-test-i-used-to-instantly-filter-out-50-of-unqualified-applicants/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-68acd598f745" onclick="toggleTweets('68acd598f745')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-68acd598f745">
+                <div class="tweet">Exciting new strategy in tech hiring! A 15-second coding test on Reddit's r/programming is revolutionizing how recruiters filter job applicants. Learn how this quick test is saving time and improving efficiency. #TechHiring #CodingTest</div>
+<div class="tweet">Could a 15-second coding test be the game-changer in tech recruitment? The test introduced on Reddit's r/programming aims to swiftly filter out unqualified candidates. Would you pass the test? #RecruitmentInTech #CodingSkills</div>
+<div class="tweet">Don't miss this insightful approach to tech recruitment! A 15-second coding test on Reddit is helping recruiters streamline the hiring process and identify qualified candidates efficiently. Discover how this innovative test is changing the game. #TechRecruitment #InnovativeHiring</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-01-16T15:20:42-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Fortnite blocks creators from selling prize wheel spins">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/863597/fortnite-creators-steal-the-brainrot-prize-wheel-spins-block" target="_blank">Fortnite blocks creators from selling prize wheel spins</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-16T15:20:42-05:00 | ID: e3d4515718cf
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Epic Games has announced a new policy prohibiting Fortnite creators from selling prize wheel spins within in-game experiences starting January 20th. This change comes shortly after allowing creators to introduce in-game transactions. The decision aims to maintain fairness and integrity within the Fortnite ecosystem by restricting the use of luck-based mechanics for monetization by creators.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/863597/fortnite-creators-steal-the-brainrot-prize-wheel-spins-block" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e3d4515718cf" onclick="toggleTweets('e3d4515718cf')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-e3d4515718cf">
+                <div class="tweet">Epic Games is cracking down on Fortnite creators selling prize wheel spins in-game starting January 20th. This move aims to promote fairness and integrity within the Fortnite ecosystem. #Fortnite #EpicGames #GamingNews</div>
+<div class="tweet">Is luck-based monetization fair game in Fortnite? Epic Games' new policy banning creators from selling prize wheel spins sparks a debate on maintaining game integrity. What are your thoughts? #Fortnite #GameIndustry #TechDebate</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-01-16 15:53" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="X has stopped working">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.the-independent.com/tech/x-down-twitter-not-working-status-b2902008.html" target="_blank">X has stopped working</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-01-16 15:53 | ID: cd4953313053
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in the r/technology subreddit has gained significant traction with 38,664 upvotes and 3,176 comments. The post highlights an issue where X, a popular tech product or service, has stopped working, sparking user concerns and technical discussions within the community. This widespread attention indicates a potential widespread impact on users relying on X for their daily tasks or activities.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.the-independent.com/tech/x-down-twitter-not-working-status-b2902008.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cd4953313053" onclick="toggleTweets('cd4953313053')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cd4953313053">
+                <div class="tweet">"🚨 Significant Reddit discussion alert! 🚨 38,664 upvotes and 3,176 comments in r/technology about X suddenly stopping. Tech users, stay informed! #TechNews #XIssues"</div>
+<div class="tweet">"Could your reliance on X be at risk? Join the conversation in r/technology as users raise concerns about X's sudden shutdown. How would you cope if your go-to tech tool failed you? #CommunityEngagement #TechTalk"</div>
+<div class="tweet">"Key insight: The recent uproar in r/technology over X's malfunction shows how integral tech products are in our daily lives. Stay updated and prepared for any potential disruptions in your tech routine. #UserConcerns #StayInformed"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-01-16 18:44" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="US says Canada will regret decision to allow Chinese EVs into their market">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.reuters.com/business/autos-transportation/us-says-canadas-decision-allow-imported-chinese-evs-is-problematic-2026-01-16/" target="_blank">US says Canada will regret decision to allow Chinese EVs into their market</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-01-16 18:44 | ID: f0d129d1d701
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The US has expressed concerns over Canada's decision to permit Chinese electric vehicles (EVs) into its market, warning that it could lead to future regrets. The move has sparked discussions on Reddit's r/technology forum, with many users debating the potential implications of this decision on both countries' automotive industries and national security. The decision highlights the ongoing scrutiny surrounding the global EV market and the geopolitical tensions influencing trade relationships in the tech sector.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.reuters.com/business/autos-transportation/us-says-canadas-decision-allow-imported-chinese-evs-is-problematic-2026-01-16/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f0d129d1d701" onclick="toggleTweets('f0d129d1d701')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f0d129d1d701">
+                <div class="tweet">"Canada's decision to allow Chinese EVs is causing a stir in the tech world. The US warns of potential regrets, sparking discussions on Reddit. Geopolitical tensions impact tech trade relationships. #EVs #TechNews #Geopolitics"</div>
+<div class="tweet">"Should Canada be cautious about welcoming Chinese electric vehicles? The US raises concerns, igniting debates on Reddit. What implications could this decision have on the automotive industry and national security? #EVs #TechTrade #GlobalRelations"</div>
+<div class="tweet">"The integration of Chinese EVs in Canada's market raises questions about national security and industry impacts. Geopolitical tensions continue to shape tech trade relationships. Stay informed on the latest developments. #TechIndustry #GlobalTrade #EVMarket"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-01-16 18:57" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Cursor Implied Success Without Evidence | Not one of 100 selected commits even built">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://embedding-shapes.github.io/cursor-implied-success-without-evidence/" target="_blank">Cursor Implied Success Without Evidence | Not one of 100 selected commits even built</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-01-16 18:57 | ID: 610877d1e376
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming has highlighted the issue of "Cursor Implied Success Without Evidence," where none of the 100 selected commits in a project even built successfully. This underscores the importance of thorough testing and verification processes in software development to ensure that code changes do not introduce errors or break the build. The conversation serves as a reminder for developers to prioritize robust testing practices to maintain code quality and prevent issues down the line.
+        </div>
+        <div class="source-link">
+            → <a href="https://embedding-shapes.github.io/cursor-implied-success-without-evidence/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-610877d1e376" onclick="toggleTweets('610877d1e376')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-610877d1e376">
+                <div class="tweet">Cursor Implied Success Without Evidence - a recent Reddit discussion in r/programming exposes the risks of unverified code changes. Prioritizing thorough testing is crucial to prevent build failures and maintain code quality. #SoftwareDevelopment #Testing</div>
+<div class="tweet">Is "Cursor Implied Success Without Evidence" a common pitfall in software development? How can developers ensure code changes are thoroughly tested to avoid build failures? Share your thoughts! #TechTalk #CodeQuality</div>
+<div class="tweet">The "Cursor Implied Success Without Evidence" phenomenon serves as a stark reminder for developers to implement robust testing and verification processes. Testing thoroughly can prevent issues that may arise from unverified code changes. #SoftwareEngineering #BestPractices</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="27.5" 
+             data-published="2026-01-16 19:16" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="[D] Burnout from the hiring process">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1qepc05/d_burnout_from_the_hiring_process/" target="_blank">[D] Burnout from the hiring process</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-01-16 19:16 | ID: c7a0cba89c9e
+             | <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 27%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A tech professional undergoing the hiring process for research internships has expressed burnout due to constant rejections and wasted time over the past 2 months. Despite being a research associate at a top European lab and starting a master's program at the University of Waterloo, the individual is experiencing mental exhaustion from the prolonged job search. This highlights the emotional toll and challenges faced by candidates in the competitive tech job market, emphasizing the need for more efficient and supportive hiring processes.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1qepc05/d_burnout_from_the_hiring_process/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c7a0cba89c9e" onclick="toggleTweets('c7a0cba89c9e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c7a0cba89c9e">
+                <div class="tweet">"Tech professionals facing burnout in the competitive job market - the emotional toll of constant rejections and wasted time is real. Time for more efficient and supportive hiring processes! #TechJobs #JobSearch #HiringProcess"</div>
+<div class="tweet">"Is the current tech job market taking a toll on your mental health? The burnout from prolonged job searches is a reality for many. How can we make the hiring process more humane and efficient? #TechBurnout #MentalHealth #TechIndustry"</div>
+<div class="tweet">"Tech job seekers feeling the burnout from prolonged rejections - a reminder of the importance of supportive and efficient hiring processes in the competitive tech industry. Let's prioritize candidate experience! #TechHiring #JobSearchTips #TechCareer"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-01-17 06:26:28 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
