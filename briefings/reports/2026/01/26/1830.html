@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - January 26, 2026, 06:30 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>January 26, 2026, 06:30 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-01-26 18:30:35
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 136.3 seconds</div>
+                <div>Start Time: 2026-01-26 18:30:35</div>
+                <div>End Time: 2026-01-26 18:32:51</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 15, Low: 18</div>
+                <div>Topics Detected: 6</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="68.5" 
+             data-published="2026-01-25 17:36" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="ICE using Palantir tool that feeds on Medicaid data">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.eff.org/deeplinks/2026/01/report-ice-using-palantir-tool-feeds-medicaid-data" target="_blank">ICE using Palantir tool that feeds on Medicaid data</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-25 17:36 | ID: baecd438b932
+             | <span class="engagement-notable">Engagement: [68.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 68%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article reveals that ICE (U.S. Immigration and Customs Enforcement) is utilizing a tool from Palantir that leverages Medicaid data for its operations. This integration allows ICE to access sensitive healthcare information to aid in its enforcement activities, raising concerns about privacy and data usage. The use of such technology highlights the intersection of data analytics, government agencies, and privacy issues in the context of immigration enforcement.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.eff.org/deeplinks/2026/01/report-ice-using-palantir-tool-feeds-medicaid-data" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-baecd438b932" onclick="toggleTweets('baecd438b932')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-baecd438b932">
+                <div class="tweet">Did you know ICE is using a Palantir tool that taps into Medicaid data for its operations? The intersection of data analytics, privacy concerns, and government agencies is under scrutiny. #ICE #Palantir #DataPrivacy</div>
+<div class="tweet">What are your thoughts on ICE leveraging Medicaid data through Palantir's tool for enforcement activities? How should tech tools balance data usage with privacy concerns in government operations? #TechEthics #DataGovernance #ImmigrationEnforcement</div>
+<div class="tweet">The integration of Palantir's tool with Medicaid data for ICE operations underscores the complex relationship between technology, government agencies, and data privacy. It raises important questions about the ethical use of data in enforcement activities. #TechNews #PrivacyIssues</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-01-23 02:24" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Bugs Apple loves">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.bugsappleloves.com" target="_blank">Bugs Apple loves</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-23 02:24 | ID: e1a579243084
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Hacker News discussion titled "Bugs Apple loves" has garnered significant attention with 1095 points and 529 comments since its posting on January 23, 2026. The thread likely delves into vulnerabilities and bugs within Apple's software or hardware, shedding light on potential security risks and the need for timely patches and updates to safeguard user data and devices. This discussion underscores the ongoing importance of robust cybersecurity measures in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.bugsappleloves.com" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e1a579243084" onclick="toggleTweets('e1a579243084')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e1a579243084">
+                <div class="tweet">Join the discussion on "Bugs Apple loves" featured on Hacker News, revealing potential vulnerabilities in Apple's ecosystem. Stay informed about cybersecurity risks and the importance of prompt software updates. #Apple #Cybersecurity #TechNews</div>
+<div class="tweet">What bugs could Apple possibly "love"? Delve into the intriguing Hacker News thread that's buzzing with insights on security vulnerabilities within Apple's products. Are you up-to-date on protecting your tech devices? #Apple #Security #HackerNews</div>
+<div class="tweet">The "Bugs Apple loves" discussion sheds light on the vital need for cybersecurity vigilance in the tech sphere. Recognize the significance of timely patches and updates to safeguard user data and devices. Stay informed, stay secure. #Cybersecurity #TechIndustry #SoftwareSecurity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-01-22 16:52" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Show HN: isometric.nyc – giant isometric pixel art map of NYC">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://cannoneyed.com/isometric-nyc/" target="_blank">Show HN: isometric.nyc – giant isometric pixel art map of NYC</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-22 16:52 | ID: c21898a769ca
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A project called isometric.nyc has been shared on Hacker News, featuring a large isometric pixel art map of New York City. The map provides a unique perspective of the city's layout and landmarks in a visually appealing way, garnering significant interest from the tech community with 1315 points and 240 comments on the discussion thread. This project showcases the creative application of isometric pixel art in mapping urban environments, offering developers and artists inspiration for similar projects.
+        </div>
+        <div class="source-link">
+            → <a href="https://cannoneyed.com/isometric-nyc/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c21898a769ca" onclick="toggleTweets('c21898a769ca')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c21898a769ca">
+                <div class="tweet">Explore the creative fusion of art and tech with isometric.nyc, a stunning isometric pixel art map of NYC. A unique way to experience the city's layout and landmarks. #TechArt #PixelArt #NYC</div>
+<div class="tweet">Ever thought about mapping cities in isometric pixel art? The isometric.nyc project on Hacker News showcases the beauty and creativity of this approach. How can we use art to enhance urban mapping? 🎨🌆 #TechCommunity #CreativeMapping #IsometricArt</div>
+<div class="tweet">Discover the power of isometric pixel art in urban mapping through isometric.nyc. This project highlights the potential for creative applications in tech projects. Let's embrace artistry in our tech endeavors! 🖌️🌇 #TechInnovation #ArtTech #IsometricMapping</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-01-23 17:58" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Microsoft gave FBI set of BitLocker encryption keys to unlock suspects' laptops">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://techcrunch.com/2026/01/23/microsoft-gave-fbi-a-set-of-bitlocker-encryption-keys-to-unlock-suspects-laptops-reports/" target="_blank">Microsoft gave FBI set of BitLocker encryption keys to unlock suspects' laptops</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-23 17:58 | ID: feebf801428f
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Microsoft reportedly provided the FBI with a set of BitLocker encryption keys to unlock suspects' laptops. This action raises concerns about user privacy and the security of encrypted data. It highlights the delicate balance between law enforcement needs and user rights in the realm of digital privacy.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/23/microsoft-gave-fbi-a-set-of-bitlocker-encryption-keys-to-unlock-suspects-laptops-reports/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-feebf801428f" onclick="toggleTweets('feebf801428f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-feebf801428f">
+                <div class="tweet">Microsoft's disclosure of BitLocker encryption keys to the FBI has sparked debates around digital privacy. Where do you stand on the balance between law enforcement access and user rights? #Microsoft #BitLocker #DigitalPrivacy</div>
+<div class="tweet">Is user privacy at risk when tech giants like Microsoft provide encryption keys to law enforcement agencies? Share your thoughts on this controversial move. #PrivacyRights #TechEthics #DataSecurity</div>
+<div class="tweet">The recent incident involving Microsoft and the FBI sheds light on the ongoing struggle between safeguarding user privacy and enabling law enforcement access. It's crucial to find a balance that protects both interests. #TechNews #DataPrivacy #UserRights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-01-22 10:48" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="We will ban you and ridicule you in public if you waste our time on crap reports">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://curl.se/.well-known/security.txt" target="_blank">We will ban you and ridicule you in public if you waste our time on crap reports</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-22 10:48 | ID: 45bcde98126e
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses a Hacker News thread where users expressed frustration with low-quality bug reports. The thread highlighted the importance of providing detailed and actionable bug reports to developers, as vague or unhelpful reports can waste time and hinder the debugging process. Users emphasized the need for clear communication and collaboration between bug reporters and developers to improve the efficiency and effectiveness of bug fixing in software development.
+        </div>
+        <div class="source-link">
+            → <a href="https://curl.se/.well-known/security.txt" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-45bcde98126e" onclick="toggleTweets('45bcde98126e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-45bcde98126e">
+                <div class="tweet">Are you a developer tired of vague bug reports wasting your time? Detailed and actionable bug reports are key to efficient debugging. Improve collaboration for better software development! #BugReports #SoftwareDevelopment</div>
+<div class="tweet">Ever faced frustration due to low-quality bug reports? How can we bridge the communication gap between bug reporters and developers for smoother debugging processes? Share your thoughts! #DeveloperCommunity #TechCollaboration</div>
+<div class="tweet">Key takeaway from Hacker News thread: Clear communication and detailed bug reports are essential for effective software debugging. Let's work together to streamline bug fixing and enhance software quality! #TechTips #EfficientDebugging</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-01-22 15:20" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="GPTZero finds 100 new hallucinations in NeurIPS 2025 accepted papers">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://gptzero.me/news/neurips/" target="_blank">GPTZero finds 100 new hallucinations in NeurIPS 2025 accepted papers</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-22 15:20 | ID: 6e68b4fc8969
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            GPTZero, an AI model, has identified 100 instances of hallucinations in papers accepted at NeurIPS 2025. These hallucinations are errors in the data or conclusions of the research. The discovery highlights the importance of thorough review processes in academic publications to ensure the integrity of research findings.
+        </div>
+        <div class="source-link">
+            → <a href="https://gptzero.me/news/neurips/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6e68b4fc8969" onclick="toggleTweets('6e68b4fc8969')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6e68b4fc8969">
+                <div class="tweet">"GPTZero uncovers 100 hallucinations in NeurIPS 2025 papers, emphasizing the need for robust review processes in academic research. #AI #NeurIPS2025 #ResearchIntegrity"</div>
+<div class="tweet">"What do you think about GPTZero spotting 100 hallucinations in NeurIPS 2025 papers? How can AI help improve research credibility? #TechEthics #AI #NeurIPS2025"</div>
+<div class="tweet">"The identification of 100 hallucinations in NeurIPS 2025 papers by GPTZero underscores the significance of rigorous review mechanisms in maintaining research integrity. #ResearchEthics #AI #NeurIPS2025"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="55" 
+             data-published="Mon, 26 Jan 2026 17:48:50 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="TikTok attributes recent glitches to a power outage at a U.S. data center">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/26/tiktok-attributes-recent-glitches-to-a-power-outage-at-a-u-s-data-center/" target="_blank">TikTok attributes recent glitches to a power outage at a U.S. data center</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 26 Jan 2026 17:48:50 +0000 | ID: 0d273c7b7803
+             | <span class="engagement-standard">Engagement: [55.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 55%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            TikTok experienced recent glitches attributed to a power outage at a U.S. data center. The outages coincided with the establishment of a separate U.S. TikTok entity, potentially impacting user experience and highlighting the importance of robust data center infrastructure for app reliability.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/26/tiktok-attributes-recent-glitches-to-a-power-outage-at-a-u-s-data-center/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0d273c7b7803" onclick="toggleTweets('0d273c7b7803')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0d273c7b7803">
+                <div class="tweet">Did you notice recent glitches on TikTok? A power outage at a U.S. data center caused disruptions. This highlights the critical role of data center infrastructure in maintaining app reliability. #TikTok #DataCenter #TechNews</div>
+<div class="tweet">What impact do you think a power outage at a data center had on TikTok users? The recent glitches coincide with establishing a U.S. TikTok entity. Share your thoughts! #TechGlitches #UserExperience #TechTalk</div>
+<div class="tweet">The recent TikTok glitches due to a U.S. data center power outage underline the need for robust infrastructure. Reliable data centers are crucial for seamless app performance. #TechInfrastructure #DataReliability #TikTokOutage</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="54.5" 
+             data-published="Mon, 26 Jan 2026 16:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Microsoft announces powerful new chip for AI inference">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/26/microsoft-announces-powerful-new-chip-for-ai-inference/" target="_blank">Microsoft announces powerful new chip for AI inference</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 26 Jan 2026 16:00:00 +0000 | ID: 2dc9e153d531
+             | <span class="engagement-standard">Engagement: [54.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Microsoft has unveiled Maia, a new chip designed for AI inference tasks, boasting over 100 billion transistors. Maia offers impressive performance with over 10 petaflops in 4-bit precision and around 5 petaflops in 8-bit precision, marking a significant leap in capabilities compared to its predecessor. This powerful chip is poised to advance AI applications by providing enhanced processing power for complex inference tasks.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/26/microsoft-announces-powerful-new-chip-for-ai-inference/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2dc9e153d531" onclick="toggleTweets('2dc9e153d531')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2dc9e153d531">
+                <div class="tweet">💥 Microsoft introduces Maia, a groundbreaking chip for AI inference tasks, with over 100 billion transistors! This powerhouse delivers over 10 petaflops in 4-bit precision and around 5 petaflops in 8-bit precision. 🔥 #Microsoft #AI #MaiaChip</div>
+<div class="tweet">🤔 How will Microsoft's Maia chip, with its massive transistor count and powerful performance, revolutionize AI applications and shape the future of AI inference tasks? #AI #MaiaChip #TechInnovation</div>
+<div class="tweet">🚀 Microsoft's Maia chip is a game-changer in the realm of AI inference, offering exceptional processing power with over 10 petaflops in 4-bit precision. This advancement signifies a significant leap forward in AI capabilities. 💡 #Microsoft #AI #MaiaChip</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="53.5" 
+             data-published="Mon, 26 Jan 2026 16:26:49 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Tech workers call for CEOs to speak up against ICE after the killing of Alex Pretti">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/26/tech-workers-call-for-ceos-to-speak-up-against-ice-after-the-killing-of-alex-pretti/" target="_blank">Tech workers call for CEOs to speak up against ICE after the killing of Alex Pretti</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 26 Jan 2026 16:26:49 +0000 | ID: f124bc5e059a
+             | <span class="engagement-standard">Engagement: [53.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 53%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Over 450 tech workers from major companies have signed a letter urging CEOs to speak out against ICE following the killing of Alex Pretti. The letter calls on CEOs to demand that ICE leave cities and highlights tech's role in enabling ICE's operations. This move underscores tech workers' increasing activism and push for accountability within the industry regarding social justice issues.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/26/tech-workers-call-for-ceos-to-speak-up-against-ice-after-the-killing-of-alex-pretti/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f124bc5e059a" onclick="toggleTweets('f124bc5e059a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f124bc5e059a">
+                <div class="tweet">Tech workers are calling on CEOs to take a stand against ICE in the wake of Alex Pretti's killing. Over 450 employees have signed a letter demanding action. #TechActivism #SocialJustice</div>
+<div class="tweet">Could tech CEOs' silence on ICE's actions be perceived as complicity? The recent call from tech workers for CEOs to speak up raises crucial questions about accountability. #ICE #TechEthics</div>
+<div class="tweet">The letter signed by 450+ tech workers highlights the industry's growing role in pushing for social justice. Tech companies are being urged to step up and address their impact on issues like immigration enforcement. #TechAccountability #Activism</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="52" 
+             data-published="Mon, 26 Jan 2026 18:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Obvious Ventures lands fund five with a 360-degree view of planetary, human, economic health">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/26/obvious-ventures-lands-fund-five-with-a-360-degree-view-of-planetary-human-economic-health/" target="_blank">Obvious Ventures lands fund five with a 360-degree view of planetary, human, economic health</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 26 Jan 2026 18:00:00 +0000 | ID: f23b775d4b4b
+             | <span class="engagement-standard">Engagement: [52.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Obvious Ventures, a 12-year-old firm, has secured $360,360,360 for its fifth fund, emphasizing a holistic approach to investing in companies that positively impact planetary, human, and economic health. The unique fund size reflects the firm's commitment to aligning its investments with its values, focusing on sustainability and societal well-being. This significant raise underscores the growing importance of impact investing in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/26/obvious-ventures-lands-fund-five-with-a-360-degree-view-of-planetary-human-economic-health/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f23b775d4b4b" onclick="toggleTweets('f23b775d4b4b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f23b775d4b4b">
+                <div class="tweet">Obvious Ventures secures $360M for fund five, prioritizing investments that benefit planetary, human, and economic health. A significant milestone in impact investing! 🌍💡 #TechNews #ImpactInvesting</div>
+<div class="tweet">How can tech firms follow Obvious Ventures' lead in prioritizing sustainability and societal well-being in their investments? Let's discuss! 💭🌱 #TechEthics #SustainableTech</div>
+<div class="tweet">Obvious Ventures' $360M fund emphasizes the shift towards impact investing in the tech industry, highlighting the growing focus on social responsibility and positive impact. 💰🤝 #TechTrends #SocialImpact</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Mon, 26 Jan 2026 17:29:35 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="VC firm 2150 raises €210M fund to solve cities’ climate challenges">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/26/vc-firm-2150-raises-e210m-fund-to-solve-cities-climate-challenges/" target="_blank">VC firm 2150 raises €210M fund to solve cities’ climate challenges</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 26 Jan 2026 17:29:35 +0000 | ID: 14b06380bdc2
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Europe-based venture capital firm 2150 has successfully raised a €210 million fund dedicated to investing in climate tech startups focused on addressing cities' carbon footprint challenges. The fund aims to support innovative solutions that can contribute to sustainable urban development and combat climate change by investing in cutting-edge technologies and initiatives. This significant investment underscores the growing importance of climate tech in the venture capital landscape and highlights the increasing focus on sustainable solutions for urban environments.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/26/vc-firm-2150-raises-e210m-fund-to-solve-cities-climate-challenges/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-14b06380bdc2" onclick="toggleTweets('14b06380bdc2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-14b06380bdc2">
+                <div class="tweet">VC firm 2150 secures €210M fund to back climate tech startups addressing cities' carbon footprint challenges. Sustainable urban development takes center stage! 🌍💡 #ClimateTech #UrbanDevelopment #VC #TechNews</div>
+<div class="tweet">Can cutting-edge technologies solve cities' climate challenges? VC firm 2150's €210M fund aims to find out! How crucial are sustainable solutions in combating climate change? 🤔💸 #ClimateInnovation #VC #SustainableCities</div>
+<div class="tweet">VC firm 2150's €210M fund for climate tech startups highlights the increasing recognition of the role of technology in sustainable urban development. Investing in the future of our cities! 🏙️💰 #TechInvestment #Sustainability #ClimateAction</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="50" 
+             data-published="Mon, 26 Jan 2026 18:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Anthropic launches interactive Claude apps, including Slack and other workplace tools">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/26/anthropic-launches-interactive-claude-apps-including-slack-and-other-workplace-tools/" target="_blank">Anthropic launches interactive Claude apps, including Slack and other workplace tools</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 26 Jan 2026 18:00:00 +0000 | ID: 3aa8f07e6c04
+             | <span class="engagement-standard">Engagement: [50.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 50%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic has introduced interactive Claude apps, enabling users to access apps within the chatbot interface, with Slack integration among the workplace tools available. The addition of Cowork integration in the future will further enhance the functionality and convenience of the Claude platform for users.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/26/anthropic-launches-interactive-claude-apps-including-slack-and-other-workplace-tools/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3aa8f07e6c04" onclick="toggleTweets('3aa8f07e6c04')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3aa8f07e6c04">
+                <div class="tweet">Exciting news from Anthropic! Their new interactive Claude apps now integrate with Slack and other workplace tools, offering users a seamless experience within the chatbot interface. #Anthropic #ClaudeApps #TechNews</div>
+<div class="tweet">Curious about how Anthropic's new interactive Claude apps will revolutionize workplace productivity? With Slack integration and more tools on the way, how do you think this will impact team collaboration? #FutureOfWork #TechInnovation #ClaudePlatform</div>
+<div class="tweet">The introduction of interactive Claude apps by Anthropic is set to redefine how users access workplace tools. With Slack integration and future Cowork integration in the works, convenience and efficiency are at the forefront of this tech advancement. #Anthropic #TechInnovations</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Mon, 26 Jan 2026 16:13:22 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="How to get Doom running on a pair of earbuds">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gaming/2026/01/how-to-get-doom-running-on-a-pair-of-earbuds/" target="_blank">How to get Doom running on a pair of earbuds</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Mon, 26 Jan 2026 16:13:22 +0000 | ID: 432a6cb99c72
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The "Doombuds" project enables running Doom on a pair of earbuds without a display by using a UART-to-web-server setup. This innovative project showcases how technology can be repurposed creatively to achieve unexpected results, demonstrating the versatility of modern hardware and software capabilities. Developers interested in unconventional applications of technology may find inspiration in this project's approach to running a classic game on a non-traditional platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gaming/2026/01/how-to-get-doom-running-on-a-pair-of-earbuds/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-432a6cb99c72" onclick="toggleTweets('432a6cb99c72')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-432a6cb99c72">
+                <div class="tweet">Can you imagine playing Doom on a pair of earbuds? The "Doombuds" project showcases innovative repurposing of technology by running the classic game without a display. Check out how technology boundaries are being pushed! #Doombuds #TechInnovation</div>
+<div class="tweet">Ever thought about playing Doom on your earbuds? The "Doombuds" project is making it possible by running the game using a UART-to-web-server setup. How can unconventional tech applications like this inspire new ideas in the industry? #TechCreativity #Doombuds</div>
+<div class="tweet">The "Doombuds" project highlights the endless possibilities of modern hardware and software capabilities. It demonstrates how even a pair of earbuds can be transformed into a gaming platform. Innovation knows no bounds in the tech world! #TechInnovation #Doombuds</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="2026-01-26T12:47:31-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="TikTokers are heading to UpScrolled following US takeover">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/867958/tiktok-upscrolled-app-us-takeover" target="_blank">TikTokers are heading to UpScrolled following US takeover</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-26T12:47:31-05:00 | ID: 821d20ab1870
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Following the US takeover of TikTok, users are migrating to an alternative social platform called UpScrolled, available on Android and iOS. UpScrolled has quickly risen to the 12th spot in Apple's App Store but is facing challenges with server capacity due to the surge in new users.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/867958/tiktok-upscrolled-app-us-takeover" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-821d20ab1870" onclick="toggleTweets('821d20ab1870')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-821d20ab1870">
+                <div class="tweet">"TikTokers are flocking to UpScrolled post-US takeover. UpScrolled is gaining momentum as an alternative social platform on Android & iOS. Server capacity strains due to surge in new users. #UpScrolled #SocialMedia"</div>
+<div class="tweet">"Is UpScrolled the new TikTok? Following the US takeover, users are swiftly moving to UpScrolled, now ranking 12th on Apple's App Store. Will this migration last? #UpScrolled #TechTrends"</div>
+<div class="tweet">"UpScrolled emerges as a viable alternative to TikTok after US takeover. The platform's rapid rise in popularity highlights the need for diversification in the social media landscape. #UpScrolled #TechNews"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="47" 
+             data-published="Mon, 26 Jan 2026 18:20:48 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="TikTok alternative Skylight soars to 380K+ users after TikTok U.S. deal finalized">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/26/tiktok-alternative-skylight-soars-to-380k-users-after-tiktok-u-s-deal-finalized/" target="_blank">TikTok alternative Skylight soars to 380K+ users after TikTok U.S. deal finalized</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 26 Jan 2026 18:20:48 +0000 | ID: 23045860809e
+             | <span class="engagement-standard">Engagement: [47.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 47%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Following the finalization of the TikTok U.S. deal, the TikTok alternative Skylight, which is based on open protocols, has seen a significant surge in users, surpassing 380,000. Skylight's growth underscores the interest in platforms that prioritize openness and user data privacy, presenting a promising alternative to mainstream social media apps like TikTok.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/26/tiktok-alternative-skylight-soars-to-380k-users-after-tiktok-u-s-deal-finalized/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-23045860809e" onclick="toggleTweets('23045860809e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-23045860809e">
+                <div class="tweet">Exciting news in the tech world! Skylight, a TikTok alternative focusing on openness and data privacy, has gained over 380,000 users post the TikTok U.S. deal. Is this the future of social media? 🚀 #Skylight #TechNews</div>
+<div class="tweet">Curious about the rise of Skylight post the TikTok U.S. deal? With over 380,000 users and a focus on open protocols, could this be the beginning of a shift towards more privacy-centric social media platforms? 🤔 #Skylight #TechTrends</div>
+<div class="tweet">Skylight's rapid growth to 380K+ users post the TikTok U.S. deal highlights a growing interest in platforms prioritizing openness and user data privacy. Could this be a turning point in the social media landscape? 📈 #Skylight #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Mon, 26 Jan 2026 17:20:07 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Saudi satirist hacked with Pegasus spyware wins damages in court battle">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/01/26/saudi-satirist-hacked-with-pegasus-spyware-wins-damages-in-court-battle/" target="_blank">Saudi satirist hacked with Pegasus spyware wins damages in court battle</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 26 Jan 2026 17:20:07 +0000 | ID: 43d40e6406f9
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            London High Court has awarded Ghanem Al-Masarir over £3 million after ruling that the Saudi government hacked his phone using Pegasus spyware and likely orchestrated a physical attack against him in London. This case highlights the misuse of powerful surveillance tools like Pegasus and raises concerns about governments targeting dissidents and activists using such technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/01/26/saudi-satirist-hacked-with-pegasus-spyware-wins-damages-in-court-battle/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-43d40e6406f9" onclick="toggleTweets('43d40e6406f9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-43d40e6406f9">
+                <div class="tweet">London High Court awarded Ghanem Al-Masarir over £3 million after ruling Saudi government used Pegasus spyware to hack his phone and likely orchestrated an attack. The misuse of surveillance tools like Pegasus raises serious concerns. #TechNews #PegasusSpyware</div>
+<div class="tweet">Is the use of powerful surveillance tools like Pegasus becoming a threat to freedom of speech and activism worldwide? The case of Ghanem Al-Masarir sheds light on governments targeting dissidents. #SurveillanceTech #PrivacyConcerns</div>
+<div class="tweet">The case of Ghanem Al-Masarir winning damages for Pegasus spyware hack underscores the need for robust regulations on surveillance technologies to prevent misuse and protect individuals' rights to privacy and safety. #TechEthics #PrivacyRights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Mon, 26 Jan 2026 14:17:46 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="EU launches formal investigation of xAI over Grok's sexualized deepfakes">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/01/eu-launches-formal-investigation-of-xai-over-groks-sexualized-deepfakes/" target="_blank">EU launches formal investigation of xAI over Grok's sexualized deepfakes</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Mon, 26 Jan 2026 14:17:46 +0000 | ID: b66791aaba11
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The European Union has initiated a formal investigation into xAI, a technology developed by Elon Musk's company, Grok, due to concerns over the creation of sexualized deepfake content. If found guilty, Grok could face fines of up to 6 percent of its daily turnover. This move highlights the growing regulatory scrutiny around artificial intelligence technologies and their potential misuse for creating harmful and unethical content.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/01/eu-launches-formal-investigation-of-xai-over-groks-sexualized-deepfakes/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b66791aaba11" onclick="toggleTweets('b66791aaba11')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b66791aaba11">
+                <div class="tweet">EU launches formal investigation into xAI technology developed by Grok over concerns of sexualized deepfakes. This highlights the increasing regulatory scrutiny on AI ethics. #xAI #EuropeanUnion #TechEthics</div>
+<div class="tweet">Could the investigation of xAI by the EU be a turning point in regulating AI technology and addressing deepfake misuse? Share your thoughts. #xAI #EUregulation #Deepfakes</div>
+<div class="tweet">The formal probe of Grok's xAI technology by the EU demonstrates the urgent need for responsible AI development and usage to prevent harmful content creation. #TechRegulation #EthicalAI #GrokTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Mon, 26 Jan 2026 16:23:48 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Data center power outage took out TikTok first weekend under US ownership">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/01/tiktok-glitches-caused-by-data-center-power-outage-us-joint-venture-says/" target="_blank">Data center power outage took out TikTok first weekend under US ownership</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Mon, 26 Jan 2026 16:23:48 +0000 | ID: c643b8d5b705
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A data center power outage disrupted TikTok services during its first weekend under US ownership, leading to errors for American users. The outage triggered speculation and conspiracy theories as users encountered difficulties accessing the platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/01/tiktok-glitches-caused-by-data-center-power-outage-us-joint-venture-says/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c643b8d5b705" onclick="toggleTweets('c643b8d5b705')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c643b8d5b705">
+                <div class="tweet">Did you experience issues accessing TikTok last weekend? A data center power outage disrupted services during its first weekend under US ownership, triggering speculation and conspiracy theories. #TikTok #DataCenterOutage</div>
+<div class="tweet">How dependent are we on stable data centers for our favorite apps like TikTok? The recent power outage during TikTok's transition to US ownership sparked user frustration and speculation. #TechDependency #DataCenterReliability</div>
+<div class="tweet">The TikTok outage during its first weekend under US ownership highlights the critical role of data center reliability in ensuring seamless app experiences for users. #TechNews #DataCenterPerformance</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="2026-01-26T13:00:00-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="MCP unites Claude chat with apps like Slack, Figma, and Canva">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/867673/claude-mcp-app-interactive-slack-figma-canva" target="_blank">MCP unites Claude chat with apps like Slack, Figma, and Canva</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-26T13:00:00-05:00 | ID: 824a17aaa1fb
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic's Claude chatbot has been enhanced with an extension to the open-source MCP protocol, enabling users to seamlessly integrate apps like Slack, Figma, and Canva within the chat interface. This update allows users to perform tasks such as drafting Slack messages and creating content in Canva directly from the Claude chatbot, streamlining workflows and enhancing productivity for users. The integration of popular apps within Claude demonstrates the potential of AI agents to access and interact with a wide range of tools and data sources, offering a more unified and efficient user experience.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/867673/claude-mcp-app-interactive-slack-figma-canva" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-824a17aaa1fb" onclick="toggleTweets('824a17aaa1fb')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-824a17aaa1fb">
+                <div class="tweet">Exciting news in tech! Claude chatbot now integrates with Slack, Figma, and Canva via MCP protocol. Boost productivity by managing tasks directly within the chat interface. #AI #ProductivityTools</div>
+<div class="tweet">Ever imagined accessing Slack, Figma, and Canva seamlessly within a chatbot interface? Claude chatbot's latest update makes it a reality! How will this integration change the way we work and collaborate? #TechInnovation #FutureOfWork</div>
+<div class="tweet">The integration of popular apps within Claude chatbot through MCP protocol showcases the power of AI agents to streamline workflows and enhance user experience. A glimpse into a future where AI seamlessly interacts with various tools and data sources. #AI #TechIntegration</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="2026-01-26T11:33:11-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="OpenAI is working out how much to charge for ChatGPT ads">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/867898/openai-chatgpt-ad-pricing" target="_blank">OpenAI is working out how much to charge for ChatGPT ads</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-26T11:33:11-05:00 | ID: 9743b71ca9e5
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI is considering charging $60 per 1,000 views for ads on ChatGPT, which is three times higher than Meta's platform. However, OpenAI won't provide advertisers with as much detailed user information as Google and Meta offer. This pricing strategy could impact advertisers looking to leverage ChatGPT for targeted advertising campaigns.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/867898/openai-chatgpt-ad-pricing" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9743b71ca9e5" onclick="toggleTweets('9743b71ca9e5')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-9743b71ca9e5">
+                <div class="tweet">OpenAI plans to charge $60 per 1,000 views for ChatGPT ads, 3x higher than Meta's rates. While more costly, advertisers will have limited user data compared to Google and Meta. How will this pricing strategy impact ad campaigns? #OpenAI #ChatGPT #Advertising</div>
+<div class="tweet">Is OpenAI's decision to charge $60 per 1,000 views for ChatGPT ads a bold move or a risky one? With limited user data available to advertisers, will this pricing strategy lead to more targeted ads or hinder campaign performance? #TechNews #AdTech #OpenAI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-01-26T11:46:05-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Internal chats show how social media companies discussed teen engagement">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/867845/meta-youtube-snap-tiktok-social-media-trials-documents" target="_blank">Internal chats show how social media companies discussed teen engagement</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-26T11:46:05-05:00 | ID: 0a5efff8309e
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Recently released internal documents reveal how social media companies viewed teen engagement as a lucrative business opportunity while acknowledging the potential risks of excessive digital consumption. The documents, disclosed in ongoing legal proceedings involving Meta, shed light on the companies' strategies and concerns regarding young users' interaction with their platforms. This insight underscores the complex balance between profitability and responsible usage that tech companies navigate in the realm of teen engagement.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/867845/meta-youtube-snap-tiktok-social-media-trials-documents" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0a5efff8309e" onclick="toggleTweets('0a5efff8309e')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-0a5efff8309e">
+                <div class="tweet">Did you know that internal documents from social media companies reveal their strategies and concerns around teen engagement? Dive into the insights here. #SocialMedia #TechNews #TeenEngagement</div>
+<div class="tweet">How do social media companies balance profitability and responsible usage when it comes to engaging with teens online? The recently disclosed internal chats shed light on this complex issue. #TechEthics #YouthOnline #DigitalConsumption</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-01-26T13:00:29-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Tattle TV has turned a Hitchcock classic into a vertical video ‘microdrama’">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/867844/tattle-tv-the-lodger-hitchcock" target="_blank">Tattle TV has turned a Hitchcock classic into a vertical video ‘microdrama’</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-26T13:00:29-05:00 | ID: 4d3e1246ceb7
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Tattle TV, a UK-based streaming platform, has transformed a Hitchcock classic into a vertical video 'microdrama,' diverging from the trend of producing new series for mobile viewing. The platform, founded by filmmakers Philip McGoldrick and Marina Elderton, aims to offer bite-sized pieces of cinematic history in a vertical format, catering to viewers interested in experiencing classic films in a new way. This innovative approach could potentially reshape how audiences engage with timeless cinematic works on mobile devices.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/867844/tattle-tv-the-lodger-hitchcock" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4d3e1246ceb7" onclick="toggleTweets('4d3e1246ceb7')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4d3e1246ceb7">
+                <div class="tweet">Tattle TV is revolutionizing mobile viewing by turning a Hitchcock classic into a vertical video 'microdrama.' Explore cinematic history in a new format! 📱🎥 #TattleTV #MobileViewing #Innovation</div>
+<div class="tweet">Ever imagined experiencing a Hitchcock classic in a vertical video format? Tattle TV is making it possible with their 'microdrama' approach. How do you feel about this shift in mobile content consumption? 🤔 #CinematicInnovation #TechTrends #VerticalVideo</div>
+<div class="tweet">Tattle TV's vertical video 'microdrama' of a Hitchcock classic is a bold move in reshaping mobile viewing habits. This innovative approach could set a new standard for how we engage with timeless cinematic works on our smartphones. 📽️📲 #MobileEntertainment #InnovativeTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-01-26T11:32:17-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Payment processors were against CSAM until Grok started making it">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/867874/stripe-visa-mastercard-amex-csam-grok" target="_blank">Payment processors were against CSAM until Grok started making it</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-26T11:32:17-05:00 | ID: 7fcb9aa665dd
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Payment processors were previously vigilant in combating child sexual abuse material (CSAM) until Grok, a company founded by Elon Musk, began generating such content. The Center for Countering Digital Hate discovered 101 sexualized images of children among a sample of 20,000 images produced by Grok between December 29th and January. This development raises concerns about the impact of technology on the proliferation of harmful content and the need for increased vigilance and regulation in this area.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/867874/stripe-visa-mastercard-amex-csam-grok" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7fcb9aa665dd" onclick="toggleTweets('7fcb9aa665dd')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-7fcb9aa665dd">
+                <div class="tweet">Payment processors shifted stance on CSAM due to Grok, a company by Elon Musk, generating such content. The need for tech regulation and increased vigilance in combating harmful online material is more crucial than ever. #TechNews #CSAM #Regulation</div>
+<div class="tweet">Are tech advancements inadvertently aiding the proliferation of harmful content online? The recent discovery of CSAM generated by Grok raises questions about the impact of technology on facilitating illicit activities. #TechEthics #CSAM #OnlineSafety</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-01-26T11:20:32-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="TikTok blames its US problems on a power outage">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/867873/tiktok-down-outage-us-data-center-power-outage" target="_blank">TikTok blames its US problems on a power outage</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-26T11:20:32-05:00 | ID: 0970ab2e13f4
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            TikTok is attributing its recent US service disruptions to a power outage that occurred early Sunday morning. The outage has led to ongoing issues affecting the platform's availability. TikTok's efforts are focused on restoring services following the outage, impacting users in the US.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/867873/tiktok-down-outage-us-data-center-power-outage" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0970ab2e13f4" onclick="toggleTweets('0970ab2e13f4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0970ab2e13f4">
+                <div class="tweet">TikTok attributes recent US service disruptions to a power outage that occurred Sunday. Users experiencing availability issues as platform works on service restoration. #TikTok #TechNews</div>
+<div class="tweet">Could a power outage really cause significant disruptions for a platform as massive as TikTok? The impact on user experience highlights the importance of robust infrastructure. #TikTok #TechIssues</div>
+<div class="tweet">TikTok's US troubles shed light on the critical need for tech companies to have resilient systems in place to mitigate unexpected challenges like power outages. #TechInfrastructure #Resilience</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-01-23" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="SyncLight: Controllable and Consistent Multi-View Relighting">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.16981v1" target="_blank">SyncLight: Controllable and Consistent Multi-View Relighting</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-23 | ID: 1d71d5401db5
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper introduces SyncLight, a novel method that allows for consistent and controllable relighting across multiple uncalibrated views of a static scene. This addresses a key challenge in generative approaches to multi-view relighting, ensuring lighting consistency. SyncLight represents a significant advancement in enabling parametric relighting across multiple views, enhancing the realism and flexibility of rendering techniques for static scenes.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.16981v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1d71d5401db5" onclick="toggleTweets('1d71d5401db5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1d71d5401db5">
+                <div class="tweet">Exciting tech news! SyncLight introduces a novel method for consistent multi-view relighting in static scenes, enhancing realism and flexibility in rendering techniques. 🌟 #SyncLight #TechInnovation</div>
+<div class="tweet">Ever struggled with lighting consistency in multi-view relighting? SyncLight's new method might just be the game-changer we've been waiting for! How could this impact future rendering technologies? 💡 #SyncLight #RenderingTech</div>
+<div class="tweet">SyncLight's groundbreaking approach to multi-view relighting not only ensures lighting consistency but also opens up new possibilities for parametric relighting across multiple views. A significant step forward in rendering realism. 🚀 #TechAdvancements #SyncLight</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-01-26 14:50" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="[Meta] Mods, when will you get on top of the constant AI slop posts?">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="http://reddit.com/r/programming" target="_blank">[Meta] Mods, when will you get on top of the constant AI slop posts?</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-01-26 14:50 | ID: 2cffc8c12ef5
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming with significant engagement, featuring 392 upvotes and 155 comments, addresses the issue of repetitive posts related to AI slop. The community is calling on moderators to take action to manage and reduce the frequency of these posts, highlighting the need for better content moderation strategies to maintain the quality and relevance of discussions within the subreddit.
+        </div>
+        <div class="source-link">
+            → <a href="http://reddit.com/r/programming" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2cffc8c12ef5" onclick="toggleTweets('2cffc8c12ef5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2cffc8c12ef5">
+                <div class="tweet">Addressing the need for better content moderation in tech communities, a Reddit discussion in r/programming calls on mods to tackle repetitive AI slop posts. Quality and relevance are key! #TechCommunity #ContentModeration</div>
+<div class="tweet">Are repetitive AI slop posts flooding your feed? The tech community in r/programming is demanding better moderation strategies to enhance the discussion quality. How can mods effectively manage this issue? #TechDiscussions #CommunityEngagement</div>
+<div class="tweet">Key insight from a Reddit discussion in r/programming: Effective content moderation is crucial for maintaining quality tech discussions. Let's work together to improve moderation strategies and keep our community engaging and relevant. #TechTalks #QualityContent</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Mon, 26 Jan 2026 12:00:57 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Former astronaut on lunar spacesuits: "I don't think they're great right now"">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/01/former-astronaut-on-lunar-spacesuits-i-dont-think-theyre-great-right-now/" target="_blank">Former astronaut on lunar spacesuits: "I don't think they're great right now"</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Mon, 26 Jan 2026 12:00:57 +0000 | ID: 9836fe44d690
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Former astronaut Chris Hadfield expressed concerns about the current state of lunar spacesuit design, stating that he doesn't believe they are optimal at the moment. He highlighted the challenges involved in creating spacesuits suitable for the lunar environment. Hadfield's comments underscore the ongoing technical hurdles in developing advanced spacesuit technology for future lunar missions.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/01/former-astronaut-on-lunar-spacesuits-i-dont-think-theyre-great-right-now/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9836fe44d690" onclick="toggleTweets('9836fe44d690')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-9836fe44d690">
+                <div class="tweet">Former astronaut Chris Hadfield raises concerns about the current state of lunar spacesuit design, emphasizing the need for advancements to ensure astronaut safety and efficiency on future missions. 🚀🌕 #SpaceTech #LunarExploration</div>
+<div class="tweet">Are current lunar spacesuits up to par? Former astronaut Chris Hadfield's doubts shed light on the challenges in creating spacesuits suitable for the lunar environment. What improvements do you think are necessary for future missions? 🤔👨‍🚀 #SpaceInnovation #TechTalk</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-01-23" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Latent Diffusion for Internet of Things Attack Data Generation in Intrusion Detection">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.16976v1" target="_blank">Latent Diffusion for Internet of Things Attack Data Generation in Intrusion Detection</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-23 | ID: 89a4eca579c4
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Sánchez-Carballo, Melgarejo-Meseguer, and Rojo-Álvarez introduces Latent Diffusion for generating attack data in IoT environments to enhance performance of Machine Learning-based IDSs. The method aims to address the class imbalance issue between benign and attack traffic, which commonly hampers IDS effectiveness. By leveraging Latent Diffusion, this approach could potentially improve the accuracy and efficiency of intrusion detection systems in IoT networks.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.16976v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-89a4eca579c4" onclick="toggleTweets('89a4eca579c4')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-89a4eca579c4">
+                <div class="tweet">Exciting research by Sánchez-Carballo, Melgarejo-Meseguer, and Rojo-Álvarez introduces Latent Diffusion for enhancing Machine Learning-based IDSs in IoT networks. Addressing class imbalance could revolutionize intrusion detection systems. #IoT #MachineLearning #IntrusionDetection</div>
+<div class="tweet">Ever wondered how Latent Diffusion can transform intrusion detection in IoT environments? Sánchez-Carballo, Melgarejo-Meseguer, and Rojo-Álvarez's research delves into this innovative approach. Could this be the key to more effective IDSs? #TechInnovation #Cybersecurity #IoT</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-01-26T11:00:53-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="A powerful AMD gaming desktop is hundreds off at Costco">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/867754/asus-desktop-pc-stream-deck-lg-oled-animal-crossing-deal-sale" target="_blank">A powerful AMD gaming desktop is hundreds off at Costco</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-01-26T11:00:53-05:00 | ID: 1dc3df530605
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Costco is offering a high-end AMD gaming desktop at a discounted price of $1,999.99, $300 off for members until February 8th. The desktop features all-AMD components and liquid cooling, providing a powerful gaming experience at a competitive value, especially amidst rising RAM prices. This prebuilt machine built into Asus' ROG platform offers a compelling option for gamers looking for performance and savings.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/867754/asus-desktop-pc-stream-deck-lg-oled-animal-crossing-deal-sale" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1dc3df530605" onclick="toggleTweets('1dc3df530605')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1dc3df530605">
+                <div class="tweet">Costco is offering a high-end AMD gaming desktop at $300 off for members - now $1,999.99! 🔥 Featuring all-AMD components, liquid cooling, and built into Asus' ROG platform, this powerful machine is a steal. Grab it before Feb 8th. #GamingPC #AMD #TechDeal</div>
+<div class="tweet">Looking for a new gaming setup? Costco's discounted AMD desktop could be the answer. With all-AMD components, liquid cooling, and a $300 off deal, it's a compelling choice for gamers. Are you tempted to upgrade? 🎮💻 #GamingCommunity #TechSavings #PCGaming</div>
+<div class="tweet">Rising RAM prices making your dream gaming rig expensive? Costco's $1,999.99 AMD desktop, $300 off for members, offers a competitive solution. Featuring liquid cooling and Asus' ROG platform, it's a blend of power and savings amidst market challenges. #TechNews #GamingSetup</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-01-23" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="AnyView: Synthesizing Any Novel View in Dynamic Scenes">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.16982v1" target="_blank">AnyView: Synthesizing Any Novel View in Dynamic Scenes</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-23 | ID: d2d9a4bc6277
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "AnyView: Synthesizing Any Novel View in Dynamic Scenes" introduces the AnyView framework, which addresses the challenge of maintaining multi-view and spatiotemporal consistency in dynamic real-world environments. Developed by Basile Van Hoorick, Dian Chen, Shun Iwase, and others, AnyView is a diffusion-based video generation framework that aims to produce high-quality outputs in such scenarios. This work contributes to advancing generative video models by enhancing their ability to generate convincing views in dynamic scenes.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.16982v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d2d9a4bc6277" onclick="toggleTweets('d2d9a4bc6277')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-d2d9a4bc6277">
+                <div class="tweet">Exciting tech news! The AnyView framework introduces a diffusion-based video generation approach to synthesize novel views in dynamic scenes, enhancing generative video models. #TechNews #VideoGeneration #AnyView</div>
+<div class="tweet">Ever wished for a seamless way to generate novel views in dynamic scenes? The AnyView framework might just be the answer! How do you think this will impact future video generation technologies? 🤔 #TechInnovation #DynamicScenes #AnyView</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.0" 
+             data-published="Sat, 24 Jan 2026 19:08:06 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Poland's energy grid was targeted by never-before-seen wiper malware">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/security/2026/01/wiper-malware-targeted-poland-energy-grid-but-failed-to-knock-out-electricity/" target="_blank">Poland's energy grid was targeted by never-before-seen wiper malware</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 24 Jan 2026 19:08:06 +0000 | ID: 8a9cdc55714c
+             | <span class="engagement-low">Engagement: [33.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Poland's energy grid was recently hit by a new form of wiper malware, marking the 10-year anniversary of Russia's attack on Ukraine's grid. This destructive payload, previously unseen, highlights the evolving threat landscape for critical infrastructure systems and underscores the need for enhanced cybersecurity measures in the energy sector to prevent such attacks in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/security/2026/01/wiper-malware-targeted-poland-energy-grid-but-failed-to-knock-out-electricity/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8a9cdc55714c" onclick="toggleTweets('8a9cdc55714c')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-8a9cdc55714c">
+                <div class="tweet">Poland's energy grid faces a new threat with the emergence of never-before-seen wiper malware. This attack underscores the urgent need for robust cybersecurity measures in critical infrastructure. #Cybersecurity #EnergyGrid #Malware</div>
+<div class="tweet">Could the recent wiper malware attack on Poland's energy grid signal a new wave of cyber threats targeting critical infrastructure worldwide? How can we better protect our energy systems from such attacks? #CyberAttacks #CriticalInfrastructure #TechSecurity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.0" 
+             data-published="Sat, 24 Jan 2026 12:00:57 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="A weird, itchy rash is linked to the keto diet—but no one knows why">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/01/a-weird-itchy-rash-is-linked-to-the-keto-diet-but-no-one-knows-why/" target="_blank">A weird, itchy rash is linked to the keto diet—but no one knows why</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 24 Jan 2026 12:00:57 +0000 | ID: 984df407df7c
+             | <span class="engagement-low">Engagement: [33.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A mysterious, itchy rash has been associated with the keto diet due to its connection with ketones, but the exact cause is still unknown. The rash, known as "keto rash," presents a puzzling challenge as researchers work to uncover the underlying mechanism behind this phenomenon. This discovery highlights the need for further investigation into the potential side effects and impacts of the popular ketogenic diet on the body.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/01/a-weird-itchy-rash-is-linked-to-the-keto-diet-but-no-one-knows-why/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-984df407df7c" onclick="toggleTweets('984df407df7c')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-984df407df7c">
+                <div class="tweet">Curious about the keto diet? 🤔 A strange and itchy rash, known as "keto rash," has been linked to this popular diet due to its connection with ketones. Researchers are working to uncover the mystery behind this phenomenon. #Keto #HealthTech</div>
+<div class="tweet">Ever heard of the "keto rash"? 🤔 This puzzling side effect associated with the keto diet has researchers scratching their heads. What could be causing this mysterious itch? Share your thoughts! #KetoRash #DietScience</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-01-23" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="A Scalable Measure of Loss Landscape Curvature for Analyzing the Training Dynamics of LLMs">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2601.16979v1" target="_blank">A Scalable Measure of Loss Landscape Curvature for Analyzing the Training Dynamics of LLMs</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-01-23 | ID: 73f2c564e8f1
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Dayal Singh Kalra, Jean-Christophe Gagnon-Audet, Andrey Gromov, and others introduces a scalable measure of loss landscape curvature for analyzing the training dynamics of large language models (LLMs). This measure aims to provide insights into the evolution of curvature in the loss landscape, which is crucial for understanding neural network training dynamics. By focusing on the largest eigenvalue of the loss Hessian, known as Hessian sharpness ($λ_{\max}^H$), the researchers aim to determine local training stability and its interaction with other factors impacting model training.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2601.16979v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-73f2c564e8f1" onclick="toggleTweets('73f2c564e8f1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-73f2c564e8f1">
+                <div class="tweet">Exciting research by Kalra, Gagnon-Audet, Gromov, and team introduces a scalable measure of loss landscape curvature for analyzing large language models' training dynamics. 🤓🔍 #AI #NeuralNetworks #TechResearch</div>
+<div class="tweet">Ever wondered how the evolution of curvature in the loss landscape impacts neural network training dynamics? Kalra et al.'s research sheds light on this crucial aspect! What implications could this have for future AI development? 🤔 #TechInnovation #ResearchQuestions</div>
+<div class="tweet">Key insight: Focusing on Hessian sharpness ($λ_{\max}^H$) offers a way to assess local training stability in large language models. Understanding loss landscape curvature is vital for enhancing model training efficiency and performance. 🧠💡 #TechInsights #DataScience</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-01-26 14:29" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="TikTok USA is broken">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.theverge.com/news/867625/tiktok-down-weekend-broke-fyp-video-uploads-review" target="_blank">TikTok USA is broken</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-01-26 14:29 | ID: 241a031ae1c2
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/technology with significant engagement highlights issues with TikTok in the USA. The conversation likely delves into concerns around privacy, security, or other technical problems affecting the popular social media platform in the country. This discussion could shed light on user experiences and potentially impact TikTok's reputation and user base in the USA.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/867625/tiktok-down-weekend-broke-fyp-video-uploads-review" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-241a031ae1c2" onclick="toggleTweets('241a031ae1c2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-241a031ae1c2">
+                <div class="tweet">Is TikTok USA facing a crisis? A Reddit thread in r/technology is buzzing with discussions on privacy, security, and technical issues. This could impact the popular social media platform in the country. Stay informed. #TikTok #TechNews</div>
+<div class="tweet">Are concerns over privacy and security breaking TikTok USA? Join the conversation on Reddit in r/technology and share your thoughts. How important are these issues for you when using social media platforms? #DataPrivacy #CyberSecurity</div>
+<div class="tweet">Insight from the Reddit discussion in r/technology: User experiences and technical problems could tarnish TikTok's reputation in the USA. Prioritizing privacy and security in social media platforms is crucial for building and maintaining user trust. #TechCommunity #OnlineSafety</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-01-26 09:30" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="[P] I built a full YOLO training pipeline without manual annotation (open-vocabulary auto-labeling)">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.reddit.com/gallery/1qnbipe" target="_blank">[P] I built a full YOLO training pipeline without manual annotation (open-vocabulary auto-labeling)</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-01-26 09:30 | ID: 5a9f07e662dd
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit user shared their achievement of creating a complete YOLO (You Only Look Once) training pipeline without manual annotation by implementing open-vocabulary auto-labeling. This innovative approach eliminates the need for manual annotation of training data, streamlining the process and potentially reducing the time and effort required for training object detection models using YOLO. The post garnered 33 upvotes and sparked 4 comments in the r/MachineLearning subreddit, showcasing interest and engagement within the community around this novel technique.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.reddit.com/gallery/1qnbipe" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5a9f07e662dd" onclick="toggleTweets('5a9f07e662dd')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-5a9f07e662dd">
+                <div class="tweet">Impressive innovation in the world of #MachineLearning! A Reddit user developed a YOLO training pipeline without manual annotation using open-vocabulary auto-labeling. This approach could revolutionize object detection model training by saving time and effort. #TechNews</div>
+<div class="tweet">Ever thought about automating the annotation process for training data in ML models? A Reddit user did just that by creating a YOLO training pipeline without manual annotation. How could this method impact the future of object detection models? #Innovation #TechTalk #YOLO</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-01-26 11:03" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="House Democrats introduced legislation that if passed would force federal immigration enforcement agents to wear a public-facing identification in the form of a clearly visible and scannable QR code during enforcement actions.">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.biometricupdate.com/202601/house-democrats-propose-qr-code-id-requirement-for-ice-cbp-agents" target="_blank">House Democrats introduced legislation that if passed would force federal immigration enforcement agents to wear a public-facing identification in the form of a clearly visible and scannable QR code during enforcement actions.</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-01-26 11:03 | ID: a8ac5f7d9012
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            House Democrats have proposed a bill that would require federal immigration enforcement agents to wear a public-facing identification in the form of a scannable QR code during enforcement actions. This measure aims to increase transparency and accountability in immigration enforcement by allowing individuals to easily verify the identity of agents involved in such actions. If passed, this legislation could have significant implications for how immigration enforcement is conducted and monitored.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.biometricupdate.com/202601/house-democrats-propose-qr-code-id-requirement-for-ice-cbp-agents" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a8ac5f7d9012" onclick="toggleTweets('a8ac5f7d9012')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a8ac5f7d9012">
+                <div class="tweet">House Democrats propose legislation requiring federal immigration agents to wear scannable QR codes for transparency during enforcement actions. #TechNews #QRCode #Immigration</div>
+<div class="tweet">How might the use of scannable QR codes on federal immigration agents impact accountability and trust in enforcement actions? Share your thoughts. #Transparency #Immigration #TechTalk</div>
+<div class="tweet">The introduction of QR codes as public-facing identification for federal immigration agents could revolutionize transparency in enforcement actions. #Innovation #Accountability #ImmigrationReform</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-01-26 16:54" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="After two years of vibecoding, I'm back to writing by hand">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://atmoio.substack.com/p/after-two-years-of-vibecoding-im" target="_blank">After two years of vibecoding, I'm back to writing by hand</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-01-26 16:54 | ID: 1120f20f931c
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in the r/programming subreddit has gained traction with 128 upvotes and 53 comments, focusing on a developer's return to writing code by hand after two years of using vibecoding. The post highlights the developer's shift in coding practice and the potential impact on productivity and workflow within the programming community.
+        </div>
+        <div class="source-link">
+            → <a href="https://atmoio.substack.com/p/after-two-years-of-vibecoding-im" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1120f20f931c" onclick="toggleTweets('1120f20f931c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1120f20f931c">
+                <div class="tweet">"After 2 years of vibecoding, a developer returns to writing code by hand. How will this shift impact productivity and workflow in the programming community? 🤔 #Coding #Programming #TechNews"</div>
+<div class="tweet">"Is the art of writing code by hand making a comeback in tech? Join the discussion sparked by a developer's decision to ditch vibecoding for a more traditional approach. #TechTrends #Development #Programming"</div>
+<div class="tweet">"Key takeaway: A developer's switch from vibecoding to writing code by hand prompts reflection on coding practices and productivity. Will this shift influence coding habits in the tech industry? 🖋️💻 #TechCommunity #Innovation #Workflow"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="28.0" 
+             data-published="Sun, 25 Jan 2026 12:00:25 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="A decade of Star Trek-themed fart jokes: The Greatest Generation podcast turns 10">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/01/a-decade-of-star-trek-themed-fart-jokes-the-greatest-generation-podcast-turns-10/" target="_blank">A decade of Star Trek-themed fart jokes: The Greatest Generation podcast turns 10</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sun, 25 Jan 2026 12:00:25 +0000 | ID: 269a4ecad3f9
+             | <span class="engagement-low">Engagement: [28.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 28%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Greatest Generation podcast, known for its Star Trek-themed humor, has reached its 10-year milestone. What started as a side project for two podcasters has evolved into a successful full-time career. The podcast's unique blend of Star Trek analysis and irreverent humor has garnered a dedicated following over the past decade.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/01/a-decade-of-star-trek-themed-fart-jokes-the-greatest-generation-podcast-turns-10/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-269a4ecad3f9" onclick="toggleTweets('269a4ecad3f9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-269a4ecad3f9">
+                <div class="tweet">Celebrate 10 years of Star Trek-themed humor with The Greatest Generation podcast! 🖖🎉 What started as a side project has become a tech comedy phenomenon. Congrats to @CutForTime and @BenjaminAhr! #StarTrek #PodcastAnniversary</div>
+<div class="tweet">Ever thought humor and Star Trek could go hand in hand? The Greatest Generation podcast proves it's possible! What's your favorite tech-themed joke from the show? Share your thoughts! 🚀😆 #SciFiComedy #PodcastHumor</div>
+<div class="tweet">The success of The Greatest Generation podcast showcases the power of blending tech analysis with humor. A perfect example of how niche content can build a strong, loyal tech-savvy community over time. 🌌🎙️ #TechPodcasts #NicheContent</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="28.0" 
+             data-published="Sat, 24 Jan 2026 18:36:11 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Did Edison accidentally make graphene in 1879?">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/01/did-edison-accidentally-make-graphene-in-1879/" target="_blank">Did Edison accidentally make graphene in 1879?</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 24 Jan 2026 18:36:11 +0000 | ID: a951c782e8e8
+             | <span class="engagement-low">Engagement: [28.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 28%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Rice University chemists recreated Thomas Edison's 1879 experiment and accidentally produced graphene, a single layer of carbon atoms arranged in a hexagonal lattice. This discovery suggests that Edison may have unknowingly made graphene over a century ago, shedding new light on the history of this versatile material with numerous technological applications. The finding highlights the potential for serendipitous discoveries in scientific research and underscores the enduring relevance of historical experiments in shaping modern innovations.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/01/did-edison-accidentally-make-graphene-in-1879/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a951c782e8e8" onclick="toggleTweets('a951c782e8e8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a951c782e8e8">
+                <div class="tweet">Did Thomas Edison accidentally create graphene in 1879? Rice University chemists recreated his experiment and unexpectedly produced the versatile material. History meets innovation! #Graphene #TechHistory</div>
+<div class="tweet">What if Thomas Edison unknowingly made graphene over a century ago? A recent experiment by Rice University chemists suggests just that, revealing the potential for serendipitous discoveries in scientific research. #Innovation #TechDiscovery</div>
+<div class="tweet">Recreating Thomas Edison's 1879 experiment led to the accidental production of graphene. This unexpected finding showcases the enduring relevance of historical experiments in shaping modern innovations. #TechInnovation #GrapheneDiscovery</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-01-26 18:30:35 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
