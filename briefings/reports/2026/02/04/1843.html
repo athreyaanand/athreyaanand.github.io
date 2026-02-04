@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - February 04, 2026, 06:43 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>February 04, 2026, 06:43 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-02-04 18:43:53
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 127.8 seconds</div>
+                <div>Start Time: 2026-02-04 18:43:53</div>
+                <div>End Time: 2026-02-04 18:46:00</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 5, Standard: 22, Low: 12</div>
+                <div>Topics Detected: 5</div>
+                <div>Cross-platform Stories: 2</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="68.5" 
+             data-published="2026-01-28 20:59" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Apple to soon take up to 30% cut from all Patreon creators in iOS app">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.macrumors.com/2026/01/28/patreon-apple-tax/" target="_blank">Apple to soon take up to 30% cut from all Patreon creators in iOS app</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-28 20:59 | ID: bc985a907022
+             | <span class="engagement-notable">Engagement: [68.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 68%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple is set to increase its commission from Patreon creators on iOS apps to up to 30%, up from the current 15-30% range. This move is expected to impact creators who rely on Patreon for income, as they will now have to share a larger portion of their earnings with Apple. The decision has sparked debate and concern within the tech community regarding Apple's App Store policies and the implications for content creators.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.macrumors.com/2026/01/28/patreon-apple-tax/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-bc985a907022" onclick="toggleTweets('bc985a907022')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-bc985a907022">
+                <div class="tweet">Apple plans to increase its commission from Patreon creators on iOS apps to up to 30%, impacting their earnings. This move has sparked debate on App Store policies. #Apple #Patreon #AppStore</div>
+<div class="tweet">Is Apple's decision to take a larger cut from Patreon creators fair or will it hinder creativity and income potential for content creators? Share your thoughts. #TechDebate #ContentCreators #AppStore</div>
+<div class="tweet">Apple's decision to increase commission from Patreon creators highlights the ongoing debate around platform fees and their impact on content creators. #TechNews #Apple #Patreon</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="67.5" 
+             data-published="2026-02-03 16:39" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="France dumps Zoom and Teams as Europe seeks digital autonomy from the US">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://apnews.com/article/europe-digital-sovereignty-big-tech-9f5388b68a0648514cebc8d92f682060" target="_blank">France dumps Zoom and Teams as Europe seeks digital autonomy from the US</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-02-03 16:39 | ID: e31fd5a89262
+             | <span class="engagement-notable">Engagement: [67.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 67%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            France has decided to move away from using Zoom and Microsoft Teams for its government communications, aiming to achieve digital autonomy from U.S.-based platforms. This decision aligns with Europe's broader efforts to reduce reliance on American tech companies for critical services. The move underscores growing concerns about data privacy and security, prompting governments to explore alternative solutions for secure communication platforms.
+        </div>
+        <div class="source-link">
+            → <a href="https://apnews.com/article/europe-digital-sovereignty-big-tech-9f5388b68a0648514cebc8d92f682060" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e31fd5a89262" onclick="toggleTweets('e31fd5a89262')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e31fd5a89262">
+                <div class="tweet">France is shifting away from Zoom and Teams for government communications to boost digital autonomy. Europe's move reflects concerns about data privacy and security. #France #TechNews #DigitalAutonomy</div>
+<div class="tweet">Is Europe's move to ditch Zoom and Teams a sign of a broader shift towards digital sovereignty? How might this impact the future of global tech partnerships? Share your thoughts! #TechTrends #DigitalSovereignty #DataPrivacy</div>
+<div class="tweet">France's decision to distance itself from Zoom and Teams highlights the increasing emphasis on data security and privacy in the digital age. Will this prompt other countries to reevaluate their tech partnerships? #DataSecurity #TechStrategy #DigitalTransformation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-02-03 19:37" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Data centers in space makes no sense">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://civai.org/blog/space-data-centers" target="_blank">Data centers in space makes no sense</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-02-03 19:37 | ID: 62ce9f8b9e90
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent Hacker News discussion highlighted the impracticality of data centers in space, with the consensus being that the idea lacks feasibility and cost-effectiveness. Technical challenges such as latency, maintenance, and the high costs associated with launching and maintaining such facilities were cited as major deterrents to the concept. The conversation underscored the importance of considering practicality and efficiency in technological advancements, especially in the realm of space-based infrastructure.
+        </div>
+        <div class="source-link">
+            → <a href="https://civai.org/blog/space-data-centers" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-62ce9f8b9e90" onclick="toggleTweets('62ce9f8b9e90')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-62ce9f8b9e90">
+                <div class="tweet">Is the idea of data centers in space truly feasible? A recent Hacker News discussion shed light on the impracticality and high costs associated with this concept. 🚀 #TechNews #SpaceTech</div>
+<div class="tweet">Can the challenges of latency and maintenance be overcome for space-based data centers? The tech community weighs in on the viability of this idea. 💭 #DataCenters #SpaceInfrastructure</div>
+<div class="tweet">Efficiency and practicality are key in technological advancements. The consensus on data centers in space highlights the importance of considering feasibility in innovation. 🌌 #TechInnovation #CostEffectiveness</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-01-30 20:05" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Antirender: remove the glossy shine on architectural renderings">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://antirender.com/" target="_blank">Antirender: remove the glossy shine on architectural renderings</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-30 20:05 | ID: cf4723936099
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Antirender is a new tool discussed on Hacker News that aims to eliminate the glossy shine often seen in architectural renderings. This tool, which garnered significant attention with 1833 points and 448 comments, could help architects and designers achieve a more realistic and natural look in their visualizations. By addressing this common issue in architectural rendering, Antirender has the potential to enhance the quality and authenticity of digital architectural designs.
+        </div>
+        <div class="source-link">
+            → <a href="https://antirender.com/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cf4723936099" onclick="toggleTweets('cf4723936099')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cf4723936099">
+                <div class="tweet">Exciting tech news! Antirender, a new tool discussed on Hacker News, aims to remove glossy shine from architectural renderings, enhancing realism and authenticity. 🏗️✨ #Antirender #ArchitecturalDesign #TechNews</div>
+<div class="tweet">Ever felt that architectural renderings lack realism due to glossy shine? Antirender, a hot topic on Hacker News, offers a solution to this common issue. How could this tool revolutionize digital architectural designs? 🤔 #Antirender #Architects #TechInnovation</div>
+<div class="tweet">Antirender's buzz on Hacker News highlights a key need in architectural rendering - eliminating glossy shine. With this tool's potential to enhance realism, designers can achieve more authentic visualizations. 🌟 #Antirender #ArchitecturalVisualization #DesignTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-02-04 03:54" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="I miss thinking hard">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.jernesto.com/articles/thinking_hard" target="_blank">I miss thinking hard</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-02-04 03:54 | ID: 94cbe277641c
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Hacker News discussion titled "I miss thinking hard" has garnered significant attention with 1107 points and 607 comments since its posting on February 4, 2026. The thread likely delves into the topic of intellectual stimulation and the desire for challenging problem-solving in the tech community, reflecting a shared sentiment among developers and tech professionals. This discussion may shed light on the importance of engaging in complex, thought-provoking tasks to foster innovation and personal growth within the industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.jernesto.com/articles/thinking_hard" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-94cbe277641c" onclick="toggleTweets('94cbe277641c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-94cbe277641c">
+                <div class="tweet">Join the conversation on The Hacker News about the importance of intellectual stimulation in tech. With 1107 points and 607 comments, tech professionals are sharing their thoughts on the need for challenging problem-solving. #TechCommunity #Innovation</div>
+<div class="tweet">Do you miss the thrill of thinking hard? Dive into the discussion on The Hacker News as tech enthusiasts share their longing for intellectual challenges in problem-solving. How important is it for innovation in the tech industry? #IntellectualStimulation #TechDiscussion</div>
+<div class="tweet">The "I miss thinking hard" thread on The Hacker News highlights a common desire among tech pros for engaging in complex problem-solving tasks. Embracing challenges can lead to personal growth and innovation within the tech industry. #ProblemSolving #TechGrowth</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="56" 
+             data-published="Wed, 04 Feb 2026 18:08:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Tinder looks to AI to help fight ‘swipe fatigue’ and dating app burnout">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/02/04/tinder-looks-to-ai-to-help-fight-swipe-fatigue-and-dating-app-burnout/" target="_blank">Tinder looks to AI to help fight ‘swipe fatigue’ and dating app burnout</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 04 Feb 2026 18:08:00 +0000 | ID: 8cb53cf22301
+             | <span class="engagement-standard">Engagement: [56.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 56%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Tinder is experimenting with AI technology to combat user "swipe fatigue" and enhance the dating app experience. The platform is testing AI-driven recommendations and utilizing insights from users' Camera Rolls to improve match suggestions, aiming to increase engagement and reduce burnout among users. This move showcases Tinder's commitment to leveraging advanced technology to enhance user satisfaction and retention within the competitive dating app market.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/02/04/tinder-looks-to-ai-to-help-fight-swipe-fatigue-and-dating-app-burnout/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8cb53cf22301" onclick="toggleTweets('8cb53cf22301')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8cb53cf22301">
+                <div class="tweet">Exciting news from Tinder! The dating app is harnessing AI to combat "swipe fatigue" and enhance user experience. 🤖💕 #Tinder #AI #DatingApp</div>
+<div class="tweet">Are you tired of endless swiping on dating apps? Tinder is using AI to change the game and reduce burnout among users. How do you think AI will revolutionize the dating app experience? 🧐 #TechTrends #AI #DatingApps</div>
+<div class="tweet">Tinder's use of AI to combat "swipe fatigue" highlights the importance of leveraging advanced technology to enhance user satisfaction and retention in competitive markets. Innovations like this could shape the future of dating apps. 🚀 #Innovation #UserExperience #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="55" 
+             data-published="Wed, 04 Feb 2026 17:56:37 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Hackers publish personal information stolen during Harvard, UPenn data breaches">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/02/04/hackers-publish-personal-information-stolen-during-harvard-upenn-data-breaches/" target="_blank">Hackers publish personal information stolen during Harvard, UPenn data breaches</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 04 Feb 2026 17:56:37 +0000 | ID: 0127a1726923
+             | <span class="engagement-standard">Engagement: [55.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 55%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The cybercrime group ShinyHunters has claimed responsibility for breaching Harvard and the University of Pennsylvania, leading to the exposure of personal information. The stolen data has been made public on an extortion website, highlighting the ongoing threat of cyberattacks targeting educational institutions and the importance of robust cybersecurity measures to safeguard sensitive information.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/02/04/hackers-publish-personal-information-stolen-during-harvard-upenn-data-breaches/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0127a1726923" onclick="toggleTweets('0127a1726923')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-0127a1726923">
+                <div class="tweet">Hackers strike again! Personal data from Harvard and UPenn breached by ShinyHunters. This incident emphasizes the critical need for stronger cybersecurity measures in educational institutions. #Cybersecurity #DataBreach</div>
+<div class="tweet">Is our personal information ever truly safe online? The recent breaches at Harvard and UPenn by ShinyHunters raise concerns about the vulnerability of educational institutions to cyberattacks. How can we better protect our data? #Privacy #CyberThreats</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="54" 
+             data-published="Wed, 04 Feb 2026 17:56:40 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Lunar Energy raises $232M to deploy home batteries that prop up the grid">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/02/04/lunar-energy-raises-232m-to-deploy-home-batteries-that-prop-up-the-grid/" target="_blank">Lunar Energy raises $232M to deploy home batteries that prop up the grid</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 04 Feb 2026 17:56:40 +0000 | ID: 2182bbffe96f
+             | <span class="engagement-standard">Engagement: [54.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Lunar Energy, a startup, has secured $232 million in funding to deploy home batteries that will help stabilize the power grid. The company aims to create a distributed power plant using residential batteries, with total funding exceeding $500 million. This initiative could significantly impact grid reliability and energy sustainability by leveraging residential energy storage solutions.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/02/04/lunar-energy-raises-232m-to-deploy-home-batteries-that-prop-up-the-grid/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2182bbffe96f" onclick="toggleTweets('2182bbffe96f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2182bbffe96f">
+                <div class="tweet">Exciting news in the energy sector! Lunar Energy secures $232M to deploy home batteries for grid stability. A step towards a more sustainable energy future. #LunarEnergy #EnergyStorage #Sustainability</div>
+<div class="tweet">How can residential batteries revolutionize grid stability? Lunar Energy's $232M funding to deploy home batteries is a game-changer in energy innovation. What are your thoughts on this approach? #GridStability #EnergyInnovation #LunarEnergy</div>
+<div class="tweet">Lunar Energy's funding of $232M to deploy home batteries for grid support highlights the growing importance of distributed power solutions. Residential energy storage is shaping the future of energy reliability and sustainability. #DistributedPower #EnergyReliability #FutureTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="52.5" 
+             data-published="Wed, 04 Feb 2026 14:53:21 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="After backlash, Adobe cancels Adobe Animate shutdown and puts app on ‘maintenance mode’">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/02/04/after-backlash-adobe-cancels-adobe-animate-shutdown-and-puts-app-on-maintenance-mode/" target="_blank">After backlash, Adobe cancels Adobe Animate shutdown and puts app on ‘maintenance mode’</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 04 Feb 2026 14:53:21 +0000 | ID: 3d2b2e99f349
+             | <span class="engagement-standard">Engagement: [52.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Following a backlash, Adobe has reversed its decision to shut down Adobe Animate and will now place the application in "maintenance mode." This means the software will continue to receive updates and bug fixes but will not see major new features. The move comes after significant criticism from users and demonstrates Adobe's responsiveness to customer feedback in preserving the popular animation tool.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/02/04/after-backlash-adobe-cancels-adobe-animate-shutdown-and-puts-app-on-maintenance-mode/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3d2b2e99f349" onclick="toggleTweets('3d2b2e99f349')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3d2b2e99f349">
+                <div class="tweet">After user backlash, Adobe cancels Adobe Animate shutdown and shifts to 'maintenance mode.' Users can breathe a sigh of relief as the popular animation tool will continue to receive updates and bug fixes. #AdobeAnimate #TechNews</div>
+<div class="tweet">Is customer feedback the driving force behind tech companies' decisions? Adobe's reversal on Adobe Animate shutdown shows the impact of user criticism. How important is user input in shaping tech products? #CustomerFeedback #TechIndustry</div>
+<div class="tweet">Key takeaway from Adobe's decision to keep Adobe Animate in 'maintenance mode': User feedback matters. Tech companies need to listen to their users to maintain trust and relevance in the industry. #UserFeedback #TechCompanies</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="2026-01-30 03:55" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Moltbook">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.moltbook.com/" target="_blank">Moltbook</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-01-30 03:55 | ID: 4a2a3d34c717
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new project called Moltbook has gained traction on Hacker News with 1649 points and 5 comments. The project, posted on January 30, 2026, appears to be generating interest within the developer community for its technical aspects or potential impact. Further details about Moltbook's specific features or purpose were not provided in the summary.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.moltbook.com/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4a2a3d34c717" onclick="toggleTweets('4a2a3d34c717')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4a2a3d34c717">
+                <div class="tweet">Exciting buzz on Hacker News about the new project Moltbook! 🚀 With 1649 points and 5 comments, it's catching the eye of the developer community. Stay tuned for more updates! #Moltbook #TechNews #HackerNews</div>
+<div class="tweet">Ever heard of Moltbook? This new project is making waves on Hacker News with its mysterious allure. What could be its potential impact in the tech world? 🤔 #Moltbook #TechCommunity #Innovation</div>
+<div class="tweet">Moltbook's rise on Hacker News highlights the tech community's hunger for innovation and cutting-edge projects. Keep an eye on this one—it might just be the next big thing! #Moltbook #TechInnovation #DeveloperCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Wed, 04 Feb 2026 17:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Roblox’s 4D creation feature is now available in open beta">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/02/04/robloxs-4d-creation-feature-is-now-available-in-open-beta/" target="_blank">Roblox’s 4D creation feature is now available in open beta</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 04 Feb 2026 17:00:00 +0000 | ID: 339f6a9fe287
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Roblox has launched its 4D creation feature in open beta, allowing developers to create immersive experiences with dynamic elements such as weather effects and time changes. This feature enables users to enhance their games with more interactive and engaging content, potentially leading to a new wave of innovative and captivating experiences on the platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/02/04/robloxs-4d-creation-feature-is-now-available-in-open-beta/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-339f6a9fe287" onclick="toggleTweets('339f6a9fe287')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-339f6a9fe287">
+                <div class="tweet">Exciting news for Roblox developers! 🚀 The 4D creation feature is now available in open beta, enabling dynamic elements like weather effects and time changes. Get ready to create more immersive experiences on #Roblox! #TechNews</div>
+<div class="tweet">Ever wondered what it would be like to add weather effects and time changes to your Roblox games? Now you can with the new 4D creation feature in open beta! How will this innovation change the gaming experience for players? 🤔 #Roblox #GamingTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Wed, 04 Feb 2026 15:33:58 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="ElevenLabs raises $500M from Sequoia at an $11 billion valuation">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/02/04/elevenlabs-raises-500m-from-sequioia-at-a-11-billion-valuation/" target="_blank">ElevenLabs raises $500M from Sequoia at an $11 billion valuation</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 04 Feb 2026 15:33:58 +0000 | ID: 5c64912d2d7b
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            ElevenLabs, a tech company, has secured a significant $500 million investment from Sequoia, boosting its valuation to $11 billion. This marks a remarkable increase, with the company's valuation more than tripling in the past year, reflecting strong investor confidence in its growth potential and technology offerings.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/02/04/elevenlabs-raises-500m-from-sequioia-at-a-11-billion-valuation/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5c64912d2d7b" onclick="toggleTweets('5c64912d2d7b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5c64912d2d7b">
+                <div class="tweet">Exciting news in tech funding! ElevenLabs secures a massive $500M investment from Sequoia, pushing its valuation to $11 billion. The rapid growth and investor confidence in their technology are truly impressive. #TechNews #ElevenLabs #Startup</div>
+<div class="tweet">💭 How did ElevenLabs manage to triple its valuation in just a year? 💡 Share your thoughts on what this substantial investment means for the tech industry and the company's future. #TechInvestment #Innovation #Sequoia</div>
+<div class="tweet">Key insight: ElevenLabs' $500M boost from Sequoia, raising its valuation to $11 billion, showcases the strong investor belief in their tech solutions. A remarkable journey reflecting the power of innovation and growth in the tech sector. #TechGrowth #Innovation #ElevenLabs</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Wed, 04 Feb 2026 14:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="SNAK Venture Partners raises $50M fund to back vertical marketplaces">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/02/04/snak-venture-partners-raises-50m-fund-to-back-digitizing-marketplaces/" target="_blank">SNAK Venture Partners raises $50M fund to back vertical marketplaces</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 04 Feb 2026 14:00:00 +0000 | ID: 4fa401a04cd2
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            SNAK Venture Partners has secured a $50 million fund to support vertical marketplaces, with investments in companies like BigRentals and Repackify, specializing in equipment rental and packaging logistics. This funding will enable the growth of these niche market platforms, potentially driving innovation and expansion within their respective industries.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/02/04/snak-venture-partners-raises-50m-fund-to-back-digitizing-marketplaces/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4fa401a04cd2" onclick="toggleTweets('4fa401a04cd2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4fa401a04cd2">
+                <div class="tweet">Exciting news in the tech investment world! SNAK Venture Partners secures a $50M fund to support vertical marketplaces like BigRentals and Repackify. 🚀💰 #TechInvestment #VerticalMarketplaces</div>
+<div class="tweet">How will the $50M fund from SNAK Venture Partners impact innovation within niche market platforms like equipment rental and packaging logistics? 🤔💡 #TechInnovation #VentureCapital</div>
+<div class="tweet">With the backing of SNAK Venture Partners, companies like BigRentals and Repackify have the opportunity to drive industry expansion and innovation in their specialized markets. 🌟💼 #TechStartups #IndustryGrowth</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="47.5" 
+             data-published="Wed, 04 Feb 2026 14:15:34 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Uber appoints new CFO as its AV plans accelerate">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/02/04/uber-appoints-new-cfo-as-its-av-plans-accelerate/" target="_blank">Uber appoints new CFO as its AV plans accelerate</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 04 Feb 2026 14:15:34 +0000 | ID: 78f5abadbf90
+             | <span class="engagement-standard">Engagement: [47.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 47%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Uber has appointed Manikandan Krishnamurthy as its new CFO as the company's autonomous vehicle (AV) plans gain momentum. Krishnamurthy, with over six years of experience at Uber, will bring his expertise from the investor relations division to drive financial strategies for Uber's AV initiatives, signaling a strategic shift towards advancing autonomous technology within the company.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/02/04/uber-appoints-new-cfo-as-its-av-plans-accelerate/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-78f5abadbf90" onclick="toggleTweets('78f5abadbf90')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-78f5abadbf90">
+                <div class="tweet">Uber makes strategic move in appointing Manikandan Krishnamurthy as its new CFO to lead financial strategies for its autonomous vehicle plans. #Uber #autonomousvehicles #technews</div>
+<div class="tweet">Is Uber's appointment of Manikandan Krishnamurthy as CFO a sign of a major push towards autonomous technology within the company? Share your thoughts! #Uber #CFO #AV #techstrategy</div>
+<div class="tweet">The choice of Manikandan Krishnamurthy to drive financial strategies for Uber's AV initiatives highlights the company's commitment to accelerating autonomous technology development. #Uber #autonomousvehicles #techstrategy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.0" 
+             data-published="2026-02-03" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Investigating Quantum Circuit Designs Using Neuro-Evolution">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2602.03840v1" target="_blank">Investigating Quantum Circuit Designs Using Neuro-Evolution</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-02-03 | ID: ca0e91c2f915
+             | <span class="engagement-standard">Engagement: [45.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A research paper by Devroop Kar, Daniel Krutz, and Travis Desell explores the use of neuro-evolution to investigate quantum circuit designs. The study aims to address the challenge of designing effective quantum circuits, as circuit structure significantly impacts expressivity, trainability, and hardware feasibility in quantum computing. By leveraging neuro-evolution, the research offers a novel approach to optimizing quantum circuit designs, potentially advancing the field's understanding and development of quantum algorithms.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2602.03840v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ca0e91c2f915" onclick="toggleTweets('ca0e91c2f915')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ca0e91c2f915">
+                <div class="tweet">Exciting research by Devroop Kar, Daniel Krutz, and Travis Desell delves into using neuro-evolution to enhance quantum circuit designs. Discover how this innovative approach could revolutionize quantum computing! 🧠⚛️ #QuantumComputing #NeuroEvolution</div>
+<div class="tweet">Curious about the intersection of AI and quantum computing? Dive into the research by Kar, Krutz, and Desell on using neuro-evolution to optimize quantum circuit designs. How might this impact future quantum algorithms? 🤔 #AI #TechInnovation</div>
+<div class="tweet">Key insight from the study by Kar, Krutz, and Desell: Leveraging neuro-evolution could unlock new possibilities for designing efficient quantum circuits. This approach may pave the way for advancements in quantum algorithm development. 🌐🔬 #TechResearch #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="2026-02-04T13:12:22-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The best iPad deals you can get right now">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/21280354/best-ipad-deals-apple" target="_blank">The best iPad deals you can get right now</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-02-04T13:12:22-05:00 | ID: 484ccb905a9d
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article highlights ongoing discounts on iPads beyond major sale events like Black Friday, with savings available on various models including the iPad Mini and iPad Air. These day-to-day deals offer opportunities to save on Apple's more affordable iPads, providing a chance for consumers to purchase these devices at reduced prices outside of traditional sale periods.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/21280354/best-ipad-deals-apple" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-484ccb905a9d" onclick="toggleTweets('484ccb905a9d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-484ccb905a9d">
+                <div class="tweet">Looking for a deal on iPads? Check out ongoing discounts on various models including the iPad Mini and iPad Air. Save on Apple's more affordable iPads today! #iPad #TechDeals</div>
+<div class="tweet">Are day-to-day iPad deals the new way to save on Apple's tablets? Share your thoughts on snagging discounts beyond traditional sale events like Black Friday. #iPadDeals #TechSavings</div>
+<div class="tweet">Don't wait for major sale events to save on iPads! Ongoing discounts are now available, giving you the chance to own Apple's popular tablets at reduced prices. Stay updated on the latest tech deals. #iPad #TechSavvy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.0" 
+             data-published="2026-02-03" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="EventNeuS: 3D Mesh Reconstruction from a Single Event Camera">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2602.03847v1" target="_blank">EventNeuS: 3D Mesh Reconstruction from a Single Event Camera</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-02-03 | ID: f9e910361409
+             | <span class="engagement-standard">Engagement: [44.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "EventNeuS: 3D Mesh Reconstruction from a Single Event Camera" by Shreyas Sachan, Viktor Rudnev, Mohamed Elgharib, et al. introduces a novel approach to dense 3D mesh reconstruction using event cameras, offering a promising alternative to traditional RGB cameras. Existing event-based techniques have been limited in their 3D reconstruction accuracy, making this new method a significant advancement in the field of computer vision and visual perception. The research aims to address the challenges in achieving high-fidelity 3D reconstructions from a single event camera, opening up new possibilities for applications in various scenarios.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2602.03847v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f9e910361409" onclick="toggleTweets('f9e910361409')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-f9e910361409">
+                <div class="tweet">Exciting breakthrough in computer vision! "EventNeuS: 3D Mesh Reconstruction from a Single Event Camera" introduces a game-changing approach to 3D reconstruction using event cameras. 🌐📸 #ComputerVision #EventNeuS #TechInnovation</div>
+<div class="tweet">Ever wondered how event cameras could revolutionize 3D mesh reconstruction? The research paper "EventNeuS" sheds light on a groundbreaking method that challenges traditional RGB camera limitations. How might this impact future tech developments? 🧐 #EventCameras #FutureTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="2026-02-04T12:30:00-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Apple TV details its 2026 streaming lineup with big list of announcements">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/streaming/873862/apple-tv-2026-streaming-lineup" target="_blank">Apple TV details its 2026 streaming lineup with big list of announcements</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-02-04T12:30:00-05:00 | ID: eab477fa3a89
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple TV has unveiled its 2026 streaming lineup, signaling a shift towards a more extensive content library to compete with rivals like Netflix and Disney. The move aims to attract a broader audience by offering a larger selection of shows and movies, moving away from its previous focus on quality over quantity. This strategic shift reflects Apple's ambition to strengthen its position in the highly competitive streaming market.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/streaming/873862/apple-tv-2026-streaming-lineup" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-eab477fa3a89" onclick="toggleTweets('eab477fa3a89')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-eab477fa3a89">
+                <div class="tweet">Exciting news from Apple TV! 🍏📺 Get ready for a more extensive streaming lineup in 2026, focusing on quantity and quality to compete with Netflix and Disney. 🎬🍿 #AppleTV #Streaming #TechNews</div>
+<div class="tweet">Curious about Apple TV's strategic shift in its 2026 streaming lineup? 🤔 How will the move to offer a broader content library impact its competition in the streaming market? 📈💥 #AppleTV #StreamingWars #TechStrategy</div>
+<div class="tweet">Apple TV's decision to expand its content library for 2026 shows a shift towards attracting a wider audience. 🌟 Quality meets quantity in the battle against streaming giants like Netflix and Disney. 🍎📽️ #AppleTV #StreamingStrategy #TechIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="2026-02-04T12:00:00-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="GitHub adds Claude and Codex AI coding agents">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/873665/github-claude-codex-ai-agents" target="_blank">GitHub adds Claude and Codex AI coding agents</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-02-04T12:00:00-05:00 | ID: c0d296277ead
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            GitHub has integrated Claude by Anthropic and OpenAI's Codex AI coding agents into its platform, including GitHub Mobile and Visual Studio Code, for users with specific subscriptions. This integration, part of GitHub's Agent HQ initiative, aims to enhance coding productivity and provide advanced AI assistance to developers directly within their development environments.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/873665/github-claude-codex-ai-agents" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c0d296277ead" onclick="toggleTweets('c0d296277ead')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-c0d296277ead">
+                <div class="tweet">Exciting news for developers! GitHub has introduced Claude by Anthropic and OpenAI's Codex AI coding agents to boost coding productivity within GitHub Mobile and Visual Studio Code. #GitHub #AI #CodingAgents</div>
+<div class="tweet">Ever wondered how AI can revolutionize coding? GitHub's integration of Claude and Codex AI coding agents is a game-changer, offering advanced assistance to developers. How do you think this will impact the future of coding? #GitHub #AI #FutureCoding</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.0" 
+             data-published="2026-02-03" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="PLATE: Plasticity-Tunable Efficient Adapters for Geometry-Aware Continual Learning">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2602.03846v1" target="_blank">PLATE: Plasticity-Tunable Efficient Adapters for Geometry-Aware Continual Learning</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-02-03 | ID: 6fc4e41bd2ab
+             | <span class="engagement-standard">Engagement: [43.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            In the research paper titled "PLATE: Plasticity-Tunable Efficient Adapters for Geometry-Aware Continual Learning" by Romain Cosentino, a novel continual learning method is introduced for pretrained models that does not rely on access to old-task data. This addresses a common challenge in adapting foundation models when pretraining distributions are not accessible. The method leverages the observation that pretrained networks demonstrate significant plasticity, offering a promising approach for efficient adaptation in continual learning scenarios.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2602.03846v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6fc4e41bd2ab" onclick="toggleTweets('6fc4e41bd2ab')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6fc4e41bd2ab">
+                <div class="tweet">PLATE introduces a new method for continual learning that doesn't require access to old-task data. Leveraging the plasticity of pretrained models, this approach offers efficient adaptation for future tasks. #PLATE #ContinualLearning</div>
+<div class="tweet">Can pretrained models demonstrate plasticity for efficient adaptation in continual learning? Find out how PLATE addresses this challenge without relying on old-task data. #PLATE #MachineLearning</div>
+<div class="tweet">Key insight from PLATE research: Pretrained models exhibit significant plasticity, enabling efficient adaptation for new tasks in continual learning scenarios. Exciting advancements in the field! #PLATE #ResearchInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Tue, 03 Feb 2026 22:44:15 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Nvidia's $100 billion OpenAI deal has seemingly vanished">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/information-technology/2026/02/five-months-later-nvidias-100-billion-openai-investment-plan-has-fizzled-out/" target="_blank">Nvidia's $100 billion OpenAI deal has seemingly vanished</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 03 Feb 2026 22:44:15 +0000 | ID: cd49f962fefd
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Nvidia's highly anticipated $100 billion deal with OpenAI appears to have fallen through, causing market uncertainty. The failed investment between the two AI powerhouses has raised questions about the future of their collaboration and its potential impact on the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/information-technology/2026/02/five-months-later-nvidias-100-billion-openai-investment-plan-has-fizzled-out/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cd49f962fefd" onclick="toggleTweets('cd49f962fefd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cd49f962fefd">
+                <div class="tweet">Nvidia's much-anticipated $100 billion deal with OpenAI seems to have fizzled out, leaving the tech world abuzz with uncertainty. What could this mean for the future of AI collaboration? #Nvidia #OpenAI #TechNews</div>
+<div class="tweet">Curious minds want to know: What led to the collapse of Nvidia's colossal $100 billion deal with OpenAI? The fallout raises intriguing questions about the dynamics of AI partnerships in the ever-evolving tech landscape. #AI #TechIndustry #Collaboration</div>
+<div class="tweet">The failure of Nvidia's potentially game-changing $100 billion investment in OpenAI highlights the volatile nature of tech partnerships. As two AI giants hit a roadblock, the tech industry braces for potential ripple effects. #TechPartnerships #Innovation #MarketImpact</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-02-04T12:27:30-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Google Cloud’s customer chief returns to Microsoft as head of security">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/873930/google-cloud-hayete-gallot-microsoft-security" target="_blank">Google Cloud’s customer chief returns to Microsoft as head of security</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-02-04T12:27:30-05:00 | ID: b21d55226a41
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Hayete Gallot, who previously led customer experience at Google Cloud, is returning to Microsoft as the new Executive Vice President of Security, reporting to CEO Satya Nadella. This move signifies a strategic shift in Microsoft's security leadership, with Gallot's extensive experience likely to influence the company's security strategy and initiatives going forward.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/873930/google-cloud-hayete-gallot-microsoft-security" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b21d55226a41" onclick="toggleTweets('b21d55226a41')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b21d55226a41">
+                <div class="tweet">Exciting news in the tech world! Hayete Gallot, former customer chief at Google Cloud, is now heading security at Microsoft. Her expertise is set to shape Microsoft's security strategy moving forward. 🔒 #TechNews #CyberSecurity</div>
+<div class="tweet">What impact will Hayete Gallot's return to Microsoft as head of security have on the tech giant's cybersecurity efforts? 🤔 Share your thoughts! #TechLeadership #CyberDefense</div>
+<div class="tweet">Hayete Gallot's appointment as Microsoft's new EVP of Security underlines the importance of experienced leadership in shaping robust cybersecurity measures. A strategic move for Microsoft's security posture. 🔐 #TechLeaders #CyberDefense</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.0" 
+             data-published="2026-02-03" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Parallel-Probe: Towards Efficient Parallel Thinking via 2D Probing">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2602.03845v1" target="_blank">Parallel-Probe: Towards Efficient Parallel Thinking via 2D Probing</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-02-03 | ID: 0e24142190f2
+             | <span class="engagement-standard">Engagement: [42.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper "Parallel-Probe: Towards Efficient Parallel Thinking via 2D Probing" by Tong Zheng, Chengsong Huang, Runpeng Dai, and others addresses the challenge of computational burdens in parallel thinking for reasoning. The paper introduces the concept of 2D probing as a mechanism to exploit global dynamics across parallel branches, aiming to enhance efficiency in parallel processing. This innovation could potentially improve the performance of parallel thinking systems by providing a principled approach to leveraging global information for more effective reasoning.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2602.03845v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0e24142190f2" onclick="toggleTweets('0e24142190f2')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-0e24142190f2">
+                <div class="tweet">Exciting research alert! The paper "Parallel-Probe: Towards Efficient Parallel Thinking via 2D Probing" presents a novel approach to enhance efficiency in parallel processing by introducing 2D probing. 🚀 #TechInnovation #ParallelThinking</div>
+<div class="tweet">Ever wondered how to address computational burdens in parallel thinking for reasoning? "Parallel-Probe: Towards Efficient Parallel Thinking via 2D Probing" explores the concept of 2D probing to boost efficiency. What are your thoughts on this approach? 💭 #TechResearch #2DProbing</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Wed, 04 Feb 2026 15:02:29 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Russian spy satellites have intercepted EU communications satellites">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/02/russian-spy-satellites-have-intercepted-eu-communications-satellites/" target="_blank">Russian spy satellites have intercepted EU communications satellites</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 04 Feb 2026 15:02:29 +0000 | ID: 4dfa3950a1e0
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Russian spy satellites have reportedly intercepted unencrypted European Union communications transmitted by EU satellites. The breach highlights the vulnerability of unencrypted communications and raises concerns about potential security risks for sensitive EU data. The incident underscores the importance of encryption and secure communication protocols to protect sensitive information from unauthorized access.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/02/russian-spy-satellites-have-intercepted-eu-communications-satellites/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4dfa3950a1e0" onclick="toggleTweets('4dfa3950a1e0')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4dfa3950a1e0">
+                <div class="tweet">Russian spy satellites have intercepted unencrypted EU communications via EU satellites, emphasizing the critical need for encryption to safeguard sensitive information. #DataSecurity #Encryption #TechNews</div>
+<div class="tweet">Are unencrypted communications putting sensitive EU data at risk? The recent breach by Russian spy satellites highlights the importance of secure communication protocols in today's digital age. #CyberSecurity #DataPrivacy #TechEthics</div>
+<div class="tweet">The interception of EU communications by Russian spy satellites underscores the urgent need for organizations to prioritize encryption and secure communication methods to prevent unauthorized access to sensitive data. #InfoSec #PrivacyMatters #StaySecure</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Wed, 04 Feb 2026 14:41:30 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="NASA finally acknowledges the elephant in the room with the SLS rocket">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/02/nasa-finally-acknowledges-the-elephant-in-the-room-with-the-sls-rocket/" target="_blank">NASA finally acknowledges the elephant in the room with the SLS rocket</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 04 Feb 2026 14:41:30 +0000 | ID: 71c73659b208
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            NASA has acknowledged the significant delays in the Space Launch System (SLS) rocket program, with Administrator Bill Nelson acknowledging the three-year gap between flights as a major concern. The admission comes as NASA faces pressure to improve efficiency and meet ambitious timelines for upcoming missions, highlighting the challenges in the development of the SLS rocket. This acknowledgment underscores the need for NASA to address the delays and streamline its processes to ensure timely and successful launches in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/02/nasa-finally-acknowledges-the-elephant-in-the-room-with-the-sls-rocket/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-71c73659b208" onclick="toggleTweets('71c73659b208')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-71c73659b208">
+                <div class="tweet">"NASA confronts delays in the SLS rocket program head-on, highlighting the importance of addressing inefficiencies to meet mission timelines. 🚀 #NASA #SLSrocket #SpaceTech"</div>
+<div class="tweet">"Are the delays in the SLS rocket program a sign of larger systemic issues at NASA? How can the agency overcome these challenges to ensure successful future missions? 🤔 #SpaceLaunchSystem #TechNews #Innovation"</div>
+<div class="tweet">"NASA's acknowledgment of delays in the SLS rocket program underscores the necessity for streamlined processes and improved efficiency in space tech development. 🛰️ #NASA #SLSrocket #TechInnovation"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Tue, 03 Feb 2026 22:55:59 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Godlike Titan threatens humanity in Monarch: Legacy of Monsters S2 trailer">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/02/meet-the-new-tentacled-titan-x-in-monarch-legacy-of-monsters-s2-trailer/" target="_blank">Godlike Titan threatens humanity in Monarch: Legacy of Monsters S2 trailer</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 03 Feb 2026 22:55:59 +0000 | ID: abf813d9cafa
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The trailer for Season 2 of Monarch: Legacy of Monsters reveals a powerful Titan threatening humanity, described as godlike and revered by sea creatures. The teaser hints at escalating conflicts and challenges for players in the upcoming season, promising intense gameplay experiences.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/02/meet-the-new-tentacled-titan-x-in-monarch-legacy-of-monsters-s2-trailer/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-abf813d9cafa" onclick="toggleTweets('abf813d9cafa')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-abf813d9cafa">
+                <div class="tweet">Gear up for intense gameplay experiences in Season 2 of Monarch: Legacy of Monsters! The new trailer showcases a godlike Titan threatening humanity, setting the stage for epic battles and challenges. 🎮 #MonarchLegacy #Season2 #GamingNews</div>
+<div class="tweet">Is humanity doomed in Monarch: Legacy of Monsters Season 2? The menacing presence of a godlike Titan hints at escalating conflicts and intense gameplay. How will players rise to the challenge? 🤔 #MonarchLegacy #Season2 #GamingCommunity</div>
+<div class="tweet">The trailer for Monarch: Legacy of Monsters Season 2 unveils a powerful Titan revered by sea creatures, adding a new layer of depth to the game's lore. Get ready for an immersive gaming experience with escalating challenges! 🌊🎮 #MonarchLegacy #Season2 #GamingInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Tue, 03 Feb 2026 20:13:08 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="X office raided in France's Grok probe; Elon Musk summoned for questioning">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/02/x-office-raided-in-frances-grok-probe-elon-musk-summoned-for-questioning/" target="_blank">X office raided in France's Grok probe; Elon Musk summoned for questioning</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 03 Feb 2026 20:13:08 +0000 | ID: e304d940a380
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            French authorities raided X's office as part of the Grok probe investigating illegal content, including pornographic images of minors. Elon Musk has been summoned for questioning in relation to this investigation. The probe highlights the ongoing challenges tech companies face in monitoring and removing illegal content from their platforms.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/02/x-office-raided-in-frances-grok-probe-elon-musk-summoned-for-questioning/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e304d940a380" onclick="toggleTweets('e304d940a380')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e304d940a380">
+                <div class="tweet">French authorities raid X's office in Grok probe investigating illegal content. Elon Musk summoned for questioning. Highlights challenges tech companies face in monitoring and removing illegal content. #TechNews #GrokProbe</div>
+<div class="tweet">How can tech companies effectively balance user privacy with the responsibility to monitor and remove illegal content from their platforms? The recent Grok probe in France sheds light on this ongoing challenge. #TechEthics #ContentModeration</div>
+<div class="tweet">The Grok probe's raid on X's office and Elon Musk's summons underline the importance of robust content moderation efforts by tech companies. Striking the right balance between free speech and preventing harm remains a complex task. #TechRegulation #OnlineSafety</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-02-04T12:24:53-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Google&#8217;s Pixel 10A will be revealed on February 18th">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/873923/google-pixel-10a-launch-date-reveal-teaser" target="_blank">Google&#8217;s Pixel 10A will be revealed on February 18th</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-02-04T12:24:53-05:00 | ID: decab23d0bd9
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has unveiled the Pixel 10A, its newest budget-friendly smartphone, set to be available for preorder on February 18th. The teaser image released by Google showcases the device in a powdery blue color, hinting at a sleek design and potentially new features. Tech enthusiasts can anticipate the official reveal to learn more about the Pixel 10A's specifications and capabilities.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/873923/google-pixel-10a-launch-date-reveal-teaser" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-decab23d0bd9" onclick="toggleTweets('decab23d0bd9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-decab23d0bd9">
+                <div class="tweet">Exciting news for tech enthusiasts! 📱 Google will unveil the budget-friendly Pixel 10A on February 18th. Preorders start on the same day. Get ready to explore this sleek device in powdery blue! #GooglePixel10A #TechNews</div>
+<div class="tweet">Curious about the upcoming Google Pixel 10A? What new features are you hoping to see on this budget-friendly smartphone? Share your thoughts! #Pixel10A #TechEnthusiasts</div>
+<div class="tweet">The teaser image of Google's Pixel 10A hints at a stylish design and potential new features. Stay tuned for the official reveal on February 18th to discover more about its specs and capabilities. #GooglePixel #NewTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-02-04T12:00:00-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Roblox calls its take on AI world models ‘real-time dreaming’">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/873777/roblox-ai-world-models-real-time-dreaming-4d-creation-tools" target="_blank">Roblox calls its take on AI world models ‘real-time dreaming’</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-02-04T12:00:00-05:00 | ID: 1c9c31e54acb
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Roblox is exploring the concept of "real-time dreaming" using AI world models and prompts to enable creators to generate and modify interactive 3D experiences on its platform. This initiative follows Google's unveiling of Project Genie, which also leverages AI world models for creating interactive experiences. Roblox's approach aims to empower creators with dynamic tools to enhance user engagement and creativity within its virtual world ecosystem.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/873777/roblox-ai-world-models-real-time-dreaming-4d-creation-tools" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1c9c31e54acb" onclick="toggleTweets('1c9c31e54acb')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1c9c31e54acb">
+                <div class="tweet">"Roblox pioneers 'real-time dreaming' with AI world models to empower creators in designing dynamic 3D experiences. A game-changer for user engagement! #Roblox #AI #TechNews"</div>
+<div class="tweet">"What could 'real-time dreaming' mean for the future of interactive 3D experiences? Roblox's innovative approach with AI world models sparks creativity and user engagement. #Roblox #AI #TechInnovation"</div>
+<div class="tweet">"By enabling creators to modify interactive experiences in real-time, Roblox's 'real-time dreaming' initiative sets a new standard for user engagement and creativity within virtual worlds. #Roblox #AI #TechTrends"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="Wed, 04 Feb 2026 12:00:37 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="So yeah, I vibe-coded a log colorizer—and I feel good about it">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/features/2026/02/so-yeah-i-vibe-coded-a-log-colorizer-and-i-feel-good-about-it/" target="_blank">So yeah, I vibe-coded a log colorizer—and I feel good about it</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 04 Feb 2026 12:00:37 +0000 | ID: 42e3de2b1a6d
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the author's experience creating a log colorizer using Vibe, a programming language. The author reflects on the role of Large Language Models (LLMs) in their work and expresses satisfaction with the project. This showcases the practical application of Vibe and highlights the author's positive experience with coding using LLMs.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/features/2026/02/so-yeah-i-vibe-coded-a-log-colorizer-and-i-feel-good-about-it/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-42e3de2b1a6d" onclick="toggleTweets('42e3de2b1a6d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-42e3de2b1a6d">
+                <div class="tweet">Exciting read on vibe-coding a log colorizer using Vibe programming language. Explore the author's journey leveraging Large Language Models in this project. #Tech #Programming</div>
+<div class="tweet">Ever wondered about the potential of Large Language Models in coding projects? Dive into this article where the author shares their experience vibe-coding a log colorizer using Vibe. #LLM #Coding</div>
+<div class="tweet">Key takeaway: Vibe programming language offers practical applications in coding projects, as seen in this log colorizer creation. Discover the author's positive experience utilizing Large Language Models. #Vibe #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="Tue, 03 Feb 2026 23:41:39 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Netflix says users can cancel service if HBO Max merger makes it too expensive">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/02/netflix-claims-subscribers-will-get-more-content-for-less-if-it-buys-hbo-max/" target="_blank">Netflix says users can cancel service if HBO Max merger makes it too expensive</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 03 Feb 2026 23:41:39 +0000 | ID: 72f03d1f72f9
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Netflix's Chief Content Officer, Ted Sarandos, informed the Senate that 80% of HBO Max subscribers also use Netflix. He stated that if the merger of HBO Max with another company leads to increased costs for Netflix users, they will have the option to cancel their subscriptions. This revelation underscores the competitive landscape in the streaming industry and the potential impact of mergers on consumer choices.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/02/netflix-claims-subscribers-will-get-more-content-for-less-if-it-buys-hbo-max/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-72f03d1f72f9" onclick="toggleTweets('72f03d1f72f9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-72f03d1f72f9">
+                <div class="tweet">Netflix's Chief Content Officer revealed that users could cancel if HBO Max merger increases costs. Competition in the streaming industry intensifies. #Netflix #HBO #StreamingWars</div>
+<div class="tweet">Are you a part of the 80% of HBO Max subscribers who also use Netflix? How would you react if the merger leads to higher costs for your Netflix subscription? Share your thoughts! #StreamingServices #TechTalk</div>
+<div class="tweet">Ted Sarandos' statement highlights the power of consumer choice in the streaming world. Users may have to make tough decisions based on pricing changes post-mergers. Stay informed and stay in control. #ConsumerChoice #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-02-04T12:30:00-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="I was detained by federal agents in Minneapolis">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/873656/alex-pretti-protester-detained-dhs-ice-whipple" target="_blank">I was detained by federal agents in Minneapolis</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-02-04T12:30:00-05:00 | ID: 1b3787dfedf5
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            In late 2025, the Department of Homeland Security targeted the Twin Cities in Minnesota following fraud allegations from a right-wing influencer, leading to a surge in Immigrations and Customs Enforcement (ICE) activities. The increased ICE operations resulted in the detention of thousands of immigrants, with two American citizens losing their lives in January while documenting ICE activities.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/873656/alex-pretti-protester-detained-dhs-ice-whipple" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1b3787dfedf5" onclick="toggleTweets('1b3787dfedf5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1b3787dfedf5">
+                <div class="tweet">Detentions by federal agents in Minneapolis surged in late 2025, impacting thousands of immigrants. Two American citizens lost their lives while documenting ICE activities. #TechNews #Immigration #ICE</div>
+<div class="tweet">What role can tech play in increasing transparency and accountability in federal agency operations to prevent tragedies like the loss of lives during ICE activities in Minneapolis? #TechEthics #GovernmentAccountability #ICE</div>
+<div class="tweet">The intersection of technology and government actions highlights the importance of ensuring oversight and accountability to protect human rights and prevent tragedies. #TechForGood #HumanRights #Transparency</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-02-04T12:00:00-05:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Fallout’s season 2 finale left plenty unanswered as it expanded in scope">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/873816/fallout-season-2-finale-review" target="_blank">Fallout’s season 2 finale left plenty unanswered as it expanded in scope</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-02-04T12:00:00-05:00 | ID: c7700dd05dc7
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Fallout's season 2 finale marked a significant expansion in the show's scope, moving beyond its initial lighthearted tone to delve into a larger post-apocalyptic world. The finale left many questions unanswered, hinting at a more complex narrative and setting for future episodes. This shift suggests a deeper exploration of the Fallout universe and its lore, potentially appealing to fans seeking a more immersive experience.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/873816/fallout-season-2-finale-review" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c7700dd05dc7" onclick="toggleTweets('c7700dd05dc7')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c7700dd05dc7">
+                <div class="tweet">Fallout's season 2 finale marked a significant shift in tone and scope, hinting at a deeper exploration of the post-apocalyptic world. Fans can expect a more immersive experience ahead! #Fallout #TVseries #TechNews</div>
+<div class="tweet">Curious about what Fallout's season 2 finale expansion means for the show's future? The unanswered questions hint at a more complex narrative and a richer universe to explore. What are your predictions? #Fallout #TechAnalysis #TVseries</div>
+<div class="tweet">The season 2 finale of Fallout not only expanded the show's scope but also teased a more intricate storyline ahead. This shift promises fans a deeper dive into the Fallout universe and its lore, setting the stage for exciting future episodes! #Fallout #SeasonFinale #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Tue, 03 Feb 2026 21:15:57 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Newborn dies after mother drinks raw milk during pregnancy">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/02/newborns-death-spurs-raw-milk-warning-in-new-mexico/" target="_blank">Newborn dies after mother drinks raw milk during pregnancy</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 03 Feb 2026 21:15:57 +0000 | ID: 31acbd6dbe43
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Health Secretary Kennedy, known for his anti-vaccine stance, has been promoting raw milk consumption. In a tragic incident, a newborn passed away after the mother consumed raw milk during pregnancy. This highlights the potential risks associated with consuming unpasteurized dairy products, especially during pregnancy.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/02/newborns-death-spurs-raw-milk-warning-in-new-mexico/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-31acbd6dbe43" onclick="toggleTweets('31acbd6dbe43')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-31acbd6dbe43">
+                <div class="tweet">"Consuming raw milk during pregnancy can have serious consequences. This tragic incident underscores the importance of food safety precautions. #RawMilk #FoodSafety #PregnancyHealth"</div>
+<div class="tweet">"What are the risks of consuming raw milk during pregnancy? This heartbreaking incident sheds light on the potential dangers. #RawMilk #FoodSafety #HealthAwareness"</div>
+<div class="tweet">"The recent case of a newborn's passing due to raw milk consumption emphasizes the need for informed decisions about dietary choices, especially during pregnancy. #FoodSafety #RawMilk #HealthAwareness"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-02-04 00:34" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="DHS Hunts Down 67-Year-Old U.S. Citizen Who Criticized Them in Email">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://newrepublic.com/post/206088/homeland-security-67-year-old-us-citizen-criticized-email" target="_blank">DHS Hunts Down 67-Year-Old U.S. Citizen Who Criticized Them in Email</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-02-04 00:34 | ID: f6d17cf13f21
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Department of Homeland Security (DHS) tracked down a 67-year-old U.S. citizen who criticized them in an email. The incident, discussed on Reddit's r/technology with over 25,000 upvotes and 668 comments, raises concerns about government surveillance and privacy violations.
+        </div>
+        <div class="source-link">
+            → <a href="https://newrepublic.com/post/206088/homeland-security-67-year-old-us-citizen-criticized-email" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f6d17cf13f21" onclick="toggleTweets('f6d17cf13f21')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-f6d17cf13f21">
+                <div class="tweet">DHS's action to track down a 67-year-old U.S. citizen who criticized them in an email sparks debate on government surveillance and privacy. Stay informed. #DHS #Privacy #GovernmentSurveillance</div>
+<div class="tweet">Is government surveillance infringing on our privacy rights? The recent incident of DHS tracking down a citizen who criticized them in an email raises important questions. What are your thoughts? #PrivacyRights #GovernmentTracking #TechDebate</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-02-04 11:51" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Palantir declares itself the guardian of Americans' rights">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.theregister.com/2026/02/03/palantir_american_rights/?td=rt-3a" target="_blank">Palantir declares itself the guardian of Americans' rights</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-02-04 11:51 | ID: 88db3495cd0a
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Palantir, a data analytics company, has positioned itself as a defender of Americans' civil liberties amid concerns about its government contracts and data privacy implications. The company's assertion comes amidst growing scrutiny of its role in handling sensitive data for government agencies, sparking debate over the balance between national security and individual privacy rights. Palantir's stance underscores the ongoing tension between technology companies, government partnerships, and the protection of user data in the digital age.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theregister.com/2026/02/03/palantir_american_rights/?td=rt-3a" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-88db3495cd0a" onclick="toggleTweets('88db3495cd0a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-88db3495cd0a">
+                <div class="tweet">Palantir, the data analytics giant, is making waves by positioning itself as a champion of civil liberties amidst increasing concerns over data privacy and government contracts. 🛡️🔒 #Palantir #DataPrivacy #TechNews</div>
+<div class="tweet">Is Palantir truly the guardian of Americans' rights, or is there a blurred line between protecting civil liberties and enabling surveillance? Share your thoughts! 🤔🇺🇸 #PrivacyDebate #TechEthics #Palantir</div>
+<div class="tweet">Palantir's assertion of safeguarding Americans' civil liberties sheds light on the complex interplay between technology firms, government ties, and the imperative to safeguard user data in the digital era. 🌐💻 #TechDebates #DataProtection #Palantir</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-02-04 09:15" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Microsoft Has Killed Widgets Six Times. Here's Why They Keep Coming Back.">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://xakpc.dev/windows-widgets/history/" target="_blank">Microsoft Has Killed Widgets Six Times. Here's Why They Keep Coming Back.</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-02-04 09:15 | ID: 2b56471aa3b3
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Despite Microsoft's repeated attempts to discontinue widgets, they keep resurfacing due to their popularity and usefulness among users. The article delves into the technical challenges and design decisions that have led to the revival of widgets, shedding light on the enduring appeal of these small, customizable applications. Developers and users continue to find value in widgets, prompting their resurgence despite Microsoft's previous efforts to phase them out.
+        </div>
+        <div class="source-link">
+            → <a href="https://xakpc.dev/windows-widgets/history/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2b56471aa3b3" onclick="toggleTweets('2b56471aa3b3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2b56471aa3b3">
+                <div class="tweet">Despite multiple attempts by Microsoft to discontinue widgets, they keep making a comeback due to their popularity and usefulness. Learn more about the technical challenges and design decisions behind the revival in this insightful article. #Microsoft #Widgets</div>
+<div class="tweet">Are widgets here to stay? Despite Microsoft's repeated efforts to retire them, their enduring appeal and value to developers and users have led to a resurgence. Share your thoughts on why widgets keep making a comeback! #Tech #Widgets</div>
+<div class="tweet">Key insight: The revival of widgets showcases the importance of user demand and developer innovation. Despite challenges, the enduring popularity and usefulness of widgets continue to defy Microsoft's attempts to phase them out. #Innovation #UserExperience</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-02-03 16:28" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="[P] MichiAI: A 530M Full-Duplex Speech LLM with ~75ms Latency using Flow Matching">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1quwjt1/p_michiai_a_530m_fullduplex_speech_llm_with_75ms/" target="_blank">[P] MichiAI: A 530M Full-Duplex Speech LLM with ~75ms Latency using Flow Matching</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-02-03 16:28 | ID: 75dd4406e509
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article introduces MichiAI, a 530M full-duplex speech Large Language Model (LLM) with approximately 75ms latency achieved through Flow Matching. The model aims to maintain coherence in speech models while minimizing compute resources for training and inference, making it efficient for real-time applications. This development is significant for speech technology, offering a promising solution for low-latency, high-quality speech processing in various applications.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1quwjt1/p_michiai_a_530m_fullduplex_speech_llm_with_75ms/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-75dd4406e509" onclick="toggleTweets('75dd4406e509')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-75dd4406e509">
+                <div class="tweet">Introducing MichiAI: A 530M full-duplex speech Large Language Model with ~75ms latency using Flow Matching. This innovation aims for low-latency, high-quality speech processing in real-time applications. 🗣️🔥 #MichiAI #SpeechTech #AI</div>
+<div class="tweet">Could MichiAI's 75ms latency revolutionize real-time speech processing? This new development in Large Language Models is setting a high standard for efficiency and quality. 🤔💬 #MichiAI #SpeechProcessing #TechInnovation</div>
+<div class="tweet">Key insight: MichiAI's Flow Matching technique enables a 530M speech LLM with unprecedented low-latency, maintaining coherence while reducing compute resources. A game-changer for real-time applications! 🌐🎙️ #Innovation #TechNews #SpeechTechnology</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-02-04 13:36" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="I Am Not a Functional Programmer">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://blog.daniel-beskin.com/2026-01-28-i-am-not-a-functional-programmer" target="_blank">I Am Not a Functional Programmer</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-02-04 13:36 | ID: 6eb533008803
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in the r/programming subreddit has gained traction with 53 upvotes and 17 comments. The thread appears to revolve around the topic of functional programming, with the title "I Am Not a Functional Programmer" suggesting a possible exploration of personal experiences or opinions on the subject within the programming community.
+        </div>
+        <div class="source-link">
+            → <a href="https://blog.daniel-beskin.com/2026-01-28-i-am-not-a-functional-programmer" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6eb533008803" onclick="toggleTweets('6eb533008803')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6eb533008803">
+                <div class="tweet">Join the conversation on Reddit's r/programming subreddit with a post titled "I Am Not a Functional Programmer." Explore diverse perspectives on functional programming in the tech community. #FunctionalProgramming #ProgrammingCommunity</div>
+<div class="tweet">Are you a functional programmer? Share your thoughts on the trending Reddit thread titled "I Am Not a Functional Programmer." Engage with fellow tech enthusiasts and expand your insights! #TechDiscussions #ProgrammingInsights</div>
+<div class="tweet">"I Am Not a Functional Programmer" sparks a lively debate on Reddit, highlighting the diversity of opinions within the tech community. Embrace different viewpoints and dive into the world of functional programming discussions. #TechDebates #ProgrammingPerspectives</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-02-04 18:43:53 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
