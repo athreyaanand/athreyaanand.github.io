@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - March 09, 2026, 06:46 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>March 09, 2026, 06:46 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-03-09 18:46:45
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 141.8 seconds</div>
+                <div>Start Time: 2026-03-09 18:46:45</div>
+                <div>End Time: 2026-03-09 18:49:07</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 13, Low: 20</div>
+                <div>Topics Detected: 8</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="71.5" 
+             data-published="2026-03-02 22:32" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Meta’s AI smart glasses and data privacy concerns">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.svd.se/a/K8nrV4/metas-ai-smart-glasses-and-data-privacy-concerns-workers-say-we-see-everything" target="_blank">Meta’s AI smart glasses and data privacy concerns</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-02 22:32 | ID: e689c9853f46
+             | <span class="engagement-notable">Engagement: [71.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 71%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Meta, formerly Facebook, has announced the development of AI-powered smart glasses that can overlay digital information onto the physical world. These glasses raise concerns about data privacy as they have the potential to collect and analyze vast amounts of personal data. The integration of AI into wearable devices like smart glasses underscores the importance of addressing privacy and security issues in emerging technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.svd.se/a/K8nrV4/metas-ai-smart-glasses-and-data-privacy-concerns-workers-say-we-see-everything" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e689c9853f46" onclick="toggleTweets('e689c9853f46')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e689c9853f46">
+                <div class="tweet">Exciting news from Meta (formerly Facebook) on their AI smart glasses development! While these glasses offer cutting-edge tech, the data privacy concerns they raise are significant. #Meta #SmartGlasses #DataPrivacy</div>
+<div class="tweet">How do you feel about the integration of AI into wearable devices like Meta's smart glasses? Share your thoughts on the potential data privacy implications! #AI #WearableTech #PrivacyConcerns</div>
+<div class="tweet">The announcement of Meta's AI smart glasses highlights the pressing need to prioritize privacy and security in the development of emerging technologies. Let's ensure innovation doesn't compromise user data protection. #DataSecurity #TechEthics #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-04 14:16" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="MacBook Neo">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/" target="_blank">MacBook Neo</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-04 14:16 | ID: a9ab5f24bb98
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new MacBook model, dubbed the MacBook Neo, has generated significant buzz on Hacker News with 1969 points and 2316 comments. The discussion likely revolves around the technical specifications, design changes, or new features of this upcoming Apple laptop. This level of engagement indicates strong interest from the tech community and potential buyers, suggesting the MacBook Neo could be a noteworthy release in the near future.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a9ab5f24bb98" onclick="toggleTweets('a9ab5f24bb98')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a9ab5f24bb98">
+                <div class="tweet">Exciting news for Apple fans! The upcoming MacBook Neo has sparked immense interest on Hacker News with 1969 points and 2316 comments. Stay tuned for potential game-changing features and specs. #MacBookNeo #Apple #TechNews</div>
+<div class="tweet">Curious about the buzz surrounding the MacBook Neo on Hacker News? What new features do you think Apple will introduce in this upcoming laptop model? Share your predictions! #MacBookNeo #Apple #TechCommunity</div>
+<div class="tweet">The overwhelming engagement on Hacker News around the MacBook Neo hints at a highly anticipated release. Apple seems to have struck a chord with tech enthusiasts. Will the MacBook Neo live up to the hype? #MacBookNeo #Apple #TechEnthusiasts</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-04 00:58" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Motorola GrapheneOS devices will be bootloader unlockable/relockable">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://grapheneos.social/@GrapheneOS/116160393783585567" target="_blank">Motorola GrapheneOS devices will be bootloader unlockable/relockable</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-04 00:58 | ID: 5ed6fbffd8c1
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Motorola has announced that its future devices running GrapheneOS will be bootloader unlockable and relockable, giving users more control over their devices. This move will allow advanced users to customize their devices and install custom software while maintaining security features. The decision is likely to appeal to tech enthusiasts and developers looking for a balance between customization and security on their devices.
+        </div>
+        <div class="source-link">
+            → <a href="https://grapheneos.social/@GrapheneOS/116160393783585567" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5ed6fbffd8c1" onclick="toggleTweets('5ed6fbffd8c1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5ed6fbffd8c1">
+                <div class="tweet">Motorola's future devices running GrapheneOS will be bootloader unlockable/relockable, giving users more control over customization while maintaining security features. 📱🔒 #Motorola #GrapheneOS #TechNews</div>
+<div class="tweet">Are you excited about Motorola's decision to make their GrapheneOS devices bootloader unlockable/relockable? How will this impact the tech community's approach to device customization and security? 🤔 #TechEnthusiasts #GrapheneOS #CustomizationVsSecurity</div>
+<div class="tweet">The move by Motorola to allow bootloader unlock/relock on GrapheneOS devices strikes a balance between customization and security, catering to advanced users seeking more control over their devices. 🛠️🔒 #TechInnovation #DeviceCustomization #GrapheneOS</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-06 14:10" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Global warming has accelerated significantly">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.researchsquare.com/article/rs-6079807/v1" target="_blank">Global warming has accelerated significantly</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-06 14:10 | ID: d5702fdae644
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent study has revealed that global warming has accelerated significantly, with temperatures rising faster than previously predicted. The findings highlight the urgent need for more aggressive climate action to mitigate the impact of climate change. Scientists emphasize the importance of implementing sustainable practices and policies to curb greenhouse gas emissions and limit further environmental damage.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.researchsquare.com/article/rs-6079807/v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d5702fdae644" onclick="toggleTweets('d5702fdae644')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d5702fdae644">
+                <div class="tweet">Study shows global warming is accelerating at an alarming rate, prompting the need for immediate climate action. Let's prioritize sustainable practices to combat climate change. 🌍🔥 #ClimateAction #GlobalWarming</div>
+<div class="tweet">Are we doing enough to combat the rapid acceleration of global warming? The latest study calls for urgent action and emphasizes the critical need for sustainable policies. How can we each contribute to a greener future? 🤔🌱 #ClimateChange #Sustainability</div>
+<div class="tweet">The recent study on global warming acceleration underscores the pressing need for aggressive climate action. Let's focus on reducing greenhouse gas emissions and adopting sustainable solutions to protect our planet for future generations. 🌿💡 #ClimateScience #Environment</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-02 20:30" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="British Columbia is permanently adopting daylight time">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.cbc.ca/news/canada/british-columbia/b-c-adopting-year-round-daylight-time-9.7111657" target="_blank">British Columbia is permanently adopting daylight time</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-02 20:30 | ID: 208dbe82e2a3
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            British Columbia has decided to permanently adopt daylight saving time, following a public consultation that received over 223,000 responses. The move means that the province will no longer switch its clocks twice a year, aligning with neighboring jurisdictions like Washington state and California. This decision aims to provide consistency and reduce the negative impacts associated with the time changes on health and productivity.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.cbc.ca/news/canada/british-columbia/b-c-adopting-year-round-daylight-time-9.7111657" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-208dbe82e2a3" onclick="toggleTweets('208dbe82e2a3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-208dbe82e2a3">
+                <div class="tweet">British Columbia has made it official! The province will permanently adopt daylight saving time, bringing consistency and saying goodbye to clock changes. 🕒 #DaylightSavingTime #BritishColumbia</div>
+<div class="tweet">Are you ready to bid farewell to the seasonal clock changes? British Columbia has decided to stick with daylight time all year round. What are your thoughts on this move? ⏰ #BC #TimeChangeDebate</div>
+<div class="tweet">By embracing daylight saving time year-round, British Columbia aims to enhance public health and productivity by eliminating the disruptions caused by clock changes. A smart move towards a more efficient future! 🌞 #Productivity #HealthBenefits</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="61.5" 
+             data-published="2026-03-03 10:56" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="The Xkcd thing, now interactive">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://editor.p5js.org/isohedral/full/vJa5RiZWs" target="_blank">The Xkcd thing, now interactive</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-03 10:56 | ID: 3391c36be529
+             | <span class="engagement-notable">Engagement: [61.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 61%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The popular webcomic "Xkcd" has introduced an interactive element to its comic titled "The Xkcd Thing." This interactive feature allows users to explore a virtual world and interact with various elements within the comic, enhancing user engagement and providing a unique experience for fans of the comic series. This move represents a creative integration of technology to offer a new dimension to the traditional comic format, showcasing the potential for innovative storytelling in the digital age.
+        </div>
+        <div class="source-link">
+            → <a href="https://editor.p5js.org/isohedral/full/vJa5RiZWs" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3391c36be529" onclick="toggleTweets('3391c36be529')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3391c36be529">
+                <div class="tweet">Exciting news for Xkcd fans! The popular webcomic has introduced an interactive feature called "The Xkcd Thing," allowing users to explore a virtual world within the comic. Dive into a new dimension of storytelling! #Xkcd #InteractiveComics</div>
+<div class="tweet">Ever imagined stepping inside a webcomic? With "The Xkcd Thing," now you can! How does this innovative interactive feature change the way we experience digital storytelling? Share your thoughts! #Xkcd #TechInnovation</div>
+<div class="tweet">"The Xkcd Thing" showcases the fusion of technology and storytelling, offering fans a unique and engaging comic experience. This creative integration highlights the endless possibilities for innovation in the digital age. #Xkcd #InnovativeComics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="54.5" 
+             data-published="Mon, 09 Mar 2026 15:56:03 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Russian government hackers targeting Signal and WhatsApp users, Dutch spies warn">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/09/russian-government-hackers-targeting-signal-and-whatsapp-users-dutch-spies-warn/" target="_blank">Russian government hackers targeting Signal and WhatsApp users, Dutch spies warn</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 09 Mar 2026 15:56:03 +0000 | ID: 6e9d2529a1c3
+             | <span class="engagement-standard">Engagement: [54.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Dutch intelligence has raised concerns about Russia-backed hackers conducting a significant hacking operation targeting users of secure messaging apps Signal and WhatsApp. The campaign is described as "large-scale global" and underscores the ongoing efforts to compromise communication platforms used by individuals and organizations for secure messaging. This warning highlights the importance of maintaining vigilance and implementing robust security measures to safeguard sensitive communications from potential cyber threats.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/09/russian-government-hackers-targeting-signal-and-whatsapp-users-dutch-spies-warn/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6e9d2529a1c3" onclick="toggleTweets('6e9d2529a1c3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6e9d2529a1c3">
+                <div class="tweet">Dutch intelligence warns of Russian government hackers targeting Signal and WhatsApp users. 🔒 Stay vigilant and prioritize strong security measures to protect your sensitive communications. #CyberSecurity #Privacy</div>
+<div class="tweet">Are your secure messaging apps truly secure? Dutch spies raise alarms on Russian hackers targeting Signal and WhatsApp users. How can we ensure our communications remain protected from such threats? 🤔 #InfoSec #CyberThreats</div>
+<div class="tweet">The recent warning from Dutch intelligence on Russian hackers targeting Signal and WhatsApp users emphasizes the ongoing need for robust cybersecurity measures. Let's prioritize protecting our privacy and secure communications online. 🛡️ #OnlineSecurity #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="53" 
+             data-published="Mon, 09 Mar 2026 18:18:25 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Periwinkle is making self-hosted social media on Bluesky’s AT Protocol even easier">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/09/periwinkle-at-protocol-bluesky-self-hosted-social-media/" target="_blank">Periwinkle is making self-hosted social media on Bluesky’s AT Protocol even easier</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 09 Mar 2026 18:18:25 +0000 | ID: 5f1fb0748596
+             | <span class="engagement-standard">Engagement: [53.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 53%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Periwinkle is simplifying self-hosted social media on Bluesky's AT Protocol by providing managed hosting services that include backups, storage, and migration tools. This offering enables AT Protocol users to easily create and maintain their own social media accounts on custom domains, enhancing control and privacy over their online presence.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/09/periwinkle-at-protocol-bluesky-self-hosted-social-media/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5f1fb0748596" onclick="toggleTweets('5f1fb0748596')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-5f1fb0748596">
+                <div class="tweet">Periwinkle is streamlining self-hosted social media on Bluesky's AT Protocol with managed hosting services, offering backups, storage, and migration tools. Take control of your online presence with custom domains! #Periwinkle #ATProtocol #SelfHostedSocialMedia</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Mon, 09 Mar 2026 17:49:04 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="OpenAI acquires Promptfoo to secure its AI agents">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/09/openai-acquires-promptfoo-to-secure-its-ai-agents/" target="_blank">OpenAI acquires Promptfoo to secure its AI agents</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 09 Mar 2026 17:49:04 +0000 | ID: 75a8cba7c403
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI has acquired Promptfoo to enhance the security of its AI agents, highlighting the increasing importance of ensuring the safe deployment of AI technology in business settings. This acquisition reflects a growing trend among tech companies to prioritize security and reliability in AI systems to gain trust and acceptance in critical business operations.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/09/openai-acquires-promptfoo-to-secure-its-ai-agents/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-75a8cba7c403" onclick="toggleTweets('75a8cba7c403')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-75a8cba7c403">
+                <div class="tweet">OpenAI bolsters AI security with Promptfoo acquisition, emphasizing the critical need for safe AI deployment in business operations. #OpenAI #AI #TechSecurity</div>
+<div class="tweet">How can tech companies like OpenAI ensure the trustworthiness of AI systems in critical business applications post-Promptfoo acquisition? Share your thoughts! #AI #TechTrends #Security</div>
+<div class="tweet">The acquisition of Promptfoo by OpenAI underscores the growing emphasis on security and reliability in AI systems to gain credibility and acceptance in business environments. #OpenAI #AI #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Mon, 09 Mar 2026 17:29:58 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="GM figured out how to navigate EV uncertainty with the Chevy Bolt">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/09/gm-figured-out-how-to-navigate-ev-uncertainty-with-the-chevy-bolt/" target="_blank">GM figured out how to navigate EV uncertainty with the Chevy Bolt</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 09 Mar 2026 17:29:58 +0000 | ID: d59aceac0c53
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            GM has addressed EV uncertainty with the 2027 Chevy Bolt by making incremental improvements without increasing the price significantly. The vehicle offers a more refined driving experience and improved range, showcasing GM's strategy to enhance existing models rather than introduce entirely new ones to navigate the evolving EV landscape.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/09/gm-figured-out-how-to-navigate-ev-uncertainty-with-the-chevy-bolt/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d59aceac0c53" onclick="toggleTweets('d59aceac0c53')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d59aceac0c53">
+                <div class="tweet">GM's approach to enhancing the 2027 Chevy Bolt showcases a strategic response to EV uncertainty by focusing on incremental improvements without a significant price increase. #GM #EV #ChevyBolt</div>
+<div class="tweet">How can GM's strategy of refining existing models, like the 2027 Chevy Bolt, influence the future of electric vehicles in an evolving market? 🤔 #EV #Innovation #ChevyBolt</div>
+<div class="tweet">GM's decision to improve the driving experience and range of the 2027 Chevy Bolt instead of introducing new models highlights a sustainable approach to navigating the changing EV landscape. #GM #ElectricVehicles #ChevyBolt</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Mon, 09 Mar 2026 17:25:40 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Anthropic sues Defense Department over supply chain risk designation">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/09/anthropic-sues-defense-department-over-supply-chain-risk-designation/" target="_blank">Anthropic sues Defense Department over supply chain risk designation</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 09 Mar 2026 17:25:40 +0000 | ID: e5a08311cbbe
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic, a tech company, has taken legal action against the Department of Defense for designating it as a supply chain risk. The lawsuit alleges that the DOD's decision is both unprecedented and unlawful, raising concerns about potential impacts on Anthropic's operations and reputation within the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/09/anthropic-sues-defense-department-over-supply-chain-risk-designation/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e5a08311cbbe" onclick="toggleTweets('e5a08311cbbe')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-e5a08311cbbe">
+                <div class="tweet">Anthropic, a tech company, challenges the Defense Department over supply chain risk designation. The lawsuit raises questions about the impact on tech operations and reputation. #TechNews #SupplyChainRisk</div>
+<div class="tweet">Should tech companies have the right to challenge government designations that could impact their business operations? Anthropic's lawsuit against the DOD sparks important conversations about regulation and innovation in the tech industry. #LegalTech #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Mon, 09 Mar 2026 16:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Xprize founder Peter Diamandis launches new contest to manifest a new Star Trek">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/09/xprize-founder-peter-diamandis-launches-new-contest-to-manifest-a-new-star-trek/" target="_blank">Xprize founder Peter Diamandis launches new contest to manifest a new Star Trek</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 09 Mar 2026 16:00:00 +0000 | ID: 6d62df3df469
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Peter Diamandis, founder of Xprize, has initiated the Future Vision Xprize, a contest aimed at funding optimistic sci-fi films. Backed by sponsors including Google, Marc Benioff, and Ben Horowitz, the competition seeks to inspire the creation of a new Star Trek-like vision of the future through cinematic storytelling. This initiative aims to encourage filmmakers to envision and depict a positive future through the lens of science fiction.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/09/xprize-founder-peter-diamandis-launches-new-contest-to-manifest-a-new-star-trek/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6d62df3df469" onclick="toggleTweets('6d62df3df469')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6d62df3df469">
+                <div class="tweet">"Exciting news in tech! Peter Diamandis launches the Future Vision Xprize contest to fund optimistic sci-fi films, inspiring a new Star Trek vision of the future. #Xprize #TechNews #SciFi"</div>
+<div class="tweet">"Could cinematic storytelling shape our future? Peter Diamandis' Future Vision Xprize aims to spark creativity and optimism in tech through sci-fi films. What positive future would you envision? #FutureVisionXprize #SciFi #Innovation"</div>
+<div class="tweet">"Key takeaway: Future Vision Xprize backed by tech giants like Google, Marc Benioff, and Ben Horowitz seeks to encourage filmmakers to depict a positive future through sci-fi storytelling. Aiming to inspire the next Star Trek era. #TechInnovation #Inspiration #FutureVision"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Mon, 09 Mar 2026 13:00:45 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Chevrolet killed it then brought it back, now we drive it: The 2027 Bolt">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/cars/2026/03/new-battery-new-motor-but-the-2027-chevrolet-bolt-keeps-its-charm/" target="_blank">Chevrolet killed it then brought it back, now we drive it: The 2027 Bolt</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Mon, 09 Mar 2026 13:00:45 +0000 | ID: dfd2f8217b4b
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Chevrolet has reintroduced the 2027 Bolt with significant upgrades including faster charging capabilities, a modernized infotainment system, and a new LFP battery. The improvements aim to enhance user experience and address key concerns in electric vehicle technology, potentially boosting the Bolt's competitiveness in the market.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/cars/2026/03/new-battery-new-motor-but-the-2027-chevrolet-bolt-keeps-its-charm/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-dfd2f8217b4b" onclick="toggleTweets('dfd2f8217b4b')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-dfd2f8217b4b">
+                <div class="tweet">Chevrolet is back with a bang! The 2027 Bolt now boasts faster charging, a modernized infotainment system, and a new LFP battery. These upgrades aim to enhance user experience in the EV market. ⚡🚗 #ChevroletBolt #ElectricVehicles #TechNews</div>
+<div class="tweet">Curious about the future of electric vehicles? Chevrolet's latest move with the 2027 Bolt, featuring faster charging and a new LFP battery, could shake up the EV market. What do you think this means for the industry? 🤔⚡ #EVs #Chevrolet #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Mon, 09 Mar 2026 16:14:30 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Slate Auto changes CEO months ahead of affordable EV launch">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/09/slate-auto-changes-ceo-months-ahead-of-affordable-ev-launch/" target="_blank">Slate Auto changes CEO months ahead of affordable EV launch</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 09 Mar 2026 16:14:30 +0000 | ID: 289531d513a0
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Slate Auto, a company set to launch an affordable electric vehicle (EV) soon, has appointed Peter Faricy, a former Amazon Marketplace executive, as its new CEO. This leadership change comes ahead of the anticipated release of Slate Auto's EV, signaling a strategic move to drive the company's growth and success in the competitive EV market. Faricy's experience in e-commerce and technology could bring valuable insights to help Slate Auto establish a strong foothold in the EV industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/09/slate-auto-changes-ceo-months-ahead-of-affordable-ev-launch/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-289531d513a0" onclick="toggleTweets('289531d513a0')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-289531d513a0">
+                <div class="tweet">Exciting news in the EV industry! #SlateAuto appoints Peter Faricy, former Amazon exec, as new CEO ahead of their affordable EV launch. Will his expertise drive the company to success in the competitive market? 🚗⚡ #ElectricVehicles #TechNews</div>
+<div class="tweet">With the appointment of Peter Faricy as CEO, is #SlateAuto gearing up to revolutionize the EV market with their upcoming affordable electric vehicle launch? 🌟 What strategic moves might we see from them next? #EVs #TechLeadership</div>
+<div class="tweet">The choice of Peter Faricy, an e-commerce and tech expert, to lead #SlateAuto ahead of their EV launch shows a strategic shift towards industry expertise. Will this move help them carve a niche in the growing electric vehicle market? 🛣️ #TechIndustry #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Mon, 09 Mar 2026 15:58:11 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Qualcomm’s partnership with Neura Robotics is just the beginning">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/09/qualcomms-partnership-with-neura-robotics-is-just-the-beginning/" target="_blank">Qualcomm’s partnership with Neura Robotics is just the beginning</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 09 Mar 2026 15:58:11 +0000 | ID: fd54a00b7726
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Neura Robotics has announced a collaboration with Qualcomm to develop robots using Qualcomm's latest IQ10 processors unveiled at CES. This partnership signals the beginning of a new era in robotics technology, leveraging Qualcomm's advanced processors to power innovative robotic applications and capabilities. The integration of Qualcomm's cutting-edge processors with Neura Robotics' expertise is expected to drive significant advancements in the field of robotics.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/09/qualcomms-partnership-with-neura-robotics-is-just-the-beginning/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-fd54a00b7726" onclick="toggleTweets('fd54a00b7726')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-fd54a00b7726">
+                <div class="tweet">Exciting news in robotics tech! Neura Robotics and Qualcomm are teaming up to revolutionize the field with Qualcomm's latest IQ10 processors. 🤖💡 #Robotics #TechNews #Qualcomm #NeuraRobotics</div>
+<div class="tweet">Curious about the future of robotics? Neura Robotics' collaboration with Qualcomm using the latest IQ10 processors promises groundbreaking innovations. What new possibilities do you think this partnership will unlock? 🚀🧠 #Innovation #TechCollaboration #FutureTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-03-09T12:13:26-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Live Nation settles government antitrust suit — that probably doesn’t include a breakup">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/891379/live-nation-antitrust-settlement-ticketmaster" target="_blank">Live Nation settles government antitrust suit — that probably doesn’t include a breakup</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-09T12:13:26-04:00 | ID: 0233f3943d8b
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Live Nation-Ticketmaster has settled a federal antitrust lawsuit with the Department of Justice, with several states expected to join the settlement. The lawsuit accused the company of monopolizing parts of the live events industry. The settlement is likely to impact the live events sector and could lead to changes in how ticketing and event promotions are handled.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/891379/live-nation-antitrust-settlement-ticketmaster" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0233f3943d8b" onclick="toggleTweets('0233f3943d8b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0233f3943d8b">
+                <div class="tweet">Live Nation-Ticketmaster settles government antitrust suit, potentially reshaping the live events industry. Stay tuned for changes in ticketing and event promotions. #LiveNation #Ticketmaster #AntitrustSettlement</div>
+<div class="tweet">Could the Live Nation-Ticketmaster settlement pave the way for more competition in the live events sector? How might this impact ticket prices and event experiences? 🤔 #AntitrustLawsuit #LiveEvents #TechIndustry</div>
+<div class="tweet">The Live Nation-Ticketmaster settlement emphasizes the importance of fair competition in the tech-driven live events industry. Changes ahead could benefit both consumers and event organizers. #FairCompetition #LiveEventsTech #DOJSettlement</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Mon, 09 Mar 2026 16:31:12 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Don't worry, Valve still plans to launch the Steam Machine "this year"">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gaming/2026/03/dont-worry-valve-still-plans-to-launch-the-steam-machine-this-year/" target="_blank">Don't worry, Valve still plans to launch the Steam Machine "this year"</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Mon, 09 Mar 2026 16:31:12 +0000 | ID: ca180d858eac
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Valve reaffirms its commitment to launching the Steam Machine this year, but the exact timing remains uncertain. The Steam Machine, a gaming console running SteamOS, aims to bring PC gaming to the living room, offering a new gaming experience to users. Developers and gamers eagerly anticipate its release, which could potentially disrupt the console market.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gaming/2026/03/dont-worry-valve-still-plans-to-launch-the-steam-machine-this-year/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ca180d858eac" onclick="toggleTweets('ca180d858eac')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ca180d858eac">
+                <div class="tweet">Valve is still on track to launch the #SteamMachine this year, aiming to revolutionize the console market by bringing PC gaming to your living room with #SteamOS. Stay tuned for updates on this exciting development!</div>
+<div class="tweet">Excited for the upcoming #SteamMachine launch? With Valve reaffirming their commitment, do you think it will be a game-changer in the console industry? Share your thoughts! 🎮 #PCGaming #GamingConsole</div>
+<div class="tweet">Valve's dedication to releasing the #SteamMachine this year shows their determination to disrupt the gaming market. The integration of #SteamOS promises a unique gaming experience, blurring the lines between PC and console gaming. Anticipation is high! #TechNews #GamingRevolution</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Mon, 09 Mar 2026 15:50:15 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="2026 Australian Grand Prix: Formula 1 debuts a new style of racing">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/cars/2026/03/2026-australian-grand-prix-formula-1-debuts-a-new-style-of-racing/" target="_blank">2026 Australian Grand Prix: Formula 1 debuts a new style of racing</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Mon, 09 Mar 2026 15:50:15 +0000 | ID: 148c85999765
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Formula 1 introduced a new racing format at the 2026 Australian Grand Prix, emphasizing energy conservation throughout the race. This innovative approach requires teams to balance speed with energy efficiency, challenging traditional racing strategies. The focus on reliability in managing energy resources marks a significant shift in the sport, pushing teams to optimize performance while maintaining power sustainability.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/cars/2026/03/2026-australian-grand-prix-formula-1-debuts-a-new-style-of-racing/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-148c85999765" onclick="toggleTweets('148c85999765')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-148c85999765">
+                <div class="tweet">Exciting news from the 2026 Australian Grand Prix as Formula 1 debuts a new energy conservation-focused racing format, changing the game for teams and drivers! 🏎️⚡ #F1 #AustralianGP #Innovation</div>
+<div class="tweet">What do you think about Formula 1's shift towards energy conservation and reliability in racing strategies at the 2026 Australian Grand Prix? How will this impact the future of motorsports? 🤔 #Formula1 #EnergyEfficiency #FutureOfRacing</div>
+<div class="tweet">At the 2026 Australian Grand Prix, Formula 1's emphasis on energy management is revolutionizing racing, requiring a delicate balance between performance and sustainability. Teams face new challenges in optimizing speed while conserving power. 🌟🏁 #TechInnovation #RaceStrategy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-03-09T11:24:03-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="X says you can block Grok from editing your photos">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/891352/x-grok-xai-edit-blocker-photo-toggle" target="_blank">X says you can block Grok from editing your photos</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-09T11:24:03-04:00 | ID: 2617931267bb
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            X has rolled out a new feature on its iOS app that allows users to prevent the Grok chatbot from editing their uploaded images. This feature, accessible through a toggle in the image upload settings, aims to provide users with more control over their photos and prevent unwanted modifications by the Grok chatbot. The update addresses concerns about privacy and image manipulation, offering users a way to safeguard their uploaded images from automated editing processes.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/891352/x-grok-xai-edit-blocker-photo-toggle" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2617931267bb" onclick="toggleTweets('2617931267bb')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2617931267bb">
+                <div class="tweet">X's iOS app now lets you block Grok from editing your photos! Gain more control over your uploaded images with this new feature accessible through the image upload settings. 📸🚫 #Privacy #TechNews</div>
+<div class="tweet">Ever wanted to prevent automated editing on your photos? X's latest update on its iOS app introduces a feature to stop Grok from making modifications to your images. How important is photo privacy to you? 🧐📷 #PhotoEditing #PrivacyControl</div>
+<div class="tweet">With X's new feature, users can now protect their uploaded photos from unwanted edits by the Grok chatbot. This update emphasizes the importance of empowering users with control over their digital content. Take charge of your image privacy! 🛡️🖼️ #DigitalPrivacy #TechUpdate</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-03-09T12:01:39-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Donut Lab says latest test proves its solid-state battery isn’t a supercapacitor">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/transportation/891310/donut-lab-solid-state-battery-supercapacitor-test-result" target="_blank">Donut Lab says latest test proves its solid-state battery isn’t a supercapacitor</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-09T12:01:39-04:00 | ID: 29e99c41027a
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Donut Lab has conducted a recent test to demonstrate that its solid-state battery is not a supercapacitor, addressing previous speculation. The Finnish startup's battery, which offers fast charging and discharging capabilities, distinguishes itself from supercapacitors due to its longer-term electrical storage characteristics. This clarification provides insight into the unique technical aspects of Donut Lab's innovation in the battery technology space.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/transportation/891310/donut-lab-solid-state-battery-supercapacitor-test-result" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-29e99c41027a" onclick="toggleTweets('29e99c41027a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-29e99c41027a">
+                <div class="tweet">Donut Lab's latest test confirms its solid-state battery is not a supercapacitor, showcasing its unique fast charging & long-term storage capabilities in the battery tech arena. 🔋 #DonutLab #SolidStateBattery #TechInnovation</div>
+<div class="tweet">Curious about the differences between solid-state batteries and supercapacitors? Donut Lab's recent test sheds light on how their innovation stands out in the world of energy storage. ⚡️ #BatteryTech #Innovation #TechDebate</div>
+<div class="tweet">Donut Lab's clarification regarding its solid-state battery not being a supercapacitor emphasizes the importance of understanding the technical nuances and advancements in battery technology. 🧠 #TechInsights #EnergyStorage #InnovativeTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="Mon, 09 Mar 2026 11:00:05 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="“It doesn't feel safe”—Many international game developers plan to skip GDC in US">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gaming/2026/03/it-doesnt-feel-safe-many-international-game-developers-plan-to-skip-gdc-in-us/" target="_blank">“It doesn't feel safe”—Many international game developers plan to skip GDC in US</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Mon, 09 Mar 2026 11:00:05 +0000 | ID: d77249ccea1a
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Many international game developers are opting to skip the Game Developers Conference (GDC) in the US due to concerns over border issues and travel safety. The decision reflects a growing sentiment of unease within the industry regarding travel to the US for conferences and events. This trend could impact the diversity and global representation at GDC, potentially affecting networking opportunities and the exchange of ideas within the international gaming community.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gaming/2026/03/it-doesnt-feel-safe-many-international-game-developers-plan-to-skip-gdc-in-us/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d77249ccea1a" onclick="toggleTweets('d77249ccea1a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d77249ccea1a">
+                <div class="tweet">"It doesn't feel safe"—International game developers are opting out of GDC in the US due to border concerns and travel safety issues. This shift may impact diversity and global representation in the gaming community. #GDC #GameDevelopers #TechNews</div>
+<div class="tweet">"Is the future of global gaming events at risk?" International developers skipping GDC raises questions about the industry's reliance on US-based conferences. How might this impact innovation and collaboration in the gaming world? #GDC #GameDevelopers #TechTrends</div>
+<div class="tweet">With international game developers avoiding GDC in the US over safety concerns, the industry faces a potential shift in networking dynamics and idea exchange. The gaming community must adapt to ensure inclusivity and global representation. #GDC #GameDevelopers #TechIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-03-09T12:28:53-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Battlefield 6 teams hit with layoffs despite ‘biggest launch in franchise history’">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/891378/battlefield-6-layoffs-ea" target="_blank">Battlefield 6 teams hit with layoffs despite ‘biggest launch in franchise history’</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-09T12:28:53-04:00 | ID: 63cbf67c21a4
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Despite the success of Battlefield 6's launch, developers at EA studios Criterion, Dice, Ripple Effect, and Motive have faced layoffs. The exact number of staff affected remains unspecified. This news highlights the ongoing challenges faced by game developers even after achieving significant commercial success.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/891378/battlefield-6-layoffs-ea" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-63cbf67c21a4" onclick="toggleTweets('63cbf67c21a4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-63cbf67c21a4">
+                <div class="tweet">Despite the success of #Battlefield6's launch, developers at EA studios Criterion, Dice, Ripple Effect, and Motive have faced layoffs. The challenges of game development post-launch are evident. #TechNews #GameDev</div>
+<div class="tweet">Is the gaming industry's focus on commercial success overshadowing the well-being of developers? The recent layoffs at EA studios post-Battlefield 6 launch raise important questions. #GameIndustry #TechEthics #Battlefield6</div>
+<div class="tweet">The layoffs at EA studios following Battlefield 6's successful launch serve as a stark reminder of the ongoing struggles faced by game developers in an industry focused on constant innovation and financial performance. #GameDev #TechChallenges #EAStudios</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-03-09T11:07:24-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Samsung’s Mario-themed microSD card for Switch 2 is 35 percent off">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/891304/switch-2-microsd-express-card-samsung-mario-day-deal-sale" target="_blank">Samsung’s Mario-themed microSD card for Switch 2 is 35 percent off</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-09T11:07:24-04:00 | ID: af0b22aa3af3
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #FF9800">₿ Crypto</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Nintendo has reduced the price of its Mario-themed Samsung microSD Express card with 256GB storage from $59.99 to $39.99 for Mario Day. The microSD card is designed for the Switch 2 console and offers a 35% discount, making it a more attractive option for gamers looking to expand storage capacity at a more affordable price point.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/891304/switch-2-microsd-express-card-samsung-mario-day-deal-sale" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-af0b22aa3af3" onclick="toggleTweets('af0b22aa3af3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-af0b22aa3af3">
+                <div class="tweet">Exciting news for Nintendo Switch 2 owners! 🎮🔥 Get your hands on the Mario-themed Samsung microSD Express card with 256GB storage at a 35% discount for Mario Day. Expand your storage for less! #NintendoSwitch #MarioDay #TechDeals</div>
+<div class="tweet">Thinking of upgrading your Nintendo Switch storage? 🤔 Now's the perfect time! Samsung's discounted Mario-themed microSD card offers 256GB storage for all your gaming needs. Don't miss out! #GamingTech #StorageUpgrade #MarioDay</div>
+<div class="tweet">Nintendo fans, rejoice! 🙌 Take advantage of the 35% discount on the Mario-themed Samsung microSD Express card designed for the Switch 2 console. Enhance your gaming experience with more storage space at a reduced price. #Nintendo #TechNews #GamingCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-03-09T12:37:42-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Anthropic is suing the Department of Defense">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/891377/anthropic-dod-lawsuit" target="_blank">Anthropic is suing the Department of Defense</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-09T12:37:42-04:00 | ID: a6925e270dfb
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic, a tech company specializing in military AI, has filed a lawsuit against the US Department of Defense for labeling it as a supply-chain risk. The legal action follows a dispute over the Pentagon's restrictions on the company's AI technology for military applications. The lawsuit, filed in a California district court, alleges that the Trump administration unlawfully penalized Anthropic, highlighting the ongoing challenges in regulating advanced AI technologies for defense purposes.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/891377/anthropic-dod-lawsuit" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a6925e270dfb" onclick="toggleTweets('a6925e270dfb')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a6925e270dfb">
+                <div class="tweet">Anthropic, a key player in military AI, is taking legal action against the DoD over supply-chain risk labeling. The lawsuit sheds light on the complexities of regulating advanced AI in defense. #Anthropic #AI #DoD</div>
+<div class="tweet">Could the lawsuit between Anthropic and the Department of Defense signal a turning point in the regulation of AI technologies for military use? Share your thoughts. #AIregulation #Anthropic #DoD</div>
+<div class="tweet">The legal battle between Anthropic and the DoD underscores the challenges faced in balancing innovation and security in the realm of military AI. Stay tuned for developments. #TechDefense #AIethics #Anthropic</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-03-09T11:38:50-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Yashica’s new retro point-and-shoot revival sounds surprisingly capable for $100">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/891299/yashica-tank-digital-point-shoot-camera-retro" target="_blank">Yashica’s new retro point-and-shoot revival sounds surprisingly capable for $100</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-09T11:38:50-04:00 | ID: 77ff801dae53
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Yashica has introduced a new retro point-and-shoot camera called the Tank, priced at $100, catering to the renewed interest in this category among photographers. Unlike other options in the market like Canon's Elph 360 HS at $400 and the $30 Kodak Charmera, the Yashica Tank seems to provide a good balance of features and performance for its price point, making it an attractive option for those looking for an affordable yet capable camera.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/891299/yashica-tank-digital-point-shoot-camera-retro" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-77ff801dae53" onclick="toggleTweets('77ff801dae53')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-77ff801dae53">
+                <div class="tweet">Yashica's new $100 retro point-and-shoot camera, the Tank, is turning heads with its features and performance. A great option for budget-conscious photographers! 📸💰 #Yashica #Photography #TechNews</div>
+<div class="tweet">Looking for a budget-friendly yet capable point-and-shoot camera? Yashica's Tank might just be the answer! At $100, it's competing with higher-priced options. Would you give it a shot? 🤔📷 #Yashica #CameraTech #Photography</div>
+<div class="tweet">Yashica's Tank camera proves that quality doesn't always come with a hefty price tag. Priced at just $100, it offers a compelling mix of features and performance, making it a strong contender in the market. 📸💡 #TechInnovation #AffordableTech #Yashica</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-03-06" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="BEVLM: Distilling Semantic Knowledge from LLMs into Bird's-Eye View Representations">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2603.06576v1" target="_blank">BEVLM: Distilling Semantic Knowledge from LLMs into Bird's-Eye View Representations</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-03-06 | ID: 9cd519bb3cdd
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "BEVLM" by Thomas Monninger, Shaoyuan Xie, Qi Alfred Chen et al. explores the integration of Large Language Models (LLMs) into autonomous driving to leverage their reasoning and semantic understanding capabilities. This integration aims to enhance decision-making in complex scenarios and long-tail situations. The paper delves into distilling semantic knowledge from LLMs to create Bird's-Eye View Representations, potentially advancing autonomous driving technology.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2603.06576v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9cd519bb3cdd" onclick="toggleTweets('9cd519bb3cdd')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-9cd519bb3cdd">
+                <div class="tweet">Exciting research on integrating Large Language Models into autonomous driving to enhance decision-making in complex scenarios. "BEVLM" by Thomas Monninger et al. explores distilling semantic knowledge to advance autonomous tech. #LLMs #AutonomousDriving</div>
+<div class="tweet">Ever wondered how Large Language Models could revolutionize autonomous driving? The research paper "BEVLM" dives deep into leveraging LLMs for enhanced reasoning and decision-making in long-tail scenarios. What potential do you see for this integration? #BEVLM #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-03-06" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Fly360: Omnidirectional Obstacle Avoidance within Drone View">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2603.06573v1" target="_blank">Fly360: Omnidirectional Obstacle Avoidance within Drone View</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-03-06 | ID: 456007fa5ca0
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper "Fly360" by Xiangkai Zhang, Dizhe Zhang, WenZhuo Cao, et al. introduces omnidirectional obstacle avoidance for drones, addressing limitations of current methods relying on limited field-of-view sensors. This innovation enhances spatial intelligence in UAVs, offering improved safety and maneuverability in complex environments. The Fly360 approach marks a significant advancement in UAV technology, promising more efficient and reliable obstacle avoidance capabilities for various applications.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2603.06573v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-456007fa5ca0" onclick="toggleTweets('456007fa5ca0')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-456007fa5ca0">
+                <div class="tweet">Exciting tech news! "Fly360" research introduces omnidirectional obstacle avoidance for drones, enhancing spatial intelligence and safety in UAVs. 🚁 #DroneTech #Innovation</div>
+<div class="tweet">Ever wondered how drones can navigate complex environments more efficiently? The "Fly360" research offers a game-changing solution with omnidirectional obstacle avoidance. What's next for UAV technology? 🤔 #TechInnovation #UAVs</div>
+<div class="tweet">Key takeaway from "Fly360" research: Omnifield obstacle avoidance in drones marks a significant advancement, promising improved safety and maneuverability in varied settings. 🌐 #Fly360 #TechProgress</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="34.5" 
+             data-published="2026-03-09T12:45:58-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Google’s latest Pixel Watches have fallen to their lowest prices ever">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/891339/google-pixel-watch-3-4-sony-wh-1000xm5-headphones-deal-sale" target="_blank">Google’s latest Pixel Watches have fallen to their lowest prices ever</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-09T12:45:58-04:00 | ID: 98bb30d41f9d
+             | <span class="engagement-low">Engagement: [34.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 34%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google's latest Pixel Watch 4 is now available at its lowest prices ever, with discounts of up to $60 off. The smartwatch offers advanced fitness tracking features, making it ideal for outdoor activities. Consumers can purchase the Pixel Watch 4 on sale at major retailers like Amazon, Best Buy, and Target, starting at $289.99.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/891339/google-pixel-watch-3-4-sony-wh-1000xm5-headphones-deal-sale" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-98bb30d41f9d" onclick="toggleTweets('98bb30d41f9d')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-98bb30d41f9d">
+                <div class="tweet">Curious about the latest in wearable tech? Google's Pixel Watch 4 is now more affordable than ever, offering top-notch fitness tracking capabilities. Are you ready to elevate your fitness game with this sleek smartwatch? #WearableTech #FitnessTracker #PixelWatch</div>
+<div class="tweet">Looking for a new smartwatch? Google's Pixel Watch 4 is on sale with discounts up to $60, making it the perfect time to invest in advanced fitness tracking technology. Don't miss out on this opportunity to stay active and connected for less! #TechSale #FitnessTech #PixelWatch</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.0" 
+             data-published="Sun, 08 Mar 2026 13:13:03 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Jessica Jones joins the fray in Daredevil: Born Again trailer">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/03/jessica-jones-joins-the-fray-in-daredevil-born-again-trailer/" target="_blank">Jessica Jones joins the fray in Daredevil: Born Again trailer</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sun, 08 Mar 2026 13:13:03 +0000 | ID: 824e58128d25
+             | <span class="engagement-low">Engagement: [33.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            In the trailer for "Daredevil: Born Again," Jessica Jones makes an appearance, hinting at a crossover between the two Marvel series. This collaboration showcases the interconnected nature of the Marvel universe on Netflix, potentially setting the stage for more shared storylines and character interactions among the superhero shows.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/03/jessica-jones-joins-the-fray-in-daredevil-born-again-trailer/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-824e58128d25" onclick="toggleTweets('824e58128d25')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-824e58128d25">
+                <div class="tweet">Exciting news for Marvel fans! Jessica Jones joins Daredevil in the new "Born Again" trailer, hinting at a crossover between the two series. 🦸‍♂️🦸‍♀️ #Marvel #Daredevil #JessicaJones</div>
+<div class="tweet">What other crossovers are you hoping to see in the Marvel Netflix universe? 🤔 The appearance of Jessica Jones in "Daredevil: Born Again" has us wondering about potential team-ups! #MarvelCrossover #NetflixHeroes</div>
+<div class="tweet">The collaboration between Jessica Jones and Daredevil in "Born Again" highlights the interconnected storytelling approach within the Marvel Netflix universe, promising exciting shared storylines and character interactions ahead. 🌟 #MarvelUniverse #NetflixCollab</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-03-09 17:28" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="AI Error Likely Led to Girl’s School Bombing in Iran">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://thisweekinworcester.com/exclusive-ai-error-girls-school-bombing" target="_blank">AI Error Likely Led to Girl’s School Bombing in Iran</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-03-09 17:28 | ID: 51c50361bb9e
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            An AI error is suspected to have caused a tragic bombing at a girl's school in Iran. The incident was discussed on Reddit's r/technology forum, garnering significant attention with 5107 upvotes and 527 comments. This highlights the potential risks and consequences of relying on artificial intelligence systems for critical decision-making processes.
+        </div>
+        <div class="source-link">
+            → <a href="https://thisweekinworcester.com/exclusive-ai-error-girls-school-bombing" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-51c50361bb9e" onclick="toggleTweets('51c50361bb9e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-51c50361bb9e">
+                <div class="tweet">An AI error is believed to have caused a devastating bombing at a girl's school in Iran. This tragedy underscores the importance of ensuring AI systems are thoroughly tested and monitored. #AI #TechNews</div>
+<div class="tweet">Could an AI error have tragic real-world consequences? The recent bombing at a girl's school in Iran raises important questions about the risks of relying on artificial intelligence for critical decision-making. #AIethics #TechSafety</div>
+<div class="tweet">The incident in Iran's girl's school bombing serves as a stark reminder of the potential dangers of AI errors. It's crucial to prioritize ethical AI development and implement strict monitoring to prevent such tragic outcomes. #AIrisks #TechEthics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-03-09 17:02" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Uber is letting women avoid male drivers and riders in the US">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.dexerto.com/entertainment/uber-is-letting-women-avoid-male-drivers-and-riders-in-the-us-3229899/" target="_blank">Uber is letting women avoid male drivers and riders in the US</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-03-09 17:02 | ID: f72c126ec129
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Uber has introduced a new feature in the U.S. that allows female passengers to opt for female drivers and avoid male drivers and riders. This move aims to enhance safety and comfort for female users by providing more control over their ride-sharing experience. The feature reflects Uber's response to concerns about safety and inclusivity in its services.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.dexerto.com/entertainment/uber-is-letting-women-avoid-male-drivers-and-riders-in-the-us-3229899/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f72c126ec129" onclick="toggleTweets('f72c126ec129')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f72c126ec129">
+                <div class="tweet">Uber introduces a new feature in the U.S. allowing female passengers to opt for female drivers for added safety and comfort. Technology empowering users to tailor their ride-sharing experience. #Uber #SafetyFirst #WomenInTech</div>
+<div class="tweet">How can tech companies better address safety and inclusivity concerns within their services? Uber's latest move to allow female passengers to choose female drivers sparks important conversations. #TechInnovation #RideSharing #GenderEquality</div>
+<div class="tweet">Uber's new feature giving female passengers control over their ride experience reflects a shift towards more personalized and secure tech solutions. Empowering users through technology is key in enhancing customer satisfaction and safety. #TechNews #Innovation #UserExperience</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="31.0" 
+             data-published="Sat, 07 Mar 2026 12:30:56 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="A unicorn-like Spinosaurus found in the Sahara">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/03/a-unicorn-like-spinosaurus-found-in-the-sahara/" target="_blank">A unicorn-like Spinosaurus found in the Sahara</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 07 Mar 2026 12:30:56 +0000 | ID: d45b7d34db2c
+             | <span class="engagement-low">Engagement: [31.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 31%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent discovery in the Sahara desert has revealed a Spinosaurus dinosaur with a unicorn-like head spike and specialized fish-eating jaws. These unique features shed light on the evolutionary adaptations of this prehistoric creature, providing valuable insights into its behavior and ecological niche. This finding contributes to our understanding of dinosaur diversity and the complex ecosystems they inhabited millions of years ago.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/03/a-unicorn-like-spinosaurus-found-in-the-sahara/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d45b7d34db2c" onclick="toggleTweets('d45b7d34db2c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d45b7d34db2c">
+                <div class="tweet">Unicorns aren't just in fairy tales! 🦄 Scientists uncover a Spinosaurus in the Sahara with a unicorn-like head spike and specialized fish-eating jaws. 🦖🌍 #TechNews #Paleontology</div>
+<div class="tweet">Ever wondered how a dinosaur could look like a unicorn? 🦄 Discover the latest finding in the Sahara desert revealing a Spinosaurus with unique features shedding light on its evolution. 🦕🔍 #DinosaurDiscovery #EcoAdaptations</div>
+<div class="tweet">Unveiling the mysteries of a unicorn-like Spinosaurus! The recent Sahara discovery provides valuable insights into prehistoric behavior and ecological niches of dinosaurs, enriching our understanding of ancient ecosystems. 🌿🦕 #PaleoTech #DinoEvolution</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-03-08 18:44" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Open Sores - an essay on how programmers spent decades building a culture of open collaboration, and how they're being punished for it">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://richwhitehouse.com/index.php?postid=77" target="_blank">Open Sores - an essay on how programmers spent decades building a culture of open collaboration, and how they're being punished for it</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-03-08 18:44 | ID: e1f8db5e19bf
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article "Open Sores" delves into the paradoxical situation where programmers who have long fostered a culture of open collaboration are now facing challenges and repercussions for their efforts. It highlights the complexities and consequences of sharing code openly, touching on issues like security vulnerabilities, licensing disputes, and the exploitation of open-source projects. The piece sheds light on the evolving landscape of software development and the need for developers to navigate these challenges while continuing to promote collaboration and innovation in the community.
+        </div>
+        <div class="source-link">
+            → <a href="https://richwhitehouse.com/index.php?postid=77" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e1f8db5e19bf" onclick="toggleTweets('e1f8db5e19bf')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e1f8db5e19bf">
+                <div class="tweet">"Is the open collaboration culture among programmers facing a reckoning? Dive into the complexities of sharing code openly in the thought-provoking article 'Open Sores'. #TechCulture #OpenSource #Collaboration"</div>
+<div class="tweet">"Are the challenges faced by programmers in sharing code openly a sign of a shifting landscape in software development? Join the discussion sparked by 'Open Sores'. #TechCommunity #Innovation #CodeSharing"</div>
+<div class="tweet">"Programmers are grappling with the consequences of open collaboration. 'Open Sores' explores the thin line between sharing code and facing security risks. Stay informed and navigate the evolving tech landscape. #SoftwareDevelopment #CodeSecurity #OpenSource"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-03-09 10:37" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="RuView - See through walls with WiFi - top trending project of the month on Github. And it's a scam.">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://github.com/ruvnet/RuView" target="_blank">RuView - See through walls with WiFi - top trending project of the month on Github. And it's a scam.</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-03-09 10:37 | ID: 139f7dbc20dd
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A project named RuView claiming to enable seeing through walls using WiFi has gained popularity on Github but has been revealed as a scam. The project, which trended as a top project of the month, sparked discussions on Reddit's r/programming with 336 upvotes and 82 comments, cautioning users about its fraudulent nature. Developers and tech enthusiasts are advised to be wary of such projects promising unrealistic capabilities.
+        </div>
+        <div class="source-link">
+            → <a href="https://github.com/ruvnet/RuView" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-139f7dbc20dd" onclick="toggleTweets('139f7dbc20dd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-139f7dbc20dd">
+                <div class="tweet">"Caution to all developers and tech enthusiasts: RuView, the project claiming to see through walls with WiFi on Github, has been exposed as a scam. Stay vigilant! #TechScam #Github #RuView"</div>
+<div class="tweet">"Could the rise of fraudulent tech projects like RuView be a sign of the need for better community vetting mechanisms on open-source platforms? Share your thoughts! #TechEthics #OpenSource #RuViewScam"</div>
+<div class="tweet">"Important reminder for the tech community: Always exercise caution when coming across projects promising unrealistic capabilities like seeing through walls with WiFi. Stay informed and skeptical! #TechCommunity #StayVigilant #RuView"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="29.5" 
+             data-published="2026-03-06" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Omni-Diffusion: Unified Multimodal Understanding and Generation with Masked Discrete Diffusion">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2603.06577v1" target="_blank">Omni-Diffusion: Unified Multimodal Understanding and Generation with Masked Discrete Diffusion</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-03-06 | ID: 8829f70a32ae
+             | <span class="engagement-low">Engagement: [29.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 29%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Omni-Diffusion: Unified Multimodal Understanding and Generation with Masked Discrete Diffusion" by Lijiang Li, Zuwei Long, Yunhang Shen, and others introduces a novel approach to multimodal large language models (MLLMs) by proposing a Masked Discrete Diffusion architecture. This new architecture aims to enhance the understanding and generation capabilities of MLLMs by providing an effective and efficient alternative to the conventional autoregressive models commonly used. The research opens up new possibilities for improving the performance and versatility of MLLMs in processing multimodal data.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2603.06577v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8829f70a32ae" onclick="toggleTweets('8829f70a32ae')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8829f70a32ae">
+                <div class="tweet">Exciting tech research alert! 🚀 "Omni-Diffusion: Unified Multimodal Understanding and Generation with Masked Discrete Diffusion" introduces a groundbreaking approach to enhancing large language models. 🤯 #TechNews #MLLM #Innovation</div>
+<div class="tweet">Ever wondered how MLLMs can further revolutionize multimodal data processing? The innovative Masked Discrete Diffusion architecture proposed in "Omni-Diffusion" might hold the key! 💡 What do you think about this new approach? #TechDiscussion #FutureTech</div>
+<div class="tweet">"Omni-Diffusion" highlights the potential of Masked Discrete Diffusion to boost the capabilities of large language models in understanding and generating multimodal content efficiently. 🌐 Exciting times ahead for MLLM advancements! #TechInnovation #ResearchImpact</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="28.0" 
+             data-published="Sun, 08 Mar 2026 11:30:06 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Tiny, long-armed dinosaur leads to rethink of dinosaur miniaturization">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/03/tiny-long-armed-dinosaur-leads-to-rethink-of-dinosaur-miniaturization/" target="_blank">Tiny, long-armed dinosaur leads to rethink of dinosaur miniaturization</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sun, 08 Mar 2026 11:30:06 +0000 | ID: a8823857aa07
+             | <span class="engagement-low">Engagement: [28.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 28%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A newly discovered tiny dinosaur with unusually long arms is challenging previous assumptions about dinosaur miniaturization. The findings suggest that the evolution of small size preceded dietary changes in this dinosaur lineage, prompting a reevaluation of the relationship between body size and feeding habits in dinosaurs. This discovery sheds light on the complex evolutionary pathways taken by different dinosaur species and highlights the importance of rethinking traditional views on dinosaur characteristics.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/03/tiny-long-armed-dinosaur-leads-to-rethink-of-dinosaur-miniaturization/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a8823857aa07" onclick="toggleTweets('a8823857aa07')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-a8823857aa07">
+                <div class="tweet">Did you know? The discovery of a tiny, long-armed dinosaur is challenging previous assumptions about dinosaur miniaturization. This finding prompts a reevaluation of the relationship between body size and feeding habits in dinosaurs. 🦕🔍 #DinosaurEvolution #TechNews</div>
+<div class="tweet">Ever wondered how body size influences feeding habits in dinosaurs? A newly discovered tiny dinosaur with long arms is shaking up traditional views on dinosaur characteristics. What other surprises might paleontology unveil next? 🤔🦖 #DinosaurDiscovery #EvolutionaryBiology</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="28.0" 
+             data-published="Sat, 07 Mar 2026 21:06:46 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Hunting for elusive "ghost elephants"">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/03/hunting-for-elusive-ghost-elephants/" target="_blank">Hunting for elusive "ghost elephants"</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 07 Mar 2026 21:06:46 +0000 | ID: 2bd8841a2074
+             | <span class="engagement-low">Engagement: [28.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 28%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Werner Herzog directed a NatGeo documentary following an ornithologist's search for a new species, dubbed "ghost elephants." The film captures the technical challenges and environmental impact of this expedition, shedding light on the complexities of wildlife exploration in remote regions.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/03/hunting-for-elusive-ghost-elephants/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2bd8841a2074" onclick="toggleTweets('2bd8841a2074')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-2bd8841a2074">
+                <div class="tweet">Unveil the mystery of "ghost elephants" in Werner Herzog's NatGeo documentary, showcasing the technical hurdles and environmental implications of wildlife exploration in remote areas. 🐘📽️ #GhostElephants #WildlifeExploration</div>
+<div class="tweet">Ever wondered about the unseen creatures lurking in remote regions? Werner Herzog's latest film explores the journey of an ornithologist in search of "ghost elephants." What other hidden wonders might exist out there? 🤔🌍 #MysteryWildlife #Exploration</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="27.5" 
+             data-published="2026-03-06" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Multimodal Large Language Models as Image Classifiers">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2603.06578v1" target="_blank">Multimodal Large Language Models as Image Classifiers</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-03-06 | ID: 03983cd8c797
+             | <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 27%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A research paper by Nikita Kisel, Illia Volkov, Klara Janouskova, and others explores the classification performance of Multimodal Large Language Models (MLLM) as image classifiers. The study emphasizes the importance of evaluation protocols and ground truth quality in determining MLLM performance. Conflicting conclusions in comparisons between MLLMs and supervised vision-language models are attributed to differing evaluation protocols, highlighting the need for standardized evaluation methods in this field.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2603.06578v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-03983cd8c797" onclick="toggleTweets('03983cd8c797')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-03983cd8c797">
+                <div class="tweet">Exciting research by Nikita Kisel, Illia Volkov, Klara Janouskova, and team on Multimodal Large Language Models (MLLM) as image classifiers! The study stresses the significance of evaluation protocols and ground truth quality in determining MLLM performance. #TechResearch #MLLM</div>
+<div class="tweet">Curious about the impact of evaluation protocols on the performance of Multimodal Large Language Models (MLLM) as image classifiers? Dive into the research by Nikita Kisel, Illia Volkov, Klara Janouskova, and others for insights! #TechDebate #MLLM</div>
+<div class="tweet">Key takeaway from the study on Multimodal Large Language Models (MLLM) as image classifiers: Standardized evaluation methods are crucial for accurate performance assessments. Kudos to the researchers for shedding light on this critical aspect! #TechInsights #MLLM</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="27.5" 
+             data-published="2026-03-07 13:53" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="[P] VeridisQuo - open-source deepfake detector that combines spatial + frequency analysis and shows you where the face was manipulated">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://i.redd.it/j51nr1pqomng1.gif" target="_blank">[P] VeridisQuo - open-source deepfake detector that combines spatial + frequency analysis and shows you where the face was manipulated</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-03-07 13:53 | ID: d120dd3e9761
+             | <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 27%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            VeridisQuo is an open-source deepfake detection tool that utilizes a combination of spatial and frequency analysis to identify manipulated areas on a face. This tool provides users with a visual representation pinpointing where alterations have been made, aiding in the identification of deepfake content. The project's popularity on Reddit's r/MachineLearning subreddit indicates a growing interest in developing effective solutions to combat the spread of deepfakes.
+        </div>
+        <div class="source-link">
+            → <a href="https://i.redd.it/j51nr1pqomng1.gif" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d120dd3e9761" onclick="toggleTweets('d120dd3e9761')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d120dd3e9761">
+                <div class="tweet">Exciting news in tech! VeridisQuo, an open-source deepfake detector, uses spatial + frequency analysis to pinpoint manipulated areas on faces. Stay informed and combat the spread of deepfakes. #VeridisQuo #DeepfakeDetection</div>
+<div class="tweet">Ever wondered how to spot a deepfake with precision? VeridisQuo, an innovative open-source tool, combines spatial + frequency analysis to reveal manipulated areas on faces. How crucial is this tech in the fight against fake media? #DeepfakeDetection #TechInnovation</div>
+<div class="tweet">VeridisQuo's approach of combining spatial + frequency analysis for deepfake detection provides a visual roadmap of manipulated areas on faces. This tool is a significant step forward in the battle against misinformation online. #VeridisQuo #DeepfakesDetection</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-03-09 18:46:45 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
