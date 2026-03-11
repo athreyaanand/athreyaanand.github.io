@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - March 11, 2026, 12:52 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>March 11, 2026, 12:52 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-03-11 12:52:53
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 121.2 seconds</div>
+                <div>Start Time: 2026-03-11 12:52:53</div>
+                <div>End Time: 2026-03-11 12:54:54</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 21, Low: 12</div>
+                <div>Topics Detected: 7</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="67.5" 
+             data-published="2026-03-06 17:46" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Tech employment now significantly worse than the 2008 or 2020 recessions">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://twitter.com/JosephPolitano/status/2029916364664611242" target="_blank">Tech employment now significantly worse than the 2008 or 2020 recessions</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-06 17:46 | ID: 256f8ce5a913
+             | <span class="engagement-notable">Engagement: [67.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 67%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Tech employment is currently facing a more severe downturn than during the 2008 financial crisis or the 2020 pandemic-induced recession. The article highlights the significant impact on tech jobs, with many professionals experiencing layoffs and hiring freezes across the industry. This downturn underscores the challenges faced by the tech sector amidst economic uncertainties and global crises.
+        </div>
+        <div class="source-link">
+            → <a href="https://twitter.com/JosephPolitano/status/2029916364664611242" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-256f8ce5a913" onclick="toggleTweets('256f8ce5a913')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-256f8ce5a913">
+                <div class="tweet">Tech job market facing a tougher downturn than during the 2008 financial crisis or the 2020 recession. Layoffs and hiring freezes impacting professionals across the industry. Stay informed! #TechIndustry #JobMarket #EconomicUncertainty</div>
+<div class="tweet">Is the current tech employment downturn a sign of greater challenges ahead for the industry? How can tech professionals navigate these uncertainties to secure their careers? Share your thoughts! #TechJobs #CareerAdvice #TechTrends</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="64.5" 
+             data-published="2026-03-05 14:05" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Judge orders government to begin refunding more than $130B in tariffs">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.wsj.com/politics/policy/judge-orders-government-to-begin-refunding-more-than-130-billion-in-tariffs-fdc1e62c" target="_blank">Judge orders government to begin refunding more than $130B in tariffs</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-05 14:05 | ID: 6f7f87dc6309
+             | <span class="engagement-notable">Engagement: [64.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 64%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A judge has ruled that the U.S. government must start refunding over $130 billion in tariffs collected on Chinese imports, citing procedural errors in the way the tariffs were implemented. The decision could have significant implications for businesses that paid these tariffs, potentially leading to refunds for affected companies. This ruling highlights the importance of proper procedures and transparency in trade policies to avoid legal challenges and financial repercussions.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.wsj.com/politics/policy/judge-orders-government-to-begin-refunding-more-than-130-billion-in-tariffs-fdc1e62c" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6f7f87dc6309" onclick="toggleTweets('6f7f87dc6309')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6f7f87dc6309">
+                <div class="tweet">Judge orders U.S. government to refund over $130B in tariffs collected on Chinese imports due to procedural errors. This decision could lead to significant refunds for affected businesses. #Tariffs #TradePolicy #TechNews</div>
+<div class="tweet">How can procedural errors in implementing tariffs lead to legal challenges and financial repercussions for businesses? The recent ruling highlights the importance of transparency in trade policies. #TariffRefunds #LegalChallenges #Transparency</div>
+<div class="tweet">Proper procedures and transparency are crucial in trade policies to avoid legal battles. The ruling to refund $130B+ in tariffs emphasizes the need for clear and fair implementation of tariffs to prevent future issues. #TradeTransparency #LegalCompliance #TechBusinesses</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-04 14:16" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="MacBook Neo">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/" target="_blank">MacBook Neo</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-04 14:16 | ID: a9ab5f24bb98
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple has announced the launch of the MacBook Neo, featuring a new M3 chip designed in-house. The M3 chip promises enhanced performance and efficiency, marking a significant shift away from Intel processors in Apple's laptop lineup. This move is expected to offer developers and users improved speed and capabilities in future MacBook models.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a9ab5f24bb98" onclick="toggleTweets('a9ab5f24bb98')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a9ab5f24bb98">
+                <div class="tweet">Exciting news for Apple fans! The new MacBook Neo is here with the powerful M3 chip, promising enhanced performance and efficiency. Say hello to a new era of MacBooks! 🚀💻 #MacBookNeo #Apple #M3Chip</div>
+<div class="tweet">Are you ready for the future of MacBooks? With the new M3 chip in the MacBook Neo, Apple is set to redefine performance and efficiency in their laptop lineup. What do you think this means for Intel processors? 🧐💭 #MacBookNeo #M3Chip #TechDebate</div>
+<div class="tweet">Apple's move to introduce the M3 chip in the MacBook Neo signifies a major shift away from Intel processors, promising developers and users improved speed and capabilities. The future of MacBooks looks faster and more efficient than ever! 💡💻 #MacBookNeo #Apple #M3Chip</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-10 14:50" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Tony Hoare has died">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html" target="_blank">Tony Hoare has died</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-10 14:50 | ID: 1c7b57d4ad87
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Renowned computer scientist Tony Hoare has passed away, as discussed on Hacker News with 1848 points and 241 comments. Hoare, known for his contributions to the development of programming languages and the invention of the Quicksort algorithm, leaves a significant legacy in the tech industry. His work has had a lasting impact on software development practices and algorithms used widely today.
+        </div>
+        <div class="source-link">
+            → <a href="https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1c7b57d4ad87" onclick="toggleTweets('1c7b57d4ad87')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1c7b57d4ad87">
+                <div class="tweet">Renowned computer scientist Tony Hoare, known for his contributions to programming languages and the Quicksort algorithm, has passed away. His legacy in tech will continue to inspire generations. #TonyHoare #TechLegend</div>
+<div class="tweet">What impact do you think Tony Hoare's work had on modern software development practices and algorithms? Share your thoughts. #TechInnovation #ProgrammingLegend #TonyHoare</div>
+<div class="tweet">Tony Hoare's passing reminds us of the profound influence he had on the tech industry. His work on programming languages and algorithms continues to shape the way we write and execute code today. #TechLegacy #Innovator #TonyHoare</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-06 14:10" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Global warming has accelerated significantly">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.researchsquare.com/article/rs-6079807/v1" target="_blank">Global warming has accelerated significantly</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-06 14:10 | ID: d5702fdae644
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Recent data shows that global warming has accelerated significantly, with 2025 being the warmest year on record. This increase in temperatures is attributed to human activities, particularly the burning of fossil fuels. The findings highlight the urgent need for global action to mitigate the impacts of climate change.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.researchsquare.com/article/rs-6079807/v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d5702fdae644" onclick="toggleTweets('d5702fdae644')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d5702fdae644">
+                <div class="tweet">Global warming is accelerating at an alarming rate according to recent data. 2025 has been identified as the warmest year on record. Time for urgent global action to combat climate change. 🌍🔥 #GlobalWarming #ClimateChange</div>
+<div class="tweet">Could the burning of fossil fuels be the primary driver of the significant acceleration in global warming? The recent data is a wake-up call for all of us. How can we make a difference? 💭🌿 #FossilFuels #ClimateCrisis</div>
+<div class="tweet">The findings on global warming's acceleration underscore the pressing need for immediate action. Let's come together to reduce our carbon footprint and protect our planet for future generations. 🌏💚 #ActOnClimate #Sustainability</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-05 16:04" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Wikipedia was in read-only mode following mass admin account compromise">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.wikimediastatus.net" target="_blank">Wikipedia was in read-only mode following mass admin account compromise</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-05 16:04 | ID: a94a6c4986cf
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Wikipedia recently experienced a security incident that led to a mass compromise of administrator accounts, forcing the platform into read-only mode temporarily. The breach disrupted editing capabilities for users as a precautionary measure to prevent unauthorized changes to content. Wikipedia's quick response to the incident highlights the importance of robust security measures to safeguard against potential cyber threats.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.wikimediastatus.net" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a94a6c4986cf" onclick="toggleTweets('a94a6c4986cf')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a94a6c4986cf">
+                <div class="tweet">Did you know that Wikipedia recently went into read-only mode due to a mass admin account compromise? This incident underscores the critical importance of robust security measures in safeguarding against cyber threats. #CyberSecurity #Wikipedia #TechNews</div>
+<div class="tweet">How can platforms like Wikipedia enhance their security measures to prevent future admin account compromises? Share your thoughts! #CyberSecurity #DataProtection #TechTalk</div>
+<div class="tweet">The recent incident where Wikipedia had to switch to read-only mode due to compromised admin accounts serves as a stark reminder of the constant need for stringent security protocols in the digital age. #SecurityAwareness #CyberThreats #StaySafeOnline</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="55" 
+             data-published="Wed, 11 Mar 2026 12:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Zoox plans to put its robotaxis on the Uber app in Vegas this year">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/11/zoox-plans-to-put-its-robotaxis-on-the-uber-app-in-vegas-this-year/" target="_blank">Zoox plans to put its robotaxis on the Uber app in Vegas this year</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 11 Mar 2026 12:00:00 +0000 | ID: 91db3f5be9c7
+             | <span class="engagement-standard">Engagement: [55.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 55%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Zoox, a self-driving car company, aims to integrate its purpose-built robotaxis into the Uber app in Las Vegas by the end of this year, with plans to expand to Los Angeles in 2023 pending regulatory approval. This move signifies a significant step towards autonomous vehicle deployment in ride-sharing services, potentially revolutionizing the transportation industry by offering passengers a glimpse into the future of mobility technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/11/zoox-plans-to-put-its-robotaxis-on-the-uber-app-in-vegas-this-year/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-91db3f5be9c7" onclick="toggleTweets('91db3f5be9c7')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-91db3f5be9c7">
+                <div class="tweet">Exciting news from Zoox 🚖🤖! The self-driving car company plans to integrate its robotaxis into the Uber app in Vegas by end of 2022, expanding to LA in 2023 pending regulatory approval. A major leap towards autonomous ride-sharing services. 🌟 #Zoox #Uber #SelfDrivingCars</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="50.5" 
+             data-published="Tue, 10 Mar 2026 20:10:06 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Amazon launches its healthcare AI assistant on its website and app">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/10/amazon-launches-its-healthcare-ai-assistant-on-its-website-and-app/" target="_blank">Amazon launches its healthcare AI assistant on its website and app</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 10 Mar 2026 20:10:06 +0000 | ID: 47a41b7431c9
+             | <span class="engagement-standard">Engagement: [50.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 50%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Amazon has introduced its healthcare AI assistant on its website and app, offering features like answering health-related queries, explaining health records, handling prescription renewals, scheduling appointments, and additional services. This move signifies Amazon's foray into the healthcare sector, providing users with convenient and accessible tools to manage their health needs through AI technology integrated into their platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/10/amazon-launches-its-healthcare-ai-assistant-on-its-website-and-app/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-47a41b7431c9" onclick="toggleTweets('47a41b7431c9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-47a41b7431c9">
+                <div class="tweet">Amazon is stepping up its game in the healthcare sector with the launch of its AI assistant on its website and app, offering various health-related services to users. #Amazon #healthcare #AI</div>
+<div class="tweet">How do you feel about using an AI assistant for healthcare needs? Amazon's latest move aims to provide convenient health management tools through technology. #healthtech #AI #Amazon</div>
+<div class="tweet">Amazon's introduction of its healthcare AI assistant marks a significant shift in the company's focus towards integrating technology into the healthcare sector, offering users accessible tools to manage their health needs efficiently. #healthcare #AI #techintegration</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Wed, 11 Mar 2026 10:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Health insurance startup Alan reaches €5B valuation">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/11/health-insurance-startup-alan-reaches-e5b-valuation/" target="_blank">Health insurance startup Alan reaches €5B valuation</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 11 Mar 2026 10:00:00 +0000 | ID: 74ccf50dff0f
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            French health insurance startup Alan has achieved a valuation of €5 billion, marking a significant increase from its previous valuation of $4.5 billion in 2024. This valuation underscores the company's growth and success in the health insurance sector, positioning it as a key player in the industry with substantial market potential.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/11/health-insurance-startup-alan-reaches-e5b-valuation/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-74ccf50dff0f" onclick="toggleTweets('74ccf50dff0f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-74ccf50dff0f">
+                <div class="tweet">Exciting news in the tech world! French health insurance startup Alan has reached a valuation of €5 billion, solidifying its position as a major player in the industry. #TechNews #HealthTech</div>
+<div class="tweet">Curious about the rapid rise of Alan? How has this health insurance startup managed to achieve a valuation of €5 billion? Share your thoughts! #Alan #HealthInsurance #TechValuation</div>
+<div class="tweet">The growth of Alan to a €5 billion valuation showcases the immense market potential in the health insurance sector. A clear indicator of innovation and success in tech-driven solutions for healthcare. #Innovation #TechSuccess #HealthcareRevolution</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Wed, 11 Mar 2026 07:01:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Anduril snaps up space surveillance firm ExoAnalytic Solutions">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/11/anduril-snaps-up-space-surveillance-firm-exoanalytic-solutions/" target="_blank">Anduril snaps up space surveillance firm ExoAnalytic Solutions</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 11 Mar 2026 07:01:00 +0000 | ID: 18e44ff6dbad
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anduril Industries, a defense technology company, has acquired ExoAnalytic Solutions, a space surveillance firm. This acquisition is expected to enhance Anduril's capabilities in securing missile defense contracts, particularly through the development of the "Golden Dome" system. The move signifies Anduril's strategic expansion into the space surveillance and defense sector, positioning the company for increased growth and opportunities in the defense technology market.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/11/anduril-snaps-up-space-surveillance-firm-exoanalytic-solutions/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-18e44ff6dbad" onclick="toggleTweets('18e44ff6dbad')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-18e44ff6dbad">
+                <div class="tweet">Anduril Industries strengthens its defense tech portfolio by acquiring ExoAnalytic Solutions, a space surveillance firm. The move is set to boost Anduril's missile defense capabilities. 🚀 #Anduril #ExoAnalytic #DefenseTech</div>
+<div class="tweet">How will Anduril's acquisition of ExoAnalytic Solutions impact the future of space surveillance and missile defense technology? Join the conversation! 💭🛰️ #TechDiscussion #DefenseInnovation</div>
+<div class="tweet">By acquiring ExoAnalytic Solutions, Anduril is strategically expanding its presence in the space surveillance and defense sector. The development of the "Golden Dome" system is poised to revolutionize missile defense. 🛡️ #StrategicAcquisition #DefenseMarket</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.0" 
+             data-published="2026-03-10" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="From Data Statistics to Feature Geometry: How Correlations Shape Superposition">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2603.09972v1" target="_blank">From Data Statistics to Feature Geometry: How Correlations Shape Superposition</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-03-10 | ID: 53d474263268
+             | <span class="engagement-standard">Engagement: [44.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            In a research paper by Lucas Prieto, Edward Stevinson, Melih Barsbey, and others, the concept of neural networks representing more features than dimensions through superposition to create an over-complete basis is explored. This idea has influenced dictionary learning methods like sparse autoencoders. The research delves into how correlations shape superposition from data statistics to feature geometry, shedding light on the mechanisms behind neural network interpretability.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2603.09972v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-53d474263268" onclick="toggleTweets('53d474263268')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-53d474263268">
+                <div class="tweet">Unlocking the power of neural networks! A new research paper delves into how correlations shape superposition, shedding light on neural network interpretability. 🧠💡 #NeuralNetworks #TechResearch #DataScience</div>
+<div class="tweet">Ever wondered how neural networks represent more features than dimensions? The concept of superposition in correlation shaping is at the heart of new research by Lucas Prieto and team. How might this impact future AI development? 🤔 #AI #NeuralNetworks #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Tue, 10 Mar 2026 20:42:44 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Google and Tesla think we’re managing the electrical grid all wrong">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/10/google-and-tesla-think-were-managing-the-electrical-grid-all-wrong/" target="_blank">Google and Tesla think we’re managing the electrical grid all wrong</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 10 Mar 2026 20:42:44 +0000 | ID: 617f4cc81f65
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google and Tesla, along with other companies, have collaborated to launch Utilize, a project aimed at revolutionizing the management and regulation of the electrical grid. By introducing new technologies and approaches, Utilize aims to optimize grid usage and efficiency, potentially leading to more sustainable and reliable energy systems in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/10/google-and-tesla-think-were-managing-the-electrical-grid-all-wrong/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-617f4cc81f65" onclick="toggleTweets('617f4cc81f65')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-617f4cc81f65">
+                <div class="tweet">Exciting news in tech! Google, Tesla, and other companies are teaming up for Project Utilize to transform the electrical grid management. 🌐⚡️ #Google #Tesla #Utilize #TechNews</div>
+<div class="tweet">Are we on the cusp of a revolution in energy management? Google, Tesla, and partners are challenging the status quo with Project Utilize. How might this reshape our energy future? 💭🔋 #EnergyRevolution #Innovation #TechTalk</div>
+<div class="tweet">Project Utilize by Google and Tesla aims to optimize the electrical grid with new tech and approaches. This could pave the way for greener, more reliable energy systems. 🌿💡 #Sustainability #EnergyEfficiency #FutureTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Tue, 10 Mar 2026 19:36:05 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="AI can rewrite open source code—but can it rewrite the license, too?">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/03/ai-can-rewrite-open-source-code-but-can-it-rewrite-the-license-too/" target="_blank">AI can rewrite open source code—but can it rewrite the license, too?</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 10 Mar 2026 19:36:05 +0000 | ID: 56e26d3c6ba2
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Researchers have developed an AI system capable of rewriting open-source code, raising questions about whether it can also modify the associated licenses. This innovation blurs the lines between reverse engineering and creating derivative works, potentially impacting the legal aspects of open-source software development. The technology's ability to automatically alter code while preserving functionality could have significant implications for the open-source community and software licensing practices.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/03/ai-can-rewrite-open-source-code-but-can-it-rewrite-the-license-too/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-56e26d3c6ba2" onclick="toggleTweets('56e26d3c6ba2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-56e26d3c6ba2">
+                <div class="tweet">Exciting developments in AI tech! Researchers have created a system that can rewrite open-source code. How will this impact software licensing practices? 🤖🖥️ #AI #OpenSource #TechNews</div>
+<div class="tweet">Could AI rewriting open-source code also mean rewriting licenses? 🤔 The intersection of technology and legal aspects in software development is evolving rapidly! #AI #OpenSource #SoftwareLicensing</div>
+<div class="tweet">The AI system that can rewrite open-source code raises fascinating questions about the future of software development and licensing. Adaptability is key in the tech world! 🌐💡 #TechInnovation #AI #OpenSource</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Tue, 10 Mar 2026 18:37:12 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="After complaints, Google will make it easier to disable gen AI search in Photos">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/03/google-backtracks-on-ai-search-in-photos-adds-toggle-for-fast-classic-search/" target="_blank">After complaints, Google will make it easier to disable gen AI search in Photos</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 10 Mar 2026 18:37:12 +0000 | ID: 371ef683014a
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has announced plans to address user complaints by introducing a new toggle for disabling the generation of AI-powered search suggestions in Google Photos. This toggle, labeled "fast classic search," will provide users with a simpler way to opt out of the AI-generated search feature, addressing concerns around privacy and unwanted suggestions. The update aims to give users more control over their data and the functionality of the Photos app.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/03/google-backtracks-on-ai-search-in-photos-adds-toggle-for-fast-classic-search/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-371ef683014a" onclick="toggleTweets('371ef683014a')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-371ef683014a">
+                <div class="tweet">After user complaints, Google is introducing a new toggle to disable AI search suggestions in Google Photos. The "fast classic search" option gives users more control over their data and privacy. #GooglePhotos #AI #Privacy</div>
+<div class="tweet">Is more control over AI features in tech apps a step in the right direction for user privacy concerns? Google's new toggle in Photos allows users to opt out of AI search suggestions. What are your thoughts? #TechPrivacy #AI #GooglePhotos</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Tue, 10 Mar 2026 17:58:23 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Trump's divisive FDA vaccine regulator self-destructs, will exit agency (again)">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/03/trumps-divisive-fda-vaccine-regulator-self-destructs-will-exit-agency-again/" target="_blank">Trump's divisive FDA vaccine regulator self-destructs, will exit agency (again)</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 10 Mar 2026 17:58:23 +0000 | ID: 61768b6aad72
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Dr. Vinay Prasad, a controversial figure at the FDA known for his outspoken views on COVID-19 vaccines, is set to leave the agency again. While the impact of his departure remains uncertain, some pharmaceutical companies are reportedly pleased with the news. Prasad's exit raises questions about the future direction of vaccine regulation and public health policy at the FDA.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/03/trumps-divisive-fda-vaccine-regulator-self-destructs-will-exit-agency-again/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-61768b6aad72" onclick="toggleTweets('61768b6aad72')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-61768b6aad72">
+                <div class="tweet">Dr. Vinay Prasad, a prominent figure at the FDA known for his controversial views on COVID-19 vaccines, is set to exit the agency again. What impact will his departure have on vaccine regulation and public health policy? #FDA #COVID19 #VaccineRegulation</div>
+<div class="tweet">Is Dr. Vinay Prasad's exit from the FDA a sign of shifting views on vaccine regulation and public health policy? How will this impact the future of vaccine development and approval processes? #PublicHealth #FDA #VaccinePolicy</div>
+<div class="tweet">The departure of Dr. Vinay Prasad from the FDA highlights ongoing debates and challenges in vaccine regulation. It raises questions about the balance between scientific evidence, public health priorities, and pharmaceutical interests. #VaccineRegulation #FDA #PublicHealth</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="2026-03-10T17:55:10-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="A live-action Samurai Champloo is in the works">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/892675/a-live-action-samurai-champloo-is-in-the-works" target="_blank">A live-action Samurai Champloo is in the works</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-10T17:55:10-04:00 | ID: 4a2977a3117b
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Shinichirō Watanabe, the creator of iconic anime series like Cowboy Bebop, is collaborating with Tomorrow Studios to develop a live-action adaptation of Samurai Champloo. Following the disappointment of the live-action Cowboy Bebop, Watanabe's involvement in this new project has sparked interest and anticipation among fans and industry observers. The announcement signals a renewed effort to bring beloved anime titles to live-action formats, with Watanabe's creative input expected to play a crucial role in the adaptation's success.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/892675/a-live-action-samurai-champloo-is-in-the-works" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4a2977a3117b" onclick="toggleTweets('4a2977a3117b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4a2977a3117b">
+                <div class="tweet">Exciting news for anime fans! Shinichirō Watanabe, creator of Cowboy Bebop, is teaming up with Tomorrow Studios for a live-action Samurai Champloo adaptation. Will this be the live-action hit fans have been waiting for? 🎬 #SamuraiChamploo #Anime #TechNews</div>
+<div class="tweet">Can Shinichirō Watanabe's involvement in the live-action Samurai Champloo project redeem the genre after the disappointment of live-action Cowboy Bebop? 🤔 Will this adaptation set a new standard for anime crossovers? 🌟 #Anime #SamuraiChamploo #Tech</div>
+<div class="tweet">With Shinichirō Watanabe leading the charge, the live-action Samurai Champloo adaptation aims to revitalize the genre and captivate fans. Watanabe's creative touch could be the key to success in bringing beloved anime titles to life. 🗡️🎥 #SamuraiChamploo #Anime #TechInsight</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.0" 
+             data-published="2026-03-10" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Task Aware Modulation Using Representation Learning for Upsaling of Terrestrial Carbon Fluxes">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2603.09974v1" target="_blank">Task Aware Modulation Using Representation Learning for Upsaling of Terrestrial Carbon Fluxes</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-03-10 | ID: 5c04be80ef8d
+             | <span class="engagement-standard">Engagement: [43.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Aleksei Rozanov, Arvind Renganathan, and Vipin Kumar introduces a novel approach called Task Aware Modulation using Representation Learning for upscaling terrestrial carbon fluxes. This method aims to address the challenges of accurately estimating global carbon budgets by leveraging representation learning to overcome limitations of existing data-driven upscaling products that struggle to generalize beyond observed domains. By incorporating task-specific information into the upscaling process, this technique shows promise in improving the accuracy and generalizability of carbon flux estimations.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2603.09974v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5c04be80ef8d" onclick="toggleTweets('5c04be80ef8d')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-5c04be80ef8d">
+                <div class="tweet">Exciting research by Rozanov, Renganathan, and Kumar introduces Task Aware Modulation using Representation Learning for upscaling terrestrial carbon fluxes. This innovative approach could revolutionize global carbon budget estimations. #TechNews #CarbonFlux</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Tue, 10 Mar 2026 20:09:51 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="DOGE employee stole Social Security data and put it on a thumb drive, report says">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/10/doge-employee-stole-social-security-data-and-put-it-on-a-thumb-drive-report-says/" target="_blank">DOGE employee stole Social Security data and put it on a thumb drive, report says</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 10 Mar 2026 20:09:51 +0000 | ID: 9f84a9c48655
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A former employee of the Social Security Administration, who was also a member of the decentralized cryptocurrency DOGE, allegedly stole Americans' personal data and saved it on a thumb drive. The individual intended to use the data at his new job, according to a whistleblower report. This incident highlights the ongoing challenges of data security and the importance of robust measures to prevent unauthorized access and misuse of sensitive information.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/10/doge-employee-stole-social-security-data-and-put-it-on-a-thumb-drive-report-says/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9f84a9c48655" onclick="toggleTweets('9f84a9c48655')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9f84a9c48655">
+                <div class="tweet">Former Social Security employee, also a DOGE member, caught stealing personal data for unauthorized use. A reminder of the critical need for stringent data security measures. #DataSecurity #PrivacyBreach</div>
+<div class="tweet">How can organizations ensure the protection of sensitive data in an era where insider threats are a significant concern? Share your thoughts. #DataPrivacy #CyberSecurity</div>
+<div class="tweet">The incident involving the DOGE employee stealing Social Security data emphasizes the pressing need for continuous monitoring and stringent access controls to safeguard personal information. #DataProtection #InfoSec</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Wed, 11 Mar 2026 11:07:54 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Quantum computing meets the Möbius molecule">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/03/quantum-computing-meets-the-mobius-molecule/" target="_blank">Quantum computing meets the Möbius molecule</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 11 Mar 2026 11:07:54 +0000 | ID: c418801a47c4
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Researchers have successfully simulated a Möbius molecule, a complex structure with multiple electrons, using quantum computing technology. This achievement showcases the potential of quantum computing to tackle intricate chemical problems that are challenging for classical computers. The ability to model such complex molecules could lead to advancements in drug discovery, materials science, and other fields that rely on understanding molecular behavior at a fundamental level.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/03/quantum-computing-meets-the-mobius-molecule/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c418801a47c4" onclick="toggleTweets('c418801a47c4')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-c418801a47c4">
+                <div class="tweet">Exciting breakthrough in quantum computing! Researchers have simulated a Möbius molecule using quantum tech, demonstrating its potential for solving complex chemical problems. #QuantumComputing #Chemistry #TechNews</div>
+<div class="tweet">The successful simulation of a Möbius molecule using quantum computing is a game-changer for understanding complex molecular behavior. This advancement could pave the way for innovative solutions in drug development and materials science. #TechInnovation #QuantumLeap</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Tue, 10 Mar 2026 19:02:55 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Meta acquires Moltbook, the AI agent social network">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/03/meta-acquires-moltbook-the-ai-agent-social-network/" target="_blank">Meta acquires Moltbook, the AI agent social network</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 10 Mar 2026 19:02:55 +0000 | ID: 361cb43c22e7
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Meta has acquired Moltbook, a social network project featuring AI agents, which was developed using OpenClaw technology. This acquisition signals Meta's continued focus on AI-driven technologies and could potentially enhance its existing AI capabilities within its social network platforms. The use of OpenClaw in Moltbook's development highlights the importance of open-source tools in fostering innovation in AI and social networking spaces.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/03/meta-acquires-moltbook-the-ai-agent-social-network/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-361cb43c22e7" onclick="toggleTweets('361cb43c22e7')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-361cb43c22e7">
+                <div class="tweet">Meta's latest move in the AI space: acquiring Moltbook, an AI agent social network developed with OpenClaw tech. 🤖 This acquisition showcases Meta's commitment to AI-driven innovation. #Meta #AI #OpenSource</div>
+<div class="tweet">What does Meta's acquisition of Moltbook mean for the future of social networking and AI integration? 🤔 Exciting times ahead! #Meta #Moltbook #AI #TechInnovation</div>
+<div class="tweet">The use of OpenClaw technology in Moltbook's development underscores the significance of open-source tools in advancing AI and social networking. Collaboration and innovation go hand in hand! 🚀 #OpenClaw #AI #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-03-11T07:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Facebook, WhatsApp, and Messenger get new ways to protect users from scams">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/892939/meta-facebook-whatsapp-messenger-scam-detection" target="_blank">Facebook, WhatsApp, and Messenger get new ways to protect users from scams</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-11T07:00:00-04:00 | ID: f8cd7610eff3
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Meta, the parent company of Facebook, WhatsApp, and Messenger, is introducing enhanced scam detection tools to these platforms to safeguard users from fraudulent activities. The new features will proactively notify users about potential scams, like unfamiliar friend requests and device linking notifications, aiming to prevent them from falling victim to scams. By providing early alerts and increased security measures, Meta aims to enhance user trust and safety across its social media and messaging services.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/892939/meta-facebook-whatsapp-messenger-scam-detection" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f8cd7610eff3" onclick="toggleTweets('f8cd7610eff3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f8cd7610eff3">
+                <div class="tweet">Exciting news for social media users! Meta is rolling out enhanced scam detection tools on Facebook, WhatsApp, and Messenger to protect us from potential scams. Stay safe and secure online! #Meta #ScamProtection</div>
+<div class="tweet">Curious about how Meta's new scam detection tools on Facebook, WhatsApp, and Messenger will impact your online safety? Let's discuss! How important are enhanced security measures to you when using social media platforms? #OnlineSafety #TechSecurity</div>
+<div class="tweet">Meta's proactive scam detection tools on Facebook, WhatsApp, and Messenger are a game-changer in safeguarding users from fraudulent activities. By providing early alerts, Meta aims to enhance trust and safety on its platforms. #UserSafety #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Wed, 11 Mar 2026 02:30:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Google brings Gemini in Chrome to India">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/10/google-gemini-chrome-expands-to-india-canada-new-zealand/" target="_blank">Google brings Gemini in Chrome to India</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 11 Mar 2026 02:30:00 +0000 | ID: cbb41528e1f2
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has introduced its Gemini keyboard in Chrome for Indian users, offering support for various languages such as Hindi, Bengali, Gujarati, Kannada, Malayalam, Marathi, Telugu, and Tamil. This move aims to enhance the user experience for Indian Chrome users by providing them with a more convenient and efficient typing experience in their native languages.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/10/google-gemini-chrome-expands-to-india-canada-new-zealand/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cbb41528e1f2" onclick="toggleTweets('cbb41528e1f2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cbb41528e1f2">
+                <div class="tweet">Google expands its Gemini keyboard to Chrome users in India, now supporting Hindi, Bengali, Gujarati, Kannada, Malayalam, Marathi, Telugu, and Tamil. Enhancing the typing experience for Indian users. #Google #Chrome #TechNews</div>
+<div class="tweet">How important is native language support in tech tools like Google's Gemini keyboard for Chrome users in India? Share your thoughts! #LanguageTech #UserExperience #Chrome</div>
+<div class="tweet">Google's introduction of Gemini keyboard in Chrome for Indian users reflects the commitment to inclusivity and user-centric design. Prioritizing native language support is key to enhancing the digital experience for diverse communities. #InclusiveTech #UserCentric #GoogleChrome</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Tue, 10 Mar 2026 23:01:47 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="In a vote of confidence for Meta’s Threads, Kalshi adds sharing feature">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/03/10/in-a-vote-of-confidence-for-metas-threads-kalshi-adds-sharing-feature/" target="_blank">In a vote of confidence for Meta’s Threads, Kalshi adds sharing feature</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 10 Mar 2026 23:01:47 +0000 | ID: e74796ef1b97
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Kalshi, a prediction market platform, has integrated a sharing feature that allows users to embed prediction market charts directly into Meta's Threads posts. This move demonstrates confidence in Meta's Threads platform and enhances the user experience by enabling seamless sharing of market data within the community. The integration is expected to foster more engagement and discussions among users on Kalshi's platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/03/10/in-a-vote-of-confidence-for-metas-threads-kalshi-adds-sharing-feature/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e74796ef1b97" onclick="toggleTweets('e74796ef1b97')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e74796ef1b97">
+                <div class="tweet">Exciting news in tech! Kalshi integrates a sharing feature to embed prediction market charts on Meta's Threads. Enhancing user experience and fostering community engagement. #Kalshi #MetaThreads #TechNews</div>
+<div class="tweet">How can the integration of Kalshi's sharing feature on Meta's Threads revolutionize the way we share market data and engage in discussions within the community? 🤔 #Predictions #MarketData #TechInnovation</div>
+<div class="tweet">By adding a sharing feature to embed prediction market charts, Kalshi shows confidence in Meta's Threads, creating a seamless user experience and promoting engagement. #UserExperience #TechIntegration #KalshiEnhancements</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Tue, 10 Mar 2026 22:12:35 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="FDA contradicts Trump admin, declines to approve generic drug for autism">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/03/fda-contradicts-trump-admin-declines-to-approve-generic-drug-for-autism/" target="_blank">FDA contradicts Trump admin, declines to approve generic drug for autism</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 10 Mar 2026 22:12:35 +0000 | ID: 5fd71d78585a
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The FDA has declined to approve a generic drug for autism, contradicting the Trump administration's push for its authorization. Instead, the FDA has approved the drug for a rare genetic condition due to clearer data supporting its efficacy. This decision highlights the importance of robust clinical evidence in determining drug approvals for specific conditions.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/03/fda-contradicts-trump-admin-declines-to-approve-generic-drug-for-autism/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5fd71d78585a" onclick="toggleTweets('5fd71d78585a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5fd71d78585a">
+                <div class="tweet">FDA declines to approve generic drug for autism, opting for rare genetic condition due to stronger data. Clinical evidence key in drug approvals. #FDA #DrugApproval #Autism</div>
+<div class="tweet">Is clear clinical evidence the ultimate determinant in drug approvals for specific conditions? FDA's decision on generic drug for autism raises questions. #FDA #DrugEfficacy #Autism</div>
+<div class="tweet">FDA's choice to approve a drug for rare genetic condition over autism underlines the significance of robust clinical data in regulatory decisions. #FDA #ClinicalEvidence #DrugApprovals</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.0" 
+             data-published="2026-03-10" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="ReCoSplat: Autoregressive Feed-Forward Gaussian Splatting Using Render-and-Compare">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2603.09968v1" target="_blank">ReCoSplat: Autoregressive Feed-Forward Gaussian Splatting Using Render-and-Compare</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-03-10 | ID: 0096daaa04af
+             | <span class="engagement-standard">Engagement: [41.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper introduces ReCoSplat, an autoregressive feed-forward Gaussian Splatting model designed for online novel view synthesis. It addresses the challenge of reconstructing scenes from sequential, often unposed observations, supporting both posed and unposed inputs with or without camera intrinsics. ReCoSplat aims to improve scene reconstruction accuracy and efficiency for various applications requiring dynamic view synthesis.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2603.09968v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0096daaa04af" onclick="toggleTweets('0096daaa04af')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0096daaa04af">
+                <div class="tweet">Exciting tech news alert! 🚀 Researchers introduce ReCoSplat, a cutting-edge autoregressive Gaussian Splatting model for novel view synthesis. 🌟 Enhancing scene reconstruction accuracy and efficiency for diverse applications. #TechInnovation #ReCoSplat #ViewSynthesis</div>
+<div class="tweet">Ever wondered how to reconstruct scenes from sequential, unposed observations efficiently? 🤔 ReCoSplat, an autoregressive feed-forward Gaussian Splatting model, could be the game-changer we've been waiting for in view synthesis tech! #FutureTech #ReCoSplat #Innovation</div>
+<div class="tweet">Key insight from the latest tech research: ReCoSplat is designed to support both posed and unposed inputs, with or without camera intrinsics. 📸 This flexibility is crucial for dynamic view synthesis applications. #TechResearch #ReCoSplat #ViewSynthesis</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-03-11T07:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Samsung Galaxy S26 and S26 Plus review: This again">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/892311/samsung-galaxy-s26-plus-review-screen-battery-camera-software" target="_blank">Samsung Galaxy S26 and S26 Plus review: This again</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-11T07:00:00-04:00 | ID: 9beb7e911319
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Samsung Galaxy S26 and S26 Plus continue the trend of minor spec refreshes in the Galaxy S flagship line, lacking major hardware upgrades seen in other Samsung devices like the Flips and Folds. The Galaxy S26 Ultra stands out with new features, but the standard S26 models offer incremental improvements rather than significant changes. Tech enthusiasts may find the lack of innovation disappointing in these latest Galaxy S devices.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/892311/samsung-galaxy-s26-plus-review-screen-battery-camera-software" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9beb7e911319" onclick="toggleTweets('9beb7e911319')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9beb7e911319">
+                <div class="tweet">Are you ready for the Samsung Galaxy S26 and S26 Plus? The latest flagship models offer minor spec refreshes but lack major hardware upgrades. Check out our review for more details. #SamsungGalaxy #TechReview #GalaxyS26</div>
+<div class="tweet">Is the lack of innovation in the Samsung Galaxy S26 lineup a deal-breaker for you? Share your thoughts on the incremental improvements in the latest Galaxy S devices. #TechEnthusiast #Samsung #GalaxyS26</div>
+<div class="tweet">The Samsung Galaxy S26 and S26 Plus may not bring groundbreaking changes, but the Galaxy S26 Ultra introduces new features that stand out. Innovation seems reserved for the Ultra model in this release. #MobileTech #GalaxyS26Ultra #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-03-11T05:45:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Anthropic is launching a new think tank amid Pentagon blacklist fight">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/892478/anthropic-institute-think-tank-claude-pentagon-jack-clark" target="_blank">Anthropic is launching a new think tank amid Pentagon blacklist fight</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-11T05:45:00-04:00 | ID: 29fb77580832
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Amid a dispute with the Pentagon leading to a blacklist and legal action, Anthropic is restructuring by launching the Anthropic Institute, a new internal think tank merging three research teams. The institute will concentrate on studying the broad impacts of AI, signaling a strategic shift in the company's research focus. This move comes amidst ongoing challenges and legal battles, underscoring Anthropic's commitment to advancing AI research despite regulatory hurdles.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/892478/anthropic-institute-think-tank-claude-pentagon-jack-clark" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-29fb77580832" onclick="toggleTweets('29fb77580832')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-29fb77580832">
+                <div class="tweet">Amidst Pentagon blacklist battle, Anthropic is launching the Anthropic Institute to focus on AI impacts & merge research teams. A strategic shift by the company in the face of regulatory challenges. #Anthropic #AIResearch #TechNews</div>
+<div class="tweet">Wondering how Anthropic's new think tank, the Anthropic Institute, will reshape the AI research landscape amidst legal battles with the Pentagon? Exciting times ahead for the company and the tech industry. #AI #Innovation #TechFuture</div>
+<div class="tweet">The launch of Anthropic's Anthropic Institute signals a strategic shift towards studying AI's broader impacts, highlighting the company's dedication to advancing AI research despite regulatory hurdles. #TechInnovation #AIResearch #AnthropicInstitute</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-03-11T08:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="How Trump’s war on Iran stranded a million fliers — and plunged the Gulf’s favorite playground into chaos">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/transportation/892358/iran-war-dubai-airport-travel-flight-cancel" target="_blank">How Trump’s war on Iran stranded a million fliers — and plunged the Gulf’s favorite playground into chaos</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-11T08:00:00-04:00 | ID: 8473857cda44
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses how escalating tensions between the U.S. and Iran led to drone attacks near Dubai's airport, causing chaos and stranding a million fliers. The incident disrupted air travel operations and highlighted the vulnerability of major transportation hubs to geopolitical conflicts, impacting travelers and the aviation industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/transportation/892358/iran-war-dubai-airport-travel-flight-cancel" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8473857cda44" onclick="toggleTweets('8473857cda44')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8473857cda44">
+                <div class="tweet">Escalating tensions between the U.S. and Iran resulted in chaos at Dubai's airport, leaving a million fliers stranded. This incident sheds light on the vulnerability of major transportation hubs during geopolitical conflicts. #TechNews #Aviation</div>
+<div class="tweet">How can the aviation industry better prepare for disruptions caused by geopolitical conflicts? The recent chaos at Dubai's airport due to U.S.-Iran tensions underscores the importance of proactive measures. Share your thoughts! #AviationSecurity #Geopolitics</div>
+<div class="tweet">The drone attacks near Dubai's airport highlight the far-reaching impact of geopolitical tensions on air travel. As tech advances, ensuring the safety and resilience of transportation hubs becomes more crucial than ever. #AviationIndustry #GeopoliticalRisk</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-03-11T05:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Oppo’s new foldable isn’t quite creaseless, but it’s pretty damn close">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/892547/oppo-find-n6-zero-feel-crease-impressions" target="_blank">Oppo’s new foldable isn’t quite creaseless, but it’s pretty damn close</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-11T05:00:00-04:00 | ID: 0f2c363d443f
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Oppo is set to launch its new foldable phone, the Find N6, which boasts a nearly creaseless display, addressing a common concern with foldable devices. The device is generating interest for its innovative design and is expected to make a significant impact in the foldable phone market. Oppo's Find N6 is scheduled for a full launch on March 17th, showcasing advancements in foldable display technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/892547/oppo-find-n6-zero-feel-crease-impressions" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0f2c363d443f" onclick="toggleTweets('0f2c363d443f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0f2c363d443f">
+                <div class="tweet">Exciting news from Oppo! The Find N6 foldable phone features a nearly creaseless display, setting a new standard for foldable devices. Launching on March 17th. #Oppo #FindN6 #FoldableTech</div>
+<div class="tweet">What do you think about Oppo's upcoming Find N6 foldable phone with its nearly creaseless display? Will this innovation reshape the foldable phone market? Share your thoughts! #TechDebate #Innovation #FindN6</div>
+<div class="tweet">Oppo's Find N6 foldable phone is pushing boundaries with its innovative design, nearly eliminating the crease issue seen in other foldable devices. A game-changer in the foldable tech world! #InnovativeTech #FoldableRevolution #FindN6</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="2026-03-11T08:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Nvidia’s head of autonomous driving opens up about his plan to beat Waymo and Tesla">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/892395/nvidia-autonomous-vehicle-xinzhou-wu-interview" target="_blank">Nvidia’s head of autonomous driving opens up about his plan to beat Waymo and Tesla</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-11T08:00:00-04:00 | ID: 360d890f2ac7
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Nvidia's head of autonomous driving, Xinzhou Wu, is focused on developing a hands-free autonomous driving system to compete with industry leaders like Waymo and Tesla. Wu's strategy involves rigorous testing and gaining "good confidence" in the system's driving capabilities before showcasing it to Nvidia's CEO, Jensen Huang. This emphasis on thorough testing and validation indicates Nvidia's commitment to ensuring the reliability and safety of their autonomous driving technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/892395/nvidia-autonomous-vehicle-xinzhou-wu-interview" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-360d890f2ac7" onclick="toggleTweets('360d890f2ac7')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-360d890f2ac7">
+                <div class="tweet">Exciting insights from Nvidia's head of autonomous driving, Xinzhou Wu, on their strategy to challenge Waymo and Tesla in developing hands-free autonomous driving systems. 🚗💨 #Nvidia #AutonomousDriving #TechNews</div>
+<div class="tweet">What does it take to beat industry giants like Waymo and Tesla in autonomous driving technology? Nvidia's Xinzhou Wu shares his strategic approach and commitment to rigorous testing. 🤔🚦 #Innovation #Competition #TechLeaders</div>
+<div class="tweet">Key takeaway: Nvidia's focus on thorough testing and validation of their autonomous driving system underscores their dedication to reliability and safety. Will this strategy help them surpass competitors like Waymo and Tesla? 🛣️🔍 #TechStrategy #SafetyFirst #Nvidia</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Tue, 10 Mar 2026 23:01:36 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Reentry of NASA satellite will exceed the agency's own risk guidelines">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/03/nasa-approved-a-safety-waiver-for-this-weeks-reentry-of-van-allen-probe/" target="_blank">Reentry of NASA satellite will exceed the agency's own risk guidelines</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 10 Mar 2026 23:01:36 +0000 | ID: 1073c0f0646e
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            NASA has announced that the reentry of its Upper Atmosphere Research Satellite (UARS) will surpass the agency's risk guidelines due to late-stage design alterations. The satellite's uncontrolled reentry poses an increased risk, highlighting the challenges of managing space debris and the importance of careful design and planning in satellite missions.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/03/nasa-approved-a-safety-waiver-for-this-weeks-reentry-of-van-allen-probe/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1073c0f0646e" onclick="toggleTweets('1073c0f0646e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1073c0f0646e">
+                <div class="tweet">NASA's Upper Atmosphere Research Satellite (UARS) facing uncontrolled reentry exceeding agency risk guidelines due to late design alterations. Managing space debris is crucial for satellite missions. 🛰️🚀 #NASA #SpaceDebris #SatelliteMission</div>
+<div class="tweet">Is the uncontrolled reentry of NASA's UARS a wake-up call for better space debris management strategies? How can we ensure the safety of our satellites in orbit? 🤔🌌 #SpaceSafety #SatelliteRisk #NASA</div>
+<div class="tweet">NASA's UARS reentry exceeding own risk guidelines sheds light on the vital need for meticulous design and planning in satellite missions. A reminder of the challenges in space exploration and debris management. 🌠🔧 #SpaceTech #DesignPlanning #SpaceExploration</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Tue, 10 Mar 2026 18:26:54 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Anthropic sues US over blacklisting; White House calls firm "radical left, woke"">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/03/anthropic-sues-us-over-blacklisting-white-house-calls-firm-radical-left-woke/" target="_blank">Anthropic sues US over blacklisting; White House calls firm "radical left, woke"</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 10 Mar 2026 18:26:54 +0000 | ID: 69dd6dcd3680
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic, a tech firm, has filed a lawsuit against the US government, alleging it was blacklisted for its stance against autonomous weapons and mass surveillance. The White House has labeled Anthropic as "radical left" and "woke" in response to the lawsuit, highlighting the contentious nature of the issue. This case underscores the intersection of technology, ethics, and government policies regarding emerging technologies like autonomous weapons.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/03/anthropic-sues-us-over-blacklisting-white-house-calls-firm-radical-left-woke/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-69dd6dcd3680" onclick="toggleTweets('69dd6dcd3680')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-69dd6dcd3680">
+                <div class="tweet">Anthropic, a tech firm, challenges US government over alleged blacklisting due to its stance against autonomous weapons and mass surveillance. The clash highlights the complex interplay between tech ethics and government policies. #Anthropic #TechEthics #GovernmentPolicies</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-03-10T18:25:06-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="How the spiraling Iran conflict could affect data centers and electricity costs">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/report/892661/iran-war-oil-gas-prices-data-center-electricity" target="_blank">How the spiraling Iran conflict could affect data centers and electricity costs</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-03-10T18:25:06-04:00 | ID: fe64cbe15dca
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The escalating conflict between the U.S. and Iran has raised concerns about potential impacts on data centers and electricity costs. With rising oil and gas prices, there is a fear of increased operational expenses for data centers that heavily rely on energy. The uncertainty surrounding the situation highlights the need for businesses to monitor developments closely and prepare for potential disruptions in the energy sector.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/report/892661/iran-war-oil-gas-prices-data-center-electricity" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-fe64cbe15dca" onclick="toggleTweets('fe64cbe15dca')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-fe64cbe15dca">
+                <div class="tweet">How could the escalating U.S.-Iran conflict impact data centers and electricity costs? Rising oil prices may lead to increased operational expenses for energy-intensive data centers. Stay informed to navigate potential disruptions. #DataCenters #TechNews</div>
+<div class="tweet">What steps should tech businesses take to mitigate the risks posed by the U.S.-Iran conflict on data centers and electricity costs? Proactive monitoring and adaptable strategies are key in uncertain times. Share your thoughts. #EnergySector #TechStrategy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.0" 
+             data-published="2026-03-10" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="CREATE: Testing LLMs for Associative Creativity">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2603.09970v1" target="_blank">CREATE: Testing LLMs for Associative Creativity</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-03-10 | ID: a8386c4a4d49
+             | <span class="engagement-low">Engagement: [35.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "CREATE: Testing LLMs for Associative Creativity" by Manya Wadhwa, Tiasa Singha Roy, Harvey Lederman, and others introduces CREATE, a benchmark for assessing models' ability in creative associative reasoning. The benchmark focuses on evaluating models' capacity to generate novel and meaningful connections between concepts, a key component of creativity. This research aims to advance the understanding and development of models capable of creative associative reasoning in artificial intelligence.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2603.09970v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a8386c4a4d49" onclick="toggleTweets('a8386c4a4d49')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-a8386c4a4d49">
+                <div class="tweet">Exciting research alert! 🚀 "CREATE: Testing LLMs for Associative Creativity" introduces a benchmark for evaluating models' ability in creative associative reasoning. Dive into the world of AI creativity with this innovative study. #AI #Creativity #TechResearch</div>
+<div class="tweet">Ever wondered how AI models can enhance their creative reasoning abilities? "CREATE: Testing LLMs for Associative Creativity" by Manya Wadhwa and team explores just that. How crucial is creative thinking in the future of AI development? 🤔 #AI #CreativeAI #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-03-11 10:38" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Report: Creating a 5-second AI video is like running a microwave for an hour">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://mashable.com/article/energy-ai-worse-than-we-thought" target="_blank">Report: Creating a 5-second AI video is like running a microwave for an hour</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-03-11 10:38 | ID: c25e3330de2f
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/technology highlighted that creating a 5-second AI video is as energy-intensive as running a microwave for an hour. This revelation underscores the significant energy consumption associated with training artificial intelligence models for video generation tasks, raising concerns about the environmental impact of AI development. The discussion sheds light on the need for more energy-efficient AI training methods to mitigate the environmental footprint of AI technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://mashable.com/article/energy-ai-worse-than-we-thought" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c25e3330de2f" onclick="toggleTweets('c25e3330de2f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c25e3330de2f">
+                <div class="tweet">Did you know? Creating a 5-second AI video can be as energy-intensive as running a microwave for an hour! 🌎💡 #AI #TechNews #EnvironmentalImpact</div>
+<div class="tweet">Ever thought about the environmental cost of AI development? Reddit users in r/technology point out that creating a short AI video is energy-intensive. How can we make AI training more energy-efficient? 🤔💭 #AI #Sustainability #TechDiscussion</div>
+<div class="tweet">The energy consumption of training AI models for video generation is raising concerns about the environmental impact of AI development. It's time to explore more energy-efficient AI training methods to reduce the carbon footprint of AI technologies. 🌱💻 #AI #GreenTech #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-03-10 22:12" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="MAGA Suddenly Quiet About Overseas Influence Now That Larry Ellison’s Warner Bros Bid Has Saudi, Chinese Backing">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.techdirt.com/2026/03/10/maga-suddenly-quiet-about-overseas-influence-now-that-larry-ellisons-warner-bros-bid-has-saudi-chinese-backing/" target="_blank">MAGA Suddenly Quiet About Overseas Influence Now That Larry Ellison’s Warner Bros Bid Has Saudi, Chinese Backing</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-03-10 22:12 | ID: e2892610966c
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Larry Ellison's bid for Warner Bros has garnered support from Saudi and Chinese backers, prompting a shift in the discussion around overseas influence in the tech industry. This development has raised questions about the silence from the Make America Great Again (MAGA) movement on this issue, highlighting the complexities of global tech partnerships and investments.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.techdirt.com/2026/03/10/maga-suddenly-quiet-about-overseas-influence-now-that-larry-ellisons-warner-bros-bid-has-saudi-chinese-backing/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e2892610966c" onclick="toggleTweets('e2892610966c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e2892610966c">
+                <div class="tweet">Larry Ellison's bid for Warner Bros gets backing from Saudi and Chinese investors, sparking debate on overseas influence in tech. #LarryEllison #WarnerBros #TechIndustry</div>
+<div class="tweet">Why the sudden silence from MAGA on Larry Ellison's tech deal with Saudi and Chinese backers? Global partnerships raise complex issues in the tech sector. #MAGA #TechInvestments #GlobalTech</div>
+<div class="tweet">The support for Larry Ellison's bid sheds light on the growing influence of overseas investors in the tech industry. Global partnerships are reshaping the landscape of tech investments. #TechPartnerships #InvestmentTrends #TechIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-03-11 05:02" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Tony Hoare, creator of Quicksort & Null, passed away.">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html" target="_blank">Tony Hoare, creator of Quicksort & Null, passed away.</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-03-11 05:02 | ID: 0bb81fb87ed8
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Renowned computer scientist Tony Hoare, known for creating the Quicksort algorithm and introducing the concept of null references, has passed away. His contributions to computer science, including the development of foundational algorithms and his work on programming languages, have had a lasting impact on the field. The news of his passing sparked a discussion on Reddit's r/programming community, with many users reflecting on his legacy and the significance of his work.
+        </div>
+        <div class="source-link">
+            → <a href="https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0bb81fb87ed8" onclick="toggleTweets('0bb81fb87ed8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0bb81fb87ed8">
+                <div class="tweet">Renowned computer scientist Tony Hoare, creator of Quicksort & Null, has passed away. His groundbreaking work in algorithms and programming languages has left a lasting legacy in the tech world. #TonyHoare #Quicksort #Null</div>
+<div class="tweet">What impact did Tony Hoare's Quicksort algorithm and concept of null references have on modern computing? Join the discussion and share your thoughts. #TechHistory #ComputerScience #Legacy</div>
+<div class="tweet">Tony Hoare's contributions to computer science remind us of the importance of foundational algorithms and innovative thinking. His work continues to shape the tech industry and inspire future generations of programmers. #TechPioneer #Innovation #Programming</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-03-11 05:39" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="simple-git npm package has a CVSS 9.8 RCE. 5M+ weekly downloads. check your lockfiles.">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.codeant.ai/security-research/security-research-simple-git-remote-code-execution-cve-2026-28292" target="_blank">simple-git npm package has a CVSS 9.8 RCE. 5M+ weekly downloads. check your lockfiles.</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-03-11 05:39 | ID: c2693bf08202
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The "simple-git" npm package has been found to have a Critical Vulnerability (CVSS 9.8) allowing Remote Code Execution (RCE). With over 5 million weekly downloads, developers are urged to check their lockfiles and update to a secure version to prevent potential exploitation of this vulnerability. This discovery underscores the importance of regularly monitoring and updating dependencies to ensure the security of software projects.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.codeant.ai/security-research/security-research-simple-git-remote-code-execution-cve-2026-28292" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c2693bf08202" onclick="toggleTweets('c2693bf08202')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c2693bf08202">
+                <div class="tweet">Attention developers! 🚨 The popular "simple-git" npm package has a Critical Vulnerability (CVSS 9.8) for Remote Code Execution. With 5M+ weekly downloads, it's crucial to check your lockfiles and update to a secure version. #CyberSecurity #TechNews</div>
+<div class="tweet">How often do you review your project dependencies? The recent discovery of a Critical Vulnerability (CVSS 9.8) in the "simple-git" npm package emphasizes the importance of staying vigilant with software updates. #SecureYourCode #DevOps</div>
+<div class="tweet">Regularly updating dependencies is key to software security. The recent CVSS 9.8 RCE in "simple-git" npm package with 5M+ weekly downloads serves as a reminder for developers to prioritize monitoring and patching vulnerabilities. #CodeSecurity #StayUpdated</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="27.5" 
+             data-published="2026-03-10 19:17" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="How I topped the Open LLM Leaderboard using 2x 4090 GPUs - Research notes in Blog form">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1rq6g08/how_i_topped_the_open_llm_leaderboard_using_2x/" target="_blank">How I topped the Open LLM Leaderboard using 2x 4090 GPUs - Research notes in Blog form</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-03-10 19:17 | ID: bab319727348
+             | <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 27%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            In a recent blog post, a researcher shared their strategy of duplicating a block of 7 middle layers in the Qwen2-72B model without changing any weights, which led to significant performance improvements across all Open LLM Leaderboard benchmarks and secured the top position. The use of 2x 4090 GPUs played a crucial role in achieving this feat, with the top 4 models on the leaderboard in 2026 still being descendants of this approach.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1rq6g08/how_i_topped_the_open_llm_leaderboard_using_2x/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-bab319727348" onclick="toggleTweets('bab319727348')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-bab319727348">
+                <div class="tweet">🚀 Discover the winning strategy that secured the top spot on the Open LLM Leaderboard! By duplicating a block of 7 middle layers in the Qwen2-72B model using 2x 4090 GPUs, researchers achieved remarkable performance gains. 🏆 #TechResearch #GPU #AI</div>
+<div class="tweet">🧐 How can duplicating a block of middle layers in an AI model lead to breakthrough performance boosts? Dive into the research insights shared in this blog post that topped the Open LLM Leaderboard. 💡 #TechInnovation #AI #ResearchDiscussion</div>
+<div class="tweet">💡 Key takeaway: Leveraging 2x 4090 GPUs and a strategic layer duplication technique can propel AI model performance to new heights. Learn how this approach dominated the Open LLM Leaderboard benchmarks and set a new standard for 2026 models. 🌟 #TechStrategy #AIProgress</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-03-11 12:52:53 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
