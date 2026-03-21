@@ -9,13 +9,13 @@ function clamp(value, min, max) {
 }
 
 function quantizeToGrid(val) {
-  const raw = P_MIN + (val + 1) * (P_MAX - P_MIN) / 2; // [-1,1] -> [-15,15]
+  const raw = P_MIN + (val + 1) * (P_MAX - P_MIN) / 2;
   const snapped = Math.round(raw / STEP) * STEP;
   return clamp(snapped, P_MIN, P_MAX);
 }
 
 function sanitize(val) {
-  const str = Number(val).toFixed(1); // force one decimal, e.g. 0 -> 0.0
+  const str = Number(val).toFixed(1);
   return str.replace('-', 'm').replace('.', 'p');
 }
 
@@ -23,65 +23,121 @@ function gridToFilename(px, py) {
   return `gaze_px${sanitize(px)}_py${sanitize(py)}_${SIZE}.webp`;
 }
 
-function updateDebug(debugEl, x, y, filename) {
-  if (!debugEl) return;
-  debugEl.innerHTML = `Mouse: (${Math.round(x)}, ${Math.round(y)})<br/>Image: ${filename}`;
+// Generate all possible filenames for preloading
+function getAllFilenames() {
+  const filenames = [];
+  for (let px = P_MIN; px <= P_MAX; px += STEP) {
+    for (let py = P_MIN; py <= P_MAX; py += STEP) {
+      filenames.push(gridToFilename(px, py));
+    }
+  }
+  return filenames;
+}
+
+// Preload all images into an in-memory cache
+function preloadImages(basePath, onProgress, onComplete) {
+  const filenames = getAllFilenames();
+  const cache = new Map();
+  let loaded = 0;
+  const total = filenames.length;
+
+  filenames.forEach((filename) => {
+    const img = new Image();
+    img.onload = img.onerror = () => {
+      cache.set(filename, img);
+      loaded++;
+      if (onProgress) onProgress(loaded, total);
+      if (loaded === total && onComplete) onComplete(cache);
+    };
+    img.src = `${basePath}${filename}`;
+  });
+
+  return cache;
 }
 
 function initializeFaceTracker(container) {
   const basePath = container.dataset.basePath || '/faces/';
-  const showDebug = String(container.dataset.debug || 'false') === 'true';
 
+  // Create the display image
   const img = document.createElement('img');
   img.className = 'face-image';
   img.alt = 'Face following gaze';
+  img.draggable = false;
   container.appendChild(img);
 
-  let debugEl = null;
-  if (showDebug) {
-    debugEl = document.createElement('div');
-    debugEl.className = 'face-debug';
-    container.appendChild(debugEl);
-  }
+  // Loading overlay
+  const loadingEl = document.createElement('div');
+  loadingEl.className = 'face-loading';
+  loadingEl.innerHTML = '<div class="face-loading-spinner"></div>';
+  container.appendChild(loadingEl);
 
-  function setFromClient(clientX, clientY) {
+  let imageCache = null;
+  let rafId = null;
+  let pendingX = null;
+  let pendingY = null;
+  let currentFilename = '';
+
+  function applyGaze() {
+    rafId = null;
+    if (pendingX === null) return;
+
     const rect = container.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
 
-    const nx = (clientX - centerX) / (rect.width / 2);
-    const ny = (centerY - clientY) / (rect.height / 2);
+    const nx = clamp((pendingX - centerX) / (rect.width / 2), -1, 1);
+    const ny = clamp((centerY - pendingY) / (rect.height / 2), -1, 1);
 
-    const clampedX = clamp(nx, -1, 1);
-    const clampedY = clamp(ny, -1, 1);
-
-    const px = quantizeToGrid(clampedX);
-    const py = quantizeToGrid(clampedY);
-
+    const px = quantizeToGrid(nx);
+    const py = quantizeToGrid(ny);
     const filename = gridToFilename(px, py);
-    const imagePath = `${basePath}${filename}`;
-    img.src = imagePath;
-    updateDebug(debugEl, clientX - rect.left, clientY - rect.top, filename);
+
+    if (filename !== currentFilename) {
+      currentFilename = filename;
+      if (imageCache && imageCache.has(filename)) {
+        img.src = imageCache.get(filename).src;
+      } else {
+        img.src = `${basePath}${filename}`;
+      }
+    }
+  }
+
+  function scheduleUpdate(clientX, clientY) {
+    pendingX = clientX;
+    pendingY = clientY;
+    if (!rafId) {
+      rafId = requestAnimationFrame(applyGaze);
+    }
   }
 
   function handleMouseMove(e) {
-    setFromClient(e.clientX, e.clientY);
+    scheduleUpdate(e.clientX, e.clientY);
   }
 
   function handleTouchMove(e) {
     if (e.touches && e.touches.length > 0) {
       const t = e.touches[0];
-      setFromClient(t.clientX, t.clientY);
+      scheduleUpdate(t.clientX, t.clientY);
     }
   }
 
-  // Track pointer anywhere on the page
-  window.addEventListener('mousemove', handleMouseMove);
-  window.addEventListener('touchmove', handleTouchMove, { passive: true });
+  // Show center image immediately, then preload all
+  const centerFilename = gridToFilename(0, 0);
+  currentFilename = centerFilename;
+  img.src = `${basePath}${centerFilename}`;
+  img.onload = () => {
+    img.classList.add('loaded');
+  };
 
-  // Initialize at center
-  const rect = container.getBoundingClientRect();
-  setFromClient(rect.left + rect.width / 2, rect.top + rect.height / 2);
+  preloadImages(basePath, null, (cache) => {
+    imageCache = cache;
+    loadingEl.classList.add('hidden');
+    img.classList.add('loaded');
+
+    // Start tracking only after images are cached
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
