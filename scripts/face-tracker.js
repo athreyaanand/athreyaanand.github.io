@@ -321,6 +321,17 @@ function initializeFaceTracker(container) {
     }, 1400);
   });
 
+  // --- Konami blast reaction ---
+  window.addEventListener('konamiBlast', () => {
+    gazeSequence([
+      { x: 0, y: 9, duration: 200, pause: 100 },
+      { x: -12, y: 6, duration: 250, pause: 80 },
+      { x: 12, y: -6, duration: 300, pause: 80 },
+      { x: -9, y: -3, duration: 250, pause: 80 },
+      { x: 0, y: 0, duration: 300, pause: 0 },
+    ], () => {});
+  });
+
   // --- Head petting ---
   const petZone = document.createElement('div');
   petZone.className = 'pet-zone';

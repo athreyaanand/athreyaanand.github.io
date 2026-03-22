@@ -344,6 +344,17 @@ function initBouncers() {
     for (const item of items) {
       if (!item.launched) continue;
 
+      // Konami convergence — lerp toward center
+      if (item.converging) {
+        const t = Math.min((timestamp - item.convergeStart) / 600, 1);
+        item.x += (item.convergeCX - item.x) * 0.08;
+        item.y += (item.convergeCY - item.y) * 0.08;
+        item.vx = 0;
+        item.vy = 0;
+        item.el.style.transform = `translate(${item.x}px,${item.y}px)`;
+        continue;
+      }
+
       // Skip physics for dragged items
       if (item.dragging) {
         item.el.style.transform = `translate(${item.x}px,${item.y}px) scale(1.12)`;
@@ -546,6 +557,65 @@ function initBouncers() {
   } else {
     window.addEventListener('faceTrackerReady', start, { once: true });
   }
+
+  // --- Konami Code Easter Egg ---
+  const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let konamiIndex = 0;
+  let konamiActive = false;
+
+  document.addEventListener('keydown', (e) => {
+    if (konamiActive) return;
+    if (e.key === KONAMI[konamiIndex]) {
+      konamiIndex++;
+      if (konamiIndex === KONAMI.length) {
+        konamiIndex = 0;
+        triggerKonami();
+      }
+    } else {
+      konamiIndex = e.key === KONAMI[0] ? 1 : 0;
+    }
+  });
+
+  function triggerKonami() {
+    konamiActive = true;
+    const islandR = getIslandRect();
+    const cx = islandR ? (islandR.left + islandR.right) / 2 : window.innerWidth / 2;
+    const cy = islandR ? (islandR.top + islandR.bottom) / 2 : window.innerHeight / 2;
+
+    // Phase 1: All pills converge to center
+    items.forEach((item) => {
+      if (!item.launched) return;
+      item.converging = true;
+      item.convergeCX = cx - item.w / 2;
+      item.convergeCY = cy - item.h / 2;
+      item.convergeStart = performance.now();
+    });
+
+    // Phase 2: After 600ms, explode outward
+    setTimeout(() => {
+      const now = performance.now();
+      items.forEach((item) => {
+        if (!item.launched) return;
+        item.converging = false;
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 6 + Math.random() * 4;
+        item.vx = Math.cos(angle) * speed;
+        item.vy = Math.sin(angle) * speed;
+        item.launching = true;
+        item.launchTime = now;
+        bounceColor(item);
+        bounceColor(item);
+        // Extra particles at center
+        spawnParticles(cx, cy, item.color, 3);
+      });
+
+      // Face does surprised look
+      window.dispatchEvent(new CustomEvent('konamiBlast'));
+
+      setTimeout(() => { konamiActive = false; }, 2000);
+    }, 600);
+  }
+
 }
 
 document.addEventListener('DOMContentLoaded', initBouncers);
