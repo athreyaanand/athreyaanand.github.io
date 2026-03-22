@@ -321,6 +321,15 @@ function initializeFaceTracker(container) {
     }, 1400);
   });
 
+  // --- Gravity toggle reaction ---
+  window.addEventListener('gravityToggle', (e) => {
+    if (e.detail.on) {
+      animateGaze({ x: 0, y: 0 }, { x: 0, y: -9 }, 400, () => {});
+    } else {
+      animateGaze({ x: 0, y: -9 }, { x: 0, y: 0 }, 400, () => {});
+    }
+  });
+
   // --- Konami blast reaction ---
   window.addEventListener('konamiBlast', () => {
     gazeSequence([

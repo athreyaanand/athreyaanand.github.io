@@ -406,35 +406,46 @@ function initBouncers() {
         }
       }
 
+      // Gravity
+      if (gravityOn) {
+        item.vy += 0.15 * factor;
+        // Dampen horizontal and add floor friction
+        item.vx *= 0.995;
+        // If near the bottom, dampen bounce heavily so pills settle
+        if (item.y + item.h >= currentVH - 2) {
+          item.vy *= -0.3; // lose 70% energy on floor bounce
+          if (Math.abs(item.vy) < 0.3) item.vy = 0; // stop jittering
+          item.vx *= 0.9; // floor friction
+        }
+      }
+
       item.x += item.vx * factor;
       item.y += item.vy * factor;
 
-      // Wall collisions
+      // Wall collisions (only trigger effects if moving fast enough)
+      const bounceThresh = 0.5;
       if (item.x <= 0) {
         item.x = 0;
         item.vx = Math.abs(item.vx);
-        bounceColor(item);
-        applySqaush(item, 'x');
+        if (Math.abs(item.vx) > bounceThresh) { bounceColor(item); applySqaush(item, 'x'); }
       } else if (item.x + item.w >= currentVW) {
         item.x = currentVW - item.w;
         item.vx = -Math.abs(item.vx);
-        bounceColor(item);
-        applySqaush(item, 'x');
+        if (Math.abs(item.vx) > bounceThresh) { bounceColor(item); applySqaush(item, 'x'); }
       }
 
       if (item.y <= 0) {
         item.y = 0;
         item.vy = Math.abs(item.vy);
-        bounceColor(item);
-        applySqaush(item, 'y');
+        if (Math.abs(item.vy) > bounceThresh) { bounceColor(item); applySqaush(item, 'y'); }
       } else if (item.y + item.h >= currentVH) {
         item.y = currentVH - item.h;
         item.vy = -Math.abs(item.vy);
-        bounceColor(item);
-        applySqaush(item, 'y');
+        if (Math.abs(item.vy) > bounceThresh) { bounceColor(item); applySqaush(item, 'y'); }
       }
 
-      // Center island collision
+      // Center island collision (skip during gravity unless pill is flung)
+      if (gravityOn && !item.flung) {} else {
       const r = item.x + item.w;
       const b = item.y + item.h;
       if (r > islandRect.left && item.x < islandRect.right &&
@@ -484,14 +495,25 @@ function initBouncers() {
             detail: { x: impactX, y: impactY }
           }));
         }
+      } // end island collision else
       }
 
-      // Pill-to-pill collisions
-      for (const other of items) {
+      // Pill-to-pill collisions (disabled during gravity — let them stack)
+      if (!gravityOn) for (const other of items) {
         if (other === item || !other.launched || other.dragging) continue;
         const ox = other.x, oy = other.y;
         if (item.x < ox + other.w && item.x + item.w > ox &&
             item.y < oy + other.h && item.y + item.h > oy) {
+          const combinedSpeed = Math.abs(item.vx) + Math.abs(item.vy) + Math.abs(other.vx) + Math.abs(other.vy);
+          if (combinedSpeed < 1.0) {
+            // Just separate gently, no effects
+            const sepX = (item.x + item.w / 2) - (ox + other.w / 2);
+            const sepY = (item.y + item.h / 2) - (oy + other.h / 2);
+            const sepDist = Math.sqrt(sepX * sepX + sepY * sepY) || 1;
+            item.x += (sepX / sepDist) * 1;
+            other.x -= (sepX / sepDist) * 1;
+            continue;
+          }
           // Swap velocities
           const tvx = item.vx, tvy = item.vy;
           item.vx = other.vx;
@@ -557,6 +579,25 @@ function initBouncers() {
   } else {
     window.addEventListener('faceTrackerReady', start, { once: true });
   }
+
+  // --- Double-click gravity toggle ---
+  let gravityOn = false;
+  document.addEventListener('dblclick', (e) => {
+    // Don't toggle if clicking a pill or link
+    if (e.target.closest('.bouncer') || e.target.closest('a')) return;
+    gravityOn = !gravityOn;
+    // When turning gravity off, kick pills back into motion
+    if (!gravityOn) {
+      items.forEach((item) => {
+        if (!item.launched) return;
+        const speed = MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED);
+        const angle = Math.random() * Math.PI * 2;
+        item.vx = Math.cos(angle) * speed;
+        item.vy = Math.sin(angle) * speed;
+      });
+    }
+    window.dispatchEvent(new CustomEvent('gravityToggle', { detail: { on: gravityOn } }));
+  });
 
   // --- Konami Code Easter Egg ---
   const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
