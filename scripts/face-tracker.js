@@ -135,14 +135,54 @@ function initializeFaceTracker(container) {
     loadingEl.classList.add('hidden');
     img.classList.add('loaded');
 
+    // Ease-in-out cubic for smooth acceleration/deceleration
+    function easeInOut(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    // Animate gaze using rAF with easing — snaps to nearest grid frame each tick
+    function animateGaze(fromPy, toPy, duration, onDone) {
+      const start = performance.now();
+      function tick(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = easeInOut(t);
+        const rawPy = fromPy + (toPy - fromPy) * eased;
+        const snappedPy = Math.round(rawPy / STEP) * STEP;
+        const clampedPy = clamp(snappedPy, P_MIN, P_MAX);
+        const fn = gridToFilename(0, clampedPy);
+        if (fn !== currentFilename && imageCache.has(fn)) {
+          img.src = imageCache.get(fn).src;
+          currentFilename = fn;
+        }
+        if (t < 1) {
+          requestAnimationFrame(tick);
+        } else if (onDone) {
+          onDone();
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
     // Trigger entrance animation
     const island = container.closest('.center-island');
     if (island) island.classList.add('ready');
-    window.dispatchEvent(new CustomEvent('faceTrackerReady'));
 
-    // Start tracking only after images are cached
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    // After face slides up (0.8s delay + 0.6s duration), smoothly look down
+    setTimeout(() => {
+      animateGaze(0, -12, 350, () => {
+        // Plaque drops in when face is fully looking down
+        if (island) island.classList.add('plaque-in');
+        // Wait for plaque to settle, then look back up
+        setTimeout(() => {
+          animateGaze(-12, 0, 350, () => {
+            // Enable cursor tracking
+            window.addEventListener('mousemove', handleMouseMove);
+            window.addEventListener('touchmove', handleTouchMove, { passive: false });
+            window.dispatchEvent(new CustomEvent('faceTrackerReady'));
+          });
+        }, 800);
+      });
+    }, 1400);
   });
 }
 
