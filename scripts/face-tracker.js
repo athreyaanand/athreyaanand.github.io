@@ -130,59 +130,59 @@ function initializeFaceTracker(container) {
     img.classList.add('loaded');
   };
 
+  // Ease-in-out cubic for smooth acceleration/deceleration
+  function easeInOut(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  // Animate gaze using rAF with easing — supports X and Y
+  function animateGaze(from, to, duration, onDone) {
+    const fromX = from.x || 0, fromY = from.y || 0;
+    const toX = to.x || 0, toY = to.y || 0;
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = easeInOut(t);
+      const rawPx = fromX + (toX - fromX) * eased;
+      const rawPy = fromY + (toY - fromY) * eased;
+      const px = clamp(Math.round(rawPx / STEP) * STEP, P_MIN, P_MAX);
+      const py = clamp(Math.round(rawPy / STEP) * STEP, P_MIN, P_MAX);
+      const fn = gridToFilename(px, py);
+      if (fn !== currentFilename && imageCache.has(fn)) {
+        img.src = imageCache.get(fn).src;
+        currentFilename = fn;
+      }
+      if (t < 1) {
+        requestAnimationFrame(tick);
+      } else if (onDone) {
+        onDone();
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Chain a sequence of gaze movements: [{x, y, duration, pause, onStart}]
+  function gazeSequence(steps, onDone) {
+    let i = 0;
+    function next() {
+      if (i >= steps.length) { if (onDone) onDone(); return; }
+      const step = steps[i++];
+      const prev = i >= 2 ? steps[i - 2] : { x: 0, y: 0 };
+      if (step.onStart) step.onStart();
+      animateGaze(
+        { x: prev.x || 0, y: prev.y || 0 },
+        { x: step.x || 0, y: step.y || 0 },
+        step.duration,
+        () => setTimeout(next, step.pause || 0)
+      );
+    }
+    next();
+  }
+
   preloadImages(basePath, null, (cache) => {
     imageCache = cache;
     loadingEl.classList.add('hidden');
     img.classList.add('loaded');
-
-    // Ease-in-out cubic for smooth acceleration/deceleration
-    function easeInOut(t) {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
-    // Animate gaze using rAF with easing — supports X and Y
-    function animateGaze(from, to, duration, onDone) {
-      const fromX = from.x || 0, fromY = from.y || 0;
-      const toX = to.x || 0, toY = to.y || 0;
-      const start = performance.now();
-      function tick(now) {
-        const t = Math.min((now - start) / duration, 1);
-        const eased = easeInOut(t);
-        const rawPx = fromX + (toX - fromX) * eased;
-        const rawPy = fromY + (toY - fromY) * eased;
-        const px = clamp(Math.round(rawPx / STEP) * STEP, P_MIN, P_MAX);
-        const py = clamp(Math.round(rawPy / STEP) * STEP, P_MIN, P_MAX);
-        const fn = gridToFilename(px, py);
-        if (fn !== currentFilename && imageCache.has(fn)) {
-          img.src = imageCache.get(fn).src;
-          currentFilename = fn;
-        }
-        if (t < 1) {
-          requestAnimationFrame(tick);
-        } else if (onDone) {
-          onDone();
-        }
-      }
-      requestAnimationFrame(tick);
-    }
-
-    // Chain a sequence of gaze movements: [{x, y, duration, pause, onStart}]
-    function gazeSequence(steps, onDone) {
-      let i = 0;
-      function next() {
-        if (i >= steps.length) { if (onDone) onDone(); return; }
-        const step = steps[i++];
-        const prev = i >= 2 ? steps[i - 2] : { x: 0, y: 0 };
-        if (step.onStart) step.onStart();
-        animateGaze(
-          { x: prev.x || 0, y: prev.y || 0 },
-          { x: step.x || 0, y: step.y || 0 },
-          step.duration,
-          () => setTimeout(next, step.pause || 0)
-        );
-      }
-      next();
-    }
 
     // Trigger entrance animation
     const island = container.closest('.center-island');
@@ -319,6 +319,104 @@ function initializeFaceTracker(container) {
         }, 800);
       });
     }, 1400);
+  });
+
+  // --- Head petting ---
+  const petZone = document.createElement('div');
+  petZone.className = 'pet-zone';
+  container.appendChild(petZone);
+
+  // Heart pool — appended to center-island so they float above, not clipped
+  const HEART_POOL_SIZE = 10;
+  const petHearts = [];
+  const heartParent = container.closest('.center-island') || container;
+  for (let i = 0; i < HEART_POOL_SIZE; i++) {
+    const h = document.createElement('div');
+    h.className = 'pet-heart';
+    h.textContent = '\u2764';
+    heartParent.appendChild(h);
+    petHearts.push(h);
+  }
+  let nextHeart = 0;
+  let lastHeartTime = 0;
+
+  function spawnPetHeart() {
+    const now = performance.now();
+    if (now - lastHeartTime < 300) return; // throttle: one heart per 300ms
+    lastHeartTime = now;
+    const h = petHearts[nextHeart];
+    nextHeart = (nextHeart + 1) % HEART_POOL_SIZE;
+    h.classList.remove('active');
+    void h.offsetWidth;
+    // Narrow spawn to head width (~middle 50% of face tracker)
+    const rect = container.getBoundingClientRect();
+    const parentRect = heartParent.getBoundingClientRect();
+    const headLeft = rect.width * 0.25;
+    const headWidth = rect.width * 0.5;
+    h.style.left = (rect.left - parentRect.left + headLeft + Math.random() * headWidth) + 'px';
+    h.style.top = (rect.top - parentRect.top - 5) + 'px';
+    h.classList.add('active');
+  }
+
+  let petDirs = [];
+  let petting = false;
+  let petTimeout = null;
+  let lastPetX = null;
+  let petStartTime = 0;
+  const PET_THRESHOLD_MS = 600; // must pet for 600ms before hearts appear
+
+  function stopPetting() {
+    petting = false;
+    petStartTime = 0;
+    petDirs = [];
+    lastPetX = null;
+    petZone.classList.remove('petting');
+    container.classList.remove('being-petted');
+  }
+
+  function checkPetting(clientX, clientY) {
+    if (lastPetX !== null) {
+      const dir = clientX > lastPetX ? 1 : clientX < lastPetX ? -1 : 0;
+      if (dir !== 0) {
+        const now = performance.now();
+        petDirs.push({ dir, t: now });
+        petDirs = petDirs.filter(d => now - d.t < 600);
+
+        let changes = 0;
+        for (let i = 1; i < petDirs.length; i++) {
+          if (petDirs[i].dir !== petDirs[i - 1].dir) changes++;
+        }
+
+        // Start tracking pet time after enough direction changes
+        if (changes >= 3 && !petStartTime) {
+          petStartTime = now;
+          petZone.classList.add('petting');
+          container.classList.add('being-petted');
+        }
+
+        // Hearts + blushing only after sustained petting
+        if (petStartTime && now - petStartTime > PET_THRESHOLD_MS) {
+          if (!petting) {
+            petting = true;
+          }
+          spawnPetHeart();
+        }
+      }
+    }
+    lastPetX = clientX;
+
+    clearTimeout(petTimeout);
+    petTimeout = setTimeout(stopPetting, 400);
+  }
+
+  petZone.addEventListener('mousemove', (e) => checkPetting(e.clientX, e.clientY));
+  petZone.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) checkPetting(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+  petZone.addEventListener('mouseleave', () => {
+    lastPetX = null;
+    petDirs = [];
+    stopPetting();
   });
 }
 

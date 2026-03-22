@@ -171,6 +171,53 @@ body {
   animation: islandSlideBack 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* --- Head petting --- */
+.pet-zone {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 35%;
+  z-index: 6;
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.pet-zone.petting {
+  cursor: grabbing;
+}
+
+@keyframes blushShake {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1) rotate(-1deg); }
+  75% { transform: scale(1) rotate(1deg); }
+}
+
+.face-tracker.being-petted {
+  animation: blushShake 0.6s ease-in-out infinite;
+}
+
+.pet-heart {
+  position: absolute;
+  font-size: 26px;
+  color: #e74c3c;
+  pointer-events: none;
+  z-index: 25;
+  opacity: 0;
+  will-change: transform;
+}
+
+@keyframes heartFloat {
+  0% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+  30% { opacity: 0.9; transform: translateY(-30px) scale(0.95) rotate(-8deg); }
+  60% { opacity: 0.6; transform: translateY(-70px) scale(0.8) rotate(5deg); }
+  100% { opacity: 0; transform: translateY(-120px) scale(0.3) rotate(-3deg); }
+}
+
+.pet-heart.active {
+  animation: heartFloat 1.4s ease-out forwards;
+}
+
 /* --- Responsive --- */
 @media (max-width: 480px) {
   .face-tracker {
