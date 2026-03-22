@@ -1,7 +1,7 @@
 const BOUNCERS = [
   // Projects
   { label: 'Daily Briefing Engine', url: './briefings/', category: 'project' },
-  { label: 'Habitability', url: 'https://habitability.com', category: 'project' },
+  { label: 'Habitability', url: 'https://habitability.app', category: 'project' },
   { label: 'Viki', url: 'https://tryviki.com', category: 'project' },
   // Companies
   { label: 'Cedar', url: 'https://www.cedar.com/', category: 'company' },
