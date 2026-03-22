@@ -105,6 +105,72 @@ body {
   transform: translateY(-10px);
 }
 
+/* --- Hearts (easter egg) --- */
+.hearts {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.hearts.visible {
+  opacity: 1;
+}
+
+.heart {
+  font-size: 20px;
+  color: #e74c3c;
+  transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+}
+
+.heart.lost {
+  color: #ccc;
+  transform: scale(0.7);
+  filter: grayscale(1);
+}
+
+/* --- Hit + Death animations --- */
+@keyframes hitShake {
+  0%, 100% { transform: translate(-50%, -50%) translateX(0); }
+  15% { transform: translate(-50%, -50%) translateX(-8px); }
+  30% { transform: translate(-50%, -50%) translateX(8px); }
+  45% { transform: translate(-50%, -50%) translateX(-5px); }
+  60% { transform: translate(-50%, -50%) translateX(5px); }
+  75% { transform: translate(-50%, -50%) translateX(-2px); }
+}
+
+.center-island.hit {
+  animation: hitShake 0.4s ease forwards;
+}
+
+.center-island.hit .face-tracker {
+  background: #e74c3c;
+  transition: background 0.1s ease;
+}
+
+@keyframes islandSlideDown {
+  from { transform: translate(-50%, -50%); }
+  to   { transform: translate(-50%, 100vh); }
+}
+
+.center-island.dying {
+  animation: islandSlideDown 0.8s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+@keyframes islandSlideBack {
+  from { transform: translate(-50%, 100vh); }
+  to   { transform: translate(-50%, -50%); }
+}
+
+.center-island.reviving {
+  animation: islandSlideBack 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
 /* --- Responsive --- */
 @media (max-width: 480px) {
   .face-tracker {

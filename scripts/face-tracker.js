@@ -221,18 +221,101 @@ function initializeFaceTracker(container) {
               });
             }, 500);
 
-            // Flinch when a flung pill hits the island
+            // --- Hearts / Lives easter egg ---
+            let lives = 3;
+            let heartsRevealed = false;
             let flinching = false;
+            let dead = false;
+            let reviveTimer = null;
+            const islandEl = container.closest('.center-island');
+            const heartsEl = document.getElementById('hearts');
+            const heartSpans = heartsEl ? heartsEl.querySelectorAll('.heart') : [];
+
+            function revealHearts() {
+              if (heartsRevealed || !heartsEl) return;
+              heartsRevealed = true;
+              heartsEl.classList.add('visible');
+            }
+
+            function loseHeart() {
+              if (lives <= 0) return;
+              lives--;
+              const idx = lives;
+              if (heartSpans[idx]) heartSpans[idx].classList.add('lost');
+            }
+
+            function resetHearts() {
+              lives = 3;
+              heartSpans.forEach((h) => h.classList.remove('lost'));
+            }
+
+            function hitFlash() {
+              // Shake whole island + red background
+              islandEl.classList.add('hit');
+              setTimeout(() => {
+                islandEl.classList.remove('hit');
+                container.style.background = '';
+              }, 400);
+            }
+
+            function revive() {
+              if (reviveTimer) { clearTimeout(reviveTimer); reviveTimer = null; }
+              islandEl.classList.remove('dying');
+              islandEl.classList.add('reviving');
+              resetHearts();
+
+              // Reset gaze to center
+              const centerFn = gridToFilename(0, 0);
+              if (imageCache.has(centerFn)) img.src = imageCache.get(centerFn).src;
+              currentFilename = centerFn;
+
+              // After slide-back animation completes
+              setTimeout(() => {
+                islandEl.classList.remove('reviving');
+                dead = false;
+                flinching = false;
+                window.addEventListener('mousemove', handleMouseMove);
+                window.addEventListener('touchmove', handleTouchMove, { passive: false });
+              }, 600);
+            }
+
+            function deathSequence() {
+              dead = true;
+              window.removeEventListener('mousemove', handleMouseMove);
+              window.removeEventListener('touchmove', handleTouchMove);
+
+              // Face looks shocked, then whole island slides off screen
+              animateGaze({ x: 0, y: 0 }, { x: 0, y: 9 }, 200, () => {
+                islandEl.classList.add('dying');
+                // Revive after 5 seconds or on next pill impact
+                reviveTimer = setTimeout(revive, 5000);
+              });
+            }
+
             window.addEventListener('pillImpact', (e) => {
+              // If dead, a pill hit revives
+              if (dead) {
+                revive();
+                return;
+              }
               if (flinching) return;
+
+              // Reveal hearts on first hit
+              revealHearts();
+
+              // Flash and shake
+              hitFlash();
+              loseHeart();
+
+              // Flinch
               flinching = true;
               const d = e.detail;
-              // Jerk away from impact direction
               const fx = clamp(-(d.x || 0) * 0.5, P_MIN, P_MAX);
               const fy = clamp(-(d.y || 0) * 0.5, P_MIN, P_MAX);
               animateGaze({ x: 0, y: 0 }, { x: fx, y: fy }, 150, () => {
                 animateGaze({ x: fx, y: fy }, { x: 0, y: 0 }, 200, () => {
                   flinching = false;
+                  if (lives <= 0) deathSequence();
                 });
               });
             });

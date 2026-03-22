@@ -50,10 +50,17 @@ function getIslandRect() {
   const island = document.querySelector('.center-island');
   if (!island) return null;
   const r = island.getBoundingClientRect();
+  // Include hearts if visible (positioned above the island)
+  const hearts = document.getElementById('hearts');
+  let topExtra = ISLAND_PAD;
+  if (hearts && hearts.classList.contains('visible')) {
+    const hr = hearts.getBoundingClientRect();
+    topExtra = Math.max(ISLAND_PAD, r.top - hr.top + ISLAND_PAD);
+  }
   return {
     left: r.left - ISLAND_PAD,
     right: r.right + ISLAND_PAD,
-    top: r.top - ISLAND_PAD,
+    top: r.top - topExtra,
     bottom: r.bottom + ISLAND_PAD,
   };
 }
