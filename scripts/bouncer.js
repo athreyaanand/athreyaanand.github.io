@@ -16,7 +16,7 @@ const BOUNCERS = [
   { label: 'TRACE Studios', url: 'https://tracestudios.xyz/', category: 'company' },
   { label: 'Georgia Tech', url: 'https://www.gatech.edu/', category: 'company' },
   // Meta
-  { label: 'Old Site', url: './old/', category: 'project' },
+  { label: 'Old Site', url: './old/index.html', category: 'project' },
 ];
 
 const COLORS = [
