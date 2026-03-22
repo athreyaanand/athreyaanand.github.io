@@ -8,6 +8,8 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 body {
@@ -16,16 +18,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* --- Face tracker --- */
 .face-tracker {
   position: relative;
   width: 360px;
   height: 360px;
   border-radius: 12px;
   overflow: hidden;
-  background: transparent;
+  background: #f0f0f0;
   user-select: none;
   -webkit-user-select: none;
   touch-action: none;
+  transform: scale(0);
 }
 
 .face-image {
@@ -33,12 +37,8 @@ body {
   height: 100%;
   object-fit: contain;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateY(30px);
   pointer-events: none;
-}
-
-.face-image.loaded {
-  opacity: 1;
 }
 
 .face-loading {
@@ -71,6 +71,42 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* --- Entrance animations --- */
+@keyframes boxExpand {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+@keyframes faceSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes plaqueSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Triggered by .ready on .center-island */
+.center-island.ready .face-tracker {
+  animation: boxExpand 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.center-island.ready .face-image.loaded {
+  animation: faceSlideUp 0.4s ease-out 0.4s forwards;
+}
+
+.center-island.ready .plaque {
+  animation: plaqueSlideDown 0.4s ease-out 0.7s forwards;
+}
+
+/* Plaque starts hidden until animated */
+.plaque {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* --- Responsive --- */
 @media (max-width: 480px) {
   .face-tracker {
     width: 280px;

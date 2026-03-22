@@ -115,6 +115,7 @@ function initializeFaceTracker(container) {
   }
 
   function handleTouchMove(e) {
+    e.preventDefault();
     if (e.touches && e.touches.length > 0) {
       const t = e.touches[0];
       scheduleUpdate(t.clientX, t.clientY);
@@ -134,9 +135,14 @@ function initializeFaceTracker(container) {
     loadingEl.classList.add('hidden');
     img.classList.add('loaded');
 
+    // Trigger entrance animation
+    const island = container.closest('.center-island');
+    if (island) island.classList.add('ready');
+    window.dispatchEvent(new CustomEvent('faceTrackerReady'));
+
     // Start tracking only after images are cached
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
   });
 }
 

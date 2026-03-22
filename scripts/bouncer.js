@@ -191,7 +191,20 @@ function initBouncers() {
     if (running) lastTime = 0;
   });
 
-  requestAnimationFrame(tick);
+  // Wait for face tracker ready, then fade in arena and start bouncing
+  function start() {
+    const arena = document.getElementById('bouncing-arena');
+    setTimeout(() => {
+      arena.classList.add('visible');
+      requestAnimationFrame(tick);
+    }, 1000);
+  }
+
+  if (document.querySelector('.center-island.ready')) {
+    start();
+  } else {
+    window.addEventListener('faceTrackerReady', start, { once: true });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', initBouncers);
