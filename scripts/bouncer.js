@@ -41,9 +41,11 @@ function randomColor(exclude) {
   return color;
 }
 
+let _onBounce = null;
 function bounceColor(item) {
   item.color = randomColor(item.color);
   item.el.style.color = item.color;
+  if (_onBounce) _onBounce(item.x + item.w / 2, item.y + item.h / 2, item.color);
 }
 
 function getIslandRect() {
@@ -81,6 +83,57 @@ function initBouncers() {
   window.addEventListener('touchmove', (e) => {
     if (e.touches.length > 0) { cursorX = e.touches[0].clientX; cursorY = e.touches[0].clientY; }
   }, { passive: true });
+
+  // --- Particle pool ---
+  const PARTICLE_COUNT = 30;
+  const PARTICLE_LIFE = 400;
+  const particles = [];
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    const el = document.createElement('div');
+    el.className = 'particle';
+    arena.appendChild(el);
+    particles.push({ el, active: false, x: 0, y: 0, vx: 0, vy: 0, born: 0, color: '' });
+  }
+
+  function spawnParticles(x, y, color, count) {
+    let spawned = 0;
+    for (const p of particles) {
+      if (p.active || spawned >= count) continue;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 1.5 + Math.random() * 3;
+      p.x = x;
+      p.y = y;
+      p.vx = Math.cos(angle) * speed;
+      p.vy = Math.sin(angle) * speed;
+      p.born = performance.now();
+      p.active = true;
+      p.color = color;
+      p.el.style.background = color;
+      p.el.style.opacity = '1';
+      spawned++;
+    }
+  }
+
+  function tickParticles(timestamp) {
+    for (const p of particles) {
+      if (!p.active) continue;
+      const age = timestamp - p.born;
+      if (age > PARTICLE_LIFE) {
+        p.active = false;
+        p.el.style.opacity = '0';
+        continue;
+      }
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.97;
+      p.vy *= 0.97;
+      const fade = 1 - age / PARTICLE_LIFE;
+      p.el.style.transform = `translate(${p.x}px,${p.y}px) scale(${fade})`;
+      p.el.style.opacity = fade;
+    }
+  }
+
+  _onBounce = (x, y, color) => spawnParticles(x, y, color, 3);
 
   // Create all pill elements — start hidden at center
   const items = BOUNCERS.map((data) => {
@@ -474,6 +527,7 @@ function initBouncers() {
       item.el.style.transform = `translate(${item.x}px,${item.y}px)${squash || hover}`;
     }
 
+    tickParticles(timestamp);
     requestAnimationFrame(tick);
   }
 
