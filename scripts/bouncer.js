@@ -197,7 +197,7 @@ function initBouncers() {
     setTimeout(() => {
       arena.classList.add('visible');
       requestAnimationFrame(tick);
-    }, 1000);
+    }, 2000);
   }
 
   if (document.querySelector('.center-island.ready')) {
