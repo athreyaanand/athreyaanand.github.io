@@ -400,6 +400,18 @@ function initBouncers() {
         }
         bounceColor(item);
 
+        // Escape if trapped between island and viewport edge
+        if (item.x < 0 || item.x + item.w > currentVW) {
+          item.y = Math.random() < 0.5 ? Math.max(0, islandRect.top - item.h - 10) : Math.min(currentVH - item.h, islandRect.bottom + 10);
+          item.x = Math.random() * Math.max(1, islandRect.left - item.w);
+          item.vy = Math.abs(item.vy) * (item.y < islandRect.top ? -1 : 1);
+        }
+        if (item.y < 0 || item.y + item.h > currentVH) {
+          item.x = Math.random() < 0.5 ? Math.max(0, islandRect.left - item.w - 10) : Math.min(currentVW - item.w, islandRect.right + 10);
+          item.y = Math.max(0, Math.random() * (islandRect.top - item.h));
+          item.vx = Math.abs(item.vx) * (item.x < islandRect.left ? -1 : 1);
+        }
+
         // Face flinch on flung pill impact
         if (item.flung) {
           const impactX = item.vx > 0 ? 6 : -6;

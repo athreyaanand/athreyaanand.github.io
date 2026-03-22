@@ -293,11 +293,7 @@ function initializeFaceTracker(container) {
             }
 
             window.addEventListener('pillImpact', (e) => {
-              // If dead, a pill hit revives
-              if (dead) {
-                revive();
-                return;
-              }
+              if (dead) return;
               if (flinching) return;
 
               // Reveal hearts on first hit
