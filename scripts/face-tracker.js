@@ -140,16 +140,19 @@ function initializeFaceTracker(container) {
       return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
     }
 
-    // Animate gaze using rAF with easing — snaps to nearest grid frame each tick
-    function animateGaze(fromPy, toPy, duration, onDone) {
+    // Animate gaze using rAF with easing — supports X and Y
+    function animateGaze(from, to, duration, onDone) {
+      const fromX = from.x || 0, fromY = from.y || 0;
+      const toX = to.x || 0, toY = to.y || 0;
       const start = performance.now();
       function tick(now) {
         const t = Math.min((now - start) / duration, 1);
         const eased = easeInOut(t);
-        const rawPy = fromPy + (toPy - fromPy) * eased;
-        const snappedPy = Math.round(rawPy / STEP) * STEP;
-        const clampedPy = clamp(snappedPy, P_MIN, P_MAX);
-        const fn = gridToFilename(0, clampedPy);
+        const rawPx = fromX + (toX - fromX) * eased;
+        const rawPy = fromY + (toY - fromY) * eased;
+        const px = clamp(Math.round(rawPx / STEP) * STEP, P_MIN, P_MAX);
+        const py = clamp(Math.round(rawPy / STEP) * STEP, P_MIN, P_MAX);
+        const fn = gridToFilename(px, py);
         if (fn !== currentFilename && imageCache.has(fn)) {
           img.src = imageCache.get(fn).src;
           currentFilename = fn;
@@ -163,22 +166,76 @@ function initializeFaceTracker(container) {
       requestAnimationFrame(tick);
     }
 
+    // Chain a sequence of gaze movements: [{x, y, duration, pause, onStart}]
+    function gazeSequence(steps, onDone) {
+      let i = 0;
+      function next() {
+        if (i >= steps.length) { if (onDone) onDone(); return; }
+        const step = steps[i++];
+        const prev = i >= 2 ? steps[i - 2] : { x: 0, y: 0 };
+        if (step.onStart) step.onStart();
+        animateGaze(
+          { x: prev.x || 0, y: prev.y || 0 },
+          { x: step.x || 0, y: step.y || 0 },
+          step.duration,
+          () => setTimeout(next, step.pause || 0)
+        );
+      }
+      next();
+    }
+
     // Trigger entrance animation
     const island = container.closest('.center-island');
     if (island) island.classList.add('ready');
 
-    // After face slides up (0.8s delay + 0.6s duration), smoothly look down
+    // After face slides up (0.8s delay + 0.6s duration), begin choreography
     setTimeout(() => {
-      animateGaze(0, -12, 350, () => {
-        // Plaque drops in when face is fully looking down
+      // Look down → plaque drops → look up → bouncers → look around in awe
+      animateGaze({ y: 0 }, { y: -12 }, 350, () => {
         if (island) island.classList.add('plaque-in');
-        // Wait for plaque to settle, then look back up
         setTimeout(() => {
-          animateGaze(-12, 0, 350, () => {
-            // Enable cursor tracking
-            window.addEventListener('mousemove', handleMouseMove);
-            window.addEventListener('touchmove', handleTouchMove, { passive: false });
+          animateGaze({ y: -12 }, { y: 0 }, 350, () => {
+            function launchPills(x, y) {
+              window.dispatchEvent(new CustomEvent('pillLaunch', { detail: { x, y } }));
+            }
+
+            // Signal bouncers to prepare (arena visible, pills hidden)
             window.dispatchEvent(new CustomEvent('faceTrackerReady'));
+
+            // Look around — pills shoot out with each glance
+            setTimeout(() => {
+              gazeSequence([
+                { x: -12, y: 3, duration: 300, pause: 150,
+                  onStart: () => launchPills(-12, 3) },
+                { x: 9, y: 6, duration: 350, pause: 100,
+                  onStart: () => launchPills(9, 6) },
+                { x: -6, y: -6, duration: 300, pause: 120,
+                  onStart: () => launchPills(-6, -6) },
+                { x: 12, y: -3, duration: 350, pause: 150,
+                  onStart: () => launchPills(12, -3) },
+                { x: 0, y: 0, duration: 400, pause: 0 },
+              ], () => {
+                // Enable cursor tracking
+                window.addEventListener('mousemove', handleMouseMove);
+                window.addEventListener('touchmove', handleTouchMove, { passive: false });
+              });
+            }, 500);
+
+            // Flinch when a flung pill hits the island
+            let flinching = false;
+            window.addEventListener('pillImpact', (e) => {
+              if (flinching) return;
+              flinching = true;
+              const d = e.detail;
+              // Jerk away from impact direction
+              const fx = clamp(-(d.x || 0) * 0.5, P_MIN, P_MAX);
+              const fy = clamp(-(d.y || 0) * 0.5, P_MIN, P_MAX);
+              animateGaze({ x: 0, y: 0 }, { x: fx, y: fy }, 150, () => {
+                animateGaze({ x: fx, y: fy }, { x: 0, y: 0 }, 200, () => {
+                  flinching = false;
+                });
+              });
+            });
           });
         }, 800);
       });
