@@ -15,6 +15,8 @@ const BOUNCERS = [
   { label: 'Elite Magazine', url: 'https://www.scvelitemagazine.com/', category: 'company' },
   { label: 'TRACE Studios', url: 'https://tracestudios.xyz/', category: 'company' },
   { label: 'Georgia Tech', url: 'https://www.gatech.edu/', category: 'company' },
+  // Meta
+  { label: 'Old Site', url: './old/', category: 'project' },
 ];
 
 const COLORS = [
