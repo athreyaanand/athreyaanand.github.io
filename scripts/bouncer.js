@@ -1,19 +1,15 @@
 const BOUNCERS = [
   // Projects
   { label: 'Daily Briefing Engine', url: './briefings/', category: 'project' },
-  { label: 'Mindless', url: 'https://github.com/athreyaanand/mindless', category: 'project' },
-  { label: 'Binder', url: 'https://github.com/athreyaanand/binder', category: 'project' },
-  { label: 'Cuex', url: 'https://github.com/athreyaanand/cuex', category: 'project' },
-  { label: 'Earthy', url: 'https://github.com/athreyaanand/earthy', category: 'project' },
+  { label: 'Habitability', url: 'https://habitability.com', category: 'project' },
+  { label: 'Viki', url: 'https://tryviki.com', category: 'project' },
   // Companies
   { label: 'Cedar', url: 'https://www.cedar.com/', category: 'company' },
   { label: 'Amazon', url: 'https://aws.amazon.com/', category: 'company' },
   { label: 'Tesla', url: 'https://www.tesla.com/', category: 'company' },
   { label: 'Esri', url: 'https://www.esri.com/', category: 'company' },
   { label: 'Boingo Wireless', url: 'https://boingo.com', category: 'company' },
-  { label: 'Calicom Video Intelligence', url: 'https://calicom.com', category: 'company' },
-  { label: 'Elite Magazine', url: 'https://www.scvelitemagazine.com/', category: 'company' },
-  { label: 'TRACE Studios', url: 'https://tracestudios.xyz/', category: 'company' },
+  { label: 'Google', url: 'https://google.com', category: 'company' },
   { label: 'Georgia Tech', url: 'https://www.gatech.edu/', category: 'company' },
   // Meta
   { label: 'Old Site', url: './old/index.html', category: 'project' },
