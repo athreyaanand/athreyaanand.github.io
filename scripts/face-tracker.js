@@ -231,6 +231,41 @@ function initializeFaceTracker(container) {
                 // Enable cursor tracking
                 window.addEventListener('mousemove', handleMouseMove);
                 window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+                // --- Idle face animations ---
+                let idleTimer = null;
+                let idling = false;
+                const IDLE_DELAY = 5000;
+
+                function startIdle() {
+                  if (idling) return;
+                  idling = true;
+                  function idleLoop() {
+                    if (!idling) return;
+                    const rx = (Math.random() - 0.5) * 20;
+                    const ry = (Math.random() - 0.5) * 20;
+                    const rx2 = (Math.random() - 0.5) * 16;
+                    const ry2 = (Math.random() - 0.5) * 16;
+                    gazeSequence([
+                      { x: rx, y: ry, duration: 600, pause: 800 + Math.random() * 1200 },
+                      { x: rx2, y: ry2, duration: 500, pause: 600 + Math.random() * 1000 },
+                      { x: 0, y: 0, duration: 400, pause: 1000 + Math.random() * 2000 },
+                    ], () => { if (idling) idleLoop(); });
+                  }
+                  idleLoop();
+                }
+
+                function resetIdle() {
+                  idling = false;
+                  clearTimeout(idleTimer);
+                  idleTimer = setTimeout(startIdle, IDLE_DELAY);
+                }
+
+                // Reset idle timer on any interaction
+                window.addEventListener('mousemove', resetIdle);
+                window.addEventListener('touchstart', resetIdle);
+                window.addEventListener('keydown', resetIdle);
+                resetIdle();
               });
             }, 500);
 
