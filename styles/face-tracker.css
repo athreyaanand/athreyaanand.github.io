@@ -31,9 +31,8 @@ body {
   position: relative;
   width: 360px;
   height: 360px;
-  border-radius: 12px;
   overflow: hidden;
-  background: #f0f0f0;
+  background: transparent;
   user-select: none;
   -webkit-user-select: none;
   touch-action: none;
@@ -46,6 +45,7 @@ body {
   object-fit: contain;
   transform: translateY(100%);
   pointer-events: none;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
 }
 
 .face-loading {
@@ -156,9 +156,9 @@ body {
   animation: hitShake 0.4s ease forwards;
 }
 
-.center-island.hit .face-tracker {
-  background: #e74c3c;
-  transition: background 0.1s ease;
+.center-island.hit .face-image {
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)) brightness(0.85) sepia(0.3) saturate(2) hue-rotate(-10deg);
+  transition: filter 0.1s ease;
 }
 
 @keyframes islandSlideDown {
