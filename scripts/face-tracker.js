@@ -202,19 +202,32 @@ function initializeFaceTracker(container) {
             // Signal bouncers to prepare (arena visible, pills hidden)
             window.dispatchEvent(new CustomEvent('faceTrackerReady'));
 
-            // Look around — pills shoot out with each glance
+            // Adaptive gaze directions based on available space
             setTimeout(() => {
-              gazeSequence([
-                { x: -12, y: 3, duration: 300, pause: 150,
-                  onStart: () => launchPills(-12, 3) },
-                { x: 9, y: 6, duration: 350, pause: 100,
-                  onStart: () => launchPills(9, 6) },
-                { x: -6, y: -6, duration: 300, pause: 120,
-                  onStart: () => launchPills(-6, -6) },
-                { x: 12, y: -3, duration: 350, pause: 150,
-                  onStart: () => launchPills(12, -3) },
-                { x: 0, y: 0, duration: 400, pause: 0 },
-              ], () => {
+              const rect = container.getBoundingClientRect();
+              const sideGap = Math.min(rect.left, window.innerWidth - rect.right);
+              const vertGap = Math.min(rect.top, window.innerHeight - rect.bottom);
+              const wide = sideGap > 80; // enough horizontal room
+
+              const gazeSteps = wide
+                ? [
+                    // Desktop: look left/right with slight vertical
+                    { x: -12, y: 3, duration: 300, pause: 150, onStart: () => launchPills(-12, 3) },
+                    { x: 9, y: 6, duration: 350, pause: 100, onStart: () => launchPills(9, 6) },
+                    { x: -6, y: -6, duration: 300, pause: 120, onStart: () => launchPills(-6, -6) },
+                    { x: 12, y: -3, duration: 350, pause: 150, onStart: () => launchPills(12, -3) },
+                  ]
+                : [
+                    // Mobile/narrow: launch up, corners, down — avoid sides
+                    { x: -3, y: 12, duration: 300, pause: 150, onStart: () => launchPills(-3, 12) },
+                    { x: 3, y: -12, duration: 350, pause: 100, onStart: () => launchPills(3, -12) },
+                    { x: -6, y: 9, duration: 300, pause: 120, onStart: () => launchPills(-6, 9) },
+                    { x: 6, y: -9, duration: 350, pause: 150, onStart: () => launchPills(6, -9) },
+                  ];
+
+              gazeSteps.push({ x: 0, y: 0, duration: 400, pause: 0 });
+
+              gazeSequence(gazeSteps, () => {
                 // Enable cursor tracking
                 window.addEventListener('mousemove', handleMouseMove);
                 window.addEventListener('touchmove', handleTouchMove, { passive: false });

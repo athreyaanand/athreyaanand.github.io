@@ -476,15 +476,33 @@ function initBouncers() {
         bounceColor(item);
 
         // Escape if trapped between island and viewport edge
-        if (item.x < 0 || item.x + item.w > currentVW) {
-          item.y = Math.random() < 0.5 ? Math.max(0, islandRect.top - item.h - 10) : Math.min(currentVH - item.h, islandRect.bottom + 10);
-          item.x = Math.random() * Math.max(1, islandRect.left - item.w);
-          item.vy = Math.abs(item.vy) * (item.y < islandRect.top ? -1 : 1);
-        }
-        if (item.y < 0 || item.y + item.h > currentVH) {
-          item.x = Math.random() < 0.5 ? Math.max(0, islandRect.left - item.w - 10) : Math.min(currentVW - item.w, islandRect.right + 10);
-          item.y = Math.max(0, Math.random() * (islandRect.top - item.h));
-          item.vx = Math.abs(item.vx) * (item.x < islandRect.left ? -1 : 1);
+        // Always escape to the direction with the MOST available space
+        if (item.x < 0 || item.x + item.w > currentVW ||
+            item.y < 0 || item.y + item.h > currentVH) {
+          const gapTop = islandRect.top;
+          const gapBot = currentVH - islandRect.bottom;
+          const gapLeft = islandRect.left;
+          const gapRight = currentVW - islandRect.right;
+          const maxGap = Math.max(gapTop, gapBot, gapLeft, gapRight);
+          const speed = MIN_SPEED + Math.random() * MAX_SPEED;
+
+          if (maxGap === gapTop) {
+            item.y = Math.random() * Math.max(1, gapTop - item.h);
+            item.x = islandRect.left + Math.random() * (islandRect.right - islandRect.left);
+            item.vy = -speed;
+          } else if (maxGap === gapBot) {
+            item.y = islandRect.bottom + Math.random() * Math.max(1, gapBot - item.h);
+            item.x = islandRect.left + Math.random() * (islandRect.right - islandRect.left);
+            item.vy = speed;
+          } else if (maxGap === gapLeft) {
+            item.x = Math.random() * Math.max(1, gapLeft - item.w);
+            item.y = Math.random() * currentVH;
+            item.vx = -speed;
+          } else {
+            item.x = islandRect.right + Math.random() * Math.max(1, gapRight - item.w);
+            item.y = Math.random() * currentVH;
+            item.vx = speed;
+          }
         }
 
         // Face flinch on flung pill impact
