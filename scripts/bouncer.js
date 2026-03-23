@@ -677,3 +677,40 @@ function initBouncers() {
 }
 
 document.addEventListener('DOMContentLoaded', initBouncers);
+
+// --- Cursor trail (desktop only) ---
+(function initCursorTrail() {
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  const TRAIL_SIZE = 16;
+  const dots = [];
+  for (let i = 0; i < TRAIL_SIZE; i++) {
+    const el = document.createElement('div');
+    el.className = 'trail-dot';
+    document.body.appendChild(el);
+    dots.push({ el, x: 0, y: 0 });
+  }
+
+  let mouseX = -100, mouseY = -100;
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function tick() {
+    let leaderX = mouseX, leaderY = mouseY;
+    for (let i = 0; i < dots.length; i++) {
+      const d = dots[i];
+      // Each dot follows the previous one with increasing lag
+      d.x += (leaderX - d.x) * 0.3;
+      d.y += (leaderY - d.y) * 0.3;
+      const fade = 1 - i / dots.length;
+      d.el.style.transform = `translate(${d.x - 3}px, ${d.y - 3}px) scale(${fade})`;
+      d.el.style.opacity = fade * 0.4;
+      leaderX = d.x;
+      leaderY = d.y;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();

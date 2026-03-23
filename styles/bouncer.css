@@ -104,6 +104,25 @@
   opacity: 0;
 }
 
+/* Cursor trail */
+.trail-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  will-change: transform;
+  transition: opacity 0.4s ease;
+}
+
+/* Hide trail on touch devices */
+@media (hover: none) {
+  .trail-dot { display: none; }
+}
+
 /* Responsive */
 @media (max-width: 480px) {
   .bouncer {
