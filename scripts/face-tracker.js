@@ -72,24 +72,20 @@ function initializeFaceTracker(container) {
   container.appendChild(loadingEl);
 
   let imageCache = null;
-  let rafId = null;
-  let pendingX = null;
-  let pendingY = null;
   let currentFilename = '';
 
-  function applyGaze() {
-    rafId = null;
-    if (pendingX === null) return;
+  // Smooth gaze tracking — lerp toward target position
+  let targetNX = 0, targetNY = 0; // normalized target (-1 to 1)
+  let currentNX = 0, currentNY = 0; // current interpolated position
+  const GAZE_LERP = 0.12; // smoothing factor (0 = frozen, 1 = instant)
 
-    const rect = container.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+  function gazeLoop() {
+    // Lerp current toward target
+    currentNX += (targetNX - currentNX) * GAZE_LERP;
+    currentNY += (targetNY - currentNY) * GAZE_LERP;
 
-    const nx = clamp((pendingX - centerX) / (rect.width / 2), -1, 1);
-    const ny = clamp((centerY - pendingY) / (rect.height / 2), -1, 1);
-
-    const px = quantizeToGrid(nx);
-    const py = quantizeToGrid(ny);
+    const px = quantizeToGrid(currentNX);
+    const py = quantizeToGrid(currentNY);
     const filename = gridToFilename(px, py);
 
     if (filename !== currentFilename) {
@@ -100,14 +96,16 @@ function initializeFaceTracker(container) {
         img.src = `${basePath}${filename}`;
       }
     }
+
+    requestAnimationFrame(gazeLoop);
   }
 
   function scheduleUpdate(clientX, clientY) {
-    pendingX = clientX;
-    pendingY = clientY;
-    if (!rafId) {
-      rafId = requestAnimationFrame(applyGaze);
-    }
+    const rect = container.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    targetNX = clamp((clientX - centerX) / (rect.width / 2), -1, 1);
+    targetNY = clamp((centerY - clientY) / (rect.height / 2), -1, 1);
   }
 
   function handleMouseMove(e) {
@@ -148,6 +146,11 @@ function initializeFaceTracker(container) {
       const px = clamp(Math.round(rawPx / STEP) * STEP, P_MIN, P_MAX);
       const py = clamp(Math.round(rawPy / STEP) * STEP, P_MIN, P_MAX);
       const fn = gridToFilename(px, py);
+      // Sync lerp state so transitions to cursor tracking are smooth
+      currentNX = rawPx / P_MAX;
+      currentNY = rawPy / P_MAX;
+      targetNX = currentNX;
+      targetNY = currentNY;
       if (fn !== currentFilename && imageCache.has(fn)) {
         img.src = imageCache.get(fn).src;
         currentFilename = fn;
@@ -228,35 +231,49 @@ function initializeFaceTracker(container) {
               gazeSteps.push({ x: 0, y: 0, duration: 400, pause: 0 });
 
               gazeSequence(gazeSteps, () => {
-                // Enable cursor tracking
+                // Enable cursor tracking + start smooth gaze loop
                 window.addEventListener('mousemove', handleMouseMove);
                 window.addEventListener('touchmove', handleTouchMove, { passive: false });
+                requestAnimationFrame(gazeLoop);
 
                 // --- Idle face animations ---
                 let idleTimer = null;
                 let idling = false;
                 const IDLE_DELAY = 5000;
 
+                let idleRaf = null;
+
                 function startIdle() {
                   if (idling) return;
                   idling = true;
-                  function idleLoop() {
+                  let targetPill = null;
+                  let switchTime = 0;
+
+                  function idleTick() {
                     if (!idling) return;
-                    const rx = (Math.random() - 0.5) * 20;
-                    const ry = (Math.random() - 0.5) * 20;
-                    const rx2 = (Math.random() - 0.5) * 16;
-                    const ry2 = (Math.random() - 0.5) * 16;
-                    gazeSequence([
-                      { x: rx, y: ry, duration: 600, pause: 800 + Math.random() * 1200 },
-                      { x: rx2, y: ry2, duration: 500, pause: 600 + Math.random() * 1000 },
-                      { x: 0, y: 0, duration: 400, pause: 1000 + Math.random() * 2000 },
-                    ], () => { if (idling) idleLoop(); });
+                    const now = performance.now();
+                    // Pick a new pill to follow every 2-4 seconds
+                    const pills = document.querySelectorAll('.bouncer');
+                    if (!targetPill || now - switchTime > 2000 + Math.random() * 2000) {
+                      const visible = Array.from(pills).filter(p => p.style.opacity !== '0');
+                      if (visible.length > 0) {
+                        targetPill = visible[Math.floor(Math.random() * visible.length)];
+                        switchTime = now;
+                      }
+                    }
+                    // Follow the pill's current position
+                    if (targetPill) {
+                      const r = targetPill.getBoundingClientRect();
+                      scheduleUpdate(r.left + r.width / 2, r.top + r.height / 2);
+                    }
+                    idleRaf = requestAnimationFrame(idleTick);
                   }
-                  idleLoop();
+                  idleTick();
                 }
 
                 function resetIdle() {
                   idling = false;
+                  if (idleRaf) { cancelAnimationFrame(idleRaf); idleRaf = null; }
                   clearTimeout(idleTimer);
                   idleTimer = setTimeout(startIdle, IDLE_DELAY);
                 }
