@@ -188,11 +188,14 @@ function initBouncers() {
     const baseAngle = Math.atan2(-gazeY, gazeX); // screen Y inverted
     const now = performance.now();
 
-    // Spawn from the edge of the island the face is looking toward
-    const iw = islandRect.right - islandRect.left;
-    const ih = islandRect.bottom - islandRect.top;
-    const primaryX = gazeX > 0; // looking right → spawn from right edge
-    const primaryLeft = gazeX < 0; // looking left → spawn from left edge
+    // Spawn from the edge the face is looking toward (dominant axis)
+    // Re-read island rect fresh for accurate positioning
+    const freshIsland = getIslandRect() || islandRect;
+    const iw = freshIsland.right - freshIsland.left;
+    const ih = freshIsland.bottom - freshIsland.top;
+    const cx = (freshIsland.left + freshIsland.right) / 2;
+    const cy = (freshIsland.top + freshIsland.bottom) / 2;
+    const horizontal = Math.abs(gazeX) > Math.abs(gazeY);
 
     batch.forEach((item) => {
       const spread = (Math.random() - 0.5) * (Math.PI / 3);
@@ -201,18 +204,14 @@ function initBouncers() {
       item.vx = Math.cos(angle) * speed;
       item.vy = -Math.sin(angle) * speed;
 
-      // Position at the edge the face is looking toward, vertically centered with slight randomness
+      const xJitter = (Math.random() - 0.5) * iw * 0.3;
       const yJitter = (Math.random() - 0.5) * ih * 0.3;
-      if (primaryX) {
-        item.x = islandRect.right;
-        item.y = islandCY - item.h / 2 + yJitter;
-      } else if (primaryLeft) {
-        item.x = islandRect.left - item.w;
-        item.y = islandCY - item.h / 2 + yJitter;
+      if (horizontal) {
+        item.x = gazeX > 0 ? freshIsland.right : freshIsland.left - item.w;
+        item.y = cy - item.h / 2 + yJitter;
       } else {
-        // Looking mostly up/down — spawn from top or bottom edge
-        item.x = islandCX - item.w / 2 + (Math.random() - 0.5) * iw * 0.3;
-        item.y = gazeY > 0 ? islandRect.top - item.h : islandRect.bottom;
+        item.x = cx - item.w / 2 + xJitter;
+        item.y = gazeY > 0 ? freshIsland.top - item.h : freshIsland.bottom;
       }
 
       item.launched = true;

@@ -204,10 +204,10 @@ function initializeFaceTracker(container) {
 
             // Adaptive gaze directions based on available space
             setTimeout(() => {
-              const rect = container.getBoundingClientRect();
-              const sideGap = Math.min(rect.left, window.innerWidth - rect.right);
-              const vertGap = Math.min(rect.top, window.innerHeight - rect.bottom);
-              const wide = sideGap > 80; // enough horizontal room
+              const iw = window.innerWidth;
+              const faceW = container.offsetWidth || 360;
+              const sideGap = (iw - faceW) / 2;
+              const wide = sideGap > 150;
 
               const gazeSteps = wide
                 ? [
