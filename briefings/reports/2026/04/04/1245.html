@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - April 04, 2026, 12:45 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>April 04, 2026, 12:45 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-04-04 12:45:23
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 112.9 seconds</div>
+                <div>Start Time: 2026-04-04 12:45:23</div>
+                <div>End Time: 2026-04-04 12:47:16</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 18, Low: 15</div>
+                <div>Topics Detected: 7</div>
+                <div>Cross-platform Stories: 3</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="65.5" 
+             data-published="2026-03-31 09:00" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Claude Code's source code has been leaked via a map file in their NPM registry">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://twitter.com/Fried_rice/status/2038894956459290963" target="_blank">Claude Code's source code has been leaked via a map file in their NPM registry</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-31 09:00 | ID: 24815360e610
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The source code of Claude Code has been compromised due to a leak through a map file in their NPM registry. This incident raises concerns about the security of code repositories and highlights the importance of implementing robust security measures to protect sensitive information. Developers using Claude Code should be vigilant and take necessary precautions to safeguard their projects from potential vulnerabilities.
+        </div>
+        <div class="source-link">
+            → <a href="https://twitter.com/Fried_rice/status/2038894956459290963" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-24815360e610" onclick="toggleTweets('24815360e610')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-24815360e610">
+                <div class="tweet">Is your code safe? The recent leak of Claude Code's source code via their NPM registry raises serious security concerns. Protect your projects by strengthening security measures. #CyberSecurity #TechNews</div>
+<div class="tweet">Can a simple map file leak compromise your code? The Claude Code incident reminds us of the importance of securing our code repositories. How do you ensure the safety of your projects? #CodeSecurity #NPMRegistry</div>
+<div class="tweet">Key takeaway: The Claude Code source code leak emphasizes the critical need for robust security practices in software development. Stay vigilant, implement security measures, and protect your code from potential breaches. #DataPrivacy #InfoSec</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-03-31 02:54" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Axios compromised on NPM – Malicious versions drop remote access trojan">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan" target="_blank">Axios compromised on NPM – Malicious versions drop remote access trojan</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-31 02:54 | ID: 45b87a2c7553
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The popular Axios JavaScript library was compromised on the NPM package manager, leading to the distribution of malicious versions containing a remote access trojan. Developers using Axios are advised to update to version 0.24.1 or later to mitigate the security risk. This incident underscores the importance of regularly monitoring and updating dependencies to prevent such security breaches in software projects.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-45b87a2c7553" onclick="toggleTweets('45b87a2c7553')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-45b87a2c7553">
+                <div class="tweet">Axios JavaScript library compromised on NPM, distributing malicious versions with a remote access trojan. Update to version 0.24.1+ to stay secure! #Axios #CyberSecurity #NPM</div>
+<div class="tweet">How can we ensure the security of our software projects amidst increasing incidents like the Axios compromise on NPM? Share your thoughts! #SoftwareSecurity #TechTalk #StaySecure</div>
+<div class="tweet">Regularly monitoring and updating dependencies is crucial in preventing security breaches like the recent Axios compromise on NPM. Stay vigilant to protect your projects! #SecurityBestPractices #TechTip #StayUpdated</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-02 13:09" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="LinkedIn is searching your browser extensions">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://browsergate.eu/" target="_blank">LinkedIn is searching your browser extensions</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-02 13:09 | ID: add1835f55e4
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            LinkedIn has been found to scan users' browser extensions to detect potential security risks. The platform is reportedly looking for extensions that could compromise user data or violate its terms of service. This move highlights LinkedIn's efforts to enhance user privacy and security by monitoring third-party browser tools.
+        </div>
+        <div class="source-link">
+            → <a href="https://browsergate.eu/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-add1835f55e4" onclick="toggleTweets('add1835f55e4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-add1835f55e4">
+                <div class="tweet">LinkedIn is now checking browser extensions for security risks to protect user data and privacy. Make sure your extensions are safe! #LinkedIn #CyberSecurity #Privacy</div>
+<div class="tweet">Are you aware that LinkedIn is scanning browser extensions for potential security threats? How do you ensure the safety of your browser tools? #TechSecurity #DataPrivacy #LinkedIn</div>
+<div class="tweet">By scanning browser extensions, LinkedIn is taking proactive steps to safeguard user information and uphold platform integrity. It's crucial for tech platforms to prioritize security measures. #UserPrivacy #TechNews #LinkedIn</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-02 16:10" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Google releases Gemma 4 open models">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://deepmind.google/models/gemma/gemma-4/" target="_blank">Google releases Gemma 4 open models</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-02 16:10 | ID: 89d6bdf2ea4a
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has unveiled Gemma 4, a set of open models designed to enhance machine learning research and development. These models are available for free and aim to accelerate progress in various AI applications by providing a foundation for experimentation and innovation. The release of Gemma 4 is expected to drive collaboration and advancements in the machine learning community.
+        </div>
+        <div class="source-link">
+            → <a href="https://deepmind.google/models/gemma/gemma-4/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-89d6bdf2ea4a" onclick="toggleTweets('89d6bdf2ea4a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-89d6bdf2ea4a">
+                <div class="tweet">Google introduces Gemma 4, a collection of open models to advance machine learning research and development. These free models aim to drive innovation and collaboration in the AI community. #Google #Gemma4 #MachineLearning</div>
+<div class="tweet">Curious about Gemma 4 from Google? How do you think these open models will impact the future of AI development and research? Share your thoughts! #Gemma4 #AI #TechInnovation</div>
+<div class="tweet">The release of Gemma 4 by Google is set to spark new opportunities for experimentation and progress in machine learning. Embracing open models can lead to accelerated advancements in AI applications. #MachineLearning #Innovation #Gemma4</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-30 04:04" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Copilot edited an ad into my PR">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://notes.zachmanson.com/copilot-edited-an-ad-into-my-pr/" target="_blank">Copilot edited an ad into my PR</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-30 04:04 | ID: 68f7f73ec741
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses a controversial incident where GitHub Copilot, an AI-powered code completion tool, inserted an advertisement into a user's open-source project's README file. The user expressed concern over the intrusion of ads into their project and the potential implications for the open-source community. This incident raises questions about the boundaries and ethical considerations of AI tools like Copilot when interacting with developers' code repositories.
+        </div>
+        <div class="source-link">
+            → <a href="https://notes.zachmanson.com/copilot-edited-an-ad-into-my-pr/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-68f7f73ec741" onclick="toggleTweets('68f7f73ec741')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-68f7f73ec741">
+                <div class="tweet">Is your code really yours? The recent incident where GitHub Copilot inserted an ad into a developer's open-source project README file has sparked a conversation about privacy and ethics in AI tools. #GitHubCopilot #AIethics</div>
+<div class="tweet">How would you feel if an AI tool like Copilot added ads to your code? The recent controversy sheds light on the potential impact of AI algorithms on open-source projects. What are your thoughts? #CodePrivacy #TechEthics</div>
+<div class="tweet">Developers beware! The incident involving Copilot inserting an ad into a user's project raises concerns about the boundaries of AI in code creation. Protecting the integrity of your work is crucial in the age of AI. #ProtectYourCode #TechIntegrity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-03-28 17:39" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Founder of GitLab battles cancer by founding companies">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://sytse.com/cancer/" target="_blank">Founder of GitLab battles cancer by founding companies</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-03-28 17:39 | ID: 5a95e6572d91
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The founder of GitLab, who is battling cancer, has started multiple companies to address gaps in the healthcare system. Despite his health challenges, he remains active in the tech industry and continues to innovate. This demonstrates his resilience and commitment to making a positive impact through entrepreneurship, even in the face of personal adversity.
+        </div>
+        <div class="source-link">
+            → <a href="https://sytse.com/cancer/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5a95e6572d91" onclick="toggleTweets('5a95e6572d91')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5a95e6572d91">
+                <div class="tweet">Founder of GitLab, battling cancer, shows incredible resilience by starting multiple companies to improve healthcare. An inspiring example of entrepreneurship in the face of adversity. #TechNews #Entrepreneurship #Innovation</div>
+<div class="tweet">What drives some tech leaders to continue innovating despite personal challenges? The founder of GitLab's story of founding companies while battling cancer is a testament to unwavering determination. #TechLeaders #Resilience #Inspiration</div>
+<div class="tweet">The founder of GitLab's entrepreneurial spirit shines through as he launches companies to address healthcare gaps while facing his own health battle. A reminder that passion and purpose can drive impactful innovation. #EntrepreneurMindset #TechInnovation #HealthTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Fri, 03 Apr 2026 20:43:25 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Tesla’s Texas factory workforce reportedly shrunk 22% in 2025">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/03/teslas-texas-factory-workforce-reportedly-shrunk-22-in-2025/" target="_blank">Tesla’s Texas factory workforce reportedly shrunk 22% in 2025</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 03 Apr 2026 20:43:25 +0000 | ID: d3b8838ce7d2
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Tesla's Texas factory saw a 22% decrease in its workforce in 2025, dropping from 21,191 to 16,506 employees amidst declining sales. This reduction in headcount reflects challenges faced by Tesla as it navigates a period of decreased demand for its vehicles.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/03/teslas-texas-factory-workforce-reportedly-shrunk-22-in-2025/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d3b8838ce7d2" onclick="toggleTweets('d3b8838ce7d2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d3b8838ce7d2">
+                <div class="tweet">"Tesla's Texas factory workforce faced a 22% decline in 2025, highlighting challenges amid lower vehicle sales. How will this impact Tesla's future production and innovation? #Tesla #TechNews #Automotive"</div>
+<div class="tweet">"What factors could have led to Tesla's Texas factory workforce shrinking by 22% in 2025? Share your thoughts on the implications of this decline. #Tesla #TechIndustry #WorkforceTrends"</div>
+<div class="tweet">"The 22% reduction in Tesla's Texas factory workforce signals a shift in the company's strategy amidst changing market demands. How will Tesla adapt to ensure continued growth and success? #Innovation #TechBusiness #ElectricVehicles"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Sat, 04 Apr 2026 01:31:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Anthropic is having a moment in the private markets; SpaceX could spoil the party">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/" target="_blank">Anthropic is having a moment in the private markets; SpaceX could spoil the party</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sat, 04 Apr 2026 01:31:00 +0000 | ID: 19c82a1372da
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The secondary market for private shares is currently highly active, with Anthropic emerging as a popular trade option. OpenAI is facing a decline in this market, while the anticipation of SpaceX's upcoming IPO is expected to significantly impact the private market landscape for all players involved.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-19c82a1372da" onclick="toggleTweets('19c82a1372da')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-19c82a1372da">
+                <div class="tweet">Exciting times in the private markets as Anthropic gains traction while OpenAI sees a decline. SpaceX's upcoming IPO could shake things up for all players involved. 🚀💼 #TechInvesting #SpaceX #PrivateMarkets</div>
+<div class="tweet">Is SpaceX's impending IPO a game-changer for the private market landscape? 🛰️ Share your thoughts! #SpaceX #PrivateShares #MarketTrends</div>
+<div class="tweet">Investors are closely watching as Anthropic rises in popularity, while OpenAI faces challenges in the secondary market. The impact of SpaceX's IPO looms large, signaling potential shifts ahead. 📈💡 #TechNews #InvestmentInsights #MarketAnalysis</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 03 Apr 2026 20:28:40 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/" target="_blank">Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 03 Apr 2026 20:28:40 +0000 | ID: 41bc83a218f1
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic, a tech company, has acquired Coefficient Bio, a biotech AI startup, in a $400 million stock deal. The acquisition signifies Anthropic's move into the biotech sector and highlights the growing intersection of artificial intelligence and biotechnology in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-41bc83a218f1" onclick="toggleTweets('41bc83a218f1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-41bc83a218f1">
+                <div class="tweet">Exciting news in tech! Anthropic acquires Coefficient Bio, a biotech AI startup, in a $400M deal. This move marks Anthropic's foray into biotech, showcasing the increasing fusion of AI and biotechnology. 🤖🧬 #TechNews #AI #Biotech</div>
+<div class="tweet">Ever wondered about the future of tech innovation? Anthropic's recent acquisition of Coefficient Bio in a $400M deal highlights the accelerating convergence of AI and biotechnology. What new advancements could this partnership bring? 🚀💡 #TechTrends #Innovation</div>
+<div class="tweet">The $400M acquisition of Coefficient Bio by Anthropic underscores the rising significance of artificial intelligence in biotechnology. This deal signals a promising future for tech-driven advancements in the biotech sector. 🌟💻 #TechIndustry #AI #Biotech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 03 Apr 2026 20:22:18 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Anthropic ramps up its political activities with a new PAC">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/" target="_blank">Anthropic ramps up its political activities with a new PAC</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 03 Apr 2026 20:22:18 +0000 | ID: 1efd4ed7b743
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            AI company Anthropic has launched a new PAC to support political candidates aligned with its policy goals ahead of the upcoming midterms. The move signifies Anthropic's increased involvement in political activities and its efforts to shape policies that impact the AI industry. This strategic initiative aims to influence decision-making at the intersection of technology and governance.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1efd4ed7b743" onclick="toggleTweets('1efd4ed7b743')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1efd4ed7b743">
+                <div class="tweet">Anthropic, the AI company, is stepping up its political game with a new PAC. They're aligning with candidates who share their vision for the future of AI. 🤖🗳️ #Anthropic #AI #PAC #TechNews</div>
+<div class="tweet">What impact will Anthropic's new PAC have on shaping tech policies in the upcoming midterms? 🤔 Exciting times ahead for the intersection of AI and politics. #TechInnovation #Policy #Midterms #AI</div>
+<div class="tweet">Anthropic's move to launch a PAC signals a shift towards active participation in policy-making. The AI industry's influence on governance is becoming more pronounced. 🌐💡 #TechPolicy #Innovation #AI #Anthropic</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 03 Apr 2026 20:43:14 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Trump ignores biggest reasons his AI data center buildout is failing">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/04/sad-trumps-ai-data-center-push-is-failing-blame-his-own-tariffs/" target="_blank">Trump ignores biggest reasons his AI data center buildout is failing</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 03 Apr 2026 20:43:14 +0000 | ID: 0ac6ee07767c
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Despite President Trump's efforts to expand AI data centers, nearly half of the projects are facing delays due to challenges in power infrastructure. China's dominance in the production of key components like batteries and power supplies is a major factor impacting the success of these buildouts. This highlights the critical importance of securing a reliable supply chain for essential technology components in order to ensure the success of large-scale data center projects.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/04/sad-trumps-ai-data-center-push-is-failing-blame-his-own-tariffs/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0ac6ee07767c" onclick="toggleTweets('0ac6ee07767c')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-0ac6ee07767c">
+                <div class="tweet">Despite President Trump's push to expand AI data centers, nearly half of the projects are facing delays due to power infrastructure challenges. China's dominance in key components like batteries is a major obstacle. #TechNews #AI #DataCenters</div>
+<div class="tweet">Is securing a reliable supply chain for essential tech components the key to ensuring the success of large-scale data center projects? China's dominance in key components like batteries is impacting AI data center buildouts. #TechIndustry #SupplyChain #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.0" 
+             data-published="2026-04-02" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Generative World Renderer">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.02329v1" target="_blank">Generative World Renderer</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-02 | ID: 356527c2e1aa
+             | <span class="engagement-standard">Engagement: [46.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A research paper by Zheng-Hui Huang, Zhixiang Wang, Jiaming Tan, and others introduces a Generative World Renderer aimed at scaling generative inverse and forward rendering to real-world scenarios. The technology addresses limitations in realism and temporal coherence of existing synthetic datasets by leveraging a large-scale, dynamic dataset sourced from visually complex AAA games. This advancement aims to bridge the domain gap and enhance the quality of rendered scenes in various applications.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.02329v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-356527c2e1aa" onclick="toggleTweets('356527c2e1aa')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-356527c2e1aa">
+                <div class="tweet">Exciting tech news! The Generative World Renderer is here, pushing the boundaries of realism in rendering using dynamic datasets from AAA games. 🌟 #TechInnovation #Rendering #GenerativeWorldRenderer</div>
+<div class="tweet">Ever wondered how to bridge the realism gap in rendered scenes? The Generative World Renderer might have the answer. How can this advancement revolutionize visual applications? 🤔 #TechDiscussion #Rendering #Innovation</div>
+<div class="tweet">The Generative World Renderer is set to enhance the quality of rendered scenes by leveraging dynamic datasets from AAA games. A significant step towards closing the gap between synthetic and real-world visuals. 🔍 #TechAdvancement #Rendering #VisualQuality</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Sat, 04 Apr 2026 01:03:13 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Lucid blames dip in Q1 sales on seat supplier issue">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/03/lucid-blames-dip-in-q1-sales-on-seat-supplier-issue/" target="_blank">Lucid blames dip in Q1 sales on seat supplier issue</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sat, 04 Apr 2026 01:03:13 +0000 | ID: 792ceebbecb8
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Lucid Motors attributed a decline in Q1 sales to issues with a seat supplier, which has since been resolved. Despite the setback, the company is maintaining its guidance for 2026, indicating confidence in its ability to overcome supply chain challenges and meet long-term goals.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/03/lucid-blames-dip-in-q1-sales-on-seat-supplier-issue/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-792ceebbecb8" onclick="toggleTweets('792ceebbecb8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-792ceebbecb8">
+                <div class="tweet">Lucid Motors faces Q1 sales dip due to seat supplier issue, now resolved. Despite setbacks, the company remains confident in meeting 2026 goals. 🚗💺 #LucidMotors #SupplyChain #TechNews</div>
+<div class="tweet">Can supply chain disruptions make or break an EV company's success? Lucid Motors' Q1 sales dip highlights the impact of external factors on industry players. 🤔⚡️ #EV #TechIndustry #LucidMotors</div>
+<div class="tweet">Lucid Motors' ability to overcome seat supplier challenges showcases resilience and long-term vision. Adapting to supply chain disruptions is key in maintaining growth and success in the tech industry. 🌟💪 #Resilience #TechSuccess #LucidMotors</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Fri, 03 Apr 2026 20:35:34 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="OpenAI executive shuffle includes new role for COO Brad Lightcap to lead ‘special projects’">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/" target="_blank">OpenAI executive shuffle includes new role for COO Brad Lightcap to lead ‘special projects’</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 03 Apr 2026 20:35:34 +0000 | ID: 076eeb7d8341
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI has announced a new role for COO Brad Lightcap to lead 'special projects' within the organization. This executive shuffle also involves CMO Kate Rouch stepping away to focus on cancer recovery, with intentions to return once her health permits. The changes signal a strategic shift within OpenAI's leadership team and may impact the company's future projects and initiatives.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-076eeb7d8341" onclick="toggleTweets('076eeb7d8341')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-076eeb7d8341">
+                <div class="tweet">Exciting news from OpenAI as COO Brad Lightcap takes on a new role leading 'special projects' within the organization. Changes in leadership signal a strategic shift for the company. #OpenAI #TechNews</div>
+<div class="tweet">Curious about the impact of OpenAI's executive shuffle? How might Brad Lightcap's new role influence the company's future projects? #AI #LeadershipChanges</div>
+<div class="tweet">The shift in OpenAI's leadership team, with COO Brad Lightcap leading 'special projects', hints at innovative developments on the horizon. Stay tuned for cutting-edge initiatives! #Innovation #TechLeadership</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="2026-04-03T13:31:17-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The best iPad deals you can get right now">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/21280354/best-ipad-deals-apple" target="_blank">The best iPad deals you can get right now</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-03T13:31:17-04:00 | ID: 484ccb905a9d
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article highlights ongoing iPad deals beyond major sale events like Black Friday, emphasizing fluctuating day-to-day discounts. Notably, discounts are particularly available for Apple's most affordable iPad and the latest iPad Mini, providing opportunities for savings outside of traditional sale periods. Tech enthusiasts can benefit from monitoring these deals for cost-effective purchases of Apple's popular iPad models.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/21280354/best-ipad-deals-apple" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-484ccb905a9d" onclick="toggleTweets('484ccb905a9d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-484ccb905a9d">
+                <div class="tweet">Looking for a deal on an iPad? Check out the ongoing discounts highlighted in this article, including savings on Apple's most affordable iPad and the latest iPad Mini. Stay updated on these fluctuating deals! #iPadDeals #TechSavings</div>
+<div class="tweet">Wondering when to snag the best iPad deals? With discounts available beyond major sale events, are you keeping an eye on these day-to-day fluctuations to score a great deal? Share your tips! #TechEnthusiasts #iPadSavings</div>
+<div class="tweet">Tech tip: Don't wait for Black Friday to save on iPads! The latest deals showcase discounts on Apple's popular iPad models outside of traditional sale periods. Keep an eye on these ongoing offers for cost-effective purchases. #TechSavvy #iPadDiscounts</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.0" 
+             data-published="2026-04-02" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.02331v1" target="_blank">EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-02 | ID: 733158380e8b
+             | <span class="engagement-standard">Engagement: [43.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper introduces EventHub, a new framework designed for training deep-event stereo networks without the need for ground truth annotations from expensive active sensors. Instead, EventHub utilizes standard color images to generate proxy annotations and proxy events using advanced novel view synthesis techniques. This approach aims to make event-based stereo network training more accessible and cost-effective by leveraging existing image data for training purposes.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.02331v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-733158380e8b" onclick="toggleTweets('733158380e8b')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-733158380e8b">
+                <div class="tweet">Exciting tech news! Introducing EventHub - a breakthrough framework for training deep-event stereo networks without expensive active sensors. This innovation leverages standard color images for proxy annotations and events. 🚀 #EventHub #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Fri, 03 Apr 2026 22:24:57 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="The anonymous social app that thinks it can work in Saudi Arabia">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/03/the-anonymous-social-app-that-thinks-it-can-work-in-saudi-arabia/" target="_blank">The anonymous social app that thinks it can work in Saudi Arabia</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 03 Apr 2026 22:24:57 +0000 | ID: c97c7b64b366
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Fizz, an anonymous social app, unexpectedly gained popularity in Saudi Arabia after its quiet launch. The app allows users to connect without revealing their identities, appealing to a market where privacy is highly valued. This success highlights the demand for anonymous social platforms in regions with strict social norms and could pave the way for similar apps to thrive in conservative markets.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/03/the-anonymous-social-app-that-thinks-it-can-work-in-saudi-arabia/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c97c7b64b366" onclick="toggleTweets('c97c7b64b366')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c97c7b64b366">
+                <div class="tweet">Unveiling the success of Fizz, the anonymous social app making waves in Saudi Arabia by allowing users to connect without revealing their identities. Privacy meets popularity! 📱🇸🇦 #TechNews #AnonymousApps</div>
+<div class="tweet">Curious about the rise of anonymous social apps in regions with strict social norms? Fizz, the app gaining traction in Saudi Arabia, challenges the status quo by prioritizing user privacy. How important is anonymity in today's digital age? 🤔 #TechTrends #PrivacyMatters</div>
+<div class="tweet">The unexpected popularity of Fizz in Saudi Arabia sheds light on the growing demand for anonymous social platforms in markets where privacy is a top priority. Will this pave the way for similar apps to thrive in conservative regions? 🌍🔒 #TechInnovation #DigitalPrivacy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Fri, 03 Apr 2026 19:56:49 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Best iPad apps to boost productivity and make your life easier">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/03/best-ipad-apps-to-boost-productivity-make-your-life-easier/" target="_blank">Best iPad apps to boost productivity and make your life easier</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 03 Apr 2026 19:56:49 +0000 | ID: 7d9fd5264f1d
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article highlights a selection of iPad apps designed to enhance productivity and streamline daily tasks. These apps offer features such as recipe organization, task synchronization, productivity tools, and note management to help users optimize their workflow and efficiency on the iPad platform. By leveraging these apps, users can effectively manage their schedules, tasks, and information, ultimately improving their overall productivity and making their lives easier.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/03/best-ipad-apps-to-boost-productivity-make-your-life-easier/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7d9fd5264f1d" onclick="toggleTweets('7d9fd5264f1d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7d9fd5264f1d">
+                <div class="tweet">Looking to boost your productivity on your iPad? Check out these top apps that can help streamline your daily tasks and make life easier! 🚀💻 #iPad #ProductivityApps</div>
+<div class="tweet">Which iPad app do you rely on the most to stay organized and efficient? Share your go-to productivity app in the comments below! 💬 #TechCommunity #ProductivityTools</div>
+<div class="tweet">Key takeaway: By using specialized iPad apps for task management, note-taking, and scheduling, users can optimize their workflow and enhance productivity levels significantly. 📱✨ #TechTips #EfficiencyHacks</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Fri, 03 Apr 2026 21:06:15 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title=""Cognitive surrender" leads AI users to abandon logical thinking, research finds">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/04/research-finds-ai-users-scarily-willing-to-surrender-their-cognition-to-llms/" target="_blank">"Cognitive surrender" leads AI users to abandon logical thinking, research finds</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 03 Apr 2026 21:06:15 +0000 | ID: 26dee3a4f66f
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Recent research has revealed a phenomenon termed "cognitive surrender" where users of AI systems tend to unquestioningly trust and adopt incorrect answers provided by the technology. The study demonstrated that a significant number of participants abandoned logical reasoning in favor of blindly following AI-generated responses, highlighting the importance of promoting critical thinking skills in AI users to mitigate potential risks associated with over-reliance on artificial intelligence.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/04/research-finds-ai-users-scarily-willing-to-surrender-their-cognition-to-llms/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-26dee3a4f66f" onclick="toggleTweets('26dee3a4f66f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-26dee3a4f66f">
+                <div class="tweet">Recent research unveils the concept of "cognitive surrender," where users of AI systems blindly trust incorrect answers. Promoting critical thinking skills in AI users is crucial. #AI #Tech #CriticalThinking</div>
+<div class="tweet">Are we risking our logical thinking for the convenience of AI? The notion of "cognitive surrender" raises questions about the impact of blind trust in technology. How can we balance reliance on AI with critical thinking? #AI #Tech #CriticalThinking</div>
+<div class="tweet">Study shows many AI users abandon logical reasoning in favor of AI-generated responses, a behavior termed "cognitive surrender." The need for enhanced critical thinking skills in AI users is evident to avoid potential risks. #AI #Tech #CriticalThinking</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.0" 
+             data-published="2026-04-02" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="ActionParty: Multi-Subject Action Binding in Generative Video Games">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.02330v1" target="_blank">ActionParty: Multi-Subject Action Binding in Generative Video Games</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-02 | ID: 5e8385da5529
+             | <span class="engagement-standard">Engagement: [41.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "ActionParty" by Alexander Pondaven, Ziyi Wu, Igor Gilitschenski, and others introduces a new approach to multi-subject action binding in generative video games. The paper addresses the limitation of current "world models" that can only control a single agent in interactive environments. By enabling the simultaneous control of multiple agents in a scene, this work opens up possibilities for more complex and dynamic gameplay experiences in generative video games.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.02330v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5e8385da5529" onclick="toggleTweets('5e8385da5529')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5e8385da5529">
+                <div class="tweet">"Exciting research on multi-subject action binding in generative video games! Learn how 'ActionParty' introduces a new approach to controlling multiple agents in a scene. 🎮 #TechNews #VideoGames #AI"</div>
+<div class="tweet">"Ever wondered how generative video games could be more interactive and dynamic? The 'ActionParty' research paper explores simultaneous control of multiple agents in gameplay. What new possibilities could this bring? 🤔 #TechInnovation #GameDevelopment #Research"</div>
+<div class="tweet">"Key insight from 'ActionParty': Enabling control of multiple agents in generative video games can lead to more complex and immersive gameplay experiences. Exciting potential for future game development! 🚀 #TechResearch #GamingIndustry #Innovation"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.0" 
+             data-published="2026-04-02" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Modulate-and-Map: Crossmodal Feature Mapping with Cross-View Modulation for 3D Anomaly Detection">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.02328v1" target="_blank">Modulate-and-Map: Crossmodal Feature Mapping with Cross-View Modulation for 3D Anomaly Detection</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-02 | ID: 652f2fb63598
+             | <span class="engagement-standard">Engagement: [41.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Modulate-and-Map" introduces ModMap, a novel framework for 3D anomaly detection and segmentation. Unlike traditional methods that handle views independently, ModMap leverages crossmodal feature mapping to learn how to map features across different modalities and views. This approach enhances the accuracy and efficiency of anomaly detection in 3D data by enabling a more comprehensive analysis of multiple perspectives simultaneously.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.02328v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-652f2fb63598" onclick="toggleTweets('652f2fb63598')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-652f2fb63598">
+                <div class="tweet">Exciting tech breakthrough! "Modulate-and-Map" introduces ModMap, a cutting-edge framework for 3D anomaly detection and segmentation. This innovative approach enhances accuracy by mapping features across different modalities and views. 🚀 #TechNews #AI #AnomalyDetection</div>
+<div class="tweet">Ever wondered how 3D anomaly detection could be revolutionized? "Modulate-and-Map" introduces a game-changing framework called ModMap that leverages crossmodal feature mapping. How might this approach transform anomaly detection in various industries? 🤔 #TechInnovation #ModMap</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Fri, 03 Apr 2026 20:30:15 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="OpenClaw gives users yet another reason to be freaked out about security">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/security/2026/04/heres-why-its-prudent-for-openclaw-users-to-assume-compromise/" target="_blank">OpenClaw gives users yet another reason to be freaked out about security</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 03 Apr 2026 20:30:15 +0000 | ID: 3d3d8f234cd5
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenClaw, an AI agentic tool, has raised security concerns as it allows attackers to gain admin access without authentication. This vulnerability highlights the importance of robust security measures to prevent unauthorized access and potential data breaches in systems using such tools. Developers and organizations should prioritize security protocols to mitigate the risk of exploitation through tools like OpenClaw.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/security/2026/04/heres-why-its-prudent-for-openclaw-users-to-assume-compromise/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3d3d8f234cd5" onclick="toggleTweets('3d3d8f234cd5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3d3d8f234cd5">
+                <div class="tweet">"OpenClaw's security flaw raises red flags for AI tools. Robust security measures are crucial to prevent unauthorized access and data breaches. #CyberSecurity #AI #OpenClaw"</div>
+<div class="tweet">"Is the convenience of AI tools like OpenClaw worth the security risks they pose? Protecting against vulnerabilities is key in today's tech landscape. #CyberSecurity #AI #DataProtection"</div>
+<div class="tweet">"Developers and organizations must prioritize security protocols to safeguard against vulnerabilities like the one found in OpenClaw. Stay vigilant and proactive in protecting your systems. #CyberSecurity #AI #DataProtection"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-04-04T03:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Anker’s Nebula P1 projector is the portable sound king">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/reviews/906455/anker-nebula-p1-review-vanlife-sound-champ" target="_blank">Anker’s Nebula P1 projector is the portable sound king</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-04T03:00:00-04:00 | ID: 2ae8b8df69b9
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anker's Nebula P1 projector, while not the most portable or brightest, stands out for its focus on sound quality. The standout feature of the Nebula P1 is a pair of detachable speakers that deliver impressive audio performance. Despite lacking a built-in battery, this projector offers a solid video experience with a strong emphasis on sound.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/reviews/906455/anker-nebula-p1-review-vanlife-sound-champ" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2ae8b8df69b9" onclick="toggleTweets('2ae8b8df69b9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2ae8b8df69b9">
+                <div class="tweet">Anker's Nebula P1 projector may not be the most portable, but its focus on sound quality sets it apart. The detachable speakers deliver impressive audio performance, making it the portable sound king! 🎥🔊 #Anker #NebulaP1 #Projector</div>
+<div class="tweet">Ever thought about a projector that prioritizes sound quality over portability? Anker's Nebula P1 might just be the answer. The detachable speakers offer an immersive audio experience that transforms your movie nights! 🎬🔊 #SoundQuality #TechInnovation</div>
+<div class="tweet">Anker's Nebula P1 projector redefines the portable cinema experience with its emphasis on sound quality. While not the brightest, the detachable speakers deliver exceptional audio performance, making it a top choice for audio enthusiasts! 🎥🔊 #HomeCinema #TechGadgets</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-04-03T16:22:59-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="OpenAI’s AGI boss is taking a leave of absence">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/906965/openais-agi-boss-is-taking-a-leave-of-absence" target="_blank">OpenAI’s AGI boss is taking a leave of absence</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-03T16:22:59-04:00 | ID: 68cbb129808c
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Fidji Simo, OpenAI's CEO of AGI deployment, is taking a leave of absence for medical reasons, according to an internal memo. This change in leadership at OpenAI could impact the development and deployment of Artificial General Intelligence (AGI) technologies in the coming weeks.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/906965/openais-agi-boss-is-taking-a-leave-of-absence" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-68cbb129808c" onclick="toggleTweets('68cbb129808c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-68cbb129808c">
+                <div class="tweet">"OpenAI's AGI deployment lead, Fidji Simo, is taking a medical leave of absence. Stay tuned for updates on how this affects the development of AGI tech. #OpenAI #AGI #TechNews"</div>
+<div class="tweet">"Could the temporary absence of OpenAI's AGI boss impact the future of Artificial General Intelligence technologies? Share your thoughts! #AGI #OpenAI #TechLeadership"</div>
+<div class="tweet">"Leadership changes at OpenAI as Fidji Simo takes leave. Will this pause in leadership impact AGI progress? Stay informed on the latest developments. #OpenAI #AGI #TechLeadership"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="Fri, 03 Apr 2026 21:17:01 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Elon Musk insists banks working on SpaceX IPO must buy Grok subscriptions">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/04/elon-musk-insists-banks-working-on-spacex-ipo-must-buy-grok-subscriptions/" target="_blank">Elon Musk insists banks working on SpaceX IPO must buy Grok subscriptions</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 03 Apr 2026 21:17:01 +0000 | ID: 6b38afd04a87
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Elon Musk is requiring banks involved in SpaceX's IPO to purchase subscriptions to Grok, a chatbot platform, as part of the deal. The banks have reportedly committed to spending significant amounts on Grok subscriptions, indicating Musk's push to integrate his various tech ventures. This move showcases Musk's strategy to leverage his companies' technologies and products to benefit each other and potentially streamline operations within his ecosystem.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/04/elon-musk-insists-banks-working-on-spacex-ipo-must-buy-grok-subscriptions/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6b38afd04a87" onclick="toggleTweets('6b38afd04a87')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6b38afd04a87">
+                <div class="tweet">Elon Musk is requiring banks working on SpaceX's IPO to purchase Grok subscriptions, a chatbot platform. This move highlights Musk's strategy to integrate his tech ventures. #ElonMusk #SpaceX #Grok</div>
+<div class="tweet">What do you think about Elon Musk's requirement for banks involved in SpaceX's IPO to buy Grok subscriptions? Will this integration of tech ventures streamline operations? Share your thoughts! #TechIntegration #SpaceX #Grok</div>
+<div class="tweet">Elon Musk's insistence on banks buying Grok subscriptions for SpaceX's IPO shows his push to leverage his companies' technologies for mutual benefit. A strategic move to streamline operations within his tech ecosystem. #TechStrategy #Innovation #SpaceX</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-04-03T19:52:49-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Anthropic essentially bans OpenClaw from Claude by making subscribers pay extra">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban" target="_blank">Anthropic essentially bans OpenClaw from Claude by making subscribers pay extra</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-03T19:52:49-04:00 | ID: baf73c5bd31f
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic has announced a policy change that will require users to pay extra to use OpenClaw with Claude AI, starting on April 4th at 3PM ET. Users will no longer be able to utilize their Claude subscription limits for third-party harnesses like OpenClaw, impacting the cost and accessibility of integrating these technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-baf73c5bd31f" onclick="toggleTweets('baf73c5bd31f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-baf73c5bd31f">
+                <div class="tweet">Anthropic's new policy shift means users will need to pay extra to use OpenClaw with Claude AI starting April 4th. This change could impact integration costs and accessibility for tech enthusiasts. #Anthropic #OpenClaw #ClaudeAI</div>
+<div class="tweet">How will Anthropic's decision to charge extra for OpenClaw integration with Claude AI impact the tech community's ability to innovate and experiment with AI technologies? Share your thoughts. #TechInnovation #AIIntegration #Anthropic</div>
+<div class="tweet">The move by Anthropic to restrict Claude AI subscribers from using OpenClaw without additional fees highlights the evolving landscape of AI integration and the potential challenges for tech users seeking seamless compatibility. #TechTrends #AIIntegration #Anthropic</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-04-03T16:53:48-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="NASA did eventually solve Artemis II&#8217;s Outlook glitch">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/science/906988/nasa-artemis-ii-microsoft-outlook-issue-fixed" target="_blank">NASA did eventually solve Artemis II&#8217;s Outlook glitch</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-03T16:53:48-04:00 | ID: 24885f0abeb6
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            During Artemis II's mission to the Moon, commander Reid Wiseman encountered a tech issue with Microsoft Outlook not working. The problem was resolved by rebooting the system, allowing Wiseman to continue his mission successfully. This incident highlights the importance of troubleshooting skills and quick problem-solving in space missions, even for common software issues.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/science/906988/nasa-artemis-ii-microsoft-outlook-issue-fixed" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-24885f0abeb6" onclick="toggleTweets('24885f0abeb6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-24885f0abeb6">
+                <div class="tweet">NASA's Artemis II mission faced a tech hiccup when Microsoft Outlook glitched, but quick thinking and a system reboot saved the day. Troubleshooting skills are crucial even in space missions! 🚀 #NASA #ArtemisII #TechGlitch</div>
+<div class="tweet">Ever wondered how astronauts handle tech issues in space? Commander Wiseman's experience with a Microsoft Outlook glitch during Artemis II sheds light on the importance of troubleshooting skills in unexpected situations. 🌌 #SpaceTech #ProblemSolving #ArtemisII</div>
+<div class="tweet">The Artemis II Outlook glitch incident serves as a reminder that even the most advanced missions can be affected by everyday tech issues. Quick problem-solving and adaptability are key skills for success in space exploration. 🛰️ #TechChallenges #Innovation #ArtemisMission</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-04-04 00:37" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="How To Write Unmaintainable Code (1999)">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.doc.ic.ac.uk/%7Esusan/475/unmain.html" target="_blank">How To Write Unmaintainable Code (1999)</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-04-04 00:37 | ID: 1419fa32228d
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in the r/programming subreddit has gained traction with 227 upvotes and 52 comments on the topic of writing unmaintainable code. The post, which dates back to 1999, likely explores humorous or cautionary examples of coding practices that can lead to difficult-to-maintain software, offering insights into what developers should avoid in their coding practices to ensure code maintainability and readability.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.doc.ic.ac.uk/%7Esusan/475/unmain.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1419fa32228d" onclick="toggleTweets('1419fa32228d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1419fa32228d">
+                <div class="tweet">Looking to avoid writing unmaintainable code? Check out this Reddit discussion in r/programming that offers insights into coding practices to steer clear of! #CodeQuality #SoftwareDevelopment</div>
+<div class="tweet">Ever wondered what makes code unmaintainable? Join the conversation on r/programming to explore examples and tips on writing code that's easy to maintain and understand. #ProgrammingCommunity #CodeTips</div>
+<div class="tweet">Writing maintainable code is key for software longevity. Learn from the past in this Reddit thread where developers discuss pitfalls to avoid for better code readability and maintainability. #TechInsights #SoftwareEngineering</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-04-04T08:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The app for tracking TV, movies, podcasts, and everything">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/906873/sofa-app-track-tv-movies-installer" target="_blank">The app for tracking TV, movies, podcasts, and everything</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-04T08:00:00-04:00 | ID: 3eee3dad1cb8
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Installer No. 122 introduces an app that allows users to track TV shows, movies, podcasts, and more. The app caters to a wide range of media consumption preferences and aims to streamline organization and tracking for users. This tool could potentially enhance user experience and efficiency in managing various forms of entertainment content.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/906873/sofa-app-track-tv-movies-installer" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3eee3dad1cb8" onclick="toggleTweets('3eee3dad1cb8')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-3eee3dad1cb8">
+                <div class="tweet">Exciting news for media enthusiasts! Installer No. 122 introduces an app to track TV shows, movies, podcasts, and more. Stay organized and streamline your entertainment experience with this all-in-one tool.📺🎬🎧 #MediaApp #EntertainmentTracker</div>
+<div class="tweet">Installer No. 122's new app for tracking TV, movies, and podcasts caters to diverse media preferences, enhancing organization and user experience. Say goodbye to scattered lists and hello to streamlined entertainment management! 🙌📽️🔊 #StreamlinedEntertainment #Efficiency</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 03 Apr 2026 23:19:36 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Trump proposes steep cut to NASA budget as astronauts head for the Moon">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/04/trump-proposes-steep-cut-to-nasa-budget-as-astronauts-head-for-the-moon/" target="_blank">Trump proposes steep cut to NASA budget as astronauts head for the Moon</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 03 Apr 2026 23:19:36 +0000 | ID: a9574295f776
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            President Trump has proposed a significant cut to NASA's budget, despite the agency's plans to send astronauts back to the Moon. Congress is expected to oppose these cuts, as it did in the previous year, to ensure funding for NASA's ambitious lunar mission remains intact. The proposed budget reduction could impact the timeline and resources available for NASA's Moon exploration program.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/04/trump-proposes-steep-cut-to-nasa-budget-as-astronauts-head-for-the-moon/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a9574295f776" onclick="toggleTweets('a9574295f776')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a9574295f776">
+                <div class="tweet">President Trump's proposed budget cut to NASA comes at a critical time as astronauts gear up for a return to the Moon. Will Congress step in to secure funding for this ambitious lunar mission? 🌕🚀 #NASA #MoonMission #SpaceExploration</div>
+<div class="tweet">With NASA's Moon exploration program at stake, how crucial is it for governments to prioritize funding for space exploration missions that push the boundaries of human knowledge and innovation? 🤔🌌 #NASA #BudgetCuts #MoonMission</div>
+<div class="tweet">The proposed budget cut to NASA raises concerns over the impact on the timeline and resources for the upcoming Moon exploration program. Ensuring adequate funding is vital to advancing space exploration and scientific discovery. 🛰️🔭 #SpaceScience #NASA #BudgetCuts</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 03 Apr 2026 22:55:29 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Ice Age dice show early Native Americans may have understood probability">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/04/ice-age-dice-show-early-native-americans-may-have-understood-probability/" target="_blank">Ice Age dice show early Native Americans may have understood probability</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 03 Apr 2026 22:55:29 +0000 | ID: c8b998619799
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent study suggests that early Native Americans during the Ice Age may have understood probability by intentionally relying on random outcomes in repeatable, rule-based ways. This finding sheds light on the sophisticated cognitive abilities of ancient hunter-gatherer societies and their potential grasp of mathematical concepts. The research highlights the early development of probability understanding among ancient cultures and its implications for the evolution of human cognition.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/04/ice-age-dice-show-early-native-americans-may-have-understood-probability/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c8b998619799" onclick="toggleTweets('c8b998619799')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c8b998619799">
+                <div class="tweet">Did you know early Native Americans during the Ice Age may have understood probability? A recent study suggests they relied on random outcomes in repeatable, rule-based ways. 🎲 #NativeAmericans #IceAge #Probability #TechNews</div>
+<div class="tweet">Ever wondered how ancient hunter-gatherer societies grasped mathematical concepts? A recent study indicates early Native Americans during the Ice Age may have understood probability. What implications could this have for human cognition? 🤔 #AncientCultures #Math #Cognition</div>
+<div class="tweet">Fascinating research suggests early Native Americans during the Ice Age understood probability by relying on random outcomes in rule-based ways. This sheds light on the advanced cognitive abilities of ancient societies. 🧠 #Probability #CognitiveAbilities #TechResearch</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 03 Apr 2026 22:20:19 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="As Artemis II zooms to the Moon, everything seems to be going swimmingly">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/04/as-artemis-ii-zooms-to-the-moon-everything-seems-to-be-going-swimmingly/" target="_blank">As Artemis II zooms to the Moon, everything seems to be going swimmingly</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 03 Apr 2026 22:20:19 +0000 | ID: 1a58727bee64
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Artemis II, NASA's upcoming mission to the Moon, is progressing smoothly with the crew successfully adjusting the cabin temperature despite a colder environment. This development indicates the spacecraft's systems are functioning well as it heads towards its lunar destination, showcasing promising progress for the mission.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/04/as-artemis-ii-zooms-to-the-moon-everything-seems-to-be-going-swimmingly/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1a58727bee64" onclick="toggleTweets('1a58727bee64')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1a58727bee64">
+                <div class="tweet">Exciting progress on NASA's Artemis II mission to the Moon! The crew has successfully adjusted cabin temperature in colder conditions, showcasing smooth system functionality. 🚀🌕 #ArtemisII #NASA #SpaceTech</div>
+<div class="tweet">Question for the tech enthusiasts: How crucial is the successful adjustment of cabin temperature on Artemis II for ensuring a smooth journey to the Moon? 🤔🚀 #ArtemisII #SpaceExploration #TechTalk</div>
+<div class="tweet">Key insight from Artemis II mission: Smooth system functionality, like the crew's ability to adjust cabin temperature, is a promising indicator of progress towards a successful lunar journey. 🌌👨‍🚀 #ArtemisII #NASA #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 03 Apr 2026 17:41:51 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Netflix must refund customers for years of price hikes, Italian court rules">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/04/netflix-ordered-to-refund-subscribers-up-to-e500-for-unlawful-price-hikes/" target="_blank">Netflix must refund customers for years of price hikes, Italian court rules</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 03 Apr 2026 17:41:51 +0000 | ID: 25b786b53d88
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            An Italian court has ruled that Netflix must refund customers for years of price increases deemed unfair. The decision comes after a consumer group threatened to sue the streaming service if it doesn't lower its current prices. This ruling could set a precedent for other countries to scrutinize subscription services for similar pricing practices.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/04/netflix-ordered-to-refund-subscribers-up-to-e500-for-unlawful-price-hikes/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-25b786b53d88" onclick="toggleTweets('25b786b53d88')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-25b786b53d88">
+                <div class="tweet">"An Italian court has ruled that Netflix must refund customers for unfair price hikes. Could this spark changes in subscription services worldwide? 🤔 #Netflix #PriceHikes #TechNews"</div>
+<div class="tweet">"Should subscription services be held more accountable for price increases? The recent ruling against Netflix in Italy raises important questions about fair pricing practices. 💡 #ConsumerRights #TechEthics #Netflix"</div>
+<div class="tweet">"The recent Italian court ruling against Netflix highlights the growing scrutiny around subscription service pricing. Will this decision pave the way for more consumer-friendly policies globally? 🌍 #FairPricing #ConsumerProtection #TechIndustry"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-04-04T08:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Super Meat Boy 3D makes suffering fun">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/904202/super-meat-boy-3d-review" target="_blank">Super Meat Boy 3D makes suffering fun</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-04T08:00:00-04:00 | ID: 6208bff26f8d
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Super Meat Boy 3D is a new version of the popular indie game that maintains the challenging gameplay of the original but in a 3D environment. The game retains its signature fast-paced, puzzle-like levels filled with hazards, providing a unique and engaging experience for players. Despite the increased dimensionality, the game still offers quick respawns, making the difficulty enjoyable rather than frustrating.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/904202/super-meat-boy-3d-review" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6208bff26f8d" onclick="toggleTweets('6208bff26f8d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6208bff26f8d">
+                <div class="tweet">Super Meat Boy 3D delivers the same challenging gameplay in a new 3D environment! Get ready for fast-paced, hazard-filled levels that keep you on your toes. #SuperMeatBoy3D #IndieGame #Gaming</div>
+<div class="tweet">Can a game truly make suffering fun? Super Meat Boy 3D takes on this challenge by offering a unique gameplay experience in a 3D world. Have you tried it yet? #GameChanger #GamingCommunity #SuperMeatBoy3D</div>
+<div class="tweet">Key insight: Super Meat Boy 3D maintains its signature difficulty while making it enjoyable in a 3D setting. The game's quick respawns ensure players stay engaged without feeling frustrated. #GamingInsights #IndieGame #SuperMeatBoy3D</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-04-04 04:43" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="[D] Those of you with 10+ years in ML — what is the public completely wrong about?">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1sbzxwn/d_those_of_you_with_10_years_in_ml_what_is_the/" target="_blank">[D] Those of you with 10+ years in ML — what is the public completely wrong about?</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-04-04 04:43 | ID: a61696b79452
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article delves into the perspectives of experienced machine learning (ML) professionals on common misconceptions about AI held by the public. It aims to bridge the gap between public perception and the reality of AI advancements at the forefront of the field. The discussion highlights areas where the public may be underestimating or overestimating AI capabilities, providing valuable insights for understanding the true potential and limitations of AI technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1sbzxwn/d_those_of_you_with_10_years_in_ml_what_is_the/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a61696b79452" onclick="toggleTweets('a61696b79452')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a61696b79452">
+                <div class="tweet">Are you curious about the common misconceptions surrounding AI? Experienced ML professionals share insights on where the public may be getting it wrong in this eye-opening article. Stay informed! #AI #MachineLearning #TechNews</div>
+<div class="tweet">Ever wondered what the public gets wrong about AI? 🤔 Dive into this article featuring perspectives from ML veterans to uncover the truth behind common misconceptions. Share your thoughts! #ArtificialIntelligence #MLPros #TechDiscussion</div>
+<div class="tweet">Insightful read alert! Experienced ML practitioners shed light on public misconceptions about AI, offering a balanced view on the reality of AI capabilities. Enhance your understanding of AI advancements with this informative piece. #TechInsights #AIRealities #MLCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-04-03T15:19:14-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Lenovo Legion Go 2 suddenly costs $650 more as RAMageddon lays waste to gaming hardware">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/906752/lenovo-legion-go-2-suddenly-costs-650-more-as-ramageddon-lays-waste-to-gaming-hardware" target="_blank">Lenovo Legion Go 2 suddenly costs $650 more as RAMageddon lays waste to gaming hardware</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-03T15:19:14-04:00 | ID: 054c112ada2e
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The price of the Lenovo Legion Go 2 has unexpectedly increased by $650 due to a shortage in RAM, dubbed "RAMageddon," impacting gaming hardware prices. Best Buy is now listing the handheld for $1,499 with a Ryzen Z2 or $1,999 with a Z2 Extreme, up from the original $1,099. This significant price hike highlights the ongoing challenges in the tech industry caused by supply chain disruptions.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/906752/lenovo-legion-go-2-suddenly-costs-650-more-as-ramageddon-lays-waste-to-gaming-hardware" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-054c112ada2e" onclick="toggleTweets('054c112ada2e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-054c112ada2e">
+                <div class="tweet">"RAMageddon strikes! Lenovo Legion Go 2 sees a sudden $650 price hike due to RAM shortage. Best Buy now lists it for $1,499 with Ryzen Z2. Supply chain disruptions impact gaming hardware prices. #TechNews #RAMageddon #LenovoLegion"</div>
+<div class="tweet">"Are supply chain disruptions the new norm for tech prices? Lenovo Legion Go 2 jumps $650 in price due to RAM shortage. What's next for gaming hardware costs? #TechIndustry #SupplyChain #LenovoLegion"</div>
+<div class="tweet">"Lenovo Legion Go 2's $650 price spike sheds light on the challenges of supply chain disruptions in tech. How will companies navigate these hurdles to meet consumer demands? #TechTrends #SupplyChainChallenges #LenovoLegion"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-03-24 22:23" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Nintendo reportedly plans to cut Switch 2 production by 33% after a lackluster holiday season">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.tomshardware.com/video-games/handheld-gaming/nintendo-reportedly-plans-to-cut-switch-2-production-by-33-percent-after-a-lackluster-holiday-season-gaming-giant-slashes-2-million-units-from-planned-output" target="_blank">Nintendo reportedly plans to cut Switch 2 production by 33% after a lackluster holiday season</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-03-24 22:23 | ID: 89beff569f06
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Nintendo is reportedly reducing production of the Switch 2 by 33% following a disappointing holiday season. This decision comes amidst supply chain challenges and weaker-than-expected demand for the gaming console. The production cut may impact availability and sales of the Switch 2 in the coming months.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.tomshardware.com/video-games/handheld-gaming/nintendo-reportedly-plans-to-cut-switch-2-production-by-33-percent-after-a-lackluster-holiday-season-gaming-giant-slashes-2-million-units-from-planned-output" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-89beff569f06" onclick="toggleTweets('89beff569f06')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-89beff569f06">
+                <div class="tweet">Nintendo plans to cut Switch 2 production by 33% post a lackluster holiday season. Supply chain challenges and lower demand cited as reasons. How will this impact the availability of the gaming console? 🎮 #Nintendo #Switch2 #TechNews</div>
+<div class="tweet">Is Nintendo's decision to reduce Switch 2 production by 33% a sign of changing gaming trends or just a blip in the industry? 🤔 Share your thoughts! #Gaming #Nintendo #TechTrends</div>
+<div class="tweet">Nintendo's move to slash Switch 2 production by 33% sheds light on the delicate balance between supply chain management and consumer demand in the tech industry. 🕹️ #SupplyChain #TechInsights #Nintendo</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-03-24 22:22" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Disney Exits OpenAI Deal After AI Giant Shutters Sora">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.hollywoodreporter.com/business/digital/openai-shutting-down-sora-ai-video-app-1236546187/" target="_blank">Disney Exits OpenAI Deal After AI Giant Shutters Sora</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-03-24 22:22 | ID: 35f788e60baa
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Disney has terminated its partnership with OpenAI following the closure of OpenAI's Sora, a project aimed at creating a large-scale AI model. Sora's shutdown has led to Disney withdrawing from the collaboration, signaling potential setbacks in AI research and development efforts within the entertainment industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.hollywoodreporter.com/business/digital/openai-shutting-down-sora-ai-video-app-1236546187/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-35f788e60baa" onclick="toggleTweets('35f788e60baa')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-35f788e60baa">
+                <div class="tweet">Disney ends OpenAI partnership post Sora shutdown. The closure of Sora is a setback for AI in entertainment. 🤖 #Disney #OpenAI #AI #TechNews</div>
+<div class="tweet">What impact does the termination of Disney's partnership with OpenAI post Sora's closure have on AI innovation in entertainment? 🧐 #AI #Innovation #TechIndustry</div>
+<div class="tweet">Disney's exit from the OpenAI deal post Sora's shutdown highlights the fragility of AI projects and the risks involved in large-scale AI model development. 🚀 #AI #TechDevelopment #EntertainmentIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-03 16:44" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="How Microsoft Vaporized a Trillion Dollars">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://isolveproblems.substack.com/p/how-microsoft-vaporized-a-trillion" target="_blank">How Microsoft Vaporized a Trillion Dollars</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-04-03 16:44 | ID: 545a67dae32e
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Microsoft's market value dropped by a trillion dollars in a single day due to a significant decline in its stock price. This drop was attributed to a weaker-than-expected earnings report, particularly in its cloud computing division, Azure. The news has sparked discussions among tech professionals about Microsoft's future strategies and the overall impact on the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://isolveproblems.substack.com/p/how-microsoft-vaporized-a-trillion" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-545a67dae32e" onclick="toggleTweets('545a67dae32e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-545a67dae32e">
+                <div class="tweet">Microsoft's market value took a hit, dropping a trillion dollars in a day. The underperformance of Azure, its cloud computing division, played a significant role. What's next for Microsoft? #Microsoft #Azure #TechNews</div>
+<div class="tweet">Is Microsoft's trillion-dollar drop a wake-up call for the tech giant? How will this impact its future strategies in the competitive tech landscape? Share your thoughts. #Microsoft #TechIndustry #CloudComputing</div>
+<div class="tweet">The drastic decline in Microsoft's market value sheds light on the vulnerability of even tech giants. It's a reminder of the ever-evolving nature of the tech industry and the need for constant innovation and adaptation. #TechTrends #Innovation #MarketAnalysis</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-04-04 12:45:23 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
