@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - April 08, 2026, 07:13 AM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>April 08, 2026, 07:13 AM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-04-08 07:13:49
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 139.2 seconds</div>
+                <div>Start Time: 2026-04-08 07:13:49</div>
+                <div>End Time: 2026-04-08 07:16:09</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 20, Low: 13</div>
+                <div>Topics Detected: 8</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="68.5" 
+             data-published="2026-04-07 18:09" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Project Glasswing: Securing critical software for the AI era">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.anthropic.com/glasswing" target="_blank">Project Glasswing: Securing critical software for the AI era</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-07 18:09 | ID: d0fe15a15c54
+             | <span class="engagement-notable">Engagement: [68.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 68%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Project Glasswing aims to enhance the security of critical software in the AI era by leveraging advanced technologies and methodologies. The project focuses on developing robust security measures to protect AI systems from potential vulnerabilities and attacks. This initiative is crucial for ensuring the integrity and reliability of AI-powered applications in various industries.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.anthropic.com/glasswing" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d0fe15a15c54" onclick="toggleTweets('d0fe15a15c54')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d0fe15a15c54">
+                <div class="tweet">Exciting news for the tech world! Project Glasswing is enhancing security for AI-powered software. Learn how advanced technologies are safeguarding critical systems. #ProjectGlasswing #AI #Cybersecurity</div>
+<div class="tweet">Ever wondered how AI systems can be protected from cyber threats? Project Glasswing is pioneering new security measures to tackle vulnerabilities. How crucial is this initiative for the future of AI applications? #AI #Cybersecurity #ProjectGlasswing</div>
+<div class="tweet">Project Glasswing is shaping the future of AI security by developing robust measures to safeguard critical software. This initiative is vital for ensuring the reliability and integrity of AI-powered applications across industries. #AI #Cybersecurity #ProjectGlasswing</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-04-06 13:50" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Issue: Claude Code is unusable for complex engineering tasks with Feb updates">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://github.com/anthropics/claude-code/issues/42796" target="_blank">Issue: Claude Code is unusable for complex engineering tasks with Feb updates</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-06 13:50 | ID: 09918cb82b25
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article highlights that the recent updates to Claude Code have rendered it unsuitable for handling complex engineering tasks. This issue has sparked a significant discussion on Hacker News, with 1305 points and 720 comments, indicating widespread concern within the tech community about the impact of these updates on engineering workflows. Developers relying on Claude Code for intricate tasks may need to seek alternative solutions until the usability issues are addressed.
+        </div>
+        <div class="source-link">
+            → <a href="https://github.com/anthropics/claude-code/issues/42796" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-09918cb82b25" onclick="toggleTweets('09918cb82b25')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-09918cb82b25">
+                <div class="tweet">Is your engineering work suffering due to recent updates in Claude Code? The tech community is abuzz with concerns over its usability for complex tasks. #ClaudeCode #Engineering #TechUpdate</div>
+<div class="tweet">Is Claude Code still a reliable tool for your intricate engineering tasks? Join the discussion sparked by recent usability issues on Hacker News. #TechCommunity #Engineering #UsabilityConcerns</div>
+<div class="tweet">Developers relying on Claude Code for complex tasks may face challenges following recent updates. Stay informed on the ongoing discussions within the tech community. #TechNews #DeveloperTools #UsabilityIssues</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-04-02 16:00" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Decisions that eroded trust in Azure – by a former Azure Core engineer">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://isolveproblems.substack.com/p/how-microsoft-vaporized-a-trillion" target="_blank">Decisions that eroded trust in Azure – by a former Azure Core engineer</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-02 16:00 | ID: 35fe488f30af
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A former Azure Core engineer has highlighted key decisions that led to eroding trust in Microsoft Azure. The engineer pointed out issues such as prioritizing new features over stability, lack of transparency in incident responses, and a focus on marketing over technical excellence. This critique sheds light on the challenges faced by Azure in maintaining trust among users and the importance of balancing innovation with reliability in cloud services.
+        </div>
+        <div class="source-link">
+            → <a href="https://isolveproblems.substack.com/p/how-microsoft-vaporized-a-trillion" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-35fe488f30af" onclick="toggleTweets('35fe488f30af')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-35fe488f30af">
+                <div class="tweet">A former Azure Core engineer sheds light on decisions eroding trust in Microsoft Azure, emphasizing the need for balancing innovation with reliability in cloud services. #Azure #CloudComputing #TechNews</div>
+<div class="tweet">Are prioritizing new features over stability and focusing on marketing hindering trust in Azure? The critique from a former engineer sparks important conversations on maintaining user trust in cloud services. #MicrosoftAzure #TechEthics #InnovationVsReliability</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-06 10:36" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Sam Altman may control our future – can he be trusted?">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted" target="_blank">Sam Altman may control our future – can he be trusted?</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-06 10:36 | ID: b2f6d6f9c0f3
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the influence and trustworthiness of Sam Altman, a prominent figure in the tech industry. Altman's control over the future of technology and his trustworthiness are questioned, sparking a lively discussion on Hacker News with 2006 points and 844 comments. The article delves into the implications of Altman's power and the ethical considerations surrounding his role in shaping the tech landscape.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b2f6d6f9c0f3" onclick="toggleTweets('b2f6d6f9c0f3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b2f6d6f9c0f3">
+                <div class="tweet">Is tech mogul Sam Altman the key to our future? Dive into this thought-provoking article discussing his influence and trustworthiness. 🤔 #SamAltman #TechInfluence #EthicalTech</div>
+<div class="tweet">Can we trust Sam Altman to shape our tech future? A hot topic on Hacker News with 2006 points and 844 comments. Join the debate! 🔥 #TechDebate #FutureTech #HackerNews</div>
+<div class="tweet">Sam Altman's power in tech raises questions about trust and ethics. Explore the implications of his influence on the tech landscape in this must-read article. #TechEthics #InfluentialTech #SamAltman</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-02 13:09" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="LinkedIn is searching your browser extensions">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://browsergate.eu/" target="_blank">LinkedIn is searching your browser extensions</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-02 13:09 | ID: add1835f55e4
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            LinkedIn has been found to scan users' browser extensions to check for potential security risks. The platform is reportedly looking for any extensions that may violate its terms of service or compromise user data. This move by LinkedIn aims to enhance security and protect user privacy on the platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://browsergate.eu/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-add1835f55e4" onclick="toggleTweets('add1835f55e4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-add1835f55e4">
+                <div class="tweet">LinkedIn is stepping up its security game by scanning browser extensions for potential risks. Your online privacy matters! 🔒 #LinkedIn #Security #Privacy</div>
+<div class="tweet">Are you aware of the browser extensions you have installed? LinkedIn's latest move to scan extensions for security risks raises important questions about online safety. 🤔 #CyberSecurity #LinkedIn #TechSafety</div>
+<div class="tweet">LinkedIn's proactive approach to checking browser extensions for security risks sets a strong example for safeguarding user data in the digital age. Stay vigilant and prioritize your online security! 👀 #DataProtection #TechNews #LinkedIn</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-02 16:10" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Google releases Gemma 4 open models">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://deepmind.google/models/gemma/gemma-4/" target="_blank">Google releases Gemma 4 open models</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-02 16:10 | ID: 89d6bdf2ea4a
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has unveiled Gemma 4, a set of open models designed to improve the accuracy and efficiency of machine learning models. These models are optimized for various tasks such as image recognition, natural language processing, and more. By releasing Gemma 4, Google aims to empower developers to build more advanced AI applications with better performance.
+        </div>
+        <div class="source-link">
+            → <a href="https://deepmind.google/models/gemma/gemma-4/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-89d6bdf2ea4a" onclick="toggleTweets('89d6bdf2ea4a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-89d6bdf2ea4a">
+                <div class="tweet">Exciting news from Google! Gemma 4 open models are here to enhance machine learning accuracy and efficiency for developers. 🚀🤖 #Google #Gemma4 #MachineLearning</div>
+<div class="tweet">Curious about the future of AI development? Google's Gemma 4 open models promise improved performance in tasks like image recognition and natural language processing. How will this impact the tech industry? 🤔💡 #AI #Gemma4 #TechInnovation</div>
+<div class="tweet">Google's release of Gemma 4 open models signifies a big leap in empowering developers to create more advanced AI applications. The optimized models promise better performance and accuracy in various tasks. 🌟💻 #TechNews #Innovation #Gemma4</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="54.5" 
+             data-published="Wed, 08 Apr 2026 05:40:19 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Google quietly launched an AI dictation app that works offline">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/" target="_blank">Google quietly launched an AI dictation app that works offline</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 08 Apr 2026 05:40:19 +0000 | ID: 0e6bbd8f665b
+             | <span class="engagement-standard">Engagement: [54.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has released an AI dictation app that operates offline, utilizing Gemma AI models for transcription. This move enables users to dictate text without requiring an internet connection, providing a convenient and efficient tool for tasks like note-taking or composing messages in areas with limited connectivity. The app's offline functionality sets it apart from competitors like Wispr Flow, offering users increased flexibility and accessibility for voice-to-text transcription.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0e6bbd8f665b" onclick="toggleTweets('0e6bbd8f665b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0e6bbd8f665b">
+                <div class="tweet">Exciting news for productivity enthusiasts! Google quietly released an AI dictation app that works offline, making text transcription easier and more convenient. #Google #AI #TechNews</div>
+<div class="tweet">Ever wished for a voice-to-text app that works without an internet connection? Google's new offline AI dictation app is here to fulfill that need! How will this impact productivity in areas with limited connectivity? 🤔 #AI #Productivity #TechInnovation</div>
+<div class="tweet">Offline functionality is the new frontier in voice transcription technology. With Google's latest AI dictation app, users can now enjoy seamless text dictation without an internet connection. Stay ahead with this game-changing tool! 🚀 #Google #AI #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="54.5" 
+             data-published="2026-04-07T14:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="A new Anthropic model found security problems &#8216;in every major operating system and web browser&#8217;">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/908114/anthropic-project-glasswing-cybersecurity" target="_blank">A new Anthropic model found security problems &#8216;in every major operating system and web browser&#8217;</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-07T14:00:00-04:00 | ID: 79da83e4795d
+             | <span class="engagement-standard">Engagement: [54.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic has introduced a new AI model named Project Glasswing in collaboration with tech giants like Nvidia, Google, and Amazon Web Services. This model aims to automatically detect security flaws in major operating systems and web browsers, offering a potentially groundbreaking solution for large organizations and government entities to identify vulnerabilities with minimal human involvement. The partnership signifies a significant step towards enhancing cybersecurity measures across various platforms.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/908114/anthropic-project-glasswing-cybersecurity" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-79da83e4795d" onclick="toggleTweets('79da83e4795d')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-79da83e4795d">
+                <div class="tweet">🔒 How secure is your operating system? Anthropic's Project Glasswing AI model has uncovered security flaws in major systems and browsers. Are you confident in your organization's cybersecurity measures? 💻 #Security #TechTalk</div>
+<div class="tweet">🔍 Key insight: Anthropic's Project Glasswing AI model, developed in partnership with Nvidia, Google, and AWS, offers a groundbreaking solution to identify security vulnerabilities in major systems and browsers. Enhanced cybersecurity is on the horizon! 🌐 #Innovation #CyberDefense</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="50.5" 
+             data-published="Tue, 07 Apr 2026 17:47:43 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Apple’s foldable iPhone is on track to launch in September, report says">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/07/apples-foldable-iphone-is-on-track-to-launch-in-september-report-says/" target="_blank">Apple’s foldable iPhone is on track to launch in September, report says</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 07 Apr 2026 17:47:43 +0000 | ID: bf2d95fa636d
+             | <span class="engagement-standard">Engagement: [50.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 50%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple's highly anticipated foldable iPhone is reportedly set to launch in September, despite concerns of potential delays during the engineering test phase. The tech giant seems to be on track with the development of the foldable device, which is expected to make a significant impact in the smartphone market upon its release later this year.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/07/apples-foldable-iphone-is-on-track-to-launch-in-september-report-says/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-bf2d95fa636d" onclick="toggleTweets('bf2d95fa636d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-bf2d95fa636d">
+                <div class="tweet">Exciting news for Apple fans! 📱 Reports suggest that the highly anticipated foldable iPhone is still on track for a September launch. Will this innovation reshape the smartphone market? #Apple #FoldableiPhone #TechNews</div>
+<div class="tweet">Would you switch to a foldable iPhone? 🤔 Apple's upcoming release is generating buzz as it aims to disrupt the smartphone market. Share your thoughts on this game-changing innovation! #Apple #FoldableiPhone #TechTrends</div>
+<div class="tweet">Apple is pushing ahead with the development of its foldable iPhone, set to launch in September. The tech giant's innovation could revolutionize the smartphone industry and set new trends for the future. #Apple #FoldableiPhone #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Tue, 07 Apr 2026 18:46:55 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Firmus, the ‘Southgate’ AI data center builder backed by Nvidia, hits $5.5B valuation">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/07/firmus-the-southgate-ai-datacenter-builder-backed-by-nvidia-hits-5-5b-valuation/" target="_blank">Firmus, the ‘Southgate’ AI data center builder backed by Nvidia, hits $5.5B valuation</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 07 Apr 2026 18:46:55 +0000 | ID: bc503db265cd
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Firmus, an AI data center builder supported by Nvidia, has achieved a valuation of $5.5 billion. The company secured $1.35 billion in funding within six months, signaling significant investor confidence in its technology and growth potential in the AI data center market. Nvidia's backing and Firmus's rapid fundraising highlight the increasing importance of AI infrastructure in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/07/firmus-the-southgate-ai-datacenter-builder-backed-by-nvidia-hits-5-5b-valuation/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-bc503db265cd" onclick="toggleTweets('bc503db265cd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-bc503db265cd">
+                <div class="tweet">Firmus, the AI data center builder backed by Nvidia, has reached a $5.5 billion valuation. With $1.35 billion funding in 6 months, it's making waves in the AI data center market. #Firmus #Nvidia #AI #TechNews</div>
+<div class="tweet">Can Firmus disrupt the AI data center market with Nvidia's support and its rapid fundraising success? The $5.5 billion valuation signals confidence. What's next for AI infrastructure? #Firmus #Nvidia #AI #TechTrends</div>
+<div class="tweet">Investor confidence in Firmus, the AI data center builder, underscores the growing significance of AI infrastructure. With $1.35 billion funding in 6 months and a $5.5 billion valuation, the tech industry is embracing AI data center solutions. #Firmus #Nvidia #AIInfrastructure</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="47.5" 
+             data-published="Tue, 07 Apr 2026 18:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/" target="_blank">Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 07 Apr 2026 18:00:00 +0000 | ID: cbdaf467dd19
+             | <span class="engagement-standard">Engagement: [47.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 47%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic has unveiled a preview of its advanced AI model, Mythos, in a cybersecurity initiative targeting select high-profile companies. Mythos is designed to bolster defensive cybersecurity efforts with its powerful capabilities, marking a significant advancement in AI-driven security solutions for the industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cbdaf467dd19" onclick="toggleTweets('cbdaf467dd19')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cbdaf467dd19">
+                <div class="tweet">Exciting news! Anthropic introduces Mythos, a cutting-edge AI model, to enhance cybersecurity for high-profile companies. The future of AI-driven security is here. 🔒🤖 #Anthropic #Mythos #AI #Cybersecurity</div>
+<div class="tweet">Ever wondered how AI like Mythos by Anthropic is reshaping the landscape of cybersecurity? What possibilities lie ahead with such advanced technology? Share your thoughts! 💭🔐 #AI #Cybersecurity #Mythos #TechInnovation</div>
+<div class="tweet">Mythos, Anthropic's latest AI model, is a game-changer in cybersecurity. Its robust capabilities are set to revolutionize defensive strategies for high-profile firms. Stay ahead of the curve with AI-driven security solutions. 🚀🔒 #Mythos #Cybersecurity #TechAdvancement #Anthropic</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Tue, 07 Apr 2026 21:35:02 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="I can’t help rooting for tiny open source AI model maker Arcee">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/" target="_blank">I can’t help rooting for tiny open source AI model maker Arcee</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 07 Apr 2026 21:35:02 +0000 | ID: d004da63d6cf
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Arcee, a small U.S. startup with 26 employees, has developed a powerful open-source Large Language Model (LLM). The model is gaining traction among OpenClaw users due to its high performance and open-source nature, showcasing the potential for smaller players to make significant contributions in the AI space.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d004da63d6cf" onclick="toggleTweets('d004da63d6cf')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d004da63d6cf">
+                <div class="tweet">Exciting news from small but mighty Arcee! 🚀 Their open-source Large Language Model is making waves in the AI community for its performance and accessibility. Innovation knows no size! #Arcee #AI #OpenSource</div>
+<div class="tweet">Ever thought about the impact of smaller players in the tech industry? Arcee, a 26-person startup, is proving that size doesn't limit innovation. How can other small companies shake up the AI space? 💭 #Innovation #Tech #Arcee</div>
+<div class="tweet">Arcee's success story highlights the potential for underdog startups to disrupt the AI industry. Their open-source model showcases the importance of accessibility and performance in cutting-edge technology. Keep an eye on Arcee! 👁️ #Disruption #TechTrends #Arcee</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Tue, 07 Apr 2026 21:24:54 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="VC Eclipse has a new $1.3B fund to back — and build — ‘physical AI’ startups">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/" target="_blank">VC Eclipse has a new $1.3B fund to back — and build — ‘physical AI’ startups</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 07 Apr 2026 21:24:54 +0000 | ID: efd1f65bce1b
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Eclipse, a venture capital firm, has announced a new $1.3 billion fund aimed at supporting and developing "physical AI" startups. The fund will not only provide financial backing but also focus on incubating and constructing new companies in this emerging field. This initiative is expected to drive innovation in the intersection of artificial intelligence and physical technologies, potentially leading to groundbreaking advancements in areas such as robotics, autonomous vehicles, and smart manufacturing.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-efd1f65bce1b" onclick="toggleTweets('efd1f65bce1b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-efd1f65bce1b">
+                <div class="tweet">Exciting news for tech startups! Eclipse VC launches a $1.3B fund to support and develop "physical AI" companies. This initiative aims to accelerate innovation in AI-powered robotics, autonomous vehicles, and smart manufacturing. 💡🚀 #AI #TechNews #Innovation</div>
+<div class="tweet">What groundbreaking advancements do you think will emerge from Eclipse VC's new $1.3B fund for "physical AI" startups? Share your predictions! 🤖💭 #FutureTech #AI #VC #TechInnovation</div>
+<div class="tweet">Eclipse VC's $1.3B fund not only finances but also incubates 'physical AI' startups, driving innovation in AI & physical tech. This strategic approach could lead to major advancements in robotics, autonomous vehicles, and smart manufacturing. 🌟💻 #TechInvestment #AIRevolution</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Tue, 07 Apr 2026 22:08:32 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Apple and Lenovo have the least repairable laptops, analysis finds">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/04/apple-has-the-lowest-grades-in-laptop-phone-repairability-analysis/" target="_blank">Apple and Lenovo have the least repairable laptops, analysis finds</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 07 Apr 2026 22:08:32 +0000 | ID: 7aef3ce0e818
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            An analysis has revealed that Apple and Lenovo produce the least repairable laptops in the market. The MacBook Neo, however, is seen as a positive move towards better repairability. This finding underscores the importance of designing devices with repairability in mind to reduce electronic waste and increase product longevity.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/04/apple-has-the-lowest-grades-in-laptop-phone-repairability-analysis/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7aef3ce0e818" onclick="toggleTweets('7aef3ce0e818')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7aef3ce0e818">
+                <div class="tweet">An analysis shows Apple and Lenovo laptops are among the least repairable in the market. Repairability matters! The new MacBook Neo is a step in the right direction. Designing for repair can reduce e-waste and boost product longevity. 🛠️💻 #TechNews #Repairability</div>
+<div class="tweet">Are you prioritizing repairability when choosing a laptop? The latest analysis reveals Apple and Lenovo have work to do in this area. How can manufacturers improve repairability and reduce electronic waste? Share your thoughts! ♻️💭 #TechDiscussion #SustainableTech</div>
+<div class="tweet">The importance of designing tech products with repairability in mind cannot be overstated. Apple and Lenovo's laptops rank low in repairability, but the MacBook Neo shows progress. Let's advocate for more sustainable and long-lasting tech solutions. 🌱🔧 #Sustainability #TechDesign</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="2026-04-07T15:07:12-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="You can now turn 2D apps into 3D while using the Galaxy XR headset">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/908268/android-xr-samsung-galaxy-auto-spatialization-2d-3d" target="_blank">You can now turn 2D apps into 3D while using the Galaxy XR headset</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-07T15:07:12-04:00 | ID: 862000378004
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google is introducing a new feature called "auto-spatialization" to Android XR, allowing users to convert 2D apps, websites, images, and videos into 3D experiences. This feature is now available as an experimental feature for Samsung Galaxy XR headsets, offering users a new way to interact with their existing content in a more immersive manner. The move signifies a step towards enhancing the XR experience and potentially opening up new possibilities for developers to create engaging content for XR platforms.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/908268/android-xr-samsung-galaxy-auto-spatialization-2d-3d" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-862000378004" onclick="toggleTweets('862000378004')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-862000378004">
+                <div class="tweet">Exciting news for Samsung Galaxy XR users! Google introduces "auto-spatialization" feature, allowing 2D apps to transform into immersive 3D experiences. Enhance your XR journey with this innovative feature. #XR #SamsungGalaxy #Google</div>
+<div class="tweet">Ever wished your favorite apps could come to life in 3D? With Google's new "auto-spatialization" feature on Android XR for Samsung Galaxy XR headsets, the future is here! What app would you love to see in 3D? 🚀 #3DApps #TechInnovation #XR</div>
+<div class="tweet">"Auto-spatialization" on Android XR for Samsung Galaxy XR headsets is a game-changer! By converting 2D content into 3D, Google opens up new avenues for XR experiences. Developers, get ready for a more immersive future! 🌟 #XRDevelopment #Innovation #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Tue, 07 Apr 2026 19:59:06 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Iranian hackers are targeting American critical infrastructure, US agencies warn">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/07/iranian-hackers-are-targeting-american-critical-infrastructure-u-s-agencies-warn/" target="_blank">Iranian hackers are targeting American critical infrastructure, US agencies warn</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 07 Apr 2026 19:59:06 +0000 | ID: 8f813d95e607
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent advisory from the FBI, NSA, and CISA highlights that Iranian hackers have intensified their targeting of American critical infrastructure in response to the U.S.-Israel conflict with Iran. The advisory warns of heightened cyber threats and emphasizes the need for organizations to bolster their cybersecurity defenses to protect against potential attacks from Iranian threat actors.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/07/iranian-hackers-are-targeting-american-critical-infrastructure-u-s-agencies-warn/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8f813d95e607" onclick="toggleTweets('8f813d95e607')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8f813d95e607">
+                <div class="tweet">Iranian hackers are ramping up attacks on American critical infrastructure, according to the FBI, NSA, and CISA. Organizations need to prioritize cybersecurity defenses to safeguard against potential threats. #CyberSecurity #IranianHackers</div>
+<div class="tweet">Do recent warnings from US agencies about Iranian hackers targeting critical infrastructure make you rethink your organization's cybersecurity strategy? Share your thoughts. #CyberThreats #CriticalInfrastructure</div>
+<div class="tweet">The advisory from FBI, NSA, and CISA underscores the urgent need for enhanced cybersecurity measures in the face of escalating cyber threats from Iranian actors. Stay vigilant and proactive in safeguarding critical systems. #CyberDefense #ThreatIntelligence</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Tue, 07 Apr 2026 16:53:55 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Testing suggests Google's AI Overviews tell millions of lies per hour">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/google/2026/04/analysis-finds-google-ai-overviews-is-wrong-10-percent-of-the-time/" target="_blank">Testing suggests Google's AI Overviews tell millions of lies per hour</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 07 Apr 2026 16:53:55 +0000 | ID: 8ba7142814fc
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Recent testing has revealed that Google's AI Overviews may be providing inaccurate information at an alarming rate, suggesting that it tells millions of lies per hour. The AI's reported 90 percent accuracy raises concerns about the reliability of the information it provides. This highlights the ongoing challenge of ensuring the accuracy and trustworthiness of AI systems in delivering information to users.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/google/2026/04/analysis-finds-google-ai-overviews-is-wrong-10-percent-of-the-time/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8ba7142814fc" onclick="toggleTweets('8ba7142814fc')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8ba7142814fc">
+                <div class="tweet">Recent testing shows Google's AI Overviews might be telling millions of lies per hour, raising concerns about its accuracy. How can we ensure the reliability of AI systems in delivering information? #AI #TechNews</div>
+<div class="tweet">Is Google's AI Overviews' reported 90% accuracy misleading? The revelation that it may be spreading misinformation at an alarming rate challenges the trustworthiness of AI. How can we address this issue? #ArtificialIntelligence #TechEthics</div>
+<div class="tweet">The testing on Google's AI Overviews emphasizes the need for ongoing efforts in ensuring the accuracy and trustworthiness of AI systems. This highlights the complex challenge in delivering reliable information to users. #AIethics #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Tue, 07 Apr 2026 18:10:01 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Intel signs on to Elon Musk’s Terafab chips project">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/07/intel-signs-on-to-elon-musks-terafab-chips-project/" target="_blank">Intel signs on to Elon Musk’s Terafab chips project</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 07 Apr 2026 18:10:01 +0000 | ID: 9d945ffb9b8a
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Intel has partnered with Elon Musk's Terafab project to establish a semiconductor factory in Texas, alongside SpaceX and Tesla. The collaboration aims to bolster domestic chip production, although specific details on Intel's involvement have not been disclosed yet. This move signifies a significant step towards enhancing U.S. semiconductor manufacturing capabilities and reducing reliance on overseas suppliers.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/07/intel-signs-on-to-elon-musks-terafab-chips-project/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9d945ffb9b8a" onclick="toggleTweets('9d945ffb9b8a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9d945ffb9b8a">
+                <div class="tweet">"Exciting news in the semiconductor world! Intel has joined forces with Elon Musk's Terafab chips project to boost domestic chip production in the US. 🚀🔬 #Intel #ElonMusk #Semiconductors"</div>
+<div class="tweet">"What impact will Intel's collaboration with Elon Musk's Terafab project have on the US semiconductor industry? 🤔 Join the conversation! #TechNews #Innovation #Semiconductors"</div>
+<div class="tweet">"Intel's partnership with Elon Musk's Terafab chips project marks a significant move towards strengthening US semiconductor manufacturing capabilities and reducing reliance on overseas suppliers. 🇺🇸💻 #TechIndustry #Semiconductors #USManufacturing"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.0" 
+             data-published="2026-04-07" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Action Images: End-to-End Policy Learning via Multiview Video Generation">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.06168v1" target="_blank">Action Images: End-to-End Policy Learning via Multiview Video Generation</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-07 | ID: f6ef4806d7fe
+             | <span class="engagement-standard">Engagement: [41.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Action Images: End-to-End Policy Learning via Multiview Video Generation" by Haoyu Zhen, Zixian Gao, Qiao Sun, and others explores the use of world action models (WAMs) for robot policy learning. WAMs utilize multiview video generation to model future states, aiming to improve policy learning efficiency. The paper addresses limitations in existing approaches that rely on separate action modules or lack pixel-grounded action representations, potentially advancing robot learning capabilities.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.06168v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f6ef4806d7fe" onclick="toggleTweets('f6ef4806d7fe')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f6ef4806d7fe">
+                <div class="tweet">"Discover how 'Action Images' revolutionize robot policy learning with multiview video generation. The research by Haoyu Zhen et al. introduces world action models for enhanced efficiency. 🤖🎥 #TechNews #Robotics #AI"</div>
+<div class="tweet">"How can world action models using multiview video generation enhance robot policy learning? Dive into the research titled 'Action Images' by Haoyu Zhen, Zixian Gao, and Qiao Sun. 🧠💡 #TechResearch #Robotics #Innovation"</div>
+<div class="tweet">"Key insight: 'Action Images' research explores leveraging multiview video generation to advance robot policy learning. By introducing world action models, Haoyu Zhen and team aim to boost efficiency and capabilities. 🚀🔬 #Robotics #TechInnovation #AI"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Tue, 07 Apr 2026 22:21:21 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Valve brings native Steam Link app to Apple's Vision Pro">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gaming/2026/04/valve-brings-native-steam-link-app-to-apples-vision-pro/" target="_blank">Valve brings native Steam Link app to Apple's Vision Pro</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 07 Apr 2026 22:21:21 +0000 | ID: d6455083e9e1
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Valve has introduced a native Steam Link app for Apple's M1-powered Macs, offering a more seamless and integrated experience compared to third-party alternatives. This move enhances gaming capabilities on Apple's devices by enabling users to stream games from their Steam library directly to their Mac, eliminating the need for less reliable third-party solutions.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gaming/2026/04/valve-brings-native-steam-link-app-to-apples-vision-pro/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d6455083e9e1" onclick="toggleTweets('d6455083e9e1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d6455083e9e1">
+                <div class="tweet">Exciting news for gamers! Valve introduces a native Steam Link app for Apple's M1-powered Macs, enhancing the gaming experience by enabling direct game streaming from Steam libraries. 🎮🍏 #Valve #SteamLink #Apple</div>
+<div class="tweet">Curious about the future of gaming on Apple's devices? With Valve's new native Steam Link app for M1 Macs, third-party alternatives might become a thing of the past. How do you think this will impact the gaming landscape? 🤔🎮 #Gaming #Tech #Apple</div>
+<div class="tweet">Valve's move to offer a native Steam Link app for Apple's M1 Macs is a game-changer for gamers, eliminating the need for less reliable third-party solutions. This integration enhances the gaming experience on Apple devices significantly. 🚀🎮 #Valve #Steam #Apple</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Tue, 07 Apr 2026 20:02:25 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="What the heck is wrong with our AI overlords?">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/04/what-the-heck-is-wrong-with-our-ai-overlords/" target="_blank">What the heck is wrong with our AI overlords?</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 07 Apr 2026 20:02:25 +0000 | ID: 18df7fb85ffe
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent profile of Sam Altman, a prominent figure in the tech industry, has raised concerns about the state of AI technology. The article delves into the challenges and ethical dilemmas faced by AI developers, highlighting issues such as bias, privacy, and the potential for misuse of AI systems. This scrutiny underscores the need for greater transparency, accountability, and ethical considerations in the development and deployment of AI technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/04/what-the-heck-is-wrong-with-our-ai-overlords/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-18df7fb85ffe" onclick="toggleTweets('18df7fb85ffe')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-18df7fb85ffe">
+                <div class="tweet">Is AI technology on the right track? A recent article raises concerns about the ethical implications of current AI systems. Transparency, accountability, and ethical considerations are crucial for the future of AI development. #AI #EthicsInTech</div>
+<div class="tweet">Are our AI overlords falling short? The challenges highlighted in a recent profile of Sam Altman point to the need for a more ethical approach to AI development. How can we ensure AI systems are unbiased and respect privacy? #AIethics #TechChallenges</div>
+<div class="tweet">Transparency and ethical considerations are key in AI development. The scrutiny faced by AI developers highlights the importance of addressing bias, privacy concerns, and potential misuse of AI systems. Let's prioritize responsible AI innovation. #ResponsibleAI #TechEthics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Tue, 07 Apr 2026 19:09:44 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Bluesky users are mastering the fine art of blaming everything on "vibe coding"">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/04/bluesky-users-are-mastering-the-fine-art-of-blaming-everything-on-vibe-coding/" target="_blank">Bluesky users are mastering the fine art of blaming everything on "vibe coding"</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 07 Apr 2026 19:09:44 +0000 | ID: 9539c95439ad
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Bluesky users are increasingly attributing technical problems to "vibe coding," a humorous term referring to the use of AI coding tools. This trend highlights the growing reliance on AI in software development and the need for developers to understand and troubleshoot AI-generated code effectively. While lighthearted, it underscores the importance of maintaining a balance between automation and human oversight in the coding process to ensure quality and reliability in software development.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/04/bluesky-users-are-mastering-the-fine-art-of-blaming-everything-on-vibe-coding/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9539c95439ad" onclick="toggleTweets('9539c95439ad')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9539c95439ad">
+                <div class="tweet">Bluesky users are playfully blaming all tech glitches on "vibe coding," a term referring to AI-generated code. This fun trend underscores the growing influence of AI in software dev. #Bluesky #AICoding #TechHumor</div>
+<div class="tweet">Ever heard of "vibe coding"? Bluesky users are jokingly attributing technical hiccups to this AI-coded phenomenon. Do you think humor helps techies strike a balance between automation and human oversight in coding? 🤖💻 #VibeCoding #TechTrends #AI</div>
+<div class="tweet">"Vibe coding" trend among Bluesky users sheds light on the rising reliance on AI in software development. Balancing automation with human input is crucial for maintaining software quality and reliability. #TechDevelopment #AI #CodingBalance</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Tue, 07 Apr 2026 18:00:20 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="SCOTUS overturns 5th Circuit ruling that told ISP to kick pirates off Internet">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/04/scotus-overturns-5th-circuit-ruling-that-told-isp-to-kick-pirates-off-internet/" target="_blank">SCOTUS overturns 5th Circuit ruling that told ISP to kick pirates off Internet</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 07 Apr 2026 18:00:20 +0000 | ID: fc2ad5cbbc65
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Supreme Court overturned a 5th Circuit ruling that required an Internet Service Provider (ISP) to disconnect users accused of piracy. This decision, based on the Cox ruling, sets a precedent that could impact how ISPs handle piracy claims in the future, with Grande successfully using this ruling to defend against music piracy claims.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/04/scotus-overturns-5th-circuit-ruling-that-told-isp-to-kick-pirates-off-internet/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-fc2ad5cbbc65" onclick="toggleTweets('fc2ad5cbbc65')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-fc2ad5cbbc65">
+                <div class="tweet">The Supreme Court's decision to overturn the 5th Circuit ruling on ISP piracy actions sets a new precedent for handling piracy claims in the digital age. #SCOTUS #TechNews</div>
+<div class="tweet">Is the recent SCOTUS ruling on ISP actions against piracy a win for internet freedom or a setback in the fight against online piracy? Share your thoughts! #InternetFreedom #Piracy #SupremeCourt</div>
+<div class="tweet">Key takeaway: The SCOTUS ruling based on the Cox case challenges how ISPs address piracy claims, potentially reshaping the landscape of online piracy enforcement. #TechLaw #LegalTech #DigitalRights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Tue, 07 Apr 2026 16:39:12 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Linux kernel maintainers are following through on removing Intel 486 support">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/04/linux-kernel-maintainers-are-following-through-on-removing-intel-486-support/" target="_blank">Linux kernel maintainers are following through on removing Intel 486 support</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 07 Apr 2026 16:39:12 +0000 | ID: a5df7dea06ef
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Linux kernel maintainers are actively removing support for Intel 486 processors, deeming it unnecessary and a waste of resources. This move reflects a focus on modern hardware and optimizing performance by shedding outdated legacy support in the Linux kernel. Developers are prioritizing efficiency and streamlining the codebase for contemporary computing needs.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/04/linux-kernel-maintainers-are-following-through-on-removing-intel-486-support/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a5df7dea06ef" onclick="toggleTweets('a5df7dea06ef')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a5df7dea06ef">
+                <div class="tweet">Linux kernel maintainers are cutting ties with Intel 486 support to prioritize modern hardware and boost performance. Streamlining for efficiency! 💻🚀 #Linux #TechNews #PerformanceBoost</div>
+<div class="tweet">Is removing Intel 486 support a vital step towards optimizing the Linux kernel for contemporary computing needs? 🤔 What do you think about shedding outdated legacy support? #Linux #TechDebate #Efficiency</div>
+<div class="tweet">The move to eliminate Intel 486 support in the Linux kernel underscores the industry's focus on efficiency and performance optimization. Embracing modern tech for a streamlined future! 🌐💡 #TechTrends #EfficiencyMatters #LinuxKernel</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-04-07T18:16:21-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Nothing’s noise-canceling CMF Buds 2A are down to $19.99 for the rest of today">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/908409/nothing-cmf-buds-2a-earbuds-amazon-lightning-deal-sale" target="_blank">Nothing’s noise-canceling CMF Buds 2A are down to $19.99 for the rest of today</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-07T18:16:21-04:00 | ID: d497acee86c9
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Nothing's CMF Buds 2A wireless earbuds, featuring active noise cancellation, transparency mode, and app support, are on sale for $19.99 until 11:15PM ET today. This budget-friendly deal on Amazon offers a rare opportunity to grab a feature-packed pair of earbuds at a significantly discounted price, making it an attractive option for those seeking affordable audio accessories with advanced functionalities.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/908409/nothing-cmf-buds-2a-earbuds-amazon-lightning-deal-sale" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d497acee86c9" onclick="toggleTweets('d497acee86c9')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-d497acee86c9">
+                <div class="tweet">"🚨 Don't miss out! Nothing's CMF Buds 2A wireless earbuds with noise cancellation, transparency mode, and app support are on sale for just $19.99 until 11:15PM ET today on Amazon. Grab yours now! 🎧💸 #TechDeals #WirelessEarbuds"</div>
+<div class="tweet">"Are advanced features worth the steal? Nothing's CMF Buds 2A wireless earbuds, equipped with noise cancellation and app support, are now only $19.99 until 11:15PM ET. How much do you value premium audio tech at a budget-friendly price? 🤔🎶 #AudioTech #BudgetFriendly"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-04-07" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="In-Place Test-Time Training">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.06169v1" target="_blank">In-Place Test-Time Training</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-07 | ID: eaa380121b79
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Guhao Feng, Shengjie Luo, Kai Hua, and others introduces the concept of Test-Time Training (TTT) as an alternative to the traditional "train then deploy" paradigm for Large Language Models (LLMs). TTT allows models to dynamically adapt their weights in response to continuous streams of new information during inference, enabling more flexibility and real-time learning capabilities. This approach could significantly enhance the performance and adaptability of LLMs in real-world tasks by updating a subset of the model during testing.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.06169v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-eaa380121b79" onclick="toggleTweets('eaa380121b79')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-eaa380121b79">
+                <div class="tweet">Exciting tech breakthrough! Test-Time Training (TTT) offers real-time weight adaptation for Large Language Models, enhancing adaptability & performance. Learn how this innovation could revolutionize LLMs. #TechNews #AI #MachineLearning</div>
+<div class="tweet">Ever considered a real-time learning approach for Large Language Models? Test-Time Training (TTT) allows models to adapt during inference, boosting performance. How could this dynamic adaptation transform the future of AI? 🤔 #TTT #AI #Innovation</div>
+<div class="tweet">Key insight: Test-Time Training (TTT) introduces a paradigm shift in Large Language Models by enabling dynamic weight updates during inference. This innovation promises enhanced adaptability and real-time learning capabilities. 🚀 #TechInnovation #LLMs #AI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-04-07T15:05:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="I wish this selfie phone case was better for selfies">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/908251/dockcase-selfix-selfie-phone-case-hands-on" target="_blank">I wish this selfie phone case was better for selfies</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-07T15:05:00-04:00 | ID: 7d009345a407
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Selfix phone case, designed for the iPhone 17 Pro, features a circular screen on the back that mirrors the main phone screen for easier selfie framing. However, despite the innovative concept, the case falls short in delivering improved selfie quality in practice. Users have found the case's execution lacking, highlighting the gap between the idea's potential and its actual performance.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/908251/dockcase-selfix-selfie-phone-case-hands-on" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7d009345a407" onclick="toggleTweets('7d009345a407')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7d009345a407">
+                <div class="tweet">"Tech meets selfies with the Selfix phone case for the iPhone 17 Pro, but does it live up to the hype? Despite the innovative design, users have reported mixed results. #Selfix #iPhone17Pro #SelfieTech"</div>
+<div class="tweet">"Is the Selfix phone case just a gimmick or a game-changer for selfie enthusiasts? Share your thoughts on this innovative yet flawed accessory. #Selfix #SelfieFail #TechDebate"</div>
+<div class="tweet">"The gap between concept and execution is evident in the Selfix phone case for the iPhone 17 Pro. A reminder that innovation is only as good as its real-world performance. #Selfix #TechInnovation #SelfieQuality"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.0" 
+             data-published="2026-04-07" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Paper Circle: An Open-source Multi-agent Research Discovery and Analysis Framework">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.06170v1" target="_blank">Paper Circle: An Open-source Multi-agent Research Discovery and Analysis Framework</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-07 | ID: 8aa4b28abcde
+             | <span class="engagement-low">Engagement: [38.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Paper Circle" introduces an open-source framework designed to aid researchers in discovering, evaluating, and synthesizing scientific literature more efficiently. Developed by Komal Kumar, Aman Chadha, Salman Khan, and others, the framework leverages multi-agent large language models (LLMs) to enhance user intent understanding. This innovation addresses the challenge posed by the exponential growth of scientific literature, offering a promising solution for improved research discovery and analysis processes.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.06170v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8aa4b28abcde" onclick="toggleTweets('8aa4b28abcde')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8aa4b28abcde">
+                <div class="tweet">Exciting news for researchers! "Paper Circle" introduces an open-source framework to enhance scientific literature discovery and analysis. Developed by Komal Kumar, Aman Chadha, and Salman Khan. #TechNews #Research #OpenSource</div>
+<div class="tweet">How can "Paper Circle" revolutionize the way researchers discover and synthesize scientific literature? Leveraging multi-agent large language models, this open-source framework promises to streamline the process. #Innovation #Research #Tech</div>
+<div class="tweet">"Paper Circle" offers a promising solution to the challenge of managing the ever-growing scientific literature. By utilizing multi-agent large language models, researchers can enhance their discovery and analysis processes. #ResearchTools #TechInnovation #SciComm</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-04-07T17:44:20-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Amazon is ending support for older Kindles and Kindle Fires">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/908302/amazon-ending-support-kindle-fire-tablet-e-reader-pre-2012-older" target="_blank">Amazon is ending support for older Kindles and Kindle Fires</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-07T17:44:20-04:00 | ID: b084607b4873
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Amazon will discontinue support for Kindle e-readers and Kindle Fire devices released in 2012 and earlier from May 20th, 2026. Users of these older devices will no longer be able to purchase, borrow, or download new content from the Kindle Store. However, they will still be able to read books already downloaded on their devices.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/908302/amazon-ending-support-kindle-fire-tablet-e-reader-pre-2012-older" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b084607b4873" onclick="toggleTweets('b084607b4873')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b084607b4873">
+                <div class="tweet">Amazon is saying goodbye to older Kindles and Kindle Fires released before 2013. From May 20th, 2026, users won't be able to access new content on these devices. Time for an upgrade? #Amazon #Kindle #TechNews</div>
+<div class="tweet">Is it time to bid farewell to your old Kindle or Kindle Fire? Amazon is discontinuing support for devices released before 2013, limiting access to new content. How attached are you to your vintage e-reader? #TechTalk #Upgrade #Kindle</div>
+<div class="tweet">Amazon's decision to end support for older Kindles and Kindle Fires highlights the pace of tech evolution. It's a reminder to stay current with your devices to access the latest features and content seamlessly. #TechEvolution #StayUpdated #KindleSupport</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="Tue, 07 Apr 2026 15:54:54 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Finally, Artemis delivers some exceptional, high-quality photos of the Moon">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/04/the-artemis-ii-mission-sends-back-stunning-images-of-the-far-side-of-the-moon/" target="_blank">Finally, Artemis delivers some exceptional, high-quality photos of the Moon</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Tue, 07 Apr 2026 15:54:54 +0000 | ID: c05cfa339bcd
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            NASA's Artemis program has successfully captured high-quality images of the Moon using its Artemis I mission. The photos showcase detailed views of the Moon's surface, providing valuable data for future lunar exploration missions. This achievement marks a significant milestone in NASA's efforts to return humans to the Moon and establish a sustainable presence there.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/04/the-artemis-ii-mission-sends-back-stunning-images-of-the-far-side-of-the-moon/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c05cfa339bcd" onclick="toggleTweets('c05cfa339bcd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c05cfa339bcd">
+                <div class="tweet">"NASA's Artemis program impresses with stunning photos of the Moon from Artemis I mission. These images offer valuable insights for upcoming lunar exploration missions. 🚀🌕 #NASA #Artemis #Moon #SpaceExploration"</div>
+<div class="tweet">"Can you imagine walking on the Moon's surface? With the exceptional photos captured by NASA's Artemis program, the dream of human return to the Moon feels more tangible than ever. 🌌👨‍🚀 #Artemis #MoonExploration #SpaceTravel"</div>
+<div class="tweet">"The detailed images of the Moon's surface from NASA's Artemis I mission mark a significant step towards establishing a sustainable human presence on the Moon. Exciting times ahead for space exploration! 🛰️🌑 #Artemis #NASA #SpaceMissions"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="2026-04-07T14:16:52-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Samsung’s Galaxy S26 Ultra is $200 off for the first time">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/908196/samsung-galaxy-s26-ultra-privacy-display-deal-sale-unlocked" target="_blank">Samsung’s Galaxy S26 Ultra is $200 off for the first time</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-07T14:16:52-04:00 | ID: b726c9fce7ea
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Samsung is offering a $200 discount on the Galaxy S26 Ultra for the first time. The standout feature of the device, the Privacy Display, prevents onlookers from viewing the screen from the side, enhancing privacy for users in public spaces. This discount makes the S26 Ultra more appealing for those prioritizing privacy in their daily usage.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/908196/samsung-galaxy-s26-ultra-privacy-display-deal-sale-unlocked" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b726c9fce7ea" onclick="toggleTweets('b726c9fce7ea')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b726c9fce7ea">
+                <div class="tweet">📱 Get $200 off on Samsung's Galaxy S26 Ultra for the first time! The Privacy Display feature ensures your screen remains private in public spaces. Don't miss this chance to upgrade your privacy game! #Samsung #GalaxyS26Ultra #PrivacyDisplay #TechDeal</div>
+<div class="tweet">🤔 How important is privacy to you when using your smartphone in public? Samsung's Galaxy S26 Ultra, now $200 off, offers a Privacy Display feature to keep your screen private from prying eyes. Is this discount a game-changer for you? #PrivacyMatters #Samsung #GalaxyS26Ultra</div>
+<div class="tweet">🔒 Upgrade your privacy game with Samsung's Galaxy S26 Ultra at a $200 discount! The new Privacy Display feature is a game-changer for users who value privacy in public spaces. Don't miss out on this opportunity to enhance your smartphone experience. #PrivacyTech #Samsung</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.0" 
+             data-published="2026-04-07" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Topological Characterization of Churn Flow and Unsupervised Correction to the Wu Flow-Regime Map in Small-Diameter Vertical Pipes">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.06167v1" target="_blank">Topological Characterization of Churn Flow and Unsupervised Correction to the Wu Flow-Regime Map in Small-Diameter Vertical Pipes</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-07 | ID: 56d6f9561930
+             | <span class="engagement-low">Engagement: [35.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #FF9800">₿ Crypto</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A research paper by Brady Koenig, Sushovan Majhi, Atish Mitra, and others introduces a topology-based characterization of churn flow, a chaotic regime in vertical two-phase flow that has lacked a quantitative mathematical definition for over 40 years. The researchers use Euler Characteristic Surfaces (ECS) to provide this characterization, marking a significant advancement in understanding this flow regime. The paper also presents an unsupervised correction to the Wu Flow-Regime Map in small-diameter vertical pipes, offering new insights and potential improvements in flow regime analysis.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.06167v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-56d6f9561930" onclick="toggleTweets('56d6f9561930')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-56d6f9561930">
+                <div class="tweet">Exciting breakthrough in fluid dynamics research! Study by Koenig, Majhi, Mitra, et al. introduces topology-based characterization of churn flow in vertical pipes using Euler Characteristic Surfaces. #FluidDynamics #Research #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="34.5" 
+             data-published="2026-04-07 22:56" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Sam Altman Says It'll Take Another Year Before ChatGPT Can Start a Timer / An $852 billion company, ladies and gentlemen.">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://gizmodo.com/sam-altman-says-itll-take-another-year-before-chatgpt-can-start-a-timer-2000743487" target="_blank">Sam Altman Says It'll Take Another Year Before ChatGPT Can Start a Timer / An $852 billion company, ladies and gentlemen.</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-04-07 22:56 | ID: 8b173cc035bc
+             | <span class="engagement-low">Engagement: [34.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 34%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Sam Altman, the CEO of OpenAI, has stated that it will take another year before ChatGPT, the company's conversational AI model, can accurately start a timer. This delay suggests ongoing challenges in developing advanced AI capabilities for practical applications. The discussion on Reddit highlights the technical complexities involved in refining AI models for specific tasks and the high expectations for AI technologies in various industries.
+        </div>
+        <div class="source-link">
+            → <a href="https://gizmodo.com/sam-altman-says-itll-take-another-year-before-chatgpt-can-start-a-timer-2000743487" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8b173cc035bc" onclick="toggleTweets('8b173cc035bc')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8b173cc035bc">
+                <div class="tweet">Sam Altman reveals it'll be another year before ChatGPT can accurately start a timer, showcasing the challenges of advancing AI for practical use. 🤖⏲️ #AI #OpenAI #TechNews</div>
+<div class="tweet">How crucial is it for AI models like ChatGPT to master simple tasks like starting a timer before we can trust them with complex functions? 🤔 #AI #TechDiscussion #OpenAI</div>
+<div class="tweet">The delay in ChatGPT's timer-starting ability highlights the intricate process of refining AI for practical applications, underscoring the need for continued innovation in the field. 🚀 #ArtificialIntelligence #Innovation #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-07T16:13:23-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Spotify&#8217;s Prompted Playlists can help you find new podcasts to listen to">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/908339/spotify-prompted-playlists-podcasts" target="_blank">Spotify&#8217;s Prompted Playlists can help you find new podcasts to listen to</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-07T16:13:23-04:00 | ID: 99c3abd99a0b
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Spotify has extended its Prompted Playlists feature to include podcasts, enabling Premium users to discover new shows more easily. Initially launched in December for music, this update now offers personalized podcast recommendations through the feature. This enhancement aims to enhance user engagement and help listeners explore a wider range of content on the platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/908339/spotify-prompted-playlists-podcasts" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-99c3abd99a0b" onclick="toggleTweets('99c3abd99a0b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-99c3abd99a0b">
+                <div class="tweet">Spotify's Prompted Playlists now recommend podcasts too! Premium users can easily discover new shows for a more personalized listening experience. 🎧 #Spotify #Podcasts #TechNews</div>
+<div class="tweet">Curious about the latest podcast recommendations on Spotify? With Prompted Playlists, finding new shows just got easier. What podcast will you discover next? 🤔 #PodcastDiscovery #Spotify #TechTalk</div>
+<div class="tweet">Enhance your podcast listening with Spotify's updated Prompted Playlists feature. By offering personalized recommendations, Spotify aims to broaden content exploration and boost user engagement. 📱🔊 #ContentDiscovery #UserExperience #TechUpdate</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-07T13:02:25-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The rugged Bose Soundlink Flex is 25 percent off right now">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/907744/bose-soundlink-flex-2nd-gen-google-nest-doorbell-deal-sale" target="_blank">The rugged Bose Soundlink Flex is 25 percent off right now</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-07T13:02:25-04:00 | ID: 30044d6ea8f2
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The latest Bose Soundlink Flex portable speaker is currently on sale at Amazon, Walmart, and Best Buy for $119, offering a $40 discount. This rugged speaker features a durable design and offers high-quality sound, making it an attractive option for those looking for a portable audio solution. The price drop presents a good opportunity for tech enthusiasts to grab this device at a discounted rate from major retailers.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/907744/bose-soundlink-flex-2nd-gen-google-nest-doorbell-deal-sale" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-30044d6ea8f2" onclick="toggleTweets('30044d6ea8f2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-30044d6ea8f2">
+                <div class="tweet">Looking for a portable speaker with rugged durability and high-quality sound? The Bose Soundlink Flex is now 25% off at Amazon, Walmart, and Best Buy for $119. Don't miss this deal! 🎶🔊 #Bose #SoundlinkFlex #TechDeal</div>
+<div class="tweet">What's your go-to portable speaker for outdoor adventures? The Bose Soundlink Flex, currently on sale for $119, combines durability with top-notch audio quality. Grab yours now! 🏞️🔊 #PortableAudio #TechEnthusiast</div>
+<div class="tweet">Tech alert! The Bose Soundlink Flex, known for its rugged design and premium sound, is now $40 cheaper at major retailers. Upgrade your portable audio experience with this discounted offer. 🎵💸 #AudioTech #DiscountDeal</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-04-07 19:40" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Oracle Appoints Hilary Maxson As CFO With $29.7 Million Package After Firing 30,000 Employees">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.ndtv.com/feature/oracle-appoints-hilary-maxson-as-cfo-with-29-7-million-package-after-firing-30-000-employees-11323707" target="_blank">Oracle Appoints Hilary Maxson As CFO With $29.7 Million Package After Firing 30,000 Employees</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-04-07 19:40 | ID: 1504a726c6e9
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Oracle has named Hilary Maxson as its new CFO, offering her a compensation package worth $29.7 million. This move comes after Oracle recently laid off 30,000 employees. The decision has sparked a discussion on Reddit's r/technology forum, with 15034 upvotes and 676 comments reflecting concerns about the company's priorities and treatment of its workforce.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.ndtv.com/feature/oracle-appoints-hilary-maxson-as-cfo-with-29-7-million-package-after-firing-30-000-employees-11323707" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1504a726c6e9" onclick="toggleTweets('1504a726c6e9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1504a726c6e9">
+                <div class="tweet">Oracle appoints Hilary Maxson as CFO with a $29.7 million package after laying off 30,000 employees. Join the discussion on Reddit's r/technology forum. #Oracle #TechNews</div>
+<div class="tweet">Is prioritizing executive compensation over employee welfare a sustainable business strategy in the tech industry? Share your thoughts on Oracle's recent move. #CorporateCulture #TechEthics</div>
+<div class="tweet">Oracle's decision to appoint a new CFO with a hefty compensation package post layoffs sheds light on corporate values and employee treatment. How should companies balance profits and workforce well-being? #EmployeeRelations #CorporateResponsibility</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-04-07 10:39" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Parse, Don't Validate — In a Language That Doesn't Want You To · cekrem.github.io">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://cekrem.github.io/posts/parse-dont-validate-typescript/" target="_blank">Parse, Don't Validate — In a Language That Doesn't Want You To · cekrem.github.io</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-04-07 10:39 | ID: eeb3906bd11f
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the concept of "parse, don't validate" in programming, emphasizing the benefits of parsing data over traditional validation methods. It explores how this approach can lead to more robust and flexible code, especially in languages that encourage parsing over validation. The Reddit discussion in r/programming with 176 upvotes and 41 comments indicates interest and engagement in this topic within the developer community.
+        </div>
+        <div class="source-link">
+            → <a href="https://cekrem.github.io/posts/parse-dont-validate-typescript/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-eeb3906bd11f" onclick="toggleTweets('eeb3906bd11f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-eeb3906bd11f">
+                <div class="tweet">Discover the power of "parse, don't validate" in programming! This approach can revolutionize how we handle data, leading to more robust and flexible code. Dive into the concept in this insightful article: cekrem.github.io #Programming #DataParsing</div>
+<div class="tweet">Ever considered the benefits of parsing over validation in programming? Join the conversation around "parse, don't validate" and explore how this approach can enhance code quality and flexibility. Share your thoughts! #TechDebate #CodeQuality</div>
+<div class="tweet">Parsing data instead of traditional validation methods can unlock new possibilities in programming. Learn how adopting the "parse, don't validate" mindset can lead to more resilient and adaptable code. Embrace the power of parsing! #TechInnovation #CodeOptimization</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-04-07 11:18" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="C3 closes out its 0.7 era — focusing on simplicity and control before 0.8">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://c3-lang.org/blog/c3-0-7-11-the-last-v0-7/" target="_blank">C3 closes out its 0.7 era — focusing on simplicity and control before 0.8</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-04-07 11:18 | ID: dba9bd22f24f
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            C3, a popular JavaScript charting library, has concluded its 0.7 era with a focus on enhancing simplicity and control in its features. This marks a significant step before the upcoming release of version 0.8, promising further improvements and advancements for developers using the library in their projects. The move underscores C3's commitment to refining user experience and functionality in response to community feedback and evolving industry standards.
+        </div>
+        <div class="source-link">
+            → <a href="https://c3-lang.org/blog/c3-0-7-11-the-last-v0-7/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-dba9bd22f24f" onclick="toggleTweets('dba9bd22f24f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-dba9bd22f24f">
+                <div class="tweet">Exciting news for developers! 🚀 C3 has wrapped up its 0.7 era, focusing on simplicity and control in its JavaScript charting library. Stay tuned for version 0.8 for even more enhancements! #C3 #JavaScript #TechNews</div>
+<div class="tweet">Curious about the future of JavaScript charting? 🤔 C3 bids farewell to its 0.7 era, paving the way for version 0.8 with improved features. What enhancements are you hoping to see in the upcoming release? Share your thoughts! #C3 #JavaScript #TechTrends</div>
+<div class="tweet">Key takeaway: C3's emphasis on simplicity and control in its 0.7 era sets the stage for a more user-centric experience. Developers can anticipate greater functionality with the upcoming version 0.8. Innovation at its finest! #C3 #JavaScript #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="27.5" 
+             data-published="2026-04-07 11:01" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="[D] thoughts on current community moving away from heavy math?">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1sesq0s/d_thoughts_on_current_community_moving_away_from/" target="_blank">[D] thoughts on current community moving away from heavy math?</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-04-07 11:01 | ID: b93f85a41d3b
+             | <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 27%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The tech community is observing a shift towards empirical findings, architecture designs, and modifications to loss functions in research papers, even before the introduction of Large Language Models (LLM). While these areas still require mathematical understanding, there is a noticeable move away from a heavy emphasis on math in some segments of the community. This trend suggests a broader focus on practical applications and implementation in tech research.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1sesq0s/d_thoughts_on_current_community_moving_away_from/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b93f85a41d3b" onclick="toggleTweets('b93f85a41d3b')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-b93f85a41d3b">
+                <div class="tweet">Is the tech community shifting away from heavy math in research papers? Recent observations suggest a move towards empirical findings and practical applications. #TechCommunity #ResearchTrends #EmpiricalTech</div>
+<div class="tweet">Are we witnessing a significant change in tech research approaches? The shift towards empirical findings and practical implementations over heavy math emphasis is gaining momentum. What are your thoughts? #TechResearch #MathInTech #EmpiricalApproach</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-04-08 07:13:49 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
