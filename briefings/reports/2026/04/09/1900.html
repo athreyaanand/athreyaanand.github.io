@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - April 09, 2026, 07:00 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>April 09, 2026, 07:00 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-04-09 19:00:15
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 170.4 seconds</div>
+                <div>Start Time: 2026-04-09 19:00:15</div>
+                <div>End Time: 2026-04-09 19:03:05</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 20, Low: 13</div>
+                <div>Topics Detected: 5</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="68.5" 
+             data-published="2026-04-07 18:09" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Project Glasswing: Securing critical software for the AI era">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.anthropic.com/glasswing" target="_blank">Project Glasswing: Securing critical software for the AI era</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-07 18:09 | ID: d0fe15a15c54
+             | <span class="engagement-notable">Engagement: [68.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 68%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Project Glasswing aims to enhance the security of critical software in the AI era. The project focuses on developing robust security measures to protect AI systems from cyber threats and vulnerabilities. This initiative is crucial for ensuring the integrity and reliability of AI technologies in various industries.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.anthropic.com/glasswing" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d0fe15a15c54" onclick="toggleTweets('d0fe15a15c54')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-d0fe15a15c54">
+                <div class="tweet">Exciting news in tech! Project Glasswing is strengthening the security of critical software in the AI era, safeguarding AI systems from cyber threats. A crucial step towards ensuring the reliability of AI technologies. #ProjectGlasswing #AIsecurity</div>
+<div class="tweet">Ever wondered how we can protect AI systems from cyber threats in the modern era? Project Glasswing is paving the way with innovative security measures to ensure the integrity of critical software. What are your thoughts on this initiative? #AIsecurity #ProjectGlasswing</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-04-08 08:53" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Git commands I run before reading any code">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://piechowski.io/post/git-commands-before-reading-code/" target="_blank">Git commands I run before reading any code</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-08 08:53 | ID: 3dc8ee28be9b
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses essential Git commands that developers should run before reviewing code changes. These commands include "git fetch" to update the local repository with remote changes, "git log" to view commit history, and "git diff" to see the differences between the local and remote branches. By using these commands proactively, developers can ensure they have the latest code changes and understand the context before diving into the code review process.
+        </div>
+        <div class="source-link">
+            → <a href="https://piechowski.io/post/git-commands-before-reading-code/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3dc8ee28be9b" onclick="toggleTweets('3dc8ee28be9b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3dc8ee28be9b">
+                <div class="tweet">"Enhance your code review process with these essential Git commands: git fetch, git log, and git diff. Stay up-to-date and understand changes before diving in. #Git #CodeReview #DeveloperTips"</div>
+<div class="tweet">"Are you running git fetch, git log, and git diff before code reviews? Proactively using these Git commands can streamline your review process and improve code understanding. Share your Git rituals! #GitCommands #TechTalk #CodeReview"</div>
+<div class="tweet">"Running git fetch, git log, and git diff before code reviews can save time and ensure you're working with the latest changes. Stay ahead in your development workflow with these essential Git commands. #GitWorkflow #Development #TechTips"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-04-06 13:50" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Issue: Claude Code is unusable for complex engineering tasks with Feb updates">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://github.com/anthropics/claude-code/issues/42796" target="_blank">Issue: Claude Code is unusable for complex engineering tasks with Feb updates</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-06 13:50 | ID: 09918cb82b25
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The recent February updates to Claude Code have rendered it unsuitable for handling complex engineering tasks, as discussed on Hacker News with 1335 points and 745 comments. Developers and engineers relying on Claude Code for intricate projects may face challenges due to this issue, highlighting the importance of thorough testing and validation in software updates to avoid disruptions in critical workflows.
+        </div>
+        <div class="source-link">
+            → <a href="https://github.com/anthropics/claude-code/issues/42796" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-09918cb82b25" onclick="toggleTweets('09918cb82b25')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-09918cb82b25">
+                <div class="tweet">Is Claude Code falling short for complex engineering tasks post-February updates? Dive into the implications discussed on Hacker News with 1335 points and 745 comments. #ClaudeCode #TechNews #SoftwareUpdate</div>
+<div class="tweet">Could relying solely on software updates like those in Claude Code pose risks for critical engineering workflows? Join the conversation sparked by recent developments on Hacker News. #EngineeringTech #SoftwareDevelopment #HackerNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-06 10:36" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Sam Altman may control our future – can he be trusted?">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted" target="_blank">Sam Altman may control our future – can he be trusted?</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-06 10:36 | ID: b2f6d6f9c0f3
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the potential influence of Sam Altman, a prominent figure in the tech industry, on shaping the future. It raises questions about whether Altman, known for his involvement in various tech ventures and initiatives, can be trusted with such power and responsibility. The Hacker News discussion generated significant engagement, with 2118 points and 889 comments, reflecting widespread interest and concern within the tech community about Altman's impact on the future of technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b2f6d6f9c0f3" onclick="toggleTweets('b2f6d6f9c0f3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b2f6d6f9c0f3">
+                <div class="tweet">Is Sam Altman the tech industry's next big influencer? This article delves into the power he holds and the trust he demands. Join the debate on Hacker News! #SamAltman #TechInfluence</div>
+<div class="tweet">Can we trust Sam Altman to steer our tech future? Dive into this article exploring the impact of one of tech's powerful figures. Share your thoughts! #TechEthics #FutureTech</div>
+<div class="tweet">The tech community is buzzing about Sam Altman's potential influence. This article raises important questions about trust and power dynamics in tech leadership. #SamAltman #TechDebate</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-08 15:40" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="I ported Mac OS X to the Nintendo Wii">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://bryankeller.github.io/2026/04/08/porting-mac-os-x-nintendo-wii.html" target="_blank">I ported Mac OS X to the Nintendo Wii</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-08 15:40 | ID: 5681b89c1669
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A hacker has successfully ported Mac OS X to the Nintendo Wii, as discussed on Hacker News with 1799 points and 303 comments. This achievement showcases the hacker's technical skills in adapting an operating system to run on unconventional hardware, opening up possibilities for further experimentation and innovation in the tech community. The project demonstrates the flexibility and adaptability of operating systems and hardware, pushing the boundaries of what can be achieved in the realm of software development.
+        </div>
+        <div class="source-link">
+            → <a href="https://bryankeller.github.io/2026/04/08/porting-mac-os-x-nintendo-wii.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5681b89c1669" onclick="toggleTweets('5681b89c1669')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-5681b89c1669">
+                <div class="tweet">Did you know a hacker successfully ported Mac OS X to the Nintendo Wii? This impressive feat showcases the possibilities of adapting operating systems to unconventional hardware. #TechInnovation #MacOSX #NintendoWii</div>
+<div class="tweet">Ever imagined running Mac OS X on a Nintendo Wii? A hacker made it happen, sparking curiosity about the potential for OS adaptations on different devices. What other unexpected pairings would you like to see in tech? #TechExperiments #Innovation #HackerNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-08 07:23" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Veracrypt project update">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://sourceforge.net/p/veracrypt/discussion/general/thread/9620d7a4b3/" target="_blank">Veracrypt project update</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-08 07:23 | ID: b91faeb00701
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Veracrypt project, a popular open-source disk encryption tool, has received attention on Hacker News with 1245 points and 486 comments. This update signifies ongoing interest and support for the project within the tech community, highlighting its importance in the realm of secure data encryption and privacy protection. Developers and users alike are actively engaged in discussions surrounding the tool's features, security enhancements, and potential future developments.
+        </div>
+        <div class="source-link">
+            → <a href="https://sourceforge.net/p/veracrypt/discussion/general/thread/9620d7a4b3/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b91faeb00701" onclick="toggleTweets('b91faeb00701')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-b91faeb00701">
+                <div class="tweet">Exciting news for encryption enthusiasts! The Veracrypt project is making waves on Hacker News with 1245 points and 486 comments. The tech community's support showcases the tool's significance in secure data encryption and privacy protection. #Veracrypt #Encryption #TechNews</div>
+<div class="tweet">Are you using Veracrypt for your data protection needs? With its latest update gaining traction on Hacker News, the tool's community engagement reflects its importance in ensuring secure data encryption. Share your thoughts! #Veracrypt #DataSecurity #PrivacyProtection</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="57" 
+             data-published="Thu, 09 Apr 2026 18:27:47 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Google and Intel deepen AI infrastructure partnership">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/09/google-and-intel-deepen-ai-infrastructure-partnership/" target="_blank">Google and Intel deepen AI infrastructure partnership</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 09 Apr 2026 18:27:47 +0000 | ID: afacb368b622
+             | <span class="engagement-standard">Engagement: [57.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 57%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google and Intel have announced plans to collaborate on developing custom chips to support artificial intelligence workloads. This partnership aims to address the increasing demand for CPUs amid a global shortage, potentially leading to more efficient AI infrastructure solutions in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/09/google-and-intel-deepen-ai-infrastructure-partnership/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-afacb368b622" onclick="toggleTweets('afacb368b622')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-afacb368b622">
+                <div class="tweet">Exciting news for #AI enthusiasts! Google and Intel are teaming up to create custom chips for AI workloads, tackling the rising demand for CPUs. This collaboration could revolutionize AI infrastructure efficiency. #TechNews</div>
+<div class="tweet">What does the future of AI infrastructure look like with Google and Intel's partnership on custom chips? Will this collaboration set a new standard for AI hardware innovation? 🤔 #AI #TechPartnership</div>
+<div class="tweet">The Google-Intel alliance to develop AI-focused custom chips is a strategic move to address CPU shortages and boost AI infrastructure efficiency. Stay tuned for potential breakthroughs in AI hardware solutions! #TechInnovation #AIInfrastructure</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="54.5" 
+             data-published="Thu, 09 Apr 2026 18:01:48 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="How to make the Startup Battlefield Top 20 — and what every company gets regardless">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/09/how-to-make-the-startup-battlefield-top-20-and-what-every-company-gets-regardless/" target="_blank">How to make the Startup Battlefield Top 20 — and what every company gets regardless</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 09 Apr 2026 18:01:48 +0000 | ID: 16daba52bbda
+             | <span class="engagement-standard">Engagement: [54.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article outlines the process for startups to make it to the Startup Battlefield Top 20 and secure a spot on the Disrupt Main Stage. It emphasizes the importance of early preparation and strategy in order to stand out among applicants. The Top 20 companies selected for the Startup Battlefield gain exposure, networking opportunities, and valuable feedback regardless of whether they advance to the main stage, making the application process beneficial for all participants.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/09/how-to-make-the-startup-battlefield-top-20-and-what-every-company-gets-regardless/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-16daba52bbda" onclick="toggleTweets('16daba52bbda')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-16daba52bbda">
+                <div class="tweet">Excited about the Startup Battlefield Top 20? Learn how to secure a spot on the Disrupt Main Stage and gain valuable exposure, networking opportunities, and feedback for your startup! #StartupBattlefield #TechNews</div>
+<div class="tweet">Curious about what it takes to make it to the Startup Battlefield Top 20? How important is early preparation and strategy in standing out among applicants? Share your thoughts! #StartupStrategy #DisruptMainStage</div>
+<div class="tweet">Key insight: The Startup Battlefield Top 20 offers exposure, networking, and feedback to all companies selected, regardless of advancing to the main stage. A valuable opportunity for startups at every stage! #TechStartups #NetworkingOpportunities</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="53.0" 
+             data-published="2026-04-08" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Measurement of Generative AI Workload Power Profiles for Whole-Facility Data Center Infrastructure Planning">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.07345v1" target="_blank">Measurement of Generative AI Workload Power Profiles for Whole-Facility Data Center Infrastructure Planning</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-08 | ID: 688045d71d04
+             | <span class="engagement-standard">Engagement: [53.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 53%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A research paper by Roberto Vercellino, Jared Willard, Gustavo Campos, and others delves into measuring the power profiles of generative AI workloads for data center infrastructure planning. The study highlights the substantial energy demands of AI workloads, emphasizing the challenges posed by proprietary and inconsistent power consumption data in data center planning. This research sheds light on the critical need for standardized, detailed power consumption data to effectively manage the energy footprint of data centers hosting AI workloads.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.07345v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-688045d71d04" onclick="toggleTweets('688045d71d04')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-688045d71d04">
+                <div class="tweet">Exciting research by Vercellino, Willard, Campos, and team explores power profiles of generative AI workloads for data center planning. The study underscores the importance of standardized power consumption data in managing energy footprints. #AI #DataCenter #TechResearch</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="52.5" 
+             data-published="Thu, 09 Apr 2026 17:20:50 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Sierra’s Bret Taylor says the era of clicking buttons is over">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/09/sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over/" target="_blank">Sierra’s Bret Taylor says the era of clicking buttons is over</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 09 Apr 2026 17:20:50 +0000 | ID: f64f39acfffd
+             | <span class="engagement-standard">Engagement: [52.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Sierra co-founder Bret Taylor believes that AI agents will render traditional software interfaces unnecessary, signaling the end of the era of clicking buttons. This prediction suggests a shift towards more intuitive and conversational interactions with technology, potentially revolutionizing how users engage with software applications in the future. Developers may need to adapt their design and development strategies to embrace this emerging trend in user interface technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/09/sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f64f39acfffd" onclick="toggleTweets('f64f39acfffd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f64f39acfffd">
+                <div class="tweet">Sierra's Bret Taylor predicts the end of the button-clicking era in software interfaces. AI agents may soon revolutionize how we interact with technology, prioritizing intuitive and conversational experiences. #TechTrends #UserInterface #AI</div>
+<div class="tweet">Is the era of clicking buttons in software coming to an end? Sierra's Bret Taylor believes AI agents will reshape user interactions. How will this shift impact developers and users? #FutureTech #AI #SoftwareDesign</div>
+<div class="tweet">Bret Taylor's vision of AI agents replacing traditional interfaces highlights the need for developers to rethink design strategies. Embracing intuitive, conversational interactions could be the future of software applications. #UIEvolution #TechInnovation #AdaptOrPerish</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="52.5" 
+             data-published="Thu, 09 Apr 2026 15:58:22 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Avec’s Tinder-style email app allows you to swipe through your inbox">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/09/avecs-tinder-styled-email-app-allows-you-to-swipe-through-your-inbox/" target="_blank">Avec’s Tinder-style email app allows you to swipe through your inbox</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 09 Apr 2026 15:58:22 +0000 | ID: 048a011dbb0e
+             | <span class="engagement-standard">Engagement: [52.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Avec has introduced a Tinder-style email app that enables users to swipe through their inbox for efficient email management. The app also features an in-built voice transcription tool, allowing users to reply to emails hands-free. This innovative approach aims to streamline email communication and enhance productivity for users.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/09/avecs-tinder-styled-email-app-allows-you-to-swipe-through-your-inbox/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-048a011dbb0e" onclick="toggleTweets('048a011dbb0e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-048a011dbb0e">
+                <div class="tweet">Exciting news for email management! Avec's new Tinder-style app lets you swipe through your inbox for efficient communication. Say goodbye to email overwhelm! 📧💫 #TechNews #EmailManagement</div>
+<div class="tweet">Ever wished you could swipe through your emails like Tinder? Avec's new app makes it possible! How do you think this innovative approach will impact email productivity? 📱💭 #TechInnovation #Productivity</div>
+<div class="tweet">With Avec's new email app, you can swipe through emails and reply hands-free using voice transcription. A game-changer in email management, making communication more efficient and user-friendly. 🚀📬 #TechTrends #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Thu, 09 Apr 2026 15:31:10 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Hacker stole £700,000 from UK energy company by redirecting payment">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/09/hacker-stole-700000-from-u-k-energy-company-by-redirecting-payment/" target="_blank">Hacker stole £700,000 from UK energy company by redirecting payment</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 09 Apr 2026 15:31:10 +0000 | ID: d008821f4a32
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A hacker managed to steal £700,000 from a UK energy company by redirecting a payment intended for a contractor into their own bank account. The incident highlights the vulnerability of payment systems to cyber attacks and underscores the importance of robust security measures to prevent such breaches in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/09/hacker-stole-700000-from-u-k-energy-company-by-redirecting-payment/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d008821f4a32" onclick="toggleTweets('d008821f4a32')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d008821f4a32">
+                <div class="tweet">Hacker steals £700,000 from UK energy company by redirecting payment. Cyber attacks on payment systems underscore the need for robust security measures. #CyberSecurity #TechNews</div>
+<div class="tweet">Thoughts on the recent cyber attack on a UK energy company - how can businesses better protect their payment systems from hackers? 💭 #CyberThreats #SecurityMeasures</div>
+<div class="tweet">Key takeaway: The £700,000 theft from a UK energy company highlights the critical importance of enhancing cybersecurity protocols to safeguard against sophisticated cyber threats. #CyberDefense #StayProtected</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="51" 
+             data-published="Thu, 09 Apr 2026 18:07:56 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Trump-appointed judges refuse to block Trump blacklisting of Anthropic AI tech">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/04/trump-appointed-judges-refuse-to-block-trump-blacklisting-of-anthropic-ai-tech/" target="_blank">Trump-appointed judges refuse to block Trump blacklisting of Anthropic AI tech</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 09 Apr 2026 18:07:56 +0000 | ID: 4224c9f2be9e
+             | <span class="engagement-standard">Engagement: [51.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            An appeals court, with judges appointed by former President Trump, has rejected Anthropic's emergency motion to halt Trump's blacklisting of the AI tech company. This decision upholds the ban on Anthropic's technology, impacting the company's operations and raising concerns about the politicization of tech regulations under the previous administration.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/04/trump-appointed-judges-refuse-to-block-trump-blacklisting-of-anthropic-ai-tech/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4224c9f2be9e" onclick="toggleTweets('4224c9f2be9e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4224c9f2be9e">
+                <div class="tweet">"Trump-appointed judges deny Anthropic AI's plea to overturn ban, impacting the tech company's operations. A concerning move highlighting the intersection of politics and tech regulation. #AI #TechRegulation"</div>
+<div class="tweet">"Are tech regulations being influenced by politics? The recent ruling against Anthropic AI raises questions about the impartiality of decisions affecting tech companies. #TechEthics #PolicyInfluence"</div>
+<div class="tweet">"The rejection of Anthropic AI's motion sheds light on the challenges tech companies face in navigating political landscapes. Tech regulation should prioritize innovation and fairness over political agendas. #TechPolicy #Innovation"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="50" 
+             data-published="Thu, 09 Apr 2026 18:50:05 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Is Anthropic limiting the release of Mythos to protect the internet — or Anthropic?">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/09/is-anthropic-limiting-the-release-of-mythos-to-protect-the-internet-or-anthropic/" target="_blank">Is Anthropic limiting the release of Mythos to protect the internet — or Anthropic?</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 09 Apr 2026 18:50:05 +0000 | ID: b5716540e424
+             | <span class="engagement-standard">Engagement: [50.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 50%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic, a leading AI research lab, is reportedly delaying the release of its powerful language model, Mythos, citing cybersecurity risks. However, speculation suggests that the delay may be due to internal concerns about the potential misuse of the technology. This move raises questions about the balance between innovation and responsible deployment of advanced AI models in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/09/is-anthropic-limiting-the-release-of-mythos-to-protect-the-internet-or-anthropic/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b5716540e424" onclick="toggleTweets('b5716540e424')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b5716540e424">
+                <div class="tweet">Is Anthropic safeguarding the internet or its interests by delaying the release of Mythos? The debate over cybersecurity risks and responsible AI deployment continues. 🤖🔒 #AI #Cybersecurity #TechEthics</div>
+<div class="tweet">What's the real reason behind Anthropic's delay in releasing Mythos? Are they protecting the internet or their own agenda? 🤔⚙️ #AI #TechIndustry #EthicalAI</div>
+<div class="tweet">The Mythos delay highlights the fine line tech companies walk between innovation and ethical AI deployment. Striking a balance is crucial for the future of advanced AI models. 🌐💡 #TechInnovation #AIethics #Mythos</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Thu, 09 Apr 2026 17:49:57 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="You can now edit your Instagram comments">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/09/you-can-now-edit-your-instagram-comments/" target="_blank">You can now edit your Instagram comments</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 09 Apr 2026 17:49:57 +0000 | ID: 43f2fb329c12
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Instagram has introduced a new feature allowing users to edit their comments, addressing a common frustration of having to delete and repost comments for corrections. This update streamlines the editing process and enhances user experience by enabling quick fixes for typos and errors without the need for reposting.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/09/you-can-now-edit-your-instagram-comments/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-43f2fb329c12" onclick="toggleTweets('43f2fb329c12')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-43f2fb329c12">
+                <div class="tweet">Exciting news for Instagram users! 📱✨ Now you can finally edit your comments on the platform, making it easier to fix typos and errors without the hassle of deleting and reposting. Enhancing user experience one edit at a time! #Instagram #EditComments</div>
+<div class="tweet">Ever wished you could edit your Instagram comments? 🤔 Well, now you can! How do you think this new feature will change the way users interact on the platform? Share your thoughts! #Instagram #UserExperience</div>
+<div class="tweet">Quick fixes just got easier on Instagram! With the ability to edit comments, users can now correct mistakes without the need for reposting. A small change that can make a big difference in enhancing user engagement and satisfaction. #Instagram #EditFeature</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="47.5" 
+             data-published="Thu, 09 Apr 2026 14:10:40 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="First, Tesla canceled the Model 2—now it's working on a new small EV">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/cars/2026/04/first-tesla-canceled-the-model-2-now-its-working-on-a-new-small-ev/" target="_blank">First, Tesla canceled the Model 2—now it's working on a new small EV</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 09 Apr 2026 14:10:40 +0000 | ID: 7ac3a323ef69
+             | <span class="engagement-standard">Engagement: [47.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 47%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Tesla has canceled its plans for the Model 2 and is now focusing on developing a new small electric vehicle (EV). This shift comes after Tesla's exploration into humanoid robots and AI, raising questions about the company's core focus on being an automotive manufacturer. The move towards a new small EV indicates Tesla's ongoing commitment to expanding its electric vehicle lineup and staying competitive in the market.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/cars/2026/04/first-tesla-canceled-the-model-2-now-its-working-on-a-new-small-ev/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7ac3a323ef69" onclick="toggleTweets('7ac3a323ef69')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7ac3a323ef69">
+                <div class="tweet">Tesla shifts gears: cancels Model 2 plans and pivots to develop a new small electric vehicle. A strategic move to stay competitive in the EV market. #Tesla #ElectricVehicles #TechNews</div>
+<div class="tweet">What do Tesla's recent changes—from humanoid robots to a new small EV—say about its core focus? Is Tesla redefining its identity beyond just being a car manufacturer? #Innovation #TechIndustry #Tesla</div>
+<div class="tweet">Tesla's decision to cancel the Model 2 and focus on a new small EV highlights the company's commitment to innovation and adapting to market demands. Stay tuned for more updates on Tesla's evolving product lineup. #Innovation #ElectricVehicles #Tesla</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Thu, 09 Apr 2026 16:37:52 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Police corporal created AI porn from driver's license pics">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/04/state-police-corporal-created-porn-deepfakes-from-drivers-license-photos/" target="_blank">Police corporal created AI porn from driver's license pics</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 09 Apr 2026 16:37:52 +0000 | ID: 7b977d126078
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A police corporal misused driver's license photos to create over 3,000 "deepfake" images using AI technology. This incident highlights the potential risks of AI misuse and the importance of safeguarding personal data to prevent such unethical practices in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/04/state-police-corporal-created-porn-deepfakes-from-drivers-license-photos/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7b977d126078" onclick="toggleTweets('7b977d126078')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-7b977d126078">
+                <div class="tweet">Police corporal misused driver's license photos to create over 3,000 AI-generated "deepfake" images. This incident emphasizes the critical need for stronger safeguards to protect personal data from unethical AI misuse. #AIethics #DataPrivacy</div>
+<div class="tweet">Could your personal data be used to create AI-generated content without your knowledge? The recent misuse of driver's license photos by a police corporal to create "deepfake" images raises important questions about data privacy and AI regulation. #EthicalAI #TechEthics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Thu, 09 Apr 2026 15:43:40 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="First man convicted under Take It Down Act kept making AI nudes after arrest">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/04/first-man-convicted-under-take-it-down-act-kept-making-ai-nudes-after-arrest/" target="_blank">First man convicted under Take It Down Act kept making AI nudes after arrest</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 09 Apr 2026 15:43:40 +0000 | ID: 710ac71c5be5
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            An Ohio man, the first to be convicted under the Take It Down Act, continued creating fake nude images of women and minors using over 100 AI tools even after his arrest. This case highlights the ongoing challenges in combating the misuse of AI technology for creating non-consensual and harmful content, underscoring the need for stronger regulations and enforcement mechanisms in the digital space to protect individuals from such violations.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/04/first-man-convicted-under-take-it-down-act-kept-making-ai-nudes-after-arrest/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-710ac71c5be5" onclick="toggleTweets('710ac71c5be5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-710ac71c5be5">
+                <div class="tweet">"First man convicted under #TakeItDownAct persisted in generating AI nudes post-arrest using over 100 tools. This case underscores the urgent need for tighter regulations to combat misuse of AI tech for harmful content. #TechEthics #DigitalSafety"</div>
+<div class="tweet">"Is the current legal framework equipped to address the misuse of AI technology for creating non-consensual content? The recent case of the Ohio man raises important questions about digital ethics and enforcement. What are your thoughts? #AIethics #TechLaw"</div>
+<div class="tweet">"Key takeaway from the recent conviction under #TakeItDownAct: The ongoing challenges in combating harmful content generated by AI tools emphasize the pressing need for proactive regulatory measures to protect individuals online. #TechRegulations #DataPrivacy"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Thu, 09 Apr 2026 15:46:28 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="X brings back Voice Notes to X Chat">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/09/x-brings-back-voice-notes-to-x-chat/" target="_blank">X brings back Voice Notes to X Chat</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 09 Apr 2026 15:46:28 +0000 | ID: afc3a7148ba9
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            X Chat has reintroduced Voice Notes to direct messages and group chats following their removal in a recent upgrade. Users can now once again send and receive Voice Notes, enhancing communication within the platform. This update provides a convenient and efficient way for users to exchange audio messages in real-time.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/09/x-brings-back-voice-notes-to-x-chat/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-afc3a7148ba9" onclick="toggleTweets('afc3a7148ba9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-afc3a7148ba9">
+                <div class="tweet">Exciting news! X Chat has brought back Voice Notes to direct messages and group chats. Enhance your communication experience with this convenient feature update. 🎙️ #XChat #VoiceNotes #TechNews</div>
+<div class="tweet">Ever missed sending Voice Notes on X Chat? The wait is over! How will this feature change the way you communicate with friends and colleagues? 🤔 #VoiceNotes #XChat #TechTalk</div>
+<div class="tweet">Voice Notes are back on X Chat! This update not only improves real-time communication but also offers a more engaging messaging experience. Stay connected effortlessly with this feature. 🚀 #XChat #VoiceMessages #TechUpdate</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="2026-04-09T12:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The MacBook Neo is the best thing to happen to Windows in years">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/909140/microsoft-windows-11-fixes-macbook-neo-response-notepad" target="_blank">The MacBook Neo is the best thing to happen to Windows in years</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-09T12:00:00-04:00 | ID: 11b3b478f076
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the impact of the rumored MacBook Neo, a new Apple laptop that is expected to run on ARM-based processors, on the Windows ecosystem. The potential introduction of the MacBook Neo is seen as a significant competitive threat that could drive Microsoft to innovate further in the laptop market. This move could lead to advancements in Windows-based laptops, potentially benefiting consumers with more diverse and powerful computing options.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/909140/microsoft-windows-11-fixes-macbook-neo-response-notepad" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-11b3b478f076" onclick="toggleTweets('11b3b478f076')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-11b3b478f076">
+                <div class="tweet">Exciting news for tech enthusiasts! The rumored MacBook Neo could shake up the Windows laptop market with its ARM-based processors. Will this spark a new era of innovation in the Windows ecosystem? #MacBookNeo #Windows #TechNews</div>
+<div class="tweet">Curious about the potential impact of the MacBook Neo on Windows laptops? Could Apple's move push Microsoft to up their game in the competition? Share your thoughts! #MacBookNeo #Windows #TechInnovation</div>
+<div class="tweet">The rumored MacBook Neo may drive Windows to step up their laptop game to stay competitive. Consumers could benefit from more powerful and diverse computing options. Stay tuned for exciting developments! #MacBookNeo #Windows #TechIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="2026-04-09T13:13:38-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Castlevania headlines a big list of exciting indie game reveals">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/908898/triple-i-initiative-indie-game-showcase-2026-recap-trailers" target="_blank">Castlevania headlines a big list of exciting indie game reveals</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-09T13:13:38-04:00 | ID: 9d3b261c4227
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The third iteration of the Triple-I Initiative showcased upcoming indie games, including an indie-developed Castlevania. The event highlighted a variety of exciting indie game reveals, offering a glimpse into the innovative and diverse projects in the indie gaming scene. This initiative serves as a platform for independent studios to showcase their creativity and contribute to the gaming industry with fresh, unique experiences.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/908898/triple-i-initiative-indie-game-showcase-2026-recap-trailers" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9d3b261c4227" onclick="toggleTweets('9d3b261c4227')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9d3b261c4227">
+                <div class="tweet">Exciting indie game reveals at the Triple-I Initiative featured an indie-developed Castlevania and a range of innovative projects. Independent studios are shaping the gaming industry with their creativity! 🎮 #IndieGames #GamingNews #Innovation</div>
+<div class="tweet">Could indie games be the future of gaming? The recent Triple-I Initiative showcased indie developers' unique creations, including an indie Castlevania. What are your thoughts on the impact of indie games in the industry? 🤔 #IndieDev #GameChangers #TechTrends</div>
+<div class="tweet">The Triple-I Initiative is a platform for indie studios to shine, unveiling the creativity and diversity in the indie gaming scene. The event highlights the valuable contributions of indie developers to the gaming industry. 🌟 #IndieDev #GamingCommunity #FreshExperiences</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Thu, 09 Apr 2026 13:54:30 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Trump's emergency orders pushing coal power are "illegal" as well as dumb">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/04/trumps-emergency-orders-pushing-coal-power-are-illegal-as-well-as-dumb/" target="_blank">Trump's emergency orders pushing coal power are "illegal" as well as dumb</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 09 Apr 2026 13:54:30 +0000 | ID: 77df09bd5867
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A World War II-era policy, the Defense Production Act, is currently preventing the closure of old coal plants in the United States. This policy, invoked by President Trump's emergency orders to support coal power, has been deemed "illegal" and criticized as counterproductive by experts. The move highlights the ongoing challenges in transitioning to cleaner energy sources and the legal complexities surrounding energy policy decisions.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/04/trumps-emergency-orders-pushing-coal-power-are-illegal-as-well-as-dumb/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-77df09bd5867" onclick="toggleTweets('77df09bd5867')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-77df09bd5867">
+                <div class="tweet">"President Trump's emergency orders supporting coal power are facing legal challenges. The Defense Production Act is currently preventing the closure of old coal plants, highlighting the complexities of transitioning to cleaner energy sources. #CleanEnergy #TechNews"</div>
+<div class="tweet">"Should outdated policies like the Defense Production Act hold back progress towards cleaner energy sources? Experts criticize Trump's emergency orders supporting coal power as "illegal" and counterproductive. #EnergyPolicy #RenewableEnergy #TechDebate"</div>
+<div class="tweet">"The ongoing challenges in transitioning to cleaner energy are underscored by the legal complexities surrounding energy policy decisions. President Trump's support for coal power is seen as a setback by experts. #CleanTech #Sustainability #EnvironmentalPolicy"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Thu, 09 Apr 2026 17:04:18 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Volkswagen stops building ID.4s in the US, has inventory "into 2027"">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/cars/2026/04/volkswagen-ends-id-4-production-in-tennessee-to-build-atlas-suv/" target="_blank">Volkswagen stops building ID.4s in the US, has inventory "into 2027"</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 09 Apr 2026 17:04:18 +0000 | ID: 49db187decc5
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Volkswagen has halted production of the ID.4 electric SUV in the US, citing a shift towards gasoline SUVs. The decision reflects a broader trend of automakers prioritizing traditional vehicles over electric models, potentially impacting the adoption of electric vehicles in the American market.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/cars/2026/04/volkswagen-ends-id-4-production-in-tennessee-to-build-atlas-suv/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-49db187decc5" onclick="toggleTweets('49db187decc5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-49db187decc5">
+                <div class="tweet">"Volkswagen halts production of ID.4 electric SUV in the US, stockpiles expected to last into 2027. Is the shift towards gasoline SUVs a setback for EV adoption? 🚗⚡️ #Volkswagen #EV #ID4"</div>
+<div class="tweet">"Are traditional automakers like Volkswagen hindering the progress of electric vehicles in the US by prioritizing gasoline SUVs over electric models like the ID.4? 🤔⛽️ #EV #Volkswagen #ID4"</div>
+<div class="tweet">"Volkswagen's decision to stop US production of the ID.4 signals a concerning trend of automakers favoring gas-powered vehicles over electric ones, potentially impacting the future of EVs in the American market. 📉⚡️ #Volkswagen #EV #ID4"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Thu, 09 Apr 2026 15:26:31 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="CDC study shows COVID shot benefits; Trump official blocks release">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/04/cdc-study-shows-covid-shot-benefits-trump-official-blocks-release/" target="_blank">CDC study shows COVID shot benefits; Trump official blocks release</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 09 Apr 2026 15:26:31 +0000 | ID: 744eb19918d6
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A CDC study revealed that COVID-19 shots reduce urgent care visits and hospitalizations by approximately 50% in healthy adults. However, a Trump administration official has prevented the release of this crucial data, potentially hindering public access to important information on the effectiveness of the vaccines in preventing severe illness.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/04/cdc-study-shows-covid-shot-benefits-trump-official-blocks-release/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-744eb19918d6" onclick="toggleTweets('744eb19918d6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-744eb19918d6">
+                <div class="tweet">CDC study finds COVID-19 shots cut urgent care visits and hospitalizations by half in healthy adults. Yet, a Trump official is blocking its release, keeping crucial data from the public. Stay informed. #COVID19 #VaccineEffectiveness</div>
+<div class="tweet">What could be the reason behind a Trump official blocking the release of crucial CDC data showing the benefits of COVID-19 shots in reducing hospitalizations and urgent care visits by 50% in healthy adults? Transparency is key. #PublicHealth #VaccineData</div>
+<div class="tweet">Key takeaway: CDC study demonstrates COVID-19 shots significantly decrease severe illness, but the withholding of this data by a Trump official raises concerns about transparency in sharing vital information related to vaccine effectiveness. #DataTransparency #PublicHealth</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-04-09T12:38:12-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The team behind 1000xResist is making a game about convincing an AI that it isn’t human">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/909180/prove-youre-human-announcement-sunset-visitor-1000xresist" target="_blank">The team behind 1000xResist is making a game about convincing an AI that it isn’t human</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-09T12:38:12-04:00 | ID: efa8f641da0a
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Indie studio Sunset Visitor, known for their game 1000xResist, is developing a new game centered on convincing an AI that it is not human. The game reflects the studio's aim to explore societal themes and challenges players to engage with AI in a unique narrative experience. This project showcases the team's innovative approach to storytelling and their commitment to creating thought-provoking games.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/909180/prove-youre-human-announcement-sunset-visitor-1000xresist" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-efa8f641da0a" onclick="toggleTweets('efa8f641da0a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-efa8f641da0a">
+                <div class="tweet">Indie studio Sunset Visitor, creators of 1000xResist, are developing a new game where players must convince an AI it's not human. This innovative project pushes boundaries in storytelling and AI interaction. 🎮 #IndieGames #AI #TechNews</div>
+<div class="tweet">Can you outsmart an AI? Sunset Visitor's upcoming game challenges players to persuade an artificial intelligence that it's not human. How will you approach this unique narrative experience? 🧠🎮 #AIChallenge #GameDev #TechInnovation</div>
+<div class="tweet">Sunset Visitor's new game concept dives deep into the realm of AI-human interaction, sparking conversations about identity and technology. This project showcases the studio's dedication to thought-provoking storytelling in gaming. 🌟 #TechTrends #Innovation #GamingCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-04-08" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Fast Spatial Memory with Elastic Test-Time Training">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.07350v1" target="_blank">Fast Spatial Memory with Elastic Test-Time Training</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-08 | ID: 50651a7d64e8
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper introduces Large Chunk Test-Time Training (LaCT) for 3D reconstruction, which offers fast spatial memory capabilities. However, LaCT's fully plastic inference-time updates are prone to issues like catastrophic forgetting and overfitting. To address this, the paper proposes Elastic Test-Time Training as a solution to enhance LaCT's performance by mitigating these vulnerabilities.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.07350v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-50651a7d64e8" onclick="toggleTweets('50651a7d64e8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-50651a7d64e8">
+                <div class="tweet">Exciting tech news! Learn about Large Chunk Test-Time Training (LaCT) for 3D reconstruction, offering fast spatial memory but facing issues like catastrophic forgetting. Discover how Elastic Test-Time Training enhances LaCT's performance. #TechNews #SpatialMemory</div>
+<div class="tweet">Ever wondered how to overcome issues like catastrophic forgetting and overfitting in spatial memory technology? Elastic Test-Time Training could be the key! Dive into this innovative solution for 3D reconstruction. #TechInnovation #SpatialMemory</div>
+<div class="tweet">Key takeaway from the latest tech research: Elastic Test-Time Training enhances Large Chunk Test-Time Training's performance by addressing vulnerabilities like catastrophic forgetting. Stay updated on advancements in spatial memory technology! #TechResearch #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-04-09T13:57:58-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Google&#8217;s Gemini AI can answer your questions with 3D models and simulations">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/909391/google-gemini-ai-3d-models-simulations" target="_blank">Google&#8217;s Gemini AI can answer your questions with 3D models and simulations</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-09T13:57:58-04:00 | ID: 035312c6e9da
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has enhanced its Gemini AI chatbot to produce interactive 3D models and simulations when answering user queries. This upgrade enables users to manipulate the AI-generated models by rotating them, adjusting sliders, or inputting values to alter simulations in real-time. The new feature enhances user engagement and provides a more immersive and interactive experience when interacting with the chatbot.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/909391/google-gemini-ai-3d-models-simulations" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-035312c6e9da" onclick="toggleTweets('035312c6e9da')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-035312c6e9da">
+                <div class="tweet">"Google's Gemini AI now offers interactive 3D models and simulations to enhance user experience. Get ready to engage with AI like never before! #Google #AI #TechNews"</div>
+<div class="tweet">"Imagine having an AI chatbot that responds to your questions with dynamic 3D models and simulations. How will this revolutionize user interactions in the digital space? #AI #Innovation #UserExperience"</div>
+<div class="tweet">"Enhancing user engagement through immersive experiences, Google's Gemini AI introduces interactive 3D models and simulations. A glimpse into the future of AI-powered interactions! #TechTrends #InteractiveAI #GoogleGemini"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="Thu, 09 Apr 2026 03:44:24 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="The Moon is already on Google Maps—did Artemis II really tell us anything new?">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/04/the-moon-is-already-on-google-maps-did-artemis-ii-really-tell-us-anything-new/" target="_blank">The Moon is already on Google Maps—did Artemis II really tell us anything new?</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 09 Apr 2026 03:44:24 +0000 | ID: 8ab35f1c24e5
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Artemis II, NASA's upcoming mission to the Moon, recently added lunar landing sites to Google Maps. While the move generated public excitement, some experts question the mission's technical revelations beyond its PR value. The inclusion of Moon landing sites on Google Maps serves as a symbolic step towards democratizing access to lunar exploration data.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/04/the-moon-is-already-on-google-maps-did-artemis-ii-really-tell-us-anything-new/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8ab35f1c24e5" onclick="toggleTweets('8ab35f1c24e5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8ab35f1c24e5">
+                <div class="tweet">Exciting news in lunar exploration! NASA's Artemis II mission updates Google Maps with Moon landing sites, boosting accessibility to lunar data. 🌕🚀 #ArtemisII #NASA #MoonExploration</div>
+<div class="tweet">Ever wondered how democratizing access to lunar exploration data impacts future space missions? NASA's Artemis II mission puts Moon landing sites on Google Maps, sparking discussions on the value of public data. 🤔🌌 #SpaceTech #ArtemisII #GoogleMaps</div>
+<div class="tweet">The symbolic move of adding Moon landing sites to Google Maps with NASA's Artemis II mission highlights a step towards openness in space exploration data. Beyond the PR buzz, it raises questions about the technical insights gained from such initiatives. 🛰️🔍 #TechNews #ArtemisII</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-04-09T14:25:22-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Netflix&#8217;s TV games get a big boost with Jackbox collection">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/streaming/909415/netflix-games-jackbox-party-essentials" target="_blank">Netflix&#8217;s TV games get a big boost with Jackbox collection</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-09T14:25:22-04:00 | ID: 9a94352610dc
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Netflix has expanded its TV games offering with the addition of popular titles from Jackbox Games, including Drawful 2, Fibbage 4, and Quiplash 3, available in the Jackbox Party Essentials pack. Subscribers can enjoy these games at no extra charge and use their smartphones as controllers for multiplayer fun. This move enhances Netflix's entertainment options and strengthens its appeal as a platform for social gaming experiences.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/streaming/909415/netflix-games-jackbox-party-essentials" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9a94352610dc" onclick="toggleTweets('9a94352610dc')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-9a94352610dc">
+                <div class="tweet">Exciting news for Netflix subscribers! 🎮📺 The addition of Jackbox Games to Netflix's TV games lineup brings popular titles like Drawful 2, Fibbage 4, and Quiplash 3 for multiplayer fun using smartphones as controllers. #Netflix #JackboxGames</div>
+<div class="tweet">Are you ready to level up your Netflix experience with interactive TV games? 🎮💬 Dive into the world of social gaming with Jackbox Games' Drawful 2, Fibbage 4, and Quiplash 3 now available on Netflix! Which game will you try first? #NetflixGames #InteractiveEntertainment</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.0" 
+             data-published="2026-04-08" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="MoRight: Motion Control Done Right">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.07348v1" target="_blank">MoRight: Motion Control Done Right</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-08 | ID: b200d274efa3
+             | <span class="engagement-low">Engagement: [37.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "MoRight: Motion Control Done Right" by Shaowei Liu, Xuanchi Ren, Tianchang Shen, and others introduces a method for generating motion-controlled videos with disentangled motion control capabilities. This allows users to independently control object motion and adjust camera viewpoints, enabling the creation of physically plausible scene dynamics from user-specified actions. The development of MoRight could revolutionize the way motion control is implemented in video production, offering a more intuitive and flexible approach for content creators.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.07348v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b200d274efa3" onclick="toggleTweets('b200d274efa3')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-b200d274efa3">
+                <div class="tweet">Exciting news in motion control technology! The research paper "MoRight: Motion Control Done Right" introduces a groundbreaking method for generating motion-controlled videos with disentangled motion control capabilities. 🎥💡 #MotionControl #TechInnovation</div>
+<div class="tweet">Ever wished you could independently control object motion and camera viewpoints in videos? The research paper "MoRight: Motion Control Done Right" presents a method that allows just that! How could this revolutionize video production? 🤔🎬 #MoRight #VideoTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-04-09T12:05:01-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Slay the Princess’ developer is the latest to expand into indie game publishing">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/908072/black-tabby-games-publishing-slay-the-princess" target="_blank">Slay the Princess’ developer is the latest to expand into indie game publishing</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-09T12:05:01-04:00 | ID: bbe1ab5c3f3a
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Black Tabby Games, known for indie hits like Slay the Princess, has launched Black Tabby Publishing to venture into indie game publishing. The new publishing arm has secured deals for upcoming titles like Prove You're Human from Sunset Visitor. This move signifies the studio's expansion into supporting and promoting other indie developers, leveraging their own success in the indie game market.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/908072/black-tabby-games-publishing-slay-the-princess" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-bbe1ab5c3f3a" onclick="toggleTweets('bbe1ab5c3f3a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-bbe1ab5c3f3a">
+                <div class="tweet">Exciting news in the indie game scene! Black Tabby Games, creator of Slay the Princess, has launched Black Tabby Publishing to support fellow indie developers. 🎮🚀 #IndieGames #GameDev #BlackTabbyGames</div>
+<div class="tweet">Curious about the future of indie game publishing? With the launch of Black Tabby Publishing, will we see more indie hits like Slay the Princess emerge under their wing? 🤔🎮 #IndieDev #GamePublishing #SlayThePrincess</div>
+<div class="tweet">Black Tabby Games' expansion into indie game publishing with Black Tabby Publishing showcases a commitment to fostering creativity and innovation in the indie game market. A commendable move for the studio and indie community alike. 👏🌟 #IndieGames #TechNews #BlackTabbyPublishing</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-04-09 14:46" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Sam Altman’s Coworkers Say He Can Barely Code and Misunderstands Basic Machine Learning Concepts">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://sg.news.yahoo.com/sam-altman-coworkers-barely-code-201114782.html" target="_blank">Sam Altman’s Coworkers Say He Can Barely Code and Misunderstands Basic Machine Learning Concepts</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-04-09 14:46 | ID: e81ac11ea396
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/technology has gained traction with 10412 upvotes and 640 comments, revealing claims from Sam Altman's coworkers that he struggles with coding and lacks understanding of fundamental machine learning concepts. The allegations suggest potential shortcomings in Altman's technical abilities, which could impact his credibility in the tech industry and his leadership role at OpenAI.
+        </div>
+        <div class="source-link">
+            → <a href="https://sg.news.yahoo.com/sam-altman-coworkers-barely-code-201114782.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e81ac11ea396" onclick="toggleTweets('e81ac11ea396')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-e81ac11ea396">
+                <div class="tweet">Is technical prowess a prerequisite for tech leadership? A Reddit thread in r/technology sheds light on claims about Sam Altman's coding abilities and machine learning understanding. What impact could this have on his role at OpenAI? #TechNews #SamAltman #MachineLearning</div>
+<div class="tweet">Do technical skills directly correlate with leadership abilities in the tech industry? A heated debate in r/technology surrounds allegations about Sam Altman's coding proficiency and machine learning comprehension. What defines a successful tech leader? #TechDebate #SamAltman</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.0" 
+             data-published="2026-04-08" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Toward a Tractability Frontier for Exact Relevance Certification">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.07349v1" target="_blank">Toward a Tractability Frontier for Exact Relevance Certification</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-08 | ID: 55fa6d985fbb
+             | <span class="engagement-low">Engagement: [35.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Tristan Simas' research paper delves into exact relevance certification for coordinate-structured decision problems, focusing on the necessity of coordinates for optimal action determination. The study explores tractable families with a finite primitive basis and emphasizes maximal optimizer-quotient realizability, highlighting the limitations of relying solely on quotient shape for characterization. This work contributes to defining a tractability frontier for exact relevance certification, shedding light on the complexities of decision-making processes in structured problems.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.07349v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-55fa6d985fbb" onclick="toggleTweets('55fa6d985fbb')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-55fa6d985fbb">
+                <div class="tweet">"Discover the latest research on exact relevance certification for decision problems in Tristan Simas' new paper. Learn about the significance of coordinates and optimal action determination. #TechResearch #DecisionMaking #TractabilityFrontier"</div>
+<div class="tweet">"Are coordinates the key to unlocking optimal actions in decision-making processes? Tristan Simas' research explores this concept in depth. Join the discussion on exact relevance certification! #TechDebate #StructuredProblems #ResearchDiscussion"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-04-09T14:24:46-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Framework is teasing a lot of Linux for its April 21st event">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/909401/framework-next-gen-linux-teaser" target="_blank">Framework is teasing a lot of Linux for its April 21st event</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-09T14:24:46-04:00 | ID: 5a1aaf911630
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Modular PC manufacturer Framework is hinting at a strong Linux focus for its upcoming "Next Gen" event scheduled for April 21st at 1:30PM ET. The teaser video "Follow the white penguin" suggests a significant Linux-related announcement, sparking speculation among tech enthusiasts about potential Linux integration or support in Framework's products. This move could potentially attract Linux users and developers looking for hardware that aligns well with the open-source operating system.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/909401/framework-next-gen-linux-teaser" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5a1aaf911630" onclick="toggleTweets('5a1aaf911630')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5a1aaf911630">
+                <div class="tweet">🐧 Exciting news! Modular PC maker Framework hints at a strong Linux focus for its upcoming event on April 21st. Will we see Linux integration in their products? Stay tuned! #Framework #Linux #TechNews</div>
+<div class="tweet">🔍 What could "Follow the white penguin" mean for Framework's April 21st event? Linux integration, new products, or something else? Share your thoughts! 🤔 #Framework #Linux #TechSpeculation</div>
+<div class="tweet">🛠️ Framework's potential Linux focus at the April 21st event could be a game-changer for developers and users seeking hardware optimized for the open-source OS. Will this move reshape the tech market? 🚀 #Framework #Linux #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-04-08 21:03" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Fake It Until You Break It: The End Of Non-Technical Managers In Software Engineering Dawns">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://programmers.fyi/fake-it-until-you-break-it-the-end-of-non-technical-managers-in-software-engineering-dawns" target="_blank">Fake It Until You Break It: The End Of Non-Technical Managers In Software Engineering Dawns</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-04-08 21:03 | ID: 8aef5c1f001f
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming has gained traction with 832 upvotes and 167 comments, signaling a shift towards the end of non-technical managers in software engineering. The conversation highlights the importance of technical expertise in leadership roles within software development teams, suggesting that non-technical managers may struggle to effectively guide and support technical staff. This trend reflects a growing recognition of the value of technical acumen in managerial positions to foster better communication, decision-making, and overall team performance in software engineering.
+        </div>
+        <div class="source-link">
+            → <a href="https://programmers.fyi/fake-it-until-you-break-it-the-end-of-non-technical-managers-in-software-engineering-dawns" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8aef5c1f001f" onclick="toggleTweets('8aef5c1f001f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8aef5c1f001f">
+                <div class="tweet">Is the era of non-technical managers in software engineering coming to an end? A Reddit discussion in r/programming suggests a shift towards technical expertise in leadership roles for better team performance. #TechLeadership #SoftwareEngineering</div>
+<div class="tweet">Should non-technical managers be phased out in software engineering teams? The rise of technical expertise in leadership roles is sparking a debate on the impact of technical acumen on team communication and performance. What do you think? #TechDebate #SoftwareDevelopment</div>
+<div class="tweet">Key insight: Technical expertise in managerial positions is becoming crucial for effective leadership in software engineering. Recognizing the value of technical acumen can lead to improved communication, decision-making, and team performance. #TechLeadership #SoftwareTeams</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-09T12:10:42-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Mastodon is about to launch its take on Bluesky&#8217;s starter packs">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/909308/mastodon-collections-bluesky-starter-packs" target="_blank">Mastodon is about to launch its take on Bluesky&#8217;s starter packs</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-09T12:10:42-04:00 | ID: b206a072e0dc
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Mastodon is set to introduce a new feature called "Collections," akin to Bluesky's Starter Packs, enabling users to curate lists of up to 25 accounts for easy following. This feature aims to streamline content discovery and enhance user experience by providing curated lists of accounts worth following. The introduction of Collections is expected to offer Mastodon users a more organized and efficient way to engage with content on the platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/909308/mastodon-collections-bluesky-starter-packs" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b206a072e0dc" onclick="toggleTweets('b206a072e0dc')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b206a072e0dc">
+                <div class="tweet">Mastodon is stepping up its game with the upcoming "Collections" feature, allowing users to curate lists of up to 25 accounts for easier following. Streamlining content discovery like never before! #Mastodon #Collections #TechNews</div>
+<div class="tweet">Wondering how Mastodon's new "Collections" feature will impact your content consumption? Are curated lists the future of social media engagement? Share your thoughts! #Mastodon #Collections #SocialMediaTrends</div>
+<div class="tweet">With Mastodon's introduction of "Collections," users can look forward to a more organized and efficient way to engage with content. Curating lists for easy following is a game-changer in enhancing user experience. #Mastodon #Collections #UserExperience</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-09 13:23" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="YouTube rolls out unskippable long ads to TV users and they’re furious">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.dexerto.com/youtube/youtube-rolls-out-unskippable-long-ads-to-tv-users-and-theyre-furious-3349081/" target="_blank">YouTube rolls out unskippable long ads to TV users and they’re furious</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-04-09 13:23 | ID: 745eb35fc069
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            YouTube has introduced unskippable long ads for TV users, sparking backlash among viewers. The move has led to frustration among users who are accustomed to shorter ad formats on the platform. The change may impact user experience and viewer retention on YouTube's TV app.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.dexerto.com/youtube/youtube-rolls-out-unskippable-long-ads-to-tv-users-and-theyre-furious-3349081/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-745eb35fc069" onclick="toggleTweets('745eb35fc069')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-745eb35fc069">
+                <div class="tweet">YouTube faces backlash as unskippable long ads are rolled out to TV users, impacting user experience and viewer retention. Will this change drive users away? #YouTubeAds #UserExperience</div>
+<div class="tweet">Are unskippable long ads on YouTube's TV app a step back in user-friendly advertising? Share your thoughts on this controversial move. #YouTubeBacklash #AdExperience</div>
+<div class="tweet">YouTube's decision to introduce unskippable long ads to TV users has sparked outrage, highlighting the importance of balancing ad revenue with user satisfaction. #YouTubeStrategy #AdMonetization</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-04-09 11:47" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="How NASA Built Artemis II’s Fault-Tolerant Computer">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://cacm.acm.org/news/how-nasa-built-artemis-iis-fault-tolerant-computer/" target="_blank">How NASA Built Artemis II’s Fault-Tolerant Computer</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-04-09 11:47 | ID: 52fd3da73c6b
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            NASA developed a fault-tolerant computer system for the Artemis II mission, which will carry astronauts around the Moon. The computer uses a custom-built hardware architecture and software redundancy to ensure reliability in the harsh space environment. This innovation is crucial for the success and safety of the mission, showcasing NASA's commitment to cutting-edge technology in space exploration.
+        </div>
+        <div class="source-link">
+            → <a href="https://cacm.acm.org/news/how-nasa-built-artemis-iis-fault-tolerant-computer/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-52fd3da73c6b" onclick="toggleTweets('52fd3da73c6b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-52fd3da73c6b">
+                <div class="tweet">NASA's latest innovation for the Artemis II mission is a fault-tolerant computer system that ensures reliability in space with custom-built hardware and software redundancy. 🚀💻 #NASA #ArtemisII #SpaceTech</div>
+<div class="tweet">Ever wondered how NASA ensures the reliability of computer systems in space missions like Artemis II? The fault-tolerant design with hardware and software redundancy is key to mission success! 🌌💡 #SpaceExploration #TechInnovation</div>
+<div class="tweet">The development of a fault-tolerant computer system for Artemis II by NASA highlights the importance of cutting-edge technology in space exploration. Innovation like this is crucial for the safety and success of future missions beyond Earth. 🛰️🔧 #NASA #TechInnovations</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="27.5" 
+             data-published="2026-04-08 18:10" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="[D] Dealing with an unprofessional reviewer using fake references and personal attacks in ICML26">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1sg0pk1/d_dealing_with_an_unprofessional_reviewer_using/" target="_blank">[D] Dealing with an unprofessional reviewer using fake references and personal attacks in ICML26</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-04-08 18:10 | ID: ed4625e9e0cc
+             | <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 27%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            An ICML 2026 reviewer has given a low score of 1 (Confidence 5) to a submission, disregarding the author's rebuttal and resorting to fake references and personal attacks such as "close-minded" and "hostile." This reviewer's actions have raised concerns due to the discrepancy with other reviewers who gave high scores, and the use of mathematically flawed arguments in the evaluation process.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1sg0pk1/d_dealing_with_an_unprofessional_reviewer_using/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ed4625e9e0cc" onclick="toggleTweets('ed4625e9e0cc')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ed4625e9e0cc">
+                <div class="tweet">"Concerns raised in tech community as an ICML 2026 reviewer uses fake references and personal attacks in evaluation process. Unprofessional behavior impacting submissions. #ICML26 #TechEthics"</div>
+<div class="tweet">"Should tech conference reviewers be held accountable for unprofessional conduct like using fake references and personal attacks? How does this impact the credibility of peer review? #ICML26 #TechCommunity"</div>
+<div class="tweet">"Negative impact of unprofessional behavior in tech reviews highlighted by an ICML 2026 reviewer resorting to fake references and personal attacks. Integrity and fairness crucial in evaluation processes. #TechReviews #ICML26"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-04-09 19:00:15 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
