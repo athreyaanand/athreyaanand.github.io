@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - April 15, 2026, 07:11 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>April 15, 2026, 07:11 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-04-15 19:11:20
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 136.8 seconds</div>
+                <div>Start Time: 2026-04-15 19:11:20</div>
+                <div>End Time: 2026-04-15 19:13:37</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 23, Low: 10</div>
+                <div>Topics Detected: 7</div>
+                <div>Cross-platform Stories: 2</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-09 17:08" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="EFF is leaving X">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.eff.org/deeplinks/2026/04/eff-leaving-x" target="_blank">EFF is leaving X</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-09 17:08 | ID: 16d00a729b35
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Electronic Frontier Foundation (EFF) has announced its departure from the X project, citing concerns over data privacy and security. The move comes after a detailed audit revealed vulnerabilities in X's encryption protocols, prompting the EFF to prioritize user protection and advocate for stronger security measures in tech projects. This decision underscores the importance of robust security practices in safeguarding user data and maintaining trust in technology platforms.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.eff.org/deeplinks/2026/04/eff-leaving-x" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-16d00a729b35" onclick="toggleTweets('16d00a729b35')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-16d00a729b35">
+                <div class="tweet">" The Electronic Frontier Foundation (EFF) is parting ways with X project due to data privacy concerns and vulnerabilities in encryption protocols. User protection and security are top priorities. #EFF #DataPrivacy #TechSecurity"</div>
+<div class="tweet">" What does EFF's departure from X project teach us about the importance of prioritizing user data protection and advocating for stronger security measures in tech projects? #EFF #DataPrivacy #TechSecurity"</div>
+<div class="tweet">" EFF's decision to leave X project highlights the critical need for robust security practices in tech to safeguard user data and maintain trust in technology platforms. Prioritizing security is non-negotiable. #EFF #TechSecurity #DataProtection"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-10 22:16" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Filing the corners off my MacBooks">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://kentwalters.com/posts/corners/" target="_blank">Filing the corners off my MacBooks</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-10 22:16 | ID: a8517c234015
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Hacker News discussion titled "Filing the corners off my MacBooks" has garnered significant attention with 1400 points and 675 comments since it was posted on April 10, 2026, at 22:16. The thread likely delves into a user's unconventional modification or customization of their MacBook by physically altering its corners, sparking technical curiosity and debate within the community. This could lead to discussions on hardware modifications, potential impacts on device functionality, and the broader implications for user customization in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://kentwalters.com/posts/corners/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a8517c234015" onclick="toggleTweets('a8517c234015')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a8517c234015">
+                <div class="tweet">"Fascinating Hacker News discussion on filing MacBook corners. Dive into hardware mods and customization trends! 💻 #TechHacks #MacBookMods"</div>
+<div class="tweet">"Would you file the corners off your MacBook for a unique look? Join the debate and share your thoughts! 🔧💭 #TechCustomization #HackerNews"</div>
+<div class="tweet">"User creativity knows no bounds - from software tweaks to hardware mods, tech enthusiasts continue to push boundaries. #Innovation #TechCommunity"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-09 00:26" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="LittleSnitch for Linux">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://obdev.at/products/littlesnitch-linux/index.html" target="_blank">LittleSnitch for Linux</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-09 00:26 | ID: 560793e5ea9f
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Hacker News discussion has sparked interest in the potential development of a LittleSnitch equivalent for Linux. LittleSnitch is a popular macOS application that monitors outbound network connections and alerts users to potential security risks. The idea of bringing this functionality to Linux could enhance network security and privacy for Linux users, generating significant interest within the tech community.
+        </div>
+        <div class="source-link">
+            → <a href="https://obdev.at/products/littlesnitch-linux/index.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-560793e5ea9f" onclick="toggleTweets('560793e5ea9f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-560793e5ea9f">
+                <div class="tweet">Exciting news for Linux users! A potential LittleSnitch equivalent might be in the works for Linux, enhancing network security and privacy. Stay tuned for updates. #Linux #NetworkSecurity #Privacy</div>
+<div class="tweet">Could a LittleSnitch-like tool revolutionize network security on Linux systems? The tech community is abuzz with discussions on this potential development. Share your thoughts! #Linux #CyberSecurity #TechDiscussion</div>
+<div class="tweet">The idea of a LittleSnitch counterpart for Linux could be a game-changer for enhancing security measures. Stay informed about the latest advancements in securing your network connections. #LinuxSecurity #TechInnovation #InfoSec</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-11 00:10" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Artemis II safely splashes down">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.cbsnews.com/live-updates/artemis-ii-splashdown-return/" target="_blank">Artemis II safely splashes down</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-11 00:10 | ID: cc9816dcb5ed
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Artemis II, NASA's mission to return humans to the Moon, successfully completed its splashdown. The mission tested the Orion spacecraft's ability to safely return astronauts from lunar orbit. This milestone brings NASA closer to its goal of landing the first woman and the next man on the Moon by 2025.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.cbsnews.com/live-updates/artemis-ii-splashdown-return/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cc9816dcb5ed" onclick="toggleTweets('cc9816dcb5ed')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cc9816dcb5ed">
+                <div class="tweet">Artemis II, NASA's mission to return humans to the Moon, has safely splashed down! 🚀🌕 This milestone marks progress towards landing the first woman and the next man on the Moon by 2025. #ArtemisII #NASA #SpaceExploration</div>
+<div class="tweet">Curious about Artemis II's successful splashdown and NASA's progress in returning humans to the Moon? What are you most excited to see in future lunar missions? 🌌👩‍🚀 #ArtemisII #NASA #SpaceGoals</div>
+<div class="tweet">Artemis II's safe return is a significant step towards achieving NASA's goal of lunar exploration. The successful splashdown showcases the Orion spacecraft's capabilities for future manned missions to the Moon. 🌑🛰️ #ArtemisII #SpaceInnovation #MoonExploration</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-11 16:47" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Small models also found the vulnerabilities that Mythos found">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier" target="_blank">Small models also found the vulnerabilities that Mythos found</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-11 16:47 | ID: 202081dfff84
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses how smaller machine learning models were able to detect vulnerabilities in software, similar to those found by Mythos, a well-known security tool. This finding highlights the potential of using smaller, more efficient models for security testing, offering a cost-effective and scalable approach to identifying vulnerabilities in software systems. By leveraging these smaller models, organizations can enhance their security posture and better protect against potential cyber threats.
+        </div>
+        <div class="source-link">
+            → <a href="https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-202081dfff84" onclick="toggleTweets('202081dfff84')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-202081dfff84">
+                <div class="tweet">Smaller machine learning models have the power to find vulnerabilities in software just like Mythos. Embracing these efficient models for security testing can enhance cyber defense capabilities. #MachineLearning #CyberSecurity</div>
+<div class="tweet">Ever thought about the potential of using smaller ML models for security testing? The discovery that they can detect vulnerabilities like Mythos is a game-changer. How might this reshape cybersecurity strategies? #TechInnovation #DataSecurity</div>
+<div class="tweet">Discovering vulnerabilities in software just got more efficient! By utilizing smaller ML models, organizations can now detect weaknesses effectively and affordably, amplifying their cybersecurity defenses. #MLforSecurity #CyberThreats</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-04-13 17:54" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Someone bought 30 WordPress plugins and planted a backdoor in all of them">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://anchor.host/someone-bought-30-wordpress-plugins-and-planted-a-backdoor-in-all-of-them/" target="_blank">Someone bought 30 WordPress plugins and planted a backdoor in all of them</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-04-13 17:54 | ID: ab23a164d51a
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A malicious actor recently acquired 30 WordPress plugins and inserted a backdoor into each of them. This security breach could potentially impact numerous WordPress websites that have these compromised plugins installed, leading to unauthorized access and data theft. WordPress users are advised to immediately update their plugins to the latest versions and conduct security audits to ensure their websites are not affected.
+        </div>
+        <div class="source-link">
+            → <a href="https://anchor.host/someone-bought-30-wordpress-plugins-and-planted-a-backdoor-in-all-of-them/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ab23a164d51a" onclick="toggleTweets('ab23a164d51a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ab23a164d51a">
+                <div class="tweet">Attention WordPress users! 🚨 30 WordPress plugins have been compromised with a backdoor by a malicious actor. Ensure your website's security by updating all plugins to the latest versions immediately. #WordPress #CyberSecurity</div>
+<div class="tweet">Could your WordPress website be at risk? 🤔 Recent news reveals that 30 WordPress plugins were infiltrated with a backdoor. Stay vigilant and protect your site from potential security threats by staying informed and updating your plugins. #WebsiteSecurity #WordPress</div>
+<div class="tweet">Key takeaway: Security breaches can happen to anyone. The recent incident of 30 compromised WordPress plugins highlights the importance of regular updates and security audits for website owners. Stay proactive and safeguard your online presence. #CyberThreats #WordPressSecurity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="59" 
+             data-published="Wed, 15 Apr 2026 18:38:10 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="AI learning app Gizmo levels up with 13M users and a $22M investment">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/15/ai-learning-app-gizmo-levels-up-with-13m-users-and-a-22m-investment/" target="_blank">AI learning app Gizmo levels up with 13M users and a $22M investment</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 15 Apr 2026 18:38:10 +0000 | ID: 9217234e453e
+             | <span class="engagement-standard">Engagement: [59.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 59%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Gizmo, an AI learning app, has seen significant growth with over 13 million users and has recently received a $22 million investment in Series A funding. The platform's success highlights the increasing demand for AI-powered educational tools and signifies potential advancements in personalized learning experiences for users.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/15/ai-learning-app-gizmo-levels-up-with-13m-users-and-a-22m-investment/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9217234e453e" onclick="toggleTweets('9217234e453e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9217234e453e">
+                <div class="tweet">Exciting news for tech enthusiasts! The AI learning app Gizmo has reached a milestone of 13 million users and secured a $22 million investment in Series A funding. 🚀 #AI #EdTech</div>
+<div class="tweet">Curious about the future of personalized learning experiences? With 13M users and a $22M investment, Gizmo's success hints at the potential impact of AI in education. How do you envision AI shaping the future of learning? 🤔 #AI #FutureOfEducation</div>
+<div class="tweet">The rapid growth of Gizmo, an AI learning app, underscores the increasing demand for AI-powered educational tools. The $22M investment in Series A funding signals a shift towards more personalized and effective learning experiences. 📚💡 #EdTech #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="55" 
+             data-published="Wed, 15 Apr 2026 18:51:54 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="LinkedIn data shows AI isn’t to blame for hiring decline… yet">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/15/linkedin-data-shows-ai-isnt-to-blame-for-hiring-decline-yet/" target="_blank">LinkedIn data shows AI isn’t to blame for hiring decline… yet</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 15 Apr 2026 18:51:54 +0000 | ID: 405915d8c44c
+             | <span class="engagement-standard">Engagement: [55.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 55%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            LinkedIn data reveals a 20% decline in hiring since 2022, attributing the slowdown to rising interest rates rather than AI technology. This suggests that AI is not the primary factor impacting hiring trends currently, highlighting the influence of economic conditions on recruitment activities.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/15/linkedin-data-shows-ai-isnt-to-blame-for-hiring-decline-yet/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-405915d8c44c" onclick="toggleTweets('405915d8c44c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-405915d8c44c">
+                <div class="tweet">LinkedIn data unveils hiring decline not due to AI, but rising interest rates. Economic conditions, not technology, driving recruitment trends. 📉💼 #AI #Recruitment #TechNews</div>
+<div class="tweet">Is AI really the main culprit behind the hiring slowdown, or are economic factors playing a more significant role? 🤔💭 #AIvsEconomy #RecruitmentTrends #LinkedInData</div>
+<div class="tweet">LinkedIn's latest findings suggest that AI may not be the primary driver of hiring declines. Economic conditions seem to be the key factor influencing recruitment activities at present. 📊💡 #LinkedInInsights #TechTrends #EconomicImpact</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="55" 
+             data-published="Wed, 15 Apr 2026 18:50:48 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Feds will require data centers to show their power bills">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/15/feds-will-require-data-centers-to-show-their-power-bills/" target="_blank">Feds will require data centers to show their power bills</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 15 Apr 2026 18:50:48 +0000 | ID: 525d5ee1c384
+             | <span class="engagement-standard">Engagement: [55.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 55%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The U.S. Energy Information Agency will mandate data centers to reveal their energy consumption details, a move aimed at enhancing transparency and efficiency in the industry. This requirement will provide insights into the environmental impact of data centers and encourage the adoption of more sustainable practices within the sector.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/15/feds-will-require-data-centers-to-show-their-power-bills/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-525d5ee1c384" onclick="toggleTweets('525d5ee1c384')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-525d5ee1c384">
+                <div class="tweet">Feds to mandate data centers to disclose energy consumption details, promoting transparency and eco-friendly practices in the industry. 🌿💻 #DataCenters #EnergyEfficiency #Sustainability</div>
+<div class="tweet">Curious about the environmental impact of data centers? The U.S. Energy Information Agency's new requirement for disclosing energy consumption details is a step towards greater transparency and sustainability. What changes might we see? 🤔 #TechIndustry #EcoTech #DataTransparency</div>
+<div class="tweet">Revealing power bills in data centers isn't just about numbers; it's about driving eco-friendly practices and efficiency. The move towards transparency will shape a more sustainable future for the tech industry. 🌍💡 #GreenTech #DataCenterEfficiency #TransparencyWins</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="54" 
+             data-published="Wed, 15 Apr 2026 18:55:12 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Hightouch reaches $100M ARR fueled by marketing tools powered by AI">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/15/hightouch-reaches-100m-arr-fueled-by-marketing-tools-powered-by-ai/" target="_blank">Hightouch reaches $100M ARR fueled by marketing tools powered by AI</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 15 Apr 2026 18:55:12 +0000 | ID: 17c46fabdd2a
+             | <span class="engagement-standard">Engagement: [54.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Hightouch, a startup, has achieved a significant milestone by reaching $100 million in Annual Recurring Revenue (ARR) through its AI-powered marketing tools. The company's rapid growth of $70 million in ARR within 20 months since launching its AI agent platform for marketers highlights the effectiveness and demand for AI-driven solutions in the marketing industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/15/hightouch-reaches-100m-arr-fueled-by-marketing-tools-powered-by-ai/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-17c46fabdd2a" onclick="toggleTweets('17c46fabdd2a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-17c46fabdd2a">
+                <div class="tweet">Hightouch, a rising startup, hits a milestone of $100M ARR with its AI-driven marketing tools. The rapid growth of $70M in just 20 months showcases the power of AI in marketing. 🚀 #Hightouch #AI #Marketing</div>
+<div class="tweet">Curious about how Hightouch achieved $100M ARR with its AI marketing tools? The demand for AI-powered solutions in marketing is clearly on the rise. How do you think AI will continue to shape the future of marketing? 🧐 #TechTrends #AI #MarketingStrategy</div>
+<div class="tweet">The success of Hightouch, reaching $100M ARR with AI-powered marketing tools, underscores the growing importance of AI in transforming the marketing landscape. Embracing AI-driven solutions can lead to significant growth opportunities for businesses. 📈 #AI #MarketingInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="54" 
+             data-published="Wed, 15 Apr 2026 18:33:20 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Can AI judge journalism? A Thiel-backed startup says yes, even if it risks chilling whistleblowers">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/15/can-ai-judge-journalism-a-thiel-backed-startup-says-yes-even-if-it-risks-chilling-whistleblowers/" target="_blank">Can AI judge journalism? A Thiel-backed startup says yes, even if it risks chilling whistleblowers</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 15 Apr 2026 18:33:20 +0000 | ID: 270f74ad79ec
+             | <span class="engagement-standard">Engagement: [54.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Thiel-backed startup Objection is leveraging AI to assess journalism by allowing users to challenge stories for a fee. This initiative has raised concerns about potentially discouraging whistleblowers and altering the landscape of media accountability practices.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/15/can-ai-judge-journalism-a-thiel-backed-startup-says-yes-even-if-it-risks-chilling-whistleblowers/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-270f74ad79ec" onclick="toggleTweets('270f74ad79ec')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-270f74ad79ec">
+                <div class="tweet">Can AI truly assess journalism? Objection, a Thiel-backed startup, is using AI to evaluate news stories, sparking concerns about media accountability and whistleblowers. #AI #TechNews</div>
+<div class="tweet">Is leveraging AI to challenge news stories a step forward or a risk to press freedom? Objection's approach raises important questions about the future of journalism ethics. #AI #MediaEthics</div>
+<div class="tweet">Objection's AI-driven platform for assessing journalism highlights the evolving intersection of technology and media practices, prompting a critical discussion on transparency and accountability in the digital age. #TechEthics #MediaInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="52.5" 
+             data-published="Wed, 15 Apr 2026 17:37:56 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Accel raises $5B to back late-stage bets">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/15/accel-raises-5b-to-back-late-stage-bets/" target="_blank">Accel raises $5B to back late-stage bets</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 15 Apr 2026 17:37:56 +0000 | ID: f8f3337c7fd6
+             | <span class="engagement-standard">Engagement: [52.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Accel, a prominent venture capital firm, has secured $5 billion in funding to support late-stage companies focusing on artificial intelligence (AI) technologies. This substantial capital injection will enable Accel to fuel the growth and development of AI-driven startups, potentially driving innovation and advancements in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/15/accel-raises-5b-to-back-late-stage-bets/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f8f3337c7fd6" onclick="toggleTweets('f8f3337c7fd6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f8f3337c7fd6">
+                <div class="tweet">Exciting news in tech funding! Accel, a leading VC firm, secures $5B to support late-stage AI-focused startups. This move could drive major advancements in the tech landscape. #Accel #AI #TechNews</div>
+<div class="tweet">What impact will Accel's $5 billion funding have on the future of AI-driven startups? Could this injection of capital accelerate innovation in the tech industry? Share your thoughts! #VentureCapital #AI #Innovation</div>
+<div class="tweet">With $5B in the bank, Accel is poised to significantly boost the growth of late-stage AI companies. This move highlights the increasing importance and potential of AI technologies in shaping the future of tech. #TechInvestment #AI #FutureTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="52" 
+             data-published="Wed, 15 Apr 2026 18:22:13 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Google rolls out a native Gemini app for Mac">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/15/google-rolls-out-a-native-gemini-app-for-mac/" target="_blank">Google rolls out a native Gemini app for Mac</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 15 Apr 2026 18:22:13 +0000 | ID: a90499e836a9
+             | <span class="engagement-standard">Engagement: [52.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has launched a native Gemini app for Mac that allows users to share their screen to receive real-time assistance. With Gemini, users can share any content on their screen, including local files, to facilitate troubleshooting and collaboration. This new app aims to enhance remote support capabilities and streamline communication for Mac users.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/15/google-rolls-out-a-native-gemini-app-for-mac/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a90499e836a9" onclick="toggleTweets('a90499e836a9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a90499e836a9">
+                <div class="tweet">Exciting news for Mac users! Google has introduced a native Gemini app, enabling real-time screen sharing for seamless troubleshooting and collaboration. Enhance your remote support capabilities with #GoogleGemini #MacApps 🚀</div>
+<div class="tweet">Curious about how Google's new Gemini app for Mac can revolutionize remote support and collaboration? Imagine the possibilities of sharing any content on your screen for instant assistance. How will you use this innovative tool? #GoogleGemini #TechInnovation 💡</div>
+<div class="tweet">With Google's Gemini app, Mac users can now easily share their screen to enhance troubleshooting and collaboration. This app is set to streamline communication and boost remote support capabilities. Stay ahead in the tech game with #GoogleGemini #MacTech 🌟</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Wed, 15 Apr 2026 17:46:28 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="This Khosla-backed autonomous pod startup just raised $170M — now it’s aiming for more">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/04/15/this-khosla-backed-autonomous-pod-startup-just-raised-170m-now-its-aiming-for-more/" target="_blank">This Khosla-backed autonomous pod startup just raised $170M — now it’s aiming for more</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 15 Apr 2026 17:46:28 +0000 | ID: 3f80cf76930c
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Autonomous pod startup Glydways, backed by Khosla Ventures, has secured $170 million in funding and is in discussions to raise an additional $250 million. The company is gearing up to launch three pilot programs, showcasing its innovative approach to autonomous transportation solutions. This significant funding boost underscores the growing interest and investment in autonomous vehicle technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/04/15/this-khosla-backed-autonomous-pod-startup-just-raised-170m-now-its-aiming-for-more/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3f80cf76930c" onclick="toggleTweets('3f80cf76930c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3f80cf76930c">
+                <div class="tweet">Autonomous pod startup Glydways, backed by Khosla Ventures, secures $170M in funding & eyes additional $250M to revolutionize autonomous transportation solutions. 🚗💸 #TechNews #AutonomousVehicles</div>
+<div class="tweet">Curious about the future of autonomous transportation? Khosla-backed startup Glydways is gearing up to launch pilot programs with a fresh $170M funding boost. How will this impact the way we travel? 🌐 #Innovation #FutureTech</div>
+<div class="tweet">With $170M secured, Glydways is set to disrupt the autonomous vehicle industry. The growing investment in this tech highlights the potential for innovative solutions in transportation. 🛣️💡 #TechInvestment #DisruptiveTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="50.5" 
+             data-published="Wed, 15 Apr 2026 15:26:56 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Allbirds abandons clothes, pivots to "AI compute infrastructure"">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/04/bubble-watch-fashion-brand-allbirds-pivots-hard-to-become-ai-services-company/" target="_blank">Allbirds abandons clothes, pivots to "AI compute infrastructure"</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 15 Apr 2026 15:26:56 +0000 | ID: 7044e3478e72
+             | <span class="engagement-standard">Engagement: [50.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 50%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #FF9800">₿ Crypto</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Allbirds, known for sustainable shoes and clothing, has shifted its focus to AI compute infrastructure, abandoning its clothing line. This move, reminiscent of past stock-boosting strategies like the Long Island Blockchain frenzy in 2017, signals a significant strategic pivot for the company towards technology infrastructure. The decision to pivot to AI compute infrastructure indicates a shift towards leveraging technology as a core business focus for Allbirds.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/04/bubble-watch-fashion-brand-allbirds-pivots-hard-to-become-ai-services-company/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7044e3478e72" onclick="toggleTweets('7044e3478e72')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7044e3478e72">
+                <div class="tweet">👟🔁💻 Allbirds, the sustainable shoe brand, shifts focus to AI compute infrastructure, leaving clothes behind. A bold move towards tech! #Allbirds #AI #TechNews</div>
+<div class="tweet">🚀 What led Allbirds to ditch its clothing line for AI infrastructure? A strategic move or a risky bet? Share your thoughts! #Allbirds #AI #TechStrategy</div>
+<div class="tweet">🔍 Allbirds' pivot to AI compute infrastructure showcases the growing importance of tech in business strategies. A shift worth noting in the tech landscape. #TechTrends #BusinessStrategy #Allbirds</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Wed, 15 Apr 2026 16:54:33 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Adobe takes Creative Cloud into Claude Code-esque territory">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/04/adobe-takes-creative-cloud-into-claude-code-esque-territory/" target="_blank">Adobe takes Creative Cloud into Claude Code-esque territory</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 15 Apr 2026 16:54:33 +0000 | ID: 390c912bd128
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Adobe is expanding its Creative Cloud platform to include a new feature called "Claude Code," allowing users to write and run custom code directly within Adobe apps. This move aims to enhance creativity and productivity by enabling developers to automate tasks and create custom tools tailored to their needs, further integrating coding capabilities into Adobe's design software. This strategic shift signals Adobe's commitment to empowering users with more advanced customization options and streamlining workflows within the Creative Cloud ecosystem.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/04/adobe-takes-creative-cloud-into-claude-code-esque-territory/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-390c912bd128" onclick="toggleTweets('390c912bd128')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-390c912bd128">
+                <div class="tweet">🚀 Exciting news from Adobe! The introduction of "Claude Code" in Creative Cloud is set to revolutionize the way users interact with Adobe apps. Get ready to unleash your creativity with custom code integration! #Adobe #CreativeCloud #ClaudeCode</div>
+<div class="tweet">💡 How will the introduction of "Claude Code" in Adobe Creative Cloud impact the workflow of designers and developers? Share your thoughts on this innovative move by Adobe! #TechInnovation #Coding #AdobeCreativeCloud</div>
+<div class="tweet">🔑 Adobe's move to introduce "Claude Code" in Creative Cloud marks a significant step towards empowering users with advanced customization options and streamlining workflows. Stay ahead of the curve with Adobe's enhanced coding capabilities! #Innovation #TechNews #CreativeCloud</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Wed, 15 Apr 2026 15:45:42 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Good Omens S3 trailer sets up a blessed conclusion">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/04/good-omens-s3-trailer-sets-up-a-blessed-conclusion/" target="_blank">Good Omens S3 trailer sets up a blessed conclusion</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 15 Apr 2026 15:45:42 +0000 | ID: c75226420e5e
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The trailer for Good Omens Season 3 teases a special 90-minute final episode, marking the conclusion of Prime Video's supernatural comedy series. Fans can expect a blessed ending as the show wraps up its storyline in this extended finale, promising a satisfying conclusion to the beloved series.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/04/good-omens-s3-trailer-sets-up-a-blessed-conclusion/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c75226420e5e" onclick="toggleTweets('c75226420e5e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c75226420e5e">
+                <div class="tweet">Exciting news for Good Omens fans! 🌟 Season 3 trailer reveals a special 90-minute final episode on Prime Video. Get ready for a blessed conclusion to this beloved supernatural comedy series! #GoodOmens #Season3 #PrimeVideo</div>
+<div class="tweet">Ever wondered how Good Omens will wrap up its storyline in the upcoming Season 3 finale? Share your predictions and theories below! 🤔⚔️ #GoodOmens #Season3 #FinalePredictions</div>
+<div class="tweet">The extended 90-minute final episode of Good Omens Season 3 promises a satisfying conclusion for fans. Don't miss out on the epic wrap-up of this beloved supernatural comedy series! 🎬👼 #GoodOmens #Season3 #SeriesFinale</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Wed, 15 Apr 2026 17:58:07 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="FCC exempts Netgear from ban on foreign routers, doesn't explain why">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/04/fcc-exempts-netgear-from-ban-on-foreign-routers-doesnt-explain-why/" target="_blank">FCC exempts Netgear from ban on foreign routers, doesn't explain why</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 15 Apr 2026 17:58:07 +0000 | ID: f075d89a23e0
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The FCC has granted Netgear an exemption from the ban on foreign-made routers implemented by the Trump administration, without providing a clear explanation for the decision. This move signifies a shift in the regulatory approach towards network equipment suppliers and could have implications for other companies seeking similar exemptions in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/04/fcc-exempts-netgear-from-ban-on-foreign-routers-doesnt-explain-why/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f075d89a23e0" onclick="toggleTweets('f075d89a23e0')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f075d89a23e0">
+                <div class="tweet">FCC grants Netgear exemption from foreign router ban, signaling a new regulatory approach in the tech industry. What implications could this decision have for other network equipment suppliers? 🤔 #FCC #Netgear #TechNews</div>
+<div class="tweet">Curious why the FCC has decided to exempt Netgear from the ban on foreign routers? The lack of explanation raises questions about regulatory transparency and its impact on the tech sector. #FCC #Netgear #Regulations</div>
+<div class="tweet">The FCC's recent decision to grant Netgear an exemption from the foreign router ban underscores the evolving landscape of regulatory policies in the tech industry. Companies may now seek similar exemptions based on this precedent. #TechRegulations #Netgear #FCC</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45" 
+             data-published="Wed, 15 Apr 2026 18:33:53 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Space Force looks at moving "significant number" of launches from ULA to SpaceX">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/04/space-force-looks-at-moving-significant-number-of-launches-from-ula-to-spacex/" target="_blank">Space Force looks at moving "significant number" of launches from ULA to SpaceX</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 15 Apr 2026 18:33:53 +0000 | ID: 48758ec9e519
+             | <span class="engagement-standard">Engagement: [45.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The U.S. Space Force is considering shifting a substantial portion of its satellite launches from United Launch Alliance (ULA) to SpaceX. This move is driven by SpaceX's ability to rapidly launch missions when spacecraft are ready, potentially giving them priority in the launch queue. The decision could significantly impact the commercial space launch industry and the competitive landscape between ULA and SpaceX.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/04/space-force-looks-at-moving-significant-number-of-launches-from-ula-to-spacex/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-48758ec9e519" onclick="toggleTweets('48758ec9e519')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-48758ec9e519">
+                <div class="tweet">The U.S. Space Force is exploring the possibility of transferring a large portion of satellite launches from ULA to SpaceX. This shift could reshape the dynamics of the commercial space launch industry. 🚀 #SpaceX #ULA #SpaceForce</div>
+<div class="tweet">Could SpaceX's rapid launch capabilities give them a competitive edge in securing more government satellite launches? 🛰️ What implications could this have on ULA's market share and the broader space industry? 🤔 #SpaceForce #SpaceX #ULA</div>
+<div class="tweet">The potential move of satellite launches from ULA to SpaceX highlights the importance of agility and efficiency in the space industry. This decision could pave the way for a new era of competitiveness and innovation in space exploration. 🌌 #SpaceX #ULA #SpaceForce</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.0" 
+             data-published="2026-04-14" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Lyra 2.0: Explorable Generative 3D Worlds">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.13036v1" target="_blank">Lyra 2.0: Explorable Generative 3D Worlds</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-14 | ID: b81defb2dbfe
+             | <span class="engagement-standard">Engagement: [45.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Lyra 2.0: Explorable Generative 3D Worlds" by Tianchang Shen, Sherwin Bahmani, Kai He, and others introduces a novel approach to 3D scene creation using video generation and feed-forward reconstruction techniques. This method allows for the generation of camera-controlled videos that simulate scene walkthroughs, which are then transformed into 3D environments. The Lyra 2.0 framework offers a new way to create visually detailed and interactive 3D worlds, potentially impacting fields such as virtual reality, gaming, and simulation technologies.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.13036v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b81defb2dbfe" onclick="toggleTweets('b81defb2dbfe')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b81defb2dbfe">
+                <div class="tweet">"Discover the groundbreaking research behind Lyra 2.0, a new framework for creating interactive 3D worlds using generative techniques. 🌐🎮 #Lyra2 #3DWorlds #TechInnovation"</div>
+<div class="tweet">"What impact could Lyra 2.0 have on the future of virtual reality experiences and gaming simulations? 🤔 Exciting possibilities ahead! #TechResearch #Innovation #VR"</div>
+<div class="tweet">"Lyra 2.0 introduces a cutting-edge approach to 3D scene creation, merging video generation and feed-forward reconstruction for visually immersive environments. 🚀 #TechAdvancements #Interactive3D #LyraFramework"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.0" 
+             data-published="2026-04-14" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Visual Preference Optimization with Rubric Rewards">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.13029v1" target="_blank">Visual Preference Optimization with Rubric Rewards</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-14 | ID: 3a82e6fe12e6
+             | <span class="engagement-standard">Engagement: [45.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Ya-Qi Yu, Fangyu Hong, Xiangyang Qu, et al. introduces a method called Visual Preference Optimization with Rubric Rewards to enhance Direct Preference Optimization (DPO) in multimodal tasks. This approach aims to improve the effectiveness of DPO by utilizing preference data that capture quality differences crucial for visual reasoning. By addressing the limitations of existing pipelines that rely on off-policy perturbations or coarse outcome-based signals, this method offers a more fine-grained approach to optimizing visual preferences in complex tasks.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.13029v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3a82e6fe12e6" onclick="toggleTweets('3a82e6fe12e6')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-3a82e6fe12e6">
+                <div class="tweet">Exciting tech news! Research introduces Visual Preference Optimization with Rubric Rewards to enhance Direct Preference Optimization in multimodal tasks. This method offers a fine-grained approach to optimizing visual preferences. #TechNews #AI #VisualOptimization</div>
+<div class="tweet">Ever wondered how to enhance visual reasoning in complex tasks? Visual Preference Optimization with Rubric Rewards might have the answer. What are your thoughts on this innovative method? #TechDiscussion #Innovation #VisualReasoning</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Wed, 15 Apr 2026 15:00:56 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="New 3D map of Universe could solve dark energy mystery">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/04/desi-completes-its-3d-map-of-universe-right-on-schedule/" target="_blank">New 3D map of Universe could solve dark energy mystery</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 15 Apr 2026 15:00:56 +0000 | ID: 89a25e31aa15
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new 3D map of the Universe is being analyzed to potentially unravel the mystery of dark energy. This data could provide insights into whether dark energy remains constant or changes over time, offering a significant advancement in our understanding of the Universe's evolution and structure. Scientists are hopeful that this research could lead to breakthroughs in cosmology and fundamental physics.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/04/desi-completes-its-3d-map-of-universe-right-on-schedule/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-89a25e31aa15" onclick="toggleTweets('89a25e31aa15')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-89a25e31aa15">
+                <div class="tweet">New 3D map of the Universe is unlocking the secrets of dark energy! Scientists are analyzing the data to understand its behavior over time. 🌌 #DarkEnergy #Cosmology #Science</div>
+<div class="tweet">Could this new 3D map of the Universe hold the key to unlocking the mystery of dark energy? 🤔 Exciting times for cosmology and physics! #SpaceExploration #Universe #Research</div>
+<div class="tweet">The latest 3D map of the Universe may revolutionize our understanding of dark energy, shedding light on its nature and evolution. 🌟 Stay tuned for groundbreaking discoveries in cosmology! #Astrophysics #DarkMatter #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.0" 
+             data-published="2026-04-14" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Generative Refinement Networks for Visual Synthesis">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.13030v1" target="_blank">Generative Refinement Networks for Visual Synthesis</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-14 | ID: 9608b1e2d1b6
+             | <span class="engagement-standard">Engagement: [43.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A research paper by Jian Han, Jinlai Liu, Jiahuan Wang, and others introduces Generative Refinement Networks for Visual Synthesis. The paper highlights the inefficiency of diffusion models in visual generation due to their uniform computational effort, regardless of complexity. In contrast, autoregressive (AR) models, with variable likelihoods, show promise as complexity-aware alternatives in visual synthesis.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.13030v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9608b1e2d1b6" onclick="toggleTweets('9608b1e2d1b6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9608b1e2d1b6">
+                <div class="tweet">Exciting tech news! 🚀 Researchers introduce Generative Refinement Networks for Visual Synthesis, challenging the efficiency of diffusion models in visual generation. Learn more about this cutting-edge research! #TechNews #VisualSynthesis</div>
+<div class="tweet">Ever wondered about the efficiency of diffusion models in visual generation? 🤔 New research by Jian Han, Jinlai Liu, and Jiahuan Wang explores Generative Refinement Networks for Visual Synthesis. Could autoregressive models be the complexity-aware solution we need? #TechResearch</div>
+<div class="tweet">Key insight alert! 🔍 Generative Refinement Networks for Visual Synthesis offer a promising alternative to diffusion models in visual generation. Autoregressive models show potential as complexity-aware solutions, reshaping the future of visual synthesis. #TechInnovation #ARModels</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-04-15T14:10:15-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Google launches a Gemini AI app on Mac">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/912638/google-gemini-mac-app" target="_blank">Google launches a Gemini AI app on Mac</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-15T14:10:15-04:00 | ID: 03543aedc5c6
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has introduced the Gemini AI app for Mac, enabling users to interact with the AI assistant seamlessly without switching windows. By using the Option + Space shortcut, a floating chat bubble appears, allowing users to ask Gemini questions and share their window content. This feature streamlines the user experience and enhances productivity by providing quick access to the AI assistant directly on the desktop.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/912638/google-gemini-mac-app" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-03543aedc5c6" onclick="toggleTweets('03543aedc5c6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-03543aedc5c6">
+                <div class="tweet">Google's new Gemini AI app for Mac revolutionizes the way users interact with AI assistants! With a simple shortcut, users can access Gemini without switching windows, boosting productivity. #Google #GeminiAI #Mac</div>
+<div class="tweet">Ever wished you could seamlessly chat with an AI assistant while working on your Mac? Google's Gemini AI app makes it possible! How will this innovation change your workflow? #AI #Productivity #Innovation</div>
+<div class="tweet">With Google's Gemini AI app on Mac, the future of multitasking and user experience is here. Say goodbye to window-switching hassles and hello to streamlined productivity! #GoogleGemini #TechInnovation #UserExperience</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-04-15T14:03:46-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Microsoft counters the MacBook Neo with freebies for students">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/912639/microsoft-counters-the-macbook-neo-with-freebies-for-students" target="_blank">Microsoft counters the MacBook Neo with freebies for students</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-15T14:03:46-04:00 | ID: 3dd793fcd159
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Microsoft is countering Apple's MacBook Neo with a new "Microsoft College Offer" targeting students in the US. The offer includes 12 months of free Microsoft 365 Premium and Xbox Game Pass Ultimate with select purchases, aiming to attract students to the Windows ecosystem. This move is a strategic response to Apple's aggressive pricing strategy and aims to increase Microsoft's presence in the student market.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/912639/microsoft-counters-the-macbook-neo-with-freebies-for-students" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3dd793fcd159" onclick="toggleTweets('3dd793fcd159')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-3dd793fcd159">
+                <div class="tweet">Interesting tech news: Microsoft counters the MacBook Neo with freebies for students... https://www.theverge.com/news/912639/microsoft-counters-the-macbook-neo-with-freebies-for-students</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Wed, 15 Apr 2026 16:08:26 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="US jobs too important to risk Chinese car imports, says Ford CEO">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/cars/2026/04/us-jobs-too-important-to-risk-chinese-car-imports-says-ford-ceo/" target="_blank">US jobs too important to risk Chinese car imports, says Ford CEO</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 15 Apr 2026 16:08:26 +0000 | ID: 50c01e8ba72f
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Ford's CEO, Jim Farley, emphasized the importance of protecting U.S. jobs by avoiding the risk of importing cars from China. Farley highlighted China's significant spare capacity, suggesting it could potentially dominate the entire U.S. car market. This stance underscores the ongoing concerns around trade relations and the impact on the automotive industry's global landscape.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/cars/2026/04/us-jobs-too-important-to-risk-chinese-car-imports-says-ford-ceo/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-50c01e8ba72f" onclick="toggleTweets('50c01e8ba72f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-50c01e8ba72f">
+                <div class="tweet">"Ford's CEO, Jim Farley, stresses the importance of safeguarding U.S. jobs by steering clear of Chinese car imports. The discussion around trade relations and the automotive industry's global landscape continues. 🚗🇺🇸 #Ford #USjobs #TradeRelations"</div>
+<div class="tweet">"Could China's spare capacity in car production pose a threat to the U.S. automotive industry? Ford's CEO, Jim Farley, raises concerns about potential domination of the U.S. market. 🤔🚘 #AutoIndustry #TradeWars #GlobalMarket"</div>
+<div class="tweet">"Ford CEO's warning about Chinese car imports highlights the delicate balance between global trade dynamics and protecting domestic jobs. The debate on trade relations in the automotive sector intensifies. 🌐🛠️ #FordCEO #TradePolicy #USManufacturing"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Wed, 15 Apr 2026 14:11:02 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="What’s the deal with Alzheimer’s disease and amyloid?">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/04/whats-the-deal-with-alzheimers-disease-and-amyloid/" target="_blank">What’s the deal with Alzheimer’s disease and amyloid?</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 15 Apr 2026 14:11:02 +0000 | ID: ccb20839e74d
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Scientists have long focused on the role of amyloid protein in Alzheimer's disease, but recent research suggests this may not be the primary cause of the condition. New studies indicate that targeting tau protein, which forms tangles in the brain, could be more promising for developing effective treatments. This shift in focus could lead to innovative approaches in understanding and potentially treating Alzheimer's disease.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/04/whats-the-deal-with-alzheimers-disease-and-amyloid/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ccb20839e74d" onclick="toggleTweets('ccb20839e74d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ccb20839e74d">
+                <div class="tweet">"Curious about the latest in Alzheimer's research? Recent studies indicate targeting tau protein may be more promising than amyloid in understanding and treating the disease. #Alzheimers #TauProtein #MedicalResearch"</div>
+<div class="tweet">"Could targeting tau protein instead of amyloid be the breakthrough we need in Alzheimer's research? Exciting new studies suggest a shift in focus for potential treatments. What are your thoughts? #Alzheimers #TauProtein #ResearchBreakthrough"</div>
+<div class="tweet">"Key insight: While amyloid has long been the focus in Alzheimer's research, recent studies propose targeting tau protein for more effective treatments. A promising shift in understanding the disease. #Alzheimers #TauProtein #MedicalScience"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-04-15T15:09:17-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Ticketmaster is an illegal monopoly, jury rules">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/912689/live-nation-ticketmaster-antitrust-monopoly-trial-verdict" target="_blank">Ticketmaster is an illegal monopoly, jury rules</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-15T15:09:17-04:00 | ID: 9b938db527ba
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Manhattan jury has ruled that Live Nation-Ticketmaster is an illegal monopolist, potentially leading to a breakup of the live entertainment company. The verdict follows a lawsuit filed by the Biden administration's Department of Justice. This decision could have significant implications for the ticketing industry and competition in the live entertainment sector.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/912689/live-nation-ticketmaster-antitrust-monopoly-trial-verdict" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9b938db527ba" onclick="toggleTweets('9b938db527ba')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9b938db527ba">
+                <div class="tweet">"Breaking: Manhattan jury rules Live Nation-Ticketmaster an illegal monopolist. Could this verdict reshape the ticketing industry? #Ticketmaster #Monopoly #TechNews"</div>
+<div class="tweet">"Is the Live Nation-Ticketmaster monopoly stifling competition in the live entertainment sector? Share your thoughts! #Ticketmaster #Monopoly #DOJ"</div>
+<div class="tweet">"The recent ruling against Live Nation-Ticketmaster highlights the ongoing battle for fair competition in the live entertainment industry. #Ticketmaster #Monopoly #DOJ"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-04-14" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="SceneCritic: A Symbolic Evaluator for 3D Indoor Scene Synthesis">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2604.13035v1" target="_blank">SceneCritic: A Symbolic Evaluator for 3D Indoor Scene Synthesis</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-04-14 | ID: 3cd6103d082b
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            "SceneCritic" is a new symbolic evaluator designed for 3D indoor scene synthesis, addressing the limitations of current evaluation methods that rely on Large Language Models (LLMs) and Vision-Language Models (VLMs). Developed by Kathakoli Sengupta, Kai Ao, and Paola Cascante-Bonilla, SceneCritic aims to provide a more objective evaluation by focusing on intermediate structures like layouts and scene graphs rather than rendered views, reducing sensitivity to viewpoint and prompt phrasing. This tool could enhance the accuracy and reliability of assessing 3D indoor scene generation models in the future.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2604.13035v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3cd6103d082b" onclick="toggleTweets('3cd6103d082b')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-3cd6103d082b">
+                <div class="tweet">Exciting development in 3D indoor scene synthesis! 🌟 SceneCritic is a new symbolic evaluator that aims to enhance evaluation accuracy by focusing on layouts and scene graphs. Say goodbye to viewpoint sensitivity! #TechNews #3DModeling</div>
+<div class="tweet">Curious about the future of 3D indoor scene evaluation? Meet SceneCritic, a new tool challenging the reliance on Large Language Models and Vision-Language Models. How might this shift impact the development of scene generation models? 🤔 #SceneCritic #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-04-15T15:00:23-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="FTC pushes ad agencies into dropping brand safety rules">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/912680/ftc-ad-agency-settlement-trust-safety" target="_blank">FTC pushes ad agencies into dropping brand safety rules</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-15T15:00:23-04:00 | ID: cbdf59deb16e
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Federal Trade Commission (FTC) and eight states have reached a proposed settlement with major ad agencies to prohibit them from collectively avoiding platforms based on political viewpoints. The FTC alleges that these ad agencies violated antitrust regulations by engaging in this practice. This move aims to ensure fair competition and prevent discriminatory behavior in the advertising industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/912680/ftc-ad-agency-settlement-trust-safety" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cbdf59deb16e" onclick="toggleTweets('cbdf59deb16e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cbdf59deb16e">
+                <div class="tweet">The FTC is cracking down on ad agencies for violating antitrust laws by avoiding platforms based on political viewpoints. This settlement aims to promote fair competition in the advertising industry. #FTC #AdAgencies #Antitrust</div>
+<div class="tweet">What impact will the FTC's settlement with ad agencies have on the future of brand safety rules and fair competition in the advertising industry? Share your thoughts! #FTC #BrandSafety #Advertising</div>
+<div class="tweet">The FTC's proposed settlement with major ad agencies serves as a reminder of the importance of upholding fair competition and preventing discriminatory practices in the digital advertising landscape. #FTC #AdvertisingIndustry #Antitrust</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-04-15T13:04:34-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Best Buy’s Ultimate Upgrade Sale features deals on dozens of our favorite gadgets">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/911853/best-buy-ultimate-upgrade-sale-2026-tech-deals-apple" target="_blank">Best Buy’s Ultimate Upgrade Sale features deals on dozens of our favorite gadgets</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-15T13:04:34-04:00 | ID: 03687bec7161
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Best Buy is hosting the Ultimate Upgrade Sale until April 19th, offering discounts on various tech products like 4K TVs, Apple devices, smartphones, and smart home gadgets. The sale provides an opportunity for consumers to purchase their favorite gadgets at reduced prices following Amazon's spring sales event. Tech enthusiasts can take advantage of the deals available during this five-day promotion to upgrade their tech arsenal.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/911853/best-buy-ultimate-upgrade-sale-2026-tech-deals-apple" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-03687bec7161" onclick="toggleTweets('03687bec7161')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-03687bec7161">
+                <div class="tweet">🚨 Don't miss out on Best Buy's Ultimate Upgrade Sale happening until April 19th! Score discounts on 4K TVs, Apple devices, smartphones, and more. Upgrade your tech game today! #BestBuy #TechSale #UpgradeSale</div>
+<div class="tweet">💭 Looking to level up your tech arsenal? Best Buy's Ultimate Upgrade Sale is here with deals on your favorite gadgets. Which tech upgrade are you most excited to snag during this sale? Share your top pick! #TechEnthusiast #UpgradeGoals #BestBuySale</div>
+<div class="tweet">🌟 Take advantage of Best Buy's Ultimate Upgrade Sale to score great discounts on tech products like 4K TVs and Apple devices. Don't miss this opportunity to upgrade your gadgets at reduced prices! #TechDeals #UpgradeYourTech #BestBuySale</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-04-15T12:27:56-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Most people still don’t want anything to do with robotaxis">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/transportation/912357/robotaxi-poll-ev-intelligence-report-waymo-tesla" target="_blank">Most people still don’t want anything to do with robotaxis</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-15T12:27:56-04:00 | ID: 9b12f9a7de1c
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Despite advancements in self-driving car technology over the years, public skepticism towards autonomous vehicles, particularly robotaxis, remains high according to various polls. The reluctance of most people to embrace robotaxis indicates a significant challenge for the widespread adoption of autonomous transportation services. This persistent lack of consumer confidence highlights the need for further improvements in safety, reliability, and public education to address concerns and increase acceptance of self-driving vehicles.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/transportation/912357/robotaxi-poll-ev-intelligence-report-waymo-tesla" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9b12f9a7de1c" onclick="toggleTweets('9b12f9a7de1c')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-9b12f9a7de1c">
+                <div class="tweet">Despite advancements in self-driving technology, public skepticism towards robotaxis remains high, posing a challenge for widespread adoption. Safety, reliability, and public education are crucial for increasing acceptance. #SelfDrivingCars #Robotaxis #TechNews</div>
+<div class="tweet">Is public skepticism hindering the widespread adoption of robotaxis? Polls show most people still reluctant to embrace autonomous vehicles. What improvements are needed to increase consumer confidence? #AutonomousVehicles #ConsumerConfidence #TechTrends</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="2026-04-15 08:28" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Direct Win32 API, Weird-Shaped Windows, and Why They Mostly Disappeared">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://warped3.substack.com/p/direct-win32-api-weird-shaped-windows" target="_blank">Direct Win32 API, Weird-Shaped Windows, and Why They Mostly Disappeared</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-04-15 08:28 | ID: d13888032d8b
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming with significant engagement delves into the decline of Direct Win32 API and the disappearance of weird-shaped windows in modern software development. The conversation highlights the shift towards more standardized UI elements and the impact of this evolution on user experience and software design practices. Developers are exploring the reasons behind these changes and reflecting on the implications for future application development.
+        </div>
+        <div class="source-link">
+            → <a href="https://warped3.substack.com/p/direct-win32-api-weird-shaped-windows" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d13888032d8b" onclick="toggleTweets('d13888032d8b')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-d13888032d8b">
+                <div class="tweet">Unpacking the disappearance of Direct Win32 API & weird-shaped windows in modern software development. Join the conversation on r/programming to explore the impact on user experience & software design practices. #TechEvolution #UI #SoftwareDesign</div>
+<div class="tweet">What led to the decline of Direct Win32 API & the disappearance of weird-shaped windows in software development? Dive into the discussion in r/programming and share your insights on the evolution of UI elements. #TechTalk #UserExperience #SoftwareDev</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-15T14:30:50-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Ikea&#8217;s smart donut lamp is a sweet treat">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/911809/ikea-varmblixt-smart-donut-lamp-review-matter-thread" target="_blank">Ikea&#8217;s smart donut lamp is a sweet treat</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-15T14:30:50-04:00 | ID: 762d2cfe52b1
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Ikea has upgraded its Varmblixt lamp to include smart home features such as color-changing options, dimming capabilities, and smart home control. The new smart lamp is designed to enhance ambiance and functionality, making it a versatile and stylish addition to any room. This update offers users more control and customization options for their lighting needs.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/911809/ikea-varmblixt-smart-donut-lamp-review-matter-thread" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-762d2cfe52b1" onclick="toggleTweets('762d2cfe52b1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-762d2cfe52b1">
+                <div class="tweet">Exciting news from Ikea! The Varmblixt lamp now comes with smart home features like color-changing options and smart controls. Elevate your space with this stylish and functional lighting upgrade. 💡🏠 #Ikea #SmartHome #Tech</div>
+<div class="tweet">How would you customize your room's ambiance with Ikea's new smart donut lamp? Share your creative lighting ideas with us! 💡✨ #SmartLighting #Ikea #Innovation</div>
+<div class="tweet">Upgrade your lighting game with Ikea's smart donut lamp - offering color-changing options, dimming capabilities, and smart home control. Enhance your space with style and functionality! 💡💫 #TechNews #SmartHome #Ikea</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-15T13:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The Senate is voting to save free IRS Direct File today">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/912490/irs-direct-file-senate-vote" target="_blank">The Senate is voting to save free IRS Direct File today</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-04-15T13:00:00-04:00 | ID: 60df53e75e2b
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Senate is set to vote on the Direct File Act, aiming to revive the free IRS Direct File service terminated in 2025. Sen. Elizabeth Warren is pushing for unanimous consent to pass the bill, potentially fast-tracking it to the House of Representatives. If successful, this move could reinstate a valuable tool for taxpayers to electronically file their taxes at no cost.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/912490/irs-direct-file-senate-vote" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-60df53e75e2b" onclick="toggleTweets('60df53e75e2b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-60df53e75e2b">
+                <div class="tweet">The Senate is voting on the Direct File Act today, aiming to bring back the free IRS Direct File service. If passed, taxpayers could soon have a cost-free option to file their taxes electronically. #IRS #DirectFileAct</div>
+<div class="tweet">Should taxpayers have free access to electronic tax filing services? The Senate is voting on the Direct File Act today, potentially reviving the IRS Direct File service. Share your thoughts! #taxes #IRS #DirectFile</div>
+<div class="tweet">Sen. Elizabeth Warren is pushing for the revival of the free IRS Direct File service through the Direct File Act. If successful, this move could provide taxpayers with a valuable tool for filing taxes at no cost. #IRS #DirectFileAct #taxpayers</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-15 13:56" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Allbirds announces stunning pivot from shoes to AI, stock explodes more than 300%">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html" target="_blank">Allbirds announces stunning pivot from shoes to AI, stock explodes more than 300%</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-04-15 13:56 | ID: e070d29a7ce3
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Allbirds, known for its sustainable shoes, has surprised the tech world by pivoting to AI development. This unexpected move has caused its stock to surge over 300%, reflecting investor excitement about the company's new direction and potential in the AI space. The shift signifies a significant strategic change for Allbirds and highlights the growing importance of AI technology in various industries.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e070d29a7ce3" onclick="toggleTweets('e070d29a7ce3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e070d29a7ce3">
+                <div class="tweet">"Big news in tech! Allbirds, famous for sustainable shoes, shocks everyone with a pivot to AI development. Stock soars by over 300%. #Allbirds #AI #TechNews"</div>
+<div class="tweet">"Is the future of sustainable tech in AI? Allbirds' unexpected shift from shoes to AI development sparks intrigue. What could this mean for the tech industry? #TechTrends #Innovation #AllbirdsAI"</div>
+<div class="tweet">"Allbirds' leap into AI showcases the evolving landscape of tech companies. The surge in stock value post-pivot signals investor confidence in the brand's AI potential. #TechEvolution #AIInnovation #Allbirds"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-15 16:00" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Google Broke Its Promise to Me. Now ICE Has My Data.">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.eff.org/deeplinks/2026/04/google-broke-its-promise-me-now-ice-has-my-data" target="_blank">Google Broke Its Promise to Me. Now ICE Has My Data.</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-04-15 16:00 | ID: 650dfdbebc65
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit user shared their experience of Google breaking its promise to not store data for users in Europe. The user, who is an immigrant in the US, found that their data was handed over to ICE due to a law enforcement request. This incident highlights the complexities of data privacy and the potential consequences of tech companies not upholding their commitments to user data protection.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.eff.org/deeplinks/2026/04/google-broke-its-promise-me-now-ice-has-my-data" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-650dfdbebc65" onclick="toggleTweets('650dfdbebc65')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-650dfdbebc65">
+                <div class="tweet">Google's broken promise to a user in Europe led to their data being handed over to ICE. This incident sheds light on the importance of tech companies honoring data privacy commitments. #Google #DataPrivacy #TechEthics</div>
+<div class="tweet">What are the implications when tech giants fail to protect user data as promised? The recent case of Google sharing data with ICE raises crucial questions about data privacy and user rights in the digital age. #DataPrivacy #TechEthics #Google</div>
+<div class="tweet">The incident where Google shared user data with ICE after breaking its promise underscores the need for tech companies to prioritize and uphold data privacy commitments. Users must trust that their data is handled responsibly. #DataPrivacy #TechEthics #Google</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-04-15 06:12" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="Was looking at a ICLR 2025 Oral paper and I am shocked it got oral [D]">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1slxqac/was_looking_at_a_iclr_2025_oral_paper_and_i_am/" target="_blank">Was looking at a ICLR 2025 Oral paper and I am shocked it got oral [D]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-04-15 06:12 | ID: a748b228bc0e
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            An ICLR 2025 Oral paper evaluating SQL code generation by LLM using natural language metrics instead of execution metrics has raised concerns due to a high false positive rate of around 20%. The decision to grant it an oral presentation despite this major flaw has sparked surprise and criticism within the tech community.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1slxqac/was_looking_at_a_iclr_2025_oral_paper_and_i_am/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a748b228bc0e" onclick="toggleTweets('a748b228bc0e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a748b228bc0e">
+                <div class="tweet">Interesting discussions in the tech community about the ICLR 2025 Oral paper on SQL code generation by LLM. Despite a 20% false positive rate, it was granted an oral presentation. #ICLR2025 #TechCommunity #SQLCodeGeneration</div>
+<div class="tweet">Should a paper with a high false positive rate receive an oral presentation at a tech conference like ICLR 2025? Join the conversation on the evaluation of SQL code generation by LLM using natural language metrics. #TechDebate #ICLR2025 #TechEthics</div>
+<div class="tweet">The decision to feature the ICLR 2025 Oral paper on SQL code generation by LLM with a 20% false positive rate highlights the importance of rigorous evaluation criteria in tech research. #ResearchStandards #TechInnovation #ICLR2025</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-04-15 12:58" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Things you didn't know about (Postgres) indexes">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://jon.chrt.dev/2026/04/15/things-you-didnt-know-about-indexes.html" target="_blank">Things you didn't know about (Postgres) indexes</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-04-15 12:58 | ID: f64bba021140
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming has highlighted lesser-known facts about Postgres indexes. The conversation, which garnered 75 upvotes and 9 comments, delved into technical details about how indexes work in Postgres, shedding light on their nuances and potential optimizations for developers working with the database. This discussion serves as a valuable resource for those seeking to deepen their understanding of Postgres indexing mechanisms.
+        </div>
+        <div class="source-link">
+            → <a href="https://jon.chrt.dev/2026/04/15/things-you-didnt-know-about-indexes.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f64bba021140" onclick="toggleTweets('f64bba021140')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f64bba021140">
+                <div class="tweet">Did you know there's more to Postgres indexes than meets the eye? Dive into this Reddit discussion in r/programming to uncover lesser-known facts about how indexes work in Postgres. #Postgres #Database #TechNews</div>
+<div class="tweet">Ever wondered about the nuances of Postgres indexes? Join the conversation in r/programming to learn more about potential optimizations and technical details shared by developers. What surprises you the most? #Postgres #Indexing #Developers</div>
+<div class="tweet">Developers, don't miss this insightful Reddit discussion in r/programming shedding light on the intricacies of Postgres indexes. Discover key optimizations and facts to enhance your database skills. #Postgres #TechTalk #Programming</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-04-15 19:11:20 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
