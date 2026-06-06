@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - June 06, 2026, 08:43 AM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>June 06, 2026, 08:43 AM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-06-06 08:43:04
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 106.4 seconds</div>
+                <div>Start Time: 2026-06-06 08:43:04</div>
+                <div>End Time: 2026-06-06 08:44:50</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 16, Low: 17</div>
+                <div>Topics Detected: 6</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="65.5" 
+             data-published="2026-06-02 19:27" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Gmail thinks I'm stupid, so I left">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://moddedbear.com/gmail-thinks-im-stupid-so-i-left" target="_blank">Gmail thinks I'm stupid, so I left</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-02 19:27 | ID: 5df91e9f3571
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses a user's frustration with Gmail's auto-complete feature, which the user found to be intrusive and prone to errors. The user ultimately decided to switch to a different email provider due to this issue. This highlights the importance of user experience in email services and the impact of such features on user retention.
+        </div>
+        <div class="source-link">
+            → <a href="https://moddedbear.com/gmail-thinks-im-stupid-so-i-left" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5df91e9f3571" onclick="toggleTweets('5df91e9f3571')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-5df91e9f3571">
+                <div class="tweet">Is Gmail's auto-complete feature causing more harm than good? Dive into this user's experience and decision to switch email providers. #Gmail #UserExperience #TechNews</div>
+<div class="tweet">User frustration with Gmail's auto-complete feature sheds light on the critical role of user experience in tech services. How important is a seamless user experience for you when using tech products? #UserExperience #TechServices #Gmail</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-06-03 16:04" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Gemma 4 12B: A unified, encoder-free multimodal model">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/" target="_blank">Gemma 4 12B: A unified, encoder-free multimodal model</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-03 16:04 | ID: af686d82a7a1
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Gemma 4 12B is a new multimodal model that does not require encoders, offering a unified approach to processing various types of data. This innovation simplifies the model architecture and reduces computational complexity, potentially leading to more efficient and streamlined machine learning applications. The model's encoder-free design could pave the way for advancements in natural language processing, computer vision, and other AI fields.
+        </div>
+        <div class="source-link">
+            → <a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-af686d82a7a1" onclick="toggleTweets('af686d82a7a1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-af686d82a7a1">
+                <div class="tweet">Exciting tech news! Gemma 4 12B is a new encoder-free multimodal model, simplifying model architecture and reducing computational complexity. 🚀 #TechInnovation #MachineLearning</div>
+<div class="tweet">Ever imagined a world without encoders in multimodal models? Gemma 4 12B is breaking the mold by offering a unified approach to data processing. How will this impact the future of AI applications? 🧐 #TechTrends #AI</div>
+<div class="tweet">Gemma 4 12B's encoder-free design opens doors to more efficient machine learning applications in NLP, computer vision, and AI fields. A game-changer in simplifying model architecture and reducing computational complexity! 💡 #TechNews #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="64.5" 
+             data-published="2026-06-04 22:48" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="SpaceX, Other Mega IPOs Denied Fast Index Entry by S&P">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.bloomberg.com/news/articles/2026-06-04/s-p-dow-jones-keeps-megacap-ipo-rules-as-is-after-consultation" target="_blank">SpaceX, Other Mega IPOs Denied Fast Index Entry by S&P</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-04 22:48 | ID: 37eaae6a39c6
+             | <span class="engagement-notable">Engagement: [64.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 64%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            SpaceX and other large IPOs have been denied quick entry into the S&P indices due to concerns about their governance structures. The decision by the S&P Dow Jones Indices affects companies like SpaceX, which have dual-class share structures that give founders more voting power. This move highlights the growing scrutiny on corporate governance practices in the tech industry and could impact the inclusion of such companies in major stock market indices.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.bloomberg.com/news/articles/2026-06-04/s-p-dow-jones-keeps-megacap-ipo-rules-as-is-after-consultation" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-37eaae6a39c6" onclick="toggleTweets('37eaae6a39c6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-37eaae6a39c6">
+                <div class="tweet">Did you know that SpaceX and other major IPOs have been denied quick entry into the S&P indices due to governance concerns? #SpaceX #IPO #CorporateGovernance</div>
+<div class="tweet">How important is governance structure in tech companies like SpaceX for their inclusion in major stock market indices? Join the conversation! #CorporateGovernance #StockMarket #TechNews</div>
+<div class="tweet">The S&P's decision to delay SpaceX's entry into major indices sheds light on the increasing focus on governance practices in the tech sector. #SpaceX #CorporateGovernance #TechIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-06-01 16:31" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="The newest Instagram “exploit” is the goofiest I've seen">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.0xsid.com/blog/meta-account-takeover-fiasco" target="_blank">The newest Instagram “exploit” is the goofiest I've seen</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-01 16:31 | ID: b210082d1c53
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new Instagram "exploit" has been discovered, allowing users to add alt text to images that can be viewed by tapping on the image. This alt text feature is not officially supported by Instagram but can be accessed by adding a text string to the image's URL. While this may seem like a harmless prank, it raises concerns about potential misuse and highlights the need for Instagram to address this loophole in their platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.0xsid.com/blog/meta-account-takeover-fiasco" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b210082d1c53" onclick="toggleTweets('b210082d1c53')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b210082d1c53">
+                <div class="tweet">Did you know about the latest Instagram "exploit"? Users can now add alt text to images by tweaking the URL. 📸 While it seems harmless, it's raising concerns about privacy and misuse. #Instagram #TechNews</div>
+<div class="tweet">Are you exploring the new Instagram alt text "exploit"? How do you think Instagram should address this loophole to ensure user privacy and prevent misuse? Share your thoughts! #Instagram #PrivacyConcerns</div>
+<div class="tweet">The latest Instagram "exploit" showcases the importance of platform security. It's crucial for tech companies to proactively address loopholes to protect user data and maintain a safe online environment. #CyberSecurity #TechEthics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-06-03 23:37" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="They’re made out of weights">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://maxleiter.com/blog/weights" target="_blank">They’re made out of weights</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-03 23:37 | ID: c005f95e389d
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent Hacker News discussion with significant engagement highlighted a topic related to weights in technology. The conversation garnered 1491 points and 680 comments, indicating a strong interest in the subject among the tech community. This discussion likely delved into the technical aspects and implications of using weights in various technology applications.
+        </div>
+        <div class="source-link">
+            → <a href="https://maxleiter.com/blog/weights" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c005f95e389d" onclick="toggleTweets('c005f95e389d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c005f95e389d">
+                <div class="tweet">Did you catch the recent Hacker News discussion on the use of weights in technology? With 1491 points and 680 comments, it's clear the tech community is deeply engaged in this topic. 💡 #TechTalk #HackerNews</div>
+<div class="tweet">Curious about the role of weights in tech? The recent Hacker News discussion sparked a frenzy with 1491 points and 680 comments! How do weights impact the future of technology? 🤔 #TechCommunity #Innovation</div>
+<div class="tweet">Weights in technology are more than just physical objects - they play a crucial role in various applications. Dive into the recent Hacker News discussion that garnered 1491 points and 680 comments for valuable insights! 🚀 #TechInsights #HackerNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-05-30 23:26" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Microsoft Office 2019 and 2021 for Mac view-only conversion">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://consumerrights.wiki/w/Microsoft_Office_2019_and_2021_for_Mac_view-only_conversion_(2026)" target="_blank">Microsoft Office 2019 and 2021 for Mac view-only conversion</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-05-30 23:26 | ID: a1d2a18d77e4
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Microsoft Office 2019 and 2021 for Mac now support view-only conversion, allowing users to easily convert documents to read-only mode to prevent accidental changes. This feature enhances document security and helps users ensure the integrity of their files when sharing them with others. It provides a convenient way to protect important documents from unintended edits while maintaining accessibility for viewing purposes.
+        </div>
+        <div class="source-link">
+            → <a href="https://consumerrights.wiki/w/Microsoft_Office_2019_and_2021_for_Mac_view-only_conversion_(2026)" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a1d2a18d77e4" onclick="toggleTweets('a1d2a18d77e4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a1d2a18d77e4">
+                <div class="tweet">Exciting update for Mac users! Microsoft Office 2019 and 2021 now support view-only conversion, enhancing document security by preventing accidental changes. #MicrosoftOffice #Mac #TechNews</div>
+<div class="tweet">Ever accidentally made changes to a shared document? With Microsoft Office 2019 and 2021 for Mac's new view-only conversion feature, you can prevent this hassle! How will this change your document-sharing process? #DocumentSecurity #TechTools</div>
+<div class="tweet">Protect your important documents with Microsoft Office 2019 and 2021 for Mac's view-only conversion feature. Ensure document integrity when sharing files, making accidental edits a thing of the past! #DataSecurity #MacUsers #ProductivityTips</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Fri, 05 Jun 2026 20:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Startup Battlefield 200 applications officially close in 3 days">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/startup-battlefield-200-applications-officially-close-in-3-days/" target="_blank">Startup Battlefield 200 applications officially close in 3 days</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 20:00:00 +0000 | ID: aa37d21ada6b
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Startup Battlefield 200 is closing applications on June 8 at 11:59 p.m. PT for a chance to compete on the Disrupt Stage at TechCrunch Disrupt 2026 in San Francisco. This opportunity offers startups a platform to showcase their innovations and gain exposure to potential investors and industry experts. Tech entrepreneurs should act quickly to secure their chance to participate in this prestigious event.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/startup-battlefield-200-applications-officially-close-in-3-days/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-aa37d21ada6b" onclick="toggleTweets('aa37d21ada6b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-aa37d21ada6b">
+                <div class="tweet">Exciting opportunity for tech startups! Applications for Startup Battlefield 200 close in 3 days. Don't miss your chance to compete on the Disrupt Stage at TechCrunch Disrupt 2026 in San Francisco. Apply now! #StartupBattlefield #TechCrunchDisrupt</div>
+<div class="tweet">Are you a tech entrepreneur with a game-changing innovation? Want to showcase your startup on a global stage? Time is running out! Apply for Startup Battlefield 200 before June 8 to secure your spot at TechCrunch Disrupt 2026. #InnovationShowcase #TechStartups</div>
+<div class="tweet">Key insight: Startup Battlefield 200 offers startups a unique opportunity to pitch their ideas to investors and industry experts on the Disrupt Stage at TechCrunch Disrupt 2026. Act fast to seize this chance for exposure and growth! #TechPitch #StartupOpportunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Fri, 05 Jun 2026 22:35:01 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Reid Hoffman is leaving Microsoft’s board to go ‘founder mode’ with  startup Manus">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/reid-hoffman-is-leaving-microsofts-board-to-go-founder-mode-with-startup-manus/" target="_blank">Reid Hoffman is leaving Microsoft’s board to go ‘founder mode’ with  startup Manus</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 22:35:01 +0000 | ID: d00771f0ced4
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Reid Hoffman, a long-time member of Microsoft's board, is resigning to concentrate on his AI drug discovery startup, Manus. This move signifies Hoffman's shift towards a more hands-on role in advancing the technology and innovation within his startup, potentially accelerating Manus' growth and impact in the field of AI-driven drug discovery.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/reid-hoffman-is-leaving-microsofts-board-to-go-founder-mode-with-startup-manus/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d00771f0ced4" onclick="toggleTweets('d00771f0ced4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d00771f0ced4">
+                <div class="tweet">Exciting news in tech! Reid Hoffman is stepping down from Microsoft's board to focus on his AI startup, Manus. A strategic move that could propel Manus to new heights in AI-driven drug discovery. #TechNews #Startups #AI</div>
+<div class="tweet">With Reid Hoffman going "founder mode" at Manus, what impact do you think this hands-on approach will have on accelerating innovation in AI-driven drug discovery? 🚀 #TechInnovation #AI #StartupLife</div>
+<div class="tweet">Reid Hoffman's decision to shift focus to Manus highlights the growing potential and importance of AI in drug discovery. A move that could pave the way for cutting-edge advancements in the field. #AI #TechIndustry #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Fri, 05 Jun 2026 20:31:04 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Former cyber executive turned whistleblower accuses IBM of covering up several data breaches">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/former-cyber-executive-turned-whistleblower-accuses-ibm-of-covering-up-several-data-breaches/" target="_blank">Former cyber executive turned whistleblower accuses IBM of covering up several data breaches</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 20:31:04 +0000 | ID: fcd01981b797
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A former cybersecurity executive has accused IBM of concealing multiple data breaches that occurred in the mid-2010s, involving IBM and its subsidiaries. The whistleblower's lawsuit alleges that IBM failed to disclose these breaches and engaged in a cover-up. This revelation raises concerns about transparency and data security practices within IBM and highlights the importance of robust cybersecurity measures in safeguarding sensitive information.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/former-cyber-executive-turned-whistleblower-accuses-ibm-of-covering-up-several-data-breaches/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-fcd01981b797" onclick="toggleTweets('fcd01981b797')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-fcd01981b797">
+                <div class="tweet">Former cybersecurity executive turned whistleblower alleges that IBM covered up multiple data breaches in the mid-2010s, sparking concerns about transparency and data security practices. #Cybersecurity #DataBreach #IBM</div>
+<div class="tweet">Do you think allegations of data breach cover-ups by tech giants like IBM erode public trust in their data handling capabilities? How can companies rebuild trust after such revelations? #DataSecurity #TechEthics #IBM</div>
+<div class="tweet">The IBM whistleblower case underscores the critical need for companies to prioritize transparency and robust cybersecurity measures to protect sensitive data. Transparency builds trust with customers and stakeholders. #CyberSecurity #DataPrivacy #IBM</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 05 Jun 2026 18:57:20 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Google will pay SpaceX $920M per month for compute">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/" target="_blank">Google will pay SpaceX $920M per month for compute</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 18:57:20 +0000 | ID: 9551d0fb4737
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google has entered into a deal with SpaceX to utilize the Starlink satellite network for cloud computing services, agreeing to pay SpaceX $920 million per month. The partnership aims to support Google's growing demand for AI products and services, leveraging SpaceX's satellite internet infrastructure to enhance Google Cloud capabilities. This collaboration highlights the increasing reliance on satellite technology to meet the escalating computational needs of tech companies.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9551d0fb4737" onclick="toggleTweets('9551d0fb4737')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9551d0fb4737">
+                <div class="tweet">Google will pay SpaceX a whopping $920 million per month to leverage the Starlink satellite network for cloud computing services, highlighting the growing reliance on satellite technology in tech. 🚀💻 #Google #SpaceX #Starlink #CloudComputing</div>
+<div class="tweet">How will Google's partnership with SpaceX to use Starlink for cloud computing impact the future of AI products and services? 🌌💭 #TechCollaboration #AI #GoogleCloud #SpaceX</div>
+<div class="tweet">The Google-SpaceX deal underscores the increasing demand for innovative solutions to address the computational needs of tech giants like Google, showcasing the pivotal role of satellite technology in enhancing cloud capabilities. 🛰️🔝 #TechPartnerships #Innovation #SatelliteTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 05 Jun 2026 17:17:06 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="The most interesting startups right now want to get you off your phone">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/video/the-most-interesting-startups-right-now-want-to-get-you-off-your-phone/" target="_blank">The most interesting startups right now want to get you off your phone</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 17:17:06 +0000 | ID: a187838080a2
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Mirror founder Brynn Putnam has raised funds for Board, a startup aiming to foster in-person social interactions through games and experiences. Additionally, Cyberdeck creators are gaining popularity with their DIY computers encouraging users to disconnect from screens and engage with nature. These startups represent a shift towards tech solutions that prioritize offline connections and well-being over constant screen time.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/video/the-most-interesting-startups-right-now-want-to-get-you-off-your-phone/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a187838080a2" onclick="toggleTweets('a187838080a2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a187838080a2">
+                <div class="tweet">Exciting tech startups like Board and Cyberdeck are leading the way in promoting offline interactions and well-being over screen time. 🌿 #TechTrends #OfflineFirst</div>
+<div class="tweet">Are you ready to trade screen time for real-life connections? Startups like Board and Cyberdeck are making it possible with innovative solutions. What's your take? 🤔 #TechInnovation #DigitalDetox</div>
+<div class="tweet">Board and Cyberdeck are revolutionizing the tech industry by encouraging users to disconnect from screens and engage with the world around them. A refreshing shift towards prioritizing offline connections and well-being. 🌳 #TechStartups #WellnessTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Fri, 05 Jun 2026 17:38:06 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="As VC-backed e-bike startups went bankrupt, bootstrapped Lectric grew">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/as-vc-backed-e-bike-startups-went-bankrupt-bootstrapped-lectric-grew/" target="_blank">As VC-backed e-bike startups went bankrupt, bootstrapped Lectric grew</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 17:38:06 +0000 | ID: ac6e85fcb2f6
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Lectric, a bootstrapped e-bike company, has thrived while venture capital-backed competitors have gone bankrupt. The company has introduced three new brands in the last six months, capitalizing on the growing demand for e-bikes in the U.S. market. Lectric's success highlights the potential for independent, self-funded startups to succeed in the e-bike industry despite challenges faced by VC-backed firms.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/as-vc-backed-e-bike-startups-went-bankrupt-bootstrapped-lectric-grew/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ac6e85fcb2f6" onclick="toggleTweets('ac6e85fcb2f6')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-ac6e85fcb2f6">
+                <div class="tweet">Did you know that bootstrapped e-bike company Lectric is outshining VC-backed competitors in the industry? Their success proves that independent startups can thrive in the e-bike market. 🚲💡 #Ebike #Startups #TechNews</div>
+<div class="tweet">Ever wondered how a bootstrapped e-bike company like Lectric managed to outlast VC-backed startups in the same industry? Their story is a testament to the power of self-funding and strategic growth. 🚀💰 #Innovation #Entrepreneurship #TechSuccess</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.0" 
+             data-published="2026-06-04" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.06492v1" target="_blank">Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-04 | ID: e28baf64cb84
+             | <span class="engagement-standard">Engagement: [44.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Code2LoRA" by Liliana Hotsko, Yinxi Li, Yuntian Deng et al. introduces Hypernetwork-Generated Adapters for Code Language Models to address the need for repository-level context in resolving imports, APIs, and project conventions. Existing methods rely on long inputs retrieved through RAG or dependency analysis, or per-repository fine-tuning and LoRA, which are costly and brittle to software evolution at scale. Code2LoRA aims to provide a more efficient and adaptable solution for integrating contextual knowledge into code language models, offering potential improvements in accuracy and scalability for software development projects.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.06492v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e28baf64cb84" onclick="toggleTweets('e28baf64cb84')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e28baf64cb84">
+                <div class="tweet">Exciting research in tech! "Code2LoRA" introduces Hypernetwork-Generated Adapters for Code Language Models, enhancing contextual knowledge integration for more accurate and scalable software development. 🚀 #Code2LoRA #TechResearch</div>
+<div class="tweet">Ever wondered how to improve code language models' adaptability to software evolution? "Code2LoRA" offers a promising solution with Hypernetwork-Generated Adapters. How can this advance software development practices? 💭 #Code2LoRA #SoftwareEvolution</div>
+<div class="tweet">Key insight from "Code2LoRA": Hypernetwork-Generated Adapters provide a cost-effective approach to integrating contextual knowledge into code language models. This innovation could revolutionize accuracy and scalability in software development. 🌟 #TechInnovation #Code2LoRA</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Fri, 05 Jun 2026 19:03:16 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="The saga of the International Space Station air leak took a worrying turn Friday">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/06/work-on-russias-leaky-space-station-module-causes-astronauts-to-take-shelter/" target="_blank">The saga of the International Space Station air leak took a worrying turn Friday</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 19:03:16 +0000 | ID: e1889937e9c9
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A worrying turn in the saga of the International Space Station air leak occurred on Friday as NASA expressed concern over the situation. NASA aims to collaborate with Roscosmos to address the leaks, emphasizing the importance of a joint effort to resolve the issue affecting the space station's environment.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/06/work-on-russias-leaky-space-station-module-causes-astronauts-to-take-shelter/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e1889937e9c9" onclick="toggleTweets('e1889937e9c9')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-e1889937e9c9">
+                <div class="tweet">A worrying development in the saga of the International Space Station air leak as NASA expresses concern over the situation. Collaboration with Roscosmos is crucial to address the leaks and maintain the space station's environment. 🚀 #ISS #NASA #Roscosmos</div>
+<div class="tweet">Could the International Space Station air leak pose a significant threat to the astronauts' safety and the station's operations? NASA's concern highlights the importance of swift action and collaboration with Roscosmos. 🌌 #SpaceStation #AirLeak #Collaboration</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.0" 
+             data-published="2026-06-04" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.06494v1" target="_blank">TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-04 | ID: 5e3abdbe0b2d
+             | <span class="engagement-standard">Engagement: [43.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning" by Marius Dragoi, Ioana Pintilie, Alexandra Dragomir, and others introduces TailLoR, a method that leverages singular bases U and V of pre-trained weights for low-rank updates in Continual Learning. This approach aims to protect principal components during parameter-efficient finetuning, contributing to advancements in Continual Learning techniques based on spectral decomposition.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.06494v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5e3abdbe0b2d" onclick="toggleTweets('5e3abdbe0b2d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5e3abdbe0b2d">
+                <div class="tweet">Exciting research alert! 🚀 "TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning" introduces a method to safeguard key components during finetuning. 🤖 #AI #MachineLearning #ContinualLearning</div>
+<div class="tweet">Ever wondered how to enhance Continual Learning efficiency without compromising key components? The TailLoR method might have the answer. 🤔 How important are principal components in your ML models? 🧐 #TechResearch #ML #Innovation</div>
+<div class="tweet">Key insight: TailLoR method leverages singular bases U and V for low-rank updates in Continual Learning, preserving principal components during finetuning. 🛡️ Innovations like this are pushing the boundaries of ML techniques. 📈 #TechAdvancements #SpectralDecomposition</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Fri, 05 Jun 2026 17:44:18 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="GM’s electric future depends on a new battery — and this facility">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/gms-electric-future-depends-on-a-new-battery-and-this-building/" target="_blank">GM’s electric future depends on a new battery — and this facility</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 17:44:18 +0000 | ID: 07c9f50bf87b
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            GM is accelerating its electric vehicle (EV) plans by aiming to introduce new battery technology ahead of schedule to reduce EV prices. This strategy involves leveraging a specific facility to support the production of these advanced batteries, which is crucial for GM's electric future and competitiveness in the EV market.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/gms-electric-future-depends-on-a-new-battery-and-this-building/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-07c9f50bf87b" onclick="toggleTweets('07c9f50bf87b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-07c9f50bf87b">
+                <div class="tweet">GM is speeding up its EV plans with a new battery tech to lower prices. The key? A dedicated facility for advanced battery production. 🔋⚡️ #ElectricVehicles #GM #TechNews</div>
+<div class="tweet">Can GM's push for new battery tech and dedicated production facility give them an edge in the competitive EV market? 🤔⚡️ #Innovation #EVs #GM</div>
+<div class="tweet">GM's focus on new battery tech & a specialized facility is crucial for their electric future. This move could shape the EV landscape significantly. 🌍⚡️ #TechTrends #GM #Sustainability</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Fri, 05 Jun 2026 18:23:00 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title=""We pissed off a lot of people": Giant data center plan cut 50% amid protests">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/06/we-pissed-off-a-lot-of-people-giant-data-center-plan-cut-50-amid-protests/" target="_blank">"We pissed off a lot of people": Giant data center plan cut 50% amid protests</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 18:23:00 +0000 | ID: 30efd24c7a1f
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A developer's plan to build a giant data center was reduced by 50% due to protests and community backlash, leading to significant changes in the project scope. The decision to scale down the data center was driven by the developer feeling pressured and facing opposition from local residents, highlighting the growing importance of community engagement in large-scale tech infrastructure projects.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/06/we-pissed-off-a-lot-of-people-giant-data-center-plan-cut-50-amid-protests/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-30efd24c7a1f" onclick="toggleTweets('30efd24c7a1f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-30efd24c7a1f">
+                <div class="tweet">"Developer scales back giant data center plan by 50% in response to community protests. A pivotal moment showcasing the power of community engagement in tech infrastructure projects. #TechNews #CommunityEngagement #DataCenter"</div>
+<div class="tweet">"Should tech companies prioritize community input when planning large-scale projects? The recent decision to cut a data center plan by 50% due to protests raises important questions about balancing tech innovation with community interests. #TechEthics #CommunityInvolvement"</div>
+<div class="tweet">"Investing in community relations is crucial for tech projects. Scaling down a data center due to protests underscores the need for tech companies to engage with local residents and consider community impact in their development plans. #TechDevelopment #CommunityRelations"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="2026-06-05T16:40:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Summer Game Fest Live 2026: The biggest news, trailers, and announcements">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/939484/summer-game-fest-live-2026-biggest-news-trailers-announcements" target="_blank">Summer Game Fest Live 2026: The biggest news, trailers, and announcements</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-05T16:40:00-04:00 | ID: feba3c4649a1
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Geoff Keighley's Summer Game Fest Live 2026 featured major announcements in the gaming industry. Highlights included news on the third Final Fantasy VII remake game, a fresh glimpse at Control Resonant, and the introduction of Tupac for RGG. The event, spanning two hours with an additional hour for Day of the Devs, showcased exciting developments that are sure to captivate gaming enthusiasts.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/939484/summer-game-fest-live-2026-biggest-news-trailers-announcements" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-feba3c4649a1" onclick="toggleTweets('feba3c4649a1')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-feba3c4649a1">
+                <div class="tweet">Exciting updates from Geoff Keighley's #SummerGameFestLive2026! 🎮 Major announcements in the gaming world, including news on Final Fantasy VII remake, Control Resonant, and the introduction of Tupac for RGG. Stay tuned for the latest in gaming trends! #gamingnews</div>
+<div class="tweet">Key takeaway from #SummerGameFestLive2026: The gaming industry is evolving with innovative releases like Control Resonant and the third Final Fantasy VII remake game. Stay connected to stay ahead of the latest trends and updates in gaming! 🚀 #technews #gamingtrends</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Fri, 05 Jun 2026 18:45:20 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/" target="_blank">S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 18:45:20 +0000 | ID: 5fa693c3550b
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The S&P 500 has rejected SpaceX, preventing the company from gaining access to significant investments from passive investors tracking the index. This decision also impacts OpenAI and Anthropic, who were also blocked from entry into the S&P 500. The move highlights the challenges these tech companies face in gaining broader investment exposure through traditional channels.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5fa693c3550b" onclick="toggleTweets('5fa693c3550b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5fa693c3550b">
+                <div class="tweet">Did you hear? The S&P 500 rejected SpaceX, OpenAI, and Anthropic, hindering their access to investments from passive investors. This move sheds light on challenges tech companies face in traditional investment avenues. #SpaceX #OpenAI #Anthropic #TechNews</div>
+<div class="tweet">Curious why the S&P 500 blocked SpaceX, OpenAI, and Anthropic from entry? This decision not only impacts these tech giants but also highlights the hurdles they encounter in seeking broader investment opportunities. What are your thoughts? #Investing #TechIndustry #S&P500</div>
+<div class="tweet">The exclusion of SpaceX, OpenAI, and Anthropic by the S&P 500 underscores the obstacles tech companies confront when trying to tap into mainstream investment channels. It's a reminder of the unique challenges faced by innovative firms in traditional markets. #SP500 #TechInvesting</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Fri, 05 Jun 2026 15:55:14 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Trump admin tries again to revive dying coal industry">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/06/trump-admin-tries-again-to-revive-dying-coal-industry/" target="_blank">Trump admin tries again to revive dying coal industry</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 15:55:14 +0000 | ID: 3c405700e140
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Trump administration is making efforts to support the struggling coal industry by providing financial aid to keep existing coal plants operational and to construct new ones, marking the first new plant constructions in over a decade. This move aims to revive the declining coal sector and maintain its presence in the energy market despite the increasing shift towards cleaner and renewable energy sources.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/06/trump-admin-tries-again-to-revive-dying-coal-industry/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3c405700e140" onclick="toggleTweets('3c405700e140')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3c405700e140">
+                <div class="tweet">Is the Trump administration's attempt to revive the coal industry a sustainable solution in today's energy landscape? 🤔 #CoalIndustry #Energy #RenewableEnergy</div>
+<div class="tweet">With financial aid to existing and new coal plants, the Trump admin aims to breathe life into a declining industry. Will this move conflict with the global push towards cleaner energy sources? #CoalRevival #CleanEnergyTransition</div>
+<div class="tweet">The Trump administration's push to revive the coal industry highlights the ongoing debate between traditional fossil fuels and renewable energy sources. How will this impact the future of energy production and sustainability? #EnergyDebate #CoalVsRenewables</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-06-05T17:45:44-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Control Resonant is a sequel — and also a starting point">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/944151/control-resonant-hands-on" target="_blank">Control Resonant is a sequel — and also a starting point</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-05T17:45:44-04:00 | ID: a2457f0e6bc6
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            "Control Resonant" is a sequel to the 2019 game "Control," but the two games are not directly connected in terms of storyline. Developer Remedy sees them as complementary experiences rather than a traditional sequel. Creative director Mikael Kasurinen mentioned that players can enjoy the games in any order, suggesting a unique approach to storytelling and gameplay continuity.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/944151/control-resonant-hands-on" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a2457f0e6bc6" onclick="toggleTweets('a2457f0e6bc6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a2457f0e6bc6">
+                <div class="tweet">Exciting news for gamers! "Control Resonant" is not your typical sequel to "Control." Developer Remedy is offering a unique approach to storytelling and gameplay continuity, making these games complementary experiences. 🎮 #ControlResonant #GamingNews</div>
+<div class="tweet">Ever thought about playing game sequels out of order? "Control Resonant" challenges this idea, suggesting players can enjoy it before "Control." How do you feel about this approach to game storytelling? 🤔 #GameSequels #InteractiveNarratives</div>
+<div class="tweet">"Control Resonant" offers a fresh perspective on sequels, emphasizing complementary experiences over a linear storyline. Creative director Mikael Kasurinen's vision invites players to explore these games in any order for a unique gaming journey. 🕹️ #GameDevelopment #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-06-04" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="TempoVLA: Learning Speed-Controllable Vision-Language-Action Policies">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.06491v1" target="_blank">TempoVLA: Learning Speed-Controllable Vision-Language-Action Policies</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-04 | ID: 487db072e9e5
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "TempoVLA: Learning Speed-Controllable Vision-Language-Action Policies" by Dong Jing, Jingchen Nie, Tianqi Zhang, and others introduces a new approach to Vision-Language-Action (VLA) models that allows for speed control in robot manipulation tasks. Traditional VLAs have a fixed speed inherited from training demonstrations, but TempoVLA enables robots to alternate between fast execution during low-risk phases and slow, precise motion in high-risk stages, improving overall performance and adaptability in various scenarios. This innovation addresses the limitations of existing models and opens up possibilities for more efficient and flexible robotic applications.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.06491v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-487db072e9e5" onclick="toggleTweets('487db072e9e5')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-487db072e9e5">
+                <div class="tweet">Exciting news in robotics! TempoVLA introduces speed-controllable Vision-Language-Action policies, enabling robots to adjust execution speed based on risk levels. This innovation boosts adaptability and performance in various tasks. 🤖🚀 #Robotics #AI #TechNews</div>
+<div class="tweet">Ever thought about robots being able to adjust their execution speed based on risk levels? TempoVLA's new approach to Vision-Language-Action models opens up a world of possibilities for more efficient and flexible robotic applications. How cool is that? 🧐🔍 #Innovation #TechTalk</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="Fri, 05 Jun 2026 21:47:56 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Founders share VC horror stories, and some are naming names">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/founders-share-vc-horror-stories-and-some-are-naming-names/" target="_blank">Founders share VC horror stories, and some are naming names</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 21:47:56 +0000 | ID: c42d5cfa2999
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A viral conversation on social media platform X has seen founders sharing VC horror stories, ranging from bizarre to frustrating experiences. Some founders have gone as far as naming specific venture capitalists involved in these negative encounters, shedding light on the challenges faced by entrepreneurs in the startup ecosystem. This public discourse highlights the importance of transparency and accountability in the VC industry, potentially leading to increased scrutiny and changes in how VCs interact with founders.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/founders-share-vc-horror-stories-and-some-are-naming-names/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c42d5cfa2999" onclick="toggleTweets('c42d5cfa2999')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c42d5cfa2999">
+                <div class="tweet">Founders are opening up about their VC horror stories on social media platform X. Transparency and accountability in the VC industry are getting a spotlight. Will this spark positive changes in how VCs interact with founders? #TechNews #VC #Startup #Transparency</div>
+<div class="tweet">What VC horror stories have you heard or experienced as a founder? The recent viral conversation on social media platform X is shedding light on the challenges faced by entrepreneurs. Share your thoughts. #TechCommunity #FounderStories #VentureCapital</div>
+<div class="tweet">Entrepreneurs naming specific VCs in negative encounters highlights the need for accountability and change in the startup ecosystem. Transparency is key for a healthier VC-founder relationship. Let's push for a more supportive and fair environment. #TechIndustry #Accountability</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-06-05T19:25:34-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="More than a decade later, the team behind N++ is back with a multiplayer sequel">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/943194/metanet-n-plus-plus-multiplayer-sequel" target="_blank">More than a decade later, the team behind N++ is back with a multiplayer sequel</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-05T19:25:34-04:00 | ID: 6534a0a8eb0d
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Metanet, the studio behind N++, has announced a multiplayer sequel to the popular 2D platformer after more than a decade. The new game builds on the challenging gameplay of its predecessor and introduces multiplayer features, marking a significant evolution for the franchise. Fans can expect a fresh take on the N series with enhanced multiplayer capabilities and continued focus on intense platforming action.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/943194/metanet-n-plus-plus-multiplayer-sequel" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6534a0a8eb0d" onclick="toggleTweets('6534a0a8eb0d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6534a0a8eb0d">
+                <div class="tweet">Exciting news for N++ fans! Metanet, the studio behind the popular 2D platformer, is launching a multiplayer sequel after over a decade. Get ready for enhanced multiplayer features and intense platforming action! 🎮 #Nplusplus #gamingnews</div>
+<div class="tweet">Are you ready for the evolution of N++? With a new multiplayer sequel announced by Metanet, fans can look forward to a fresh take on the challenging platformer. How do you think multiplayer will enhance the N series experience? 🤔 #gaming #Nplusplus #technews</div>
+<div class="tweet">Metanet's announcement of a multiplayer sequel to N++ marks a significant step for the franchise. The introduction of multiplayer features promises a new level of excitement and engagement for fans, bringing the beloved platformer to a whole new dimension. 🚀 #Nplusplus #gamedev</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-06-05T19:05:27-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Grand Theft Auto VI is warping the video game release calendar">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/944229/grand-theft-auto-6-release-calendar-summer-game-fest" target="_blank">Grand Theft Auto VI is warping the video game release calendar</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-05T19:05:27-04:00 | ID: 262ad0f23af5
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Grand Theft Auto VI's impending release is causing a significant impact on the video game release calendar, with other developers seemingly avoiding launching their games around the same time in November. Despite its absence from recent key events like Summer Game Fest, the anticipation surrounding GTA VI is palpable, leading to a noticeable gap in major releases during its launch month.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/944229/grand-theft-auto-6-release-calendar-summer-game-fest" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-262ad0f23af5" onclick="toggleTweets('262ad0f23af5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-262ad0f23af5">
+                <div class="tweet">Grand Theft Auto VI's imminent release is shaking up the video game calendar! Other developers are steering clear of November. The anticipation is real, causing a major gap in new releases. 🎮 #GTA6 #VideoGames #TechNews</div>
+<div class="tweet">Is Grand Theft Auto VI's impact on the gaming world a sign of its unrivaled dominance or are developers missing an opportunity by avoiding its release month? 🤔 #GTA6 #GamingCalendar #TechDebate</div>
+<div class="tweet">The buzz around Grand Theft Auto VI is so strong that it's influencing the entire gaming industry's release schedule. A game changer in action! 🚀 #GTA6 #GamingIndustry #TechTrends</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="Fri, 05 Jun 2026 21:00:29 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="How a USB-connected speaker can infect a PC without ever being touched">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/security/2026/06/highly-reviewed-speaker-can-be-hacked-over-the-air-to-infect-connected-devices/" target="_blank">How a USB-connected speaker can infect a PC without ever being touched</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 21:00:29 +0000 | ID: a7535ade5106
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A security researcher discovered that the Sound Blaster Katana V2X USB speaker can infect a PC with malware without physical contact, exploiting a flaw in the speaker's firmware update process. By tricking the speaker into installing a malicious firmware update, an attacker could compromise the connected PC. The speaker's manufacturer does not view this behavior as a vulnerability, raising concerns about the potential security risks posed by USB-connected devices.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/security/2026/06/highly-reviewed-speaker-can-be-hacked-over-the-air-to-infect-connected-devices/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a7535ade5106" onclick="toggleTweets('a7535ade5106')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-a7535ade5106">
+                <div class="tweet">Did you know a USB-connected speaker like the Sound Blaster Katana V2X can infect a PC without physical contact? A security researcher discovered a flaw in the speaker's firmware update process, highlighting potential security risks. #CyberSecurity #USBThreat</div>
+<div class="tweet">Ever thought about the security implications of USB-connected devices? The recent discovery of a USB speaker that can infect a PC without touch raises concerns about the need for stronger security measures. How can we better protect our devices? #TechSecurity #USBVulnerability</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="Fri, 05 Jun 2026 19:23:08 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Small modular nuclear reactor reaches criticality in first test">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/06/first-us-test-of-modular-reactor-reaches-criticality/" target="_blank">Small modular nuclear reactor reaches criticality in first test</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 19:23:08 +0000 | ID: aadcf090c803
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Antares, a startup, has achieved criticality in its small modular nuclear reactor during testing, marking a significant milestone in its development. While the reactor is not yet operational for power generation, this achievement demonstrates progress towards potentially offering a new, more compact nuclear energy solution in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/06/first-us-test-of-modular-reactor-reaches-criticality/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-aadcf090c803" onclick="toggleTweets('aadcf090c803')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-aadcf090c803">
+                <div class="tweet">Antares, a startup, has achieved criticality in its small modular nuclear reactor, a major step in developing a compact nuclear energy solution for the future. 🌿⚛️ #NuclearEnergy #Innovation</div>
+<div class="tweet">Is Antares' small modular nuclear reactor the key to a sustainable energy future? The recent criticality achievement could revolutionize the way we generate power. 🌍💡 #CleanEnergy #FutureTech</div>
+<div class="tweet">Antares' successful criticality test of its small modular nuclear reactor signifies progress towards a more efficient and scalable nuclear energy solution. Exciting times ahead for clean energy innovation! 🚀⚡️ #Renewables #TechAdvancements</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-06-05T14:44:20-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Gone in 60 minutes">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/944337/gone-in-60-minutes" target="_blank">Gone in 60 minutes</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-05T14:44:20-04:00 | ID: 12d5fcfcc8f6
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the firing of Scott Pelley from 60 Minutes due to his questioning of CBS's leadership decisions. Pelley's dismissal highlights internal conflicts within the network, with concerns raised about the presence of sycophants in top positions. This move could have implications for the editorial direction and integrity of 60 Minutes moving forward.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/944337/gone-in-60-minutes" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-12d5fcfcc8f6" onclick="toggleTweets('12d5fcfcc8f6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-12d5fcfcc8f6">
+                <div class="tweet">"Scott Pelley's firing from 60 Minutes raises questions about editorial independence and leadership conflicts at CBS. Will this impact the show's future direction? #ScottPelley #60Minutes #CBS"</div>
+<div class="tweet">"Is the dismissal of Scott Pelley a sign of growing tensions between journalists and corporate interests in media organizations? How will 60 Minutes navigate this internal conflict? #Journalism #MediaEthics #60Minutes"</div>
+<div class="tweet">"The removal of Scott Pelley from 60 Minutes underscores the importance of editorial integrity and the need to safeguard journalistic independence within media networks. #EditorialIntegrity #JournalismEthics #60Minutes"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-06-05T13:00:47-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The Sonos Era 100 speaker is down to its lowest price in months">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/944095/sonos-era-100-google-nest-doorbell-deal-sale" target="_blank">The Sonos Era 100 speaker is down to its lowest price in months</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-05T13:00:47-04:00 | ID: cda07042f044
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Sonos Era 100 smart speaker is currently on sale for $189, offering a $30 discount from its regular price. This compact and feature-rich speaker is ideal for those looking to start or expand their Sonos setup. The discounted price is available at various retailers including Amazon, Best Buy, and Sonos' official website, making it an attractive option for tech enthusiasts and music lovers.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/944095/sonos-era-100-google-nest-doorbell-deal-sale" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cda07042f044" onclick="toggleTweets('cda07042f044')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cda07042f044">
+                <div class="tweet">Looking to enhance your home audio setup? The Sonos Era 100 smart speaker is currently on sale for $189, offering a $30 discount! 🎵🔊 Grab this deal at Amazon, Best Buy, or Sonos' official website. #Sonos #SmartSpeaker #TechDeals</div>
+<div class="tweet">Thinking of expanding your Sonos collection? With the Sonos Era 100 speaker on sale for $189, now might be the perfect time to elevate your audio experience. What's your favorite feature in a smart speaker? 🤔🔊 #Sonos #AudioTech #SmartHome</div>
+<div class="tweet">Tech enthusiasts and music lovers, take note! The Sonos Era 100 speaker is currently discounted to $189, down $30 from its regular price. Don't miss out on this opportunity to enjoy high-quality sound at a great price. 🎶💸 #Sonos #TechSale #MusicLovers</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-06-04 12:40" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="On-policy distillation: one of the hottest terms on PapersWithCode [R]">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1twmhud/onpolicy_distillation_one_of_the_hottest_terms_on/" target="_blank">On-policy distillation: one of the hottest terms on PapersWithCode [R]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-06-04 12:40 | ID: a9c318606cfe
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article highlights "On-policy distillation" as a trending term in AI research, recently added to PapersWithCode by Niels from Hugging Face. This technique involves distilling knowledge from a teacher model to a student model while staying on the same policy, enhancing training efficiency. By making such cutting-edge AI techniques easily accessible, PapersWithCode aims to facilitate learning and adoption of advanced methodologies in the AI community.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1twmhud/onpolicy_distillation_one_of_the_hottest_terms_on/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a9c318606cfe" onclick="toggleTweets('a9c318606cfe')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a9c318606cfe">
+                <div class="tweet">"On-policy distillation" is making waves in AI research! This technique, recently added to PapersWithCode by Niels from Hugging Face, enhances training efficiency by distilling knowledge from a teacher model to a student model. #AI #OnPolicyDistillation #TechTrends</div>
+<div class="tweet">Ever wondered how "On-policy distillation" is revolutionizing AI training? Dive into this trending technique recently added to PapersWithCode by Niels from Hugging Face! #AI #Innovation #TechTalk</div>
+<div class="tweet">PapersWithCode continues to democratize cutting-edge AI techniques with the addition of "On-policy distillation." Stay ahead in the AI field by exploring this technique that enhances training efficiency! #AI #PapersWithCode #TechAdvancements</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 05 Jun 2026 22:36:21 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Baby botulism outbreak: FDA still doesn't know cause—or how to prevent it">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/06/baby-botulism-outbreak-fda-still-doesnt-know-cause-or-how-to-prevent-it/" target="_blank">Baby botulism outbreak: FDA still doesn't know cause—or how to prevent it</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 22:36:21 +0000 | ID: 5b4a1fdb0633
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The FDA is investigating a baby botulism outbreak without a clear cause or prevention method identified yet. Three companies involved in the production process are blaming each other for the issue, adding complexity to the investigation and resolution of the outbreak.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/06/baby-botulism-outbreak-fda-still-doesnt-know-cause-or-how-to-prevent-it/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5b4a1fdb0633" onclick="toggleTweets('5b4a1fdb0633')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5b4a1fdb0633">
+                <div class="tweet">"FDA's investigation into the baby botulism outbreak continues, with no clear cause or prevention method yet. Stay informed and follow updates. #FDA #BabyBotulism #TechNews"</div>
+<div class="tweet">"What could be causing the baby botulism outbreak? The blame game between production companies adds layers of complexity to the investigation. Share your thoughts. #Outbreak #FDA #TechTalk"</div>
+<div class="tweet">"Complexities arise as three companies involved in production blame each other for the baby botulism outbreak. Cooperation and transparency are crucial for a swift resolution. #Cooperation #HealthTech #FDA"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 05 Jun 2026 17:05:02 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Review: Spider-Noir recaptures the magic of a bygone era">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/06/review-spider-noir-recaptures-the-magic-of-a-bygone-era/" target="_blank">Review: Spider-Noir recaptures the magic of a bygone era</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 17:05:02 +0000 | ID: 3ffc15576930
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article reviews the character Spider-Noir, played by Nicolas Cage, in the latest tech-enhanced animated film. Spider-Noir is portrayed as a 1930s private investigator with a unique blend of Bogart-esque charm and Bugs Bunny humor, embodying the essence of a bygone era. The character's portrayal in the film is praised for capturing the nostalgic magic of classic detective stories while adding a modern twist with Cage's distinctive style.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/06/review-spider-noir-recaptures-the-magic-of-a-bygone-era/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3ffc15576930" onclick="toggleTweets('3ffc15576930')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3ffc15576930">
+                <div class="tweet">"Discover the enchanting portrayal of Spider-Noir by Nicolas Cage in the latest tech-enhanced animated film, celebrating the charm of a bygone era. 🎥✨ #SpiderNoir #TechFilm #NicolasCage"</div>
+<div class="tweet">"Can Spider-Noir's blend of 1930s charm and modern tech bring a fresh take on classic detective stories? Share your thoughts! 🕵️‍♂️💭 #SpiderNoir #TechMovies #NicolasCage"</div>
+<div class="tweet">"Spider-Noir's nostalgic yet modern portrayal in the latest animated film reminds us of the timeless allure of classic detective stories. 🎬🔍 #SpiderNoir #FilmMagic #TechInnovation"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.0" 
+             data-published="2026-06-04" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.06493v1" target="_blank">HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-04 | ID: 9a0618aa7ddf
+             | <span class="engagement-low">Engagement: [35.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers" by Lizhi Yang, Junheng Li, Nehar Poddar, et al. focuses on the importance of the command space for humanoid robots in real-world applications. The paper introduces a new approach that addresses the challenge of synthesizing dense kinematic or spatial references for whole-body control, enhancing the robot's ability to perform tasks effectively and efficiently. This research could lead to advancements in humanoid robot deployment and improve their performance in various real-world scenarios.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.06493v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9a0618aa7ddf" onclick="toggleTweets('9a0618aa7ddf')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9a0618aa7ddf">
+                <div class="tweet">"Exciting research alert! The paper on 'HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers' introduces a new approach to enhance humanoid robots' task performance. 🤖🚀 #Robotics #AI #TechNews"</div>
+<div class="tweet">"Ever wondered how humanoid robots can improve task performance in real-world scenarios? The research on 'HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers' dives deep into this fascinating topic. 💡🌐 #Robotics #TechDiscussion"</div>
+<div class="tweet">"Key insight: 'HANDOFF' research emphasizes the significance of command space for humanoid robots, enhancing their ability to perform tasks effectively. Exciting potential for advancements in robot deployment and performance! 🤖💼 #AI #TechInnovation"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-06-05 13:57" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Configuration flags are where software goes to rot">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://00f.net/2026/04/11/config-flags/" target="_blank">Configuration flags are where software goes to rot</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-06-05 13:57 | ID: 5017d6c4cde7
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming has highlighted the issue of configuration flags leading to software decay. The conversation, popular with 232 upvotes and 144 comments, emphasized how excessive configuration flags can complicate code, increase technical debt, and hinder maintainability. Developers are urged to carefully consider the necessity of each flag to prevent software degradation over time.
+        </div>
+        <div class="source-link">
+            → <a href="https://00f.net/2026/04/11/config-flags/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5017d6c4cde7" onclick="toggleTweets('5017d6c4cde7')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5017d6c4cde7">
+                <div class="tweet">Is your software suffering from excessive configuration flags? A recent r/programming discussion sheds light on how these flags can lead to software decay, complicating code and increasing technical debt. #TechNews #SoftwareDevelopment</div>
+<div class="tweet">Are configuration flags causing your software to rot? Join the conversation in r/programming to learn how excessive flags can hinder maintainability and lead to software degradation over time. What flags are essential for your codebase? #SoftwareEngineering #TechDiscussion</div>
+<div class="tweet">Key takeaway from the recent Reddit discussion in r/programming: excessive configuration flags can be detrimental to software. Developers are reminded to evaluate the necessity of each flag to prevent code complexity and maintain a healthy codebase. #DevTips #SoftwareMaintenance</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-05T18:52:06-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Final Fantasy VII&#8217;s remake trilogy will conclude with Revelation">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/939396/final-fantasy-vii-revelation-remake-trilogy-third-game-announcement" target="_blank">Final Fantasy VII&#8217;s remake trilogy will conclude with Revelation</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-05T18:52:06-04:00 | ID: 1004de3eb051
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Square Enix has revealed the third and final installment of the Final Fantasy VII remake trilogy, titled Final Fantasy VII Revelation. The game is set to launch in spring 2027 across various platforms including PC, PS5, Xbox Series X/S, and the upcoming Nintendo Switch 2. This announcement marks the conclusion of the highly anticipated trilogy, offering fans a definitive end to the modern retelling of the classic RPG.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/939396/final-fantasy-vii-revelation-remake-trilogy-third-game-announcement" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1004de3eb051" onclick="toggleTweets('1004de3eb051')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1004de3eb051">
+                <div class="tweet">Square Enix unveils Final Fantasy VII Revelation, the final chapter in the remake trilogy set to launch in spring 2027! 🎮 Are you ready to embark on the epic conclusion across PC, PS5, Xbox Series X/S, and Nintendo Switch 2? #FinalFantasyVII #Revelation #GamingNews</div>
+<div class="tweet">What are your predictions for the ending of Final Fantasy VII Revelation, the third installment in the remake trilogy? Share your theories and join the speculation! 🤔⚔️ #FFVII #FinalFantasyVIIRevelation #GamerTalk</div>
+<div class="tweet">The announcement of Final Fantasy VII Revelation not only marks the end of a beloved trilogy but also sets the stage for an exciting future in gaming as Square Enix continues to redefine classic narratives for new and existing fans alike. 🌟🎮 #GameChanger #TechTrends #FFVIITrilogy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-05T17:15:48-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Congress still can’t decide what to do about warrantless surveillance">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/944615/section-702-senate-vote-fails-pulte" target="_blank">Congress still can’t decide what to do about warrantless surveillance</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-05T17:15:48-04:00 | ID: 856da98d3868
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            With the deadline looming on June 12th, Congress is facing uncertainty over reauthorizing Section 702 of the Foreign Intelligence Surveillance Act. Despite a previous reauthorization in late April, the issue remains unresolved, leaving the future of warrantless surveillance in question and creating ongoing uncertainty for tech companies and privacy advocates.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/944615/section-702-senate-vote-fails-pulte" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-856da98d3868" onclick="toggleTweets('856da98d3868')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-856da98d3868">
+                <div class="tweet">With Congress still undecided on reauthorizing Section 702 of the FISA, the future of warrantless surveillance remains uncertain. Tech companies and privacy advocates continue to monitor the situation closely. #TechNews #Privacy #Surveillance</div>
+<div class="tweet">Is warrantless surveillance a necessary tool for national security or a violation of privacy rights? Congress's ongoing indecision over Section 702 of the FISA sparks important debates on surveillance practices. What are your thoughts? #PrivacyDebate #TechEthics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-06 00:53" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="CEO Says There Will Be No Raises Because He Spent All the Money on AI">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://finance.yahoo.com/sectors/technology/articles/ceo-says-no-raises-because-175237309.html?.tsrc=daily_mail&segment_id=DY_VTO_50_Supernova&ncid=crm_19907-1202927-20260605-0--A&bt_ee=ZTaEWTPstFiwSxGFOI75TCUo0Z5MDf1xUYiBj0O8cFHE6Eua5%2FnA9lryCB4WZxQs&bt_ts=1780700316954" target="_blank">CEO Says There Will Be No Raises Because He Spent All the Money on AI</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-06-06 00:53 | ID: 163c3fcabfdc
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The CEO of a tech company has announced that there will be no raises for employees as all the funds have been allocated to investing in artificial intelligence (AI) technology. This decision has sparked a discussion on Reddit, with many questioning the prioritization of AI over employee compensation. The move highlights the growing trend of companies prioritizing AI development and innovation over traditional employee benefits.
+        </div>
+        <div class="source-link">
+            → <a href="https://finance.yahoo.com/sectors/technology/articles/ceo-says-no-raises-because-175237309.html?.tsrc=daily_mail&segment_id=DY_VTO_50_Supernova&ncid=crm_19907-1202927-20260605-0--A&bt_ee=ZTaEWTPstFiwSxGFOI75TCUo0Z5MDf1xUYiBj0O8cFHE6Eua5%2FnA9lryCB4WZxQs&bt_ts=1780700316954" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-163c3fcabfdc" onclick="toggleTweets('163c3fcabfdc')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-163c3fcabfdc">
+                <div class="tweet">CEO of tech company announces no raises for employees as funds are allocated to AI development. Is prioritizing AI over employee compensation the new norm in tech? #TechNews #AI #EmployeeCompensation</div>
+<div class="tweet">Is investing in AI technology at the expense of employee raises the right move for tech companies? Join the discussion on Reddit to share your thoughts. #TechTrends #AI #EmployeeBenefits</div>
+<div class="tweet">Tech companies are increasingly prioritizing AI innovation over employee benefits like raises. This decision highlights the evolving landscape of tech industry trends. #TechIndustry #AIInnovation #EmployeeCompensation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-06-05 20:07" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Illinois Gov. JB Pritzker to suspend tax breaks offered to data centers">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.nbcnews.com/politics/2028-election/illinois-gov-jb-pritzker-suspend-tax-breaks-offered-data-centers-rcna348537" target="_blank">Illinois Gov. JB Pritzker to suspend tax breaks offered to data centers</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-06-05 20:07 | ID: 83ebeaa6cc61
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Illinois Governor JB Pritzker has announced the suspension of tax breaks previously offered to data centers in the state. This decision follows concerns about the effectiveness of these incentives in promoting economic growth and job creation. Data center operators in Illinois may now face increased operating costs as a result of this policy change.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.nbcnews.com/politics/2028-election/illinois-gov-jb-pritzker-suspend-tax-breaks-offered-data-centers-rcna348537" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-83ebeaa6cc61" onclick="toggleTweets('83ebeaa6cc61')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-83ebeaa6cc61">
+                <div class="tweet">Illinois Gov. JB Pritzker suspends tax breaks for data centers, citing concerns about economic impact. Data center operators in Illinois could see increased operating costs. #TechNews #DataCenters #TaxPolicy</div>
+<div class="tweet">Is suspending tax breaks for data centers in Illinois the right move for economic growth and job creation? Share your thoughts! #TechDebate #EconomicImpact #DataCenters</div>
+<div class="tweet">Illinois Governor's decision to suspend tax breaks for data centers highlights the evolving landscape of tech incentives. Data center operators may need to reassess their cost structures. #TechPolicy #EconomicDevelopment #IllinoisTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-06-05 08:47" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="You Don't Love systemd Timers Enough">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://blog.tjll.net/you-dont-love-systemd-timers-enough/" target="_blank">You Don't Love systemd Timers Enough</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-06-05 08:47 | ID: b779f4d48f58
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming with significant engagement highlighted the underappreciated utility of systemd timers. The conversation underscored the benefits of using systemd timers for scheduling tasks and automation in Linux systems, emphasizing their reliability and flexibility compared to traditional cron jobs. Developers were encouraged to explore systemd timers for improved job scheduling and system maintenance efficiency.
+        </div>
+        <div class="source-link">
+            → <a href="https://blog.tjll.net/you-dont-love-systemd-timers-enough/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b779f4d48f58" onclick="toggleTweets('b779f4d48f58')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b779f4d48f58">
+                <div class="tweet">Are you maximizing your task scheduling efficiency in Linux systems? Discover the power of systemd timers highlighted in a recent r/programming discussion. #Linux #SystemdTimers #Tech</div>
+<div class="tweet">Ever considered the benefits of using systemd timers over traditional cron jobs? Join the conversation sparked in r/programming and explore new possibilities for job scheduling and automation in Linux. #TechDebates #Linux #Systemd</div>
+<div class="tweet">Key takeaway from the Reddit discussion: systemd timers offer reliability and flexibility for task scheduling in Linux, outperforming traditional cron jobs. Explore this efficient solution for improved system maintenance and automation. #SystemdTimers #Linux #Efficiency</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-06-06 08:43:04 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
