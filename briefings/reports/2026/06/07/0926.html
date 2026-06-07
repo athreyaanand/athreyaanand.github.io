@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - June 07, 2026, 09:26 AM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>June 07, 2026, 09:26 AM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>38 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-06-07 09:26:40
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 104.5 seconds</div>
+                <div>Start Time: 2026-06-07 09:26:40</div>
+                <div>End Time: 2026-06-07 09:28:25</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 38</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 5, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 38</div>
+                <div>Tweet Sets: 38</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 38</div>
+                <div>Distribution: Notable: 5, Standard: 7, Low: 26</div>
+                <div>Topics Detected: 6</div>
+                <div>Cross-platform Stories: 2</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="65.5" 
+             data-published="2026-06-02 19:27" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Gmail thinks I'm stupid, so I left">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://moddedbear.com/gmail-thinks-im-stupid-so-i-left" target="_blank">Gmail thinks I'm stupid, so I left</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-02 19:27 | ID: 5df91e9f3571
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses a user's frustration with Gmail's Smart Compose feature, which auto-suggests email responses. The user found the suggestions inaccurate and intrusive, leading them to disable the feature and eventually switch to a different email service. This highlights the importance of user control and accuracy in AI-driven features to prevent user dissatisfaction and potential loss of users.
+        </div>
+        <div class="source-link">
+            → <a href="https://moddedbear.com/gmail-thinks-im-stupid-so-i-left" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5df91e9f3571" onclick="toggleTweets('5df91e9f3571')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5df91e9f3571">
+                <div class="tweet">Is Gmail's Smart Compose feature too intrusive? One user shares their frustration with inaccurate suggestions, leading to a switch in email services. User control and accuracy are key in AI-driven features. #Gmail #SmartCompose #AI</div>
+<div class="tweet">How important is user control in AI-driven features like Gmail's Smart Compose? This user's experience sheds light on the impact of inaccurate suggestions on user satisfaction. Have you faced similar frustrations? #UserExperience #Tech #AI</div>
+<div class="tweet">User dissatisfaction can lead to loss of users. This article on Gmail's Smart Compose highlights the importance of accuracy and user control in AI-driven features to prevent frustration and service switches. #TechNews #AI #UserFeedback</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-06-03 16:04" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Gemma 4 12B: A unified, encoder-free multimodal model">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/" target="_blank">Gemma 4 12B: A unified, encoder-free multimodal model</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-03 16:04 | ID: af686d82a7a1
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Gemma 4 12B is a new multimodal model that operates without encoders, offering a unified approach to processing different types of data. This innovation simplifies the model architecture and improves efficiency by eliminating the need for separate encoder components. The Gemma 4 12B's encoder-free design has the potential to streamline development processes and enhance performance in various machine learning applications.
+        </div>
+        <div class="source-link">
+            → <a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-af686d82a7a1" onclick="toggleTweets('af686d82a7a1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-af686d82a7a1">
+                <div class="tweet">Exciting tech news! Meet Gemma 4 12B, a new encoder-free multimodal model simplifying data processing. This innovation promises improved efficiency and performance in machine learning. #Gemma412B #MultimodalModel #MachineLearning</div>
+<div class="tweet">Ever thought about a world without encoders in multimodal models? Gemma 4 12B is making it a reality! How will this encoder-free approach shape the future of data processing in machine learning? #Innovation #TechFuture #Gemma412B</div>
+<div class="tweet">Key insight: Gemma 4 12B's encoder-free design offers a unified solution for processing diverse data types, enhancing efficiency in machine learning applications. This model has the potential to revolutionize development processes. #TechInnovation #Efficiency #MachineLearning</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="64.5" 
+             data-published="2026-06-04 22:48" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="SpaceX, Other Mega IPOs Denied Fast Index Entry by S&P">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.bloomberg.com/news/articles/2026-06-04/s-p-dow-jones-keeps-megacap-ipo-rules-as-is-after-consultation" target="_blank">SpaceX, Other Mega IPOs Denied Fast Index Entry by S&P</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-04 22:48 | ID: 37eaae6a39c6
+             | <span class="engagement-notable">Engagement: [64.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 64%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            SpaceX and other large IPOs have been denied fast entry into the S&P indexes due to concerns about their governance structures. The decision by the S&P Dow Jones Indices will impact the inclusion of these high-profile companies in major stock market benchmarks, potentially affecting investor interest and market performance. This move reflects a growing emphasis on corporate governance standards in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.bloomberg.com/news/articles/2026-06-04/s-p-dow-jones-keeps-megacap-ipo-rules-as-is-after-consultation" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-37eaae6a39c6" onclick="toggleTweets('37eaae6a39c6')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-37eaae6a39c6">
+                <div class="tweet">Did you hear? SpaceX and other mega IPOs have been denied fast entry into S&P indexes due to governance concerns. This decision could impact investor interest and market performance. 🚀📉 #SpaceX #IPO #SP500</div>
+<div class="tweet">How important are governance standards in the tech industry? The S&P's denial of fast entry for SpaceX and other major IPOs highlights the growing emphasis on corporate governance. What do you think? 💭🤔 #TechGovernance #SP500 #CorporateEthics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-06-01 16:31" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="The newest Instagram “exploit” is the goofiest I've seen">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.0xsid.com/blog/meta-account-takeover-fiasco" target="_blank">The newest Instagram “exploit” is the goofiest I've seen</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-01 16:31 | ID: b210082d1c53
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new Instagram "exploit" has been discovered, allowing users to bypass the platform's restrictions on posting multiple photos in a single post. By using a specific sequence of emojis in the caption, users can create a carousel post with up to 10 images. This loophole could potentially be used for spam or other malicious purposes, highlighting the need for Instagram to address this issue promptly.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.0xsid.com/blog/meta-account-takeover-fiasco" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b210082d1c53" onclick="toggleTweets('b210082d1c53')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b210082d1c53">
+                <div class="tweet">A new Instagram "exploit" has surfaced, allowing users to post multiple photos in a single post by using specific emojis in the caption. 📸🔄 Stay informed and cautious! #Instagram #TechNews</div>
+<div class="tweet">Is Instagram's latest loophole a fun trick or a potential security threat? 🤔 Users can now bypass image limits by using emojis in captions. What are your thoughts on this workaround? #Instagram #TechTalk</div>
+<div class="tweet">The discovery of a loophole on Instagram highlights the importance of platform security. As users can now post multiple photos in a single post through emoji sequences, it's crucial for Instagram to address this issue promptly to prevent misuse. #Instagram #OnlineSafety</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-06-03 23:37" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="They’re made out of weights">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://maxleiter.com/blog/weights" target="_blank">They’re made out of weights</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-03 23:37 | ID: c005f95e389d
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Hacker News discussion with 1511 points and 685 comments has surfaced regarding a project involving weights as a material for creating objects. The project showcases innovative uses of weights in technology, potentially opening up new possibilities for design and engineering applications. Developers and tech enthusiasts are engaging in a lively conversation about the implications and technical aspects of this unconventional approach.
+        </div>
+        <div class="source-link">
+            → <a href="https://maxleiter.com/blog/weights" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c005f95e389d" onclick="toggleTweets('c005f95e389d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c005f95e389d">
+                <div class="tweet">Did you hear about the innovative project using weights as a material for creating objects? A Hacker News discussion is buzzing with insights on this unconventional approach in technology. 🏋️‍♂️💡 #TechInnovation #WeightsTech</div>
+<div class="tweet">Ever thought weights could be the next big thing in tech design? Join the discussion on Hacker News where developers are exploring the potential of using weights for engineering applications. What's your take on this unique approach? #TechDiscussion #FutureTech</div>
+<div class="tweet">Discover how weights are reshaping tech design and engineering possibilities. The project featured in a popular Hacker News thread is sparking creativity and pushing boundaries in the tech world. 🌐💭 #TechTrends #InnovativeTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Sat, 06 Jun 2026 20:32:24 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="OpenAI unveils Lockdown Mode to protect sensitive data from prompt injection attacks">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/" target="_blank">OpenAI unveils Lockdown Mode to protect sensitive data from prompt injection attacks</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sat, 06 Jun 2026 20:32:24 +0000 | ID: 3e1bda5952f7
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI has introduced Lockdown Mode to safeguard sensitive data from prompt injection attacks in ChatGPT. While this feature aims to minimize the risk of data exposure, the platform may still be susceptible to prompt injections. Lockdown Mode enhances security measures to mitigate the potential sharing of confidential information during interactions.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3e1bda5952f7" onclick="toggleTweets('3e1bda5952f7')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3e1bda5952f7">
+                <div class="tweet">OpenAI takes a step towards protecting sensitive data with Lockdown Mode in ChatGPT, shielding against prompt injection attacks. Security measures are crucial in today's tech landscape. #OpenAI #Security #DataProtection</div>
+<div class="tweet">Is Lockdown Mode in ChatGPT a game-changer for safeguarding sensitive data against prompt injection attacks? How can innovative features like this shape the future of data security in AI applications? 🛡️💭 #AI #DataSecurity #Innovation</div>
+<div class="tweet">With the introduction of Lockdown Mode by OpenAI, the tech community gains a valuable tool to enhance data protection in AI interactions. Proactive security measures are vital in the fight against data breaches. #TechNews #DataPrivacy #CyberSecurity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Sat, 06 Jun 2026 17:42:15 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Sriram Krishnan is leaving his role as White House AI advisor">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/06/sriram-krishnan-is-leaving-his-role-as-white-house-ai-advisor/" target="_blank">Sriram Krishnan is leaving his role as White House AI advisor</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sat, 06 Jun 2026 17:42:15 +0000 | ID: caea0ed7b480
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Sriram Krishnan, the White House AI advisor, is stepping down from his role to establish a new organization dedicated to further influencing AI policy under the Trump administration. This move signifies a shift in leadership within the AI advisory space and could impact the direction of AI regulations and initiatives at the federal level.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/06/sriram-krishnan-is-leaving-his-role-as-white-house-ai-advisor/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-caea0ed7b480" onclick="toggleTweets('caea0ed7b480')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-caea0ed7b480">
+                <div class="tweet">Sriram Krishnan, White House AI advisor, steps down to create new organization shaping AI policy under Trump administration. What impact will this leadership shift have on federal AI regulations? #AI #TechNews</div>
+<div class="tweet">Curious about the implications of Sriram Krishnan leaving his role as White House AI advisor to pioneer new AI policy initiatives. How might this change influence future AI developments under the Trump administration? #AI #TechLeadership</div>
+<div class="tweet">Sriram Krishnan's departure as White House AI advisor signals a significant shift in AI leadership. Stay tuned to see how this move could shape the trajectory of AI policies and initiatives at the federal level. #AI #TechPolicy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Sat, 06 Jun 2026 18:13:36 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="What to expect from WWDC 2026: Siri’s highly anticipated revamp and Apple Intelligence updates">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/06/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/" target="_blank">What to expect from WWDC 2026: Siri’s highly anticipated revamp and Apple Intelligence updates</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sat, 06 Jun 2026 18:13:36 +0000 | ID: 8ca482e8038d
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            At WWDC 2026, Apple is expected to unveil a major revamp of Siri, its virtual assistant, with improved capabilities and intelligence. Additionally, the event will showcase updates to Apple Intelligence, enhancing the company's AI technology across its ecosystem. These advancements are likely to bring significant improvements to user experiences and productivity on Apple devices.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/06/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8ca482e8038d" onclick="toggleTweets('8ca482e8038d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8ca482e8038d">
+                <div class="tweet">Exciting news for Apple users! #WWDC2026 is set to unveil a major revamp of Siri with enhanced capabilities and updates to Apple Intelligence, enhancing AI technology across Apple's ecosystem. Stay tuned for improved user experiences! 🍎💡 #Apple #Siri #AI</div>
+<div class="tweet">Curious about the future of virtual assistants? What do you hope to see in Siri's revamp at #WWDC2026? Share your thoughts on how AI advancements can elevate user experiences on Apple devices! 🧠💭 #Apple #Siri #AI #TechTalk</div>
+<div class="tweet">At #WWDC2026, Apple's focus on revamping Siri and enhancing Apple Intelligence signals a significant shift towards improving user productivity and experiences. The future of AI technology on Apple devices looks promising! 🚀📱 #Apple #Siri #AI #TechTrends</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Sat, 06 Jun 2026 16:17:21 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="The Trump administration might take an equity stake in OpenAI">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/" target="_blank">The Trump administration might take an equity stake in OpenAI</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sat, 06 Jun 2026 16:17:21 +0000 | ID: 57926ba5c031
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Trump administration is considering taking an equity stake in OpenAI to allow the American people to benefit from AI success. This move could signify a shift towards government involvement in AI initiatives and potentially impact the future direction of OpenAI's research and development efforts.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-57926ba5c031" onclick="toggleTweets('57926ba5c031')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-57926ba5c031">
+                <div class="tweet">"The Trump administration exploring an equity stake in OpenAI could signal a new era of government involvement in AI initiatives. Will this influence the future of AI research? 🤖 #AI #OpenAI #TechNews"</div>
+<div class="tweet">"Should governments invest in AI companies like OpenAI to ensure public benefits? How might this impact innovation and research in the tech industry? 🤔 #AI #GovernmentTech #OpenAI"</div>
+<div class="tweet">"Government considering equity stake in OpenAI highlights growing importance of AI in shaping our future. Will public-private partnerships redefine tech development? 🚀 #TechTrends #AI #OpenAI"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Sat, 06 Jun 2026 15:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Beyond Instagram: Introducing the next generation of social apps">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/06/beyond-instagram-introducing-the-next-generation-of-social-apps/" target="_blank">Beyond Instagram: Introducing the next generation of social apps</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sat, 06 Jun 2026 15:00:00 +0000 | ID: c1e4f9b2cd11
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the emergence of a new generation of social apps that provide alternatives to traditional Big Tech platforms like Instagram. These apps prioritize user interests, creativity, and community engagement over algorithm-driven feeds. This shift aims to offer users more personalized and meaningful social experiences beyond the mainstream social media landscape.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/06/beyond-instagram-introducing-the-next-generation-of-social-apps/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c1e4f9b2cd11" onclick="toggleTweets('c1e4f9b2cd11')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c1e4f9b2cd11">
+                <div class="tweet">Exciting times ahead in the social media landscape! Discover the rise of new social apps that prioritize user interests and creativity over algorithms. Say goodbye to mainstream platforms like Instagram. #SocialMedia #TechTrends</div>
+<div class="tweet">How do you envision the future of social media? Will the shift towards user-centric, creative platforms redefine our online interactions? Share your thoughts! #NextGenSocial #CommunityEngagement</div>
+<div class="tweet">Dive into a new era of social networking where user interests and community engagement take center stage. The evolution of social apps promises a more personalized and meaningful online experience. #UserCentric #SocialMediaRevolution</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.0" 
+             data-published="Fri, 05 Jun 2026 22:35:01 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Reid Hoffman is leaving Microsoft’s board to go ‘founder mode’ with  startup Manus">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/reid-hoffman-is-leaving-microsofts-board-to-go-founder-mode-with-startup-manus/" target="_blank">Reid Hoffman is leaving Microsoft’s board to go ‘founder mode’ with  startup Manus</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 22:35:01 +0000 | ID: d00771f0ced4
+             | <span class="engagement-standard">Engagement: [41.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Reid Hoffman, a long-standing member of Microsoft's board, is leaving to concentrate on his AI drug discovery startup, Manus. This move signifies Hoffman's shift towards a more hands-on role in his startup, potentially accelerating innovation in the field of AI-driven drug discovery. Hoffman's departure from Microsoft's board highlights his commitment to advancing technology in the healthcare sector through entrepreneurial endeavors.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/reid-hoffman-is-leaving-microsofts-board-to-go-founder-mode-with-startup-manus/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d00771f0ced4" onclick="toggleTweets('d00771f0ced4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d00771f0ced4">
+                <div class="tweet">Reid Hoffman steps down from Microsoft's board to focus on his AI drug discovery startup, Manus. A move that could drive innovation in AI healthcare solutions. #ReidHoffman #Manus #AI #HealthTech</div>
+<div class="tweet">Is Reid Hoffman's move to prioritize his startup Manus a sign of a growing trend among tech leaders to pursue hands-on roles in their ventures? Share your thoughts! #TechLeaders #StartupLife #Innovation #AI</div>
+<div class="tweet">Reid Hoffman's decision to go 'founder mode' with Manus underscores the importance of hands-on involvement for tech entrepreneurs in driving impactful innovation. #Entrepreneurship #TechInnovation #AIStartups #HealthcareTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.0" 
+             data-published="Fri, 05 Jun 2026 20:31:04 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Former cyber executive turned whistleblower accuses IBM of covering up several data breaches">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/former-cyber-executive-turned-whistleblower-accuses-ibm-of-covering-up-several-data-breaches/" target="_blank">Former cyber executive turned whistleblower accuses IBM of covering up several data breaches</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 20:31:04 +0000 | ID: fcd01981b797
+             | <span class="engagement-standard">Engagement: [41.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A former cybersecurity executive has filed a lawsuit against IBM, alleging that the company failed to disclose and actively covered up multiple data breaches that occurred in the mid-2010s. The lawsuit claims that IBM and its subsidiaries were breached, raising concerns about the handling of sensitive data and potential security vulnerabilities within the company's systems. This accusation could have significant implications for IBM's reputation and cybersecurity practices.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/former-cyber-executive-turned-whistleblower-accuses-ibm-of-covering-up-several-data-breaches/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-fcd01981b797" onclick="toggleTweets('fcd01981b797')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-fcd01981b797">
+                <div class="tweet">Former cyber executive blows the whistle on IBM, alleging cover-up of multiple data breaches. 🚨 This lawsuit shines a light on potential security vulnerabilities within the company's systems. #IBM #DataBreach #Cybersecurity</div>
+<div class="tweet">Could IBM's alleged cover-up of data breaches impact its standing in the cybersecurity industry? 💭 The lawsuit raises questions about data security practices and transparency within the tech giant. #CyberSecurity #IBM #DataBreach</div>
+<div class="tweet">The lawsuit against IBM for allegedly covering up data breaches underscores the critical need for transparency and accountability in cybersecurity. Companies must prioritize data protection to maintain trust and credibility in the digital age. #DataSecurity #TechNews #IBM</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-06-06T13:59:37-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="GOG apologizes for emailing people Nazi symbols">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/945088/gog-apologizes-email-nazi-symbols-the-end-of-the-sun" target="_blank">GOG apologizes for emailing people Nazi symbols</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-06T13:59:37-04:00 | ID: 9d5cf140af1e
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            GOG recently issued an apology for mistakenly including Nazi SS symbols in a newsletter promoting the game The End of the Sun. The incident was attributed to a series of errors, including miscommunication with the German QA team, font rendering issues, and understaffing during a holiday. The company has acknowledged the mistake and is working to prevent similar occurrences in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/945088/gog-apologizes-email-nazi-symbols-the-end-of-the-sun" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9d5cf140af1e" onclick="toggleTweets('9d5cf140af1e')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-9d5cf140af1e">
+                <div class="tweet">Apology issued by GOG after inadvertently sending out Nazi symbols in a newsletter promoting a game. Important reminder on the significance of cultural sensitivity in tech content. #GOG #TechNews</div>
+<div class="tweet">Could better communication and quality control have prevented the inadvertent inclusion of Nazi symbols in the GOG newsletter promoting The End of the Sun game? How can tech companies ensure such errors are avoided in the future? #QA #TechEthics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-06-06T11:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Benn Jordan longs for the days of tech that didn’t spy on you">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/report/942609/benn-jordan-music-gear-cybersecurity-surveillance-questionnaire" target="_blank">Benn Jordan longs for the days of tech that didn’t spy on you</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-06T11:00:00-04:00 | ID: 825dd3cc076a
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Benn Jordan, known for his music and tech reviews on YouTube, has shifted his content focus towards tech that prioritizes user privacy by not collecting personal data. Over the years, he has transitioned his channel to highlight products and services that respect user privacy and do not engage in surveillance practices, reflecting a growing concern in the tech community about data privacy. Jordan's decision underscores the increasing demand for technology that values user privacy and transparency in an era where data collection and surveillance are prevalent concerns.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/report/942609/benn-jordan-music-gear-cybersecurity-surveillance-questionnaire" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-825dd3cc076a" onclick="toggleTweets('825dd3cc076a')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-825dd3cc076a">
+                <div class="tweet">Are you tired of tech that spies on you? 🕵️‍♂️ Check out Benn Jordan's latest content shift focusing on user privacy and data protection. It's time to prioritize our digital well-being! #PrivacyMatters #TechEthics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="2026-06-06T11:05:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The mayor of Shelbyville, Indiana, says only people who live in ‘shitty houses’ oppose data center">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/944984/shelbyville-indiana-mayor-shitty-houses-data-center" target="_blank">The mayor of Shelbyville, Indiana, says only people who live in ‘shitty houses’ oppose data center</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-06T11:05:00-04:00 | ID: 77080e0cf0d8
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The mayor of Shelbyville, Indiana, Scott Furgeson, sparked controversy by suggesting that only people living in "shitty houses" oppose the proposed $2 billion data center in the city. The comments were made in response to opposition signs cropping up around town. The incident highlights the growing tensions surrounding the data center project and the differing perspectives on its potential impact on the community.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/944984/shelbyville-indiana-mayor-shitty-houses-data-center" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-77080e0cf0d8" onclick="toggleTweets('77080e0cf0d8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-77080e0cf0d8">
+                <div class="tweet">"Mayor of Shelbyville, Indiana causes uproar by claiming only those in 'shitty houses' oppose $2 billion data center. Community divided over impact. #TechNews #Controversy #DataCenter"</div>
+<div class="tweet">"Are criticisms of the proposed data center in Shelbyville justified, or is the mayor overlooking valid concerns? Join the conversation. #CommunityImpact #DataCenterDebate #TechTalk"</div>
+<div class="tweet">"The incident in Shelbyville underscores the importance of inclusive community engagement in tech projects. All voices should be heard to ensure balanced development. #CommunityEngagement #TechDevelopment #Inclusivity"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="2026-06-04" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.06492v1" target="_blank">Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-04 | ID: e28baf64cb84
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Code2LoRA" introduces Hypernetwork-Generated Adapters for Code Language Models to address the need for repository-level context in resolving imports, APIs, and project conventions. Existing methods rely on long inputs or per-repository fine-tuning, which can be costly and brittle to software evolution. Code2LoRA aims to improve this by generating adapters dynamically, potentially offering a more efficient and adaptable solution for code language models under software evolution.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.06492v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e28baf64cb84" onclick="toggleTweets('e28baf64cb84')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e28baf64cb84">
+                <div class="tweet">Exciting research on Code2LoRA introduces Hypernetwork-Generated Adapters for Code Language Models, enhancing repository-level context in software evolution. 🚀🔍 #Code2LoRA #TechResearch #CodeLanguageModels</div>
+<div class="tweet">How can Code2LoRA's dynamic adapter generation revolutionize code language models' adaptability in software evolution? 🤔💡 #TechInnovation #AdaptiveCode #SoftwareDevelopment</div>
+<div class="tweet">Code2LoRA's approach to dynamically generating adapters offers a promising solution for improving code language models' efficiency and adaptability amidst software evolution challenges. 🛠️💬 #Code2LoRA #TechSolutions #SoftwareEvolution</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.0" 
+             data-published="Fri, 05 Jun 2026 19:03:16 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="The saga of the International Space Station air leak took a worrying turn Friday">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/06/work-on-russias-leaky-space-station-module-causes-astronauts-to-take-shelter/" target="_blank">The saga of the International Space Station air leak took a worrying turn Friday</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 19:03:16 +0000 | ID: e1889937e9c9
+             | <span class="engagement-low">Engagement: [36.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The International Space Station (ISS) is facing a concerning air leak issue, with Roscosmos, the Russian space agency, working on a collaborative solution. The exact cause and location of the leak are still being investigated, raising technical and safety concerns for the crew aboard the ISS. Efforts are underway to address the issue and ensure the continued operation of the space station.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/06/work-on-russias-leaky-space-station-module-causes-astronauts-to-take-shelter/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e1889937e9c9" onclick="toggleTweets('e1889937e9c9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e1889937e9c9">
+                <div class="tweet">"The International Space Station is currently facing a concerning air leak issue. Roscosmos is working on a solution to address this technical and safety concern. 🚀 #ISS #SpaceTech #AirLeak"</div>
+<div class="tweet">"What could be causing the air leak on the International Space Station? The safety of the crew is paramount as investigations continue. 🛰️ #ISS #SpaceExploration #SafetyFirst"</div>
+<div class="tweet">"Efforts are underway to address the air leak on the International Space Station and ensure the safety of the crew. Collaboration between space agencies is crucial for space missions. 🌌 #SpaceStation #Collaboration #TechNews"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Sat, 06 Jun 2026 20:53:07 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Scientists ejected from diabetes conference for distributing journal reprints">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/06/scientists-ejected-from-diabetes-conference-for-distributing-journal-reprints/" target="_blank">Scientists ejected from diabetes conference for distributing journal reprints</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 06 Jun 2026 20:53:07 +0000 | ID: 8d8f60f003c5
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            At a diabetes conference, scientists like ADA journal editor-in-chief Steven Kahn and former ADA president Desmond Schatz were ejected for distributing journal reprints. The incident highlights the ongoing debate over access to scientific research and the role of publishers in controlling dissemination of knowledge within the scientific community.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/06/scientists-ejected-from-diabetes-conference-for-distributing-journal-reprints/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8d8f60f003c5" onclick="toggleTweets('8d8f60f003c5')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-8d8f60f003c5">
+                <div class="tweet">Scientists, including prominent figures like Steven Kahn and Desmond Schatz, were ejected from a diabetes conference for distributing journal reprints. The incident sparks debate on access to scientific research and publisher control. #DiabetesConference #ScientificResearch</div>
+<div class="tweet">What are your thoughts on scientists being ejected from a diabetes conference for sharing journal reprints? Does this highlight issues with access to scientific knowledge? Share your opinions. #ScienceDebate #KnowledgeAccess</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Sat, 06 Jun 2026 11:15:51 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Some ancient microbes frozen with Ötzi the Iceman are still growing">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/06/otzis-mummified-body-is-home-to-ancient-strains-of-yeast-and-bacteria/" target="_blank">Some ancient microbes frozen with Ötzi the Iceman are still growing</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 06 Jun 2026 11:15:51 +0000 | ID: 8ed0ed0e1c8f
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Ancient microbes frozen with Ötzi the Iceman, a mummy dating back over 5,000 years, are still alive and actively growing. Researchers discovered that these microbes are thriving in the ice where Ötzi was found, highlighting the resilience and adaptability of certain microorganisms in extreme environments. This finding sheds light on the potential for ancient microbial ecosystems to persist over millennia and offers insights into the dynamics of microbial life in glacial environments.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/06/otzis-mummified-body-is-home-to-ancient-strains-of-yeast-and-bacteria/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8ed0ed0e1c8f" onclick="toggleTweets('8ed0ed0e1c8f')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-8ed0ed0e1c8f">
+                <div class="tweet">Did you know? Microbes frozen with Ötzi the Iceman, a 5,000-year-old mummy, are still alive and growing! This discovery showcases the remarkable resilience of ancient microorganisms in extreme environments. 🧊 #AncientMicrobes #Ötzi #TechDiscovery</div>
+<div class="tweet">What secrets lie within frozen ancient microbes? Researchers found that microbes with Ötzi the Iceman are thriving after 5,000 years. How might this discovery shape our understanding of microbial life in extreme conditions? 🤔 #MicrobialEcology #Ötzi #TechScience</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-06-06T14:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The first Story-Rich showcase was packed with narrative-driven games">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/944406/fellow-traveller-story-rich-showcase-2026-announcements-trailers" target="_blank">The first Story-Rich showcase was packed with narrative-driven games</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-06T14:00:00-04:00 | ID: b86677a8ab28
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Fellow Traveller recently concluded its Story-Rich Showcase, highlighting narrative-driven indie games such as Titanium Court and 1000xResist. The event featured over 20 games, showcasing a diverse range of storytelling experiences for players. This showcase underscores the growing popularity and importance of narrative-focused games in the indie gaming scene.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/944406/fellow-traveller-story-rich-showcase-2026-announcements-trailers" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b86677a8ab28" onclick="toggleTweets('b86677a8ab28')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-b86677a8ab28">
+                <div class="tweet">Did you catch the recent Story-Rich Showcase by Fellow Traveller? This event featured over 20 narrative-driven indie games like Titanium Court and 1000xResist, highlighting the rise of storytelling in indie gaming. 🎮📚 #IndieGames #NarrativeGaming</div>
+<div class="tweet">What draws you to narrative-focused indie games? The recent Story-Rich Showcase by Fellow Traveller showcased the power of storytelling in games like never before. Share your thoughts on the growing importance of narratives in gaming! 🤔🕹️ #GamingCommunity #Storytelling</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-06-04" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.06494v1" target="_blank">TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-04 | ID: 5e3abdbe0b2d
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning" by Marius Dragoi, Ioana Pintilie, Alexandra Dragomir, and others introduces TailLoR, a method that leverages singular bases U and V of pre-trained weights to facilitate low-rank updates in Continual Learning. By utilizing spectral decomposition and a fixed reference frame, TailLoR aims to protect principal components during parameter-efficient finetuning, contributing to advancements in Continual Learning techniques.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.06494v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5e3abdbe0b2d" onclick="toggleTweets('5e3abdbe0b2d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5e3abdbe0b2d">
+                <div class="tweet">Exciting research on Continual Learning! Check out the latest method, TailLoR, which protects principal components during parameter-efficient finetuning. 🧠💻 #TechResearch #ContinualLearning #TailLoR</div>
+<div class="tweet">Ever wondered how to safeguard principal components during Continual Learning? TailLoR might have the answer! Dive into this innovative method leveraging singular bases for low-rank updates. 🤔🔍 #TailLoR #TechInnovation #MachineLearning</div>
+<div class="tweet">Key takeaway: TailLoR introduces a novel approach to protect principal components in Continual Learning, offering a more efficient method for finetuning pre-trained weights. Explore the potential impact of this advancement in ML techniques. 🚀🔬 #ML #TailLoR #TechAdvancement</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="34.0" 
+             data-published="Fri, 05 Jun 2026 18:23:00 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title=""We pissed off a lot of people": Giant data center plan cut 50% amid protests">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/06/we-pissed-off-a-lot-of-people-giant-data-center-plan-cut-50-amid-protests/" target="_blank">"We pissed off a lot of people": Giant data center plan cut 50% amid protests</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 18:23:00 +0000 | ID: 30efd24c7a1f
+             | <span class="engagement-low">Engagement: [34.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 34%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A developer's plan to build a giant data center was reduced by 50% due to protests and backlash from the community. The decision to scale down the project was made after facing significant opposition, impacting the original scope and scale of the data center development.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/06/we-pissed-off-a-lot-of-people-giant-data-center-plan-cut-50-amid-protests/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-30efd24c7a1f" onclick="toggleTweets('30efd24c7a1f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-30efd24c7a1f">
+                <div class="tweet">"Developer scales back giant data center plan by 50% after community protests. A reminder that public opinion can influence tech projects. #DataCenter #CommunityEngagement"</div>
+<div class="tweet">"Should tech companies prioritize community feedback when planning large-scale projects? The recent reduction of a data center plan shows the power of public opinion. #TechEthics #CommunityInvolvement"</div>
+<div class="tweet">"Lesson learned: Even tech giants face pushback from communities. Scaling down a data center project highlights the importance of balancing innovation with public concerns. #TechDevelopment #CommunityRelations"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-06-06T12:14:23-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Summer Game Fest 2026: All the news from gaming&#8217;s busiest week">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/939206/summer-game-fest-playstation-xbox-gaming-events-2026" target="_blank">Summer Game Fest 2026: All the news from gaming&#8217;s busiest week</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-06T12:14:23-04:00 | ID: 0857debd40e9
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Summer Game Fest 2026 is underway, featuring major announcements from PlayStation, Xbox, and gaming personality Geoff Keighley. PlayStation's event highlighted premium single-player games, including the upcoming God of War Laufey. The event signals a focus on high-quality gaming experiences and sets the tone for the rest of the gaming industry's announcements during this busy week.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/939206/summer-game-fest-playstation-xbox-gaming-events-2026" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0857debd40e9" onclick="toggleTweets('0857debd40e9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0857debd40e9">
+                <div class="tweet">Exciting updates from Summer Game Fest 2026! PlayStation shines with premium single-player games like God of War Laufey. 🎮🔥 Stay tuned for more gaming news this week! #SummerGameFest #PlayStation #Xbox #GamingNews</div>
+<div class="tweet">What's your favorite announcement from Summer Game Fest 2026 so far? 🤔 PlayStation's focus on premium single-player games is setting the bar high! #SummerGameFest #GamingCommunity #GeoffKeighley</div>
+<div class="tweet">Summer Game Fest 2026 highlights the industry's shift towards high-quality gaming experiences. PlayStation's event showcasing God of War Laufey signals a promising future for gamers seeking immersive gameplay. 🌟 #QualityGaming #GameAnnouncements #FutureOfGaming</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.0" 
+             data-published="Fri, 05 Jun 2026 18:45:20 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/" target="_blank">S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 18:45:20 +0000 | ID: 5fa693c3550b
+             | <span class="engagement-low">Engagement: [33.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The S&P 500 has rejected SpaceX, preventing the company from accessing significant investments from passive investors tracking the index. This decision also impacts OpenAI and Anthropic, blocking their entry into the S&P 500 as well. SpaceX, OpenAI, and Anthropic will need to seek alternative avenues for investment and growth following this exclusion from the index.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5fa693c3550b" onclick="toggleTweets('5fa693c3550b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5fa693c3550b">
+                <div class="tweet">The exclusion of SpaceX, OpenAI, and Anthropic from the S&P 500 highlights the challenges innovative tech companies face in accessing traditional investment channels. #SpaceX #OpenAI #Anthropic #TechNews</div>
+<div class="tweet">Is the S&P 500's rejection of SpaceX, OpenAI, and Anthropic a sign of the index's reluctance to embrace cutting-edge technologies and disruptive innovations? Share your thoughts. #TechInvestments #Innovation #S&P500</div>
+<div class="tweet">The S&P 500's decision to block SpaceX, OpenAI, and Anthropic sheds light on the importance of exploring diverse investment options and not solely relying on traditional indices for growth opportunities in the tech sector. #InvestmentStrategies #TechIndustry #S&P500</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-07T03:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="JMGO’s N3 Ultimate projector is the new portable 4K champ">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/reviews/943732/best-portable-4k-projector-review" target="_blank">JMGO’s N3 Ultimate projector is the new portable 4K champ</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-07T03:00:00-04:00 | ID: 41a0942436cb
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            JMGO's N3 Ultimate projector is being hailed as the new portable 4K champion, surpassing Anker's offerings. The N3 Ultimate boasts exceptional performance, able to handle moderate ambient light and challenging placement angles while delivering quality that can rival pricier home theater setups. Testers have praised its raw adaptability, making it a standout choice for those seeking a high-quality portable projector.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/reviews/943732/best-portable-4k-projector-review" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-41a0942436cb" onclick="toggleTweets('41a0942436cb')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-41a0942436cb">
+                <div class="tweet">JMGO's N3 Ultimate projector is changing the game with its exceptional 4K performance, adaptability to ambient light, and challenging placement angles. A must-have for tech enthusiasts! #JMGO #4K #TechNews</div>
+<div class="tweet">Can JMGO's N3 Ultimate projector dethrone Anker as the portable 4K champion? The reviews are in, and it's giving pricier home theater setups a run for their money. What's your take on this new powerhouse? #JMGO #4K #TechDebate</div>
+<div class="tweet">The JMGO N3 Ultimate projector is a game-changer for those seeking high-quality portable projection. Its adaptability to various lighting conditions and angles sets it apart in the market. Upgrade your viewing experience with this 4K champion! #JMGO #HomeTheater #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-06T13:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The cutest games from the Wholesome Direct 2026 showcase">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/943977/wholesome-direct-2026-cute-games-trailers" target="_blank">The cutest games from the Wholesome Direct 2026 showcase</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-06T13:00:00-04:00 | ID: 8e0a57f3ebc3
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Wholesome Direct 2026 showcase at Summer Game Fest featured over 50 adorable and heartwarming games, offering a refreshing break from the usual blockbuster showcases. These games focus on creating a chill and wholesome gaming experience, emphasizing positivity and feel-good gameplay. The showcase highlights a growing trend in the gaming industry towards more relaxing and emotionally uplifting gaming experiences.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/943977/wholesome-direct-2026-cute-games-trailers" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8e0a57f3ebc3" onclick="toggleTweets('8e0a57f3ebc3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8e0a57f3ebc3">
+                <div class="tweet">Discover the cutest and most heartwarming games from the Wholesome Direct 2026 showcase at Summer Game Fest! Over 50 games focused on positivity and feel-good gameplay. 🎮❤️ #WholesomeDirect #Gaming #SummerGameFest</div>
+<div class="tweet">Which game from the Wholesome Direct 2026 showcase caught your eye the most? Share your favorite heartwarming gaming experience! 🌟🕹️ #WholesomeGaming #GameFest #GamingCommunity</div>
+<div class="tweet">The rise of chill and wholesome games at events like Wholesome Direct 2026 showcases a growing trend in the gaming industry towards more relaxing and emotionally uplifting gaming experiences. Positive vibes only! 🌈🎮 #WholesomeGames #GamingTrends #PositiveGaming</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-06T12:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="4K Blu-rays are three for $33 ahead of Father’s Day">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/944347/4k-bluray-gruv-fathers-day-deal-sale" target="_blank">4K Blu-rays are three for $33 ahead of Father’s Day</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-06T12:00:00-04:00 | ID: 2a5cc083a4fc
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Gruv, an online seller operated by Universal Pictures, is offering a deal where customers can purchase three 4K Blu-ray movies for $33 in celebration of Father's Day. This promotion allows individuals to gift high-quality physical media to tech-savvy dads who appreciate the superior resolution and audio quality of 4K content. The offer presents a cost-effective way for consumers to expand their 4K movie collection and enjoy a premium viewing experience.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/944347/4k-bluray-gruv-fathers-day-deal-sale" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2a5cc083a4fc" onclick="toggleTweets('2a5cc083a4fc')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2a5cc083a4fc">
+                <div class="tweet">🎬 Score 3 4K Blu-rays for just $33! Gruv's Father’s Day deal is a steal for tech-savvy movie buffs 🍿 Upgrade your collection with top-notch resolution and audio quality. #4KBluRay #FathersDay #TechDeals</div>
+<div class="tweet">🎁 Stuck on what to gift a tech-loving dad this Father’s Day? How about 3 4K Blu-rays for $33? 🤔 Give the gift of premium movie viewing experience that he'll appreciate! #TechGifts #FathersDayGift #4KMovies</div>
+<div class="tweet">💿 Expand your 4K movie collection without breaking the bank! Gruv's offer of 3 4K Blu-rays for $33 is a great way to enjoy superior resolution and audio quality 🎥 Upgrade your home entertainment setup now! #MovieNight #TechUpgrade #4KResolution</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-04" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="TempoVLA: Learning Speed-Controllable Vision-Language-Action Policies">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.06491v1" target="_blank">TempoVLA: Learning Speed-Controllable Vision-Language-Action Policies</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-04 | ID: 487db072e9e5
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper "TempoVLA" by Dong Jing, Jingchen Nie, Tianqi Zhang, and others introduces a new approach to Vision-Language-Action (VLA) models that allows for speed control during robot manipulation tasks. This innovation addresses the need for robots to alternate between fast execution in low-risk phases and slow, precise motion in high-risk stages. By enabling speed adjustments based on task requirements, TempoVLA enhances the flexibility and adaptability of VLA models in real-world scenarios.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.06491v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-487db072e9e5" onclick="toggleTweets('487db072e9e5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-487db072e9e5">
+                <div class="tweet">Exciting news in robotics! The TempoVLA research paper introduces a groundbreaking approach to Vision-Language-Action models, enabling speed control for robots during manipulation tasks. 🤖🔬 #AI #Robotics #TechInnovation</div>
+<div class="tweet">How can TempoVLA's speed-controllable VLA policies revolutionize the way robots operate in real-world scenarios? 🤔 Share your thoughts! #Robotics #TechResearch #Innovation</div>
+<div class="tweet">TempoVLA's novel approach of adjusting robot speeds based on task requirements enhances adaptability and flexibility in VLA models. A game-changer for robotics in dynamic environments! 🌐💡 #TechAdvancements #Robotics #AI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-06 22:46" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Jeff Bezos says it's 'absurd' to tax someone making $50K — and wants their tax bill dropped to zero">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://finance.yahoo.com/economy/policy/articles/jeff-bezos-says-absurd-tax-165713685.html" target="_blank">Jeff Bezos says it's 'absurd' to tax someone making $50K — and wants their tax bill dropped to zero</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-06-06 22:46 | ID: 2e9760688bde
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Jeff Bezos, the founder of Amazon, has expressed his view that it is unreasonable to tax individuals earning $50,000 annually and suggests their tax burden should be reduced to zero. This statement has sparked a discussion on Reddit in the r/technology community, garnering significant engagement with over 17,000 upvotes and 2,800 comments. Bezos' stance on taxation for lower-income earners has raised debates on wealth distribution and tax policies within the tech and broader community.
+        </div>
+        <div class="source-link">
+            → <a href="https://finance.yahoo.com/economy/policy/articles/jeff-bezos-says-absurd-tax-165713685.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2e9760688bde" onclick="toggleTweets('2e9760688bde')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2e9760688bde">
+                <div class="tweet">Jeff Bezos' recent statement on taxing individuals making $50k has sparked debates on wealth distribution. Join the conversation on Reddit's r/technology community. #JeffBezos #Taxation #TechDebates</div>
+<div class="tweet">Is it fair to tax someone making $50k annually? Jeff Bezos thinks not. What are your thoughts on reducing tax burdens for lower-income earners? Share your opinions. #TaxFairness #WealthDistribution #TechTalk</div>
+<div class="tweet">Jeff Bezos' call to drop tax bills to zero for those earning $50k raises important questions on tax policies and income equality. It's time to rethink wealth distribution. #IncomeEquality #TaxPolicies #TechCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-07 04:55" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="SpaceX has to grow 60x in a decade to justify a $1.75 trillion valuation. It's an impossible bar | Fortune">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://fortune.com/2026/06/06/spacex-ipo-stock-price-valuation/" target="_blank">SpaceX has to grow 60x in a decade to justify a $1.75 trillion valuation. It's an impossible bar | Fortune</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-06-07 04:55 | ID: 4adbf342d53a
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            According to a Fortune article, SpaceX would need to expand its business 60 times over the next decade to justify its current $1.75 trillion valuation, a feat deemed nearly impossible. The discussion on Reddit's r/technology forum, with over 5,000 upvotes and hundreds of comments, reflects skepticism about the company's ability to achieve such exponential growth in a short timeframe.
+        </div>
+        <div class="source-link">
+            → <a href="https://fortune.com/2026/06/06/spacex-ipo-stock-price-valuation/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4adbf342d53a" onclick="toggleTweets('4adbf342d53a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4adbf342d53a">
+                <div class="tweet">Is SpaceX's $1.75 trillion valuation achievable? @Fortune's analysis suggests the company needs to grow 60x in the next decade. Join the discussion on Reddit's r/technology forum for more insights. #SpaceX #TechNews</div>
+<div class="tweet">Can SpaceX really grow 60 times over the next 10 years? The $1.75 trillion valuation seems like a tall order. What do you think about this ambitious target? Share your thoughts! #SpaceX #TechIndustry</div>
+<div class="tweet">Fortune's analysis raises doubts about SpaceX's ability to justify its $1.75 trillion valuation. Exponential growth at this scale in a decade is a major challenge. Will SpaceX be able to meet this lofty goal? #SpaceX #TechAnalysis</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-05 14:04" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="How do you identify researchers who are good? [D]">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1txlxm6/how_do_you_identify_researchers_who_are_good_d/" target="_blank">How do you identify researchers who are good? [D]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-06-05 14:04 | ID: a96346e17627
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the challenge of identifying high-quality researchers in the field of artificial intelligence (AI). The author reflects on their experience with machine learning techniques such as regression, KNN, and LVQ, and notes the proliferation of AI researchers in recent years. The article raises the question of how to differentiate between researchers who produce substantial work and those who may not have the same level of expertise or impact in the field.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1txlxm6/how_do_you_identify_researchers_who_are_good_d/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a96346e17627" onclick="toggleTweets('a96346e17627')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a96346e17627">
+                <div class="tweet">Curious about identifying top AI researchers? Check out this article discussing the challenges and techniques used to differentiate high-quality work in the field. 🤖🔍 #AI #Research #Tech</div>
+<div class="tweet">Ever wondered how we can distinguish between impactful AI researchers and those who may not have the same expertise? This article delves into the complexities of identifying top talent in the field. 🤔💡 #ArtificialIntelligence #TechTalk #Research</div>
+<div class="tweet">One key takeaway from the article on identifying good AI researchers: the importance of using machine learning techniques like regression, KNN, and LVQ to assess the quality of work in the ever-expanding field of AI research. 📊🧠 #MachineLearning #TechInsights #AI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.0" 
+             data-published="Fri, 05 Jun 2026 21:47:56 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Founders share VC horror stories, and some are naming names">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/05/founders-share-vc-horror-stories-and-some-are-naming-names/" target="_blank">Founders share VC horror stories, and some are naming names</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 05 Jun 2026 21:47:56 +0000 | ID: c42d5cfa2999
+             | <span class="engagement-low">Engagement: [32.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent viral conversation on social media platform X has seen founders sharing their VC horror stories, ranging from strange to frustrating experiences. This trend sheds light on the challenges faced by entrepreneurs in dealing with venture capitalists, potentially impacting trust and relationships within the tech startup ecosystem.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/05/founders-share-vc-horror-stories-and-some-are-naming-names/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c42d5cfa2999" onclick="toggleTweets('c42d5cfa2999')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-c42d5cfa2999">
+                <div class="tweet">Founders are opening up about their VC horror stories on platform X, shedding light on challenges in the tech startup world. Trust and relationships in the ecosystem may be impacted. #TechStartups #VentureCapital #Entrepreneurship</div>
+<div class="tweet">What VC horror stories have you heard or experienced in the tech industry? The recent viral conversation on platform X is sparking important discussions about trust and transparency between founders and investors. #TechTalk #VCStories #StartupLife</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-06-06 07:27" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="The perils of UUID primary keys in SQLite">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://andersmurphy.com/2026/06/05/the-perils-of-uuid-primary-keys-in-sqlite.html" target="_blank">The perils of UUID primary keys in SQLite</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-06-06 07:27 | ID: a38f5eab1a2a
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming has highlighted the potential pitfalls of using UUID primary keys in SQLite databases. The conversation, popular among developers with 344 upvotes and 128 comments, delves into the performance issues and storage overhead that can arise when utilizing UUIDs as primary keys in SQLite, shedding light on important considerations for database design and optimization. Developers are advised to carefully evaluate the trade-offs and implications of choosing UUIDs over traditional integer primary keys in SQLite databases.
+        </div>
+        <div class="source-link">
+            → <a href="https://andersmurphy.com/2026/06/05/the-perils-of-uuid-primary-keys-in-sqlite.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a38f5eab1a2a" onclick="toggleTweets('a38f5eab1a2a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a38f5eab1a2a">
+                <div class="tweet">Are you using UUID primary keys in your SQLite databases? A Reddit discussion in r/programming has uncovered potential pitfalls, shedding light on the performance issues and storage overhead. #SQLite #DatabaseDesign</div>
+<div class="tweet">How do you weigh the trade-offs between using UUIDs and integer primary keys in SQLite databases? Join the conversation sparked by a popular Reddit thread in r/programming. #DeveloperCommunity #TechTalk</div>
+<div class="tweet">Key insight: Choosing primary keys in SQLite databases requires careful consideration. A recent Reddit discussion highlights the importance of evaluating performance implications when using UUIDs over traditional integer keys. #DatabaseOptimization #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-06-06 10:32" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Stop Using Conventional Commits">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://sumnerevans.com/posts/software-engineering/stop-using-conventional-commits/" target="_blank">Stop Using Conventional Commits</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-06-06 10:32 | ID: afb1ef496c36
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming with significant engagement has raised concerns about the use of Conventional Commits. The debate centers around the limitations and complexities of the Conventional Commits specification, with some developers advocating for alternative commit message formats that better suit their workflows. This discussion highlights the importance of choosing commit message conventions that align with a team's specific needs and processes.
+        </div>
+        <div class="source-link">
+            → <a href="https://sumnerevans.com/posts/software-engineering/stop-using-conventional-commits/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-afb1ef496c36" onclick="toggleTweets('afb1ef496c36')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-afb1ef496c36">
+                <div class="tweet">Are Conventional Commits too limiting? A recent Reddit discussion in r/programming has sparked a debate on the complexities of commit message conventions. Choose wisely to suit your team's workflow! #ConventionalCommits #Programming #TechDebates</div>
+<div class="tweet">Is it time to ditch Conventional Commits? Join the conversation with developers discussing the limitations and complexities of this commit message specification. What's your take on commit message conventions? #TechTalks #DeveloperCommunity #CommitMessages</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.0" 
+             data-published="Fri, 05 Jun 2026 21:00:29 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="How a USB-connected speaker can infect a PC without ever being touched">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/security/2026/06/highly-reviewed-speaker-can-be-hacked-over-the-air-to-infect-connected-devices/" target="_blank">How a USB-connected speaker can infect a PC without ever being touched</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 21:00:29 +0000 | ID: a7535ade5106
+             | <span class="engagement-low">Engagement: [30.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A security researcher discovered that the Sound Blaster Katana V2X USB speaker could potentially infect a PC with malware without physical contact. By exploiting the speaker's ability to act as a USB hub, an attacker could inject malicious code into the connected PC. The manufacturer does not view this behavior as a vulnerability, raising concerns about the security implications for users of this device.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/security/2026/06/highly-reviewed-speaker-can-be-hacked-over-the-air-to-infect-connected-devices/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a7535ade5106" onclick="toggleTweets('a7535ade5106')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a7535ade5106">
+                <div class="tweet">"Did you know? A USB-connected speaker like the Sound Blaster Katana V2X could potentially infect your PC with malware without physical contact. Stay vigilant about your device security! #TechSecurity #MalwareThreat"</div>
+<div class="tweet">"Could your USB speaker be a backdoor for hackers? The recent discovery of the Sound Blaster Katana V2X's vulnerability raises concerns about device security. How can we protect our PCs from such threats? Share your thoughts! #CyberSecurity #USBThreat"</div>
+<div class="tweet">"Key insight: USB speakers, like the Sound Blaster Katana V2X, can pose unforeseen security risks. Understanding how peripherals interact with your PC is crucial in safeguarding against potential malware injections. Stay informed, stay secure! #DeviceSafety #TechAwareness"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.0" 
+             data-published="Fri, 05 Jun 2026 19:23:08 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Small modular nuclear reactor reaches criticality in first test">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/06/first-us-test-of-modular-reactor-reaches-criticality/" target="_blank">Small modular nuclear reactor reaches criticality in first test</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 19:23:08 +0000 | ID: aadcf090c803
+             | <span class="engagement-low">Engagement: [30.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Antares, a startup, has achieved criticality in the first test of its small modular nuclear reactor, marking a significant milestone in its development. While the reactor is not yet operational for power generation, this achievement paves the way for advancements in small-scale nuclear technology with potential implications for clean energy production in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/06/first-us-test-of-modular-reactor-reaches-criticality/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-aadcf090c803" onclick="toggleTweets('aadcf090c803')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-aadcf090c803">
+                <div class="tweet">Antares, a startup, successfully achieves criticality in the first test of its small modular nuclear reactor! 🚀 This milestone is a game-changer for small-scale nuclear technology. #NuclearEnergy #CleanTech</div>
+<div class="tweet">What does the successful criticality test of Antares' small modular nuclear reactor mean for the future of clean energy production? 🌍💡 Exciting times ahead for nuclear tech! #Innovation #Sustainability</div>
+<div class="tweet">The achievement of criticality by Antares' small modular nuclear reactor sets the stage for potential advancements in clean energy solutions. A promising step towards a more sustainable future. #TechNews #EnergyTransition</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="28.0" 
+             data-published="Fri, 05 Jun 2026 22:36:21 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Baby botulism outbreak: FDA still doesn't know cause—or how to prevent it">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/06/baby-botulism-outbreak-fda-still-doesnt-know-cause-or-how-to-prevent-it/" target="_blank">Baby botulism outbreak: FDA still doesn't know cause—or how to prevent it</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 05 Jun 2026 22:36:21 +0000 | ID: 5b4a1fdb0633
+             | <span class="engagement-low">Engagement: [28.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 28%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Three companies involved in the baby botulism outbreak are unable to determine the cause, leading to a lack of clarity on prevention methods. The FDA is still investigating the situation as the companies continue to shift blame onto each other, leaving the root cause unresolved. This uncertainty highlights the challenges in identifying and preventing such outbreaks in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/06/baby-botulism-outbreak-fda-still-doesnt-know-cause-or-how-to-prevent-it/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5b4a1fdb0633" onclick="toggleTweets('5b4a1fdb0633')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5b4a1fdb0633">
+                <div class="tweet">"Uncertainty looms as FDA investigates baby botulism outbreak with no clear cause or prevention methods identified yet. Companies involved continue to shift blame. #FDA #outbreak #BabyBotulism"</div>
+<div class="tweet">"Who should take responsibility for the baby botulism outbreak with companies pointing fingers? How can we ensure transparency and accountability in such cases? #accountability #transparency #technews"</div>
+<div class="tweet">"Identifying the root cause of the baby botulism outbreak proves challenging, emphasizing the need for improved prevention strategies and collaboration in addressing future health crises. #prevention #collaboration #healthcrisis"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="27.5" 
+             data-published="2026-06-04" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.06493v1" target="_blank">HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-04 | ID: 9a0618aa7ddf
+             | <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 27%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "HANDOFF" by Lizhi Yang, Junheng Li, Nehar Poddar, and others introduces a novel approach for humanoid robot control called Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers. The paper emphasizes the importance of the command space in bridging task planning and whole-body control for real-world deployment of humanoid robots. This new method aims to simplify the control process by providing a more intuitive interface for planners, potentially advancing the field of robotics by making it easier to synthesize task semantics into control commands.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.06493v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9a0618aa7ddf" onclick="toggleTweets('9a0618aa7ddf')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9a0618aa7ddf">
+                <div class="tweet">Exciting tech news! "HANDOFF" introduces a new approach for humanoid robot control, bridging task planning and whole-body control. This method aims to simplify control processes for better robot deployment. 🤖🚀 #Robotics #TechInnovation</div>
+<div class="tweet">Ever wondered how we can enhance humanoid robot control for real-world applications? "HANDOFF" research by Lizhi Yang, Junheng Li, Nehar Poddar, and team introduces a novel approach that could revolutionize the field! 💭🤖 #RobotControl #TechResearch</div>
+<div class="tweet">Key insight from "HANDOFF": Emphasizing the command space in humanoid robot control can make task planning and whole-body control more intuitive and effective, potentially advancing robotics deployment. 🤖💡 #HumanoidRobots #TechAdvancements</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-06-07 09:26:40 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
