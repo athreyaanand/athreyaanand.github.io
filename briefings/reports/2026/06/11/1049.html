@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - June 11, 2026, 10:49 AM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>June 11, 2026, 10:49 AM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-06-11 10:49:27
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 108.6 seconds</div>
+                <div>Start Time: 2026-06-11 10:49:27</div>
+                <div>End Time: 2026-06-11 10:51:16</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 18, Low: 15</div>
+                <div>Topics Detected: 5</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="65.5" 
+             data-published="2026-06-06 04:38" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/" target="_blank">S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-06 04:38 | ID: 5fa693c3550b
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The S&P 500 has rejected SpaceX, OpenAI, and Anthropic from joining the index, impacting their potential for inclusion in investment portfolios that track the index. This decision highlights the challenges faced by companies in the tech sector seeking entry into major financial benchmarks, potentially affecting their market visibility and investor interest. SpaceX, OpenAI, and Anthropic will need to navigate these hurdles to gain broader recognition and access to institutional investors.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5fa693c3550b" onclick="toggleTweets('5fa693c3550b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5fa693c3550b">
+                <div class="tweet">S&P 500 rejects SpaceX, OpenAI, and Anthropic from joining the index, impacting their market visibility and investor interest. Tech companies facing hurdles in accessing major financial benchmarks. #SP500 #TechNews</div>
+<div class="tweet">What challenges do tech companies like SpaceX, OpenAI, and Anthropic face in gaining entry into major financial benchmarks like the S&P 500? Share your thoughts. #TechInvesting #MarketEntry</div>
+<div class="tweet">Being excluded from the S&P 500 poses challenges for tech companies like SpaceX, OpenAI, and Anthropic, affecting their visibility and investor appeal. Overcoming these hurdles crucial for broader recognition and investor access. #TechInvestments #MarketTrends</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-06-10 00:29" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="macOS Container Machines">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://github.com/apple/container/blob/main/docs/container-machine.md" target="_blank">macOS Container Machines</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-10 00:29 | ID: 0739d10ba48d
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new development in the macOS ecosystem involves the introduction of container machines, which are similar to Docker containers but specifically designed for macOS. This innovation allows developers to run multiple instances of macOS on a single host machine, facilitating easier testing and development workflows. The introduction of macOS container machines is expected to streamline development processes and enhance efficiency for developers working within the macOS environment.
+        </div>
+        <div class="source-link">
+            → <a href="https://github.com/apple/container/blob/main/docs/container-machine.md" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0739d10ba48d" onclick="toggleTweets('0739d10ba48d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0739d10ba48d">
+                <div class="tweet">Exciting news for macOS developers! macOS container machines have arrived, offering a Docker-like solution tailored for macOS. Enhance your testing and development workflows with this new innovation. 🖥️🔧 #macOS #ContainerMachines #DeveloperTools</div>
+<div class="tweet">Ever wished for a more streamlined macOS development process? Say hello to macOS container machines! How will this new technology impact your workflow and productivity as a developer? 💭🤔 #macOS #TechInnovation #DeveloperCommunity</div>
+<div class="tweet">Developers, get ready for a game-changer! macOS container machines are set to revolutionize testing and development workflows on macOS. This innovation promises enhanced efficiency and smoother processes for developers. 🚀💻 #macOS #DevOps #EfficiencyBoost</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-06-07 12:49" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="LLMs are eroding my software engineering career and I don't know what to do">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://human-in-the-loop.bearblog.dev/llms-are-eroding-my-software-engineering-career-and-i-dont-know-what-to-do/" target="_blank">LLMs are eroding my software engineering career and I don't know what to do</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-07 12:49 | ID: 10e4d9e45d70
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the impact of Large Language Models (LLMs) on the software engineering field, with concerns raised about their potential to automate tasks traditionally done by developers. LLMs like GPT-3 are increasingly being used for code generation and other programming tasks, leading to fears of job displacement among software engineers. The article highlights the need for developers to adapt to this changing landscape by focusing on skills that complement and enhance the capabilities of LLMs.
+        </div>
+        <div class="source-link">
+            → <a href="https://human-in-the-loop.bearblog.dev/llms-are-eroding-my-software-engineering-career-and-i-dont-know-what-to-do/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-10e4d9e45d70" onclick="toggleTweets('10e4d9e45d70')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-10e4d9e45d70">
+                <div class="tweet">Is your software engineering career being impacted by Large Language Models (LLMs)? Learn how LLMs like GPT-3 are changing the landscape of programming and what developers can do to adapt. #LLMs #SoftwareEngineering #TechTrends</div>
+<div class="tweet">Are Large Language Models (LLMs) a threat to software engineers? How can developers navigate the rise of automation in coding tasks? Share your thoughts on the future of programming with LLMs like GPT-3. #Automation #FutureOfWork #TechDebate</div>
+<div class="tweet">Developers, embrace the shift brought by Large Language Models (LLMs) like GPT-3 in software engineering. Enhance your skills to work alongside these tools, not against them. Adaptation is key in the evolving tech landscape. #Adaptability #TechSkills #SoftwareDevelopment</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-06-09 16:58" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Claude Fable 5">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Claude Fable 5</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-09 16:58 | ID: aba1226004a8
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Hacker News discussion titled "Claude Fable 5" has garnered significant attention with 2568 points and 2107 comments since its posting on June 9, 2026, at 16:58. The topic appears to be of high interest to the tech community, suggesting potential relevance and impact in the field.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-aba1226004a8" onclick="toggleTweets('aba1226004a8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-aba1226004a8">
+                <div class="tweet">Join the buzz in the tech community around "Claude Fable 5" on Hacker News! With 2568 points and 2107 comments, this discussion seems to hold significant importance. Stay tuned for potential impacts in the tech field. #ClaudeFable5 #TechCommunity</div>
+<div class="tweet">What makes "Claude Fable 5" such a hot topic in the tech world? With over 2000 comments and counting, this Hacker News discussion is sparking curiosity and speculation. Share your thoughts on the potential implications of this trend! #TechDiscussion #Innovation</div>
+<div class="tweet">The massive engagement around "Claude Fable 5" on Hacker News indicates a topic of high relevance and interest within the tech community. Keep an eye on this discussion for potential insights and developments shaping the tech landscape. #TechTrends #StayInformed</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-06-08 14:05" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Show HN: Performative-UI – A react component library of design tropes">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://vorpus.github.io/performativeUI/" target="_blank">Show HN: Performative-UI – A react component library of design tropes</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-08 14:05 | ID: 74a005573168
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            "Performative-UI" is a new React component library showcased on Hacker News, garnering significant attention with 1169 points and 209 comments. The library offers a collection of design tropes for developers to easily integrate into their projects, potentially streamlining UI development and enhancing user experience. This resource could be valuable for teams seeking to quickly prototype or implement common design patterns in their web applications.
+        </div>
+        <div class="source-link">
+            → <a href="https://vorpus.github.io/performativeUI/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-74a005573168" onclick="toggleTweets('74a005573168')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-74a005573168">
+                <div class="tweet">🚀 Exciting news! Check out "Performative-UI," a new React component library filled with design tropes to supercharge your projects. With 1169 points on Hacker News, this tool could revolutionize UI development. #React #UI #WebDev</div>
+<div class="tweet">🤔 Want to level up your UI game? Explore "Performative-UI," the React component library buzzing on Hacker News. How could integrating design tropes streamline your next project? #DesignTropes #UX #TechTalk</div>
+<div class="tweet">🔑 Key insight: "Performative-UI" offers developers a treasure trove of design tropes to enhance user experience. With 209 comments, this library is a hot topic on Hacker News. Could this be the UI solution your team needs? #WebDesign #ReactJS #DeveloperCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-06-10 12:45" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Building an HTML-first site doubled our users overnight">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://mohkohn.co.uk/writing/html-first/" target="_blank">Building an HTML-first site doubled our users overnight</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-06-10 12:45 | ID: 4b5e12ec9c99
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A tech company shared how transitioning to an HTML-first approach for their website led to a significant increase in users, doubling their user base overnight. By prioritizing HTML content over JavaScript, the site improved loading times and overall performance, resulting in a better user experience and increased engagement. This shift highlights the importance of optimizing websites for speed and accessibility to attract and retain users.
+        </div>
+        <div class="source-link">
+            → <a href="https://mohkohn.co.uk/writing/html-first/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4b5e12ec9c99" onclick="toggleTweets('4b5e12ec9c99')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4b5e12ec9c99">
+                <div class="tweet">Did you know that transitioning to an HTML-first approach can significantly boost user engagement? This tech company doubled its user base overnight by prioritizing HTML content over JavaScript. #TechNews #WebDevelopment #UserExperience</div>
+<div class="tweet">Ever considered the impact of prioritizing HTML over JavaScript on website performance? This tech company's switch led to a doubling of user numbers practically overnight. How could this strategy benefit your site's user experience? #TechTrends #WebOptimization</div>
+<div class="tweet">Key insight: Prioritizing HTML content over JavaScript can lead to substantial user growth. By optimizing for speed and accessibility, this tech company doubled its user base in a short span. Speed matters! #HTMLFirst #UserEngagement #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Wed, 10 Jun 2026 22:31:19 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="xAI fired an engineer who raised alarms about Grok safety, new lawsuit claims">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/" target="_blank">xAI fired an engineer who raised alarms about Grok safety, new lawsuit claims</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 10 Jun 2026 22:31:19 +0000 | ID: cb38525e8467
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A former xAI engineer has filed a lawsuit against the company and SpaceX, claiming he was terminated after raising AI safety concerns about Grok, an AI system, just days before SpaceX's IPO. The engineer alleges that his warnings were disregarded, leading to his dismissal. This case highlights the importance of addressing AI safety issues and the potential consequences for employees who raise such concerns within tech companies.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cb38525e8467" onclick="toggleTweets('cb38525e8467')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cb38525e8467">
+                <div class="tweet">Former xAI engineer alleges wrongful termination after raising AI safety concerns about Grok before SpaceX's IPO. This case underscores the significance of addressing AI safety issues in tech. #AI #TechEthics #xAI #SpaceX</div>
+<div class="tweet">Is the tech industry doing enough to protect employees who raise AI safety concerns? The lawsuit against xAI and SpaceX sheds light on the challenges faced by whistleblowers in the tech world. #TechNews #AI #Whistleblower #TechEthics</div>
+<div class="tweet">The dismissal of the xAI engineer highlights the pressing need for tech companies to prioritize AI safety and create a supportive environment for employees to voice concerns. Addressing these issues is crucial for the future of AI development. #TechIndustry #AI #TechEthics #xAI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Wed, 10 Jun 2026 20:21:25 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Everyone wants a piece of Tesla’s battery business">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/10/everyone-wants-a-piece-of-teslas-battery-business/" target="_blank">Everyone wants a piece of Tesla’s battery business</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 10 Jun 2026 20:21:25 +0000 | ID: 2e71e7c3a3cc
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Automakers like GM and Ford are entering the energy storage business to meet the rising electricity demand from AI data centers, competing with Tesla's battery business. This move reflects the increasing convergence of automotive and energy sectors as companies seek to capitalize on the growing need for energy storage solutions in various industries. The competition in the energy storage market is intensifying, driven by the demand for sustainable and efficient power solutions.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/10/everyone-wants-a-piece-of-teslas-battery-business/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2e71e7c3a3cc" onclick="toggleTweets('2e71e7c3a3cc')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-2e71e7c3a3cc">
+                <div class="tweet">Interesting tech news: Everyone wants a piece of Tesla’s battery business... https://techcrunch.com/2026/06/10/everyone-wants-a-piece-of-teslas-battery-business/</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Wed, 10 Jun 2026 19:57:04 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="North Koreans behind nearly half of US tech industry hacks, says CrowdStrike">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/10/north-koreans-behind-nearly-half-of-us-tech-industry-hacks-says-crowdstrike/" target="_blank">North Koreans behind nearly half of US tech industry hacks, says CrowdStrike</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 10 Jun 2026 19:57:04 +0000 | ID: 502bebefab18
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            According to cybersecurity firm CrowdStrike, North Korean hackers, masquerading as remote IT workers and recruiters, have been responsible for almost half of the cyberattacks targeting U.S., European, and Asian tech companies in the last year. These attacks highlight the ongoing threat posed by North Korean cyber operatives and emphasize the importance of robust cybersecurity measures for organizations in the tech industry to protect against such threats.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/10/north-koreans-behind-nearly-half-of-us-tech-industry-hacks-says-crowdstrike/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-502bebefab18" onclick="toggleTweets('502bebefab18')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-502bebefab18">
+                <div class="tweet">North Korean hackers, disguised as remote IT workers, are responsible for nearly half of the cyberattacks on US tech companies. Stay vigilant and prioritize cybersecurity measures! #Cybersecurity #TechNews</div>
+<div class="tweet">Are you aware that North Korean cyber operatives have been behind almost 50% of recent tech industry hacks in the US? How can organizations better defend against such sophisticated threats? #CyberAttacks #CyberSecurity #TechTalk</div>
+<div class="tweet">CrowdStrike reports North Korean hackers posing as IT workers have targeted tech firms worldwide. The rise in these attacks underscores the critical need for robust cybersecurity practices in the tech industry. Stay protected! #CyberThreats #DataSecurity #TechIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Wed, 10 Jun 2026 21:33:32 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Cybercriminals claim breach of Oracle PeopleSoft servers at 100-plus organizations">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/10/cybercriminals-claim-breach-of-oracle-peoplesoft-servers-at-100-plus-organizations/" target="_blank">Cybercriminals claim breach of Oracle PeopleSoft servers at 100-plus organizations</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 10 Jun 2026 21:33:32 +0000 | ID: 9e99a8ac3e8b
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The ShinyHunters hacking group has reportedly breached the Oracle PeopleSoft servers of over 100 organizations, predominantly universities. This breach raises concerns about the security of sensitive data stored on these servers and highlights the ongoing threat posed by cybercriminals targeting enterprise systems like PeopleSoft. Organizations using PeopleSoft should review their security measures and consider implementing additional safeguards to protect against potential breaches.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/10/cybercriminals-claim-breach-of-oracle-peoplesoft-servers-at-100-plus-organizations/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9e99a8ac3e8b" onclick="toggleTweets('9e99a8ac3e8b')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-9e99a8ac3e8b">
+                <div class="tweet">Cybercriminals have breached over 100 organizations' Oracle PeopleSoft servers, raising concerns about data security. Organizations using PeopleSoft should enhance their security measures to prevent potential breaches. #CyberSecurity #DataBreach #OraclePeopleSoft</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.0" 
+             data-published="2026-06-10" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="FACTR 2: Learning External Force Sensing for Commodity Robot Arms Improves Policy Learning">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.12406v1" target="_blank">FACTR 2: Learning External Force Sensing for Commodity Robot Arms Improves Policy Learning</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-10 | ID: 2149c5ad6739
+             | <span class="engagement-standard">Engagement: [45.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "FACTR 2" by Steven Oh, Jason Jingzhou Liu, Tony Tao, and others introduces Neural External Torque Estimation (NEXT), a technique that enables commodity robot arms to estimate external joint torques without dedicated force sensors. This innovation addresses the challenge of contact-rich manipulation that typically requires costly force sensitivity. By leveraging data-driven methods like NEXT, robot arms can enhance policy learning and perform tasks that demand force feedback more effectively, potentially advancing the capabilities of affordable robotic systems.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.12406v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2149c5ad6739" onclick="toggleTweets('2149c5ad6739')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-2149c5ad6739">
+                <div class="tweet">"Exciting tech breakthrough! The research paper FACTR 2 introduces NEXT, enabling robot arms to estimate external joint torques without expensive sensors. Enhancing policy learning and advancing affordable robotic systems. #TechNews #Robotics #Innovation"</div>
+<div class="tweet">"Can commodity robot arms effectively perform tasks requiring force feedback without costly sensors? The latest research on Neural External Torque Estimation (NEXT) offers a promising solution. How might this impact the future of robotics? 🤖💡 #TechDiscussion #RobotArms"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Thu, 11 Jun 2026 04:02:19 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Opendoor’s India exit is fueling a bigger conversation about AI and outsourcing">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/10/opendoors-india-exit-is-fueling-a-bigger-conversation-about-ai-and-outsourcing/" target="_blank">Opendoor’s India exit is fueling a bigger conversation about AI and outsourcing</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 11 Jun 2026 04:02:19 +0000 | ID: 9f39c283ab0c
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Opendoor's exit from India is sparking discussions about the role of AI and outsourcing, coinciding with India's rise as the largest GCC market globally. The move highlights the evolving landscape of technology companies leveraging AI and outsourcing strategies, prompting reflections on the implications for the industry and global market dynamics.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/10/opendoors-india-exit-is-fueling-a-bigger-conversation-about-ai-and-outsourcing/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9f39c283ab0c" onclick="toggleTweets('9f39c283ab0c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9f39c283ab0c">
+                <div class="tweet">"Opendoor's exit from India sparks discussions on AI and outsourcing in tech. How will this impact the industry's global dynamics? 🌐 #AI #TechNews #Outsourcing"</div>
+<div class="tweet">"Is Opendoor's India exit a sign of changing strategies in the tech industry? How can companies navigate the evolving landscape of AI and outsourcing? 🧐 #TechTrends #Innovation #GlobalMarket"</div>
+<div class="tweet">"Opendoor's departure from India sheds light on the tech industry's reliance on AI and outsourcing. As India emerges as a key GCC market, what implications will this have for future tech developments? 🚀 #DigitalTransformation #TechIndustry"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Wed, 10 Jun 2026 22:24:12 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Why Andrew Yang is building instead of waiting for Washington">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/video/why-andrew-yang-is-building-instead-of-waiting-for-washington/" target="_blank">Why Andrew Yang is building instead of waiting for Washington</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 10 Jun 2026 22:24:12 +0000 | ID: 93ebb30699f8
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Andrew Yang, known for his warnings about automation and AI impacting the labor market, is now focusing on building solutions rather than waiting for government action. His advocacy for Universal Basic Income, once considered fringe, is gaining traction with figures like Dario Amodei, Sam Altman, and Bernie Sanders echoing similar concerns. Yang's entrepreneurial approach aims to address wealth concentration and job displacement caused by advancing technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/video/why-andrew-yang-is-building-instead-of-waiting-for-washington/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-93ebb30699f8" onclick="toggleTweets('93ebb30699f8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-93ebb30699f8">
+                <div class="tweet">Andrew Yang, known for his warnings about automation and AI, is taking an entrepreneurial approach to address job displacement and wealth concentration caused by advancing technologies. #TechInnovation #AI #UBI</div>
+<div class="tweet">Is Andrew Yang's shift towards building solutions, rather than waiting for government action, the key to addressing the impacts of automation and AI on the labor market? Share your thoughts! #FutureTech #Entrepreneurship #UBI</div>
+<div class="tweet">Andrew Yang's advocacy for Universal Basic Income and focus on building solutions highlights a proactive approach to combat the challenges posed by advancing technologies. #TechLeadership #Innovation #AI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Wed, 10 Jun 2026 20:19:31 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Fresh off bond sale, Amazon borrows $17.5B from banks as AI spending continues">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/10/fresh-off-bond-sale-amazon-borrows-17-5-billion-from-banks-as-ai-spending-continues/" target="_blank">Fresh off bond sale, Amazon borrows $17.5B from banks as AI spending continues</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 10 Jun 2026 20:19:31 +0000 | ID: 1ef8204814f1
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Amazon has secured a $17.5 billion loan from banks following a recent bond sale, as the company ramps up spending on artificial intelligence initiatives. This move reflects the escalating financial commitments required to stay competitive in the AI landscape, with companies investing heavily in technology to maintain their edge. The increasing debt levels highlight the significant costs associated with advancing AI capabilities and signal the ongoing intensification of the AI arms race among tech giants.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/10/fresh-off-bond-sale-amazon-borrows-17-5-billion-from-banks-as-ai-spending-continues/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1ef8204814f1" onclick="toggleTweets('1ef8204814f1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1ef8204814f1">
+                <div class="tweet">"Amazon secures $17.5B loan from banks to fuel AI spending, showcasing the escalating financial commitments in the tech industry. #Amazon #AI #TechNews"</div>
+<div class="tweet">"Is the AI arms race among tech giants driving up debt levels? Amazon's $17.5B loan for AI initiatives sheds light on the competitive landscape. #TechTrends #AI #Debt"</div>
+<div class="tweet">"The significant costs of advancing AI capabilities are evident as Amazon borrows $17.5B, emphasizing the fierce competition in the tech sector. #TechInvestments #AI #Amazon"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="2026-06-10T17:55:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Nearly a million passports and photo IDs were left unprotected on the public internet">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/947157/passports-data-breach-cannabis-club-systems-nefos-puffpal" target="_blank">Nearly a million passports and photo IDs were left unprotected on the public internet</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-10T17:55:00-04:00 | ID: f1fa8d5c155a
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Nearly a million passports and photo IDs were exposed on the public internet due to a security lapse. The documents, including passports and driver's licenses, were left unprotected, potentially compromising the personal information of the individuals featured. This incident highlights the critical need for robust security measures to safeguard sensitive data online.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/947157/passports-data-breach-cannabis-club-systems-nefos-puffpal" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f1fa8d5c155a" onclick="toggleTweets('f1fa8d5c155a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f1fa8d5c155a">
+                <div class="tweet">"Nearly a million passports and photo IDs left exposed on the public internet - a stark reminder of the importance of robust online security measures. #CyberSecurity #DataPrivacy"</div>
+<div class="tweet">"What would you do if your passport or driver's license was left unprotected online? This recent security lapse raises concerns about data vulnerability. #OnlinePrivacy #DataBreach"</div>
+<div class="tweet">"Important lesson from the recent incident: Ensuring the protection of personal data online is crucial. Let's prioritize security measures to prevent such lapses. #DataProtection #TechSecurity"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Wed, 10 Jun 2026 21:30:44 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Man sues Florida cops over arrest spurred by "93% match" in facial recognition">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/06/man-jailed-due-to-faulty-face-recognition-says-florida-cops-ignored-other-evidence/" target="_blank">Man sues Florida cops over arrest spurred by "93% match" in facial recognition</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 10 Jun 2026 21:30:44 +0000 | ID: 1587f7748138
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A man in Florida is suing the police over his arrest, which was triggered by a facial recognition match claiming a 93% accuracy rate. The lawsuit alleges that the police relied on a flawed AI system instead of conducting a proper investigation, highlighting concerns about the accuracy and potential biases of facial recognition technology. This case underscores the importance of ensuring the reliability and accountability of AI systems used in law enforcement to prevent wrongful arrests and protect individual rights.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/06/man-jailed-due-to-faulty-face-recognition-says-florida-cops-ignored-other-evidence/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-1587f7748138" onclick="toggleTweets('1587f7748138')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-1587f7748138">
+                <div class="tweet">"Facial recognition technology under fire as a man sues Florida police over wrongful arrest triggered by a 93% match. This case raises important questions about the accuracy and biases of AI in law enforcement. #FacialRecognition #AI #TechEthics"</div>
+<div class="tweet">"Should law enforcement rely on facial recognition tech with a 93% match rate? A recent lawsuit in Florida highlights concerns about the accuracy and potential biases of AI systems. How can we ensure accountability and prevent wrongful arrests? #FacialRecognition #AI #TechEthics"</div>
+<div class="tweet">"Legal case in Florida underscores the need for reliable and accountable AI systems in law enforcement. Facial recognition technology's 93% match led to a wrongful arrest, raising alarms about accuracy and biases. #FacialRecognition #AI #TechEthics"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="2026-06-11T04:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Deezer launches an AI music detector for other streaming services">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/948153/deezer-ai-music-detector-spotify-apple" target="_blank">Deezer launches an AI music detector for other streaming services</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-11T04:00:00-04:00 | ID: 4580eda3ded2
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Deezer has introduced an AI music detector that scans playlists on other streaming services to identify AI-generated music. This move makes Deezer the first major streaming platform to label AI-generated tracks and offer its detection technology to other services. While Qobuz has also launched its own detection tech, it appears that Apple and Spotify have not yet adopted this feature.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/948153/deezer-ai-music-detector-spotify-apple" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4580eda3ded2" onclick="toggleTweets('4580eda3ded2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4580eda3ded2">
+                <div class="tweet">Did you know? @Deezer has introduced an AI music detector that scans playlists on other streaming services to identify AI-generated tracks, setting a new standard in music recognition and labeling. 🎵🤖 #Deezer #AI #MusicTech</div>
+<div class="tweet">Curious about the future of music recognition technology? @Deezer's AI music detector is leading the way by identifying AI-generated tracks on various streaming platforms. How might this impact the music industry as a whole? 🎶💭 #MusicTech #AI #Deezer</div>
+<div class="tweet">Noteworthy move by @Deezer to launch an AI music detector that labels AI-generated tracks on streaming services. With this technology now available, the music industry may see increased transparency and recognition for AI-composed music. 🎵🔍 #Deezer #AI #MusicRecognition</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Wed, 10 Jun 2026 19:29:21 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Google DeepMind releases DiffusionGemma, a model that runs local AI 4x faster">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/google/2026/06/googles-latest-diffusiongemma-open-ai-model-comes-with-a-4x-speed-boost/" target="_blank">Google DeepMind releases DiffusionGemma, a model that runs local AI 4x faster</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 10 Jun 2026 19:29:21 +0000 | ID: c8a787a40491
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google DeepMind has unveiled DiffusionGemma, a new model designed to accelerate local AI processes by up to 4 times. This technology, primarily used in image generation tasks, now promises significant speed improvements for text outputs as well, enhancing the efficiency of AI applications across various domains.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/google/2026/06/googles-latest-diffusiongemma-open-ai-model-comes-with-a-4x-speed-boost/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c8a787a40491" onclick="toggleTweets('c8a787a40491')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c8a787a40491">
+                <div class="tweet">Google DeepMind introduces DiffusionGemma, a groundbreaking model that boosts local AI performance by up to 4x. This innovation is set to revolutionize AI efficiency across multiple domains. #DeepMind #AI #TechNews</div>
+<div class="tweet">Curious about the future of AI speed enhancements? Google DeepMind's DiffusionGemma is here to accelerate local AI processes by up to 4 times, paving the way for more efficient AI applications. What impact will this have on the tech industry? #AI #Innovation #TechTrends</div>
+<div class="tweet">With the release of DiffusionGemma, Google DeepMind is not only advancing image generation tasks but also transforming text outputs by speeding up local AI processes by 4x. This breakthrough will redefine the efficiency of AI applications. #DeepMind #AIProgress #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Wed, 10 Jun 2026 17:19:31 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Nobody needs AI to search the Internet, court says in ruling against Google">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/06/nobody-needs-ai-to-search-the-internet-court-says-in-ruling-against-google/" target="_blank">Nobody needs AI to search the Internet, court says in ruling against Google</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 10 Jun 2026 17:19:31 +0000 | ID: e310b5ae3ed5
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A court ruling in Germany has stated that AI technology is not necessary for internet searches, dealing a blow to Google's AI Overview tool. This decision could have significant implications for the AI search industry, potentially limiting the use of AI in search functionalities. The ruling highlights the ongoing legal and ethical debates surrounding the role of AI in search technologies and its impact on user privacy and data protection.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/06/nobody-needs-ai-to-search-the-internet-court-says-in-ruling-against-google/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e310b5ae3ed5" onclick="toggleTweets('e310b5ae3ed5')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-e310b5ae3ed5">
+                <div class="tweet">Court ruling in Germany declares AI unnecessary for internet searches, impacting Google's AI Overview tool. This decision could reshape the AI search industry landscape. Stay tuned for more updates. #AI #SearchTechnology #Google</div>
+<div class="tweet">Is AI essential for internet searches or can traditional methods still prevail? The recent court ruling in Germany against Google's AI Overview tool raises thought-provoking questions on the future of search technologies. What are your thoughts? #AI #InternetSearch #TechDebate</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-06-10T18:52:17-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Apple’s new Siri AI knows when to shut up">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/948155/apple-siri-ai-chatbot-personality" target="_blank">Apple’s new Siri AI knows when to shut up</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-10T18:52:17-04:00 | ID: 7bbf097bf626
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple has introduced a new version of Siri AI that is more concise and to the point compared to other chatbots. This updated Siri is designed to be less chatty and more efficient in its responses, focusing on providing relevant information quickly. Users may appreciate this streamlined approach for more effective interactions with Siri.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/948155/apple-siri-ai-chatbot-personality" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7bbf097bf626" onclick="toggleTweets('7bbf097bf626')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7bbf097bf626">
+                <div class="tweet">Exciting news for Apple users! The new Siri AI is now more concise and efficient, making interactions quicker and more effective. #Apple #Siri #AI</div>
+<div class="tweet">Wondering if less is more? Apple's updated Siri AI is now designed to be less chatty and more to the point. Do you prefer this streamlined approach in chatbots? #TechTalk #Siri #AI</div>
+<div class="tweet">Key insight: Apple's revamped Siri AI focuses on providing quick, relevant information without unnecessary chatter. Efficiency and effectiveness take center stage in this new update. #Apple #Siri #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="2026-06-11T06:08:24-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="YouTube is introducing DMs (again)">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/streaming/948256/youtube-brings-back-private-messaging-feature-availability" target="_blank">YouTube is introducing DMs (again)</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-11T06:08:24-04:00 | ID: 0e0a9526d693
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            YouTube is relaunching its private messaging feature, allowing users to share videos and engage in conversations directly on the platform. The in-app video sharing and messaging feature is being expanded to users in the US and other global regions, targeting users aged 18 and above. This move aims to enhance user engagement and foster more interactions within the YouTube community.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/streaming/948256/youtube-brings-back-private-messaging-feature-availability" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0e0a9526d693" onclick="toggleTweets('0e0a9526d693')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0e0a9526d693">
+                <div class="tweet">YouTube is rolling out DMs again! Users in the US and globally can now share videos and chat directly on the platform. A move to boost engagement and foster community interactions. #YouTube #MessagingFeature</div>
+<div class="tweet">Tweeting your thoughts is so 2010. How about discussing videos directly on YouTube with their new DM feature? Are you excited to engage in more meaningful conversations on the platform? #YouTubeDMs #Engagement</div>
+<div class="tweet">Did you know? YouTube is relaunching its private messaging feature to enhance user engagement. This upgrade aims to connect users through in-app video sharing and messaging, creating a more interactive YouTube community. #YouTubeUpdates #UserEngagement</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Wed, 10 Jun 2026 17:31:13 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="We managed to glean some interesting details about the Artemis III mission">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/06/we-managed-to-glean-some-interesting-details-about-the-artemis-iii-mission/" target="_blank">We managed to glean some interesting details about the Artemis III mission</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 10 Jun 2026 17:31:13 +0000 | ID: bcf05977fe5a
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Blue Origin leadership has shared intriguing details about the Artemis III mission during a recent conversation. The discussions have provided insights into the mission's progress and potential advancements in space exploration technology. This information could offer valuable insights for developers and tech professionals interested in the space industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/06/we-managed-to-glean-some-interesting-details-about-the-artemis-iii-mission/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-bcf05977fe5a" onclick="toggleTweets('bcf05977fe5a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-bcf05977fe5a">
+                <div class="tweet">Exciting insights on the Artemis III mission shared by Blue Origin leadership! Learn about the latest advancements in space exploration technology. 🚀 #ArtemisIII #SpaceTech #BlueOrigin</div>
+<div class="tweet">Curious about the future of space exploration? Dive into the details of the Artemis III mission revealed by Blue Origin. What potential innovations could transform the industry? 🌌 #ArtemisIII #SpaceInnovation #BlueOrigin</div>
+<div class="tweet">Key takeaway from the Artemis III mission details: The advancements discussed by Blue Origin could pave the way for groundbreaking developments in space tech. Stay tuned for more updates! 🛰️ #ArtemisIII #SpaceExploration #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Wed, 10 Jun 2026 17:04:47 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Cheap Iranian drone downed $25 million US Army helicopter—maybe by chance">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/06/cheap-iranian-drone-downed-25-million-us-army-helicopter-maybe-by-chance/" target="_blank">Cheap Iranian drone downed $25 million US Army helicopter—maybe by chance</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 10 Jun 2026 17:04:47 +0000 | ID: 54d000fb66d0
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A $25 million US Army helicopter was downed by a cheap Iranian drone in a lucky midair strike, prompting a retaliatory response from the US military. The incident highlights the potential threat posed by inexpensive drones to high-value military assets and the need for advanced anti-drone technology to mitigate such risks.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/06/cheap-iranian-drone-downed-25-million-us-army-helicopter-maybe-by-chance/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-54d000fb66d0" onclick="toggleTweets('54d000fb66d0')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-54d000fb66d0">
+                <div class="tweet">Is the era of inexpensive drones posing a serious threat to high-value military assets? A recent incident involving a $25 million US Army helicopter downed by a cheap Iranian drone suggests so. #TechNews #MilitaryTech #DroneThreat</div>
+<div class="tweet">How can advanced anti-drone technology help safeguard high-value military assets against potential attacks by inexpensive drones? The recent downing of a $25 million US Army helicopter by a cheap Iranian drone raises crucial questions. #DefenseTech #DroneSecurity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-06-10" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Context-Driven Incremental Compression for Multi-Turn Dialogue Generation">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.12411v1" target="_blank">Context-Driven Incremental Compression for Multi-Turn Dialogue Generation</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-10 | ID: 7eb40c891404
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Context-Driven Incremental Compression for Multi-Turn Dialogue Generation" by Yeongseo Jung, Jaehyeok Kim, Eunseo Jung, and others addresses the challenge of efficiently handling an expanding dialogue history in conversational agents. The study introduces a context-driven incremental compression technique to reduce redundant attention and encoding costs as dialogues progress, aiming to enhance dialogue generation quality without sacrificing fidelity. By incorporating cross-turn memory sharing and revision mechanisms, the proposed approach aims to improve the efficiency and effectiveness of multi-turn dialogue generation models.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.12411v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7eb40c891404" onclick="toggleTweets('7eb40c891404')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7eb40c891404">
+                <div class="tweet">Exciting research on dialogue generation! "Context-Driven Incremental Compression for Multi-Turn Dialogue Generation" introduces a technique to enhance dialogue quality efficiently. 🤖💬 #AI #DialogueGeneration #TechResearch</div>
+<div class="tweet">Can context-driven compression revolutionize dialogue generation in conversational agents? The latest study by Yeongseo Jung, Jaehyeok Kim, and Eunseo Jung delves into this intriguing question. 🧐💭 #TechInnovation #ResearchPaper #AI</div>
+<div class="tweet">Key insight: Cross-turn memory sharing and revision mechanisms can enhance multi-turn dialogue generation models by reducing redundant costs. Stay ahead in the dialogue generation game with this innovative approach! 🚀💭 #Innovation #TechTalk #DialogueModels</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="Thu, 11 Jun 2026 03:53:06 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Anthropic’s Dario Amodei has just one direct report">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/10/anthropics-dario-amodei-has-just-one-direct-report/" target="_blank">Anthropic’s Dario Amodei has just one direct report</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 11 Jun 2026 03:53:06 +0000 | ID: 6c2f208f505f
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic's Dario Amodei, known for his work in artificial intelligence, now has just one direct report, signaling a shift in the company's structure. This move suggests a more streamlined approach to decision-making and potentially faster progress in developing advanced AI technologies under Amodei's leadership.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/10/anthropics-dario-amodei-has-just-one-direct-report/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6c2f208f505f" onclick="toggleTweets('6c2f208f505f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6c2f208f505f">
+                <div class="tweet">Exciting news from Anthropic as Dario Amodei, a key figure in AI, now leads with just one direct report. This change hints at a streamlined decision-making process and accelerated progress in cutting-edge AI tech development. #AI #TechNews</div>
+<div class="tweet">Is Anthropic's decision to have Dario Amodei with just one direct report a strategic move to boost innovation and agility in AI development? How might this new structure impact the pace of technological advancements? #ArtificialIntelligence #Innovation</div>
+<div class="tweet">With Dario Amodei now overseeing just one direct report, Anthropic seems poised for faster advancements in AI tech. A streamlined leadership structure could lead to more efficient decision-making and groundbreaking developments in the field. #TechLeadership #AIProgress</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="Wed, 10 Jun 2026 19:57:56 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Logitech’s foldable mouse is for people who refuse to carry a mouse with them">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/06/logitechs-mobi-fold-folds-for-travel-but-i-prefer-a-different-portable-mouse/" target="_blank">Logitech’s foldable mouse is for people who refuse to carry a mouse with them</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 10 Jun 2026 19:57:56 +0000 | ID: 6a986594f8b9
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Logitech has introduced the Mobi Fold, an $80 Bluetooth mouse featuring a silicone-wrapped hinge that allows it to fold in half for portability. The innovative design targets users who prefer not to carry a traditional mouse, offering a compact and convenient solution for on-the-go productivity. This foldable mouse combines functionality with portability, catering to individuals seeking a lightweight and space-saving input device for their computing needs.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/06/logitechs-mobi-fold-folds-for-travel-but-i-prefer-a-different-portable-mouse/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6a986594f8b9" onclick="toggleTweets('6a986594f8b9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6a986594f8b9">
+                <div class="tweet">Logitech's Mobi Fold is a game-changer for on-the-go productivity! This $80 foldable Bluetooth mouse features a silicone-wrapped hinge for easy portability. Say goodbye to bulky mice! #Logitech #MobiFold #TechInnovation</div>
+<div class="tweet">Are you tired of lugging around a bulky mouse? Logitech's new Mobi Fold might just be the answer you've been looking for! How important is portability when it comes to your tech accessories? #MouseOnTheGo #Logitech #TechTalk</div>
+<div class="tweet">Logitech's Mobi Fold caters to the tech-savvy individual who seeks both functionality and portability in their devices. This innovative foldable mouse offers a compact solution for those constantly on the move. #TechEssentials #Logitech #InnovativeDesign</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-06-09 13:29" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="someone actually leaked the Miasma supply chain attack toolkit source code on github">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://safedep.io/inside-the-miasma-supply-chain-attack-toolkit/" target="_blank">someone actually leaked the Miasma supply chain attack toolkit source code on github</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-06-09 13:29 | ID: 2a324df3d3ce
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Miasma supply chain attack toolkit source code has been leaked on GitHub, as reported in a Reddit discussion on r/programming. This leak could potentially enable malicious actors to analyze the code and exploit vulnerabilities in software supply chains, posing a significant security threat to organizations relying on third-party dependencies. Developers and security professionals should be vigilant and take necessary precautions to protect their systems against potential attacks stemming from this leaked source code.
+        </div>
+        <div class="source-link">
+            → <a href="https://safedep.io/inside-the-miasma-supply-chain-attack-toolkit/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2a324df3d3ce" onclick="toggleTweets('2a324df3d3ce')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2a324df3d3ce">
+                <div class="tweet">The Miasma supply chain attack toolkit source code has been leaked on GitHub, raising concerns about potential software supply chain vulnerabilities. #CyberSecurity #SupplyChainAttack</div>
+<div class="tweet">Are you prepared to defend against potential security threats posed by the leaked Miasma supply chain attack toolkit source code on GitHub? Share your thoughts. #CyberThreats #InfoSec</div>
+<div class="tweet">The leaked Miasma supply chain attack toolkit source code highlights the importance of robust cybersecurity measures and continuous monitoring to safeguard against evolving threats in software supply chains. #CyberDefense #StayProtected</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.0" 
+             data-published="2026-06-10" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Reroute, Don't Remove: Recoverable Visual Token Routing for Vision-Language Models">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.12412v1" target="_blank">Reroute, Don't Remove: Recoverable Visual Token Routing for Vision-Language Models</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-10 | ID: d08db46310a8
+             | <span class="engagement-low">Engagement: [38.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Cheng-Yu Yang, Shao-Yuan Lo, and Yu-Lun Liu introduces a novel approach called "Recoverable Visual Token Routing" for Vision-Language Models (VLMs). This method aims to address the inefficiencies in decoder inference caused by the large number of visual tokens generated by VLMs. Unlike existing methods that remove visual tokens based on ranking, this approach focuses on rerouting tokens to improve efficiency in attention computation and memory usage, potentially enhancing the performance of VLMs in various applications.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.12412v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d08db46310a8" onclick="toggleTweets('d08db46310a8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d08db46310a8">
+                <div class="tweet">Exciting tech news! Researchers have introduced "Recoverable Visual Token Routing" to optimize Vision-Language Models. Learn how this method enhances efficiency and performance in decoding. #TechNews #VLMs</div>
+<div class="tweet">Ever wondered how Vision-Language Models handle a large number of visual tokens during decoding? Check out the innovative solution of "Recoverable Visual Token Routing" proposed by Cheng-Yu Yang, Shao-Yuan Lo, and Yu-Lun Liu. #TechInnovation #Efficiency</div>
+<div class="tweet">Key insight: "Recoverable Visual Token Routing" offers a promising approach to improving attention computation and memory usage in Vision-Language Models. This method could revolutionize VLM performance across different applications. #TechBreakthrough #ResearchImpact</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-06-11T04:59:16-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Ryanair is under investigation over charging parents to sit with their kids">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/transportation/948244/ryanair-cma-probe-parents-child-seating-fee" target="_blank">Ryanair is under investigation over charging parents to sit with their kids</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-11T04:59:16-04:00 | ID: a648a30a4a98
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Ryanair is being investigated by the UK's Competition and Markets Authority for charging parents mandatory fees to sit with their children. The CMA is examining whether these seating fees, which may be related to child safety and disability obligations, are unfair to consumers. This investigation raises concerns about the airline's pricing practices and potential impact on families traveling with children.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/transportation/948244/ryanair-cma-probe-parents-child-seating-fee" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a648a30a4a98" onclick="toggleTweets('a648a30a4a98')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a648a30a4a98">
+                <div class="tweet">Ryanair faces investigation for charging parents mandatory fees to sit with their kids. The CMA is exploring if these fees comply with consumer fairness standards. #Ryanair #CMA #TechNews</div>
+<div class="tweet">Is it fair for airlines to charge parents extra to sit with their children on flights? The investigation into Ryanair's seating fees raises important questions about consumer rights and family travel experiences. #Ryanair #CMA #ConsumerRights</div>
+<div class="tweet">The Ryanair investigation highlights the potential impact of airline pricing practices on families traveling with children. Will this lead to changes in how airlines approach seating fees for parents and kids? #Ryanair #CMA #FamilyTravelTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Wed, 10 Jun 2026 22:16:57 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Diabetes org apologizes for ejecting scientists over criticism of Trump">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/06/diabetes-org-apologizes-for-ejecting-scientists-over-criticism-of-trump/" target="_blank">Diabetes org apologizes for ejecting scientists over criticism of Trump</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 10 Jun 2026 22:16:57 +0000 | ID: ebebdeab8333
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The American Diabetes Association (ADA) issued an apology for expelling scientists who criticized former President Trump during a conference. The ADA initially defended its decision but later backtracked, acknowledging the error and expressing regret for the incident. This controversy highlights the challenges organizations face in balancing free speech and professional conduct, especially in the context of political discourse within scientific communities.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/06/diabetes-org-apologizes-for-ejecting-scientists-over-criticism-of-trump/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ebebdeab8333" onclick="toggleTweets('ebebdeab8333')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ebebdeab8333">
+                <div class="tweet">Apology issued by the American Diabetes Association after ejecting scientists who criticized Trump at a conference. Balancing free speech and professional conduct remains a challenge in scientific communities. #ADA #FreeSpeech #TechNews</div>
+<div class="tweet">How should organizations navigate the intersection of politics and science? The recent incident with the American Diabetes Association sheds light on the complexities of upholding free speech while maintaining professional standards. #SciComm #Ethics #ADA</div>
+<div class="tweet">The controversy surrounding the ADA and the ejected scientists underscores the importance of fostering open dialogue in scientific spaces. Upholding professional conduct while respecting diverse viewpoints is crucial for progress and inclusivity. #Inclusion #ScienceEthics #ADA</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Wed, 10 Jun 2026 16:52:36 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="OB-GYNs release their own vaccine schedule, rejecting RFK Jr.'s meddling">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/06/bucking-rfk-jr-ob-gyns-release-vaccine-guidance-that-conflicts-with-cdc/" target="_blank">OB-GYNs release their own vaccine schedule, rejecting RFK Jr.'s meddling</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 10 Jun 2026 16:52:36 +0000 | ID: 58ddb39449bf
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OB-GYNs have introduced their own vaccine schedule, distancing themselves from Robert F. Kennedy Jr.'s influence. This move follows endorsements from thirteen medical organizations supporting the independent schedule, emphasizing the importance of evidence-based vaccination practices in the medical community.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/06/bucking-rfk-jr-ob-gyns-release-vaccine-guidance-that-conflicts-with-cdc/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-58ddb39449bf" onclick="toggleTweets('58ddb39449bf')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-58ddb39449bf">
+                <div class="tweet">OB-GYNs take a stand by introducing their own vaccine schedule, emphasizing evidence-based practices over external influence. Medical community united for independent vaccination guidelines. #OBGYN #Vaccines #Healthcare #EvidenceBased</div>
+<div class="tweet">Are OB-GYNs leading the way in advocating for evidence-based vaccination practices? Their rejection of external influence showcases a commitment to prioritizing patient health and safety. What are your thoughts? #OBGYN #Vaccination #PatientSafety #MedicalEthics</div>
+<div class="tweet">The move by OB-GYNs to establish an independent vaccine schedule sends a strong message about the importance of evidence-based medicine in the face of external pressures. Trust in science and medical expertise remains crucial. #EvidenceBased #Medicine #Healthcare #VaccineSchedule</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-06-10 23:19" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="College students are rapidly losing the ability to read — “There is a measurable, generational collapse in sustained reading and writing”: professor">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.yahoo.com/news/us/articles/college-students-rapidly-losing-ability-124439310.html" target="_blank">College students are rapidly losing the ability to read — “There is a measurable, generational collapse in sustained reading and writing”: professor</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-06-10 23:19 | ID: 8ee0498a32df
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A professor has highlighted a concerning trend of college students losing the ability to engage in sustained reading and writing, pointing to a generational collapse in these skills. This observation underscores the impact of digital distractions and changing study habits on literacy levels among young adults, raising questions about the implications for education and communication in the digital age.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.yahoo.com/news/us/articles/college-students-rapidly-losing-ability-124439310.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8ee0498a32df" onclick="toggleTweets('8ee0498a32df')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8ee0498a32df">
+                <div class="tweet">Are digital distractions leading to a decline in reading and writing skills among college students? A professor highlights a concerning trend of a generational collapse in sustained literacy levels. 📚💻 #TechTrends #DigitalAge #Education</div>
+<div class="tweet">How can we ensure that college students maintain strong reading and writing skills in the digital age? The impact of changing study habits on literacy levels among young adults is a pressing concern. 📖💬 #TechSkills #Literacy #Education</div>
+<div class="tweet">Digital distractions are contributing to a measurable decline in sustained reading and writing among college students. This trend raises important questions about the future of education and communication in today's tech-driven world. 📚💭 #TechImpact #DigitalLiteracy #Education</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.0" 
+             data-published="2026-06-10" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="How Seemingly Inconsequential Design Choices Dictate Performance of LLMs in Pathology">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.12407v1" target="_blank">How Seemingly Inconsequential Design Choices Dictate Performance of LLMs in Pathology</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-10 | ID: e23b9138c2ae
+             | <span class="engagement-low">Engagement: [35.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A research paper by Kian R. Weihrauch, Thomas A. Buckley, William Lotter, and others highlights the impact of seemingly inconsequential design choices on the performance of large language models (LLMs) in pathology. The study reveals that using small, high-magnification patches processed independently can significantly affect the performance of LLM baselines when evaluating specialized pathology models on whole-slide images (WSIs) due to the limitations of contemporary model context. This research underscores the importance of carefully considering design choices in utilizing LLMs for pathology applications to optimize performance.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.12407v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e23b9138c2ae" onclick="toggleTweets('e23b9138c2ae')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e23b9138c2ae">
+                <div class="tweet">Unlocking the potential of large language models (LLMs) in pathology requires attention to seemingly minor design choices. Learn how small, high-magnification patches impact LLM performance. #TechNews #AI #Pathology</div>
+<div class="tweet">Ever wondered how seemingly inconsequential design choices can influence the performance of large language models in pathology? Dive into this fascinating research by Kian R. Weihrauch and team. #TechResearch #LLMs #Pathology</div>
+<div class="tweet">The study on LLMs in pathology emphasizes the critical need to carefully consider design choices for optimal performance. Small, high-magnification patches play a significant role in enhancing specialized pathology models. #HealthTech #ResearchInsights #TechCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="34.5" 
+             data-published="2026-06-11 00:27" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Landmark German ruling declares Google's AI Overviews are Google's own words and makes it liable for false answers">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://the-decoder.com/landmark-german-ruling-declares-googles-ai-overviews-are-googles-own-words-and-makes-it-liable-for-false-answers/" target="_blank">Landmark German ruling declares Google's AI Overviews are Google's own words and makes it liable for false answers</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-06-11 00:27 | ID: 9e613d567ac9
+             | <span class="engagement-low">Engagement: [34.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 34%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent German court ruling has declared that Google's AI-generated search result overviews are considered Google's own content, holding the tech giant liable for any false information provided. This decision sets a precedent for the responsibility of tech companies in ensuring the accuracy of AI-generated content and could impact how search engines handle automated responses in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://the-decoder.com/landmark-german-ruling-declares-googles-ai-overviews-are-googles-own-words-and-makes-it-liable-for-false-answers/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9e613d567ac9" onclick="toggleTweets('9e613d567ac9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9e613d567ac9">
+                <div class="tweet">Landmark German ruling holds Google accountable for AI-generated content, setting a precedent for tech responsibility in ensuring accuracy. #AI #Google #TechLaw</div>
+<div class="tweet">How should tech companies balance innovation with accountability in AI-generated content post this German court ruling on Google's AI Overviews? #TechEthics #AIResponsibility #Google</div>
+<div class="tweet">German court decision makes Google liable for false AI-generated content, emphasizing the need for tech companies to prioritize accuracy in automated responses. #TechResponsibility #AIContent #SearchEngines</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-11T06:40:21-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="iFixit Trump phone teardown confirms it’s an HTC dupe">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/948262/trump-phone-t1-ifixit-teardown-htc-u24-pro" target="_blank">iFixit Trump phone teardown confirms it’s an HTC dupe</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-11T06:40:21-04:00 | ID: cd1e55a072a8
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            iFixit's teardown of the Trump phone revealed that it is essentially a replica of the HTC U24 Pro, confirming earlier suspicions. The partnership with NBC allowed iFixit to examine the device closely, highlighting the similarities between the two models and raising questions about the originality of the Trump phone's design and technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/948262/trump-phone-t1-ifixit-teardown-htc-u24-pro" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cd1e55a072a8" onclick="toggleTweets('cd1e55a072a8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cd1e55a072a8">
+                <div class="tweet">"iFixit's teardown of the Trump phone unveiled its true identity as an HTC U24 Pro dupe. The partnership with NBC provided a close examination, revealing striking similarities. 📱🛠️ #iFixit #TechNews"</div>
+<div class="tweet">"Could the resemblance between the Trump phone and HTC U24 Pro be a case of imitation or inspiration? iFixit's teardown raises questions about the originality of the design. 🤔📱 #TechMystery #iFixit"</div>
+<div class="tweet">"The Trump phone's teardown by iFixit showcases a surprising connection to the HTC U24 Pro, shedding light on the intricacies of tech replication in the industry. 🧐🔍 #TechInsight #iFixit"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-10T20:05:48-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Bluesky is getting ‘communities’">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/948215/bluesky-communities-at-protocol-atmosphere-reddit" target="_blank">Bluesky is getting ‘communities’</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-10T20:05:48-04:00 | ID: 6887e0aa81fc
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Bluesky, the decentralized social media project, is set to introduce "communities" as smaller spaces for users to engage with like-minded individuals. These communities will be based on the AT Protocol that powers Bluesky, offering users a deeper and more focused interaction experience. This move aims to enhance user engagement and foster connections around shared interests within the Bluesky platform.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/948215/bluesky-communities-at-protocol-atmosphere-reddit" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6887e0aa81fc" onclick="toggleTweets('6887e0aa81fc')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6887e0aa81fc">
+                <div class="tweet">Bluesky is elevating user interaction with the introduction of 'communities' - smaller spaces for like-minded individuals to connect and engage. The AT Protocol powers this move, promising a more focused social experience. #Bluesky #DecentralizedSocialMedia</div>
+<div class="tweet">Are 'communities' the missing link in social media engagement? Bluesky's new feature aims to bring users closer based on shared interests. How do you think this will impact the way we connect online? Share your thoughts! #Bluesky #CommunityEngagement</div>
+<div class="tweet">Bluesky's introduction of 'communities' signifies a shift towards more meaningful interactions online. By fostering connections around shared interests, the platform is aiming to enhance user engagement and create a more focused social experience. #Bluesky #UserEngagement</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-10T19:12:51-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Framework delays its first Laptop 13 Pro shipments by a month">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/948044/framework-laptop-13-pro-delay-shipment-july-august" target="_blank">Framework delays its first Laptop 13 Pro shipments by a month</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-10T19:12:51-04:00 | ID: 351c8f28f3f3
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Framework Laptop 13 Pro, a 13-inch flagship model, is facing delays with the first batch of shipments now expected in July, potentially extending to early August for some customers. This delay impacts customers eagerly awaiting the new laptop's release, pushing back their receipt of the product by at least a month from the initial June launch timeline.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/948044/framework-laptop-13-pro-delay-shipment-july-august" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-351c8f28f3f3" onclick="toggleTweets('351c8f28f3f3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-351c8f28f3f3">
+                <div class="tweet">Attention tech enthusiasts! The highly anticipated Framework Laptop 13 Pro shipments are facing delays, with the first batch expected in July. Stay tuned for updates. #FrameworkLaptop #TechNews</div>
+<div class="tweet">Curious about the latest delay in the Framework Laptop 13 Pro shipments? What factors might be causing these setbacks, and how will it impact the tech community's reception of this flagship model? Share your thoughts. #Framework #TechDelays</div>
+<div class="tweet">The delay in Framework Laptop 13 Pro shipments sheds light on the challenges tech companies face in meeting high demand while maintaining quality standards. Patience is key for customers eagerly awaiting this innovative product. #TechIndustry #ProductLaunches</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-06-09 10:01" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="SQLite improving performance with pre-sort">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://andersmurphy.com/2026/06/07/sqlite-improving-performance-with-pre-sort.html" target="_blank">SQLite improving performance with pre-sort</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-06-09 10:01 | ID: 5686129a7a54
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            SQLite is enhancing its performance by introducing a new feature called "pre-sort" that allows users to specify a pre-sorted order for data retrieval. This feature aims to optimize query performance, especially for large datasets, by reducing the need for sorting during query execution. Developers can leverage this improvement to enhance the speed and efficiency of their SQLite database operations.
+        </div>
+        <div class="source-link">
+            → <a href="https://andersmurphy.com/2026/06/07/sqlite-improving-performance-with-pre-sort.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5686129a7a54" onclick="toggleTweets('5686129a7a54')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-5686129a7a54">
+                <div class="tweet">SQLite boosts performance with new "pre-sort" feature, streamlining data retrieval for optimized query performance. Developers can now enhance SQLite database operations for faster and more efficient results. #SQLite #database #performance</div>
+<div class="tweet">Curious how SQLite's new "pre-sort" feature could revolutionize query execution for large datasets? Learn how this enhancement is set to transform the efficiency of SQLite database operations. #technews #SQLite #optimization</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="27.5" 
+             data-published="2026-06-10 14:14" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="Anthropic's new model Fable will silently handicap work on LLMs [D]">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1u23f8p/anthropics_new_model_fable_will_silently_handicap/" target="_blank">Anthropic's new model Fable will silently handicap work on LLMs [D]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-06-10 14:14 | ID: e38af26d58cf
+             | <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 27%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic has introduced a new model called Fable that includes engineered limitations to restrict its effectiveness in developing large language models (LLMs) at the cutting edge. This move aims to address concerns about the rapid advancement of AI models and their potential risks, by deliberately handicapping Fable's capabilities for frontier LLM development. Developers working on LLMs may need to adjust their strategies or explore alternative models due to these intentional limitations in Anthropic's Fable model.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1u23f8p/anthropics_new_model_fable_will_silently_handicap/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e38af26d58cf" onclick="toggleTweets('e38af26d58cf')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-e38af26d58cf">
+                <div class="tweet">Anthropic's new model Fable introduces intentional limitations to curb rapid AI advancement in developing large language models (LLMs). Developers may need to adapt strategies or explore alternative models. #AI #TechNews #Fable</div>
+<div class="tweet">Can intentionally handicapping AI models like Anthropic's Fable be an effective strategy to mitigate risks associated with rapid advancements in technology? How might this impact the future of AI development? #AIethics #TechDiscussion #Fable</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-06-11 10:49:27 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
