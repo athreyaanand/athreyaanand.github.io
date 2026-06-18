@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - June 18, 2026, 10:40 AM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>June 18, 2026, 10:40 AM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>33 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-06-18 10:40:54
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 102.8 seconds</div>
+                <div>Start Time: 2026-06-18 10:40:54</div>
+                <div>End Time: 2026-06-18 10:42:36</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 33</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 33</div>
+                <div>Tweet Sets: 33</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 33</div>
+                <div>Distribution: Standard: 17, Low: 16</div>
+                <div>Topics Detected: 6</div>
+                <div>Cross-platform Stories: 1</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="53.5" 
+             data-published="Wed, 17 Jun 2026 19:46:16 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="FTC lawsuit reveals how subscription scam networks evade app store enforcement">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/17/ftc-lawsuit-reveals-how-subscription-scam-networks-evade-app-store-enforcement/" target="_blank">FTC lawsuit reveals how subscription scam networks evade app store enforcement</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 17 Jun 2026 19:46:16 +0000 | ID: 26a9ae0e8aa5
+             | <span class="engagement-standard">Engagement: [53.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 53%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent FTC lawsuit uncovered the tactics used by subscription app operators to evade app store regulations, including the use of shell companies and complex payment infrastructure. Despite consumer complaints, these operators have managed to remain active on app stores by employing these deceptive practices. This revelation highlights the need for stricter enforcement measures to protect consumers from subscription scams in the app ecosystem.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/17/ftc-lawsuit-reveals-how-subscription-scam-networks-evade-app-store-enforcement/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-26a9ae0e8aa5" onclick="toggleTweets('26a9ae0e8aa5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-26a9ae0e8aa5">
+                <div class="tweet">Unveiling the deception: FTC lawsuit exposes how subscription scam networks dodge app store rules through shell companies and intricate payment setups. Consumers beware! #TechNews #FTC #SubscriptionScams</div>
+<div class="tweet">Ever wondered how subscription app operators evade app store regulations? The recent FTC lawsuit sheds light on their deceptive tactics. What measures should be taken to safeguard consumers from such scams? #TechEthics #AppStore #FTC</div>
+<div class="tweet">Key takeaway from the FTC lawsuit: Subscription app operators are adept at circumventing app store rules, posing risks to consumers. Stricter enforcement is essential to curb the prevalence of subscription scams in the app ecosystem. #ConsumerProtection #TechIndustry #FTC</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Thu, 18 Jun 2026 06:26:24 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="NASA picks Eric Schmidt’s rocket company for Mars mission, setting up a race with SpaceX">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/17/nasa-picks-eric-schmidts-rocket-company-for-mars-mission-setting-up-a-race-with-spacex/" target="_blank">NASA picks Eric Schmidt’s rocket company for Mars mission, setting up a race with SpaceX</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 18 Jun 2026 06:26:24 +0000 | ID: fcb5ca4bf68e
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            NASA has chosen Relativity Space, a rocket company acquired by Eric Schmidt, for a Mars mission, potentially setting up a competition with SpaceX. Relativity Space, known for its 3D-printed rockets, could be on track to reach Mars ahead of SpaceX, marking a significant milestone in the space exploration industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/17/nasa-picks-eric-schmidts-rocket-company-for-mars-mission-setting-up-a-race-with-spacex/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-fcb5ca4bf68e" onclick="toggleTweets('fcb5ca4bf68e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-fcb5ca4bf68e">
+                <div class="tweet">NASA selects Eric Schmidt's rocket company, Relativity Space, for Mars mission, potentially sparking a competition with SpaceX. Exciting to see how 3D-printed rockets may advance space exploration! 🚀🔴 #NASA #SpaceX #RelativitySpace #MarsMission</div>
+<div class="tweet">Could Eric Schmidt's Relativity Space beat SpaceX to Mars? NASA's recent choice sets the stage for an intriguing space race. Which company do you think will reach the Red Planet first? 🌌🔴 #SpaceRace #MarsExploration #EricSchmidt #SpaceX #RelativitySpace</div>
+<div class="tweet">NASA's selection of Relativity Space for a Mars mission signals a new era in space exploration. With innovative 3D-printed rockets, Relativity Space could be on the verge of making history by reaching Mars ahead of SpaceX. 🚀🔴 #SpaceInnovation #FutureofSpace #NASA #RelativitySpace</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="50.5" 
+             data-published="Wed, 17 Jun 2026 23:28:21 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="AI is hurting Apple in more ways than one: it may force iPhone price increases">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/17/ai-is-hurting-apple-in-more-ways-than-one-it-may-force-iphone-price-increases/" target="_blank">AI is hurting Apple in more ways than one: it may force iPhone price increases</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 17 Jun 2026 23:28:21 +0000 | ID: 87a0dcb36ae8
+             | <span class="engagement-standard">Engagement: [50.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 50%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple is facing challenges with AI technology that may lead to potential iPhone price increases, according to CEO Tim Cook. Cook expressed concerns about the impact of AI on Apple's business model, indicating that the current situation is "unsustainable." This suggests that Apple may need to reevaluate its pricing strategy in response to the evolving landscape of AI technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/17/ai-is-hurting-apple-in-more-ways-than-one-it-may-force-iphone-price-increases/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-87a0dcb36ae8" onclick="toggleTweets('87a0dcb36ae8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-87a0dcb36ae8">
+                <div class="tweet">Is AI causing iPhone prices to rise? Apple CEO Tim Cook suggests so, highlighting challenges faced by the tech giant. How will this impact consumer pricing and Apple's competitive edge? 📱💰 #AI #Apple #iPhone #TechNews</div>
+<div class="tweet">How will Apple navigate the challenges posed by AI technology? With potential iPhone price increases on the horizon, will consumers be willing to pay more for cutting-edge AI features? 🍎💡 #AI #Apple #TechTrends #Innovation</div>
+<div class="tweet">Apple's Tim Cook acknowledges the strain AI is placing on the company's pricing strategy. As AI evolves, will Apple be able to maintain its premium positioning amidst rising costs? 🤖💲 #Apple #AI #TechIndustry #FutureTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Wed, 17 Jun 2026 21:30:50 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Chi-Hua Chien saw Facebook coming — now he says the real AI winners won’t be selling AI">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/17/chi-hua-chien-saw-facebook-coming-now-he-says-the-real-ai-winners-wont-be-selling-ai/" target="_blank">Chi-Hua Chien saw Facebook coming — now he says the real AI winners won’t be selling AI</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 17 Jun 2026 21:30:50 +0000 | ID: eea03ba8c618
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Venture capitalist Chi-Hua Chien predicts that the true winners in artificial intelligence (AI) will not be those selling AI technology, but rather companies leveraging AI to enhance their core businesses. Chien emphasizes the importance of integrating AI into existing products and services to drive real value and innovation. This perspective highlights a shift towards practical AI applications that deliver tangible benefits beyond just selling AI solutions.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/17/chi-hua-chien-saw-facebook-coming-now-he-says-the-real-ai-winners-wont-be-selling-ai/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-eea03ba8c618" onclick="toggleTweets('eea03ba8c618')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-eea03ba8c618">
+                <div class="tweet">Venture capitalist Chi-Hua Chien predicts that true winners in AI won't be selling AI tech, but companies leveraging AI to enhance core businesses. Integrating AI into products/services is key for driving real innovation. 🚀 #ArtificialIntelligence #Innovation #TechNews</div>
+<div class="tweet">Is the future of AI less about selling the technology and more about integrating it into existing products/services for real value and innovation? 💭 What are your thoughts on this shift in AI focus? #AI #TechInnovation #FutureTech</div>
+<div class="tweet">Key insight: Chi-Hua Chien emphasizes the importance of companies leveraging AI to enhance core businesses, rather than just selling AI solutions. Practical AI applications that drive tangible benefits and innovation are the way forward. 🌟 #AI #TechIndustry #InnovationFocus</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Wed, 17 Jun 2026 20:17:38 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="NEA’s Tiffany Luck says enterprises are still figuring out their AI ROI">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/video/neas-tiffany-luck-says-enterprises-are-still-figuring-out-their-ai-roi/" target="_blank">NEA’s Tiffany Luck says enterprises are still figuring out their AI ROI</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 17 Jun 2026 20:17:38 +0000 | ID: d08e1526186f
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Enterprises are grappling with the challenge of determining the return on investment (ROI) for their AI initiatives, according to NEA's Tiffany Luck. The article highlights instances where companies like Uber exceeded their annual AI budgets quickly, leading to adjustments in AI usage and strategies. This underscores the importance of carefully evaluating and managing AI investments to ensure sustainable and effective implementation within organizations.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/video/neas-tiffany-luck-says-enterprises-are-still-figuring-out-their-ai-roi/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d08e1526186f" onclick="toggleTweets('d08e1526186f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d08e1526186f">
+                <div class="tweet">Enterprises are still navigating the challenge of measuring AI ROI, as highlighted by NEA's Tiffany Luck. Wise AI investment evaluation is crucial for sustainable implementation. #AI #ROI #TechNews</div>
+<div class="tweet">Ever wondered how companies like Uber are managing their AI budgets? NEA's Tiffany Luck sheds light on the ongoing struggle with AI ROI in enterprises. What strategies would you implement to ensure effective AI investments? #ArtificialIntelligence #TechROI</div>
+<div class="tweet">Key takeaway from NEA's Tiffany Luck: Companies are quickly adjusting AI strategies due to exceeding annual budgets. Careful evaluation and management of AI investments are vital for sustainable implementation and success. #TechInvestments #AIstrategy #NEAinsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Thu, 18 Jun 2026 01:23:51 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="How to turn off AI in your Google Docs">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/17/how-to-turn-off-ai-in-your-google-docs/" target="_blank">How to turn off AI in your Google Docs</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Thu, 18 Jun 2026 01:23:51 +0000 | ID: 4a5e62b6803d
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            To turn off the AI-powered writing suggestions in Google Docs, users can disable the "Smart Compose" feature by clicking on "Tools" in the menu bar, selecting "Preferences," and unchecking the box next to "Show Smart Compose suggestions." This allows users to opt out of the AI-generated writing prompts and regain control over their writing experience in Google Docs. By following these steps, users can customize their editing environment to suit their preferences and workflow.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/17/how-to-turn-off-ai-in-your-google-docs/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4a5e62b6803d" onclick="toggleTweets('4a5e62b6803d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4a5e62b6803d">
+                <div class="tweet">Looking to regain control over your writing experience in Google Docs? Follow these steps to turn off AI-powered writing suggestions by disabling "Smart Compose" in the Preferences menu. #GoogleDocs #AI #TechTips</div>
+<div class="tweet">Ever felt like AI was taking over your writing process in Google Docs? What if you could opt out of AI-generated prompts and customize your editing environment? Find out how to disable "Smart Compose" and reclaim your writing space. #AI #Tech #GoogleDocs</div>
+<div class="tweet">Take charge of your writing experience in Google Docs by turning off AI-powered suggestions. By disabling "Smart Compose," users can personalize their editing environment and tailor it to their workflow preferences. #TechNews #GoogleDocs #AI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Wed, 17 Jun 2026 20:32:52 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Roelof Botha joins SpaceX’s board of directors">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/17/roelof-botha-joins-spacexs-board-of-directors/" target="_blank">Roelof Botha joins SpaceX’s board of directors</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 17 Jun 2026 20:32:52 +0000 | ID: 7bcd163979e1
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Roelof Botha, former Sequoia Capital leader, has joined SpaceX's board of directors to fill an existing vacancy. This move comes shortly after SpaceX's record-breaking IPO, signaling potential strategic shifts and increased expertise in the company's leadership.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/17/roelof-botha-joins-spacexs-board-of-directors/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7bcd163979e1" onclick="toggleTweets('7bcd163979e1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7bcd163979e1">
+                <div class="tweet">Exciting news for SpaceX as Roelof Botha, former Sequoia Capital leader, joins their board of directors following the record-breaking IPO. 🚀 #SpaceX #RoelofBotha #TechNews</div>
+<div class="tweet">What strategic shifts could we expect at SpaceX with Roelof Botha now on board? 🤔 Join the conversation! #SpaceX #RoelofBotha #TechLeadership</div>
+<div class="tweet">Roelof Botha's addition to SpaceX's board brings valuable expertise and signals potential growth avenues for the company. 🌟 #SpaceX #TechIndustry #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Thu, 18 Jun 2026 06:37:59 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Hulk, Punisher join Peter Parker in Spider-Man: Brand New Day trailer">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/06/hulk-punisher-join-peter-parker-in-spider-man-brand-new-day-trailer/" target="_blank">Hulk, Punisher join Peter Parker in Spider-Man: Brand New Day trailer</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Thu, 18 Jun 2026 06:37:59 +0000 | ID: 64088d87c2f5
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The latest Spider-Man: Brand New Day trailer reveals a crossover featuring Hulk and Punisher alongside Peter Parker. The trailer showcases the trio teaming up in a high-octane adventure, hinting at exciting new gameplay mechanics and storylines for fans of the Marvel universe. This crossover is expected to bring a fresh dynamic to the game and create buzz among players eager to explore new interactions between these iconic characters.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/06/hulk-punisher-join-peter-parker-in-spider-man-brand-new-day-trailer/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-64088d87c2f5" onclick="toggleTweets('64088d87c2f5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-64088d87c2f5">
+                <div class="tweet">Exciting news for Marvel fans! The latest Spider-Man: Brand New Day trailer features a crossover with Hulk and Punisher, promising new gameplay mechanics and storylines. Get ready for an epic adventure! 🕷️🎮 #SpiderMan #Marvel #Gaming</div>
+<div class="tweet">What happens when Spider-Man teams up with Hulk and Punisher? The new trailer for Spider-Man: Brand New Day hints at thrilling possibilities! Which superhero combo are you most excited to see in action? 🦸‍♂️💥 #SuperheroCrossover #Marvel #Gaming</div>
+<div class="tweet">The crossover of Spider-Man, Hulk, and Punisher in the Brand New Day trailer not only expands gameplay but also offers a fresh narrative perspective. Fans can expect a dynamic trio with unique interactions and action-packed sequences. 🎬🕸️ #GamingCommunity #MarvelUniverse</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Wed, 17 Jun 2026 20:24:28 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="After unveiling ridiculously expensive AR glasses, Snap’s stock takes a dive">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/06/17/after-unveiling-ridiculously-expensive-ar-glasses-snaps-stock-takes-a-dive/" target="_blank">After unveiling ridiculously expensive AR glasses, Snap’s stock takes a dive</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 17 Jun 2026 20:24:28 +0000 | ID: b05f5d163bdd
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Snap recently launched its highly anticipated augmented reality (AR) glasses, which come with a hefty price tag. However, the unveiling of these expensive AR glasses has led to a decline in Snap's stock value. Investors are closely monitoring the reception of these smart glasses as they could potentially impact Snap's future in the AR market.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/06/17/after-unveiling-ridiculously-expensive-ar-glasses-snaps-stock-takes-a-dive/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b05f5d163bdd" onclick="toggleTweets('b05f5d163bdd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b05f5d163bdd">
+                <div class="tweet">"Snap's latest AR glasses make a splash with a high price tag but cause a dip in stock value. Will the hefty cost be worth it for the tech-savvy consumer? #Snap #AR #TechNews"</div>
+<div class="tweet">"Is the gamble on pricey AR glasses paying off for Snap? The stock takes a hit post-launch. Are consumers ready to splurge for AR tech? #Snap #AR #TechInvestment"</div>
+<div class="tweet">"Snap's AR glasses stir buzz with a luxury price point but investors are cautious as stock value drops. A risky move in the competitive AR market. #Snap #AR #TechStocks"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Wed, 17 Jun 2026 22:11:20 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Second carcass-eating fly species cleared by FDA for maggot wound therapy">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/06/second-carcass-eating-fly-species-cleared-by-fda-for-maggot-wound-therapy/" target="_blank">Second carcass-eating fly species cleared by FDA for maggot wound therapy</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 17 Jun 2026 22:11:20 +0000 | ID: 817d8bcb85ab
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The FDA has approved a second species of carcass-eating fly for maggot wound therapy, expanding treatment options for medical professionals. While maggot therapy lacks comprehensive data, it is gaining popularity among practitioners and patients as an alternative wound healing method. The addition of a new fly species provides more choices for healthcare providers exploring this unconventional yet effective approach.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/06/second-carcass-eating-fly-species-cleared-by-fda-for-maggot-wound-therapy/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-817d8bcb85ab" onclick="toggleTweets('817d8bcb85ab')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-817d8bcb85ab">
+                <div class="tweet">Exciting news in the medical field! FDA approves second carcass-eating fly species for maggot wound therapy, offering more options for healthcare providers. #FDA #MaggotTherapy #HealthTech</div>
+<div class="tweet">Ever considered using maggots for wound healing? With FDA clearing a new fly species for maggot therapy, could this unconventional approach become more mainstream in healthcare? #InnovativeTherapies #MedicalTech #FDAApproval</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.0" 
+             data-published="2026-06-17" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Learning User Simulators with Turing Rewards">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.19336v1" target="_blank">Learning User Simulators with Turing Rewards</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-17 | ID: ef7c3d2bb960
+             | <span class="engagement-standard">Engagement: [43.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper "Learning User Simulators with Turing Rewards" by Yingshan Susan Wang, Cedegao E. Zhang, Linlu Qiu, and others explores training user simulators in interactive settings using large language models (LLMs). This approach could enhance agent assistant training, personalization system evaluation, and social sciences research. By leveraging Turing Rewards, the study aims to improve the accuracy and effectiveness of simulating human user behavior.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.19336v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ef7c3d2bb960" onclick="toggleTweets('ef7c3d2bb960')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-ef7c3d2bb960">
+                <div class="tweet">Interesting tech news: Learning User Simulators with Turing Rewards... http://arxiv.org/abs/2606.19336v1</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="43.0" 
+             data-published="2026-06-17" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Freeing the Law with LOCUS: A Local Ordinance Corpus for the United States">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.19334v1" target="_blank">Freeing the Law with LOCUS: A Local Ordinance Corpus for the United States</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-17 | ID: 86705a4179f2
+             | <span class="engagement-standard">Engagement: [43.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Freeing the Law with LOCUS" by Denis Peskoff, Joe Barrow, Christopher Vu, and others introduces a Local Ordinance Corpus for the United States to address the lack of machine-readable data on local ordinances in legal AI research. Local ordinances play a crucial role in governing areas like zoning, housing, business licensing, and public health, making this corpus a valuable resource for advancing legal AI technologies by providing access to authoritative local legal text for analysis and development. This initiative aims to fill a significant gap in existing legal corpora and enhance the understanding and application of local laws in AI systems.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.19334v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-86705a4179f2" onclick="toggleTweets('86705a4179f2')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-86705a4179f2">
+                <div class="tweet">Exciting research introduces LOCUS, a Local Ordinance Corpus for the US to empower legal AI research by providing machine-readable data on local ordinances. Dive into the details here! #LegalTech #AI #LOCUS</div>
+<div class="tweet">Ever wondered how local ordinances impact AI algorithms? The new Local Ordinance Corpus (LOCUS) aims to bridge the gap by providing access to crucial local legal text for analysis and development. How could this reshape legal tech innovation? 🧐 #LegalAI #LOCUS</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Wed, 17 Jun 2026 19:25:19 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="AI coding agents taught robots how to install GPUs and cut zip ties">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/06/ai-coding-agents-can-autonomously-direct-robot-training/" target="_blank">AI coding agents taught robots how to install GPUs and cut zip ties</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 17 Jun 2026 19:25:19 +0000 | ID: 4cffc3a350bb
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Nvidia has developed an AI coding program that teaches robots how to install GPUs and cut zip ties. This self-improvement initiative utilizes teams of AI coding agents to enhance robot capabilities in hardware manipulation tasks, showcasing advancements in AI-driven automation for complex physical tasks.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/06/ai-coding-agents-can-autonomously-direct-robot-training/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-4cffc3a350bb" onclick="toggleTweets('4cffc3a350bb')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-4cffc3a350bb">
+                <div class="tweet">Exciting tech news! Nvidia's AI coding agents are teaching robots to install GPUs and cut zip ties, showcasing advancements in automation for physical tasks. #AI #Robotics #Automation</div>
+<div class="tweet">Ever thought about AI teaching robots? Nvidia's latest initiative involves AI coding agents training robots to handle hardware tasks like installing GPUs and cutting zip ties. What's next for AI-driven automation in the physical world? #AI #Robotics #FutureTech</div>
+<div class="tweet">Nvidia's use of AI coding agents to enhance robot capabilities in hardware tasks highlights the potential of AI-driven automation for complex physical tasks. The future of robotics is evolving rapidly with AI advancements. #Nvidia #AI #Automation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-06-17T17:42:21-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Tim Cook says RAM expenses are &#8216;unsustainable&#8217; and Apple is going to raise prices">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/951948/apple-tim-cook-price-increases-ram" target="_blank">Tim Cook says RAM expenses are &#8216;unsustainable&#8217; and Apple is going to raise prices</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-17T17:42:21-04:00 | ID: 7011972f5e09
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple CEO Tim Cook has acknowledged the unsustainable costs of RAM due to the ongoing memory shortage and plans to raise prices to offset the impact. Cook mentioned in an interview with The Wall Street Journal that price increases are inevitable as Apple tries to mitigate the significant cost hikes being passed on to them. This move reflects the broader industry challenges related to the supply chain disruptions affecting memory components.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/951948/apple-tim-cook-price-increases-ram" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7011972f5e09" onclick="toggleTweets('7011972f5e09')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7011972f5e09">
+                <div class="tweet">"Apple CEO Tim Cook acknowledges the impact of rising RAM costs due to memory shortages. Brace yourselves for potential price hikes. 📈💻 #Apple #TechNews"</div>
+<div class="tweet">"Are you willing to pay more for Apple products as RAM prices soar? Tim Cook hints at price hikes to counter memory shortages. 🤔💰 #Tech #Apple"</div>
+<div class="tweet">"Tim Cook's admission on unsustainably high RAM costs sheds light on broader industry challenges. How will Apple navigate supply chain disruptions? 🤔💡 #TechIndustry #SupplyChain"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-06-17T16:43:28-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="VSCO launches Studio Pro mobile photo editing app and plans $500 per year subscription">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/951863/vsco-studio-pro-vsco-one-subscription" target="_blank">VSCO launches Studio Pro mobile photo editing app and plans $500 per year subscription</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-17T16:43:28-04:00 | ID: 0890dedc3256
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            VSCO has introduced Studio Pro, a new mobile photo editing app that will compete with Adobe's offerings. The app, initially available on iOS with a macOS version planned for later this year, includes features like batch editing, style matching, and image sharing through VSCO Galleries. VSCO also announced a subscription model priced at $500 per year, signaling a shift towards a more premium service for professional users.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/951863/vsco-studio-pro-vsco-one-subscription" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0890dedc3256" onclick="toggleTweets('0890dedc3256')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-0890dedc3256">
+                <div class="tweet">Interesting tech news: VSCO launches Studio Pro mobile photo editing app and plans $500 per year subscription... https://www.theverge.com/tech/951863/vsco-studio-pro-vsco-one-subscription</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Wed, 17 Jun 2026 19:43:13 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Tesco moving 40,000 server workloads off VMware amid Broadcom's “abusive conduct”">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/information-technology/2026/06/tesco-moving-40000-server-workloads-off-vmware-amid-broadcoms-abusive-conduct/" target="_blank">Tesco moving 40,000 server workloads off VMware amid Broadcom's “abusive conduct”</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 17 Jun 2026 19:43:13 +0000 | ID: ad49434c5f44
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Tesco is shifting 40,000 server workloads away from VMware due to Broadcom's alleged price increase of 175% in UK court documents. This move highlights the impact of vendor pricing strategies on large enterprises and the importance of cost efficiency in managing server workloads.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/information-technology/2026/06/tesco-moving-40000-server-workloads-off-vmware-amid-broadcoms-abusive-conduct/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ad49434c5f44" onclick="toggleTweets('ad49434c5f44')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ad49434c5f44">
+                <div class="tweet">Tesco's decision to move 40,000 server workloads away from VMware sheds light on the impact of vendor pricing strategies on large enterprises. Cost efficiency remains crucial in managing server workloads. #TechNews #EnterpriseTech</div>
+<div class="tweet">Is vendor pricing becoming a major concern for large enterprises? Tesco's move to shift server workloads away from VMware due to Broadcom's alleged abusive conduct sparks conversations on cost efficiency and vendor relationships. #TechIndustry #VendorRelations</div>
+<div class="tweet">The case of Tesco moving 40,000 server workloads highlights the significance of evaluating vendor pricing strategies for cost efficiency. Enterprises must prioritize managing server workloads effectively amidst evolving tech landscapes. #CostEfficiency #ServerManagement</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-06-17T12:27:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Vibe-decoding the White House-Anthropic fight over Fable">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/column/951516/trump-anthropic-feud-mythos-fable-white-house" target="_blank">Vibe-decoding the White House-Anthropic fight over Fable</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-17T12:27:00-04:00 | ID: 7a17f578566c
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses a feud between the White House and AI company Anthropic over Fable, a tool for developing AI models. The White House is pushing for transparency and oversight in AI development, while Anthropic argues for more autonomy. This clash highlights the ongoing debate over the regulation and ethical considerations in AI development, potentially shaping the future of frontier AI technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/column/951516/trump-anthropic-feud-mythos-fable-white-house" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7a17f578566c" onclick="toggleTweets('7a17f578566c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7a17f578566c">
+                <div class="tweet">Is the future of AI development at stake? Dive into the clash between the White House and AI company Anthropic over Fable, shedding light on the transparency vs. autonomy debate in frontier AI technologies. #AIethics #TechDebate</div>
+<div class="tweet">Are transparency and autonomy mutually exclusive in AI development? The White House and Anthropic's feud over Fable sparks debate on regulation and ethics in shaping the next-generation of AI technologies. What are your thoughts? #TechEthics #AIRegulation</div>
+<div class="tweet">The clash between the White House and Anthropic over Fable underscores the crucial need for balancing transparency and autonomy in AI development. Understanding the ethical considerations is key to shaping the future of AI technologies. #AIFuture #TechDebate</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-06-17T15:09:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Epic wants to let you bring your Fortnite skins to other games">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/951785/epic-games-fortnite-unreal-fest-2026-unreal-engine-6-ai-metaverse" target="_blank">Epic wants to let you bring your Fortnite skins to other games</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-17T15:09:00-04:00 | ID: 397cd66da983
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Epic Games is aiming to enable players to carry their Fortnite skins to other games through Unreal Engine 6. This move aligns with Epic's vision of an interoperable metaverse, allowing developers to create games that can utilize these assets across different platforms. Unreal Engine 6's capabilities are set to facilitate a more seamless integration of virtual worlds and assets, potentially reshaping the gaming landscape.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/951785/epic-games-fortnite-unreal-fest-2026-unreal-engine-6-ai-metaverse" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-397cd66da983" onclick="toggleTweets('397cd66da983')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-397cd66da983">
+                <div class="tweet">Exciting news for gamers! Epic Games is working on enabling Fortnite skins to be used in other games through Unreal Engine 6. This could revolutionize cross-platform gaming experiences! 🎮 #Fortnite #UnrealEngine6 #GamingNews</div>
+<div class="tweet">Ever wished you could use your favorite Fortnite skins in other games? Epic Games is making it possible with Unreal Engine 6. How do you think this move will impact the future of gaming? 🤔 #Fortnite #UnrealEngine6 #GamingCommunity</div>
+<div class="tweet">Unreal Engine 6's potential to allow Fortnite skins in other games signals a step towards a more interconnected metaverse. Epic Games' vision of an interoperable gaming experience could reshape how we play and share virtual assets. 🌐 #Metaverse #VirtualAssets #GamingFuture</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-06-17T13:20:24-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Two-thirds of Americans think AI is advancing too quickly">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/951653/pew-research-ai-chatbot-usage-advancing-too-quickly" target="_blank">Two-thirds of Americans think AI is advancing too quickly</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-17T13:20:24-04:00 | ID: 2a5dac6ccd63
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent Pew Research poll reveals that while 49 percent of Americans use chatbots occasionally, 63 percent believe AI is progressing too rapidly. The use of AI chatbots has surged since 2024, with ChatGPT's adoption doubling since 2023. This data underscores growing concerns about the pace of AI development among a majority of Americans.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/951653/pew-research-ai-chatbot-usage-advancing-too-quickly" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2a5dac6ccd63" onclick="toggleTweets('2a5dac6ccd63')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2a5dac6ccd63">
+                <div class="tweet">Are we moving too fast with AI? According to a recent Pew Research poll, 63% of Americans think so. The use of AI chatbots is on the rise, but concerns about the pace of development are growing. #AI #TechTrends</div>
+<div class="tweet">Is the rapid advancement of AI cause for concern? With 63% of Americans believing AI is progressing too quickly, it's clear there's a divide on the pace of innovation. How can we balance progress with ethical considerations? #ArtificialIntelligence #EthicsInTech</div>
+<div class="tweet">Key insight: Majority of Americans (63%) feel AI is advancing too rapidly, despite the increasing adoption of AI chatbots like ChatGPT. This highlights the need for discussions around responsible AI development and regulation. #AIethics #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="Wed, 17 Jun 2026 20:44:32 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Sooner than expected? Useful quantum error correction promised for 2028.">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/06/amazon-quera-promise-useful-quantum-error-correction-by-2028/" target="_blank">Sooner than expected? Useful quantum error correction promised for 2028.</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 17 Jun 2026 20:44:32 +0000 | ID: 01ca7c05467d
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent tech news article discusses the promising development of quantum error correction, expected to be useful by 2028, earlier than previously anticipated. This advancement is crucial for stabilizing quantum computing systems and improving their reliability. Additionally, the article mentions progress in both quantum hardware and classical computing, indicating a competitive landscape in the field of quantum technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/06/amazon-quera-promise-useful-quantum-error-correction-by-2028/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-01ca7c05467d" onclick="toggleTweets('01ca7c05467d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-01ca7c05467d">
+                <div class="tweet">Exciting news in quantum computing! Quantum error correction set to be useful by 2028, earlier than expected. This development will enhance the reliability of quantum systems. #QuantumComputing #TechNews</div>
+<div class="tweet">Question for tech enthusiasts: How will the accelerated timeline of quantum error correction impact the future of quantum technologies? Let's discuss! #QuantumTech #Innovation</div>
+<div class="tweet">Key insight: Quantum error correction advancements signal a competitive landscape in quantum computing. The race to stabilize systems is on, with potential implications for various industries. #TechInnovation #QuantumErrorCorrection</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-06-17T23:12:31-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Midjourney goes from generating cat images to full-body ultrasound scans">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/952011/midjourney-medical-ai-ultrasound-scan" target="_blank">Midjourney goes from generating cat images to full-body ultrasound scans</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-17T23:12:31-04:00 | ID: c8dca87fba1d
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Midjourney, known for its AI image generator creating cat pictures, has unveiled The Midjourney Scanner, a full-body ultrasound scanner using a ring of sensors. The device marks the company's shift towards hardware and healthcare technology, with plans to establish a San Francisco spa. The scanner's technology offers detailed full-body ultrasound scans, showcasing Midjourney's expansion beyond its initial AI image generation focus.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/952011/midjourney-medical-ai-ultrasound-scan" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c8dca87fba1d" onclick="toggleTweets('c8dca87fba1d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c8dca87fba1d">
+                <div class="tweet">From cat images to full-body ultrasound scans! Midjourney surprises with The Midjourney Scanner, utilizing a ring of sensors for detailed scans. Their move into healthcare tech is a game-changer. #TechNews #HealthTech</div>
+<div class="tweet">Ever imagined a tech company known for cat pics would venture into full-body ultrasound scans? What do you think of Midjourney's bold shift into healthcare technology? #Innovation #HealthcareRevolution</div>
+<div class="tweet">Midjourney's transition to hardware and healthcare tech with The Midjourney Scanner signifies the company's growth and adaptability in the tech industry. Exciting to see their innovative journey unfold! #TechEvolution #StartupGrowth</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-06-17T14:28:50-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Anthropic got hit by export rules nobody understands">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/951703/anthropic-shutdown-export-controls" target="_blank">Anthropic got hit by export rules nobody understands</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-17T14:28:50-04:00 | ID: 319a7afa25c5
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Anthropic, an AI company, faced challenges when the Trump administration ordered it to block access to its latest AI models, Fable 5 and Mythos 5, for all foreign nationals, including users in the US and its own employees. The export rules imposed created confusion and disruption, leading Anthropic to take down the models temporarily. This incident highlights the complexities and uncertainties surrounding export regulations in the tech industry, impacting the company's operations and access to its AI technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/951703/anthropic-shutdown-export-controls" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-319a7afa25c5" onclick="toggleTweets('319a7afa25c5')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-319a7afa25c5">
+                <div class="tweet">Anthropic, an AI company, faced challenges due to unclear export rules, impacting access to its latest AI models for all foreign nationals. Learn more about the complexities of tech export regulations. #TechNews #AI #ExportRegulations</div>
+<div class="tweet">What are the implications of export rules on tech companies like Anthropic? How can regulatory clarity be achieved to avoid disruptions in AI technology access? Share your thoughts. #TechIndustry #Regulations #AI</div>
+<div class="tweet">The incident with Anthropic highlights the need for clearer export regulations in the tech industry. Uncertainties can disrupt operations and hinder access to cutting-edge AI technology like Fable 5 and Mythos 5. #TechRegulations #AIDevelopment #Anthropic</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.0" 
+             data-published="2026-06-17" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Native Active Perception as Reasoning for Omni-Modal Understanding">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.19341v1" target="_blank">Native Active Perception as Reasoning for Omni-Modal Understanding</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-17 | ID: 79ba94f85316
+             | <span class="engagement-low">Engagement: [36.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Zhenghao Xing, Ruiyang Xu, Yuxuan Wang, and others introduces the concept of Native Active Perception for Omni-Modal Understanding. This approach aims to address the limitations of passive models in long video understanding by incorporating reasoning mechanisms that adaptively focus on relevant video segments, reducing computational costs associated with processing entire videos uniformly. By integrating active perception into the framework, the research proposes a more efficient and targeted approach to video analysis, potentially improving performance in tasks requiring nuanced understanding of video content.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.19341v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-79ba94f85316" onclick="toggleTweets('79ba94f85316')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-79ba94f85316">
+                <div class="tweet">Exciting tech news! Research by Zhenghao Xing, Ruiyang Xu, Yuxuan Wang, and team introduces Native Active Perception for Omni-Modal Understanding, optimizing video analysis efficiency. 📹🧠 #TechNews #VideoAnalysis</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Wed, 17 Jun 2026 20:07:40 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="California says AT&T lied to FCC in attempt to shut off old phone network">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/06/california-says-att-lied-to-fcc-in-attempt-to-shut-off-old-phone-network/" target="_blank">California says AT&T lied to FCC in attempt to shut off old phone network</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 17 Jun 2026 20:07:40 +0000 | ID: 0cf5bc0e96c7
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            California has accused AT&T of providing false information to the FCC in an effort to shut down its old phone network. The FCC is currently reviewing AT&T's petitions to preempt state regulations and cease providing traditional phone services, which could have significant implications for consumers and the telecommunications industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/06/california-says-att-lied-to-fcc-in-attempt-to-shut-off-old-phone-network/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0cf5bc0e96c7" onclick="toggleTweets('0cf5bc0e96c7')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0cf5bc0e96c7">
+                <div class="tweet">California alleges AT&T misled FCC to shut down old phone network. FCC reviewing petitions to preempt state regulations. Potential impact on consumers and telecom industry. #ATandT #FCC #telecomnews</div>
+<div class="tweet">Is AT&T's push to shut off its old phone network a step towards progress or a move that could harm consumers? California accuses the company of providing false info to the FCC. #telecom #consumerprotection #techethics</div>
+<div class="tweet">California's accusations against AT&T highlight the complexity of balancing innovation with consumer protection in the telecom industry. The outcome of this dispute could shape the future of traditional phone services. #telecomindustry #regulations #consumerimpact</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Wed, 17 Jun 2026 19:54:31 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Massive breach spills credentials for thousands of sensitive networks">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/security/2026/06/massive-breach-spills-credentials-for-thousands-of-sensitive-networks/" target="_blank">Massive breach spills credentials for thousands of sensitive networks</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 17 Jun 2026 19:54:31 +0000 | ID: 20288e44bac0
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A massive breach has exposed credentials for thousands of sensitive networks, impacting companies like Oracle, Lenovo, FedEx, a NATO contractor, and Fortinet. This breach raises concerns about the security of these networks and the potential for unauthorized access to sensitive information. Companies affected by this breach should take immediate steps to secure their networks and investigate the extent of the breach to mitigate any potential damage.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/security/2026/06/massive-breach-spills-credentials-for-thousands-of-sensitive-networks/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-20288e44bac0" onclick="toggleTweets('20288e44bac0')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-20288e44bac0">
+                <div class="tweet">Massive breach exposes credentials for thousands of sensitive networks, including major companies like Oracle, Lenovo, and FedEx. #CyberSecurity #DataBreach</div>
+<div class="tweet">Could your company be the next target of a massive breach? Protect your network and sensitive information now. #NetworkSecurity #DataProtection</div>
+<div class="tweet">The recent breach affecting major companies like Fortinet highlights the critical importance of regular security audits and proactive measures to safeguard sensitive networks. #CyberThreats #InfoSec</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Wed, 17 Jun 2026 18:23:21 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="The Slate Truck's price may have leaked, starts at $24,950">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/cars/2026/06/the-slate-trucks-price-may-have-leaked-starts-at-24950/" target="_blank">The Slate Truck's price may have leaked, starts at $24,950</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Wed, 17 Jun 2026 18:23:21 +0000 | ID: da59a7cd3d07
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The upcoming Slate Truck's price may have been leaked, starting at $24,950, with the official launch scheduled for next week. This pricing information provides insight into the positioning of the Slate Truck in the market, potentially appealing to a specific target audience looking for a competitively priced tech solution in the trucking industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/cars/2026/06/the-slate-trucks-price-may-have-leaked-starts-at-24950/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-da59a7cd3d07" onclick="toggleTweets('da59a7cd3d07')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-da59a7cd3d07">
+                <div class="tweet">Exciting news for tech enthusiasts! The upcoming Slate Truck's price may have leaked, starting at $24,950. Get ready for the official launch next week! 🚚💸 #SlateTruck #TechNews</div>
+<div class="tweet">Curious about the Slate Truck's leaked price of $24,950? How do you think this competitive pricing will impact its market positioning? Share your thoughts! 💭🚛 #SlateTruck #TechIndustry</div>
+<div class="tweet">The leaked price of $24,950 for the Slate Truck hints at a competitive edge in the trucking tech market. Will this pricing strategy attract a specific target audience seeking affordable tech solutions? 🛣️💡 #SlateTruck #MarketInsight</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-06-17 19:54" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="OpenAI joins The Rust Foundation as a Platinun member and donates funds to support Rust maintenance">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://rustfoundation.org/media/on-openais-support-for-rust/" target="_blank">OpenAI joins The Rust Foundation as a Platinun member and donates funds to support Rust maintenance</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-06-17 19:54 | ID: ece9d6643d0a
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI has become a Platinum member of The Rust Foundation and has made a significant financial contribution to support the maintenance of the Rust programming language. This move highlights OpenAI's commitment to Rust and its growing importance in the tech industry, signaling a positive impact on the development and sustainability of the language.
+        </div>
+        <div class="source-link">
+            → <a href="https://rustfoundation.org/media/on-openais-support-for-rust/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ece9d6643d0a" onclick="toggleTweets('ece9d6643d0a')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ece9d6643d0a">
+                <div class="tweet">Exciting news in the tech world as @OpenAI becomes a Platinum member of The Rust Foundation and donates funds to support Rust maintenance. 🚀 #OpenAI #RustFoundation #TechNews</div>
+<div class="tweet">Curious about the significance of @OpenAI's move to support Rust maintenance? What does this mean for the future of Rust in the tech industry? 🤔 #OpenAI #Rust #TechTrends</div>
+<div class="tweet">By joining The Rust Foundation as a Platinum member and contributing to Rust maintenance, @OpenAI is playing a key role in shaping the future of this programming language. 🌟 #TechInnovation #RustFoundation #OpenAI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.0" 
+             data-published="2026-06-17" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Beyond the Current Observation: Evaluating Multimodal Large Language Models in Controllable Non-Markov Games">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2606.19338v1" target="_blank">Beyond the Current Observation: Evaluating Multimodal Large Language Models in Controllable Non-Markov Games</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-06-17 | ID: ca2a8be3fe04
+             | <span class="engagement-low">Engagement: [35.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Shengyuan Ding, Xilin Wei, Xinyu Fang, and others delves into evaluating multimodal large language models in controllable non-Markov games. The study addresses the challenge of conditioning actions on observations that are no longer visible in closed-loop policies using multimodal foundation models. Existing benchmarks are critiqued for either exposing the full state, conflating hidden-state reconstruction with other agent skills, or focusing solely on recall testing. This research sheds light on the complexities and nuances of deploying such models in practical applications.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2606.19338v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ca2a8be3fe04" onclick="toggleTweets('ca2a8be3fe04')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ca2a8be3fe04">
+                <div class="tweet">Exciting research alert! Ding, Wei, Fang, and team explore the challenges of using multimodal large language models in non-Markov games. Learn how this study sheds light on deploying these models effectively. #TechResearch #AI #MultimodalModels</div>
+<div class="tweet">Ever wondered how large language models perform in non-Markov games? Ding, Wei, Fang, and colleagues dive deep into this in their latest paper. How can we overcome the challenges of conditioning actions on unseen observations? #TechInnovation #GameAI</div>
+<div class="tweet">Key insight from Ding et al.'s research: tackling the complexities of conditioning actions on hidden observations in non-Markov games is crucial for deploying multimodal models effectively. Understanding these nuances is key for future applications. #TechInsights #ResearchPaper</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-17T12:47:43-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The Echo Dot Max is cheaper than ever in an early Prime Day sale">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/951602/amazon-echo-dot-max-early-prime-day-deal-sale" target="_blank">The Echo Dot Max is cheaper than ever in an early Prime Day sale</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-06-17T12:47:43-04:00 | ID: dd979012b8ec
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Amazon is offering the Echo Dot Max at a discounted price of $64.99, $35 off its regular price, as part of an early Prime Day sale. This deal is one of several price drops on Amazon devices leading up to the event next week. Tech enthusiasts and smart home users can take advantage of this opportunity to enhance their home automation setup at a more affordable cost.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/951602/amazon-echo-dot-max-early-prime-day-deal-sale" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-dd979012b8ec" onclick="toggleTweets('dd979012b8ec')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-dd979012b8ec">
+                <div class="tweet">Exciting news for smart home enthusiasts! 🏡 Get your hands on the Echo Dot Max for just $64.99 in Amazon's early Prime Day sale, $35 off its regular price. Upgrade your home automation setup now! #EchoDot #PrimeDaySale</div>
+<div class="tweet">Are you ready to level up your smart home game? 🧠💡 Snag the Echo Dot Max at a discounted price of $64.99 in Amazon's early Prime Day sale. Don't miss out on this opportunity to enhance your home automation setup! #SmartHome #TechDeals</div>
+<div class="tweet">Tech alert! 🚨 The Echo Dot Max is currently on sale for $64.99, $35 off its original price, as part of Amazon's early Prime Day deals. Take advantage of this offer to elevate your smart home experience without breaking the bank! #AmazonDevices #HomeAutomation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-17 20:35" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Firefox has an ambitious new roadmap, the browser is also losing millions of users a month">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.techspot.com/news/112803-firefox-has-ambitious-new-roadmap-browser-also-losing.html" target="_blank">Firefox has an ambitious new roadmap, the browser is also losing millions of users a month</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-06-17 20:35 | ID: 7cccbec7ac4d
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Mozilla's Firefox browser has unveiled an ambitious new roadmap that includes plans for a more privacy-focused browsing experience and improved performance. Despite these efforts, Firefox is reportedly losing millions of users each month, raising concerns about its market share and long-term sustainability in the competitive browser landscape.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.techspot.com/news/112803-firefox-has-ambitious-new-roadmap-browser-also-losing.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7cccbec7ac4d" onclick="toggleTweets('7cccbec7ac4d')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7cccbec7ac4d">
+                <div class="tweet">🌐 Exciting updates from Firefox with a new privacy-focused roadmap and performance enhancements! Despite this, the browser is losing millions of users monthly. Will these changes help Firefox regain its market share? #Firefox #TechNews</div>
+<div class="tweet">🤔 Is Firefox losing users due to fierce competition or changing user preferences? The browser's new roadmap aims to enhance privacy and performance. What do you think will be the key to Firefox's success in the future? #BrowserWars #TechTrends</div>
+<div class="tweet">🔍 Despite Firefox's efforts to improve user experience, the browser is facing a decline in its user base. A reminder that staying competitive in the tech industry requires constant innovation and adaptation to meet user needs. #Innovation #TechIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-18 03:42" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change" target="_blank">AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-06-18 03:42 | ID: 6043c26e1ce7
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            AMD has quietly removed memory encryption from consumer Ryzen CPUs without informing users, potentially leaving them vulnerable to security threats. The security feature disappeared after a recent AGESA firmware update, and AMD engineers have not provided clear explanations for the change, causing concern among users about the security implications of this decision.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6043c26e1ce7" onclick="toggleTweets('6043c26e1ce7')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6043c26e1ce7">
+                <div class="tweet">AMD quietly removes memory encryption from consumer Ryzen CPUs, leaving users vulnerable to security threats without their knowledge. Stay informed about the latest AGESA firmware updates to protect your system. #AMD #Ryzen #SecurityThreat</div>
+<div class="tweet">Did you know that AMD recently removed memory encryption from consumer Ryzen CPUs without notifying users? What implications could this have on system security moving forward? Share your thoughts. #AMD #Ryzen #SecurityConcerns</div>
+<div class="tweet">The recent removal of memory encryption from AMD Ryzen CPUs highlights the importance of staying informed about firmware updates and security features. Users should proactively monitor system changes to ensure data protection. #DataSecurity #TechNews #StayInformed</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-06-18 05:50" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="Multivariate Probability Models in Machine Learning [D]">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.reddit.com/gallery/1u8xxyh" target="_blank">Multivariate Probability Models in Machine Learning [D]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-06-18 05:50 | ID: cc45b0dcd164
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in the r/MachineLearning subreddit has gained traction with 33 upvotes and 2 comments, focusing on the topic of Multivariate Probability Models in Machine Learning. The thread likely delves into the technical aspects and applications of using these models to analyze complex datasets and make predictions based on multiple variables simultaneously. This indicates a keen interest among the machine learning community in exploring advanced probabilistic models for more robust and accurate AI systems.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.reddit.com/gallery/1u8xxyh" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cc45b0dcd164" onclick="toggleTweets('cc45b0dcd164')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-cc45b0dcd164">
+                <div class="tweet">Curious about Multivariate Probability Models in #MachineLearning? Join the discussion on Reddit's r/MachineLearning subreddit with 33 upvotes and 2 comments. Dive into the world of advanced probabilistic models for robust AI systems. #AI #DataScience</div>
+<div class="tweet">Ever wondered how Multivariate Probability Models revolutionize predictive analytics in #MachineLearning? Join the conversation on Reddit's r/MachineLearning subreddit. What breakthroughs can these models bring to AI systems? #AI #DataAnalytics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-06-18 06:41" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="RFC 8628 fixed CLI login in 2019. Most CLIs still ship the broken version">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.abgeo.dev/blog/cli-authentication-the-right-way/" target="_blank">RFC 8628 fixed CLI login in 2019. Most CLIs still ship the broken version</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-06-18 06:41 | ID: 3d83f3055d22
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Despite the fix introduced in RFC 8628 in 2019 to address security vulnerabilities in Command Line Interface (CLI) login processes, a significant number of CLIs continue to ship with the flawed version. This oversight poses ongoing security risks for users who rely on these CLIs for various tasks. The Reddit discussion in r/programming highlights the importance of updating CLIs to the secure version specified in RFC 8628 to safeguard user data and prevent potential exploits.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.abgeo.dev/blog/cli-authentication-the-right-way/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3d83f3055d22" onclick="toggleTweets('3d83f3055d22')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3d83f3055d22">
+                <div class="tweet">Did you know that despite the fix introduced in RFC 8628 in 2019 to address CLI login security issues, many CLIs still ship with the flawed version? Stay informed and update your CLIs to protect your data! #TechSecurity #CLI #RFC8628</div>
+<div class="tweet">Is your favorite CLI up to date with the security fix from RFC 8628, or are you unknowingly exposing your data to potential exploits? Stay safe and ensure your CLI is running the secure version recommended by the RFC! #TechSafety #UpdateCLI #RFC8628</div>
+<div class="tweet">The oversight of many CLIs still shipping with the flawed login process despite the RFC 8628 fix in 2019 is a stark reminder to prioritize security updates. Stay vigilant, update your CLIs, and protect your data from vulnerabilities! #TechUpdates #SecurityFirst #RFC8628</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-06-18 10:40:54 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
