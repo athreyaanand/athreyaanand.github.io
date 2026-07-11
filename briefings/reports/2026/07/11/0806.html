@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - July 11, 2026, 08:06 AM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>July 11, 2026, 08:06 AM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-07-11 08:06:06
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 108.6 seconds</div>
+                <div>Start Time: 2026-07-11 08:06:06</div>
+                <div>End Time: 2026-07-11 08:07:54</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 13, Low: 20</div>
+                <div>Topics Detected: 7</div>
+                <div>Cross-platform Stories: 3</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="65.5" 
+             data-published="2026-07-08 23:37" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="John Deere owners will get the right to repair equipment under FTC settlement">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://apnews.com/article/john-deere-right-to-repair-agriculture-equipment-cb7514ffedb95c130a976af661f2bc02" target="_blank">John Deere owners will get the right to repair equipment under FTC settlement</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-08 23:37 | ID: dde530857de8
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            John Deere has reached a settlement with the FTC granting owners the right to repair their own equipment without voiding warranties. This move allows farmers and technicians to access diagnostic software and manuals, enabling them to fix their machinery independently. The decision marks a significant win for the right-to-repair movement and empowers users to maintain and repair their equipment more affordably and efficiently.
+        </div>
+        <div class="source-link">
+            → <a href="https://apnews.com/article/john-deere-right-to-repair-agriculture-equipment-cb7514ffedb95c130a976af661f2bc02" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-dde530857de8" onclick="toggleTweets('dde530857de8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-dde530857de8">
+                <div class="tweet">Great news for farmers and technicians! John Deere settles with the FTC, granting owners the right to repair their equipment without voiding warranties. #RightToRepair #JohnDeere #TechNews</div>
+<div class="tweet">Shouldn't users have the right to repair their own equipment? John Deere's settlement with the FTC opens the door for owners to access diagnostic software and manuals. What are your thoughts on the #RightToRepair movement? #TechDiscussion</div>
+<div class="tweet">Empowering move by John Deere in settling with the FTC to allow users to repair equipment independently, marking a significant win for the #RightToRepair movement. Access to diagnostic tools and manuals enables more affordable and efficient maintenance. #TechProgress #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-07-09 11:03" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="EU Parliament greenlights Chat Control 1.0">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.patrick-breyer.de/en/eu-parliament-greenlights-chat-control-1-0-breyer-our-children-lose-out/" target="_blank">EU Parliament greenlights Chat Control 1.0</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-09 11:03 | ID: 053eaa27a6f6
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The European Parliament has approved Chat Control 1.0, a controversial measure that allows tech companies to scan private messages for child sexual abuse material. The system uses hashing technology to compare message content against a database of known illegal material without decrypting the messages. While proponents argue it is a necessary tool to combat online child exploitation, critics raise concerns about privacy violations and potential misuse of the technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.patrick-breyer.de/en/eu-parliament-greenlights-chat-control-1-0-breyer-our-children-lose-out/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-053eaa27a6f6" onclick="toggleTweets('053eaa27a6f6')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-053eaa27a6f6">
+                <div class="tweet">The EU Parliament has approved Chat Control 1.0, allowing tech companies to scan private messages for child sexual abuse material using hashing technology. Proponents say it's crucial for combating online child exploitation. #ChatControl #EU #TechNews</div>
+<div class="tweet">Could Chat Control 1.0 strike the right balance between combating online child exploitation and protecting user privacy? The approval by the EU Parliament sparks debate on the role of tech in addressing sensitive issues. #Privacy #TechEthics #EU</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-07-09 17:04" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="GPT-5.6">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://openai.com/index/gpt-5-6/" target="_blank">GPT-5.6</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-09 17:04 | ID: 813f349ba129
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI has released GPT-5.6, the latest iteration of its powerful natural language processing model. This new version boasts improved performance and accuracy in understanding and generating human-like text. Developers can leverage GPT-5.6 to enhance various applications such as chatbots, content generation, and language translation, marking a significant advancement in AI technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://openai.com/index/gpt-5-6/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-813f349ba129" onclick="toggleTweets('813f349ba129')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-813f349ba129">
+                <div class="tweet">🚀 Exciting news in AI tech! OpenAI unveils GPT-5.6, the latest natural language processing model. Enhanced performance and accuracy promise to revolutionize chatbots, content generation, and more. #AI #NaturalLanguageProcessing</div>
+<div class="tweet">💡 How do you think GPT-5.6 will impact the future of AI applications? Share your thoughts! #GPT56 #TechInnovation</div>
+<div class="tweet">🔑 Developers rejoice! OpenAI's GPT-5.6 offers a major leap in AI capabilities. Improved text understanding and generation open doors for innovative applications across industries. #OpenAI #TechAdvancement</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-07-08 08:46" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Decoding the obfuscated bash script on a Uniqlo t-shirt">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://tris.sherliker.net/blog/obfuscated-self-evaluating-bash-script-by-cdn-akamai-being-supplied-to-consumers-via-retail-stores/" target="_blank">Decoding the obfuscated bash script on a Uniqlo t-shirt</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-08 08:46 | ID: c4a2a16d7c44
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A bash script found on a Uniqlo t-shirt has sparked interest in the tech community. The script, obfuscated with base64 encoding, was decoded by users revealing a message promoting a cybersecurity competition. This discovery showcases the creativity of using unconventional mediums for tech-related content and has generated discussions on the intersection of fashion and technology.
+        </div>
+        <div class="source-link">
+            → <a href="https://tris.sherliker.net/blog/obfuscated-self-evaluating-bash-script-by-cdn-akamai-being-supplied-to-consumers-via-retail-stores/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c4a2a16d7c44" onclick="toggleTweets('c4a2a16d7c44')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c4a2a16d7c44">
+                <div class="tweet">Decoding the obfuscated bash script found on a Uniqlo t-shirt reveals a cybersecurity competition promotion. Creativity in tech content knows no bounds! 🤯💻 #TechInFashion #Cybersecurity</div>
+<div class="tweet">Ever found tech surprises in unexpected places? The bash script on a Uniqlo t-shirt has us thinking about the intersection of fashion and technology. What other tech mysteries are out there waiting to be discovered? 🤔 #TechDiscovery #FashionTech</div>
+<div class="tweet">Unconventional mediums like a t-shirt bash script are sparking creativity in the tech community. The blend of fashion and technology opens up new possibilities for engaging content. How can we innovate further in tech communication? 💡 #TechInnovation #CreativeTech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-07-05 14:14" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Organic Maps">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://organicmaps.app/" target="_blank">Organic Maps</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-05 14:14 | ID: e806c8bc5147
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new project called Organic Maps has gained attention on Hacker News with 1179 points and 364 comments. Organic Maps is an open-source mapping platform that aims to provide an alternative to commercial mapping services by offering privacy-focused, community-driven maps. The project's focus on user privacy and community collaboration could potentially disrupt the dominance of existing mapping services by providing a more transparent and user-centric alternative.
+        </div>
+        <div class="source-link">
+            → <a href="https://organicmaps.app/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e806c8bc5147" onclick="toggleTweets('e806c8bc5147')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-e806c8bc5147">
+                <div class="tweet">Exciting news in the tech world! Organic Maps, a privacy-focused, community-driven open-source mapping platform, is gaining traction. Could this be the next big disruptor in the mapping industry? 🗺️ #OrganicMaps #TechNews</div>
+<div class="tweet">Curious about the future of mapping services? Organic Maps, a project focused on user privacy and community collaboration, is making waves. How important is data privacy to you when using mapping apps? 🌐 #PrivacyMatters #TechTrends</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-07-05 21:03" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="OpenPrinter">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.opentools.studio/" target="_blank">OpenPrinter</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-05 21:03 | ID: 8ac5a4451edb
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The OpenPrinter project, discussed on Hacker News with significant engagement, aims to create an open-source, secure printing solution for businesses and individuals. This initiative could potentially address security vulnerabilities associated with traditional printer software and offer a more transparent and customizable printing experience for users. Developers and tech enthusiasts are showing interest in contributing to and adopting this project for enhanced printing security and control.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.opentools.studio/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8ac5a4451edb" onclick="toggleTweets('8ac5a4451edb')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8ac5a4451edb">
+                <div class="tweet">Exciting news for printing security! The OpenPrinter project, discussed on Hacker News, is creating an open-source, secure printing solution for businesses and individuals. 🖨️💻 #OpenPrinter #PrintingSecurity</div>
+<div class="tweet">Ever worried about the security of your printer software? The OpenPrinter project aims to address that by providing an open-source solution. How important is printing security to you in a digital age? 🤔🔒 #OpenPrinter #PrintingSecurity</div>
+<div class="tweet">The OpenPrinter project is gaining traction among tech enthusiasts for its goal of offering a more secure and transparent printing experience. Embracing open-source solutions in tech can lead to enhanced user control and security. 🚀🔐 #OpenPrinter #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="52.5" 
+             data-published="Fri, 10 Jul 2026 17:42:36 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Filing: College app Fizz accuses VC of sharing confidential startup information with rival Sidechat">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/10/filing-college-app-fizz-accuses-vc-of-sharing-confidential-startup-information-with-rival-sidechat/" target="_blank">Filing: College app Fizz accuses VC of sharing confidential startup information with rival Sidechat</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 10 Jul 2026 17:42:36 +0000 | ID: 95a5bab8bbd6
+             | <span class="engagement-standard">Engagement: [52.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            College app Fizz has escalated its legal battle against rival Sidechat, claiming that a Maveron VC disclosed confidential information acquired during a fundraising session to Sidechat. The lawsuit alleges that the VC breached confidentiality agreements by sharing sensitive startup details, potentially impacting Fizz's competitive edge in the market. This case underscores the importance of safeguarding confidential information in the tech industry and the potential risks associated with sharing sensitive data with investors.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/10/filing-college-app-fizz-accuses-vc-of-sharing-confidential-startup-information-with-rival-sidechat/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-95a5bab8bbd6" onclick="toggleTweets('95a5bab8bbd6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-95a5bab8bbd6">
+                <div class="tweet">College app Fizz takes legal action against Sidechat, alleging a VC leaked confidential info. A reminder of the importance of data security in tech. #TechNews #DataSecurity</div>
+<div class="tweet">How can tech startups ensure their confidential information remains protected when sharing with investors? The Fizz vs. Sidechat case raises critical questions. #TechEthics #DataProtection</div>
+<div class="tweet">The Fizz vs. Sidechat lawsuit highlights the risks of breaching confidentiality agreements in the tech industry. Safeguarding sensitive data is crucial for maintaining a competitive edge. #TechIndustry #StartupSecurity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Fri, 10 Jul 2026 17:11:51 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="A new app, HyperTexting, turns the open web into a scrollable social media-like feed">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/10/a-new-app-hypertexting-turns-the-open-web-into-a-scrollable-social-media-like-feed/" target="_blank">A new app, HyperTexting, turns the open web into a scrollable social media-like feed</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 10 Jul 2026 17:11:51 +0000 | ID: 71ff6139dd9b
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            HyperTexting has introduced a new app that transforms the open web into a social media-style feed, enabling users to browse websites, blogs, newsletters, and podcasts in a scrollable format. The app also simplifies posting to personal websites, bridging the gap between traditional web content and the convenience of social media interactions. This innovation could potentially reshape how users engage with online content and enhance the accessibility of personal publishing platforms.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/10/a-new-app-hypertexting-turns-the-open-web-into-a-scrollable-social-media-like-feed/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-71ff6139dd9b" onclick="toggleTweets('71ff6139dd9b')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-71ff6139dd9b">
+                <div class="tweet">HyperTexting introduces a game-changing app that transforms the open web into a scrollable social media-like feed, making browsing websites and posting to personal sites easier than ever. 🌐💡 #HyperTexting #TechInnovation</div>
+<div class="tweet">Ever wished for a seamless blend between social media convenience and traditional web content? HyperTexting's new app might just be the answer! How do you think this innovation will impact user engagement with online content? 🤔 #HyperTexting #OnlineExperience</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Fri, 10 Jul 2026 21:00:29 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Apple sues OpenAI over alleged trade secret theft">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/" target="_blank">Apple sues OpenAI over alleged trade secret theft</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 10 Jul 2026 21:00:29 +0000 | ID: 6206184d799f
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple has filed a lawsuit against OpenAI, accusing the organization of stealing trade secrets. The lawsuit claims that OpenAI's senior leadership, including a former longtime Apple employee, orchestrated the alleged theft. This legal action highlights the importance of safeguarding intellectual property in the tech industry and could have significant implications for the relationship between the two companies.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6206184d799f" onclick="toggleTweets('6206184d799f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6206184d799f">
+                <div class="tweet">Apple takes legal action against OpenAI for alleged trade secret theft. The lawsuit alleges senior leadership's involvement in the theft. 🍏⚖️ #Apple #OpenAI #TradeSecret #TechNews</div>
+<div class="tweet">Could the lawsuit between Apple and OpenAI reshape how tech companies protect their intellectual property? 🤔💼 #TechIndustry #LegalBattle #IPProtection #AppleVsOpenAI</div>
+<div class="tweet">The Apple vs. OpenAI lawsuit underscores the critical need for robust measures to safeguard trade secrets in the tech sector. 🛡️💻 #IntellectualProperty #TechLaw #DataSecurity #BusinessEthics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Fri, 10 Jul 2026 17:17:12 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="SK Hynix raises $26.5B in the biggest foreign IPO in US history, is urged to build new US fabs">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/" target="_blank">SK Hynix raises $26.5B in the biggest foreign IPO in US history, is urged to build new US fabs</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 10 Jul 2026 17:17:12 +0000 | ID: 79f3ddf19f12
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            SK Hynix has successfully raised $26.5 billion in the largest foreign IPO in US history, marking a significant milestone in the AI chip industry. Following this achievement, there are calls for SK Hynix and Samsung to establish new semiconductor manufacturing facilities in the United States to strengthen domestic chip production capabilities and reduce reliance on overseas suppliers. This move could potentially enhance the US semiconductor industry's competitiveness and security.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-79f3ddf19f12" onclick="toggleTweets('79f3ddf19f12')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-79f3ddf19f12">
+                <div class="tweet">SK Hynix makes history with a record-breaking $26.5B IPO in the US, signaling a huge shift in the AI chip industry. Calls for new US fabs to boost domestic chip production and security. 🚀💡 #SKHynix #AI #semiconductors</div>
+<div class="tweet">Could SK Hynix and Samsung setting up new chip fabs in the US reshape the global semiconductor landscape? 🤔💭 Join the conversation on boosting US chip production and security. #TechIndustry #USsemiconductors #Innovation</div>
+<div class="tweet">SK Hynix's $26.5B IPO success highlights a crucial need for the US to enhance semiconductor production capabilities domestically. Strengthening US chip manufacturing could bolster industry competitiveness and security. 🛠️💪 #TechNews #USmanufacturing #ChipIndustry</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="47.5" 
+             data-published="2026-07-10T17:36:51-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Apple sues OpenAI for allegedly stealing hardware secrets">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/964350/apple-openai-lawsuit-trade-secrets" target="_blank">Apple sues OpenAI for allegedly stealing hardware secrets</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-10T17:36:51-04:00 | ID: 9dfab1940a1f
+             | <span class="engagement-standard">Engagement: [47.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 47%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple has filed a lawsuit against OpenAI, accusing the AI startup of stealing hardware secrets from Apple to enhance its own hardware projects. The complaint alleges a pattern of trade secret theft by former Apple employees now working at OpenAI. The lawsuit also involves IO Products, a hardware startup founded by Jony Ive.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/964350/apple-openai-lawsuit-trade-secrets" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9dfab1940a1f" onclick="toggleTweets('9dfab1940a1f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9dfab1940a1f">
+                <div class="tweet">Apple takes legal action against OpenAI for alleged hardware secrets theft. Former Apple employees accused of trade secret theft for enhancing AI startup's hardware projects. #Apple #OpenAI #TechNews</div>
+<div class="tweet">Could the lawsuit between Apple and OpenAI over hardware secrets set a precedent for protecting intellectual property in the tech industry? Share your thoughts. #IntellectualProperty #TechEthics #AppleVsOpenAI</div>
+<div class="tweet">The Apple vs. OpenAI lawsuit highlights the importance of safeguarding trade secrets in the tech sector. Companies must prioritize protecting their intellectual property to prevent such disputes. #TradeSecrets #TechIndustry #LegalBattle</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 10 Jul 2026 23:55:07 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Meta removes controversial AI feature on Instagram after backlash">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/" target="_blank">Meta removes controversial AI feature on Instagram after backlash</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 10 Jul 2026 23:55:07 +0000 | ID: e6055e17213f
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Meta, formerly Facebook, has removed a controversial AI feature from Instagram following criticism. The feature allowed users to generate text for image captions using AI, but faced backlash for potentially enabling harassment and misinformation. Meta responded to the feedback by discontinuing the feature to address concerns about privacy and misuse of public content.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e6055e17213f" onclick="toggleTweets('e6055e17213f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e6055e17213f">
+                <div class="tweet">Meta, formerly Facebook, removes controversial AI feature from Instagram following backlash. The feature allowed AI-generated text for image captions, but faced criticism for privacy concerns. #Meta #Instagram #AI</div>
+<div class="tweet">Was Meta right to remove the AI feature from Instagram? How can tech companies balance innovation with user privacy and safety concerns in AI-driven features? #TechEthics #Privacy #AI</div>
+<div class="tweet">Meta's decision to remove the controversial AI feature on Instagram highlights the importance of user feedback and addressing privacy concerns in tech innovations. #UserFeedback #PrivacyMatters #TechResponsibility</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.0" 
+             data-published="2026-07-09" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="LongE2V: Long-Horizon Event-based Video Reconstruction, Prediction, and Frame Interpolation with Video Diffusion Models">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2607.08770v1" target="_blank">LongE2V: Long-Horizon Event-based Video Reconstruction, Prediction, and Frame Interpolation with Video Diffusion Models</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-07-09 | ID: f36ccc52c359
+             | <span class="engagement-standard">Engagement: [44.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "LongE2V" introduces a novel approach to reconstructing high-quality video from sparse event streams. The proposed method, leveraging pre-trained video diffusion priors, aims to address the challenge of maintaining long-term stability in generative models. By combining video diffusion models with frame interpolation techniques, LongE2V offers a promising solution for improving video reconstruction and prediction from limited event data.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2607.08770v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f36ccc52c359" onclick="toggleTweets('f36ccc52c359')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-f36ccc52c359">
+                <div class="tweet">Exciting tech news! 🌟 LongE2V research introduces a new method for reconstructing high-quality videos from sparse event streams. Learn how video diffusion models are revolutionizing video reconstruction and prediction. #TechNews #VideoProcessing</div>
+<div class="tweet">Ever wondered how to reconstruct high-quality videos from sparse event streams? LongE2V research presents a groundbreaking approach using video diffusion models. How can this innovation reshape the future of video processing? 🤔 #Innovation #TechResearch</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="Sat, 11 Jul 2026 01:01:28 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="US cybersecurity agency CISA had to build its incident playbook during the incident, agency reveals">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/10/us-cyber-agency-cisa-had-to-build-its-incident-playbook-during-the-incident-agency-reveals/" target="_blank">US cybersecurity agency CISA had to build its incident playbook during the incident, agency reveals</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sat, 11 Jul 2026 01:01:28 +0000 | ID: 7450494a9940
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The US cybersecurity agency CISA was forced to develop its incident response playbook in real-time after a security researcher discovered exposed passwords in a GitHub repository linked to a CISA contractor. The incident highlights the importance of robust cybersecurity protocols and the need for organizations to proactively address vulnerabilities to prevent data breaches. This serves as a reminder for all organizations, especially those handling sensitive data, to prioritize security measures and regularly review their practices to mitigate risks.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/10/us-cyber-agency-cisa-had-to-build-its-incident-playbook-during-the-incident-agency-reveals/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-7450494a9940" onclick="toggleTweets('7450494a9940')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-7450494a9940">
+                <div class="tweet">"US cybersecurity agency CISA had to create its incident response playbook on the fly after exposed passwords were found in a contractor's GitHub repo. A crucial reminder for all organizations to prioritize cybersecurity measures. #Cybersecurity #DataProtection"</div>
+<div class="tweet">"Imagine having to build your incident response strategy on the spot due to a security breach. How prepared is your organization to handle such scenarios? #Cybersecurity #IncidentResponse"</div>
+<div class="tweet">"Building incident response plans in real-time is risky. The CISA incident underscores the importance of proactive cybersecurity measures and regular vulnerability assessments. Stay ahead of threats. #Cybersecurity #DataBreachPrevention"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Sat, 11 Jul 2026 00:29:25 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Phia accused of ‘cookie stuffing,’ taking affiliate credit on purchases it didn’t earn">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/10/phia-accused-of-cookie-stuffing-taking-affiliate-credit-on-purchases-it-didnt-earn/" target="_blank">Phia accused of ‘cookie stuffing,’ taking affiliate credit on purchases it didn’t earn</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sat, 11 Jul 2026 00:29:25 +0000 | ID: e9fc023e26cf
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Phia, a shopping startup co-founded by Bill Gates' daughter, Phoebe, and Sophia Kianni, is facing allegations of "cookie stuffing," a practice that allowed the company to claim affiliate credit for purchases it did not facilitate. The accusations, revealed in a Bloomberg investigation, suggest Phia received commissions and credit for sales it did not legitimately earn, raising ethical concerns about the startup's business practices.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/10/phia-accused-of-cookie-stuffing-taking-affiliate-credit-on-purchases-it-didnt-earn/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e9fc023e26cf" onclick="toggleTweets('e9fc023e26cf')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e9fc023e26cf">
+                <div class="tweet">Did you hear about Phia, the shopping startup co-founded by Bill Gates' daughter, facing allegations of 'cookie stuffing'? The ethical concerns raised in this Bloomberg investigation are worth discussing. #TechNews #Phia #CookieStuffing</div>
+<div class="tweet">What are your thoughts on the allegations of 'cookie stuffing' against Phia, a startup co-founded by Bill Gates' daughter? How can tech companies ensure transparency and ethical practices in affiliate marketing? #TechEthics #Phia #AffiliateMarketing</div>
+<div class="tweet">The accusations of 'cookie stuffing' against Phia highlight the importance of maintaining integrity in affiliate marketing. Transparency and trust are crucial in building a reputable tech business. #TechEthics #Phia #AffiliateMarketing</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="2026-07-10T19:49:50-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Meta turns off the Instagram feature that let users make AI deepfakes of public accounts">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/964416/meta-instagram-ai-muse-image-deepfakes" target="_blank">Meta turns off the Instagram feature that let users make AI deepfakes of public accounts</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-10T19:49:50-04:00 | ID: 307541f2c791
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Meta has decided to disable a controversial Instagram feature that allowed users to create AI deepfakes of public accounts by simply tagging them. The feature sparked backlash due to concerns over privacy and consent, as it allowed the use of content from public Instagram accounts without the account owner's permission. Meta's decision to turn off this feature addresses the ethical and privacy implications associated with AI-generated content using publicly available data.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/964416/meta-instagram-ai-muse-image-deepfakes" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-307541f2c791" onclick="toggleTweets('307541f2c791')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-307541f2c791">
+                <div class="tweet">Meta takes action! The controversial Instagram AI deepfake feature, allowing users to create deepfakes of public accounts, has been disabled. Privacy and consent concerns addressed. #Meta #Instagram #AIethics</div>
+<div class="tweet">What are your thoughts on Meta's decision to disable the Instagram AI deepfake feature? How can tech companies balance innovation with ethical considerations in AI development? Share your insights! #TechEthics #AI #PrivacyConcerns</div>
+<div class="tweet">Key takeaway: Meta's move to turn off the Instagram AI deepfake feature highlights the importance of considering privacy and consent in AI technologies. Ethical implications must be carefully navigated in the development of AI tools using public data. #TechEthics #PrivacyMatters</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Fri, 10 Jul 2026 21:51:55 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Bluesky’s interim CEO, Toni Schneider, drops the ‘interim’">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/10/blueskys-interim-ceo-toni-schneider-drops-the-interim/" target="_blank">Bluesky’s interim CEO, Toni Schneider, drops the ‘interim’</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 10 Jul 2026 21:51:55 +0000 | ID: d267552c48ab
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Toni Schneider, the interim CEO of Bluesky, has officially dropped the 'interim' title, signaling his full commitment to the unconventional social media platform. Schneider, a former CEO of Automattic and a partner at True Ventures, brings his extensive experience to Bluesky, potentially shaping the platform's future direction with his leadership.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/10/blueskys-interim-ceo-toni-schneider-drops-the-interim/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d267552c48ab" onclick="toggleTweets('d267552c48ab')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d267552c48ab">
+                <div class="tweet">Exciting news for Bluesky as Toni Schneider officially takes the reins as CEO, bringing his wealth of experience to shape the future of this unconventional social media platform. 🚀 #Bluesky #TechNews #SocialMedia</div>
+<div class="tweet">What impact do you think Toni Schneider's leadership will have on Bluesky's future direction? 🤔 Share your thoughts! #Bluesky #TechLeadership #SocialMedia</div>
+<div class="tweet">Toni Schneider's transition from interim to full CEO at Bluesky highlights the platform's commitment to growth and innovation under his seasoned leadership. 🌟 #Bluesky #TechIndustry #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="Fri, 10 Jul 2026 16:36:09 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Firmware update bricks Hue Bridge Pro devices; Philips gives free replacements">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/07/firmware-update-bricks-hue-bridge-pro-devices-philips-gives-free-replacements/" target="_blank">Firmware update bricks Hue Bridge Pro devices; Philips gives free replacements</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 10 Jul 2026 16:36:09 +0000 | ID: 978c5902ab41
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A recent firmware update has caused some Hue Bridge Pro devices to become inoperable, prompting Philips to offer free replacements to affected users. This issue requires users to reconfigure their lights and settings from scratch, potentially causing inconvenience and data loss. Philips' response aims to address the problem and minimize disruption for impacted customers.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/07/firmware-update-bricks-hue-bridge-pro-devices-philips-gives-free-replacements/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-978c5902ab41" onclick="toggleTweets('978c5902ab41')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-978c5902ab41">
+                <div class="tweet">Firmware update bricks Hue Bridge Pro devices; Philips offers free replacements to affected users. Remember to back up your settings to avoid data loss! #Philips #HueBridgePro #FirmwareUpdate</div>
+<div class="tweet">Can a simple firmware update turn your smart lights into paperweights? Philips' move to replace bricked Hue Bridge Pro devices raises questions about IoT security and user experience. How do you protect your smart home devices? #SmartHome #IoTSecurity #Philips</div>
+<div class="tweet">The recent Hue Bridge Pro firmware issue serves as a reminder of the importance of regular backups and manufacturer support in the IoT era. Philips' swift response showcases the significance of customer-centric solutions in tech. #TechSupport #CustomerExperience #Philips</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-07-09" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Geometry and Gradient-based Partitioning for Panoramic Outdoor Reconstruction">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2607.08769v1" target="_blank">Geometry and Gradient-based Partitioning for Panoramic Outdoor Reconstruction</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-07-09 | ID: 831c20714b10
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Weijian Chen, Weibo Yao, Yuhang Zhang et al. explores using panoramic images with equirectangular projection (ERP) for outdoor scene reconstruction to reduce data acquisition costs. The study focuses on scaling 3D Gaussian Splatting (3DGS) to large outdoor scenes, addressing the challenges of data acquisition and computation. By leveraging geometry and gradient-based partitioning techniques, the research aims to improve the efficiency and accuracy of reconstructing panoramic outdoor environments.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2607.08769v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-831c20714b10" onclick="toggleTweets('831c20714b10')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-831c20714b10">
+                <div class="tweet">Exciting research by Weijian Chen, Weibo Yao, Yuhang Zhang et al. explores using panoramic images with equirectangular projection for outdoor scene reconstruction, reducing data acquisition costs. 🌍📸 #TechResearch #PanoramicImaging</div>
+<div class="tweet">Ever wondered how geometry and gradient-based partitioning can enhance the efficiency of reconstructing panoramic outdoor environments? 🌄💻 Dive into this fascinating study by Weijian Chen, Weibo Yao, Yuhang Zhang et al. #TechInnovation #OutdoorReconstruction</div>
+<div class="tweet">Key insight from the research paper: Leveraging 3D Gaussian Splatting and advanced partitioning techniques can significantly improve the accuracy and efficiency of reconstructing large outdoor scenes using panoramic images. 🏞️🔍 #TechInsights #ResearchFindings</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-07-10T13:31:35-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Nvidia&#8217;s biggest RAM supplier just had a trillion-dollar debut on Wall Street">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/964121/sk-hynix-nvidia-ram-stock-market-debut" target="_blank">Nvidia&#8217;s biggest RAM supplier just had a trillion-dollar debut on Wall Street</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-10T13:31:35-04:00 | ID: 240df4643449
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            SK Hynix, a major supplier of memory chips, made a significant debut on Wall Street by raising $26.5 billion and opening at $170 per share. The company's strong performance is attributed to the increasing demand for RAM driven by the AI industry, highlighting the crucial role of memory suppliers in supporting tech advancements.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/964121/sk-hynix-nvidia-ram-stock-market-debut" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-240df4643449" onclick="toggleTweets('240df4643449')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-240df4643449">
+                <div class="tweet">"SK Hynix, Nvidia's major RAM supplier, made a trillion-dollar debut on Wall Street, raising $26.5 billion. The AI industry's demand for RAM is driving tech advancements. 💡 #SKHynix #Nvidia #TechNews"</div>
+<div class="tweet">"Could SK Hynix's $26.5 billion debut on Wall Street signal a new era for memory chip suppliers in the tech industry? 🤔💰 #SKHynix #TechStocks #AI"</div>
+<div class="tweet">"The impressive $26.5 billion debut of SK Hynix on Wall Street underscores the pivotal role of memory suppliers in fueling tech innovation, especially with the rising demand from the AI sector. 🚀 #TechInnovation #MemoryChips #SKHynix"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-07-10T20:10:38-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="No, Flock isn&#8217;t threatening people for debating surveillance">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/964425/flock-safety-cease-and-desist-letter" target="_blank">No, Flock isn&#8217;t threatening people for debating surveillance</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-10T20:10:38-04:00 | ID: 243bb70e011b
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Flock Safety, a surveillance technology company, faced backlash after an Instagram post showed what seemed to be a cease and desist letter from them. The company has been criticized for its technology and collaboration with law enforcement. The incident sparked further debate on Flock's practices and raised concerns about surveillance technology ethics.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/964425/flock-safety-cease-and-desist-letter" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-243bb70e011b" onclick="toggleTweets('243bb70e011b')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-243bb70e011b">
+                <div class="tweet">Is surveillance tech company Flock Safety crossing ethical lines? Learn more about the recent controversy surrounding their practices and collaboration with law enforcement. #FlockSafety #SurveillanceTech #EthicsDebate</div>
+<div class="tweet">Is Flock Safety's collaboration with law enforcement blurring the line between privacy and security? How do we ensure ethical use of surveillance technology in today's world? Share your thoughts. #PrivacyVsSecurity #TechEthics #FlockBacklash</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-07-10T15:20:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="ICE is threatening to deport witnesses of its latest shooting">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/964294/ice-shooting-houston-lorenzo-salgado-araujo" target="_blank">ICE is threatening to deport witnesses of its latest shooting</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-10T15:20:00-04:00 | ID: 08ba1f04db2e
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Advocates are pressuring the Department of Homeland Security to release bodycam footage of the recent fatal shooting of Mexican immigrant Lorenzo Salgado Araujo by ICE officers in Houston. However, DHS states that the agents involved in the shooting did not have body cameras due to the extended rollout timeline for the technology. This incident highlights the importance of transparency and accountability in law enforcement actions, especially in cases involving vulnerable populations like immigrants.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/964294/ice-shooting-houston-lorenzo-salgado-araujo" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-08ba1f04db2e" onclick="toggleTweets('08ba1f04db2e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-08ba1f04db2e">
+                <div class="tweet">Advocates are urging DHS to release bodycam footage of the recent fatal shooting by ICE officers, highlighting the need for transparency in law enforcement actions. #ICE #transparency #accountability</div>
+<div class="tweet">Shouldn't body cameras be standard issue for all law enforcement officers to ensure transparency and accountability in their actions? #ICE #bodycameras #accountability</div>
+<div class="tweet">The absence of body cameras in the recent ICE shooting incident underscores the critical need for increased transparency and oversight in law enforcement activities. #transparency #accountability #ICE</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.0" 
+             data-published="2026-07-09" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="ZipDepth: Bringing Lightweight Zero-Shot Monocular Depth Anywhere, on Any Device">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2607.08771v1" target="_blank">ZipDepth: Bringing Lightweight Zero-Shot Monocular Depth Anywhere, on Any Device</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-07-09 | ID: 2509d40d0171
+             | <span class="engagement-low">Engagement: [38.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "ZipDepth" by Fabio Tosi, Luca Bartolomei, Matteo Poggi, and others introduces a lightweight solution for monocular depth estimation that can run on embedded and mobile devices. This innovation aims to address the computational limitations of existing models, enabling broader accessibility to accurate depth estimation on various platforms. ZipDepth offers a promising approach to bringing efficient zero-shot monocular depth estimation to a wider range of devices, potentially impacting applications in augmented reality, robotics, and autonomous vehicles.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2607.08771v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-2509d40d0171" onclick="toggleTweets('2509d40d0171')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-2509d40d0171">
+                <div class="tweet">Exciting tech news! "ZipDepth" introduces a lightweight solution for monocular depth estimation that can run on embedded and mobile devices, expanding accessibility to accurate depth estimation. 📱💡 #ZipDepth #TechInnovation</div>
+<div class="tweet">Ever wondered how we can bring efficient zero-shot monocular depth estimation to a wider range of devices? Check out the groundbreaking research on "ZipDepth" by Fabio Tosi, Luca Bartolomei, Matteo Poggi, and team. 💭🚀 #TechResearch #Innovation</div>
+<div class="tweet">Key insight: "ZipDepth" offers a promising solution to address computational limitations in monocular depth estimation, enabling applications in AR, robotics, and autonomous vehicles across various platforms. Exciting times for tech advancements! 🌐🤖 #ZipDepth #TechAdvancements</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="Fri, 10 Jul 2026 23:02:30 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Quantum error correction can constantly recalibrate a processor">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/07/quantum-error-correction-can-constantly-recalibrate-a-processor/" target="_blank">Quantum error correction can constantly recalibrate a processor</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 10 Jul 2026 23:02:30 +0000 | ID: c3eabc6dc5f2
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses how quantum error correction enables processors to continuously recalibrate themselves, improving their performance and reliability. By using reinforcement learning techniques that leverage error information, control algorithms can be adjusted in real-time to optimize quantum computing processes. This advancement in error correction and recalibration has the potential to enhance the efficiency and stability of quantum processors, paving the way for more reliable quantum computing systems in the future.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/07/quantum-error-correction-can-constantly-recalibrate-a-processor/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c3eabc6dc5f2" onclick="toggleTweets('c3eabc6dc5f2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c3eabc6dc5f2">
+                <div class="tweet">Quantum processors can now recalibrate themselves continuously through quantum error correction, boosting performance and reliability. 🚀 #QuantumComputing #TechNews</div>
+<div class="tweet">Ever wondered how quantum error correction is revolutionizing processor recalibration in real-time? 🤔 Dive into this fascinating tech breakthrough! #QuantumTech #Innovation</div>
+<div class="tweet">Real-time recalibration of quantum processors via error correction is opening doors to more stable and efficient quantum computing systems. The future looks promising! 💡 #TechInnovation #QuantumRevolution</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-07-10T15:51:10-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="A decade later, Pokémon Go finally made good on its original promise">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/964022/pokemon-go-10th-anniversary-mewtwo-nyc-go-fest-2026" target="_blank">A decade later, Pokémon Go finally made good on its original promise</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-10T15:51:10-04:00 | ID: 0c9508d60383
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            At Pokémon Go's 10th anniversary event in New York City, nearly 2,000 players collaborated to catch a powerful Pokémon, Mewtwo, fulfilling the game's original promise of large-scale cooperative gameplay. This achievement demonstrates the evolution of augmented reality gaming and showcases the potential for massive multiplayer experiences in mobile games.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/964022/pokemon-go-10th-anniversary-mewtwo-nyc-go-fest-2026" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0c9508d60383" onclick="toggleTweets('0c9508d60383')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0c9508d60383">
+                <div class="tweet">At Pokémon Go's 10th anniversary event in NYC, nearly 2,000 players teamed up to catch Mewtwo, showcasing the evolution of augmented reality gaming. 📱🎮 #PokemonGo #AR #MobileGaming</div>
+<div class="tweet">What does Pokémon Go's successful large-scale cooperative gameplay event tell us about the future of mobile gaming experiences and augmented reality technology? 🤔 #PokemonGo #GamingEvolution #AR</div>
+<div class="tweet">The recent Pokémon Go event in NYC highlights the potential for massive multiplayer mobile gaming experiences and the promising future of augmented reality gaming. 🌟📲 #PokemonGo #MobileGaming #ARFuture</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-07-07 16:20" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="TorchJD: Training with multiple losses in PyTorch [P]">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1upzxk2/torchjd_training_with_multiple_losses_in_pytorch_p/" target="_blank">TorchJD: Training with multiple losses in PyTorch [P]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-07-07 16:20 | ID: a46a525614e6
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The TorchJD project, available on GitHub, introduces a solution for training models with multiple losses in PyTorch. This is beneficial for machine learning practitioners dealing with various tasks, constraints, auxiliary losses, and regularization terms simultaneously. The tool provides a streamlined approach to handle complex training scenarios efficiently.
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1upzxk2/torchjd_training_with_multiple_losses_in_pytorch_p/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a46a525614e6" onclick="toggleTweets('a46a525614e6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a46a525614e6">
+                <div class="tweet">🔥 Exciting news for PyTorch users! TorchJD on GitHub offers a solution for training models with multiple losses. Perfect for handling complex ML tasks efficiently. Check it out! #PyTorch #MachineLearning #TorchJD</div>
+<div class="tweet">💡 How do you handle training models with multiple losses in PyTorch? TorchJD, now available on GitHub, simplifies the process for ML practitioners. Share your thoughts! #PyTorch #MachineLearning #TorchJD</div>
+<div class="tweet">🚀 Key insight: TorchJD project on GitHub streamlines training with multiple losses in PyTorch. A game-changer for handling various ML tasks simultaneously. Enhance your training efficiency today! #PyTorch #MachineLearning #TorchJD</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="2026-07-10T18:35:18-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The FCC is cracking down on DJI tech that dodged the foreign drone ban">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/964342/fcc-crack-down-dji-front-companies-xtra-skyrover-sgs-lab" target="_blank">The FCC is cracking down on DJI tech that dodged the foreign drone ban</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-10T18:35:18-04:00 | ID: 32b28295cc26
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The FCC is taking action against DJI for allegedly circumventing the foreign drone ban in the US through companies like Xtra and Skyrover. These firms are suspected of helping DJI bring its cameras and drones into the country in violation of regulations. The crackdown highlights the regulatory challenges faced by tech companies trying to navigate international trade restrictions.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/964342/fcc-crack-down-dji-front-companies-xtra-skyrover-sgs-lab" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-32b28295cc26" onclick="toggleTweets('32b28295cc26')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-32b28295cc26">
+                <div class="tweet">The FCC is clamping down on DJI for skirting the US foreign drone ban through Xtra and Skyrover. The move underscores the complexities tech companies face in complying with international trade rules. #FCC #DJI #TechRegulations</div>
+<div class="tweet">Is DJI's alleged circumvention of the US foreign drone ban a sign of the challenges tech firms encounter when navigating global trade restrictions? How can companies ensure compliance in such a complex regulatory landscape? #TechCompliance #FCC #DJI</div>
+<div class="tweet">The crackdown on DJI by the FCC serves as a reminder of the importance of strict adherence to international trade regulations. Tech companies must stay vigilant to avoid legal pitfalls and maintain ethical business practices. #TechEthics #RegulatoryCompliance #DJI</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 10 Jul 2026 22:37:22 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Increased drone surveillance of illegal July 4th fireworks led to $100K fine">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/07/on-americas-250th-more-cities-used-drone-surveillance-to-spot-illegal-fireworks/" target="_blank">Increased drone surveillance of illegal July 4th fireworks led to $100K fine</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 10 Jul 2026 22:37:22 +0000 | ID: f2af2a2a49c9
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Police and firefighters are increasingly utilizing drones for surveillance to identify and deter illegal fireworks activities during July 4th celebrations. This heightened drone surveillance has resulted in a significant $100,000 fine imposed on individuals engaged in illegal fireworks displays. The use of drones showcases the effectiveness of technology in enforcing laws and ensuring public safety during festive events.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/07/on-americas-250th-more-cities-used-drone-surveillance-to-spot-illegal-fireworks/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-f2af2a2a49c9" onclick="toggleTweets('f2af2a2a49c9')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-f2af2a2a49c9">
+                <div class="tweet">Increased drone surveillance during July 4th celebrations led to a $100K fine for illegal fireworks activity. Technology is playing a crucial role in law enforcement and public safety. #Drones #TechEnforcement</div>
+<div class="tweet">Is increased drone surveillance infringing on privacy rights or necessary for public safety during July 4th fireworks? Share your thoughts. #PrivacyVsSafety #TechEthics</div>
+<div class="tweet">The $100K fine imposed due to drone surveillance highlights the effectiveness of technology in enforcing laws and ensuring public safety during festive events. #TechInEnforcement #PublicSafety</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 10 Jul 2026 21:41:43 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="China recovered its first reusable rocket and showed a new way to do it">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way-to-do-it/" target="_blank">China recovered its first reusable rocket and showed a new way to do it</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 10 Jul 2026 21:41:43 +0000 | ID: 117511d55c35
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            China successfully recovered its first reusable rocket, a Long March 2C, using a new method that involves deploying a parachute to slow its descent. This move indicates China's efforts to emulate SpaceX's reusable rocket technology. The achievement marks a significant milestone in China's space program and could lead to cost savings and increased efficiency in future space missions.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/07/china-recovered-its-first-reusable-rocket-and-showed-a-new-way-to-do-it/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-117511d55c35" onclick="toggleTweets('117511d55c35')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-117511d55c35">
+                <div class="tweet">China has successfully recovered its first reusable rocket, the Long March 2C, using a new parachute deployment method. This achievement signifies a key milestone in China's space program. 🚀🇨🇳 #ChinaSpace #ReusableRocket</div>
+<div class="tweet">Could China's successful recovery of its first reusable rocket using parachute technology challenge SpaceX's dominance in reusable rocket technology? 🤔 #SpaceRace #Innovation #TechNews</div>
+<div class="tweet">China's adoption of reusable rocket technology through successful recovery of the Long March 2C could revolutionize future space missions, leading to cost savings and increased efficiency. 🌌💰 #SpaceExploration #FutureTech #SpaceInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 10 Jul 2026 19:59:31 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Check out the first images of Quest shipwreck">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/07/expedition-captures-first-images-of-shackletons-last-ship/" target="_blank">Check out the first images of Quest shipwreck</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 10 Jul 2026 19:59:31 +0000 | ID: b19806647b48
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The first images of the <em>Quest</em> shipwreck reveal a deteriorated state, showcasing the vessel in worse condition than previously thought. Despite its state, the shipwreck has become a vibrant marine ecosystem, attracting a diverse array of marine life. This discovery underscores the resilience of nature in adapting to and thriving in challenging environments.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/07/expedition-captures-first-images-of-shackletons-last-ship/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b19806647b48" onclick="toggleTweets('b19806647b48')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b19806647b48">
+                <div class="tweet">🌊 The first images of the deteriorated Quest shipwreck have been revealed, showing a vibrant marine ecosystem thriving in challenging conditions. Nature never fails to adapt and flourish! #TechNews #MarineLife #Ecosystem</div>
+<div class="tweet">💭 How does the Quest shipwreck's transformation into a bustling marine ecosystem reflect the resilience and adaptability of nature in the face of adversity? 🐠🚢 #NatureResilience #MarineEcosystem #QuestShipwreck</div>
+<div class="tweet">🔍 The Quest shipwreck's degraded state highlights the remarkable ability of nature to transform and thrive in even the harshest conditions, showcasing the beauty of adaptation and resilience. 🌿🌊 #NatureAdaptation #ResilientEcosystem #TechDiscovery</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 10 Jul 2026 19:40:11 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Ransomware negotiator hired to represent victims was working for the attackers">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/07/ransomware-negotiator-helped-attackers-extort-his-own-clients-gets-6-year-sentence/" target="_blank">Ransomware negotiator hired to represent victims was working for the attackers</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 10 Jul 2026 19:40:11 +0000 | ID: 66fb3ba0346d
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A ransomware negotiator who was hired to represent victims has been sentenced to six years in prison for working with the attackers. The man betrayed the trust of those seeking his help by collaborating with the ransomware perpetrators, ultimately harming the victims he was supposed to assist. This case highlights the risks associated with engaging third-party negotiators in ransomware incidents and underscores the importance of vetting such individuals thoroughly to ensure their trustworthiness.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/07/ransomware-negotiator-helped-attackers-extort-his-own-clients-gets-6-year-sentence/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-66fb3ba0346d" onclick="toggleTweets('66fb3ba0346d')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-66fb3ba0346d">
+                <div class="tweet">Is your ransomware negotiator really on your side? A recent case reveals the risks involved - a negotiator hired to help victims was working with the attackers instead. Be cautious and vet third-party negotiators thoroughly. #Ransomware #Cybersecurity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 10 Jul 2026 19:25:04 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Study shows how toxic RFK Jr.’s change to measles vaccine is for US toddlers">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/07/anti-vaccine-changes-under-rfk-jr-will-hurt-vulnerable-toddlers-study-confirms/" target="_blank">Study shows how toxic RFK Jr.’s change to measles vaccine is for US toddlers</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 10 Jul 2026 19:25:04 +0000 | ID: b585dfd0f4dd
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A study has revealed that the change made by Robert F. Kennedy Jr. to the measles vaccine, which combines the measles, mumps, and rubella (MMR) vaccines into a single shot, is toxic for US toddlers. The research highlights that toddlers receiving this combination shot are among the most at risk. This finding underscores the importance of ensuring the safety and efficacy of vaccines, especially for vulnerable populations like young children.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/07/anti-vaccine-changes-under-rfk-jr-will-hurt-vulnerable-toddlers-study-confirms/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b585dfd0f4dd" onclick="toggleTweets('b585dfd0f4dd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b585dfd0f4dd">
+                <div class="tweet">Study reveals toxic impact of combining measles, mumps, and rubella vaccines into a single shot for US toddlers. Ensuring vaccine safety is crucial for protecting vulnerable populations. #VaccineSafety #ChildHealth</div>
+<div class="tweet">Is the combination shot of measles, mumps, and rubella vaccines placing US toddlers at risk? Research suggests so. How can we prioritize vaccine safety for our youngest population? #VaccineRisk #PublicHealth</div>
+<div class="tweet">Research emphasizes the need to carefully assess vaccine combinations for safety, particularly for young children like US toddlers. Let's prioritize evidence-based decisions to safeguard the health of our vulnerable populations. #VaccineResearch #HealthcareSafety</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="Fri, 10 Jul 2026 16:53:31 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Valve's new Steam Machine verification system is silent on these Steam Deck-busters">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gaming/2026/07/valves-steam-machine-verified-ratings-offer-more-questions-than-answers/" target="_blank">Valve's new Steam Machine verification system is silent on these Steam Deck-busters</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 10 Jul 2026 16:53:31 +0000 | ID: cb35e093a8fd
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Valve's new Steam Machine verification system has left dozens of titles unrated for the Steam Deck, indicating they may be too taxing for the new hardware. This could potentially limit the availability of certain games on the Steam Deck due to compatibility issues, impacting the gaming experience for users looking to play these titles on the handheld device.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gaming/2026/07/valves-steam-machine-verified-ratings-offer-more-questions-than-answers/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-cb35e093a8fd" onclick="toggleTweets('cb35e093a8fd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-cb35e093a8fd">
+                <div class="tweet">Valve's new Steam Machine verification system has left some titles unrated for the Steam Deck, potentially limiting game availability and user experience. #SteamDeck #Valve #GamingNews</div>
+<div class="tweet">Is Valve's new Steam Machine verification system hindering game access on the Steam Deck? How will this impact the handheld gaming experience for users? 🤔 #TechNews #SteamDeck #Gaming</div>
+<div class="tweet">Valve's unrated titles on the Steam Deck highlight the importance of hardware compatibility for seamless gaming experiences. Will this lead to more optimized games for the platform in the future? 🎮 #Valve #SteamDeck #GameCompatibility</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.0" 
+             data-published="2026-07-09" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Wat3R: Underwater 3D Geometry Learning without Annotations">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2607.08772v1" target="_blank">Wat3R: Underwater 3D Geometry Learning without Annotations</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-07-09 | ID: 98289d2a8d99
+             | <span class="engagement-low">Engagement: [35.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Wat3R: Underwater 3D Geometry Learning without Annotations" addresses the challenges of estimating 3D geometry in underwater environments without large-scale, high-quality annotations. Traditional methods requiring dense annotations are impractical underwater due to light attenuation and scattering. The paper introduces pioneering techniques to overcome these limitations and improve underwater 3D geometry learning.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2607.08772v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-98289d2a8d99" onclick="toggleTweets('98289d2a8d99')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-98289d2a8d99">
+                <div class="tweet">"Dive into the latest tech breakthrough! The research paper 'Wat3R' introduces innovative techniques for underwater 3D geometry learning without annotations. 🌊🔍 #TechNews #UnderwaterTech"</div>
+<div class="tweet">"Ever wondered how to estimate 3D geometry underwater without annotations? The research paper 'Wat3R' dives deep into groundbreaking solutions. What challenges do you think researchers faced? 💭🌊 #TechInnovation #UnderwaterResearch"</div>
+<div class="tweet">"Key takeaway from the 'Wat3R' paper: Traditional methods for estimating underwater 3D geometry are impractical due to annotation challenges. Discover how pioneering techniques are revolutionizing this field! 🚀🔬 #TechBreakthrough #Innovation"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-07-11T03:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Are you filthy enough for a $700 portable shower?">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/reviews/963814/joolca-hottap-portable-shower-review" target="_blank">Are you filthy enough for a $700 portable shower?</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-11T03:00:00-04:00 | ID: 70fbc4a97c4f
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new $700 portable shower called the "Helio LX" has been introduced, targeting outdoor enthusiasts and campers who crave a hot shower experience on the go. The Helio LX features a foot pump for pressurized water flow, a 5.9-gallon tank, and a 7-foot hose, providing a convenient and luxurious showering solution in remote locations. This high-end portable shower aims to elevate the outdoor showering experience for those willing to invest in premium camping gear.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/reviews/963814/joolca-hottap-portable-shower-review" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-70fbc4a97c4f" onclick="toggleTweets('70fbc4a97c4f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-70fbc4a97c4f">
+                <div class="tweet">Are you an outdoor enthusiast or camper looking for a luxurious shower experience on the go? Check out the new Helio LX portable shower with a foot pump, 5.9-gallon tank, and 7-foot hose! #Tech #OutdoorGear #HelioLX</div>
+<div class="tweet">How much would you invest in a premium camping gear item for the ultimate shower experience in the wilderness? The $700 Helio LX portable shower might just be the answer for outdoor enthusiasts seeking comfort off the grid. #CampingTech #LuxuryGear #HelioLX</div>
+<div class="tweet">Invest in convenience and luxury with the Helio LX portable shower - a game-changer for outdoor enthusiasts who value a hot shower experience in remote locations. Elevate your camping adventures with this high-end shower solution! #TechInnovation #HelioLX #OutdoorLiving</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-07-10 18:13" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Mayor Mamdani Announces Landmark "Click-To-Cancel" Consumer Protection Rules to Ban Subscription Traps and Junk Fees">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.nyc.gov/mayors-office/news/2026/07/mayor-mamdani-announces-landmark--click-to-cancel--consumer-prot" target="_blank">Mayor Mamdani Announces Landmark "Click-To-Cancel" Consumer Protection Rules to Ban Subscription Traps and Junk Fees</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-07-10 18:13 | ID: 394e2ce9d139
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Mayor Mamdani has introduced "Click-To-Cancel" rules to combat subscription traps and hidden fees, aiming to enhance consumer protection. The new regulations require businesses to make it easy for customers to cancel subscriptions online, reducing the prevalence of deceptive practices. This move is expected to benefit consumers by increasing transparency and preventing unwanted charges.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.nyc.gov/mayors-office/news/2026/07/mayor-mamdani-announces-landmark--click-to-cancel--consumer-prot" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-394e2ce9d139" onclick="toggleTweets('394e2ce9d139')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-394e2ce9d139">
+                <div class="tweet">Mayor Mamdani's new "Click-To-Cancel" rules are a game-changer in consumer protection! Businesses will now have to make it easy for customers to cancel subscriptions online, reducing deceptive practices. #ConsumerProtection #TechNews</div>
+<div class="tweet">Ever fallen into a subscription trap or been hit with hidden fees? Mayor Mamdani's "Click-To-Cancel" rules are here to tackle these issues head-on. How will this new regulation shape the future of online subscriptions? #SubscriptionTraps #Transparency</div>
+<div class="tweet">Mayor Mamdani's "Click-To-Cancel" rules mark a significant step towards enhancing consumer rights in the digital age. Increased transparency and easier subscription cancellations will empower consumers and prevent unwanted charges. #ConsumerRights #DigitalEconomy</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-07-10 12:29" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Quantum Computers Are Not a Threat to 128-bit Symmetric Keys">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://words.filippo.io/128-bits/" target="_blank">Quantum Computers Are Not a Threat to 128-bit Symmetric Keys</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-07-10 12:29 | ID: 5cd6f0dbf95f
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming has clarified that quantum computers do not pose a threat to 128-bit symmetric keys. This is reassuring for encryption protocols relying on such key lengths, as quantum computers are not currently advanced enough to break them. The discussion highlights the ongoing importance of using strong encryption methods to secure data in the face of evolving technologies.
+        </div>
+        <div class="source-link">
+            → <a href="https://words.filippo.io/128-bits/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5cd6f0dbf95f" onclick="toggleTweets('5cd6f0dbf95f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5cd6f0dbf95f">
+                <div class="tweet">Quantum computers are not a threat to 128-bit symmetric keys, as clarified in a recent Reddit discussion. This reaffirms the security of encryption protocols relying on such key lengths. 🔒 #QuantumComputing #Encryption</div>
+<div class="tweet">Could quantum computers challenge the security of encryption in the future? A recent Reddit discussion in r/programming sheds light on the current stance regarding 128-bit symmetric keys. 🤔 #TechSecurity #EncryptionDebate</div>
+<div class="tweet">The discussion on quantum computers and 128-bit symmetric keys underscores the importance of staying vigilant with encryption methods. Understanding the limitations and strengths of evolving technologies is crucial for data security. 🔐 #DataProtection #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-07-10 18:55" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="State Senator Pockets Massive Real Estate Fee From a $30M Data Center Land Sale, Then Introduces Bill to Fast-Track Development">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.gadgetreview.com/state-senator-pockets-massive-real-estate-fee-from-a-30m-data-center-land-sale-then-introduces-bill-to-fast-track-development" target="_blank">State Senator Pockets Massive Real Estate Fee From a $30M Data Center Land Sale, Then Introduces Bill to Fast-Track Development</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-07-10 18:55 | ID: 18a205b1901f
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A state senator recently received a substantial real estate fee from a $30 million data center land sale and subsequently introduced a bill to expedite development processes. This move has sparked discussions on Reddit's r/technology forum, with users questioning the ethics and potential conflicts of interest involved in the transaction. The incident highlights the intersection of politics and technology infrastructure development, raising concerns about transparency and accountability in such dealings.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.gadgetreview.com/state-senator-pockets-massive-real-estate-fee-from-a-30m-data-center-land-sale-then-introduces-bill-to-fast-track-development" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-18a205b1901f" onclick="toggleTweets('18a205b1901f')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-18a205b1901f">
+                <div class="tweet">State Senator receives hefty fee from $30M data center land sale, then introduces bill to speed up development process. The intersection of politics and tech infrastructure raises questions on transparency and ethics. #TechNews #DataCenter #EthicsInTech</div>
+<div class="tweet">Is it ethical for a State Senator to profit from a $30M data center land sale and then fast-track development through a new bill? Discussing the blurred lines between politics and technology on Reddit's r/technology forum. #Ethics #TechPolitics #Transparency</div>
+<div class="tweet">The recent incident involving a State Senator profiting from a data center land sale highlights the importance of transparency and accountability in tech infrastructure development. How can we ensure ethical practices in such dealings moving forward? #TechEthics #Accountability</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-07-10 10:19" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Good Tools Are Invisible">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.gingerbill.org/article/2026/07/10/good-tools-are-invisible/" target="_blank">Good Tools Are Invisible</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-07-10 10:19 | ID: 519c5e0af222
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit discussion in r/programming with significant engagement highlighted the importance of "invisible" tools in software development. The thread emphasized that effective tools should seamlessly integrate into developers' workflows without drawing unnecessary attention to themselves. This underscores the significance of creating tools that enhance productivity and efficiency without adding complexity to the development process.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.gingerbill.org/article/2026/07/10/good-tools-are-invisible/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-519c5e0af222" onclick="toggleTweets('519c5e0af222')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-519c5e0af222">
+                <div class="tweet">"Developers discuss the importance of 'invisible' tools in software development on Reddit. Effective tools should seamlessly integrate into workflows without added complexity. #TechTalk #SoftwareDevelopment"</div>
+<div class="tweet">"Are your tools 'invisible' in your development process? Join the conversation sparked by a Reddit thread emphasizing the need for tools that enhance productivity without being intrusive. #DeveloperTools #Efficiency"</div>
+<div class="tweet">"Key takeaway from the r/programming discussion: 'Good tools are invisible.' Prioritizing tools that seamlessly integrate into workflows can boost productivity and efficiency in software development. #TechCommunity #Innovation"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-07-11 08:06:06 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
