@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - July 27, 2026, 10:03 AM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>July 27, 2026, 10:03 AM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-07-27 10:03:56
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 144.1 seconds</div>
+                <div>Start Time: 2026-07-27 10:03:56</div>
+                <div>End Time: 2026-07-27 10:06:20</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>🤖 AI Processing:</h4>
+                <div>AI Summaries: 39</div>
+                <div>Tweet Sets: 39</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 6, Standard: 10, Low: 23</div>
+                <div>Topics Detected: 6</div>
+                <div>Cross-platform Stories: 3</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="65.5" 
+             data-published="2026-07-21 20:09" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="OpenAI and Hugging Face address security incident during model evaluation">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank">OpenAI and Hugging Face address security incident during model evaluation</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-21 20:09 | ID: 554f3cbc40ca
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            OpenAI and Hugging Face recently encountered a security incident during the evaluation of a language model. The incident involved a vulnerability in the evaluation setup that could potentially leak sensitive information. Both organizations promptly addressed the issue and implemented measures to enhance security protocols during model evaluations, emphasizing the importance of robust security practices in AI development.
+        </div>
+        <div class="source-link">
+            → <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-554f3cbc40ca" onclick="toggleTweets('554f3cbc40ca')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-554f3cbc40ca">
+                <div class="tweet">OpenAI and Hugging Face tackle security head-on after a recent incident during model evaluation. Learn how they swiftly responded to enhance security measures in AI development. #OpenAI #HuggingFace #AIsecurity</div>
+<div class="tweet">Is the recent security incident at OpenAI and Hugging Face a wake-up call for the tech industry to prioritize robust security practices in AI development? Share your thoughts. #AIsecurity #TechEthics #OpenAI #HuggingFace</div>
+<div class="tweet">The security incident during model evaluation at OpenAI and Hugging Face highlights the critical need for stringent security protocols in the AI landscape. Learn how these organizations are setting the bar for safe AI development. #AIsecurity #TechInnovation #OpenAI #HuggingFace</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-07-23 14:24" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Writing by hand is good for your brain">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://nealstephenson.substack.com/p/writing-by-hand-is-good-for-your" target="_blank">Writing by hand is good for your brain</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-23 14:24 | ID: 82b0b8ce09e8
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Hacker News discussion with 1476 points and 665 comments highlights the benefits of writing by hand for brain health. Research suggests that the act of physically writing can improve memory retention, cognitive function, and creativity. This finding underscores the importance of incorporating handwriting into digital workflows to enhance overall brain function.
+        </div>
+        <div class="source-link">
+            → <a href="https://nealstephenson.substack.com/p/writing-by-hand-is-good-for-your" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-82b0b8ce09e8" onclick="toggleTweets('82b0b8ce09e8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-82b0b8ce09e8">
+                <div class="tweet">Did you know writing by hand can boost your brain health? Research shows it enhances memory, cognitive function, and creativity! 🧠📝 #Handwriting #BrainHealth #TechNews</div>
+<div class="tweet">Ever thought about how writing by hand could impact your brain function in a digital world? 💻📝 Join the conversation on the benefits of handwriting for brain health! #TechDebate #DigitalVsAnalog #HackerNews</div>
+<div class="tweet">Key insight: Incorporating handwriting into your digital routines can improve memory retention, cognitive skills, and creativity. Embrace the power of pen and paper for a healthier brain! 🖊️🧠 #BrainBoost #HandwritingMatters #TechTips</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-07-20 14:21" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="China’s open-weights AI strategy is winning">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/" target="_blank">China’s open-weights AI strategy is winning</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-20 14:21 | ID: e459f78b4c49
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            China's open-weights AI strategy, which involves sharing large-scale models and datasets openly, is gaining traction and proving successful. By adopting this approach, China is fostering collaboration and innovation within the AI community, leading to advancements in AI research and development. This strategy is enabling Chinese researchers and developers to access and leverage cutting-edge AI technologies, positioning China as a key player in the global AI landscape.
+        </div>
+        <div class="source-link">
+            → <a href="https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e459f78b4c49" onclick="toggleTweets('e459f78b4c49')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e459f78b4c49">
+                <div class="tweet">China's open-weights AI strategy is revolutionizing the AI landscape by promoting collaboration and innovation. Sharing models and datasets openly is propelling Chinese researchers to the forefront of AI development. #AI #TechInnovation</div>
+<div class="tweet">Is China's success in AI research attributed to its open-weights strategy? By sharing models and datasets openly, China is fostering a collaborative environment driving advancements in AI. How can this approach shape the future of AI globally? #AI #TechStrategy</div>
+<div class="tweet">Key insight: China's open-weights AI strategy is propelling the nation to the forefront of AI research. By sharing resources openly, China fosters collaboration and innovation, positioning itself as a key player in shaping the future of AI. #AI #TechAdvancements</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-07-24 16:57" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Claude Opus 5">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank">Claude Opus 5</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-24 16:57 | ID: 5cef4e8b891e
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Hacker News discussion titled "Claude Opus 5" has garnered significant attention with 1771 points and 1318 comments since it was posted on July 24, 2026, at 16:57. The topic appears to be of high interest within the tech community, likely discussing a new software release, security vulnerability, or innovative technology development. Developers and tech professionals may find valuable insights and discussions within the thread.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-5cef4e8b891e" onclick="toggleTweets('5cef4e8b891e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-5cef4e8b891e">
+                <div class="tweet">Join the buzz around "Claude Opus 5" on Hacker News! With 1771 points and 1318 comments, this discussion is a must-read for tech enthusiasts seeking the latest on software releases, security vulnerabilities, and tech innovations. #TechNews #HackerNews</div>
+<div class="tweet">What could "Claude Opus 5" be about? Join the conversation on Hacker News and share your thoughts on this trending topic with 1771 points and 1318 comments. Let's uncover the latest in tech together! #TechCommunity #InnovationDiscussion</div>
+<div class="tweet">Discover valuable insights and engaging discussions within the "Claude Opus 5" thread on Hacker News. Stay informed about new software releases, security vulnerabilities, and tech developments that matter to developers and tech pros. #TechInsights #StayUpdated</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-07-22 17:30" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Terence Tao's ChatGPT conversation about the Jacobian Conjecture counterexample">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://chatgpt.com/share/6a5fdc7a-d6f8-83e8-bbea-8deb42cfed56" target="_blank">Terence Tao's ChatGPT conversation about the Jacobian Conjecture counterexample</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-22 17:30 | ID: 19aa217b55a6
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Renowned mathematician Terence Tao engaged in a ChatGPT conversation on Hacker News discussing a potential counterexample to the Jacobian Conjecture. The discussion garnered significant attention with 1119 points and 636 comments, showcasing the interest in advanced mathematical concepts within the tech community. This exchange highlights the intersection of cutting-edge mathematics and technology, sparking valuable discourse among developers and tech professionals.
+        </div>
+        <div class="source-link">
+            → <a href="https://chatgpt.com/share/6a5fdc7a-d6f8-83e8-bbea-8deb42cfed56" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-19aa217b55a6" onclick="toggleTweets('19aa217b55a6')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-19aa217b55a6">
+                <div class="tweet">"Dive into the world of advanced mathematics with Terence Tao's ChatGPT discussion on the Jacobian Conjecture counterexample. The tech community's interest in math shines through! #TerenceTao #Mathematics #TechCommunity"</div>
+<div class="tweet">"Curious about the latest buzz in advanced math? Terence Tao's ChatGPT conversation on the Jacobian Conjecture counterexample on Hacker News is a must-read! What are your thoughts on the intersection of math and tech? #MathTechIntersection #TerenceTao #TechDiscussion"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-07-21 18:58" 
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Advertise in ChatGPT">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://ads.openai.com/" target="_blank">Advertise in ChatGPT</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-07-21 18:58 | ID: bf32bc8bf868
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            ChatGPT, a popular AI chatbot platform, is now offering the ability for advertisers to place ads within chat conversations. This new feature allows businesses to reach users in a more engaging and personalized way, leveraging the platform's AI capabilities to tailor ad content to individual users. The move is expected to provide a new revenue stream for ChatGPT while potentially improving user experience through more relevant ad placements.
+        </div>
+        <div class="source-link">
+            → <a href="https://ads.openai.com/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-bf32bc8bf868" onclick="toggleTweets('bf32bc8bf868')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-bf32bc8bf868">
+                <div class="tweet">Exciting news for advertisers! ChatGPT now allows ads within chat conversations, offering more personalized and engaging ad experiences. #AI #Advertising #ChatGPT</div>
+<div class="tweet">Curious about the future of ad targeting? ChatGPT's new feature enables tailored ads within conversations. How will this impact user engagement and revenue generation? #AI #AdTech #ChatGPT</div>
+<div class="tweet">By integrating ads in chat conversations, ChatGPT is set to unlock a new revenue stream while enhancing user experience with more relevant ad placements. A win-win for both advertisers and users! #ChatGPT #AI #Advertising</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="55" 
+             data-published="Mon, 27 Jul 2026 10:00:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Europe got its own TBPN-style live show, and everyone’s angling for a guest spot">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/27/europe-got-its-own-tbpn-style-live-show-and-its-already-a-hot-spot-on-a-press-tour/" target="_blank">Europe got its own TBPN-style live show, and everyone’s angling for a guest spot</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 27 Jul 2026 10:00:00 +0000 | ID: 9bc2a550fbb3
+             | <span class="engagement-standard">Engagement: [55.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 55%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Europe's TBPN-style live show secured a $1.6 million seed round from prominent investors like Powerhouse Capital, Axel Springer SE, LadBible, and angel investors from OpenAI and DeepMind. This funding will fuel the network's significant expansion plans, marking a key milestone in its growth within the media ecosystem. The show's popularity is attracting attention from various industry players vying for guest spots, indicating its rising influence and potential for further success.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/27/europe-got-its-own-tbpn-style-live-show-and-its-already-a-hot-spot-on-a-press-tour/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-9bc2a550fbb3" onclick="toggleTweets('9bc2a550fbb3')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-9bc2a550fbb3">
+                <div class="tweet">Exciting news in the tech media landscape! Europe's TBPN-style live show just secured a $1.6 million seed round from top investors like Powerhouse Capital and Axel Springer SE, fueling its expansion. 🚀 #TechNews #Media #Investment</div>
+<div class="tweet">What makes Europe's TBPN-style live show so irresistible to investors and industry players alike? 🤔 Its recent funding round and growing popularity hint at big things to come! #TechTrends #Innovation #TBPN</div>
+<div class="tweet">The $1.6 million seed funding secured by Europe's TBPN-style live show underscores its rising influence and potential for success. Industry players are already eyeing guest spots, showcasing the show's growing impact in the media ecosystem. 📈 #TechInvestment #MediaGrowth</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="47.5" 
+             data-published="Sun, 26 Jul 2026 21:06:44 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Can Apple make smart glasses that aren’t a constant privacy threat?">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/26/can-apple-make-smart-glasses-that-arent-a-constant-privacy-threat/" target="_blank">Can Apple make smart glasses that aren’t a constant privacy threat?</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sun, 26 Jul 2026 21:06:44 +0000 | ID: 808c20db9af0
+             | <span class="engagement-standard">Engagement: [47.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 47%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple is gearing up to release its first smart glasses, but is facing challenges in ensuring consumer privacy. The company is working on implementing features that protect user data and privacy, aiming to address potential privacy threats associated with wearable technology. Apple's approach to balancing innovation with privacy safeguards will be crucial in determining the success of its smart glasses in the market.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/26/can-apple-make-smart-glasses-that-arent-a-constant-privacy-threat/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-808c20db9af0" onclick="toggleTweets('808c20db9af0')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-808c20db9af0">
+                <div class="tweet">Can Apple make smart glasses that prioritize user privacy? With features aimed at protecting data, Apple is working to address privacy concerns associated with wearable tech. #Apple #SmartGlasses #Privacy</div>
+<div class="tweet">Privacy or innovation? Apple faces the challenge of balancing both with its upcoming smart glasses release. Will the quest for cutting-edge technology compromise user data security? #TechPrivacy #SmartDevices #Apple</div>
+<div class="tweet">Apple's strategic focus on safeguarding user privacy in its new smart glasses is crucial for their success in the market. Balancing innovation with privacy measures will determine consumer trust and adoption rates. #TechNews #UserPrivacy #AppleSmartGlasses</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Mon, 27 Jul 2026 00:19:14 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Are brain waves the next unlock for physical AI?">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/26/are-brain-waves-the-next-unlock-for-physical-ai/" target="_blank">Are brain waves the next unlock for physical AI?</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Mon, 27 Jul 2026 00:19:14 +0000 | ID: 67c1b6357823
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article explores the potential of incorporating brain wave readings as a new input for physical AI models, alongside multiple camera angles and dense annotation. This shift could enhance the capabilities of AI systems by providing deeper insights into human behavior and cognition, potentially leading to more advanced and intuitive AI applications in the future. Developers and researchers are now considering brain waves as a valuable source of data to unlock new possibilities in the field of physical AI.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/26/are-brain-waves-the-next-unlock-for-physical-ai/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-67c1b6357823" onclick="toggleTweets('67c1b6357823')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-67c1b6357823">
+                <div class="tweet">Exciting tech news alert! 🧠🤖 Could brain waves be the next big thing in physical AI? Learn how incorporating brain wave readings can enhance AI systems and unlock new possibilities. #AI #BrainWaves #TechNews</div>
+<div class="tweet">Ever thought about your brain waves helping AI systems? 🤯💭 The future of physical AI might be closer than we think! How could this new input change the game for AI developers and researchers? #TechInnovation #BrainWaves #AI</div>
+<div class="tweet">Key insight: Integrating brain wave readings into physical AI models could revolutionize human-computer interactions. Imagine the potential for more intuitive and advanced AI applications with deeper insights into human behavior and cognition! #AI #TechTrends #BrainWaves</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Sun, 26 Jul 2026 19:40:57 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Making sense of the panic over Chinese AI">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/26/making-sense-of-the-panic-over-chinese-ai/" target="_blank">Making sense of the panic over Chinese AI</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sun, 26 Jul 2026 19:40:57 +0000 | ID: c3a3bc7b79fa
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            In the latest episode of Equity, the panic over Chinese AI company Moonshot AI's Kimi was discussed, causing concern in Silicon Valley and Wall Street. The episode delved into the reasons behind the unease surrounding the company's technology and its potential impact on the tech industry. Moonshot AI's Kimi has raised questions about data privacy, security, and the competitive landscape in the AI sector, prompting a closer examination of the implications of Chinese AI advancements.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/26/making-sense-of-the-panic-over-chinese-ai/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-c3a3bc7b79fa" onclick="toggleTweets('c3a3bc7b79fa')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-c3a3bc7b79fa">
+                <div class="tweet">"Concerns over Chinese AI company Moonshot AI's Kimi are causing ripples in Silicon Valley and Wall Street. Dive into the implications for data privacy, security, and the AI sector on the latest episode of Equity. #AI #TechNews"</div>
+<div class="tweet">"Is the unease around Moonshot AI's Kimi justified, or are we underestimating the potential of Chinese AI advancements? Share your thoughts on the impact of this technology on the global tech landscape. #ChineseAI #MoonshotAI #TechDebate"</div>
+<div class="tweet">"Key takeaway from the latest Equity episode: The rise of Chinese AI company Moonshot AI's Kimi raises critical questions about data privacy, security, and market competition in the AI sector. Stay informed about the evolving tech industry dynamics. #AIInnovation #MoonshotAI"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Sun, 26 Jul 2026 16:33:13 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Hugging Face CEO calls for ‘radical transparency’ after ‘unprecedented’ OpenAI hack">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/26/hugging-face-ceo-calls-for-radical-transparency-after-unprecedented-openai-hack/" target="_blank">Hugging Face CEO calls for ‘radical transparency’ after ‘unprecedented’ OpenAI hack</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sun, 26 Jul 2026 16:33:13 +0000 | ID: b31237c326eb
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Hugging Face CEO emphasizes the need for "radical transparency" following an "unprecedented" hack on OpenAI, which is believed to be the first autonomous agent cyberattack. The CEO's call highlights the growing importance of cybersecurity measures and transparency in the face of evolving threats in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/26/hugging-face-ceo-calls-for-radical-transparency-after-unprecedented-openai-hack/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b31237c326eb" onclick="toggleTweets('b31237c326eb')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b31237c326eb">
+                <div class="tweet">"Hugging Face CEO stresses 'radical transparency' post 'unprecedented' OpenAI hack, underlining the critical need for enhanced cybersecurity measures. #Cybersecurity #TechIndustry #Transparency"</div>
+<div class="tweet">"Could the recent OpenAI hack signal a new era of autonomous agent cyberattacks? Hugging Face CEO's call for 'radical transparency' raises questions about the future of cybersecurity. #OpenAI #Cybersecurity #TechTrends"</div>
+<div class="tweet">"Key lesson from the OpenAI hack: 'Radical transparency' is crucial in addressing evolving cyber threats. Hugging Face CEO's emphasis on transparency sets a precedent for the tech industry. #Cybersecurity #TechLeadership #OpenAI"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Sun, 26 Jul 2026 19:48:43 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="First teaser for Apple TV's Neuromancer debuts at SDCC">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/07/first-teaser-for-apple-tvs-neuromancer-debuts-at-sdcc/" target="_blank">First teaser for Apple TV's Neuromancer debuts at SDCC</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sun, 26 Jul 2026 19:48:43 +0000 | ID: 3ca0b1db74e4
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            During San Diego Comic-Con, the first teaser for Apple TV's adaptation of "Neuromancer" was unveiled. This highly anticipated series is based on William Gibson's iconic cyberpunk novel and marks Apple's foray into the sci-fi genre for its streaming platform. The teaser offers a glimpse into the visual style and tone of the upcoming show, generating excitement among fans of the genre and showcasing Apple's push into original content creation.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/07/first-teaser-for-apple-tvs-neuromancer-debuts-at-sdcc/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3ca0b1db74e4" onclick="toggleTweets('3ca0b1db74e4')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3ca0b1db74e4">
+                <div class="tweet">Exciting news for cyberpunk fans! The first teaser for Apple TV's adaptation of "Neuromancer" was revealed at #SDCC. Get ready for a visually stunning series based on William Gibson's iconic novel. #AppleTV #Neuromancer</div>
+<div class="tweet">How do you think Apple's entry into the sci-fi genre with "Neuromancer" will impact the streaming platform competition? Share your thoughts! #AppleTV #Neuromancer #SciFi</div>
+<div class="tweet">Get ready for a visually immersive experience! Apple's adaptation of "Neuromancer" at #SDCC hints at a bold move into sci-fi content creation. Will this series set a new standard for streaming platforms? #AppleTV #Neuromancer #SciFi</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Sun, 26 Jul 2026 16:03:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="TechCrunch Mobility: Uber bets on its former CEO">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/26/techcrunch-mobility-uber-bets-on-its-former-ceo/" target="_blank">TechCrunch Mobility: Uber bets on its former CEO</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sun, 26 Jul 2026 16:03:00 +0000 | ID: 543860e2f9fd
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            In a recent TechCrunch Mobility article, Uber is highlighted for its strategic move to bet on its former CEO, Travis Kalanick, by investing in his new startup, CloudKitchens. This investment underscores Uber's continued interest in the food delivery market and the potential synergy between CloudKitchens' tech-driven approach to food delivery and Uber's platform. The move showcases the growing importance of AI and technology in shaping the future of transportation and delivery services.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/26/techcrunch-mobility-uber-bets-on-its-former-ceo/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-543860e2f9fd" onclick="toggleTweets('543860e2f9fd')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-543860e2f9fd">
+                <div class="tweet">In a strategic move, Uber invests in former CEO Travis Kalanick's startup, CloudKitchens, highlighting the synergy between tech-driven food delivery and Uber's platform. 🍔🚗 #TechNews #Uber #CloudKitchens</div>
+<div class="tweet">What does Uber's investment in CloudKitchens say about the future of food delivery and transportation services? 🤔 Exciting times ahead! 🌟 #TechInnovation #Uber #CloudKitchens</div>
+<div class="tweet">Uber's bet on CloudKitchens reinforces the growing role of AI and tech in shaping the future of delivery services. Innovation at its finest! 🚀 #AI #TechTrends #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-07-26T15:36:38-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Apple is banking on privacy to set its smart glasses apart">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/971101/apple-smart-glasses-privacy" target="_blank">Apple is banking on privacy to set its smart glasses apart</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-26T15:36:38-04:00 | ID: 87a35235db4a
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Apple is set to unveil its first smart glasses at WWDC in June, with a potential launch by the end of 2027. The delay could be attributed to Apple's focus on refining privacy features to differentiate its smart glasses in a market dominated by competitors like Meta. Apple's emphasis on privacy is expected to be a key selling point for its smart glasses.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/971101/apple-smart-glasses-privacy" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-87a35235db4a" onclick="toggleTweets('87a35235db4a')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-87a35235db4a">
+                <div class="tweet">Exciting news from Apple! 🍏👓 They are gearing up to unveil their first smart glasses at WWDC in June, focusing on privacy features to stand out in a crowded market dominated by Meta. Privacy-first tech is the future! #Apple #SmartGlasses #Privacy #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-07-25T14:13:36-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Google basically confirms the Pixel 11 is getting a price hike">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/971041/google-confirms-pixel-11-price-hike" target="_blank">Google basically confirms the Pixel 11 is getting a price hike</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-25T14:13:36-04:00 | ID: 6946cbdd048e
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Google's vice president of devices and services, Shakil Barkat, has indicated in an interview that the upcoming Pixel 11 smartphone is likely to be priced higher than its predecessor, the Pixel 10. This potential price increase is attributed to ongoing RAM supply challenges caused by the growing demand from AI data centers. The confirmation of a price hike for the Pixel 11 suggests that consumers may need to budget for a higher cost for Google's latest flagship device.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/971041/google-confirms-pixel-11-price-hike" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6946cbdd048e" onclick="toggleTweets('6946cbdd048e')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6946cbdd048e">
+                <div class="tweet">Google's VP of devices hints at a possible price increase for the Pixel 11 due to RAM supply challenges driven by AI data center demand. Will consumers be willing to pay more for Google's latest flagship device? #GooglePixel11 #TechNews</div>
+<div class="tweet">Is Google's decision to raise the price of the Pixel 11 justified by the ongoing RAM supply challenges or is it a strategic move to position the device differently in the market? Share your thoughts! #Pixel11 #TechDiscussion</div>
+<div class="tweet">The confirmed price hike for Google's Pixel 11 sheds light on the impact of RAM supply challenges from AI data centers on consumer tech prices. Are we entering an era where cutting-edge tech comes at a higher cost? #TechTrends #Pixel11PriceHike</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="41.0" 
+             data-published="Sun, 26 Jul 2026 01:30:00 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Monday.com is the latest tech company to blame AI for layoffs — here are 20 others">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/" target="_blank">Monday.com is the latest tech company to blame AI for layoffs — here are 20 others</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sun, 26 Jul 2026 01:30:00 +0000 | ID: e1fb1e3e04f6
+             | <span class="engagement-standard">Engagement: [41.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article provides a list of tech companies that have recently announced layoffs attributing them to the implementation of AI technology. Monday.com is the latest addition to this trend, joining a growing number of companies leveraging AI for efficiency gains but resulting in workforce reductions. This highlights the ongoing impact of AI on reshaping the workforce in the tech industry.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e1fb1e3e04f6" onclick="toggleTweets('e1fb1e3e04f6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e1fb1e3e04f6">
+                <div class="tweet">Is AI reshaping tech companies for better efficiency at the cost of human jobs? Learn how Monday.com and 20 others are attributing recent layoffs to AI implementation. #TechNews #AI #MondayDotCom</div>
+<div class="tweet">Are tech companies relying too heavily on AI, leading to workforce reductions? The recent layoffs at Monday.com and other firms raise questions about the future of employment in tech. What are your thoughts? #AI #TechIndustry #FutureOfWork</div>
+<div class="tweet">As tech companies embrace AI for efficiency gains, the shift in workforce dynamics becomes evident. The trend of layoffs at firms like Monday.com highlights the evolving landscape of technology and its impact on jobs. #TechTrends #AIInTech #MondayDotCom</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="Sun, 26 Jul 2026 17:03:19 +0000" 
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Inside one London founder house rewriting the founder-house rules">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/07/26/inside-one-london-founder-house-rewriting-the-founder-house-rules/" target="_blank">Inside one London founder house rewriting the founder-house rules</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Sun, 26 Jul 2026 17:03:19 +0000 | ID: effdeb75c7e0
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A London-based founder house is redefining traditional work-life balance to combat burnout among entrepreneurs. The initiative aims to provide a supportive environment for founders to live and work together, fostering collaboration and well-being. By prioritizing mental health and work-life harmony, this innovative approach could set a new standard for founder communities seeking sustainable success.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/07/26/inside-one-london-founder-house-rewriting-the-founder-house-rules/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-effdeb75c7e0" onclick="toggleTweets('effdeb75c7e0')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-effdeb75c7e0">
+                <div class="tweet">Discover how a London founder house is reshaping work-life balance for entrepreneurs, emphasizing collaboration and well-being to combat burnout. #FounderHouse #Entrepreneur #WorkLifeBalance</div>
+<div class="tweet">Are traditional work norms hindering entrepreneurial success? Dive into how a London founder house is challenging the status quo to prioritize mental health and harmony in work-life balance. #FounderCommunity #TechInnovation</div>
+<div class="tweet">By fostering a supportive environment and prioritizing mental health, this London founder house is setting a new standard for sustainable success among entrepreneurs. Collaboration and well-being take center stage in rewriting founder-house rules. #FounderWellness #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="38.0" 
+             data-published="Fri, 24 Jul 2026 21:56:02 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Paramount/WBD merger delayed for months as states' lawsuit moves toward trial">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/07/after-court-loss-paramount-agrees-to-delay-warner-bros-merger-until-trial/" target="_blank">Paramount/WBD merger delayed for months as states' lawsuit moves toward trial</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 24 Jul 2026 21:56:02 +0000 | ID: 09ac86001f70
+             | <span class="engagement-low">Engagement: [38.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The merger between Paramount and Warner Bros. Discovery has been delayed for several months due to an ongoing lawsuit by multiple states. The lawsuit aims to block the merger, with the New York Attorney General stating that halting the merger during the legal proceedings is a significant win. This delay could impact the timeline and plans for the merger, potentially affecting the companies' strategies and operations in the near future.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/07/after-court-loss-paramount-agrees-to-delay-warner-bros-merger-until-trial/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-09ac86001f70" onclick="toggleTweets('09ac86001f70')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-09ac86001f70">
+                <div class="tweet">"🚨 Paramount/WBD merger faces significant setback as states' lawsuit drags on, delaying the process for months. Stay tuned for updates! #TechNews #Paramount #WarnerBrosDiscovery"</div>
+<div class="tweet">"What impact could the delay in the Paramount/WBD merger due to the ongoing lawsuit have on the future of the entertainment industry? 🤔 #TechTrends #MergersAndAcquisitions"</div>
+<div class="tweet">"The Paramount/WBD merger delay highlights the complexity and challenges faced in large-scale corporate mergers, underscoring the importance of legal scrutiny in such transactions. #BusinessStrategy #LegalProceedings"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-07-26T14:45:50-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The US is charging an American citizen for wiping his phone at the border">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/policy/971097/us-charging-american-citizen-wiping-phone-duress-password" target="_blank">The US is charging an American citizen for wiping his phone at the border</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-26T14:45:50-04:00 | ID: b488093cf176
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The US government is pressing charges against American citizen Sam Tunick for reportedly using a "duress password" to wipe his phone when authorities attempted to confiscate it at Atlanta's Hartsfield-Jackson airport. Tunick was detained by federal agents who questioned him about child exploitation images. The case highlights the legal complexities surrounding device security measures and the potential consequences individuals may face for employing such tactics at border crossings.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/policy/971097/us-charging-american-citizen-wiping-phone-duress-password" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b488093cf176" onclick="toggleTweets('b488093cf176')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b488093cf176">
+                <div class="tweet">The US government is pressing charges against a citizen for wiping his phone at the border. The case sheds light on the legal complexities surrounding device security measures. #TechPrivacy #BorderSecurity</div>
+<div class="tweet">Is using a "duress password" to wipe your phone at the border a necessary security measure or a legal risk? The case of Sam Tunick raises important questions about device security in border crossings. #TechEthics #DataSecurity</div>
+<div class="tweet">The case of Sam Tunick highlights the potential consequences individuals may face for using security tactics like a duress password at border crossings. It underscores the need for clarity on the legal boundaries of protecting personal data. #TechLaw #PrivacyRights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-07-26T11:33:27-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Carrie is just trying to make a friend in the new trailer">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/971069/carrie-amazon-mike-flanagan-trailer-comic-con" target="_blank">Carrie is just trying to make a friend in the new trailer</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-26T11:33:27-04:00 | ID: b2066ddc78a2
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Mike Flanagan's fourth Stephen King adaptation, "Carrie," is set to premiere on Amazon Prime on October 7th, as revealed in the new trailer released at Comic-Con 2026. The trailer, while not offering many surprises, stays true to the expected themes of the story. The adaptation has been updated for modern audiences, promising a fresh take on the classic tale.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/971069/carrie-amazon-mike-flanagan-trailer-comic-con" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b2066ddc78a2" onclick="toggleTweets('b2066ddc78a2')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b2066ddc78a2">
+                <div class="tweet">Exciting news for Stephen King fans! 🎬 Mike Flanagan's adaptation of "Carrie" is coming to Amazon Prime on Oct 7th. The new trailer teases a modern twist on the classic story. Don't miss it! #Carrie #StephenKing #AmazonPrime #TechNews</div>
+<div class="tweet">What do you think of the updated adaptation of "Carrie" for modern audiences? Are you excited to see Mike Flanagan's take on the classic Stephen King story? Let's discuss! #Carrie #StephenKing #TechTalk #AmazonPrime</div>
+<div class="tweet">The new "Carrie" trailer offers a glimpse into how the adaptation has been refreshed for today's viewers. Mike Flanagan's vision promises a fresh perspective on the timeless Stephen King tale. Mark your calendars for Oct 7th! #Carrie #StephenKing #AmazonPrime #TechInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-07-26T11:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="You can get three months of Xbox Game Pass Ultimate for almost half off">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/970775/xbox-game-pass-ultimate-deal-sale" target="_blank">You can get three months of Xbox Game Pass Ultimate for almost half off</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-26T11:00:00-04:00 | ID: 02df4c37befb
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Eneba is offering a discounted digital code for a three-month subscription to Xbox Game Pass Ultimate, priced at $39.01 instead of the usual $69. This deal provides almost half off the regular cost, making it a more affordable option for gamers looking to access a wide range of games on Xbox consoles and PC through the subscription service.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/970775/xbox-game-pass-ultimate-deal-sale" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-02df4c37befb" onclick="toggleTweets('02df4c37befb')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-02df4c37befb">
+                <div class="tweet">Get your game on! 🎮 Score almost half off on a 3-month Xbox Game Pass Ultimate subscription with a discounted digital code from Eneba. Unlock access to a diverse library of games on Xbox and PC for just $39.01! #XboxGamePass #GamingDeals</div>
+<div class="tweet">Are you ready to level up your gaming experience? 💥 With Eneba's discounted offer, you can enjoy 3 months of Xbox Game Pass Ultimate at a steal! Tell us, which game are you most excited to play on the subscription service? #GamingCommunity #XboxGamer</div>
+<div class="tweet">Attention gamers! 🚨 Take advantage of Eneba's deal to save big on Xbox Game Pass Ultimate – access a plethora of games on both Xbox and PC for just $39.01. Don't miss out on this opportunity to explore new gaming adventures without breaking the bank. #GamingSavings #TechNews</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-07-26T10:51:33-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Marvel announces Ryan Gosling as Ghost Rider, a new Black Panther, and more">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/971071/marvel-ryan-gosling-ghost-rider-black-panther-comic-con" target="_blank">Marvel announces Ryan Gosling as Ghost Rider, a new Black Panther, and more</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-26T10:51:33-04:00 | ID: 6b92658b8645
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Marvel made significant announcements at Comic-Con, revealing that Ryan Gosling will portray Ghost Rider in a standalone movie directed by Shawn Levy, scheduled for release in 2028. This move marks a notable addition to the Marvel Cinematic Universe's lineup of characters and films, generating excitement among fans and industry watchers.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/971071/marvel-ryan-gosling-ghost-rider-black-panther-comic-con" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6b92658b8645" onclick="toggleTweets('6b92658b8645')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-6b92658b8645">
+                <div class="tweet">Exciting news from Marvel at Comic-Con! Ryan Gosling is set to play Ghost Rider in a standalone movie directed by Shawn Levy, coming in 2028. A thrilling addition to the Marvel Cinematic Universe lineup! #Marvel #RyanGosling #GhostRider</div>
+<div class="tweet">What do you think about Ryan Gosling taking on the role of Ghost Rider in the upcoming Marvel movie? Are you excited to see his portrayal in the MCU? Share your thoughts! #Marvel #RyanGosling #GhostRider</div>
+<div class="tweet">Marvel's decision to cast Ryan Gosling as Ghost Rider shows their commitment to expanding and diversifying their character roster. This move is sure to bring fresh energy and intrigue to the MCU! #Marvel #RyanGosling #GhostRider</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-07-26T17:24:07-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Champagne and Bullets belongs on the Mount Rushmore of bad movies">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/column/971103/champagne-and-bullets-bad-movies-review" target="_blank">Champagne and Bullets belongs on the Mount Rushmore of bad movies</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-26T17:24:07-04:00 | ID: b359e22b2453
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the cult appeal of "so bad they're good" movies like The Room and Troll 2, highlighting how these films, despite their low production values and lack of self-awareness, have garnered a dedicated following. Champagne and Bullets, also known as GetEven, is cited as another example of a movie that falls into this category, where ambition surpasses the film's technical shortcomings to create a unique and entertaining viewing experience for fans of such cult classics.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/column/971103/champagne-and-bullets-bad-movies-review" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-b359e22b2453" onclick="toggleTweets('b359e22b2453')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-b359e22b2453">
+                <div class="tweet">"Love 'so bad they're good' movies like The Room? Check out the cult appeal of Champagne and Bullets, a hidden gem in the realm of entertainingly bad films. 🍿🎬 #CultClassic #BadMovies #ChampagneAndBullets"</div>
+<div class="tweet">"Which 'so bad they're good' movie is your guilty pleasure? Dive into the cult world of films like Champagne and Bullets that defy expectations and create a unique viewing experience. 🎥✨ #CultFilms #GuiltyPleasure #FilmFan"</div>
+<div class="tweet">"Despite their flaws, movies like Champagne and Bullets showcase the power of ambition and creativity in creating a cult following. Embrace the charm of entertainingly bad films and join the cult classic fanbase! 🌟🎞️ #Ambition #Creativity #CultFollowing"</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-07-24" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Twins: Learn to Predict Unified Representations with Focal Loss">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2607.22531v1" target="_blank">Twins: Learn to Predict Unified Representations with Focal Loss</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-07-24 | ID: e10aa7ff4dbe
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "Twins: Learn to Predict Unified Representations with Focal Loss" by Kaixiong Gong, Xin Cai, Bin Lin, et al. introduces a method for predicting unified representations in multimodal models using focal loss. The study focuses on creating a shared visual token space that facilitates both multimodal understanding and image generation. This work explores unifying interfaces through shared codebooks in discrete methods, contrasting with continuous pipelines that typically use separate representations like semantic features (e.g., ViT).
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2607.22531v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-e10aa7ff4dbe" onclick="toggleTweets('e10aa7ff4dbe')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-e10aa7ff4dbe">
+                <div class="tweet">Delving into cutting-edge research, the paper "Twins: Learn to Predict Unified Representations with Focal Loss" introduces a method for predicting unified representations in multimodal models using focal loss. #TechNews #Research #FocalLoss</div>
+<div class="tweet">How can we enhance multimodal understanding and image generation through shared visual token spaces? Discover more in the research paper "Twins" by Kaixiong Gong, Xin Cai, Bin Lin, et al. #Innovation #UnifiedRepresentations #TechTalk</div>
+<div class="tweet">"Twins" research sheds light on unifying interfaces with shared codebooks for better multimodal understanding. An insightful look at creating a unified visual token space for enhanced model predictions. #TechInnovation #VisualTokenSpace #ResearchInsights</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-07-26 08:21" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Modeling Facts and Reactions with Domain Events">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://deniskyashif.com/2026/07/25/modeling-facts-and-reactions-with-domain-events/" target="_blank">Modeling Facts and Reactions with Domain Events</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-07-26 08:21 | ID: bba84eba20a8
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Reddit discussion in r/programming with 65 upvotes and 6 comments delves into the concept of modeling facts and reactions using domain events. This approach involves representing changes in a system as a series of events that capture the state transitions, allowing for a more flexible and scalable design in software development. By leveraging domain events, developers can achieve better decoupling, maintainability, and extensibility in their applications.
+        </div>
+        <div class="source-link">
+            → <a href="https://deniskyashif.com/2026/07/25/modeling-facts-and-reactions-with-domain-events/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-bba84eba20a8" onclick="toggleTweets('bba84eba20a8')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-bba84eba20a8">
+                <div class="tweet">Join the conversation on Reddit's r/programming with 65 upvotes and 6 comments discussing the benefits of modeling facts and reactions using domain events in software development. 🚀 #TechNews #SoftwareDevelopment #DomainEvents</div>
+<div class="tweet">Ever considered using domain events to model facts and reactions in your software? Dive into this Reddit discussion in r/programming and share your thoughts on this innovative approach! 💡 #TechTalk #Programming #Innovation</div>
+<div class="tweet">By embracing domain events, developers can enhance decoupling, maintainability, and extensibility in their applications. Learn more about this powerful concept by checking out the insightful Reddit thread in r/programming. 🌟 #SoftwareDesign #DevelopmentTips #DomainEvents</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="34.0" 
+             data-published="Sat, 25 Jul 2026 10:45:32 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Big Tech accused of stonewalling European social media researchers">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/07/big-tech-accused-of-stonewalling-european-social-media-researchers/" target="_blank">Big Tech accused of stonewalling European social media researchers</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 25 Jul 2026 10:45:32 +0000 | ID: 6df4ec998037
+             | <span class="engagement-low">Engagement: [34.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 34%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            European social media researchers have accused tech giants like TikTok, Facebook (Meta), and Twitter of withholding data required for their studies. The companies are allegedly not complying with European Union regulations that mandate the sharing of data for research purposes, hindering efforts to understand the impact of social media on society. This lack of transparency could impede the ability to address issues such as misinformation, privacy violations, and algorithmic bias on these platforms.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/07/big-tech-accused-of-stonewalling-european-social-media-researchers/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6df4ec998037" onclick="toggleTweets('6df4ec998037')">
+                📱 Show Tweet Suggestions (1)
+            </div>
+            <div class="tweets-content" id="tweets-6df4ec998037">
+                <div class="tweet">Interesting tech news: Big Tech accused of stonewalling European social media researchers... https://arstechnica.com/tech-policy/2026/07/big-tech-accused-of-stonewalling-european-social-media-researchers/</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-07-26T08:00:00-04:00" 
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The vertical video takeover is here">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/column/970756/vertical-video-tiktok-youtube-instagram-streaming-facebook" target="_blank">The vertical video takeover is here</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-07-26T08:00:00-04:00 | ID: a9341b6160db
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The article discusses the increasing prevalence of vertical videos across social and media platforms. With the rise of mobile usage, vertical videos are becoming more popular due to their better viewing experience on smartphones. This trend highlights the importance for content creators and marketers to adapt their strategies to cater to the growing demand for vertical video content.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/column/970756/vertical-video-tiktok-youtube-instagram-streaming-facebook" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a9341b6160db" onclick="toggleTweets('a9341b6160db')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a9341b6160db">
+                <div class="tweet">Vertical videos are taking over! With the surge in mobile usage, creating content in portrait mode is essential for engaging smartphone users. 📱 #VerticalVideos #MobileFirst</div>
+<div class="tweet">Are you ready for the vertical video revolution? With more people watching content on their phones, adapting to this trend is crucial for maximizing engagement. How will you adjust your content strategy? 🤳 #TechTrends #ContentCreation</div>
+<div class="tweet">Don't miss out on the vertical video trend! As mobile usage continues to soar, optimizing your content for portrait viewing can significantly boost viewer engagement. Stay ahead by embracing vertical videos in your marketing strategy. 📹 #DigitalMarketing #MobileContent</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.0" 
+             data-published="Sat, 25 Jul 2026 20:52:30 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="SDCC teaser gives us our first good look at Blade Runner 2099">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/07/sdcc-teaser-gives-us-our-first-good-look-at-blade-runner-2099/" target="_blank">SDCC teaser gives us our first good look at Blade Runner 2099</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 25 Jul 2026 20:52:30 +0000 | ID: 8dccd590b528
+             | <span class="engagement-low">Engagement: [33.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new teaser unveiled at San Diego Comic-Con (SDCC) offers a detailed glimpse into the upcoming Blade Runner 2099 project. The teaser provides a first substantial look at the highly anticipated sequel, generating excitement among fans and showcasing the futuristic visual style of the film. The release of this teaser at SDCC indicates a significant milestone in the promotion and development of Blade Runner 2099, setting the stage for further anticipation and engagement within the tech and entertainment communities.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/07/sdcc-teaser-gives-us-our-first-good-look-at-blade-runner-2099/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-8dccd590b528" onclick="toggleTweets('8dccd590b528')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-8dccd590b528">
+                <div class="tweet">Exciting news for Blade Runner fans! The new SDCC teaser for Blade Runner 2099 offers a detailed glimpse into the futuristic visual style of the upcoming sequel. 🌟🎥 #BladeRunner2099 #SDCC #TechNews</div>
+<div class="tweet">Curious about what Blade Runner 2099 has in store? The latest SDCC teaser has tech enthusiasts buzzing. What futuristic elements are you most looking forward to in this highly anticipated sequel? 🚀💭 #BladeRunner2099 #SDCC #TechTalk</div>
+<div class="tweet">The release of the Blade Runner 2099 teaser at SDCC marks a significant milestone in the project's promotion, capturing the attention of tech and entertainment communities alike. Anticipation is high for this visually stunning sequel! 🌆🎬 #BladeRunner2099 #SDCC #TechCommunity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="33.0" 
+             data-published="Fri, 24 Jul 2026 22:28:20 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Wildfire forces evacuation of NASA's Deep Space Network complex in Spain">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/07/wildfire-forces-evacuation-of-nasas-deep-space-network-complex-in-spain/" target="_blank">Wildfire forces evacuation of NASA's Deep Space Network complex in Spain</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 24 Jul 2026 22:28:20 +0000 | ID: 17452f36d2d0
+             | <span class="engagement-low">Engagement: [33.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A wildfire in Spain has led to the evacuation of NASA's Deep Space Network complex, disrupting communication with spacecraft. The extent of potential damage to the complex will be evaluated once it is safe to return. This incident highlights the vulnerability of critical infrastructure to natural disasters and the importance of contingency planning in ensuring uninterrupted space missions.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/07/wildfire-forces-evacuation-of-nasas-deep-space-network-complex-in-spain/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-17452f36d2d0" onclick="toggleTweets('17452f36d2d0')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-17452f36d2d0">
+                <div class="tweet">Wildfire forces evacuation of NASA's Deep Space Network complex in Spain, disrupting spacecraft communication. 🚀🔥 Importance of contingency planning in critical infrastructure highlighted. #NASA #SpaceTech #Wildfire</div>
+<div class="tweet">Could natural disasters like wildfires disrupt our ability to communicate with spacecraft in the future? 🌍🔥 Contingency planning is crucial for safeguarding critical infrastructure. #SpaceMissions #DisasterPreparedness</div>
+<div class="tweet">The evacuation of NASA's Deep Space Network complex in Spain underscores the need for robust contingency plans to ensure uninterrupted space missions. 🌌🔒 Preparedness is key in safeguarding critical infrastructure. #SpaceTech #DisasterRecovery</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-07-24" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="SM4RT: Learning Structured Motion Geometry for 4D Reconstruction">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2607.22534v1" target="_blank">SM4RT: Learning Structured Motion Geometry for 4D Reconstruction</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-07-24 | ID: 14cf4f2b01ca
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper titled "SM4RT: Learning Structured Motion Geometry for 4D Reconstruction" by Shing Ho J. Lin, Wenzhao Zheng, Dong Zhuo, and others addresses the challenge of extending Geometry Foundation Models (GFMs) to enable 4D dynamic understanding for reconstruction. Existing motion perception methods such as sparse tracking and dense point-wise flow are limited in capturing structured motion geometry, highlighting the need for advancements in this area to enhance 4D reconstruction capabilities.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2607.22534v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-14cf4f2b01ca" onclick="toggleTweets('14cf4f2b01ca')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-14cf4f2b01ca">
+                <div class="tweet">Exciting tech news alert! 🚀 Researchers introduce SM4RT, a breakthrough in 4D reconstruction by enhancing structured motion geometry understanding. 🌟 #TechNews #4DReconstruction #SM4RT</div>
+<div class="tweet">Ever wondered how far we can push the boundaries of 4D reconstruction tech? The new research on SM4RT by Lin, Zheng, Zhuo, and team seems to be a promising leap forward. What do you think? 💭 #TechInnovation #Research #SM4RT</div>
+<div class="tweet">Key insight from the latest tech research: SM4RT is paving the way for advanced 4D reconstruction by focusing on structured motion geometry, addressing limitations faced by existing methods. Innovation at its finest! 🌐 #TechProgress #SM4RT #Innovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-07-24" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2607.22529v1" target="_blank">Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-07-24 | ID: ec9fd0b3ed0b
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Siyuan Huang, Pengyu Cheng, Haotian Liu, and others explores Skill Self-Play, a method that advances Large Language Models (LLMs) by enabling interaction-driven self-evolution. This approach aims to overcome the challenge of balancing task diversity and verification reliability in LLM training, moving away from manual design and annotation towards more dynamic and adaptive learning processes. By co-evolving skills through self-play, this technique pushes the boundaries of LLM capability, potentially leading to more robust and versatile language models.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2607.22529v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-ec9fd0b3ed0b" onclick="toggleTweets('ec9fd0b3ed0b')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-ec9fd0b3ed0b">
+                <div class="tweet">Exciting tech breakthrough! Researchers are pushing the boundaries of Large Language Models with Skill Self-Play, enhancing adaptability and task diversity. 🚀 #TechNews #LLM #SkillSelfPlay</div>
+<div class="tweet">Ever wondered how Large Language Models can evolve through self-play? The groundbreaking research on Skill Self-Play is exploring just that, paving the way for more dynamic learning processes. 💡 #TechInnovation #SelfEvolution</div>
+<div class="tweet">Skill Self-Play is revolutionizing LLM training by co-evolving skills through interaction-driven processes. This method could lead to more robust and versatile language models, changing the game for AI development. 🤖 #TechAdvancements #AIResearch</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-07-26 20:10" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="US prosecutors charge Atlanta man after GrapheneOS phone wipes itself during airport search">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.techspot.com/news/113236-us-prosecutors-charge-atlanta-man-after-grapheneos-phone.html" target="_blank">US prosecutors charge Atlanta man after GrapheneOS phone wipes itself during airport search</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-07-26 20:10 | ID: 35c99cffdbcb
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            US prosecutors have charged an Atlanta man after his GrapheneOS phone reportedly wiped itself during an airport search. The incident highlights the security features of GrapheneOS, an open-source Android-based operating system known for its strong privacy and security protections, which can be set to automatically wipe data in certain scenarios to prevent unauthorized access. This case underscores the importance of data protection and encryption for individuals concerned about privacy and security in the digital age.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.techspot.com/news/113236-us-prosecutors-charge-atlanta-man-after-grapheneos-phone.html" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-35c99cffdbcb" onclick="toggleTweets('35c99cffdbcb')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-35c99cffdbcb">
+                <div class="tweet">US prosecutors charge Atlanta man after his GrapheneOS phone wipes itself during an airport search. Learn how this incident highlights the strong privacy and security features of GrapheneOS, an open-source Android-based OS. #GrapheneOS #Privacy #Security</div>
+<div class="tweet">Could your phone self-wipe like the Atlanta man's GrapheneOS device did during an airport search? This case serves as a reminder of the importance of data protection in our digital world. Are you taking steps to safeguard your data? #DataPrivacy #GrapheneOS #TechSecurity</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-07-27 02:08" 
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Why does everything feel so joyless? Welcome to the age of decadence without pleasure">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.theguardian.com/us-news/ng-interactive/2026/jul/26/age-of-decadence-pleasure-ai" target="_blank">Why does everything feel so joyless? Welcome to the age of decadence without pleasure</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-07-27 02:08 | ID: 6a99b76fd683
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The Reddit discussion in r/technology delves into the concept of decadence without pleasure in the current technological age, questioning why many experiences feel joyless despite the abundance of digital tools and conveniences. Users are exploring how the saturation of technology in daily life may be contributing to a sense of emptiness or dissatisfaction, prompting reflection on the balance between convenience and genuine fulfillment in the digital era.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theguardian.com/us-news/ng-interactive/2026/jul/26/age-of-decadence-pleasure-ai" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-6a99b76fd683" onclick="toggleTweets('6a99b76fd683')">
+                📱 Show Tweet Suggestions (2)
+            </div>
+            <div class="tweets-content" id="tweets-6a99b76fd683">
+                <div class="tweet">Join the conversation on Reddit's r/technology discussing the paradox of decadence without pleasure in our tech-driven world. Are digital conveniences leaving us feeling joyless? #TechTalk #DigitalAge #JoylessTech</div>
+<div class="tweet">Is the abundance of technology in our lives leading to a lack of genuine fulfillment? Dive into the thought-provoking Reddit thread on decadence without pleasure in the digital era. Share your thoughts! #TechDiscussion #DigitalDilemma #TechReflect</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="31.0" 
+             data-published="Sat, 25 Jul 2026 11:00:32 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="With help from data, art museums are reframing the visitor experience">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/07/with-help-from-data-art-museums-are-reframing-the-visitor-experience/" target="_blank">With help from data, art museums are reframing the visitor experience</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 25 Jul 2026 11:00:32 +0000 | ID: 759fae446e8c
+             | <span class="engagement-low">Engagement: [31.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 31%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            Art museums are leveraging data-driven approaches to enhance the visitor experience by tailoring exhibits based on visitor preferences and behavior. This shift towards data-driven curation is reshaping how museums engage with audiences and adapt to evolving technology trends, ultimately creating more personalized and interactive experiences for visitors.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/07/with-help-from-data-art-museums-are-reframing-the-visitor-experience/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-759fae446e8c" onclick="toggleTweets('759fae446e8c')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-759fae446e8c">
+                <div class="tweet">Exciting to see art museums embracing data-driven approaches to enhance visitor experiences! 🖼️ Leveraging insights to tailor exhibits based on preferences is reshaping how museums engage with audiences. #TechInArt #DataDrivenMuseums</div>
+<div class="tweet">Ever wondered how art museums are utilizing data to personalize your experience? 🧐 From visitor behavior to preferences, data-driven curation is transforming how museums engage with audiences. How do you think this will impact the future of museum visits? #DataInArt #TechTrends</div>
+<div class="tweet">Key insight: Data-driven curation in art museums is revolutionizing visitor experiences by creating more personalized and interactive exhibits. This shift highlights the importance of adapting to evolving tech trends to enhance audience engagement. #MuseumTech #ArtInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="31.0" 
+             data-published="Fri, 24 Jul 2026 21:25:15 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="Canadian legislator reads out apparent LLM response in floor speech">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/07/canadian-legislator-reads-out-apparent-llm-response-in-floor-speech/" target="_blank">Canadian legislator reads out apparent LLM response in floor speech</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Fri, 24 Jul 2026 21:25:15 +0000 | ID: d709a6d7f9a6
+             | <span class="engagement-low">Engagement: [31.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 31%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            During a floor speech, a Canadian legislator read out an apparent response generated by OpenAI's GPT-3 language model. The legislator presented the text as a more natural version of a section, showcasing the capabilities of AI in generating human-like language. This event highlights the increasing use of AI in various fields and the potential impact on content creation and communication.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/07/canadian-legislator-reads-out-apparent-llm-response-in-floor-speech/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-d709a6d7f9a6" onclick="toggleTweets('d709a6d7f9a6')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-d709a6d7f9a6">
+                <div class="tweet">Canadian legislator showcases AI's language capabilities by reading out a response generated by OpenAI's GPT-3 during a floor speech. This event underscores the growing influence of AI in content creation. #AI #OpenAI #TechNews</div>
+<div class="tweet">How do you feel about a Canadian legislator incorporating AI-generated text in a floor speech? The use of OpenAI's GPT-3 raises questions about the intersection of AI and human communication. Share your thoughts! #AI #OpenAI #TechDebate</div>
+<div class="tweet">The recent demonstration by a Canadian legislator using AI-generated text from OpenAI's GPT-3 highlights the evolving landscape of human-AI collaboration. As technology advances, the boundaries between human and machine-generated content blur. #AI #OpenAI #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-07-25 20:09" 
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Introducing Triton: DirectX 11 driver for QEMU">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://blog.getutm.app/2026/introducing-triton-directx-11-driver-for-qemu/" target="_blank">Introducing Triton: DirectX 11 driver for QEMU</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-07-25 20:09 | ID: 510845649396
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A new DirectX 11 driver called Triton has been introduced for QEMU, a popular open-source machine emulator and virtualizer. This driver enables users to run Windows games and applications that require DirectX 11 support on virtual machines with improved performance and compatibility. The introduction of Triton is expected to enhance the gaming and application experience for users utilizing QEMU for virtualization purposes.
+        </div>
+        <div class="source-link">
+            → <a href="https://blog.getutm.app/2026/introducing-triton-directx-11-driver-for-qemu/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-510845649396" onclick="toggleTweets('510845649396')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-510845649396">
+                <div class="tweet">🚀 Exciting news for virtualization enthusiasts! Triton, a new DirectX 11 driver, enhances performance and compatibility on QEMU for running Windows games and apps. Say goodbye to compatibility issues! #Triton #QEMU #DirectX11</div>
+<div class="tweet">💭 Wondering how Triton's introduction will revolutionize virtualization experiences on QEMU? Dive into the world of enhanced DirectX 11 support for an unparalleled gaming and app experience! #TechInnovation #Virtualization #Triton</div>
+<div class="tweet">🎮 With Triton now available for QEMU, users can expect smoother gameplay and better app performance. The future of virtualization just got a whole lot brighter with enhanced DirectX 11 support! #GamingTech #VirtualizationUpgrade #Triton</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="28.5" 
+             data-published="2026-07-24" 
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Robot-Factored World Models via Robot Rendering">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2607.22535v1" target="_blank">Robot-Factored World Models via Robot Rendering</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-07-24 | ID: 0f2273db4c99
+             | <span class="engagement-low">Engagement: [28.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 28%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            The research paper by Byungjun Kim, Taeksoo Kim, Hyunsoo Cha, and others introduces a method for creating robot-factored world models through robot rendering. These models use action-conditioned video world models to predict future observations based on initial observations and action signals. This approach is significant for robotics as it considers how actions impact future observations by translating them into robot motion and interactions with the environment.
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2607.22535v1" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-0f2273db4c99" onclick="toggleTweets('0f2273db4c99')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-0f2273db4c99">
+                <div class="tweet">Exciting research by Kim et al. introduces a method for creating robot-factored world models through robot rendering. 🤖🌍 Understanding the impact of actions on future observations is crucial for advancing robotics. #Robotics #AI #TechNews</div>
+<div class="tweet">Can action-conditioned video world models revolutionize how robots predict future observations? 🤔 Kim et al.'s research on robot-factored world models through robot rendering is pushing boundaries in robotics. #Innovation #TechResearch #Robotics</div>
+<div class="tweet">Key insight from Kim et al.'s research: considering how actions influence future observations in robot-factored world models is a game-changer for robotics. 🚀 Understanding these dynamics can lead to more precise robot motion and interactions. #TechBreakthrough #Robotics</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="28.0" 
+             data-published="Sat, 25 Jul 2026 17:47:22 +0000" 
+             data-source="Ars Technica - All content"
+             data-source-type="RSS"
+             data-title="SpaceX eyes tower catch for next Starship after auspicious end to 13th flight">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/07/spacex-eyes-tower-catch-for-next-starship-after-auspicious-end-to-13th-flight/" target="_blank">SpaceX eyes tower catch for next Starship after auspicious end to 13th flight</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica - All content | Published: Sat, 25 Jul 2026 17:47:22 +0000 | ID: a82147d8fbd0
+             | <span class="engagement-low">Engagement: [28.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 28%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            SpaceX is considering a tower catch maneuver for the next Starship flight, aiming to catch the spacecraft back at the launch pad. This innovative approach could streamline recovery operations and potentially lead to quicker turnaround times for future missions. The move showcases SpaceX's ongoing efforts to advance reusability and efficiency in its spaceflight operations.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/07/spacex-eyes-tower-catch-for-next-starship-after-auspicious-end-to-13th-flight/" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-a82147d8fbd0" onclick="toggleTweets('a82147d8fbd0')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-a82147d8fbd0">
+                <div class="tweet">SpaceX is revolutionizing spaceflight with a tower catch maneuver for the next Starship flight! 🚀 This innovative approach could lead to quicker turnaround times and more efficient operations. #SpaceX #Starship #Innovation</div>
+<div class="tweet">Ever imagined a spacecraft being caught mid-air like a football? 🏈 SpaceX is exploring a tower catch maneuver for the next Starship flight! What other out-of-the-box ideas could shape the future of space exploration? 🌌 #SpaceX #Starship #FutureTech</div>
+<div class="tweet">SpaceX's consideration of a tower catch maneuver for the next Starship flight highlights their commitment to reusability and efficiency in spaceflight operations. Innovation at its finest! 🛰️ #SpaceX #Starship #TechInnovation</div>
+
+            </div>
+        </div>
+    </article>
+
+    <article data-engagement="27.5" 
+             data-published="2026-07-26 06:43" 
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="I implemented the YOLO26n model inference from scratch using ARM64 Assembly Language (No framework) [P]">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://i.redd.it/wiyelkfpsifh1.jpeg" target="_blank">I implemented the YOLO26n model inference from scratch using ARM64 Assembly Language (No framework) [P]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-07-26 06:43 | ID: 3992dc4dd4a1
+             | <span class="engagement-low">Engagement: [27.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 27%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 AI Summary:</strong><br>
+            A Reddit user shared their accomplishment of implementing the YOLOv2 neural network model inference using ARM64 Assembly Language without relying on any frameworks. This achievement showcases the user's technical prowess in optimizing deep learning models for efficient inference on ARM64 architecture, potentially leading to performance improvements in edge computing and IoT devices. The project garnered positive feedback from the machine learning community on Reddit, with 96 upvotes and 14 comments highlighting the interest and recognition of this technical feat.
+        </div>
+        <div class="source-link">
+            → <a href="https://i.redd.it/wiyelkfpsifh1.jpeg" target="_blank">Read full article</a>
+        </div>
+        <div class="tweets-section">
+            <div class="tweets-toggle" id="toggle-3992dc4dd4a1" onclick="toggleTweets('3992dc4dd4a1')">
+                📱 Show Tweet Suggestions (3)
+            </div>
+            <div class="tweets-content" id="tweets-3992dc4dd4a1">
+                <div class="tweet">Impressive work by a Reddit user who implemented YOLOv2 model inference using ARM64 Assembly Language without frameworks. This showcases advanced optimization skills for efficient deep learning on ARM64 architecture. #TechNews #DeepLearning</div>
+<div class="tweet">Ever thought about optimizing deep learning models without relying on frameworks? This Reddit user did it by implementing YOLOv2 inference using ARM64 Assembly Language. What other frameworks could be bypassed for customization? #TechInnovation #AssemblyLanguage</div>
+<div class="tweet">Implementing YOLOv2 inference from scratch using ARM64 Assembly Language demonstrates the potential for advanced optimization in deep learning for edge computing and IoT devices. Technical feats like this push boundaries in machine learning. #Innovation #ARM64Tech</div>
+
+            </div>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-07-27 10:03:56 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
