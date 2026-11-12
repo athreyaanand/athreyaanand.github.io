@@ -43,12 +43,16 @@ function preloadImages(basePath, onProgress, onComplete) {
 
   filenames.forEach((filename) => {
     const img = new Image();
-    img.onload = img.onerror = () => {
-      cache.set(filename, img);
+    function settled() {
       loaded++;
       if (onProgress) onProgress(loaded, total);
       if (loaded === total && onComplete) onComplete(cache);
+    }
+    img.onload = () => {
+      cache.set(filename, img);
+      settled();
     };
+    img.onerror = settled;
     img.src = `${basePath}${filename}`;
   });
 
@@ -58,18 +62,15 @@ function preloadImages(basePath, onProgress, onComplete) {
 function initializeFaceTracker(container) {
   const basePath = container.dataset.basePath || '/faces/';
 
-  // Create the display image
-  const img = document.createElement('img');
-  img.className = 'face-image';
-  img.alt = 'Face following gaze';
+  // Enhance the HTML portrait so identity stays visible before JavaScript loads.
+  let img = container.querySelector('.face-image');
+  if (!img) {
+    img = document.createElement('img');
+    img.className = 'face-image';
+    img.alt = 'Athreya Anand';
+    container.appendChild(img);
+  }
   img.draggable = false;
-  container.appendChild(img);
-
-  // Loading overlay
-  const loadingEl = document.createElement('div');
-  loadingEl.className = 'face-loading';
-  loadingEl.innerHTML = '<div class="face-loading-spinner"></div>';
-  container.appendChild(loadingEl);
 
   let imageCache = null;
   let currentFilename = '';
@@ -88,13 +89,10 @@ function initializeFaceTracker(container) {
     const py = quantizeToGrid(currentNY);
     const filename = gridToFilename(px, py);
 
-    if (filename !== currentFilename) {
+    // Keep the last good frame if an optional gaze image failed to load.
+    if (filename !== currentFilename && imageCache && imageCache.has(filename)) {
       currentFilename = filename;
-      if (imageCache && imageCache.has(filename)) {
-        img.src = imageCache.get(filename).src;
-      } else {
-        img.src = `${basePath}${filename}`;
-      }
+      img.src = imageCache.get(filename).src;
     }
 
     requestAnimationFrame(gazeLoop);
@@ -113,7 +111,6 @@ function initializeFaceTracker(container) {
   }
 
   function handleTouchMove(e) {
-    e.preventDefault();
     if (e.touches && e.touches.length > 0) {
       const t = e.touches[0];
       scheduleUpdate(t.clientX, t.clientY);
@@ -123,10 +120,7 @@ function initializeFaceTracker(container) {
   // Show center image immediately, then preload all
   const centerFilename = gridToFilename(0, 0);
   currentFilename = centerFilename;
-  img.src = `${basePath}${centerFilename}`;
-  img.onload = () => {
-    img.classList.add('loaded');
-  };
+  if (!img.getAttribute('src')) img.src = `${basePath}${centerFilename}`;
 
   // Ease-in-out cubic for smooth acceleration/deceleration
   function easeInOut(t) {
@@ -184,18 +178,11 @@ function initializeFaceTracker(container) {
 
   preloadImages(basePath, null, (cache) => {
     imageCache = cache;
-    loadingEl.classList.add('hidden');
-    img.classList.add('loaded');
 
-    // Trigger entrance animation
-    const island = container.closest('.center-island');
-    if (island) island.classList.add('ready');
-
-    // After face slides up (0.8s delay + 0.6s duration), begin choreography
+    // Gaze and pill choreography are optional; the portrait and links already work.
     setTimeout(() => {
-      // Look down → plaque drops → look up → bouncers → look around in awe
+      // Look down at the plaque, then up to launch the bouncers.
       animateGaze({ y: 0 }, { y: -12 }, 350, () => {
-        if (island) island.classList.add('plaque-in');
         setTimeout(() => {
           animateGaze({ y: -12 }, { y: 0 }, 350, () => {
             function launchPills(x, y) {
@@ -233,7 +220,7 @@ function initializeFaceTracker(container) {
               gazeSequence(gazeSteps, () => {
                 // Enable cursor tracking + start smooth gaze loop
                 window.addEventListener('mousemove', handleMouseMove);
-                window.addEventListener('touchmove', handleTouchMove, { passive: false });
+                window.addEventListener('touchmove', handleTouchMove, { passive: true });
                 requestAnimationFrame(gazeLoop);
 
                 // --- Idle face animations ---
@@ -340,7 +327,7 @@ function initializeFaceTracker(container) {
                 dead = false;
                 flinching = false;
                 window.addEventListener('mousemove', handleMouseMove);
-                window.addEventListener('touchmove', handleTouchMove, { passive: false });
+                window.addEventListener('touchmove', handleTouchMove, { passive: true });
               }, 600);
             }
 
