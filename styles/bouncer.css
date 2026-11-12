@@ -44,12 +44,15 @@
   flex-direction: column;
   align-items: stretch;
   pointer-events: none;
+  visibility: hidden;
+}
+
+.center-island.ready {
   visibility: visible;
-  max-width: calc(100vw - 32px);
 }
 
 .center-island .face-tracker,
-.center-island a {
+.center-island .plaque a {
   pointer-events: auto;
 }
 
@@ -60,7 +63,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  flex-wrap: wrap;
 }
 
 .plaque-name {
@@ -87,68 +89,6 @@
 
 .plaque-socials a:hover {
   color: #333;
-}
-
-.center-island a:focus-visible {
-  outline: 2px solid #333;
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-
-.intro {
-  margin-top: 14px;
-  color: #555;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.intro a,
-.project-links a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-.intro a:hover,
-.project-links a:hover {
-  color: #111;
-}
-
-.project-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  margin-top: 12px;
-  font-size: 12px;
-  line-height: 1.5;
-  color: #666;
-}
-
-/* Keep the profile usable in short windows and with enlarged text. */
-@media (max-height: 600px) {
-  html, body {
-    overflow-y: auto;
-    touch-action: auto;
-  }
-
-  .center-island {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: fit-content;
-    margin: 24px auto;
-  }
-
-  .face-tracker {
-    touch-action: pan-y;
-  }
-
-  .center-island.hit,
-  .center-island.dying,
-  .center-island.reviving {
-    animation: none;
-  }
 }
 
 /* Particles */
