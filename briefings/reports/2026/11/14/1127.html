@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - November 14, 2026, 11:27 AM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>November 14, 2026, 11:27 AM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>35 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-11-14 11:27:09
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 164.9 seconds</div>
+                <div>Start Time: 2026-11-14 11:27:09</div>
+                <div>End Time: 2026-11-14 11:29:54</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 35</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, Reddit: 5</div>
+            </div>
+            
+            
+            <div class="run-summary-section">
+                <h4>🤖 Briefing Content:</h4>
+                <div>Local AI Summaries: 6</div>
+                <div>Model: Qwen3.5-0.8B (local)</div>
+                <div>Source Descriptions: 29</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 35</div>
+                <div>Distribution: Notable: 6, Standard: 18, Low: 11</div>
+                <div>Topics Detected: 8</div>
+                <div>Cross-platform Stories: 2</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="67.5" 
+             data-published="2026-11-10 15:25"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Smart home devices should work without the internet">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://docodethatmatters.com/home-automation-overnight-success/" target="_blank">Smart home devices should work without the internet</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-10 15:25 | ID: 33a7745cda06
+             | <span class="engagement-notable">Engagement: [67.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 67%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1194 points and 442 comments. Posted 2026-11-10 15:25.
+        </div>
+        <div class="source-link">
+            → <a href="https://docodethatmatters.com/home-automation-overnight-success/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="65.5" 
+             data-published="2026-11-09 12:19"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Foldable Flight: The Best Paper Airplanes">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.foldableflight.com" target="_blank">Foldable Flight: The Best Paper Airplanes</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-09 12:19 | ID: 01bead084f96
+             | <span class="engagement-notable">Engagement: [65.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 65%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1281 points and 168 comments. Posted 2026-11-09 12:19.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.foldableflight.com" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-12 13:52"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Jensen Huang resigns">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f" target="_blank">Jensen Huang resigns</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-12 13:52 | ID: 9042ed924ad7
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 4025 points and 3435 comments. Posted 2026-11-12 13:52.
+        </div>
+        <div class="source-link">
+            → <a href="https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-13 21:05"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="FAA issues national ground stop – lifted 4.5 hours later">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247" target="_blank">FAA issues national ground stop – lifted 4.5 hours later</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-13 21:05 | ID: 7eb4c6e87afa
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1554 points and 1178 comments. Posted 2026-11-13 21:05.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-11 07:03"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Tim Peters has died">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028" target="_blank">Tim Peters has died</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-11 07:03 | ID: 4dd24a20a9f1
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1429 points and 203 comments. Posted 2026-11-11 07:03.
+        </div>
+        <div class="source-link">
+            → <a href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-11 22:31"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Nvidia is preparing to oust Jensen Huang">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad" target="_blank">Nvidia is preparing to oust Jensen Huang</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-11 22:31 | ID: ad254e5553c9
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1223 points and 1645 comments. Posted 2026-11-11 22:31.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="52.5" 
+             data-published="Fri, 13 Nov 2026 22:43:00 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank">Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 13 Nov 2026 22:43:00 +0000 | ID: 7bda83cc1b32
+             | <span class="engagement-standard">Engagement: [52.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            Nvidia has poured tens of billions into AI startups under the leadership of Jensen Huang, prompting VCs and founders to brace for smaller checks and lower valuations.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Fri, 13 Nov 2026 15:58:00 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="The unfolding Jensen Huang scandal: a timeline">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/13/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/" target="_blank">The unfolding Jensen Huang scandal: a timeline</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 13 Nov 2026 15:58:00 +0000 | ID: 1a1c8bae6b52
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            Jensen Huang has resigned from Nvidia following an affair, which could have ramifications for national security as the U.S. and China race to develop the most advanced AI infrastructure.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/13/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Fri, 13 Nov 2026 17:25:45 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="OpenAI board member worries an AI &quot;takeover&quot; of society could be months away">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/" target="_blank">OpenAI board member worries an AI &quot;takeover&quot; of society could be months away</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Fri, 13 Nov 2026 17:25:45 +0000 | ID: 96725ad3efe5
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Researcher traces a path from AI reward hacking to potential human extinction.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Fri, 13 Nov 2026 16:26:32 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Windows 0-day dropped by disgruntled researcher hands hackers System rights">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/security/2026/11/windows-0-day-dropped-by-disgruntled-researcher-hands-hackers-system-rights/" target="_blank">Windows 0-day dropped by disgruntled researcher hands hackers System rights</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Fri, 13 Nov 2026 16:26:32 +0000 | ID: 89cb3eef09aa
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            &quot;SignDrop&quot; exploit lets local users gain all-powerful System rights.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/security/2026/11/windows-0-day-dropped-by-disgruntled-researcher-hands-hackers-system-rights/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 13 Nov 2026 19:37:57 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="AI agent startup LangChain hits $3B valuation">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/" target="_blank">AI agent startup LangChain hits $3B valuation</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 13 Nov 2026 19:37:57 +0000 | ID: 3a57c1149559
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            LangChain has announced a valuation of $3B and has secured 7,000 customers for its agent management tool.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 13 Nov 2026 18:40:30 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/" target="_blank">Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 13 Nov 2026 18:40:30 +0000 | ID: 93607e8b2f44
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            A new research indicates that the most advanced AI models from China were trained on banned Nvidia chips.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 13 Nov 2026 16:00:12 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="ChatGPT’s new Wallet lets AI agents shop and check out for you">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank">ChatGPT’s new Wallet lets AI agents shop and check out for you</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 13 Nov 2026 16:00:12 +0000 | ID: 3fe28d58a6d2
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            ChatGPT has launched a new wallet designed to allow AI agents to shop and check out for users, with a limited rollout to U.S. Pro subscribers.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Fri, 13 Nov 2026 21:20:47 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="FAA expands AI advice to manage air traffic congestion across entire US airspace">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/" target="_blank">FAA expands AI advice to manage air traffic congestion across entire US airspace</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Fri, 13 Nov 2026 21:20:47 +0000 | ID: a12c42866991
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            The FAA has announced an expansion of AI advice to manage air traffic congestion across the entire US airspace, though the airline industry has praised the initiative while the air traffic controllers&#x27; union remains uninvolved.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Fri, 13 Nov 2026 21:44:38 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="US government grounds all flights across the United States ‘due to extraordinary circumstances’">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/13/u-s-government-grounds-all-flights-across-the-united-states-due-to-extraordinary-cirumstances/" target="_blank">US government grounds all flights across the United States ‘due to extraordinary circumstances’</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 13 Nov 2026 21:44:38 +0000 | ID: 698e7b9f557d
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            A spokesperson for the FAA told TechCrunch that it issued the ground stop &quot;following communication issues impacting multiple Air Route Traffic Control Centers,&quot; which manage the airspace across the United States.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/13/u-s-government-grounds-all-flights-across-the-united-states-due-to-extraordinary-cirumstances/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Fri, 13 Nov 2026 20:07:24 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="This young startup wants to power floating data centers with the ocean’s heat, and investors are already on board">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/13/this-young-startup-wants-to-power-floating-data-centers-with-the-oceans-heat-and-investors-are-already-on-board/" target="_blank">This young startup wants to power floating data centers with the ocean’s heat, and investors are already on board</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 13 Nov 2026 20:07:24 +0000 | ID: 57e9cc9a43f7
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Drogue is harvesting heat from the ocean to power data centers on floating vessels. The first prototype should be bobbing around the ocean, crunching bits, in less than two years.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/13/this-young-startup-wants-to-power-floating-data-centers-with-the-oceans-heat-and-investors-are-already-on-board/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Sat, 14 Nov 2026 00:49:13 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Starship flight 15 powers to orbit—setting up a possible catch on Saturday">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/11/starship-flight-15-powers-to-orbit-setting-up-a-possible-catch-on-saturday/" target="_blank">Starship flight 15 powers to orbit—setting up a possible catch on Saturday</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Sat, 14 Nov 2026 00:49:13 +0000 | ID: aba80a6546fb
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            One way or another, the company will get some more data on Saturday.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/11/starship-flight-15-powers-to-orbit-setting-up-a-possible-catch-on-saturday/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Fri, 13 Nov 2026 21:59:01 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Millions of Americans are not taking their GLP-1 drugs as prescribed">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/health/2026/11/millions-in-us-use-unapproved-glp-1s-and-use-them-in-unapproved-ways/" target="_blank">Millions of Americans are not taking their GLP-1 drugs as prescribed</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Fri, 13 Nov 2026 21:59:01 +0000 | ID: a3bc14f03d21
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Cost and access barriers are pushing people to modified use and unapproved versions.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/health/2026/11/millions-in-us-use-unapproved-glp-1s-and-use-them-in-unapproved-ways/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Fri, 13 Nov 2026 19:49:16 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Kalshi ditches Trump Jr. as advisor; CEO admitted &quot;optics&quot; weren&#x27;t good">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/11/trump-jr-out-as-kalshi-advisor-after-his-firms-big-investment-in-polymarket/" target="_blank">Kalshi ditches Trump Jr. as advisor; CEO admitted &quot;optics&quot; weren&#x27;t good</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Fri, 13 Nov 2026 19:49:16 +0000 | ID: f204291941c3
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Trump son advised Kalshi and got equity while Trump admin helped Kalshi in lawsuits.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/11/trump-jr-out-as-kalshi-advisor-after-his-firms-big-investment-in-polymarket/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-11-13T14:14:38-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Here’s how you can save on your GTA VI preorder ahead of launch">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/1033046/playstation-xbox-gift-card-gta-vi-6-preorder-deal-sale" target="_blank">Here’s how you can save on your GTA VI preorder ahead of launch</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-13T14:14:38-05:00 | ID: d57e674ec372
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            The long-awaited launch of GTA VI is around the corner, happening next Friday, November 19th. While discounts on the game itself will be rare for some time, there’s a clever workaround to save you a few bucks on your digital copy. We found discounts on gift cards for both Sony PlayStation and Micros...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/1033046/playstation-xbox-gift-card-gta-vi-6-preorder-deal-sale" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-11-13T12:44:22-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Jensen Huang was reckless with the environment, too">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1033051/nvidia-jensen-huang-chips-gpu-supply-chain-climate-pollution" target="_blank">Jensen Huang was reckless with the environment, too</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-13T12:44:22-05:00 | ID: 4774e8b6c365
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Under cofounder Jensen Huang, Nvidia has become the engine for the AI boom - and one of the tech industry&#x27;s biggest environmental liabilities. Its sought-after chips have triggered a new wave of water- and chemical-intensive factories, drained power grids from inside massive data centers, and set th...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1033051/nvidia-jensen-huang-chips-gpu-supply-chain-climate-pollution" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Fri, 13 Nov 2026 23:17:38 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="FAA has lifted its third-ever nationwide ground stop">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/11/faa-orders-third-nationwide-ground-stop-in-its-history/" target="_blank">FAA has lifted its third-ever nationwide ground stop</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Fri, 13 Nov 2026 23:17:38 +0000 | ID: d6ad30999d44
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Secretary of Transportation Sean Duffy blamed obsolete equipment for the outage.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/11/faa-orders-third-nationwide-ground-stop-in-its-history/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Fri, 13 Nov 2026 20:03:13 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="In elephants, the resilience of communities has its limits">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/science/2026/11/in-elephants-the-resilience-of-communities-has-its-limits/" target="_blank">In elephants, the resilience of communities has its limits</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Fri, 13 Nov 2026 20:03:13 +0000 | ID: 0c896eae2a3a
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            In Sri Lanka, ecological change is shrinking a park&#x27;s elephant population.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/science/2026/11/in-elephants-the-resilience-of-communities-has-its-limits/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-11-13T18:49:11-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Amazon has a plan to index the world’s online shopping data">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" target="_blank">Amazon has a plan to index the world’s online shopping data</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-13T18:49:11-05:00 | ID: 80322574fdaf
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Amazon has plans to build a vault of data on every product sold anywhere on the internet, even products Amazon doesn&#x27;t sell, and make the information available through its own site, according to Reuters. The project, called the &quot;World Product Graph,&quot; is meant to make it less likely that shoppers lea...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="Fri, 13 Nov 2026 23:00:00 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Amazon’s new Kindle Colorsoft is a premium e-reader with a premium price">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/13/amazons-new-kindle-colorsoft-is-a-premium-e-reader-with-a-premium-price/" target="_blank">Amazon’s new Kindle Colorsoft is a premium e-reader with a premium price</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Fri, 13 Nov 2026 23:00:00 +0000 | ID: 8e9fdb499d86
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            The latest model is lighter and thinner than its predecessor and features an edge-to-edge display. But if you already own the first-generation Colorsoft, there’s little reason to upgrade.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/13/amazons-new-kindle-colorsoft-is-a-premium-e-reader-with-a-premium-price/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-11-13T15:45:10-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet" target="_blank">ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-13T15:45:10-05:00 | ID: d998346f2bca
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            After launching its Dots AI agents platform earlier this year, OpenAI is launching a wallet for the agents. ChatGPT Wallet is rolling out starting today for ChatGPT Pro subscribers in the US aged 18 and older using a US billing address and &quot;eligible US-issued American Express, Chase, Mastercard and ...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-11-13T12:12:56-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The smallest version of Camp Snap’s retro digital camcorder fits on your keychain">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1033026/camp-snap-retro-digital-video-campcorder-cs-8-micro-keychain" target="_blank">The smallest version of Camp Snap’s retro digital camcorder fits on your keychain</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-13T12:12:56-05:00 | ID: 9a33c8eaf858
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Last week, Camp Snap launched a miniaturized version of its screen-free CS-8 video camera that was half the size of the original with a smaller grip designed to be easier for kids to hold. But it turns out the company wasn&#x27;t done shrinking its hardware. Camp Snap&#x27;s new CS-8 Micro is even smaller tha...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1033026/camp-snap-retro-digital-video-campcorder-cs-8-micro-keychain" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-11-13T20:53:04-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="FAA lifts nationwide ground stop that blocked takeoffs for hours">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/1033489/faa-ground-stop" target="_blank">FAA lifts nationwide ground stop that blocked takeoffs for hours</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-13T20:53:04-05:00 | ID: 0c258f0f3f0d
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Takeoffs from airports throughout the US largely stopped on Friday after the FAA issued a national ground stop at 3:44PM ET &quot;due to extraordinary circumstances and for reasons of safety.&quot; More than four hours after the stop was issued, officials announced it was lifted at 8:15PM ET and that flights ...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/1033489/faa-ground-stop" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-11-13T15:30:00-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="CMF’s milk carton-shaped Bluetooth speaker is down to a new low price">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/1033185/nothing-cmf-speaker-s-m-black-friday-deal-sale" target="_blank">CMF’s milk carton-shaped Bluetooth speaker is down to a new low price</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-13T15:30:00-05:00 | ID: fe6ece7514eb
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Bluetooth speakers are often boring boxes in plain colors, but not this one! As part of Nothing’s ongoing early Black Friday promo, you can grab its unique, milk carton-shaped CMF Speaker S from Amazon and Nothing for just $39. That’s a solid $20 discount and the lowest price we’ve seen on Nothing’s...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/1033185/nothing-cmf-speaker-s-m-black-friday-deal-sale" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-11-13T13:10:41-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="You can adjust the position of the trackball on Keychron’s new wireless mouse">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1033159/keychron-t1-he-trackball-wireless-mouse-adjustable" target="_blank">You can adjust the position of the trackball on Keychron’s new wireless mouse</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-13T13:10:41-05:00 | ID: ef62894ad5c7
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            The Nape Pro was Keychron&#x27;s first trackball device that was introduced at CES 2026 with a slim and compact design allowing it to be positioned right up against a keyboard. The company&#x27;s new T1 HE instead looks more like other trackball mice already available from companies like Logitech and Kensingt...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1033159/keychron-t1-he-trackball-wireless-mouse-adjustable" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="34.5" 
+             data-published="2026-11-14 06:24"
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Nvidia director sold nearly $1B in stock weeks before the Jensen Huang scandal broke">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-director-sold-nearly-1b-160000846.html" target="_blank">Nvidia director sold nearly $1B in stock weeks before the Jensen Huang scandal broke</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-11-14 06:24 | ID: 81af02d4e297
+             | <span class="engagement-low">Engagement: [34.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 34%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/technology with 5463 upvotes and 270 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-director-sold-nearly-1b-160000846.html" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-11-13 14:02"
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Formatting an entire 25 million line codebase overnight: the rubyfmt story">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://stripe.dev/blog/formatting-an-entire-25-million-line-codebase-overnight-the-rubyfmt-story" target="_blank">Formatting an entire 25 million line codebase overnight: the rubyfmt story</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-11-13 14:02 | ID: cc451343ef22
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/programming with 118 upvotes and 67 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://stripe.dev/blog/formatting-an-entire-25-million-line-codebase-overnight-the-rubyfmt-story" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-11-14 05:33"
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="CNN Aviation Analyst Says ‘It’s Just Too Much of a Coincidence’ FAA Rolled Out New AI Traffic Tool Right Before Nationwide Ground Stop">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.mediaite.com/media/news/cnn-aviation-analyst-says-its-just-too-much-of-a-coincidence-faa-rolled-out-new-ai-traffic-tool-right-before-nationwide-comms-outage/?utm_source=mediaite_smartnews_redirect" target="_blank">CNN Aviation Analyst Says ‘It’s Just Too Much of a Coincidence’ FAA Rolled Out New AI Traffic Tool Right Before Nationwide Ground Stop</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-11-14 05:33 | ID: 008bc47ee5c5
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/technology with 12857 upvotes and 499 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.mediaite.com/media/news/cnn-aviation-analyst-says-its-just-too-much-of-a-coincidence-faa-rolled-out-new-ai-traffic-tool-right-before-nationwide-comms-outage/?utm_source=mediaite_smartnews_redirect" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-11-13 21:53"
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="ICML 2027 Changes [D]">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1xvkxbj/icml_2027_changes_d/" target="_blank">ICML 2027 Changes [D]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-11-13 21:53 | ID: 0a4f8065ecd7
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Just read the ICML 2027 CFP and it looks like they’re trying to tackle the submission explosion in a reasonable way. Under the new two-stage process, the area chair decides whether a paper goes to full review, and any proposed first-stage rejection has to be confirmed by a senior area chair. Authors...
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1xvkxbj/icml_2027_changes_d/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-11-13 20:34"
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Announcing Rust 1.100.0">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/" target="_blank">Announcing Rust 1.100.0</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-11-13 20:34 | ID: dcf424ce8276
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/programming with 224 upvotes and 30 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-11-14 11:27:09 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
