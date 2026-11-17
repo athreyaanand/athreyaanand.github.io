@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - November 17, 2026, 11:30 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>November 17, 2026, 11:30 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>38 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-11-17 23:30:07
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 20.0 seconds</div>
+                <div>Start Time: 2026-11-17 23:30:07</div>
+                <div>End Time: 2026-11-17 23:30:27</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 38</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 4</div>
+            </div>
+            
+            
+            <div class="run-summary-section">
+                <h4>🤖 Briefing Content:</h4>
+                <div>Local AI Summaries: 6</div>
+                <div>Model: Qwen3.5-0.8B (local)</div>
+                <div>Source Descriptions: 32</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 38</div>
+                <div>Distribution: Notable: 7, Standard: 17, Low: 14</div>
+                <div>Topics Detected: 6</div>
+                <div>Cross-platform Stories: 2</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="68.5" 
+             data-published="2026-11-15 14:46"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="All AI-generated code should be Open Source">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://jakub.jankiewicz.org/blog/ai-code-open-source/" target="_blank">All AI-generated code should be Open Source</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-15 14:46 | ID: 2e67246bdaf2
+             | <span class="engagement-notable">Engagement: [68.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 68%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1278 points and 668 comments. Posted 2026-11-15 14:46.
+        </div>
+        <div class="source-link">
+            → <a href="https://jakub.jankiewicz.org/blog/ai-code-open-source/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-12 13:52"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Jensen Huang resigns">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f" target="_blank">Jensen Huang resigns</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-12 13:52 | ID: 9042ed924ad7
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 4058 points and 3483 comments. Posted 2026-11-12 13:52.
+        </div>
+        <div class="source-link">
+            → <a href="https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-16 20:43"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Carnegie Mellon is putting computer science courses on YouTube for free">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.cs.cmu.edu/learn/" target="_blank">Carnegie Mellon is putting computer science courses on YouTube for free</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-16 20:43 | ID: a033d6e78724
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 2271 points and 308 comments. Posted 2026-11-16 20:43.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.cs.cmu.edu/learn/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-14 21:22"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="SpaceX catches the Starship to end Flight 15">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.spacex.com/launches/starship-flight-15" target="_blank">SpaceX catches the Starship to end Flight 15</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-14 21:22 | ID: f770f8d0ec1b
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1755 points and 1420 comments. Posted 2026-11-14 21:22.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.spacex.com/launches/starship-flight-15" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-13 21:05"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="FAA issues national ground stop – lifted 4.5 hours later">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247" target="_blank">FAA issues national ground stop – lifted 4.5 hours later</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-13 21:05 | ID: 7eb4c6e87afa
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1654 points and 1284 comments. Posted 2026-11-13 21:05.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-11 07:03"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Tim Peters has died">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028" target="_blank">Tim Peters has died</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-11 07:03 | ID: 4dd24a20a9f1
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1444 points and 207 comments. Posted 2026-11-11 07:03.
+        </div>
+        <div class="source-link">
+            → <a href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62" 
+             data-published="Tue, 17 Nov 2026 22:32:16 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Hundreds of websites deliver potent malware cocktail to unsuspecting visitors">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/security/2026/11/malicious-code-delivered-through-optimizely-hits-visitors-to-hundreds-of-sites/" target="_blank">Hundreds of websites deliver potent malware cocktail to unsuspecting visitors</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 22:32:16 +0000 | ID: dbcde2c6145d
+             | <span class="engagement-notable">Engagement: [62.0/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            A significant number of websites are delivering a malware cocktail that includes cryptocurrency theft payloads and iOS exploits.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/security/2026/11/malicious-code-delivered-through-optimizely-hits-visitors-to-hundreds-of-sites/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="54.5" 
+             data-published="Tue, 17 Nov 2026 18:00:51 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="The data is very preliminary, but Vulcan failure may not be due to BE-4 engines">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/features/2026/11/sources-vulcan-launch-anomaly-investigation-is-complex/" target="_blank">The data is very preliminary, but Vulcan failure may not be due to BE-4 engines</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 18:00:51 +0000 | ID: 5b651acae38e
+             | <span class="engagement-standard">Engagement: [54.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            The data regarding Vulcan failure is preliminary and held by ULA and Blue Origin, suggesting that the failure may not be due to BE-4 engines.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/features/2026/11/sources-vulcan-launch-anomaly-investigation-is-complex/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="54" 
+             data-published="Tue, 17 Nov 2026 23:04:35 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Nvidia says its open-source AI strategy remains intact after Jensen Huang’s exit">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/nvidia-says-its-open-source-ai-strategy-remains-intact-after-jensen-huangs-exit/" target="_blank">Nvidia says its open-source AI strategy remains intact after Jensen Huang’s exit</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 17 Nov 2026 23:04:35 +0000 | ID: 4fb1ba07b549
+             | <span class="engagement-standard">Engagement: [54.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            Nvidia&#x27;s interim CEO has reaffirmed its open-source AI strategy and plans to acquire Hugging Face despite the sudden departure of its founder.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/nvidia-says-its-open-source-ai-strategy-remains-intact-after-jensen-huangs-exit/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="53" 
+             data-published="Tue, 17 Nov 2026 23:09:09 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="San Diego dumps both Flock cameras and smart streetlights">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/11/san-diego-dumps-both-flock-cameras-and-smart-streetlights/" target="_blank">San Diego dumps both Flock cameras and smart streetlights</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 23:09:09 +0000 | ID: 6104fd88665c
+             | <span class="engagement-standard">Engagement: [53.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 53%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            500+ cameras will go dark just 3 years after mayor urged approval.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/11/san-diego-dumps-both-flock-cameras-and-smart-streetlights/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="52" 
+             data-published="Tue, 17 Nov 2026 22:42:27 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Nvidia says it doesn’t plan to reappoint Jensen Huang as CEO">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/nvidia-says-it-doesnt-plan-to-reappoint-jensen-huang-as-ceo/" target="_blank">Nvidia says it doesn’t plan to reappoint Jensen Huang as CEO</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 17 Nov 2026 22:42:27 +0000 | ID: de60eb4c14a7
+             | <span class="engagement-standard">Engagement: [52.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            Nvidia has confirmed that it does not plan to reappoint Jensen Huang as CEO.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/nvidia-says-it-doesnt-plan-to-reappoint-jensen-huang-as-ceo/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="52" 
+             data-published="Tue, 17 Nov 2026 22:44:46 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Yet another satellite company is jockeying for a rocket—but this one makes sense">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/11/yet-another-satellite-company-is-jockeying-for-a-rocket-but-this-one-makes-sense/" target="_blank">Yet another satellite company is jockeying for a rocket—but this one makes sense</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 22:44:46 +0000 | ID: 85d724420826
+             | <span class="engagement-standard">Engagement: [52.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 52%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            A satellite company is jockeying for a new rocket, but the source excerpt suggests that governments need control of their critical space infrastructure, implying that Europe requires it most.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/11/yet-another-satellite-company-is-jockeying-for-a-rocket-but-this-one-makes-sense/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Tue, 17 Nov 2026 21:48:07 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="SEC reportedly investigating Nvidia amid Huang exit">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/sec-reportedly-investigating-nvidia-amid-huang-exit/" target="_blank">SEC reportedly investigating Nvidia amid Huang exit</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 17 Nov 2026 21:48:07 +0000 | ID: 2662bbf05a5b
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            The Wall Street Journal reports that the SEC is investigating Nvidia following the departure of CEO Jensen Huang, who admitted to an affair with an alleged Chinese spy.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/sec-reportedly-investigating-nvidia-amid-huang-exit/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Tue, 17 Nov 2026 21:34:50 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Google joins the tech outage trend by announcing it’s not having one">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/google-joins-the-tech-outage-trend-by-announcing-its-not-having-one/" target="_blank">Google joins the tech outage trend by announcing it’s not having one</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 17 Nov 2026 21:34:50 +0000 | ID: e1a51fda6467
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            With tech outages seemingly everywhere, Google took the unusual step of announcing that Gmail is working just fine, actually.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/google-joins-the-tech-outage-trend-by-announcing-its-not-having-one/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Tue, 17 Nov 2026 19:32:11 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Model ML raises $250M to automate investment banking grunt work">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/model-ml-raises-250m-to-automate-investment-banking-grunt-work/" target="_blank">Model ML raises $250M to automate investment banking grunt work</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 17 Nov 2026 19:32:11 +0000 | ID: 9b7b459083f2
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            The startup says its agents understand the full context of deals that bankers and consultants are working on and can automatically update financial models and presentations when new developments affect their analysis.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/model-ml-raises-250m-to-automate-investment-banking-grunt-work/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Tue, 17 Nov 2026 18:13:34 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="OpenAI sued by California after admitting to 80 loss-of-control incidents">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/11/california-sues-openai-to-stop-public-nuisance-of-out-of-control-ai-agents/" target="_blank">OpenAI sued by California after admitting to 80 loss-of-control incidents</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 18:13:34 +0000 | ID: 53d6c22a4550
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            AG: OpenAI tested dangerous AI without proper oversight and misled public about it.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/11/california-sues-openai-to-stop-public-nuisance-of-out-of-control-ai-agents/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="50.5" 
+             data-published="Tue, 17 Nov 2026 22:29:05 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Amazon and Google will together own nearly 30% of Anthropic after its IPO">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/" target="_blank">Amazon and Google will together own nearly 30% of Anthropic after its IPO</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 17 Nov 2026 22:29:05 +0000 | ID: 0fec85e4f646
+             | <span class="engagement-standard">Engagement: [50.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 50%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Amazon will own just under 15% of Anthropic after the IPO, with the option to go much higher. Google is a close second with holdings of nearly 14%.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Tue, 17 Nov 2026 19:49:41 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Waymo suspends freeway rides nationwide after California DMV order">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/" target="_blank">Waymo suspends freeway rides nationwide after California DMV order</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 17 Nov 2026 19:49:41 +0000 | ID: b6864f136d17
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #FF9800">₿ Crypto</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            The DMV said Waymo&#x27;s freeway operations pose an imminent hazard to public safety. Restrictions will remain in place until Waymo can demonstrate that it has taken &quot;effective corrective actions&quot; to address the deficiencies.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="49.5" 
+             data-published="Tue, 17 Nov 2026 19:02:20 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Google expands access to Gemini Tasks, which can help with calls, purchases">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/" target="_blank">Google expands access to Gemini Tasks, which can help with calls, purchases</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 17 Nov 2026 19:02:20 +0000 | ID: 6e0ef160a447
+             | <span class="engagement-standard">Engagement: [49.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 49%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Gemini&#x27;s Task mode can help users coordinate calls, log into websites, and even make purchases on the user&#x27;s behalf.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="48.5" 
+             data-published="Tue, 17 Nov 2026 20:32:55 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="“Trump was in bed with Jensen”: Critics balk at Huang’s wish to return to Nvidia">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/11/trump-was-in-bed-with-jensen-critics-balk-at-huangs-wish-to-return-to-nvidia/" target="_blank">“Trump was in bed with Jensen”: Critics balk at Huang’s wish to return to Nvidia</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 20:32:55 +0000 | ID: e509c7dadc61
+             | <span class="engagement-standard">Engagement: [48.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            “I love our country”: Jensen Huang’s apology comes amid escalating Nvidia probes.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/11/trump-was-in-bed-with-jensen-critics-balk-at-huangs-wish-to-return-to-nvidia/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Tue, 17 Nov 2026 19:45:25 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Civilization studio Firaxis Games lays off a third of staff">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gaming/2026/11/civilization-studio-firaxis-games-lays-off-a-third-of-staff/" target="_blank">Civilization studio Firaxis Games lays off a third of staff</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 19:45:25 +0000 | ID: 97e8a89e6890
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Studio head Heather Hazen is among those departing.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gaming/2026/11/civilization-studio-firaxis-games-lays-off-a-third-of-staff/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="46.5" 
+             data-published="Tue, 17 Nov 2026 18:26:26 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Humanity braces for an alien invasion in 3 Body Problem S2 teaser">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/culture/2026/11/humanity-braces-for-an-alien-invasion-in-3-body-problem-s2-teaser/" target="_blank">Humanity braces for an alien invasion in 3 Body Problem S2 teaser</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 18:26:26 +0000 | ID: 058c48502145
+             | <span class="engagement-standard">Engagement: [46.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 46%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            “Wake up! They haven’t come 24 trillion miles to negotiate. They are coming to exterminate us.”
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/culture/2026/11/humanity-braces-for-an-alien-invasion-in-3-body-problem-s2-teaser/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="42.5" 
+             data-published="2026-11-17T17:25:41-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="iFixit’s Apple HomeView teardown reveals a device that will be difficult to repair">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1036045/ifixit-teardown-apple-homeview-smart-home-hub" target="_blank">iFixit’s Apple HomeView teardown reveals a device that will be difficult to repair</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T17:25:41-05:00 | ID: 936e10ffab62
+             | <span class="engagement-standard">Engagement: [42.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 42%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            After finding recent versions of Apple&#x27;s iPads and HomePods much easier to disassemble for battery replacements or other repairs, iFixit assumed it would be the same story for Apple&#x27;s new HomeView hub that looks like a seven-inch tablet stuck to a smart speaker. The reality was much different and by...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1036045/ifixit-teardown-apple-homeview-smart-home-hub" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-11-16"
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Latent Lattice Language Models">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2611.21608v1" target="_blank">Latent Lattice Language Models</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-11-16 | ID: 36cb85192a0c
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Research paper by Shivam Duggal, Zongze Wu, William T. Freeman et al.. Language models typically increase per-token computation through deeper or looped layers and latent reasoning steps, while richer residual connections improve information flow across layers. We instead increase computational capa...
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2611.21608v1" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-11-17T17:32:50-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Read everything that Nvidia’s board chair had to say about Jensen Huang">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1036160/nvidia-earnings-harvey-c-jones-jensen-huang" target="_blank">Read everything that Nvidia’s board chair had to say about Jensen Huang</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T17:32:50-05:00 | ID: 384b64379c66
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Nvidia&#x27;s quarterly earnings call on Tuesday was its first with CFO and interim CEO Colette Kress at the helm alongside the company&#x27;s first board chair, Harvey C. Jones. The leadership change followed Jensen Huang&#x27;s resignation last week after reports he had multiple affairs - including one with form...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1036160/nvidia-earnings-harvey-c-jones-jensen-huang" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-11-17T17:05:05-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Nvidia says it does not intend to reinstate Jensen Huang as CEO">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/report/1035465/nvidia-says-it-will-not-reinstate-jensen-huang-as-ceo" target="_blank">Nvidia says it does not intend to reinstate Jensen Huang as CEO</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T17:05:05-05:00 | ID: 42a26c3f2a86
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Starting Nvidia&#x27;s quarterly earnings call on Tuesday, new board chair Harvey Jones said that when former CEO Jensen Huang resigned, &quot;the Nvidia board unanimously accepted his resignation and does not intend to reinstate Jensen as CEO.&quot; Jones added, &quot;We will not be addressing or taking questions on t...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/report/1035465/nvidia-says-it-will-not-reinstate-jensen-huang-as-ceo" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-11-17T16:40:59-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Nvidia’s Q3 earnings hit the mark, without mentioning the whole Jensen Huang thing">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1036032/nvidia-q3-2027-jensen-huang" target="_blank">Nvidia’s Q3 earnings hit the mark, without mentioning the whole Jensen Huang thing</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T16:40:59-05:00 | ID: 41837d056395
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Interim Nvidia CEO Colette Kress announced the company&#x27;s Q3 earnings on Tuesday, without initially mentioning former CEO Jensen Huang or the details of his departure, or possible attempt at a return. On the earnings call accompanying the release, board chair Harvey Jones kicked things off by saying ...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1036032/nvidia-q3-2027-jensen-huang" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-11-17T16:00:55-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Not even Sam Altman is safe from AI deepfakes on Instagram">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/news/1035957/meta-alexandr-wang-sam-altman-instagram-ai-deepfake" target="_blank">Not even Sam Altman is safe from AI deepfakes on Instagram</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T16:00:55-05:00 | ID: 67f51e5e7cf1
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Instagram is filled with people posting deepfaked content - including, as of late, from one of Meta&#x27;s most prominent executives. Earlier in November, Alexandr Wang, Meta&#x27;s chief AI officer, shared a short clip to promote Muse, the company&#x27;s consumer AI agent. In the AI-generated clip, Wang, Meta CEO...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/news/1035957/meta-alexandr-wang-sam-altman-instagram-ai-deepfake" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="38.0" 
+             data-published="2026-11-16"
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="ViRA: Toward Ultra-High-Resolution Visual Agents via Cross-Input Relative Policy Optimization">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2611.21605v1" target="_blank">ViRA: Toward Ultra-High-Resolution Visual Agents via Cross-Input Relative Policy Optimization</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-11-16 | ID: 48b3c999865f
+             | <span class="engagement-low">Engagement: [38.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Research paper by Huawei Lin, Jinting Liu, Tongyan Wang et al.. Visual agents answer questions about ultra-high-resolution photos by zooming into the relevant regions. However, existing agents often answer from common sense instead of reading the evidence. Reinforcement learning (RL) on the final an...
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2611.21605v1" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-11-17T16:46:20-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="The MacBook Neo is receiving a rare $50 discount ahead of Black Friday">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/gadgets/1035932/apple-macbook-neo-black-friday-2026-deal-sale" target="_blank">The MacBook Neo is receiving a rare $50 discount ahead of Black Friday</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T16:46:20-05:00 | ID: 21db781e0a38
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            If you’re looking for a new laptop or a gift for the student in your life, you can save $50 on the MacBook Neo at several retailers, in both storage sizes and all four colors. The 256GB model is currently discounted to $649 (Amazon, Best Buy, Target), while the 512GB model with Touch ID is […]
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/gadgets/1035932/apple-macbook-neo-black-friday-2026-deal-sale" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="37.5" 
+             data-published="2026-11-17T16:38:08-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Nike’s new air sole technology can mix soft and firm cushioning">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1035911/nike-shoes-tuned-air-sole-printing-variable-cushioning" target="_blank">Nike’s new air sole technology can mix soft and firm cushioning</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T16:38:08-05:00 | ID: c57e7dc04c86
+             | <span class="engagement-low">Engagement: [37.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 37%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            In 2024, Nike announced its Air Max 1000 that were manufactured using a 3D-printing process resulting in a shoe that had a uniform silhouette but varying areas of support and flexibility throughout. The company is now doing something similar with its iconic air-filled soles using its new Tuned Air t...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1035911/nike-shoes-tuned-air-sole-printing-variable-cushioning" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="2026-11-17T17:38:41-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Jeff Bezos says he was ‘heavily involved’ in picking the new James Bond">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/1036110/jeff-bezos-james-bond-casting-amazon" target="_blank">Jeff Bezos says he was ‘heavily involved’ in picking the new James Bond</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T17:38:41-05:00 | ID: 0674d80c56ea
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Robert Pattinson&#x27;s casting as James Bond made enough sense given his recent work with director Denis Villeneuve, who&#x27;s making the franchise&#x27;s next film over at Amazon. But it turns out that Amazon founder Jeff Bezos played a significant role in making the final decision, too. During Semafor&#x27;s Silico...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/1036110/jeff-bezos-james-bond-casting-amazon" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="35.0" 
+             data-published="2026-11-16"
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="FaceJev: Direct Visual Decisions for Face Forgery Detection">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2611.21604v1" target="_blank">FaceJev: Direct Visual Decisions for Face Forgery Detection</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-11-16 | ID: 039a3b8500c1
+             | <span class="engagement-low">Engagement: [35.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Research paper by Siran Peng, Tianshuo Zhang, Yibo Xue et al.. Face forgery detection methods often perform well on seen manipulations but generalize poorly to unseen ones. Multimodal Large Language Models (MLLMs) can recognize facial parts and assess their visual plausibility. Existing MLLM-based m...
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2611.21604v1" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="35.0" 
+             data-published="2026-11-16"
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Quantifying the added value of human forecaster discussions for tropical cyclone intensity prediction">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2611.21602v1" target="_blank">Quantifying the added value of human forecaster discussions for tropical cyclone intensity prediction</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-11-16 | ID: 80cbeeb1d198
+             | <span class="engagement-low">Engagement: [35.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Research paper by Ilia Azizi, Frederick Iat-Hin Tam, Marc-Olivier Boldi et al.. The National Hurricane Center routinely releases Tropical Cyclone Discussions that offer insights into its tropical cyclone forecasts. This study examines the added value of these discussions for intensity forecasting be...
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2611.21602v1" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="34.5" 
+             data-published="2026-11-17 19:28"
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Tech outages live updates: Apple, Microsoft, NSA, banks, FAA">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.foxnews.com/live-news/tech-outages-microsoft-banks-faa-fbi-11-17-26" target="_blank">Tech outages live updates: Apple, Microsoft, NSA, banks, FAA</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-11-17 19:28 | ID: d235a62f304d
+             | <span class="engagement-low">Engagement: [34.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 34%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/technology with 7222 upvotes and 1043 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.foxnews.com/live-news/tech-outages-microsoft-banks-faa-fbi-11-17-26" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="34.5" 
+             data-published="2026-11-17 22:06"
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Nvidia says it will not reinstate Jensen Huang as CEO">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.theverge.com/report/1035465/nvidia-says-it-will-not-reinstate-jensen-huang-as-ceo" target="_blank">Nvidia says it will not reinstate Jensen Huang as CEO</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-11-17 22:06 | ID: 26d095ac5148
+             | <span class="engagement-low">Engagement: [34.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 34%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/technology with 4688 upvotes and 617 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/report/1035465/nvidia-says-it-will-not-reinstate-jensen-huang-as-ceo" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-11-17 21:22"
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Calif discloses Java4Shell flaw in OpenJDK&#x27;s Base64 decoder">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://runtimewire.com/article/calif-discloses-java4shell-flaw-in-openjdk-s-base64-decoder" target="_blank">Calif discloses Java4Shell flaw in OpenJDK&#x27;s Base64 decoder</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-11-17 21:22 | ID: fa1a83a390c3
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/programming with 101 upvotes and 9 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://runtimewire.com/article/calif-discloses-java4shell-flaw-in-openjdk-s-base64-decoder" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-11-17 08:22"
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="ICLR 2027: PCs ran an AI detector on reviews, peer review is cooked [D]">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1xyf1tq/iclr_2027_pcs_ran_an_ai_detector_on_reviews_peer/" target="_blank">ICLR 2027: PCs ran an AI detector on reviews, peer review is cooked [D]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-11-17 08:22 | ID: d335e01c2deb
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            The PCs ran AI detectors on the reviews and left this comment on undisclosed AI usage in reviews: &gt;AI use in this review &gt;An AI-text detector assesses this review as likely AI-generated, yet its AI-use documentation field does not mention how AI was used. It is therefore possible that the review c.....
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1xyf1tq/iclr_2027_pcs_ran_an_ai_detector_on_reviews_peer/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-11-17 23:30:07 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
