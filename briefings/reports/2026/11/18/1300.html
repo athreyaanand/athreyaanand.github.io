@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DaB - Daily Briefing - November 18, 2026, 01:00 PM </title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            background-color: white;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links a {
+            color: #0000EE;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav-links a:visited {
+            color: #551A8B;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        article {
+            margin-bottom: 30px;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .article-number {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .article-title a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        .article-title a:visited {
+            color: #551A8B;
+        }
+        
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-description {
+            margin-bottom: 15px;
+        }
+        
+        .source-link {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .tweets-section {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+        
+        .tweets-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .tweets-toggle:hover {
+            background: #ddd;
+        }
+        
+        .tweets-content {
+            display: none;
+            padding: 10px;
+        }
+        
+        .tweet {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .tweet:last-child {
+            margin-bottom: 0;
+        }
+        
+        .engagement-high {
+            color: #d73527 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-notable {
+            color: #ff8c00 !important;
+            font-weight: bold;
+        }
+        
+        .engagement-standard {
+            color: #666 !important;
+        }
+        
+        .engagement-low {
+            color: #999 !important;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        
+        .sort-controls {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .sort-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sort-button {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 12px;
+            margin: 2px 5px 2px 0;
+            cursor: pointer;
+            border: 1px solid #999;
+            background: white;
+            color: #333;
+        }
+        
+        .sort-button:hover {
+            background: #e8e8e8;
+        }
+        
+        .sort-button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .engagement-bar {
+            display: inline-block;
+            width: 60px;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            position: relative;
+        }
+        
+        .engagement-fill {
+            height: 100%;
+            background: linear-gradient(to right, #999 0%, #ff8c00 50%, #d73527 100%);
+        }
+        
+        .source-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .topic-tag {
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .run-summary {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+        .run-summary-toggle {
+            background: #e8e8e8;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .run-summary-toggle:hover {
+            background: #ddd;
+        }
+        
+        .run-summary-content {
+            display: none;
+            padding: 10px;
+            font-size: 11px;
+        }
+        
+        .run-summary-section {
+            margin-bottom: 10px;
+        }
+        
+        .run-summary-section h4 {
+            margin: 0 0 5px 0;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .error-item {
+            color: #d73527;
+        }
+        
+        .warning-item {
+            color: #ff8c00;
+        }
+    </style>
+    <script>
+        let articles = [];
+        let currentSort = 'engagement';
+        
+        function toggleTweets(articleId) {
+            const content = document.getElementById('tweets-' + articleId);
+            const toggle = document.getElementById('toggle-' + articleId);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide Tweet Suggestions';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📱 Show Tweet Suggestions (' + content.children.length + ')';
+            }
+        }
+        
+        function sortArticles(sortType) {
+            // Update active button
+            document.querySelectorAll('.sort-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sort-' + sortType).classList.add('active');
+            currentSort = sortType;
+            
+            // Get all articles
+            const articleElements = Array.from(document.querySelectorAll('article'));
+            const container = articleElements[0].parentNode;
+            
+            // Sort based on type
+            articleElements.sort((a, b) => {
+                switch(sortType) {
+                    case 'engagement':
+                        const scoreA = parseFloat(a.getAttribute('data-engagement') || 0);
+                        const scoreB = parseFloat(b.getAttribute('data-engagement') || 0);
+                        return scoreB - scoreA;
+                    case 'date':
+                        const dateA = new Date(a.getAttribute('data-published') || 0);
+                        const dateB = new Date(b.getAttribute('data-published') || 0);
+                        return dateB - dateA;
+                    case 'source':
+                        const sourceA = a.getAttribute('data-source') || '';
+                        const sourceB = b.getAttribute('data-source') || '';
+                        return sourceA.localeCompare(sourceB);
+                    case 'title':
+                        const titleA = a.getAttribute('data-title') || '';
+                        const titleB = b.getAttribute('data-title') || '';
+                        return titleA.localeCompare(titleB);
+                    default:
+                        return 0;
+                }
+            });
+            
+            // Re-append sorted articles
+            articleElements.forEach((article, index) => {
+                // Update article number
+                const numberEl = article.querySelector('.article-number');
+                if (numberEl) {
+                    const num = String(index + 1).padStart(2, '0');
+                    numberEl.textContent = '[' + num + ']';
+                }
+                container.appendChild(article);
+            });
+        }
+        
+        function getSourceIcon(sourceType) {
+            switch(sourceType) {
+                case 'RSS': return '📰';
+                case 'Hacker News': return '💻';
+                case 'arXiv': return '📚';
+                case 'Reddit': return '🗨️';
+                default: return '📄';
+            }
+        }
+        
+        function toggleRunSummary() {
+            const content = document.getElementById('run-summary-content');
+            const toggle = document.getElementById('run-summary-toggle');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                toggle.textContent = '🔽 Hide System Run Summary';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = '📋 Show System Run Summary';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../../../../index.html">← Back to Archive</a>
+    </div>
+    
+    <h1>The DaB - Daily Briefing</h1>
+    <h2>November 18, 2026, 01:00 PM </h2>
+    <hr>
+    
+    <div class="stats">
+        📊 <strong>39 articles</strong> collected from multiple sources<br>
+        🔄 Generated at 2026-11-18 13:00:32
+    </div>
+    
+    <div class="sort-controls">
+        <h3>🔄 Sort Articles:</h3>
+        <button class="sort-button active" id="sort-engagement" onclick="sortArticles('engagement')">
+            📊 By Engagement Score
+        </button>
+        <button class="sort-button" id="sort-date" onclick="sortArticles('date')">
+            📅 By Date (Newest First)
+        </button>
+        <button class="sort-button" id="sort-source" onclick="sortArticles('source')">
+            📡 By Source
+        </button>
+        <button class="sort-button" id="sort-title" onclick="sortArticles('title')">
+            🔤 By Title (A-Z)
+        </button>
+    </div>
+    
+    
+    <div class="run-summary">
+        <button class="run-summary-toggle" id="run-summary-toggle" onclick="toggleRunSummary()">
+            📋 Show System Run Summary
+        </button>
+        <div class="run-summary-content" id="run-summary-content">
+            <div class="run-summary-section">
+                <h4>⏱️ Execution Details:</h4>
+                <div>Duration: 16.0 seconds</div>
+                <div>Start Time: 2026-11-18 13:00:32</div>
+                <div>End Time: 2026-11-18 13:00:48</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📡 Data Collection:</h4>
+                <div>Articles Collected: 39</div>
+                <div>Sources Configured: 4</div>
+                <div>Source Breakdown: RSS: 24, Hacker News: 6, arXiv: 4, Reddit: 5</div>
+            </div>
+            
+            
+            <div class="run-summary-section">
+                <h4>🤖 Briefing Content:</h4>
+                <div>Local AI Summaries: 6</div>
+                <div>Model: Qwen3.5-0.8B (local)</div>
+                <div>Source Descriptions: 33</div>
+            </div>
+            
+            <div class="run-summary-section">
+                <h4>📊 Analytics:</h4>
+                <div>Engagement Scores: 39</div>
+                <div>Distribution: Notable: 7, Standard: 19, Low: 13</div>
+                <div>Topics Detected: 8</div>
+                <div>Cross-platform Stories: 3</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <hr>
+
+    <article data-engagement="68.5" 
+             data-published="2026-11-15 14:46"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="All AI-generated code should be Open Source">
+        <div class="article-number">[01]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://jakub.jankiewicz.org/blog/ai-code-open-source/" target="_blank">All AI-generated code should be Open Source</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-15 14:46 | ID: 2e67246bdaf2
+             | <span class="engagement-notable">Engagement: [68.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 68%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1281 points and 669 comments. Posted 2026-11-15 14:46.
+        </div>
+        <div class="source-link">
+            → <a href="https://jakub.jankiewicz.org/blog/ai-code-open-source/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-12 13:52"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Jensen Huang resigns">
+        <div class="article-number">[02]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f" target="_blank">Jensen Huang resigns</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-12 13:52 | ID: 9042ed924ad7
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 4059 points and 3487 comments. Posted 2026-11-12 13:52.
+        </div>
+        <div class="source-link">
+            → <a href="https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-16 20:43"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="Carnegie Mellon is putting computer science courses on YouTube for free">
+        <div class="article-number">[03]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.cs.cmu.edu/learn/" target="_blank">Carnegie Mellon is putting computer science courses on YouTube for free</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-16 20:43 | ID: a033d6e78724
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 2324 points and 317 comments. Posted 2026-11-16 20:43.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.cs.cmu.edu/learn/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-14 21:22"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="SpaceX catches the Starship to end Flight 15">
+        <div class="article-number">[04]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.spacex.com/launches/starship-flight-15" target="_blank">SpaceX catches the Starship to end Flight 15</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-14 21:22 | ID: f770f8d0ec1b
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1755 points and 1441 comments. Posted 2026-11-14 21:22.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.spacex.com/launches/starship-flight-15" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-13 21:05"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="FAA issues national ground stop – lifted 4.5 hours later">
+        <div class="article-number">[05]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247" target="_blank">FAA issues national ground stop – lifted 4.5 hours later</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-13 21:05 | ID: 7eb4c6e87afa
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1654 points and 1282 comments. Posted 2026-11-13 21:05.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="62.5" 
+             data-published="2026-11-17 17:46"
+             data-source="Hacker News"
+             data-source-type="Hacker News"
+             data-title="GPT‑6.2 Astra and Sol">
+        <div class="article-number">[06]</div>
+        <div class="article-title">
+            <span class="source-icon">💻</span>
+            <a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/" target="_blank">GPT‑6.2 Astra and Sol</a>
+        </div>
+        <div class="article-meta">
+            Source: Hacker News | Published: 2026-11-17 17:46 | ID: 211d65a80826
+             | <span class="engagement-notable">Engagement: [62.5/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 62%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Hacker News discussion with 1298 points and 811 comments. Posted 2026-11-17 17:46.
+        </div>
+        <div class="source-link">
+            → <a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="60" 
+             data-published="Wed, 18 Nov 2026 13:00:00 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Nvidia clarifies when it will — and won’t —keep financing neoclouds">
+        <div class="article-number">[07]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/18/nvidia-clarifies-when-it-will-and-wont-keep-financing-neoclouds/" target="_blank">Nvidia clarifies when it will — and won’t —keep financing neoclouds</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 18 Nov 2026 13:00:00 +0000 | ID: d71804264bda
+             | <span class="engagement-notable">Engagement: [60.0/100] ⭐ Notable</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 60%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #9C27B0">☁️ Cloud</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            Nvidia CEO Colette Kress clarified that Nvidia will not be on the hook for a data center loan unless the project has its own independent financing and the facility is built with Nvidia gear installed.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/18/nvidia-clarifies-when-it-will-and-wont-keep-financing-neoclouds/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="54.5" 
+             data-published="Wed, 18 Nov 2026 11:30:00 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="India’s Humyn Labs raises $47M to feed U.S. robotics companies the data they need">
+        <div class="article-number">[08]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/" target="_blank">India’s Humyn Labs raises $47M to feed U.S. robotics companies the data they need</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 18 Nov 2026 11:30:00 +0000 | ID: 413814485886
+             | <span class="engagement-standard">Engagement: [54.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            India&#x27;s Humyn Labs has raised $47 million to support U.S. robotics companies in acquiring their data, a move that aligns with its current revenue profile of approximately 90% U.S.-based.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="54.5" 
+             data-published="Tue, 17 Nov 2026 22:32:16 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Hundreds of websites deliver potent malware cocktail to unsuspecting visitors">
+        <div class="article-number">[09]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/security/2026/11/malicious-code-delivered-through-optimizely-hits-visitors-to-hundreds-of-sites/" target="_blank">Hundreds of websites deliver potent malware cocktail to unsuspecting visitors</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 22:32:16 +0000 | ID: dbcde2c6145d
+             | <span class="engagement-standard">Engagement: [54.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #F44336">🔒 Security</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            A significant number of websites are delivering a malware cocktail that includes cryptocurrency theft payloads and iOS exploits.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/security/2026/11/malicious-code-delivered-through-optimizely-hits-visitors-to-hundreds-of-sites/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="54" 
+             data-published="Wed, 18 Nov 2026 12:15:44 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Voyager 1 at one light-day: Historian revisits Golden Record&#x27;s forgotten details">
+        <div class="article-number">[10]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/11/voyager-1-at-one-light-day-historian-revisits-golden-records-forgotten-details/" target="_blank">Voyager 1 at one light-day: Historian revisits Golden Record&#x27;s forgotten details</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Wed, 18 Nov 2026 12:15:44 +0000 | ID: d4a2a932a694
+             | <span class="engagement-standard">Engagement: [54.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 54%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            &quot;They are pretty confident that it&#x27;s going to last a long, long, long time...&quot;
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/11/voyager-1-at-one-light-day-historian-revisits-golden-records-forgotten-details/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Wed, 18 Nov 2026 12:00:00 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Felicis leads $7.5M bet on Unsiloed AI to make enterprise documents usable by AI agents">
+        <div class="article-number">[11]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/18/felicis-leads-7-5m-bet-on-unsiloed-ai-to-make-enterprise-documents-usable-by-ai-agents/" target="_blank">Felicis leads $7.5M bet on Unsiloed AI to make enterprise documents usable by AI agents</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 18 Nov 2026 12:00:00 +0000 | ID: 1f8c0793204d
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            Felicis leads a $7.5M bet on Unsiloed AI to compete with tech giants and startups in the AI document-processing market.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/18/felicis-leads-7-5m-bet-on-unsiloed-ai-to-make-enterprise-documents-usable-by-ai-agents/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Wed, 18 Nov 2026 11:00:00 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="China dominates battery graphite, but this startup could break the monopoly">
+        <div class="article-number">[12]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/18/china-dominates-battery-graphite-but-this-startup-could-break-the-monopoly/" target="_blank">China dominates battery graphite, but this startup could break the monopoly</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 18 Nov 2026 11:00:00 +0000 | ID: dbaf48a3ddcf
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            China maintains near total dominance of the graphite industry, but Molten Industries claims its new factory in Oakland could break the monopoly.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/18/china-dominates-battery-graphite-but-this-startup-could-break-the-monopoly/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="51.5" 
+             data-published="Wed, 18 Nov 2026 11:00:27 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Grand Theft Auto VI: The Ars Technica review">
+        <div class="article-number">[13]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gaming/2026/11/grand-theft-auto-vi-the-ars-technica-review/" target="_blank">Grand Theft Auto VI: The Ars Technica review</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Wed, 18 Nov 2026 11:00:27 +0000 | ID: 6cc24d8171d4
+             | <span class="engagement-standard">Engagement: [51.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>🤖 Local AI Summary · Qwen3.5-0.8B (local):</strong><br>
+            The Ars Technica review of Grand Theft Auto VI highlights how the game&#x27;s crime-heavy narrative and digital simulation elements drive the story.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gaming/2026/11/grand-theft-auto-vi-the-ars-technica-review/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="51.0" 
+             data-published="2026-11-17"
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching">
+        <div class="article-number">[14]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2611.23229v1" target="_blank">Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-11-17 | ID: be592fde5948
+             | <span class="engagement-standard">Engagement: [51.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 51%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #2196F3">📱 Mobile</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Research paper by Giannis Daras, Marios Papachristou, Adam Klivans et al.. Collecting large-scale, diverse, and high-quality post-training datasets for autoregressive language models is challenging. Consequently, Supervised Fine-Tuning (SFT) is typically applied to datasets significantly smaller tha...
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2611.23229v1" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="48.0" 
+             data-published="2026-11-17"
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="StringQFT: A Multiuse Textbook Resource for AI-Assisted Theoretical Physics">
+        <div class="article-number">[15]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2611.23225v1" target="_blank">StringQFT: A Multiuse Textbook Resource for AI-Assisted Theoretical Physics</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-11-17 | ID: ef593d6f4ea4
+             | <span class="engagement-standard">Engagement: [48.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 48%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Research paper by Xingyang Yu. We present StringQFT as a textbook collection for string constructions of quantum field theory and as infrastructure for AI-assisted theoretical physics. The collection comprises 18 volumes, 190 chapters and 3,795 pages, covering brane probes, brane webs, geometric eng...
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2611.23225v1" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="45.5" 
+             data-published="Tue, 17 Nov 2026 23:09:09 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="San Diego dumps both Flock cameras and smart streetlights">
+        <div class="article-number">[16]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/11/san-diego-dumps-both-flock-cameras-and-smart-streetlights/" target="_blank">San Diego dumps both Flock cameras and smart streetlights</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 23:09:09 +0000 | ID: 6104fd88665c
+             | <span class="engagement-standard">Engagement: [45.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 45%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            500+ cameras will go dark just 3 years after mayor urged approval.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/11/san-diego-dumps-both-flock-cameras-and-smart-streetlights/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Wed, 18 Nov 2026 00:01:00 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Stripe backer Atomico calls for Europe to own its success stories">
+        <div class="article-number">[17]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/stripe-backer-atomico-calls-for-europe-to-own-its-success-stories/" target="_blank">Stripe backer Atomico calls for Europe to own its success stories</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 18 Nov 2026 00:01:00 +0000 | ID: e35edd3b09ba
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Europe is home to many of the world&#x27;s fastest growing companies of all time, veteran VC firm Atomico highlighted in its latest annual State of European Tech report.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/stripe-backer-atomico-calls-for-europe-to-own-its-success-stories/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="44.5" 
+             data-published="Tue, 17 Nov 2026 22:44:46 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Yet another satellite company is jockeying for a rocket—but this one makes sense">
+        <div class="article-number">[18]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/space/2026/11/yet-another-satellite-company-is-jockeying-for-a-rocket-but-this-one-makes-sense/" target="_blank">Yet another satellite company is jockeying for a rocket—but this one makes sense</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 22:44:46 +0000 | ID: 85d724420826
+             | <span class="engagement-standard">Engagement: [44.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 44%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            &quot;Governments need control of their critical space infrastructure, and Europe needs it most.&quot;
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/space/2026/11/yet-another-satellite-company-is-jockeying-for-a-rocket-but-this-one-makes-sense/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Wed, 18 Nov 2026 01:44:21 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future  deals in doubt">
+        <div class="article-number">[19]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/" target="_blank">Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future  deals in doubt</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 18 Nov 2026 01:44:21 +0000 | ID: c3cc92e78429
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>, <span class="topic-tag" style="color: #00BCD4">🚀 Startup</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            The value of Nvidia’s private investments has nearly tripled over the past nine months, fueled by Jensen Huang’s aggressive dealmaking and rising valuations of its existing portfolio companies.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="43.5" 
+             data-published="Tue, 17 Nov 2026 20:32:55 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="“Trump was in bed with Jensen”: Critics balk at Huang’s wish to return to Nvidia">
+        <div class="article-number">[20]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/tech-policy/2026/11/trump-was-in-bed-with-jensen-critics-balk-at-huangs-wish-to-return-to-nvidia/" target="_blank">“Trump was in bed with Jensen”: Critics balk at Huang’s wish to return to Nvidia</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 20:32:55 +0000 | ID: e509c7dadc61
+             | <span class="engagement-standard">Engagement: [43.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 43%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            “I love our country”: Jensen Huang’s apology comes amid escalating Nvidia probes.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/tech-policy/2026/11/trump-was-in-bed-with-jensen-critics-balk-at-huangs-wish-to-return-to-nvidia/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Wed, 18 Nov 2026 00:16:50 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Nvidia promises that revenue will keep soaring — for now">
+        <div class="article-number">[21]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/" target="_blank">Nvidia promises that revenue will keep soaring — for now</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Wed, 18 Nov 2026 00:16:50 +0000 | ID: 84962bdf8bb5
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Despite the turmoil Nvidia is in after the departure of its disgraced founder and CEO Jensen Huang, the company projected that its streak of record-breaking revenue isn&#x27;t about to stop.
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Tue, 17 Nov 2026 23:37:48 +0000"
+             data-source="TechCrunch"
+             data-source-type="RSS"
+             data-title="Nvidia is abandoning China after Jensen Huang’s ouster">
+        <div class="article-number">[22]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/" target="_blank">Nvidia is abandoning China after Jensen Huang’s ouster</a>
+        </div>
+        <div class="article-meta">
+            Source: TechCrunch | Published: Tue, 17 Nov 2026 23:37:48 +0000 | ID: cc8190db39c5
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Nvidia&#x27;s interim CEO says the company is done selling chips to China. How much will that cost?
+        </div>
+        <div class="source-link">
+            → <a href="https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Wed, 18 Nov 2026 00:27:29 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Copilot is &quot;the new OS for work,&quot; and now Office runs inside of it">
+        <div class="article-number">[23]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gadgets/2026/11/microsoft-calls-copilot-the-new-os-for-work-at-ignite-keynote/" target="_blank">Copilot is &quot;the new OS for work,&quot; and now Office runs inside of it</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Wed, 18 Nov 2026 00:27:29 +0000 | ID: 516dc1f1baf2
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Word, Excel, and PowerPoint now live inside Copilot; always-on agents are next.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gadgets/2026/11/microsoft-calls-copilot-the-new-os-for-work-at-ignite-keynote/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="41.5" 
+             data-published="Tue, 17 Nov 2026 19:45:25 +0000"
+             data-source="Ars Technica"
+             data-source-type="RSS"
+             data-title="Civilization studio Firaxis Games lays off a third of staff">
+        <div class="article-number">[24]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://arstechnica.com/gaming/2026/11/civilization-studio-firaxis-games-lays-off-a-third-of-staff/" target="_blank">Civilization studio Firaxis Games lays off a third of staff</a>
+        </div>
+        <div class="article-meta">
+            Source: Ars Technica | Published: Tue, 17 Nov 2026 19:45:25 +0000 | ID: 97e8a89e6890
+             | <span class="engagement-standard">Engagement: [41.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 41%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Studio head Heather Hazen is among those departing.
+        </div>
+        <div class="source-link">
+            → <a href="https://arstechnica.com/gaming/2026/11/civilization-studio-firaxis-games-lays-off-a-third-of-staff/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="40.5" 
+             data-published="2026-11-18T06:00:00-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="‘It’s a risk’: How Rockstar built the most detailed (and romantic) GTA yet">
+        <div class="article-number">[25]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/1035806/grand-theft-auto-6-rob-nelson-interview" target="_blank">‘It’s a risk’: How Rockstar built the most detailed (and romantic) GTA yet</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-18T06:00:00-05:00 | ID: 3b5429b7b6e6
+             | <span class="engagement-standard">Engagement: [40.5/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Grand Theft Auto VI isn&#x27;t just the biggest GTA game to date; it&#x27;s also the most romantic. Though the series is well known for its sordid assortment of criminal leads, GTA VI switches things up by starring a pair of thieves who also happen to fall in love after meeting while stealing a car. It&#x27;s […]
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/1035806/grand-theft-auto-6-rob-nelson-interview" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="40.0" 
+             data-published="2026-11-17"
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="Spool: Low-Latency Streaming Inference for Hybrid Vision-Language Models">
+        <div class="article-number">[26]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2611.23228v1" target="_blank">Spool: Low-Latency Streaming Inference for Hybrid Vision-Language Models</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-11-17 | ID: 3ec21fd94375
+             | <span class="engagement-standard">Engagement: [40.0/100] 📰 Standard</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 40%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Research paper by Rui Ning, Om Chabra, Hari Balakrishnan. Applications such as visual accessibility agents and robotics require answering questions about recent video content promptly, over a bounded window of past frames (e.g., the last two minutes). Hybrid vision-language models (VLMs), which inte...
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2611.23228v1" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-11-17T18:41:18-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Satya Nadella says he’s AGI-pilled now">
+        <div class="article-number">[27]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1036111/satya-nadella-says-hes-agi-pilled-now" target="_blank">Satya Nadella says he’s AGI-pilled now</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T18:41:18-05:00 | ID: 2b71a530dac7
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Microsoft CEO Satya Nadella says he&#x27;s AGI-pilled, at least when it comes to how AI might make startling changes to the structure of the economy and how politics might change because of it. &quot;I am AGI-pilled in the sense that at an economy level, what is the political economy&#x27;s organization around AGI...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1036111/satya-nadella-says-hes-agi-pilled-now" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="39.5" 
+             data-published="2026-11-17T17:32:50-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Read everything that Nvidia’s board chair had to say about Jensen Huang">
+        <div class="article-number">[28]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/tech/1036160/nvidia-earnings-harvey-c-jones-jensen-huang" target="_blank">Read everything that Nvidia’s board chair had to say about Jensen Huang</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T17:32:50-05:00 | ID: 384b64379c66
+             | <span class="engagement-low">Engagement: [39.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 39%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>, <span class="topic-tag" style="color: #607D8B">🔧 Hardware</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Nvidia&#x27;s quarterly earnings call on Tuesday was its first with CFO and interim CEO Colette Kress at the helm alongside the company&#x27;s first board chair, Harvey C. Jones. The leadership change followed Jensen Huang&#x27;s resignation last week after reports he had multiple affairs - including one with form...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/tech/1036160/nvidia-earnings-harvey-c-jones-jensen-huang" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-11-18T06:16:53-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Suno now lets you make AI videos for your AI music">
+        <div class="article-number">[29]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature" target="_blank">Suno now lets you make AI videos for your AI music</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-18T06:16:53-05:00 | ID: f3490a1c97a6
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Suno has introduced image and video generation in its latest effort to expand beyond being an AI music platform. The new feature, called &quot;Visuals,&quot; allows users to turn Suno songs into AI-generated video clips that automatically lipsync to lyrics, or make images via prompt descriptions that can be u...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="38.5" 
+             data-published="2026-11-18T06:06:16-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Grand Theft Auto VI has arrived">
+        <div class="article-number">[30]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/1035847/grand-theft-auto-6-launch-review-news" target="_blank">Grand Theft Auto VI has arrived</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-18T06:06:16-05:00 | ID: 41cf93c360a8
+             | <span class="engagement-low">Engagement: [38.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 38%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            More than a decade after Grand Theft Auto V was first released, its sequel is finally launching. On November 19th, GTA VI will be available on both the PS5 and Xbox Series X / S, and it’s quite possibly the most anticipated video game launch of all time. Part of this has to do with […]
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/1035847/grand-theft-auto-6-launch-review-news" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="36.5" 
+             data-published="2026-11-17T17:38:41-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Jeff Bezos says he was ‘heavily involved’ in picking the new James Bond">
+        <div class="article-number">[31]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/entertainment/1036110/jeff-bezos-james-bond-casting-amazon" target="_blank">Jeff Bezos says he was ‘heavily involved’ in picking the new James Bond</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-17T17:38:41-05:00 | ID: 0674d80c56ea
+             | <span class="engagement-low">Engagement: [36.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Robert Pattinson&#x27;s casting as James Bond made enough sense given his recent work with director Denis Villeneuve, who&#x27;s making the franchise&#x27;s next film over at Amazon. But it turns out that Amazon founder Jeff Bezos played a significant role in making the final decision, too. During Semafor&#x27;s Silico...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/entertainment/1036110/jeff-bezos-james-bond-casting-amazon" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="36.0" 
+             data-published="2026-11-17"
+             data-source="arXiv"
+             data-source-type="arXiv"
+             data-title="FastFrames: Video Generation at Interactive Latency">
+        <div class="article-number">[32]</div>
+        <div class="article-title">
+            <span class="source-icon">📚</span>
+            <a href="http://arxiv.org/abs/2611.23226v1" target="_blank">FastFrames: Video Generation at Interactive Latency</a>
+        </div>
+        <div class="article-meta">
+            Source: arXiv | Published: 2026-11-17 | ID: 7586bb88d076
+             | <span class="engagement-low">Engagement: [36.0/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 36%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Research paper by Gene Chou, Guandao Yang, Fujun Luan et al.. Autoregressive video diffusion models generate frames based on new observations and inputs, making them a promising medium for interactive visual experiences. However, existing models are orders of magnitude too slow for fluid interaction...
+        </div>
+        <div class="source-link">
+            → <a href="http://arxiv.org/abs/2611.23226v1" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="35.5" 
+             data-published="2026-11-17 21:23"
+             data-source="Reddit (r/MachineLearning)"
+             data-source-type="Reddit"
+             data-title="CMU&#x27;s Machine Learning with Large Datasets (10-605, Fall 2026) lectures are free on YouTube, with a new one every week [N]">
+        <div class="article-number">[33]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://reddit.com/r/MachineLearning/comments/1xywou0/cmus_machine_learning_with_large_datasets_10605/" target="_blank">CMU&#x27;s Machine Learning with Large Datasets (10-605, Fall 2026) lectures are free on YouTube, with a new one every week [N]</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/MachineLearning) | Published: 2026-11-17 21:23 | ID: 00cd1be86dfb
+             | <span class="engagement-low">Engagement: [35.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 35%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Disclosure: I&#x27;m a CMU faculty member and I lead CS Learn, the program publishing these. Carnegie Mellon started publishing full lecture recordings from 10-605 this week, which is William Cohen&#x27;s course on scaling machine learning to data that doesn&#x27;t fit on one machine. The first three lectures ar.....
+        </div>
+        <div class="source-link">
+            → <a href="https://reddit.com/r/MachineLearning/comments/1xywou0/cmus_machine_learning_with_large_datasets_10605/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="34.5" 
+             data-published="2026-11-17 22:34"
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Google: ‘The era of autonomous attacks has arrived’">
+        <div class="article-number">[34]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://thehill.com/policy/technology/6224604-autonomous-ai-threats-google-report/" target="_blank">Google: ‘The era of autonomous attacks has arrived’</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-11-17 22:34 | ID: f58ce4c3e8c7
+             | <span class="engagement-low">Engagement: [34.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 34%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #E91E63">🏢 Big Tech</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/technology with 18613 upvotes and 1779 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://thehill.com/policy/technology/6224604-autonomous-ai-threats-google-report/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="33.5" 
+             data-published="2026-11-17 21:22"
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Calif discloses Java4Shell flaw in OpenJDK&#x27;s Base64 decoder">
+        <div class="article-number">[35]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://runtimewire.com/article/calif-discloses-java4shell-flaw-in-openjdk-s-base64-decoder" target="_blank">Calif discloses Java4Shell flaw in OpenJDK&#x27;s Base64 decoder</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-11-17 21:22 | ID: fa1a83a390c3
+             | <span class="engagement-low">Engagement: [33.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 33%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/programming with 450 upvotes and 81 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://runtimewire.com/article/calif-discloses-java4shell-flaw-in-openjdk-s-base64-decoder" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-11-18T07:03:36-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="NASA’s Voyager 1 probe is now one light-day away">
+        <div class="article-number">[36]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/science/1036431/nasa-voyager-1-light-day-milestone" target="_blank">NASA’s Voyager 1 probe is now one light-day away</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-18T07:03:36-05:00 | ID: a1010e210133
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+            
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            After traveling through the void of space for 49 years, Voyager 1 has hit a momentous milestone: the spacecraft is now officially one light-day away from Earth, which is, as NASA put it, &quot;very, very far.&quot; The probe crossed the milepost on Wednesday at 5:16AM ET, and is now 16.094 billion miles away ...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/science/1036431/nasa-voyager-1-light-day-milestone" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-11-18T06:00:00-05:00"
+             data-source="The Verge"
+             data-source-type="RSS"
+             data-title="Grand Theft Auto VI does something impossible — it lives up to the hype">
+        <div class="article-number">[37]</div>
+        <div class="article-title">
+            <span class="source-icon">📰</span>
+            <a href="https://www.theverge.com/games/1035801/grand-theft-auto-6-review" target="_blank">Grand Theft Auto VI does something impossible — it lives up to the hype</a>
+        </div>
+        <div class="article-meta">
+            Source: The Verge | Published: 2026-11-18T06:00:00-05:00 | ID: 100d426709b7
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #FF9800">₿ Crypto</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            How do you follow a game like Grand Theft Auto V? Thirteen years ago, Rockstar&#x27;s crime-fueled epic went on to redefine what an open-world game could be and became an enormous success, selling more than 230 million copies across three generations of game consoles. It sits just behind Tetris and Minec...
+        </div>
+        <div class="source-link">
+            → <a href="https://www.theverge.com/games/1035801/grand-theft-auto-6-review" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="32.5" 
+             data-published="2026-11-18 01:39"
+             data-source="Reddit (r/technology)"
+             data-source-type="Reddit"
+             data-title="Bank CEOs, NSA Tell Congress That AI-Driven Patches Are Behind Outages">
+        <div class="article-number">[38]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages" target="_blank">Bank CEOs, NSA Tell Congress That AI-Driven Patches Are Behind Outages</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/technology) | Published: 2026-11-18 01:39 | ID: 7985f6dae6b2
+             | <span class="engagement-low">Engagement: [32.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 32%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #4CAF50">🤖 Ai Ml</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/technology with 10081 upvotes and 752 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <article data-engagement="30.5" 
+             data-published="2026-11-17 21:41"
+             data-source="Reddit (r/programming)"
+             data-source-type="Reddit"
+             data-title="Java4Shell: RCE in OpenJDK Base64 (Calif)">
+        <div class="article-number">[39]</div>
+        <div class="article-title">
+            <span class="source-icon">🗨️</span>
+            <a href="https://calif.io/java4shell/" target="_blank">Java4Shell: RCE in OpenJDK Base64 (Calif)</a>
+        </div>
+        <div class="article-meta">
+            Source: Reddit (r/programming) | Published: 2026-11-17 21:41 | ID: 8ec061f9d24b
+             | <span class="engagement-low">Engagement: [30.5/100] 📄 Low Impact</span>
+            <div class="engagement-bar"><div class="engagement-fill" style="width: 30%"></div></div>
+             | Topics: <span class="topic-tag" style="color: #795548">👩‍💻 Programming</span>
+        </div>
+        <div class="article-description">
+            <strong>📄 Description:</strong><br>
+            Reddit discussion in r/programming with 248 upvotes and 42 comments.
+        </div>
+        <div class="source-link">
+            → <a href="https://calif.io/java4shell/" target="_blank">Read full article</a>
+        </div>
+    </article>
+
+    <div class="footer">
+        Generated by Daily Briefing Engine at 2026-11-18 13:00:32 | 
+        <a href="../../../../index.html">Back to Archive</a>
+    </div>
+</body>
+</html>
